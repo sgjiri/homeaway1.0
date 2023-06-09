@@ -12,15 +12,49 @@
 		</title>
 	</head>
 	<body>
-		{%  include 'header.html.twig' %}
+
 		{% block content %}
 			<div class='content'>
 				<nav id='navDash'>
 					<ul>
 						<li id='info'>
-							<figure class='icon' id='iconInfo'>
-								<img src="{{ asset('/img/🦆 icon _person_.png') }}" alt="">
-							</figure>
+							<ul>
+								<li id='infoPerso'>
+									<figure class='icon'>
+										<img src="{{ asset('/img/🦆 icon _person_.png') }}" alt="icon _person">
+									</figure>
+								</li>
+								<li id='perso'>
+									<figure class='icon'>
+										<img src="{{ asset('/img/Perso.png') }}" alt="Perso">
+									</figure>
+								</li>
+								<li id='historic'>
+									<figure class='icon'>
+										<img src="{{ asset('/img/group.png') }}" alt="group">
+									</figure>
+								</li>
+
+
+								<li id='gestionBien'>
+									<figure class='icon'>
+										<img src="{{ asset('/img/gestion.png') }}" alt="Perso">
+									</figure>
+								</li>
+								<li id='ajouterBien'>
+									<figure class='icon'>
+										<img src="{{ asset('/img/ajouter.png') }}" alt="add house">
+									</figure>
+								</li>
+								<li id='gestionReservation'>
+									<figure class='icon'>
+										<img src="{{ asset('/img/gestionReservation.png') }}" alt="reservation">
+									</figure>
+								</li>
+								{# <li></li> #}
+
+
+							</ul>
 						</li>
 						<li id='like'>
 							<figure class='icon' id='iconLike'>
@@ -29,29 +63,42 @@
 						</li>
 						<li id='resevations'>
 							<figure class='icon'>
-								<img src="{{ asset('/img/reservation (1).png') }}" alt="">
+								<img src="{{ asset('/img/reservation.png') }}" alt="">
 							</figure>
 						</li>
 						<li id='messagerie'>
 							<figure class='icon'>
-								<img src="{{ asset('/img/icon message.png') }}" alt="">
+								<img src="{{ asset('/img/iconMessage.png') }}" alt="">
 							</figure>
 						</li>
 					</ul>
 				</nav>
-				<div class='contentPage'>
-					<div class='card'></div>
-					<div class='card'></div>
-					<div class='card'></div>
-					<div class='card'></div>
+				<div class='contentPage contentInfoPerso'>
+					<div class='card cardInfoPerso'>
+						<div>
+						<h3>Nom légal</h3>
+						<p>Nom de bdd</p>
+						<div>
+						<input type="text" class'changeText' placeholder="Votre nom">
+						<input type="text" class'changeText' placeholder="Votre prenom">
+						</div>
+						</div>
+						<figure id="figureModifier">
+							<img id="imgModifier"src="{{ asset('/img/exchange.png') }}" alt="">
+						</figure>
+						
+					</div>
+					<div class='card cardInfoPerso'></div>
+					<div class='card cardInfoPerso'></div>
+					<div class='card cardInfoPerso'></div>
 				</div>
 			</div>
 
 		{% endblock %}
 		{% block js %}
-        <script src="{{ asset('/js/dashboard.js') }}"></script>
-        
-        
-        {% endblock %}
+			<script src="{{ asset('/js/dashboard.js') }}"></script>
+
+
+		{% endblock %}
 	</body>
 </html>
