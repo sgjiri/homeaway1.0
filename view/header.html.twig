@@ -5,7 +5,7 @@
 	<div id="burgerDesktop">
 
 		{% if session.connect is defined and session.connect == true %}
-			<img src="{{asset('/img/divBurgerConnect')}}" alt="burger">
+			<img id="imgConnectDesktop" src="{{asset('/img/divBurgerConnect')}}" alt="burger">
 			<nav id='navConnect'>
 				<ul>
 					<li><a href='#'>Vos informations</a></li>
@@ -14,15 +14,15 @@
 					<li><a href='#'>Ajouter un logement en ligne</a></li>
 					<li><a href='#'>Vos favoris</a></li>
 					<li><a href='#'>FAQ</a></li>
-					<li><a href='#'>Déconnexion</a></li>
+					<li><a href='{{path('logout')}}'>Déconnexion</a></li>
 				</ul>
 			</nav>
 		{% else %}
-			<img src="{{asset('/img/divBurger')}}" alt="conection">
+			<img id="imgDisconnectDesktop"src="{{asset('/img/divBurger')}}" alt="conection">
 			<nav id='navDisconnect'>
 				<ul>
-					<li><a href='#'>Connexion</a></li>
-					<li><a href='#'>Inscription</a></li>
+					<li><a id='loginButtonDestop' href='#'>Connexion</a></li>
+					<li><a id='registerButtonDesktop' href='#'>Inscription</a></li>
 					<li><a href='#'>FAQ</a></li>
 
 				</ul>
