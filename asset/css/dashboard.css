@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.content nav {
+  position: sticky;
+  top: 75px;
+  background-color: #017c8e;
+  width: 100px;
+  height: calc(100vh - 75px);
+  transition: all 1s ease-in-out;
+}
+.content nav ul {
+  height: 100%;
+}
+.content nav ul li {
+  position: absolute;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+.content nav ul li figure {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content nav ul li figure.likeActive {
+  top: 10px;
+}
+.content nav ul li figure.infoActive {
+  top: 10px;
+}
+.content nav ul li figure img {
+  height: 50px;
+}
+.content nav #info {
+  background-color: #017c8e;
+}
+.content nav #info.infoActive {
+  bottom: 24%;
+  height: 76%;
+  width: 100%;
+  cursor: default;
+}
+.content nav #info.likeActive {
+  animation: info 2s forwards;
+}
+@keyframes info {
+  10% {
+    transform: translateX(-100px);
+  }
+  90% {
+    bottom: 16%;
+  }
+  100% {
+    transform: translateX(0%);
+    bottom: 16%;
+  }
+}
+.content nav #resevations {
+  background: #4fb849;
+  bottom: 8%;
+}
+.content nav #like {
+  background: #ed1b24;
+  bottom: 16%;
+  transition: all 1s ease-in;
+}
+.content nav #like.likeActive {
+  bottom: 24%;
+  height: 76%;
+  width: 100%;
+  cursor: default;
+}
+.content nav #messagerie {
+  background: #fbb019;
+  bottom: 0;
+}
+.content nav #messagerie figure {
+  margin-right: 9%;
+}
+.content nav #messagerie figure img {
+  margin-top: 20%;
+}
+.content .contentPage {
+  width: 70%;
+  margin: 0 auto;
+}
+.content .contentPage .card {
+  width: 100%;
+  height: 300px;
+  margin-top: 50px;
+  background-color: #017c8e;
+}/*# sourceMappingURL=dashboard.css.map */

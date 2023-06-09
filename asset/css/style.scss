@@ -1,0 +1,464 @@
+$roboto: 'Roboto', sans-serif;
+$fontTitle : 'righteous',
+sans-serif;
+$blueDark : #017C8E;
+$bluelight: #01949C;
+$grey: #6a6f8c;
+$inherit: inherit;
+$white: #fff;
+$color_4: #aaa;
+$border-blue: #1161ee;
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+
+/*header phone*/
+
+header {
+    #logo img {
+        width: 200px;
+        display: block;
+        margin: 5px auto;
+    }
+
+    #burgerDesktop {
+        display: none;
+    }
+
+    #burgerPhone {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 1;
+
+        #menuBurger,
+        #searchPhone {
+            width: 50%;
+            height: 50px;
+            position: relative;
+
+            .iconMenuPhone {
+                width: 25px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        #menuBurger {
+            background-color: $blueDark;
+
+            #navConnectPhone,
+            #navDisconnectPhone {
+                display: none;
+            }
+
+            #navDisconnectPhone.logout,
+            #navConnectPhone.loginActive {
+                display: block;
+                position: absolute;
+                bottom: 50px;
+                width: 100%;
+
+                ul {
+                    li {
+                        width: 100%;
+                        text-align: center;
+                        padding: 20px 0;
+                        background-color: $blueDark;
+                        border: 1px solid #fff;
+
+
+                        a {
+                            color: #fff;
+                            font-family: $fontTitle;
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        #searchPhone {
+            background-color: $bluelight;
+        }
+
+    }
+
+
+
+
+    .clearfix {
+        &:after {
+            content: '';
+            display: table;
+            clear: both;
+            display: block;
+        }
+
+        &:before {
+            content: '';
+            display: table;
+        }
+    }
+
+    a {
+        color: $inherit;
+        text-decoration: none;
+    }
+
+    #searchBoxPhone {
+        background-image: url(../img/heroMontainPhone.jpg);
+        background-size: cover;
+        margin: auto;
+        max-width: 350px;
+        width: 100%;
+        min-height: 600px;
+        display: none;
+
+        form {
+            width: 100%;
+            padding-top: 25px;
+
+            .searchFormBox {
+                width: 150px;
+                background-color: #fff;
+                height: 75px;
+                margin: 25px auto;
+                border: 1px solid $blueDark;
+                position: relative;
+                padding-top: 10px;
+
+                label {
+                    font-size: 1rem;
+                    font-family: $fontTitle;
+                    font-weight: 700;
+                    padding: 10px 0 0 10px;
+                }
+
+                input {
+                    position: absolute;
+                    left: 10px;
+                    bottom: 10px;
+                    width: 80%;
+                    margin: 0 auto;
+                    border: none;
+                    border-bottom: 1px solid $blueDark;
+                }
+
+
+            }
+
+            #buttonSearch {
+                width: 150px;
+                height: 75px;
+                margin: 25px auto;
+
+                input {
+                    width: 100%;
+                    height: 100%;
+                    position: inherit;
+                    margin: unset;
+                    color: $white;
+                    font-family: $fontTitle;
+                    font-size: 1.5rem;
+                    background: linear-gradient(90deg, rgba(1, 124, 142, 1) 50%, rgba(1, 148, 156, 1) 50%);
+
+                }
+            }
+        }
+    }
+
+    #searchBoxPhone.formSearchActive {
+        display: block;
+    }
+
+    #loginBox {
+        width: 100%;
+        margin: auto;
+        max-width: 525px;
+        min-height: 850px;
+        display: none;
+        position: relative;
+        background: url(../img/castelnou.png);
+        background-size: cover;
+        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+
+        #close {
+            position: absolute;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: $fontTitle;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    }
+
+    #loginBox.formActive {
+        display: block;
+    }
+
+    .loginBoxHeader {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        padding: 50px 10px 50px 10px;
+        background: rgba(40, 57, 101, .5);
+
+        .sign-in-form {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+            transition: all .4s linear;
+
+
+        }
+
+        .sign-up-form {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+            transition: all .4s linear;
+
+        }
+
+        .sign-in {
+            display: none;
+
+            &:checked {
+                + {
+                    .tab {
+                        color: $white;
+                        border-color: $bluelight;
+
+                        + {
+                            .sign-up {
+                                + {
+                                    .tab {
+
+
+                                        + {
+                                            .login-form {
+                                                .sign-in-form {
+                                                    transform: rotate(0);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .sign-up {
+            display: none;
+
+            &:checked {
+                + {
+                    .tab {
+                        color: $white;
+                        border-color: $bluelight;
+
+                        + {
+                            .login-form {
+                                .sign-up-form {
+                                    transform: rotate(0);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .tab {
+            text-transform: uppercase;
+            font-family: $fontTitle;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-right: 15px;
+            padding-bottom: 5px;
+            margin: 0 15px 50px 15px;
+            display: inline-block;
+            border-bottom: 2px solid transparent;
+            color: black;
+        }
+    }
+
+    .login-form {
+        width: 80%;
+        margin: 0 auto;
+
+        .group {
+            .check {
+                display: none;
+
+                &:checked {
+                    + {
+                        label {
+                            color: $white;
+
+                            .icon {
+                                background: #1161ee;
+
+                                &:before {
+                                    transform: scale(1) rotate(45deg);
+                                }
+
+                                &:after {
+                                    transform: scale(1) rotate(-45deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .label {
+                text-transform: uppercase;
+                width: 100%;
+                color: $white;
+                display: block;
+                margin-left: 10%;
+                font-size: 12px;
+            }
+
+            .button {
+                text-transform: uppercase;
+                width: 100%;
+                color: $white;
+                display: block;
+                border: none;
+                padding: 15px 0px;
+                margin-top: 20px;
+                border-radius: 25px;
+                background: $blueDark;
+            }
+
+            margin-bottom: 15px;
+
+            .input {
+                width: 100%;
+                color: $white;
+                display: block;
+                border: none;
+                padding: 15px 20px;
+                border-radius: 25px;
+                background: rgba(255, 255, 255, .5);
+            }
+
+            label {
+                .icon {
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 2px;
+                    position: relative;
+                    display: inline-block;
+                    background: rgba(255, 255, 255, .5);
+
+                    &:before {
+                        content: '';
+                        width: 10px;
+                        height: 2px;
+                        background: #fff;
+                        position: absolute;
+                        transition: all .2s ease-in-out 0s;
+                        left: 3px;
+                        width: 5px;
+                        bottom: 6px;
+                        transform: scale(0) rotate(0);
+                    }
+
+                    &:after {
+                        content: '';
+                        width: 10px;
+                        height: 2px;
+                        background: #fff;
+                        position: absolute;
+                        transition: all .2s ease-in-out 0s;
+                        top: 6px;
+                        right: 0;
+                        transform: scale(0) rotate(0);
+                    }
+                }
+            }
+        }
+
+        min-height: 345px;
+        position: relative;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+    }
+
+}
+
+/*header tablet*/
+@media screen and (min-width:800px) {
+    header {
+        #burgerPhone {
+            display: none;
+        }
+
+        #burgerDesktop {
+            display: block;
+        }
+    }
+}
+
+/*hero phone*/
+#hero {
+    position: relative;
+
+    figure img {
+        width: 100%;
+
+
+    }
+
+    h1 {
+        position: absolute;
+        color: $white;
+        font-family: $fontTitle;
+        white-space: nowrap;
+        font-size: 1.2rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    #searchBoxDesktop {
+        display: none;
+    }
+}
+
+/*hero tablet*/
+
+@media screen and (min-width:500px) {
+    #hero h1 {
+        font-size: 1.5rem;
+    }
+}

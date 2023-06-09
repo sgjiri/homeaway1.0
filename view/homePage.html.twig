@@ -1,0 +1,37 @@
+{% extends "template.html.twig" %}
+
+
+{% block title %}
+	HomeAway
+{% endblock %}
+{% block content %}
+	<section id="hero">
+		<figure>
+			<img src="{{asset('/img/heroMontainPhone.jpg')}}" alt=""></figure>
+		<h1>Détendez-vous et explorez !</h1>
+		<div id="searchBoxDesktop">
+			<form action="POST" id="searchform">
+				<div class="searchFormBox">
+					<label for="city">Destination</label>
+					<input type="text" name="city" id="city">
+				</div>
+				<div class="searchFormBox">
+					<label for="start_date">Date d'arrivée</label>
+					<input type="date" name="start_date" id="start_date">
+				</div>
+				<div class="searchFormBox">
+					<label for="end_date">Date de retour</label>
+					<input type="date" name="end_date" id="end_date">
+				</div>
+				<div class="searchFormBox">
+					<label for="number_of_person">Voyageurs</label>
+					<input type="number" name="number_of_person" id="number_of_person">
+				</div>
+				<div id="buttonSearch">
+					<input type="submit" value="Rechercher">
+				</div>
+			</form>
+		</div>
+
+	</section>
+{% endblock %}

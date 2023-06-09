@@ -1,0 +1,156 @@
+<header>
+	<div id="logo">
+		<a href="./"><img src="{{asset('/img/Logo')}}" alt="logo"></a>
+	</div>
+	<div id="burgerDesktop">
+
+		{% if session.connect is defined and session.connect == true %}
+			<img src="{{asset('/img/divBurgerConnect')}}" alt="burger">
+			<nav id='navConnect'>
+				<ul>
+					<li><a href='#'>Vos informations</a></li>
+					<li><a href='#'>Messages</a></li>
+					<li><a href='#'>Vos réservations</a></li>
+					<li><a href='#'>Ajouter un logement en ligne</a></li>
+					<li><a href='#'>Vos favoris</a></li>
+					<li><a href='#'>FAQ</a></li>
+					<li><a href='#'>Déconnexion</a></li>
+				</ul>
+			</nav>
+		{% else %}
+			<img src="{{asset('/img/divBurger')}}" alt="conection">
+			<nav id='navDisconnect'>
+				<ul>
+					<li><a href='#'>Connexion</a></li>
+					<li><a href='#'>Inscription</a></li>
+					<li><a href='#'>FAQ</a></li>
+
+				</ul>
+			</nav>
+		{% endif %}
+	</div>
+	<div id="burgerPhone">
+		<div id='menuBurger'>
+			<img class='iconMenuPhone' src="{{asset('/img/burgerPhone.png')}}" alt="burger">
+			{% if session.connect is defined and session.connect == true %}
+
+				<nav id='navConnectPhone'>
+					<ul>
+						<li><a href='#'>Vos informations</a></li>
+						<li><a href='#'>Messages</a></li>
+						<li><a href='#'>Vos réservations</a></li>
+						<li><a href='#'>Ajouter un logement en ligne</a></li>
+						<li><a href='#'>Vos favoris</a></li>
+						<li><a href='#'>FAQ</a></li>
+						<li><a href='{{path('logout')}}'>Déconnexion</a></li>
+					</ul>
+				</nav>
+			{% else %}
+
+				<nav id='navDisconnectPhone'>
+					<ul>
+						<li><a href='#' id='loginButton'>Connexion</a></li>
+						<li><a href='#' id='registerButton'>Inscription</a></li>
+						<li><a href='#'>FAQ</a></li>
+
+					</ul>
+				</nav>
+			{% endif %}
+		</div>
+		<div id='searchPhone'>
+			<img class='iconMenuPhone' src="{{asset('/img/loupe.png')}}" alt="loupe">
+
+		</div>
+	</div>
+	<div id="searchBoxPhone">
+		<form method="POST" id="searchform">
+			<div class="searchFormBox">
+				<label for="city">Destination</label>
+				<input type="text" name="city" id="city">
+			</div>
+			<div class="searchFormBox">
+				<label for="start_date">Date d'arrivée</label>
+				<input type="date" name="start_date" id="start_date">
+			</div>
+			<div class="searchFormBox">
+				<label for="end_date">Date de retour</label>
+				<input type="date" name="end_date" id="end_date">
+			</div>
+			<div class="searchFormBox">
+			<label for="number_of_person">Voyageurs</label>
+			<input type="number" name="number_of_person" id="number_of_person">
+			</div>
+			<div id="buttonSearch">
+			<input type="submit" value="Rechercher">
+			</div>
+		</form>
+	</div>
+	<div id="loginBox">
+		<div class="loginBoxHeader">
+			<p id="close">X</p>
+			<input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+			<label for="tab-1" class="tab">Connexion</label>
+			<input id="tab-2" type="radio" name="tab" class="sign-up">
+			<label for="tab-2" class="tab">Inscription</label>
+			<div class="login-form">
+				<form action='{{path('login')}}' method='POST' class="sign-in-form">
+					<div class="group">
+						<label for="mail" class="label">Mail</label>
+						<input id="mail" name="mail" type="mail" class="input">
+					</div>
+					<div class="group">
+						<label for="password" class="label">Mot de passe</label>
+						<input id="password" name="password" type="password" class="input" data-type="password">
+					</div>
+
+					<div class="group">
+						<input type="submit" class="button" value="Connexion">
+					</div>
+
+				</form>
+				<form method='POST' action='{{path('register')}}' class="sign-up-form">
+					<div class="group">
+						<label for="name" class="label">Nom</label>
+						<input id="name" type="text" name='name' class="input">
+					</div>
+					<div class="group">
+						<label for="firstname" class="label">Prénom</label>
+						<input id="firstname" type="text" name='firstname' class="input">
+					</div>
+					<div class="group">
+						<label for="date_of_birth" class="label">Date de naissance</label>
+						<input id="date_of_birth" type="date" name='date_of_birth' class="input">
+					</div>
+					<div class="group">
+						<label for="phone_number" class="label">Numéro de téléphone</label>
+						<input type="tel" id="phone_number" name="phone_number" required class="input">
+					</div>
+
+					<div class="group">
+						<label for="password" class="label">Mot de passe</label>
+						<input id="password" name="password" type="password" class="input">
+					</div>
+					<div class="group">
+						<label for="password" class="label">Confirmé mot de passe</label>
+						<input id="password" name="password" type="password" class="input" data-type="password">
+					</div>
+					<div class="group">
+						<label for="pass" class="label">Email Address</label>
+						<input id="mail" name="mail" type="mail" class="input">
+					</div>
+
+					<div class="group">
+						<input type="submit" class="button" value="Inscription ">
+					</div>
+
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+
+</header>
+
+
+

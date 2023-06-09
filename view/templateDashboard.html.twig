@@ -1,0 +1,57 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ asset('/css/dashboard.css') }}">
+		<link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+		<link rel="stylesheet" href="{{ asset('/font/font.css') }}">
+
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+	</head>
+	<body>
+		{%  include 'header.html.twig' %}
+		{% block content %}
+			<div class='content'>
+				<nav id='navDash'>
+					<ul>
+						<li id='info'>
+							<figure class='icon' id='iconInfo'>
+								<img src="{{ asset('/img/🦆 icon _person_.png') }}" alt="">
+							</figure>
+						</li>
+						<li id='like'>
+							<figure class='icon' id='iconLike'>
+								<img src="{{ asset('/img/🦆 icon _heart_.png') }}" alt="">
+							</figure>
+						</li>
+						<li id='resevations'>
+							<figure class='icon'>
+								<img src="{{ asset('/img/reservation (1).png') }}" alt="">
+							</figure>
+						</li>
+						<li id='messagerie'>
+							<figure class='icon'>
+								<img src="{{ asset('/img/icon message.png') }}" alt="">
+							</figure>
+						</li>
+					</ul>
+				</nav>
+				<div class='contentPage'>
+					<div class='card'></div>
+					<div class='card'></div>
+					<div class='card'></div>
+					<div class='card'></div>
+				</div>
+			</div>
+
+		{% endblock %}
+		{% block js %}
+        <script src="{{ asset('/js/dashboard.js') }}"></script>
+        
+        
+        {% endblock %}
+	</body>
+</html>

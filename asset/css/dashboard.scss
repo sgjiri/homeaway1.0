@@ -1,0 +1,147 @@
+$turque: #017c8e;
+$red: #ed1b24;
+$orange: #fbb019;
+$green: #4fb849;
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    nav {
+        position: sticky;
+        top: 75px;
+        background-color: $turque;
+        width: 100px;
+        height: calc(100vh - 75px);
+        transition: all 1s ease-in-out;
+
+        ul {
+            height: 100%;
+
+
+            li {
+                position: absolute;
+                height: 8%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                cursor: pointer;
+
+                figure {
+                    width: 100%;
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &.likeActive{
+                        top: 10px;
+                    }
+                    &.infoActive{
+                        top: 10px;
+                    }
+
+                    img {
+                        height: 50px;
+
+                    }
+
+                }
+            }
+
+        }
+
+
+
+        #info {
+            background-color: $turque;
+            &.infoActive{
+                bottom: 24%;
+                height: 76%;
+                width: 100%;
+                cursor: default;
+            }
+
+
+            &.likeActive {
+                animation: info 2s forwards;
+                
+            }
+            @keyframes info {
+                10%{
+                    transform: translateX(-100px);
+                }
+                90%{
+                    bottom: 16%;
+                }
+                100%{
+                    transform: translateX(0%);
+                    bottom: 16%;
+                }
+                
+            }
+        }
+
+        #resevations {
+            background: $green;
+            bottom: 8%;
+
+        }
+
+        #like {
+            background: $red;
+            bottom: 16%;
+            transition: all 1s ease-in;
+
+            &.likeActive {
+                bottom: 24%;
+                height: 76%;
+                width: 100%;
+                cursor: default;
+            }
+
+
+
+        }
+
+
+        #messagerie {
+            background: $orange ;
+            bottom: 0;
+
+            figure {
+                margin-right: 9%;
+
+                img {
+                    margin-top: 20%;
+
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .contentPage {
+        width: 70%;
+        margin: 0 auto;
+
+        .card {
+            width: 100%;
+            height: 300px;
+            margin-top: 50px;
+            background-color: $turque;
+        }
+    }
+}
