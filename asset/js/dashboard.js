@@ -21,7 +21,9 @@ info.addEventListener('click', function(){
 
 let figureModifier = document.getElementById('figureModifier');
 let imgModifier = document.getElementById('imgModifier');
+let setName = document.getElementById('setName');
 
 figureModifier.addEventListener('click', function(){
     imgModifier.classList.toggle('activeModifie');
+    setName.classList.toggle('activeInput');
 })
