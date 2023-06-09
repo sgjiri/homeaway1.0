@@ -10,7 +10,7 @@
 			<img src="{{asset('/img/heroMontainPhone.jpg')}}" alt=""></figure>
 		<h1>Détendez-vous et explorez !</h1>
 		<div id="searchBoxDesktop">
-			<form action="POST" id="searchform">
+			<form action="POST" id="searchformDesktop">
 				<div class="searchFormBox">
 					<label for="city">Destination</label>
 					<input type="text" name="city" id="city">
@@ -33,5 +33,21 @@
 			</form>
 		</div>
 
+	</section>
+
+	<section id="destination" class="row-limit-size">
+		<div class="destinationContainer">
+			<article class="articleDestination">
+				<img src="{{asset('/img/orangeLogo.png')}}" alt="logo orange">
+				<h2 class="titleDestination">Envie de plage
+				</h2>
+			</article>
+			<div class="imgDestination">
+			<img src="{{asset('/img/montpellier.png')}}" alt="Montpellier">
+			<img src="{{asset('/img/Marseille.png')}}" alt="Marseille">
+			<img src="{{asset('/img/MontStMichelle.png')}}" alt="Mont saint Michel">
+			<img src="{{asset('/img/StMalo.png')}}" alt="Saint Mallo">
+			</div>
+		</div>
 	</section>
 {% endblock %}
