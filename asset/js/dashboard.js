@@ -16,3 +16,12 @@ info.addEventListener('click', function(){
     like.classList.remove('likeActive');
     iconInfo.classList.add('iconInfo')
 })
+
+
+
+let figureModifier = document.getElementById('figureModifier');
+let imgModifier = document.getElementById('imgModifier');
+
+figureModifier.addEventListener('click', function(){
+    imgModifier.classList.toggle('activeModifie');
+})
