@@ -1,7 +1,41 @@
 {% extends "template.html.twig" %}
 
-{% block title %} HomeAway logement{% endblock %}
+{% block title %}
+	HomeAway logement
+{% endblock %}
 
 
 {% block content %}
+
+	<section id="resultResearchPhone">
+		<div id="resumSearchPhone">
+			<ul>
+				<li>Destination :
+					<span>Montpellier</span>
+				</li>
+				<li>Date :
+					<span>1 aôut 2023 au 6 août 2023</span>
+				</li>
+				<li>Nombre de personne :
+					<span>1</span>
+				</li>
+			</ul>
+		</div>
+		<figure id="filter">
+			<img src="{{asset('/img/filter.png')}}" alt="filtre">
+		</figure>
+		<div id="containerResultSearch">
+			<div id="map"></div>
+		</div>
+		<div class="listResult">
+			<article class="postSearch">
+				<img src="{{asset('/img/logement/appartMontpellier1.1.webp')}}" alt="appartement montpelier">
+				<h4>Appartement &nbsp;-&nbsp;Montpellier</h4>
+				<p>description</p>
+				<p>
+					<span>58€ </span>par nuit - &nbsp; 294€ au total</p>
+			</article>
+		</div>
+	</section>
+
 {% endblock %}
