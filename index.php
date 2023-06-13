@@ -11,6 +11,7 @@ $router->setBasePath('/Projet/homeaway1.0');
 
 
 $router->map('GET', '/', 'LogementController#homepage', 'home' );
+$router->map('GET', '/legalNotices', 'LogementController#legalNotices', 'legalNotices' );
 $router->map('GET', '/', 'LogementController#getAllLogements', 'getAll' );
 
 $router->map('GET|POST','/login','PersonController#userLogin','login');

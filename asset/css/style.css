@@ -459,7 +459,7 @@ header .login-form .group label .icon:after {
     font-size: 2.5rem;
   }
 }
-/*section destination*/
+/*section destination phone*/
 #destination .destinationContainer .articleDestination {
   display: flex;
   margin: 25px;
@@ -474,9 +474,132 @@ header .login-form .group label .icon:after {
 }
 #destination .destinationContainer .imgDestination img {
   width: 200px;
+  height: 168px;
   margin: 25px auto;
   display: block;
 }
 #destination .destinationContainer .imgDestination img:last-child {
   margin-bottom: 100px;
+}
+
+/* section destination tablet desketop*/
+@media screen and (min-width: 600px) {
+  #destination .destinationContainer .imgDestination {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 750px) {
+  #destination .destinationContainer .imgDestination {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 850px) {
+  #destination .destinationContainer .imgDestination {
+    width: 100%;
+  }
+}
+/*footer phone*/
+footer {
+  margin-bottom: 50px;
+}
+footer #firstContainerFooter,
+footer #secondContainerFooter {
+  height: 200px;
+}
+footer #firstContainerFooter {
+  background-color: #017C8E;
+  padding-top: 30px;
+}
+footer #firstContainerFooter button {
+  width: 80%;
+  display: block;
+  margin: 0 auto 25px auto;
+  color: #fff;
+  font-family: "righteous", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: #017C8E;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  height: 50px;
+}
+footer #firstContainerFooter div {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+footer #firstContainerFooter div a img {
+  width: 30px;
+}
+footer #secondContainerFooter {
+  background-color: #01949C;
+  display: flex;
+  flex-direction: column;
+}
+footer #secondContainerFooter a {
+  text-align: center;
+  padding-top: 30px;
+  font-family: "righteous", sans-serif;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/*footer desktop */
+@media screen and (min-width: 800px) {
+  footer {
+    display: flex;
+    margin-bottom: unset;
+  }
+  footer #firstContainerFooter,
+  footer #secondContainerFooter {
+    width: 50%;
+  }
+}
+/*legal Notices phone */
+#legalNotices {
+  width: 90%;
+  margin: 0 auto;
+}
+#legalNotices h1 {
+  text-align: center;
+  margin: 50px 0;
+  font-family: "righteous", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #017C8E;
+}
+#legalNotices h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #017C8E;
+  margin: 20px 0;
+}
+#legalNotices p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  text-align: justify;
+}
+#legalNotices p span {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+#legalNotices ul li {
+  list-style-type: initial;
+  width: 80%;
+  margin: 10px 0 10px 10%;
+}
+#legalNotices ol {
+  margin: 25px 0;
+  background-color: rgba(1, 148, 156, 0.1);
+}
+#legalNotices li {
+  margin: 10px 0 10px 10%;
+  list-style-type: decimal;
 }/*# sourceMappingURL=style.css.map */
