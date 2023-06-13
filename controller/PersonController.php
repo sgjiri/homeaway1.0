@@ -21,6 +21,7 @@ class PersonController extends Controller
             // si $post non vide recuperation des valeurs des champs dans le formulaire a travers variable $mail et $password
 
             $mail = $_POST['mail'];
+
             $password = $_POST['password'];
 
             // creation instance model qui app la methode getuserbymail pour récuperation des info utilisateur
@@ -33,7 +34,7 @@ class PersonController extends Controller
             if ($person) {
                 if (password_verify($password, $person->getPassword())) {
                      $_SESSION['connect'] = true;
-                    $_SESSION['id'] = $person->getId_person();
+                    $_SESSION['id_person'] = $person->getId_person();
                     $_SESSION['mail'] = $person->getMail();
                    
 
