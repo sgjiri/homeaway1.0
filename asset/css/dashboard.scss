@@ -182,14 +182,21 @@ sans-serif;
 
         .card {
             width: 100%;
-            margin-top: 50px;
-            background-color: $turque;
+            margin-top: 0px;
             display: flex;
             justify-content: space-between;
             border: 20px;
             
             position: relative;
             z-index: 100;
+
+            &:first-child{
+                margin-top: 50px;
+            }
+
+            &.activeModifie{
+                transform: translateY(+50px);
+            }
 
             
 
@@ -215,11 +222,11 @@ sans-serif;
                 }
             }
 
-            #figureModifier{
+            .figureModifier{
                 padding: 20px;
                 cursor: pointer;
 
-                #imgModifier{
+                .imgModifier{
                     transition: all 0.2s;
                     &.activeModifie{
                         transform: rotate(-90deg);
@@ -236,6 +243,7 @@ sans-serif;
             transform: translateY(-70px);
             transition: all 0.2s ease-in;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            display: flex;
 
             input{
                 font-size: 1.5em;
@@ -243,6 +251,35 @@ sans-serif;
                 border: #fff 3px solid;
                 border-radius:10px;
                 color: #fff;
+                padding: 5px;
+                margin-left: 20px;
+
+                &::placeholder{
+                    color: #e3dada;
+                }
+
+                &:focus {
+                    outline: none;
+                  }
+
+                &:first-child{
+                    margin-left: 0;
+                    
+                }
+            }
+
+            .valider{
+                background: url(../img/valider.png) center center no-repeat ;
+                border-radius: 50%;
+                height: 40px;
+                width: 40px;
+                transition: all 0.1s ease-in;
+
+                &:hover{
+                    cursor: pointer;
+                    background-color: $green;
+                    transform: scale(1.1);
+                }
             }
 
             &.activeInput{

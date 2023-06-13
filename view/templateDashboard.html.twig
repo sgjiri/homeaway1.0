@@ -78,40 +78,74 @@
 						<div>
 							<h3>Nom légal</h3>
 							<p>Nom de bdd</p>
-							
+
 						</div>
-						
-						<figure id="figureModifier">
-							<img id="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
+
+						<figure class="figureModifier">
+							<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
 						</figure>
 
 					</div>
-					<div class='input' id='setName'>
+					<div class='input'>
 
-								<input type="text" class'changetext' placeholder="Votre nom">
-								<input type="text" class'changetext' placeholder="Votre prenom">
+						<input type="text" class'changetext' placeholder="Votre nom...">
+						<input type="text" class'changetext' placeholder="Votre prenom...">
+						<input type="submit" name="valider" class="valider" value="">
 
 					</div>
 					<div class='card cardInfoPerso'>
-					<div>
-							<h3>Nom légal</h3>
-							<p>Nom de bdd</p>
-							
+						<div>
+							<h3>Adresse mail</h3>
+							<p>Mail de bdd</p>
+
 						</div>
-						
-						<figure id="figureModifier">
-							<img id="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
-						</figure></div>
-					<div class='card cardInfoPerso'></div>
-					<div class='card cardInfoPerso'></div>
+
+						<figure class="figureModifier">
+							<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
+						</figure>
+					</div>
+					<div class='input'>
+
+						<input type="text" class'changetext' placeholder="Votre mail...">
+						<input type="submit" name="valider" class="valider" value="">
+					</div>
+					<div class='card cardInfoPerso'>
+						<div>
+							<h3>Numero de telophone</h3>
+							<p>Tel de bdd</p>
+
+						</div>
+
+						<figure class="figureModifier">
+							<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
+						</figure>
+					</div>
+					<div class='input'>
+
+						<input type="text" class'changetext' placeholder="Votre numero de telephone...">
+						<input type="submit" name="valider" class="valider" value="">
+					</div>
+					<div class='card cardInfoPerso'>
+					<div>
+							<h3>Adresse</h3>
+							<p>Adresse de bdd</p>
+						</div>
+						<figure class="figureModifier">
+							<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
+						</figure>
+					</div>
+					<div class='input'>
+						<input type="text" class'changetext' placeholder="Votre rue">
+						<input type="text" class'changetext' placeholder="N° de batiment">
+						<input type="text" class'changetext' placeholder="code postale">
+						<input type="text" class'changetext' placeholder="ville">
+						<input type="submit" name="valider" class="valider" value="">
+					</div>
 				</div>
+				</div>
+				
 			</div>
-
-		{% endblock %}
-		{% block js %}
-			<script src="{{ asset('/js/dashboard.js') }}"></script>
-
-
-		{% endblock %}
-	</body>
-</html>
+		</body>
+	</html>
+</div>{% endblock %}{% block js %}
+<script src="{{ asset('/js/dashboard.js') }}"></script>{% endblock %}</body></html>
