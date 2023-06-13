@@ -11,14 +11,14 @@
 					<li><a href='#'>Vos informations</a></li>
 					<li><a href='#'>Messages</a></li>
 					<li><a href='#'>Vos réservations</a></li>
-					<li><a href='#'>Ajouter un logement en ligne</a></li>
+					<li><a href='{{path('add')}}'>Ajouter un logement en ligne</a></li>
 					<li><a href='#'>Vos favoris</a></li>
 					<li><a href='#'>FAQ</a></li>
 					<li><a href='{{path('logout')}}'>Déconnexion</a></li>
 				</ul>
 			</nav>
 		{% else %}
-			<img id="imgDisconnectDesktop"src="{{asset('/img/divBurger')}}" alt="conection">
+			<img id="imgDisconnectDesktop"src="{{asset('/img/divBurger')}}" alt="connexion">
 			<nav id='navDisconnect'>
 				<ul>
 					<li><a id='loginButtonDestop' href='#'>Connexion</a></li>
@@ -39,7 +39,7 @@
 						<li><a href='#'>Vos informations</a></li>
 						<li><a href='#'>Messages</a></li>
 						<li><a href='#'>Vos réservations</a></li>
-						<li><a href='#'>Ajouter un logement en ligne</a></li>
+						<li><a href='{{path('add')}}'>Ajouter un logement en ligne</a></li>
 						<li><a href='#'>Vos favoris</a></li>
 						<li><a href='#'>FAQ</a></li>
 						<li><a href='{{path('logout')}}'>Déconnexion</a></li>
