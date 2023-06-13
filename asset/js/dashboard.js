@@ -33,19 +33,29 @@ for (let i = 0; i < classFigureModifier.length; i++) {
         classFigureModifier[index].addEventListener('click', function () {
 
             classImgModifier[index].classList.toggle('activeModifie');
-            classInput[index].classList.toggle('activeInput');
+            
             for (let i = index + 1; i < classCard.length; i++) {
                 if(classImgModifier[index].classList.contains('activeModifie')){
                 classCard[i].style.transform = "translateY(" + j + "px)";
                 classInput[i].style.transform = "translateY(" + p + "px)";
+                
             }else{
-                classCard[i].style.transform = "translateY(-" + p + "px)";
-                classInput[i].style.transform = "translateY(-" + p + "px)";
+                classCard[i].style.transform = "translateY(" + (j-100) + "px)";
+                classInput[i].style.transform = "translateY(" + (p-100)+ "px)";
             }
+            if(classImgModifier[index].classList.contains('activeModifie')){
+                j = j+50;
+                p = p+50;
+                classInput[index].style.transform = "translateY(" + (j-150) + "px)";
+                }else{
+                j = j-50;
+                p = p-50;
+                classInput[index].style.transform = "translateY(" + (j-150) + "px)";
+                }
+                console.log(j);
+                console.log(p);
         }
-        j = j+50;
-        p = p+50;
-        console.log(j);
+       
         });
     })(i);
 }
