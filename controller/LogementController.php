@@ -4,6 +4,10 @@ class LogementController extends Controller {
      
         echo self::getRender('homePage.html.twig', []);
     }
+    public function legalNotices() {
+        $twig = $this-> getTwig();
+        echo $twig->render('legalNotices.html.twig',[]);
+    }
 
     public function addLogement(){
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

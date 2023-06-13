@@ -10,8 +10,11 @@ $router = new AltoRouter();
 $router->setBasePath('/Projet/homeaway1.0');
 
 
-// ****** -------ROUTE ACCUEIL-------*******
-$router->map('GET', '/', 'LogementController#homepage', 'home');
+
+$router->map('GET', '/', 'LogementController#homepage', 'home' );
+$router->map('GET', '/legalNotices', 'LogementController#legalNotices', 'legalNotices' );
+$router->map('GET', '/', 'LogementController#getAllLogements', 'getAll' );
+
 
 // ******-------ROUTE UTILISATEUR-------*****
 $router->map('GET|POST', '/login', 'PersonController#userLogin', 'login');
