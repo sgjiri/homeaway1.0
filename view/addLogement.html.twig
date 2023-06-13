@@ -1,11 +1,13 @@
 
+{% block content %}
 
-
-
+	{% if message %} <p> {{ message }} </p> {% endif %}
+		
+			<legend>Ajouter un logement </legend>
 
 <form method="post" action='{{path('add')}}'>
-    <label for="id_person">Person ID:</label>
-    <input type="number" name="id_person" id="id_person" required>
+    
+    <input type="hidden" name="id_person" id="id_person" value="session.id" required>
     <br>
     
     <label for="title">Title:</label>
@@ -16,17 +18,15 @@
     <br>
  
     <br>
-    <label for="thumbnail">Thumbnail:</label>
-    <input type="text" name="thumbnail" id="thumbnail" required>
-    <br>
+    
     <label for="surface">surface:</label>
     <input type="number" name="surface" id="type" required>
     <br>
     <label for="description">description</label>
     <input type="text" name="description" id="type" required>
     <br>
-    <label for="address">adress</label>
-    <input type="text" name="address" id="type" required>
+    <label for="adress">adress</label>
+    <input type="text" name="adress" id="type" required>
     <br>
     <label for="city">city:</label>
     <input type="text" name="city" id="type" required>
@@ -93,5 +93,6 @@
     <input type="checkbox" name="jacuzzi " id="type"  value="1" >
    
     <br>
-    <input type="submit" value="Add Logement">
+    <input type="submit"name="submit" value="submit">
 </form>
+{% endblock %}

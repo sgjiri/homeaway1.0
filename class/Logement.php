@@ -4,6 +4,7 @@ class Logement
     private $id_logement;
     private $id_person;
     private $title;
+    private $type;
     private $surface;
     private $description;
     private $adress;
@@ -19,7 +20,6 @@ class Logement
     private $garden;
     private $tv;
     private $climatisation;
-  
     private $camera;
     private $home_textiles;
     private $spa;
@@ -63,7 +63,10 @@ class Logement
     {
         return $this->title;
     }
-
+    public function getType()
+    {
+        return $this->type;
+    }
     public function getSurface()
     {
         return $this->surface;
@@ -135,9 +138,7 @@ class Logement
     {
         return $this->climatisation;
     }
-
-   
-
+ 
     public function getCamera()
     {
         return $this->camera;
@@ -161,12 +162,12 @@ class Logement
     // -*-*-*-*-*-*-*-*SETTERS-*-*-*-*-*-*-*-*//
 
 
-    public function setId_logement(INT $id_logement)
+    public function setId_logement(int $id_logement)
     {
         $this->id_logement = $id_logement;
     }
 
-    public function setId_person(INT $id_person)
+    public function setId_person(int $id_person)
     {
         $this->id_person = $id_person;
     }
@@ -176,7 +177,12 @@ class Logement
         $this->title = $title;
     }
 
-    public function setSurface(INT $surface)
+    public function setType(STRING $type)
+    {
+        $this->type = $type;
+    }
+
+    public function setSurface(int $surface)
     {
         $this->surface = $surface;
     }
@@ -186,9 +192,9 @@ class Logement
         $this->description = $description;
     }
 
-    public function setAdress(STRING $adress)
+    public function setAdress(STRING $address)
     {
-        $this->adress = $adress;
+        $this->adress = $address;
     }
 
     public function setCity(STRING $city)
@@ -196,17 +202,17 @@ class Logement
         $this->city = $city;
     }
 
-    public function setPrice_by_night(INT $price_by_night)
+    public function setPrice_by_night(int $price_by_night)
     {
         $this->price_by_night = $price_by_night;
     }
 
-    public function setNumber_of_person(INT $number_of_person)
+    public function setNumber_of_person(int  $number_of_person)
     {
         $this->number_of_person = $number_of_person;
     }
 
-    public function setNumber_of_beds(INT $number_of_beds)
+    public function setNumber_of_beds(int  $number_of_beds)
     {
         $this->number_of_beds = $number_of_beds;
     }
