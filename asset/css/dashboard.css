@@ -141,6 +141,7 @@
   border: 20px;
   position: relative;
   z-index: 100;
+  transition: all 0.2s ease-in;
 }
 .content .contentPage .card:first-child {
   margin-top: 50px;
