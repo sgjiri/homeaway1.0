@@ -172,7 +172,7 @@ class Logement
         $this->id_person = $id_person;
     }
 
-    public function setTitle(STRING $title)
+    public function setTitle(String $title)
     {
         $this->title = $title;
     }

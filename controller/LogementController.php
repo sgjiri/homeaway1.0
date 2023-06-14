@@ -15,6 +15,7 @@ class LogementController extends Controller
             echo self::getRender('addLogement.html.twig', []);
         } else {
             if (isset($_POST['submit'])) {
+                var_dump($_POST['submit']);
                 if (isset($_SESSION['id'])) {
 
                     $id_person = $_SESSION['id'];
