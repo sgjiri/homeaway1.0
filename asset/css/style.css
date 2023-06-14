@@ -385,7 +385,8 @@ header .login-form .group label .icon:after {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#hero #searchBoxDesktop {
+
+.searchBoxDesktop {
   display: none;
 }
 
@@ -399,14 +400,14 @@ header .login-form .group label .icon:after {
   #hero h1 {
     font-size: 2rem;
   }
-  #hero #searchBoxDesktop {
+  .searchBoxDesktop {
     display: block;
     position: absolute;
     top: 60%;
     margin: auto;
     width: 100%;
   }
-  #hero #searchBoxDesktop #searchformDesktop {
+  .searchBoxDesktop .searchformDesktop {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
@@ -414,7 +415,7 @@ header .login-form .group label .icon:after {
     display: flex;
     justify-content: space-evenly;
   }
-  #hero #searchBoxDesktop #searchformDesktop .searchFormBox {
+  .searchBoxDesktop .searchformDesktop .searchFormBox {
     width: 150px;
     background-color: #fff;
     height: 75px;
@@ -424,13 +425,13 @@ header .login-form .group label .icon:after {
     padding-top: 10px;
     border-radius: 5px;
   }
-  #hero #searchBoxDesktop #searchformDesktop .searchFormBox label {
+  .searchBoxDesktop .searchformDesktop .searchFormBox label {
     font-size: 1rem;
     font-family: "righteous", sans-serif;
     font-weight: 700;
     padding: 10px 0 0 10px;
   }
-  #hero #searchBoxDesktop #searchformDesktop .searchFormBox input {
+  .searchBoxDesktop .searchformDesktop .searchFormBox input {
     position: absolute;
     left: 10px;
     bottom: 10px;
@@ -439,12 +440,12 @@ header .login-form .group label .icon:after {
     border: none;
     border-bottom: 1px solid #017C8E;
   }
-  #hero #searchBoxDesktop #searchformDesktop #buttonSearch {
+  .searchBoxDesktop .searchformDesktop #buttonSearch {
     width: 150px;
     height: 75px;
     margin: 25px auto;
   }
-  #hero #searchBoxDesktop #searchformDesktop #buttonSearch input {
+  .searchBoxDesktop .searchformDesktop #buttonSearch input {
     width: 100%;
     height: 100%;
     position: inherit;
@@ -610,37 +611,78 @@ footer #secondContainerFooter a {
 }
 
 /*resultsearch phone*/
-#resultResearchPhone #resumSearchPhone {
+#resultResearch #resumSearchPhone {
   width: 90%;
   margin: 50px auto;
 }
-#resultResearchPhone #resumSearchPhone ul li {
+#resultResearch #resumSearchPhone ul li {
   margin-bottom: 20px;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 700;
 }
-#resultResearchPhone #resumSearchPhone ul li span {
+#resultResearch #resumSearchPhone ul li span {
   font-weight: 100;
 }
-#resultResearchPhone #filter {
+#resultResearch .searchBoxDesktop {
+  position: inherit;
+}
+#resultResearch #filter {
   margin: 0 0 50px 5%;
 }
-#resultResearchPhone #containerResultSearch #map {
+#resultResearch #formFilter {
+  width: 230px;
+  margin: 0 auto;
+  border: 1px solid #017C8E;
+  z-index: 1;
+  display: none;
+}
+#resultResearch #formFilter .convenience input {
+  margin-left: 5px;
+}
+#resultResearch #formFilter .convenience img {
+  padding: 0 10px;
+  width: 45px;
+}
+#resultResearch #formFilter.formFilterActive {
+  display: block;
+}
+#resultResearch #containerResultSearch #map {
   height: 350px;
 }
-#resultResearchPhone .listResult .postSearch {
+#resultResearch .listResult .postSearch {
   width: 200px;
   margin: 50px auto;
 }
-#resultResearchPhone .listResult .postSearch img {
+#resultResearch .listResult .postSearch img {
   width: 100%;
   height: 200px;
 }
-#resultResearchPhone .listResult .postSearch h4, #resultResearchPhone .listResult .postSearch p {
+#resultResearch .listResult .postSearch h4, #resultResearch .listResult .postSearch p {
   font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
 }
-#resultResearchPhone .listResult .postSearch h4 span, #resultResearchPhone .listResult .postSearch p span {
+#resultResearch .listResult .postSearch h4 span, #resultResearch .listResult .postSearch p span {
   font-weight: 700;
+}
+
+@media screen and (min-width: 800px) {
+  #resumSearchPhone {
+    display: none;
+  }
+  #containerResultSearch {
+    display: flex;
+    flex-direction: row;
+  }
+  #containerResultSearch #map {
+    width: 40%;
+    margin-top: 50px;
+    position: fixed;
+    right: 0;
+  }
+  #containerResultSearch .listResult {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }/*# sourceMappingURL=style.css.map */

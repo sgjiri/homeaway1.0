@@ -55,6 +55,8 @@ class LogementController extends Controller {
         // $req->close();
     }
 
-
+    public function getOneLogement () {
+        echo self::getRender('oneLogement.html.twig', []);
+    }
    
 }
