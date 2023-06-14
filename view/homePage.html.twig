@@ -10,7 +10,7 @@
 			<img src="{{asset('/img/heroMontainPhone.jpg')}}" alt=""></figure>
 		<h1>Détendez-vous et explorez !</h1>
 		<div id="searchBoxDesktop">
-			<form action="POST" id="searchformDesktop">
+			<form action="{{path('search')}}" id="searchformDesktop">
 				<div class="searchFormBox">
 					<label for="city">Destination</label>
 					<input type="text" name="city" id="city">
@@ -43,10 +43,36 @@
 				</h2>
 			</article>
 			<div class="imgDestination">
-			<a href='{{path('search')}}'><img src="{{asset('/img/montpellier.png')}}" alt="Montpellier"></a>
-			<img src="{{asset('/img/Marseille.png')}}" alt="Marseille">
-			<img src="{{asset('/img/MontStMichelle.png')}}" alt="Mont saint Michel">
-			<img src="{{asset('/img/StMalo.png')}}" alt="Saint Mallo">
+			<a href=""><img src="{{asset('/img/montpellier.png')}}" alt="Montpellier"></a>
+			<a href=""><img src="{{asset('/img/Marseille.png')}}" alt="Marseille"></a>
+			<a href=""><img src="{{asset('/img/MontStMichelle.png')}}" alt="Mont saint Michel"></a>
+			<a href=""><img src="{{asset('/img/StMalo.png')}}" alt="Saint Mallo"></a>
+			</div>
+		</div>
+		<div class="destinationContainer">
+			<article class="articleDestination">
+				<img src="{{asset('/img/greenLogo.png')}}" alt="logo vert">
+				<h2 class="titleDestination">Envie de montagne
+				</h2>
+			</article>
+			<div class="imgDestination">
+			<a href=""><img src="{{asset('/img/ValThorrens.png')}}" alt="Val Thorens"></a>
+			<a href=""><img src="{{asset('/img/ChamonixMtBlanc.png')}}" alt="Chamonix-Mont-Blanc"></a>
+			<a href=""><img src="{{asset('/img/Saorge.png')}}" alt="Saorge"></a>
+			<a href=""><img src="{{asset('/img/Castelnou.png')}}" alt="Castelnou"></a>
+			</div>
+		</div>
+		<div class="destinationContainer">
+			<article class="articleDestination">
+				<img src="{{asset('/img/redLogo.png')}}" alt="logo rouge">
+				<h2 class="titleDestination">Envie d'insolite
+				</h2>
+			</article>
+			<div class="imgDestination">
+			<a href=""><img src="{{asset('/img/Peniche.png')}}" alt="Péniche"></a>
+			<a href=""><img src="{{asset('/img/Tipi.png')}}" alt="Tipi"></a>
+			<a href=""><img src="{{asset('/img/Yourte.png')}}" alt="Yourte"></a>
+			<a href=""><img src="{{asset('/img/Cabane.png')}}" alt="Cabane"></a>
 			</div>
 		</div>
 	</section>

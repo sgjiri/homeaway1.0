@@ -6,7 +6,7 @@ class PersonModel extends Model
 
     public function getUserByMail(String $mail)
     {
-        $req = $this->getDb()->prepare("SELECT `mail`, `password` FROM `person` WHERE `mail` =:mail LIMIT 0, 25");
+        $req = $this->getDb()->prepare("SELECT `mail`, `password`, `id_person` FROM `person` WHERE `mail` =:mail LIMIT 0, 25");
 
         $req->bindParam(":mail", $mail, PDO::PARAM_STR);
         $req->execute();
