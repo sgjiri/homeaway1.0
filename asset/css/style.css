@@ -422,6 +422,7 @@ header .login-form .group label .icon:after {
     border: 1px solid #017C8E;
     position: relative;
     padding-top: 10px;
+    border-radius: 5px;
   }
   #hero #searchBoxDesktop #searchformDesktop .searchFormBox label {
     font-size: 1rem;
@@ -452,6 +453,7 @@ header .login-form .group label .icon:after {
     font-family: "righteous", sans-serif;
     font-size: 1.5rem;
     background: linear-gradient(90deg, rgb(1, 124, 142) 50%, rgb(1, 148, 156) 50%);
+    border-radius: 5px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -472,13 +474,16 @@ header .login-form .group label .icon:after {
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
 }
-#destination .destinationContainer .imgDestination img {
+#destination .destinationContainer .imgDestination a {
   width: 200px;
   height: 168px;
   margin: 25px auto;
   display: block;
 }
-#destination .destinationContainer .imgDestination img:last-child {
+#destination .destinationContainer .imgDestination a img {
+  border-radius: 5px;
+}
+#destination .destinationContainer .imgDestination a:last-child {
   margin-bottom: 100px;
 }
 
@@ -602,4 +607,40 @@ footer #secondContainerFooter a {
 #legalNotices li {
   margin: 10px 0 10px 10%;
   list-style-type: decimal;
+}
+
+/*resultsearch phone*/
+#resultResearchPhone #resumSearchPhone {
+  width: 90%;
+  margin: 50px auto;
+}
+#resultResearchPhone #resumSearchPhone ul li {
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+#resultResearchPhone #resumSearchPhone ul li span {
+  font-weight: 100;
+}
+#resultResearchPhone #filter {
+  margin: 0 0 50px 5%;
+}
+#resultResearchPhone #containerResultSearch #map {
+  height: 350px;
+}
+#resultResearchPhone .listResult .postSearch {
+  width: 200px;
+  margin: 50px auto;
+}
+#resultResearchPhone .listResult .postSearch img {
+  width: 100%;
+  height: 200px;
+}
+#resultResearchPhone .listResult .postSearch h4, #resultResearchPhone .listResult .postSearch p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+}
+#resultResearchPhone .listResult .postSearch h4 span, #resultResearchPhone .listResult .postSearch p span {
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */

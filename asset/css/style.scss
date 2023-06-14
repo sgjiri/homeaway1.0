@@ -553,6 +553,7 @@ header {
                     border: 1px solid $blueDark;
                     position: relative;
                     padding-top: 10px;
+                    border-radius: 5px;
 
                     label {
                         font-size: 1rem;
@@ -569,6 +570,7 @@ header {
                         margin: 0 auto;
                         border: none;
                         border-bottom: 1px solid $blueDark;
+                        
                     }
 
 
@@ -588,6 +590,7 @@ header {
                         font-family: $fontTitle;
                         font-size: 1.5rem;
                         background: linear-gradient(90deg, rgba(1, 124, 142, 1) 50%, rgba(1, 148, 156, 1) 50%);
+                        border-radius: 5px;
 
                     }
                 }
@@ -622,14 +625,18 @@ header {
         }
 
         .imgDestination {
-            img {
+             a  {
                 width: 200px;
                 height: 168px;
                 margin: 25px auto;
                 display: block;
+                img {
+                    border-radius: 5px;
+                }
+                
             }
 
-            img:last-child {
+            a:last-child {
                 margin-bottom: 100px;
             }
         }
@@ -806,4 +813,57 @@ footer {
             list-style-type: decimal;
             
     }
+}
+
+
+/*resultsearch phone*/
+
+#resultResearchPhone {
+    #resumSearchPhone {
+        width: 90%;
+        margin: 50px auto;
+        ul li {
+            margin-bottom: 20px;
+            font-family: $roboto;
+            font-size: 1rem;
+            font-weight: 700;
+            span{
+                font-weight: 100;
+            }
+        }
+        
+    }
+    #filter {
+        margin: 0 0 50px 5%;
+    }
+    #containerResultSearch {
+         #map {
+             height: 350px; 
+            }
+    }
+    .listResult {
+        .postSearch {
+            width: 200px;
+            margin: 50px auto;
+
+            img {
+                width: 100%;
+                height: 200px;
+              
+            }
+            h4 , p {
+                font-family: $roboto;
+                 font-size: 0.8rem;
+            }
+       
+           h4, p{
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+
+   
 }
