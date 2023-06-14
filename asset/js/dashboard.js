@@ -26,7 +26,7 @@ let classCard = document.getElementsByClassName('card');
 
 for (let i = 0; i < classFigureModifier.length; i++) {
     (function (index) {
-        j=50;
+        j=60;
         
         p=-20;
         classCard[index].id = index + 1 + 'card';
@@ -40,21 +40,22 @@ for (let i = 0; i < classFigureModifier.length; i++) {
                 classInput[i].style.transform = "translateY(" + p + "px)";
                 
             }else{
-                classCard[i].style.transform = "translateY(" + (j-100) + "px)";
-                classInput[i].style.transform = "translateY(" + (p-100)+ "px)";
+                classCard[i].style.transform = "translateY(" + (j -120)+ "px)";
+                classInput[i].style.transform = "translateY(" + (p -120)+ "px)";
             }
-            if(classImgModifier[index].classList.contains('activeModifie')){
-                j = j+50;
-                p = p+50;
-                classInput[index].style.transform = "translateY(" + (j-150) + "px)";
-                }else{
-                j = j-50;
-                p = p-50;
-                classInput[index].style.transform = "translateY(" + (j-150) + "px)";
-                }
-                console.log(j);
-                console.log(p);
+            
         }
+        if(classImgModifier[index].classList.contains('activeModifie')){
+            j = j+50;
+            p = p+50;
+            classInput[index].style.transform = "translateY(" + (p-40)+ "px)";
+            }else{
+            j = j-50;
+            p = p-50;
+            classInput[index].style.transform = "translateY(" + (p-60) + "px)";
+            }
+            console.log(j);
+            console.log(p);
        
         });
     })(i);
