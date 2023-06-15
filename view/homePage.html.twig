@@ -9,8 +9,12 @@
 		<figure>
 			<img src="{{asset('/img/heroMontainPhone.jpg')}}" alt=""></figure>
 		<h1>Détendez-vous et explorez !</h1>
+
 		<div id="searchBoxDesktop">
 			<form action="#" id="searchformDesktop">
+		<div class="searchBoxDesktop">
+			<form action="{{path('search')}}" class="searchformDesktop">
+
 				<div class="searchFormBox">
 					<label for="city">Destination</label>
 					<input type="text" name="city" id="city">
