@@ -6,19 +6,32 @@ class LogementController extends Controller
 
         echo self::getRender('homePage.html.twig', []);
     }
+    public function legalNotices() {
+        $twig = $this-> getTwig();
+        echo $twig->render('legalNotices.html.twig',[]);
+    }
 
     public function addLogement()
     {
+        
+        
         global $router;
 
         if (!$_POST) {
             echo self::getRender('addLogement.html.twig', []);
+            
         } else {
+
             if (isset($_POST['submit'])) {
                 var_dump($_POST['submit']);
                 if (isset($_SESSION['id'])) {
+            
+            if (isset($_POST['submt'])) {
+                
+                if (isset($_SESSION['id_person'])) {
 
-                    $id_person = $_SESSION['id'];
+
+                    $id_person = $_SESSION['id_person'];
                     $title = $_POST['title'];
                     $type = $_POST['type'];
                     $surface = $_POST['surface'];
@@ -42,38 +55,8 @@ class LogementController extends Controller
                     $jacuzzi = isset($_POST['jacuzzi']) &&  $_POST['jacuzzi'] == 1 ? true : false;
 
 
-
-                    $logement = new Logement(
-
-                        [
-                            'id_person' => $id_person,
-                            'title' => $title,
-                            'type' => $type,
-                            'surface' => $surface,
-                            'description' => $description,
-                            'adress' => $adress,
-                            'city' => $city,
-                            'price_by_night' => $price_by_night,
-                            'number_of_person' => $number_of_person,
-                            'number_of_beds' => $number_of_beds,
-                            'parking' => $parking,
-                            'wifi' => $wifi,
-                            'piscine' => $piscine,
-                            'animals' => $animals,
-                            'kitchen' => $kitchen,
-                            'garden' => $garden,
-                            'tv' => $tv,
-                            'climatisation' => $climatisation,
-                            'camera' => $camera,
-                            'home_textiles' => $home_textiles,
-                            'spa' => $spa,
-                            'jacuzzi' => $jacuzzi,
-
-                        ]
-                    );
-
                     $logementmodel = new LogementModel();
-                    $logementmodel->addFlat($logement);
+                    $logementmodel->addFlat($id_person, $title, $type, $surface, $description, $adress, $city, $price_by_night, $number_of_person, $number_of_beds, $parking, $wifi, $piscine, $animals, $kitchen, $garden, $tv, $climatisation, $camera, $home_textiles, $spa, $jacuzzi);
                     echo self::getRender('addLogement.html.twig', []);
                 } else {
                    

@@ -2,16 +2,16 @@ let like = document.getElementById('like');
 let info = document.getElementById('info');
 let resevations = document.getElementById('resevations');
 let messagerie = document.getElementById('messagerie');
-let nav =document.getElementById('navDash');
+let nav = document.getElementById('navDash');
 let iconLike = document.getElementById('iconLike');
-like.addEventListener('click', function(){
+like.addEventListener('click', function () {
     like.classList.add('likeActive');
     nav.classList.add('likeActive');
     iconLike.classList.add('likeActive');
     info.classList.add('likeActive')
 })
 
-info.addEventListener('click', function(){
+info.addEventListener('click', function () {
     info.classList.add('infoActive');
     like.classList.remove('likeActive');
     iconInfo.classList.add('iconInfo')
@@ -19,11 +19,55 @@ info.addEventListener('click', function(){
 
 
 
-let figureModifier = document.getElementById('figureModifier');
-let imgModifier = document.getElementById('imgModifier');
-let setName = document.getElementById('setName');
+let classFigureModifier = document.getElementsByClassName('figureModifier');
+let classImgModifier = document.getElementsByClassName('imgModifier');
+let classInput = document.getElementsByClassName('input');
+let classCard = document.getElementsByClassName('card');
 
-figureModifier.addEventListener('click', function(){
-    imgModifier.classList.toggle('activeModifie');
-    setName.classList.toggle('activeInput');
-})
+for (let i = 0; i < classFigureModifier.length; i++) {
+    (function (index) {
+        j = 60;
+
+        p = -20;
+        classCard[index].id = index + 1 + 'card';
+        classFigureModifier[index].addEventListener('click', function () {
+
+            classImgModifier[index].classList.toggle('activeModifie');
+
+            let activeCount = 0;
+            for (let i = index + 1; i < classFigureModifier.length; i++) {
+              if (classImgModifier[i].classList.contains('activeModifie')) {
+                activeCount++;
+                
+                console.log(activeCount);
+              }
+            }
+
+            for (let i = index + 1; i < classCard.length; i++) {
+                if (classImgModifier[index].classList.contains('activeModifie')) {
+                    classCard[i].style.transform = "translateY(" + j  + "px)";
+                    classInput[i].style.transform = "translateY(" + p + "px)";
+
+                } else {
+                    if(classImgModifier[i].classList.contains('activeModifie')){}
+                    classCard[i].style.transform = "translateY(" + (j - 120) + "px)";
+                    classInput[i].style.transform = "translateY(" + (p - 120) + "px)";
+                }
+
+            }
+            if (classImgModifier[index].classList.contains('activeModifie')) {
+                j = j + 50;
+                p = p + 50;
+                classInput[index].style.transform = "translateY(" + (p - 35 - activeCount*50) + "px)";
+            } else {
+                j = j - 50;
+                p = p - 50;
+                classInput[index].style.transform = "translateY(" + (p - 60 - activeCount*50) + "px)";
+            }
+            console.log(j);
+            console.log(p);
+
+        });
+    })(i);
+}
+

@@ -7,6 +7,6 @@ public function searchLogement (){
         $model = new SearchModel();
         $datas = $model->getSearch($searchResult);
     }
-    echo self::getRender('templateDashboard.html.twig', []);
+    echo self::getRender('resultsearch.html.twig', []);
 }
 }
