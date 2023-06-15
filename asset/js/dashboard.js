@@ -26,46 +26,59 @@ let classCard = document.getElementsByClassName('card');
 
 for (let i = 0; i < classFigureModifier.length; i++) {
     (function (index) {
-        j = 60;
 
-        p = -20;
         classCard[index].id = index + 1 + 'card';
+        p = 0;
+        y = -90
         classFigureModifier[index].addEventListener('click', function () {
+
 
             classImgModifier[index].classList.toggle('activeModifie');
 
-            let activeCount = 0;
+            let activeBeforeCount = 0;
             for (let i = index + 1; i < classFigureModifier.length; i++) {
-              if (classImgModifier[i].classList.contains('activeModifie')) {
-                activeCount++;
-                
-                console.log(activeCount);
-              }
+                if (classImgModifier[i].classList.contains('activeModifie')) {
+                    activeBeforeCount++;
+                }
             }
+            let activeBehindCount = 0;
+            for (let i = 0; i <= index; i++) {
+                if (classImgModifier[i].classList.contains('activeModifie')) {
+                    activeBehindCount++;
+                    console.log(activeBehindCount);
+                }
+            }
+            console.log(activeBehindCount);
+
+
 
             for (let i = index + 1; i < classCard.length; i++) {
                 if (classImgModifier[index].classList.contains('activeModifie')) {
-                    classCard[i].style.transform = "translateY(" + j  + "px)";
-                    classInput[i].style.transform = "translateY(" + p + "px)";
+
+
+                    classCard[i].style.transform = "translateY(" + (p + 90) + "px)";
+                    classInput[i].style.transform = "translateY(" + (y + 90) + "px)";
 
                 } else {
-                    if(classImgModifier[i].classList.contains('activeModifie')){}
-                    classCard[i].style.transform = "translateY(" + (j - 120) + "px)";
-                    classInput[i].style.transform = "translateY(" + (p - 120) + "px)";
+                    if (classImgModifier[i].classList.contains('activeModifie')) { }
+                    classCard[i].style.transform = "translateY(" + (p - 90) + "px)";
+                    classInput[i].style.transform = "translateY(" + (y - 90) + "px)";
                 }
 
             }
             if (classImgModifier[index].classList.contains('activeModifie')) {
-                j = j + 50;
-                p = p + 50;
-                classInput[index].style.transform = "translateY(" + (p - 35 - activeCount*50) + "px)";
+                p = p + 90;
+                y = y + 90;
+                classInput[index].style.transform = "translateY(" + (y) +"px)";
+
+
             } else {
-                j = j - 50;
-                p = p - 50;
-                classInput[index].style.transform = "translateY(" + (p - 60 - activeCount*50) + "px)";
+                p = p - 90;
+                y = y - 90;
+                classInput[index].style.transform = "translateY(" + y + "px)";
+
             }
-            console.log(j);
-            console.log(p);
+
 
         });
     })(i);
