@@ -45,7 +45,7 @@ $match = $router->match();
 
 
 
-var_dump($match);
+// var_dump($match);
 
 // var_dump($_SESSION);
 if (is_array($match)) {
