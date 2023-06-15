@@ -30,13 +30,22 @@ $router->map('GET|POST', '/search', 'SearchController#searchLogement', 'search')
 $router->map('GET|POST', '/add', 'LogementController#addLogement', 'add');
 $router->map('GET', '/one', 'LogementController#getOneLogement', 'one');
 
+// $router->map('GET','/AllLogement/[a:city]', 'LogementController#getAllLogement', 'AllLogement');
+// $router->map('GET', '/logement/[a:city]', 'LogementController#getAllLogement', 'logement');
+
+$router->map('GET', '/logement/[a:city]', 'LogementController#getAllLogement', 'logement');
+// $router->map('GET', '/logement/[i:id]', 'LogementController#getLogementDetails', 'logement');
+
+
+
+
 
 $match = $router->match();
 
 
 
 
-// var_dump($match);
+var_dump($match);
 
 // var_dump($_SESSION);
 if (is_array($match)) {

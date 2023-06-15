@@ -123,6 +123,26 @@
 		<div id="containerResultSearch">
 			<div id="map"></div>
 
+		</div>
+
+
+		
+		<div class="listResult">
+			
+    {% for logement in logements %}
+        <article class="postSearch">
+            <img src="{{ asset('/img/logement/appartMontpellier1.1.webp') }}" alt="appartement montpellier">
+            <h4>{{ logement.title }}</h4>
+            <p>{{ logement.description }}</p>
+            <p>{{ book.start_date }} {{ book.end_date }}</p>
+            <p><span>{{ logement.price_by_night }}€ </span>par nuit - &nbsp; {{ logement.price_by_night }}€ au total</p>
+        </article>
+    {% endfor %}
+
+</div>
+
+
+
 			<div class="listResult">
 				{# {% for logement in logements %} #}
 				<article class="postSearch">
@@ -164,6 +184,7 @@
 				{# {% endfor %} #}
 			</div>
 		</div>
+
 	</section>
 
 {% endblock %}
