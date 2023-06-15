@@ -72,7 +72,9 @@ class LogementController extends Controller
       
         
 
-
+    public function getOneLogement () {
+        echo self::getRender('oneLogement.html.twig', []);
+    }
    
 
     //     echo self::getRender('homePage.html.twig', []);

@@ -28,6 +28,7 @@ $router->map('GET|POST', '/search', 'SearchController#searchLogement', 'search')
 // ******------ROUTE LOGEMENT ------******
 
 $router->map('GET|POST', '/add', 'LogementController#addLogement', 'add');
+$router->map('GET', '/one', 'LogementController#getOneLogement', 'one');
 
 
 $match = $router->match();
