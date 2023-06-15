@@ -68,7 +68,7 @@ class LogementController extends Controller
         }
     }
 
-
+        
     public function getAllLogement($city)
 {
     global $router;
@@ -91,13 +91,13 @@ class LogementController extends Controller
     //     echo self::getRender('resultsearch.html.twig', ['logements' => $ville, 'logement'=>$Logement]);
     // }
     
+    }
+
+    
 
 
 
-
-
-
-}     
+    
       
         
 
