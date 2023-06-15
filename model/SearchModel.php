@@ -7,11 +7,16 @@ class SearchModel extends Model
     {
         $logements =[];
 
-        $sql=$this->getDb()->query('SELECT l.* FROM `logement` l WHERE l.city = "Marseille" AND NOT EXISTS ( SELECT * FROM ` book` b WHERE b.`id_logement` = l.`id_logement` AND b.`start_date` <= DATE_ADD(CURDATE(), INTERVAL 5 DAY) AND b.`end_date` >= DATE_SUB(CURDATE(), INTERVAL 5 DAY)' );
+        $sql=$this->getDb()->query(SELECT * FROM `book`
+        WHERE ville = 'nom_de_la_ville'
+          AND date_arrivee >= 'date_arrivee_recherchee'
+          AND date_depart <= 'date_depart_recherchee'
+          AND nombre_personnes >= 'nombre_personnes_recherche'
+        ' );
        
        
-        while ($logements = $sql->fetch(PDO::FETCH_ASSOC)) {
-            $logements[] = new Logement($logements);
+        while ($logement = $sql->fetch(PDO::FETCH_ASSOC)) {
+            $logements[] = new Logement($logement);
         }
 
         return $logements;
