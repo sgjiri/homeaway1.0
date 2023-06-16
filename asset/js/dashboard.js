@@ -39,16 +39,17 @@ for (let i = 0; i < classFigureModifier.length; i++) {
             for (let i = index + 1; i < classFigureModifier.length; i++) {
                 if (classImgModifier[i].classList.contains('activeModifie')) {
                     activeBeforeCount++;
+                    console.log(activeBeforeCount)
                 }
             }
             let activeBehindCount = 0;
-            for (let i = 0; i <= index; i++) {
+            for (let i = 0; i < classImgModifier[index]; i++) {
                 if (classImgModifier[i].classList.contains('activeModifie')) {
                     activeBehindCount++;
-                    console.log(activeBehindCount);
+                    
                 }
             }
-            console.log(activeBehindCount);
+            
 
 
 
@@ -56,8 +57,8 @@ for (let i = 0; i < classFigureModifier.length; i++) {
                 if (classImgModifier[index].classList.contains('activeModifie')) {
 
 
-                    classCard[i].style.transform = "translateY(" + (p + 90) + "px)";
-                    classInput[i].style.transform = "translateY(" + (y + 90) + "px)";
+                    classCard[i].style.transform = "translateY(" + ((p + 90) - (activeBeforeCount*90)) + "px)";
+                    classInput[i].style.transform = "translateY(" + ((y + 90)- (activeBeforeCount*90)) + "px)";
 
                 } else {
                     if (classImgModifier[i].classList.contains('activeModifie')) { }
@@ -69,7 +70,8 @@ for (let i = 0; i < classFigureModifier.length; i++) {
             if (classImgModifier[index].classList.contains('activeModifie')) {
                 p = p + 90;
                 y = y + 90;
-                classInput[index].style.transform = "translateY(" + (y) +"px)";
+                console.log(activeBeforeCount)
+                classInput[index].style.transform = "translateY(" + ((y) - (activeBeforeCount*90)) +"px)";
 
 
             } else {
