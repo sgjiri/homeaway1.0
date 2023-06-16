@@ -13,7 +13,6 @@ $router->map('GET', '/', 'LogementController#homepage', 'home' );
 $router->map('GET', '/legalNotices', 'LogementController#legalNotices', 'legalNotices' );
 
 
-
 // **-------ROUTE UTILISATEUR-------
 $router->map('GET|POST', '/login', 'PersonController#userLogin', 'login');
 $router->map('GET', '/logout', 'PersonController#logout', 'logout');
@@ -28,9 +27,11 @@ $router->map('GET|POST', '/search', 'SearchController#searchLogement', 'search')
 $router->map('GET|POST', '/add', 'LogementController#addLogement', 'add');
 $router->map('GET', '/one', 'LogementController#getOneLogement', 'one');
 
+
 $router->map('GET', '/logement/', '', 'baseLogement');
 $router->map('GET', '/logement/[i:id_ville]', 'LogementController#getOneCity', 'city');
 $router->map('GET','/all/','LogementController#getAllLogement','logements');
+
 
 $match = $router->match();
 

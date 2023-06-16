@@ -37,6 +37,10 @@ class LogementModel extends Model
         $req->execute();
     }
 
+
+      
+
+
     public function getCity(int $id_ville){
         $req = $this->getDb()->prepare('SELECT  `title`,`id_ville`,`number_of_person` FROM `logement` WHERE `id_ville`= :id_ville');
         $req->bindParam('id_ville',$id_ville,PDO::PARAM_INT);
@@ -61,5 +65,5 @@ class LogementModel extends Model
         }
     
 }
-    
+
 

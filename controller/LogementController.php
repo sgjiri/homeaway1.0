@@ -24,7 +24,9 @@ class LogementController extends Controller
 
             if (isset($_POST['submt'])) {
 
+
                 if (isset($_SESSION['id_person'])) {
+
 
                     $id_person = $_SESSION['id_person'];
                     $title = $_POST['title'];
@@ -64,6 +66,8 @@ class LogementController extends Controller
         }
     }
 
+
+
     public function getOneCity($id_ville)
     {
         global $router;
@@ -88,19 +92,10 @@ class LogementController extends Controller
     }
 
 
+
   public function getOneLogement () {
         echo self::getRender('oneLogement.html.twig', []);
     }
    
-
-
-
-
-
-    public function getOneLogement()
-    {
-        echo self::getRender('oneLogement.html.twig', []);
-    }
-}
 
 
