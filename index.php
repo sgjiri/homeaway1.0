@@ -11,7 +11,7 @@ $router->setBasePath('/Projet/homeaway1.0');
 
 $router->map('GET', '/', 'LogementController#homepage', 'home' );
 $router->map('GET', '/legalNotices', 'LogementController#legalNotices', 'legalNotices' );
-$router->map('GET', '/', 'LogementController#getAllLogements', 'getAll' );
+
 
 
 // **-------ROUTE UTILISATEUR-------
@@ -28,24 +28,15 @@ $router->map('GET|POST', '/search', 'SearchController#searchLogement', 'search')
 $router->map('GET|POST', '/add', 'LogementController#addLogement', 'add');
 $router->map('GET', '/one', 'LogementController#getOneLogement', 'one');
 
-// $router->map('GET','/AllLogement/[a:city]', 'LogementController#getAllLogement', 'AllLogement');
-// $router->map('GET', '/logement/[a:city]', 'LogementController#getAllLogement', 'logement');
-
-$router->map('GET', '/logement/[a:city]', 'LogementController#getAllLogement', 'logement');
-// $router->map('GET', '/logement/[i:id]', 'LogementController#getLogementDetails', 'logement');
-
-
-
-
+$router->map('GET', '/logement/', '', 'baseLogement');
+$router->map('GET', '/logement/[i:id_ville]', 'LogementController#getOneCity', 'city');
+$router->map('GET','/all/','LogementController#getAllLogement','logements');
 
 $match = $router->match();
 
-
-
-
 var_dump($match);
 
-// var_dump($_SESSION);
+
 if (is_array($match)) {
     list($controller, $action) = explode('#', $match['target']);
 
