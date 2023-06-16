@@ -14,16 +14,16 @@ $router->map('GET', '/legalNotices', 'LogementController#legalNotices', 'legalNo
 
 
 
-// ******-------ROUTE UTILISATEUR-------*****
+// **-------ROUTE UTILISATEUR-------
 $router->map('GET|POST', '/login', 'PersonController#userLogin', 'login');
 $router->map('GET', '/logout', 'PersonController#logout', 'logout');
 $router->map('GET|POST', '/register', 'PersonController#createPerson', 'register');
 $router->map('GET', '/dashboard', 'DashboardController#dashboard', 'dashboard');
 
-// ******-------ROUTE RECHERCHE-------*****
+// **-------ROUTE RECHERCHE-------**
 $router->map('GET|POST', '/search', 'SearchController#searchLogement', 'search');
 
-// ******------ROUTE LOGEMENT ------******
+// **------ROUTE LOGEMENT ------**
 
 $router->map('GET|POST', '/add', 'LogementController#addLogement', 'add');
 $router->map('GET', '/one', 'LogementController#getOneLogement', 'one');

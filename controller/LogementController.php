@@ -75,6 +75,7 @@ class LogementController extends Controller
         echo self::getRender('logementCity.html.twig', ['logement' => $logement, 'oneLogement' => $oneLogement]);
     }
 
+
     
     public function getAllLogement()
     {
@@ -87,6 +88,13 @@ class LogementController extends Controller
     }
 
 
+  public function getOneLogement () {
+        echo self::getRender('oneLogement.html.twig', []);
+    }
+   
+
+
+
 
 
     public function getOneLogement()
@@ -94,3 +102,5 @@ class LogementController extends Controller
         echo self::getRender('oneLogement.html.twig', []);
     }
 }
+
+
