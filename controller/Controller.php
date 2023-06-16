@@ -39,14 +39,13 @@ abstract class Controller{
 
         global $router;
 
-        // LINKS
-       
-      
+        // LINKS      
 
         // LINKS TABLE + NEW ONES
-        // $new = [
+        $new = [
+        
            
-        // ] + $datas;
+         ] + $datas;
         
         echo self::getTwig()->render($template);
     }
