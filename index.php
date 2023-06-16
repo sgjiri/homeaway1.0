@@ -35,7 +35,7 @@ $router->map('GET','/all/','LogementController#getAllLogement','logements');
 
 $match = $router->match();
 
-var_dump($match);
+// var_dump($match);
 
 
 if (is_array($match)) {

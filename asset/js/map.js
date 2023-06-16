@@ -1,54 +1,109 @@
 /*map*/
 
-let blop = document.getElementById('map')
+let mappy = document.getElementById('map')
 
 class LeafletMap {
     constructor(){
         this.map = null
+        this.bounds=[]
     }
-    load(element) {
-        this.map = L.map(element)
+   async load(element) {
+    return new Promise((resolve, reject) => {
+         $script("https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" , () => {
+              this.map = L.map(element, {scrollWheelZoom: false})
         L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png', {
-            maxZoom: 20,
+           
             attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
         }).addTo(this.map)
+        resolve()
+        })
+    })
+       
+      
     }
     addMarker(lat,lng,text){
-        L.popup({
-           autoClose:false, 
-           closeOnEscapeKey :false,
-           closeOnClick : false,
-           closeButton : false,
-           className :'marker',
-           maxWidth: 400 
-        })
-        .setLatLng([lat, lng])
-        .setContent(text)
-        .openOn(this.map)
+        let point=[lat,lng]
+        this.bounds.push(point)
+        return new LeafletMarker(point,text, this.map)
 
     }
 
+    center() {
+        this.map.fitBounds(this.bounds)
+    }
+
+}
+class LeafletMarker {
+    constructor(point, text, map) {
+        this.popup= L.popup({
+            autoClose:false, 
+            closeOnEscapeKey :false,
+            closeOnClick : false,
+            closeButton : false,
+            className :'marker',
+            maxWidth: 400 
+         })
+         .setLatLng(point)
+         .setContent(text)
+         .openOn(map)
+    }
+    setActive() {
+        this.popup.getElement().classList.add('is-active')
+    }
+    unsetActive() {
+        this.popup.getElement().classList.remove('is-active')
+    }
+    addEventListener(event, callback) {
+        this.popup.addEventListener('add',  () => {
+          this.popup.getElement().addEventListener(event,callback)  
+        })        
+    }
+    setContent (text) {
+        this.popup.setContent(this.text)
+        this.popup.getElement().classList.add('is-expended')
+        this.popup.update()
+
+    }
+    resetContent () {
+        this.popup.setContent(this.text)
+        this.popup.getElement().classList.remove('is-expended')
+        this.popup.update()
+
+    }
 }
 
-const initMap = function () {
+const initMap = async function () {
     let map = new LeafletMap()
-    map.load(blop)
+    let hoverMarker = null
+    let activeMarker= null
+     await map.load(mappy)
     Array.from(document.querySelectorAll('.js-marker')).forEach((item)=>{
-        map.addMarker(item.dataset.lat, item.dataset.lng, item.dataset.price+'€')
+       let marker= map.addMarker(item.dataset.lat, item.dataset.lng, item.dataset.price+'€')
+        item.addEventListener('mouseover', function() {
+            if(hoverMarker !== null) {
+                hoverMarker.unsetActive()
+            }
+            marker.setActive()
+            hoverMarker = marker
+        })
+        item.addEventListener('mouseleave', function () {
+            if(hoverMarker !== null){
+                hoverMarker.unsetActive()
+            }
+        })
+        marker.addEventListener('click', function () {
+            if(activeMarker !== null){
+                activeMarker.resetContent()
+            }
+            marker.setContent(item.innerHTML)
+            activeMarker = marker
+        })
+        
     })
+    map.center() 
 }
 
-if (blop !== null) {
+if (mappy !== null) {
     initMap()
 }
 
-// let map = L.map('map').setView([51.505, -0.09], 13);
-// L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png', {
-//     maxZoom: 20,
-//     attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-// }).addTo(map)
-
-// L.popup()
-//     .setLatLng([51.505, -0.09])
-//     .setContent('<p>Hello world!<br />This is a nice popup.</p>')
-//     .openOn(map);

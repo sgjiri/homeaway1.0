@@ -611,6 +611,63 @@ footer #secondContainerFooter a {
 }
 
 /*resultsearch phone*/
+#resultResearch .marker.leaflet-popup {
+  margin-bottom: 16px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+}
+#resultResearch .marker.leaflet-popup::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -8px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #fff;
+}
+#resultResearch .marker.leaflet-popup .leaflet-popup-content-wrapper {
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
+  text-align: inherit;
+}
+#resultResearch .marker.leaflet-popup .leaflet-popup-tip-container {
+  display: none;
+}
+#resultResearch .marker .leaflet-popup-content {
+  text-align: inherit;
+  color: inherit;
+  margin: 0;
+}
+#resultResearch .marker.is-active {
+  background-color: #017C8E;
+  color: #fff;
+  z-index: 300;
+}
+#resultResearch .marker.is-active::after {
+  border-top-color: #017C8E;
+}
+#resultResearch .marker:hover {
+  background-color: #017C8E;
+  color: #fff;
+  z-index: 300;
+}
+#resultResearch .marker:hover::after {
+  border-top-color: #017C8E;
+}
+#resultResearch .marker.is-expended {
+  z-index: 301;
+  text-align: left;
+}
 #resultResearch #resumSearchPhone {
   width: 90%;
   margin: 50px auto;
@@ -678,18 +735,19 @@ footer #secondContainerFooter a {
   #resultresearch .listResult .postSearch {
     margin: 30px;
   }
-  #containerResultSearch {
+  #resultresearch #containerResultSearch {
     display: flex;
     flex-direction: row-reverse;
     position: relative;
   }
-  #containerResultSearch #map {
+  #resultresearch #containerResultSearch #map {
     width: 40%;
     margin: 50px 20px 0 0;
     position: sticky;
     top: 0;
+    height: 500px;
   }
-  #containerResultSearch .listResult {
+  #resultresearch #containerResultSearch .listResult {
     width: 60%;
     display: flex;
     flex-wrap: wrap;
