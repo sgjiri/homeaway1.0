@@ -21,15 +21,10 @@ class LogementController extends Controller
             echo self::getRender('addLogement.html.twig', []);
             
         } else {
-
-            if (isset($_POST['submit'])) {
-                var_dump($_POST['submit']);
-                if (isset($_SESSION['id'])) {
             
             if (isset($_POST['submt'])) {
                 
                 if (isset($_SESSION['id_person'])) {
-
 
                     $id_person = $_SESSION['id_person'];
                     $title = $_POST['title'];
@@ -68,18 +63,57 @@ class LogementController extends Controller
             }
         }
     }
-}     
-      
-        
 
-    public function getOneLogement () {
+
+    public function getAllLogement($city)
+{
+    global $router;
+    $model = new LogementModel();
+    $start_date = "2023-06-01";
+    $end_date = "2023-06-10";
+    $number_of_person = 2;
+
+    $logements = $model->getAll($city,$start_date,$end_date,$number_of_person);
+    $logementUrl = $router->generate('logement');
+    echo self::getRender('resultsearch.html.twig', ['logements' => $logements, 'logementUrl' => $logementUrl]);
+}
+
+    // public function getAllLogement($city)
+    // {
+    //     global $router;
+    //     $model = new LogementModel();
+    //     $ville = $model->getAll($city);
+    //     $Logement = $router->generate('logement');
+    //     echo self::getRender('resultsearch.html.twig', ['logements' => $ville, 'logement'=>$Logement]);
+    // }
+    
+
+
+
+  public function getOneLogement () {
         echo self::getRender('oneLogement.html.twig', []);
     }
    
 
-    //     echo self::getRender('homePage.html.twig', []);
 
-    //             } else {
-    //                 echo self::getRender('addLogement.html.twig', []);
+}     
+      
         
-    // }
+
+
+
+    
+
+
+    
+
+
+
+
+ 
+      
+        
+
+  
+
+    

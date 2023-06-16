@@ -36,16 +36,53 @@ class LogementModel extends Model
 
         $req->execute();
     }
+
+
+    // public function getAll($city,$start_date,$end_date,$number_of_person)
+    // {
+    //     $logements = [];
+    //     $req = $this->getDb()->prepare('SELECT `title`, `description`, `price_by_night` FROM `logement` WHERE `city` = :city  
+    //         AND  `start_date` >= :start_date
+    //         AND `end_date` <= :end_date 
+    //         AND `number_of_person` >= :number_of_person');
+    //     $req->bindParam(":city", $city, PDO::PARAM_STR);
+    //     $req->bindParam(":start_date", $start_date, PDO::PARAM_STR);
+    //     $req->bindParam(":end_date", $end_date, PDO::PARAM_STR);
+    //     $req->bindParam(":number_of_person", $number_of_person, PDO::PARAM_INT);
+    //     $req->execute();
+    //     while ($row = $req->fetch(PDO::FETCH_ASSOC)) {
+    //         $logements[] = new Logement($row);
+    //     }
+    //     return $logements;
+        
+    public function getAll($city, $start_date, $end_date, $number_of_person)
+{
+    $logements = [];
+    $req = $this->getDb()->prepare('SELECT logement.`title`, logement.`description`, logement.`price_by_night` 
+                                   FROM `logement` 
+                                   INNER JOIN `book` ON logement.`id_logement` = book.`id_logement`
+                                   WHERE logement.`city` = :city  
+                                   AND book.`start_date` >= :start_date
+                                   AND book.`end_date` <= :end_date 
+                                   AND logement.`number_of_person` >= :number_of_person');
+    $req->bindParam(":city", $city, PDO::PARAM_STR);
+    $req->bindParam(":start_date", $start_date, PDO::PARAM_STR);
+    $req->bindParam(":end_date", $end_date, PDO::PARAM_STR);
+    $req->bindParam(":number_of_person", $number_of_person, PDO::PARAM_INT);
+    $req->execute();
+    while ($row = $req->fetch(PDO::FETCH_ASSOC)) {
+        $logements[] = new Logement($row['title'], $row['description'], $row['price_by_night']);
+    }
+    return $logements;
 }
+
+    
+}
+
+
+
+
       
 
-    // public function addImage($id_logement, $thumbnail)
-    // {
-      
-    //     $req = $this->getDb()->prepare("INSERT INTO image (id_logement, thumbnail) VALUES (:id_logement, :thumbnail)");
-    //     $req->bindParam(":id_logement", $id_logement,PDO::PARAM_INT );
-    //     $req->bindParam(":thumbnail", $thumbnail,PDO::PARAM_STR );
-    //     $req->execute();
-       
-    // }
+    
 

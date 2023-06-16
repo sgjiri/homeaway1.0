@@ -658,11 +658,13 @@ footer #secondContainerFooter a {
   width: 100%;
   height: 200px;
 }
-#resultResearch .listResult .postSearch h4, #resultResearch .listResult .postSearch p {
+#resultResearch .listResult .postSearch h4,
+#resultResearch .listResult .postSearch p {
   font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
 }
-#resultResearch .listResult .postSearch h4 span, #resultResearch .listResult .postSearch p span {
+#resultResearch .listResult .postSearch h4 span,
+#resultResearch .listResult .postSearch p span {
   font-weight: 700;
 }
 
@@ -670,15 +672,22 @@ footer #secondContainerFooter a {
   #resumSearchPhone {
     display: none;
   }
+  #resultresearch .listResult {
+    margin: 0 auto;
+  }
+  #resultresearch .listResult .postSearch {
+    margin: 30px;
+  }
   #containerResultSearch {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    position: relative;
   }
   #containerResultSearch #map {
     width: 40%;
-    margin-top: 50px;
-    position: fixed;
-    right: 0;
+    margin: 50px 20px 0 0;
+    position: sticky;
+    top: 0;
   }
   #containerResultSearch .listResult {
     width: 60%;

@@ -125,7 +125,7 @@
 
 			<div class="listResult">
 				{# {% for logement in logements %} #}
-				<article class="postSearch">
+				<article class="postSearch item js-marker" data-lat="43.57639" data-lng="3.96309" data-price="58€">
 					<img src="{{asset('/img/logement/appartMontpellier1.1.webp')}}" alt="appartement montpelier">
 					<h4>Appartement &nbsp;-&nbsp;Montpellier</h4>
 					<p>
@@ -165,5 +165,6 @@
 			</div>
 		</div>
 	</section>
-
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="{{asset('/js/map.js')}}"></script>
 {% endblock %}
