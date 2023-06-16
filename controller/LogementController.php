@@ -6,25 +6,27 @@ class LogementController extends Controller
 
         echo self::getRender('homePage.html.twig', []);
     }
-    public function legalNotices() {
-        $twig = $this-> getTwig();
-        echo $twig->render('legalNotices.html.twig',[]);
+    public function legalNotices()
+    {
+        $twig = $this->getTwig();
+        echo $twig->render('legalNotices.html.twig', []);
     }
 
     public function addLogement()
     {
-        
-        
+
+
         global $router;
 
         if (!$_POST) {
             echo self::getRender('addLogement.html.twig', []);
-            
         } else {
-            
+
             if (isset($_POST['submt'])) {
-                
+
+
                 if (isset($_SESSION['id_person'])) {
+
 
                     $id_person = $_SESSION['id_person'];
                     $title = $_POST['title'];
@@ -54,7 +56,7 @@ class LogementController extends Controller
                     $logementmodel->addFlat($id_person, $title, $type, $surface, $description, $adress, $city, $price_by_night, $number_of_person, $number_of_beds, $parking, $wifi, $piscine, $animals, $kitchen, $garden, $tv, $climatisation, $camera, $home_textiles, $spa, $jacuzzi);
                     echo self::getRender('addLogement.html.twig', []);
                 } else {
-                   
+
                     echo self::getRender('addLogement.html.twig', []);
                 }
             } else {
@@ -65,28 +67,29 @@ class LogementController extends Controller
     }
 
 
-    public function getAllLogement($city)
-{
-    global $router;
-    $model = new LogementModel();
-    $start_date = "2023-06-01";
-    $end_date = "2023-06-10";
-    $number_of_person = 2;
 
-    $logements = $model->getAll($city,$start_date,$end_date,$number_of_person);
-    $logementUrl = $router->generate('logement');
-    echo self::getRender('resultsearch.html.twig', ['logements' => $logements, 'logementUrl' => $logementUrl]);
-}
+    public function getOneCity($id_ville)
+    {
+        global $router;
 
-    // public function getAllLogement($city)
-    // {
-    //     global $router;
-    //     $model = new LogementModel();
-    //     $ville = $model->getAll($city);
-    //     $Logement = $router->generate('logement');
-    //     echo self::getRender('resultsearch.html.twig', ['logements' => $ville, 'logement'=>$Logement]);
-    // }
+        $model = new LogementModel();
+        $logement = $model->getCity($id_ville);
+        $oneLogement = $router->generate('baseLogement', ['id' => $id_ville]);
+
+        echo self::getRender('logementCity.html.twig', ['logement' => $logement, 'oneLogement' => $oneLogement]);
+    }
+
+
     
+    public function getAllLogement()
+    {
+        global $router;
+        $model = new LogementModel();
+        $ville = $model->getAll();
+        
+        $Logements = $router->generate('logements');
+        echo self::getRender('logementCity.html.twig', ['logements' => $ville, 'logementsUrl' => $Logements]);
+    }
 
 
 
@@ -96,24 +99,3 @@ class LogementController extends Controller
    
 
 
-}     
-      
-        
-
-
-
-    
-
-
-    
-
-
-
-
- 
-      
-        
-
-  
-
-    

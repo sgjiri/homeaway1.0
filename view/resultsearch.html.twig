@@ -123,6 +123,26 @@
 		<div id="containerResultSearch">
 			<div id="map"></div>
 
+		</div>
+
+
+		
+		<div class="listResult">
+			
+    {% for logement in logements %}
+        <article class="postSearch">
+            <img src="{{ asset('/img/logement/appartMontpellier1.1.webp') }}" alt="appartement montpellier">
+            <h4>{{ logement.title }}</h4>
+            <p>{{ logement.description }}</p>
+            <p>{{ book.start_date }} {{ book.end_date }}</p>
+            <p><span>{{ logement.price_by_night }}€ </span>par nuit - &nbsp; {{ logement.price_by_night }}€ au total</p>
+        </article>
+    {% endfor %}
+
+</div>
+
+
+
 			<div class="listResult">
 				{# {% for logement in logements %} #}
 				<article class="postSearch item js-marker" data-lat="43.57639" data-lng="3.96309" data-price="58€">
@@ -164,6 +184,7 @@
 				{# {% endfor %} #}
 			</div>
 		</div>
+
 	</section>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="{{asset('/js/map.js')}}"></script>
