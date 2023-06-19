@@ -69,7 +69,7 @@ header #burgerPhone #menuBurger #navConnectPhone.loginActive ul li {
 header #burgerPhone #menuBurger #navDisconnectPhone.logout ul li a,
 header #burgerPhone #menuBurger #navConnectPhone.loginActive ul li a {
   color: #fff;
-  font-family: "righteous", sans-serif;
+  font-family: "Righteous", cursive;
 }
 header #burgerPhone #searchPhone {
   background-color: #01949C;
@@ -112,7 +112,7 @@ header #searchBoxPhone form .searchFormBox {
 }
 header #searchBoxPhone form .searchFormBox label {
   font-size: 1rem;
-  font-family: "righteous", sans-serif;
+  font-family: "Righteous", cursive;
   font-weight: 700;
   padding: 10px 0 0 10px;
 }
@@ -136,7 +136,7 @@ header #searchBoxPhone form #buttonSearch input {
   position: inherit;
   margin: unset;
   color: #fff;
-  font-family: "righteous", sans-serif;
+  font-family: "Righteous", cursive;
   font-size: 1.5rem;
   background: linear-gradient(90deg, rgb(1, 124, 142) 50%, rgb(1, 148, 156) 50%);
 }
@@ -158,7 +158,7 @@ header #loginBox #close {
   position: absolute;
   font-size: 1.5rem;
   font-weight: 700;
-  font-family: "righteous", sans-serif;
+  font-family: "Righteous", cursive;
   top: 10px;
   right: 10px;
   cursor: pointer;
@@ -216,7 +216,7 @@ header .loginBoxHeader .sign-up:checked + .tab + .login-form .sign-up-form {
 }
 header .loginBoxHeader .tab {
   text-transform: uppercase;
-  font-family: "righteous", sans-serif;
+  font-family: "Righteous", cursive;
   font-weight: 700;
   font-size: 1rem;
   margin-right: 15px;
@@ -359,7 +359,7 @@ header .login-form .group label .icon:after {
   header #burgerDesktop #navDisconnect.logoutDesktop ul li a,
   header #burgerDesktop #navConnect.loginDesktopActive ul li a {
     color: #fff;
-    font-family: "righteous", sans-serif;
+    font-family: "Righteous", cursive;
     padding: 10px;
   }
   header #burgerDesktop #navDisconnect.logoutDesktop ul li a:hover,
@@ -378,12 +378,13 @@ header .login-form .group label .icon:after {
 #hero h1 {
   position: absolute;
   color: #fff;
-  font-family: "righteous", sans-serif;
+  font-family: "Righteous", cursive;
   white-space: nowrap;
   font-size: 1.2rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-weight: 100;
 }
 
 .searchBoxDesktop {
@@ -427,7 +428,7 @@ header .login-form .group label .icon:after {
   }
   .searchBoxDesktop .searchformDesktop .searchFormBox label {
     font-size: 1rem;
-    font-family: "righteous", sans-serif;
+    font-family: "Righteous", cursive;
     font-weight: 700;
     padding: 10px 0 0 10px;
   }
@@ -451,7 +452,7 @@ header .login-form .group label .icon:after {
     position: inherit;
     margin: unset;
     color: #fff;
-    font-family: "righteous", sans-serif;
+    font-family: "Righteous", cursive;
     font-size: 1.5rem;
     background: linear-gradient(90deg, rgb(1, 124, 142) 50%, rgb(1, 148, 156) 50%);
     border-radius: 5px;
@@ -475,17 +476,26 @@ header .login-form .group label .icon:after {
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
 }
-#destination .destinationContainer .imgDestination a {
+#destination .destinationContainer .imgDestination div {
+  position: relative;
+}
+#destination .destinationContainer .imgDestination div a img {
+  border-radius: 5px;
   width: 200px;
   height: 168px;
   margin: 25px auto;
   display: block;
 }
-#destination .destinationContainer .imgDestination a img {
-  border-radius: 5px;
-}
-#destination .destinationContainer .imgDestination a:last-child {
-  margin-bottom: 100px;
+#destination .destinationContainer .imgDestination div h4 {
+  position: absolute;
+  white-space: nowrap;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-family: "Righteous", cursive;
+  font-size: 1.2rem;
+  -webkit-text-stroke: 0.5px #000;
 }
 
 /* section destination tablet desketop*/
@@ -493,8 +503,12 @@ header .login-form .group label .icon:after {
   #destination .destinationContainer .imgDestination {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     width: 80%;
     margin: 0 auto;
+  }
+  #destination .destinationContainer .imgDestination div h4 {
+    bottom: 50px;
   }
 }
 @media screen and (min-width: 750px) {
@@ -504,12 +518,40 @@ header .login-form .group label .icon:after {
 }
 @media screen and (min-width: 850px) {
   #destination .destinationContainer .imgDestination {
-    width: 100%;
+    width: 60%;
   }
 }
+@media screen and (min-width: 980px) {
+  #destination .destinationContainer .imgDestination {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 980px) {
+  #destination .destinationContainer .imgDestination {
+    width: 90%;
+  }
+}
+/*oneLogements phone*/
+#oneLogement div {
+  width: 90%;
+  margin: 0 auto;
+}
+#oneLogement div #list-slide {
+  width: 100%;
+}
+#oneLogement div #list-slide img {
+  width: 100%;
+}
+#oneLogement div h4, #oneLogement div p {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+}
+
 /*footer phone*/
 footer {
-  margin-bottom: 50px;
+  margin: 100px 0 50px 0;
 }
 footer #firstContainerFooter,
 footer #secondContainerFooter {
@@ -524,9 +566,9 @@ footer #firstContainerFooter button {
   display: block;
   margin: 0 auto 25px auto;
   color: #fff;
-  font-family: "righteous", sans-serif;
+  font-family: "Righteous", cursive;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 500;
   background-color: #017C8E;
   border: 1px solid #fff;
   border-radius: 25px;
@@ -549,10 +591,10 @@ footer #secondContainerFooter {
 footer #secondContainerFooter a {
   text-align: center;
   padding-top: 30px;
-  font-family: "righteous", sans-serif;
+  font-family: "Righteous", cursive;
   color: #fff;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /*footer desktop */
@@ -574,7 +616,7 @@ footer #secondContainerFooter a {
 #legalNotices h1 {
   text-align: center;
   margin: 50px 0;
-  font-family: "righteous", sans-serif;
+  font-family: "Righteous", cursive;
   font-size: 1.5rem;
   font-weight: 700;
   color: #017C8E;

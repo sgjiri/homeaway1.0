@@ -7,77 +7,87 @@
 
 {% block content %}
 	<section id="oneLogement" class="row-limit-size">
-    <div>
-		<div id="list-slide">
-{# boucle slide #}
-			<div class="slide">
-				<img src="{{asset('/img/logement/appartementMarseille1.1.webp')}}" alt="nom de l'image">
+		<div>
+			<article>
+				<div
+					id="list-slide">
+					{# boucle slide #}
+					<div class="slide">
+						<img src="{{asset('/img/logement/appartementMarseille1.1.webp')}}" alt="nom de l'image">
 
+					</div>
+				</div>
+				<h4>
+					titre - type - Chez prenom</h4>
+				<p>
+					nb de voyageurs - nb lit</p>
+			</article>
+      <div id="cancel">
+      <img src="{{asset('/img/iconCalendar.png')}}" alt="icon calendrier">
+      <p>Annulation gratuite 5j avt</p>
+      </div>
+			
+			<h4>A propos de ce logement :</h4>
+			<p>Logement T2 au premier étage en centre ville à côté de la Gare St Roch, à 3-4 min à pied. Le logement dispose d'une petite chambre avec un lit 2 places. Le salon est ouvert sur la cuisine et dispose d'un tout petit balcon donnant sur la rue. Plusieurs arrêts de tram et de bus sont à côté du logement, les plus proches étant Observatoire et Gare St Roch. Epicerie, Tabac, Carrefour accessible à 50 mètres. Le logement est ancien et parfait pour un passage à Montpellier. Ne convient pas aux enfants.</p>
+
+			<div id="boxFilter">
+				<h4>Ce que contient ce logement :</h4>
+
+				<div class="convenience">
+					<img src="{{asset('/img/wifi.png')}}" alt="icon wifi">
+					<p>Wifi</p>
+				</div>
+				<div class="convenience">
+					<img src="{{asset('/img/linge.png')}}" alt="icon linge">
+					<p>Linge de maison</p>
+				</div>
+				<div class="convenience">
+					<img src="{{asset('/img/kitchen.png')}}" alt="icon cuisine">
+					<p>Cuisine</p>
+				</div>
+				<div class="convenience">
+					<img src="{{asset('/img/pate.png')}}" alt="icon pate">
+					<p>Animaux</p>
+				</div>
+				<div class="convenience">
+					<img src="{{asset('/img/tv.png')}}" alt="icon tv">
+					<p>TV</p>
+				</div>
+				<div class="convenience">
+					<img src="{{asset('/img/climatisation.png')}}" alt="icon climatisation">
+					<p>Climatisation</p>
+				</div>
+				<div class="convenience">
+					<img src="{{asset('/img/garden.png')}}" alt="icon jardin">
+					<p>Jardin</p>
+				</div>
+				<div class="convenience">
+					<img src="{{asset('/img/spa.png')}}" alt="icon spa">
+					<p>Spa</p>
+				</div>
+				<div class="convenience">
+					<img src="{{asset('/img/jacuzzi.png')}}" alt="icon jacuzzi">
+					<p>Jacuzzi</p>
+				</div>
+				<div class="convenience">
+					<img src="{{asset('/img/camera.png')}}" alt="icon caméra">
+					<p>Caméra de surveillance</p>
+				</div>
+				<div class="convenience">
+					<img src="{{asset('/img/swimmingpool.png')}}" alt="icon piscine">
+					<p>Piscine</p>
+				</div>
+				<div class="convenience">
+					<img src="{{asset('/img/iconParking.png')}}" alt="icon parking">
+					<p>Parking
+					</p>
+				</div>
 			</div>
+			<h4>Calendrier</h4>
+			<div id="calendar"></div>
+
+
 		</div>
-        <h4> titre - type - Chez prenom</h4>
-        <p> nb de voyageurs - nb lit</p>
-        <p id="cancel">Annulation gratuite 5j avt</p>
-        <h4>A propos de ce logement :</h4>
-        <p>Logement T2 au premier étage en centre ville à côté de la Gare St Roch, à 3-4 min à pied. Le logement dispose d'une petite chambre avec un lit 2 places. Le salon est ouvert sur la cuisine et dispose d'un tout petit balcon donnant sur la rue. Plusieurs arrêts de tram et de bus sont à côté du logement, les plus proches étant Observatoire et Gare St Roch. Epicerie, Tabac, Carrefour accessible à 50 mètres. Le logement est ancien et parfait pour un passage à Montpellier. Ne convient pas aux enfants.</p>
-        <h4>Ce que contient ce logement :</h4>
-
-        <div class="convenience">
-        <img src="{{asset('/img/wifi.png')}}" alt="icon wifi">
-        <p>Wifi</p>
-        </div>
-        <div class="convenience">
-        <img src="{{asset('/img/linge.png')}}" alt="icon linge">
-        <p>Linge de maison</p>
-        </div>
-        <div class="convenience">
-        <img src="{{asset('/img/kitchen.png')}}" alt="icon cuisine">
-        <p>Cuisine</p>
-        </div>
-        <div class="convenience">
-        <img src="{{asset('/img/pate.png')}}" alt="icon pate">
-        <p>Animaux</p>
-        </div>
-        <div class="convenience">
-        <img src="{{asset('/img/tv.png')}}" alt="icon tv">
-        <p>TV</p>
-        </div>
-        <div class="convenience">
-        <img src="{{asset('/img/climatisation.png')}}" alt="icon climatisation">
-        <p>Climatisation</p>
-        </div>
-        <div class="convenience">
-        <img src="{{asset('/img/garden.png')}}" alt="icon jardin">
-        <p>Jardin</p>
-        </div>
-        <div class="convenience">
-        <img src="{{asset('/img/spa.png')}}" alt="icon spa">
-        <p>Spa</p>
-        </div>
-        <div class="convenience">
-        <img src="{{asset('/img/jacuzzi.png')}}" alt="icon jacuzzi">
-        <p>Jacuzzi</p>
-        </div>
-        <div class="convenience">
-        <img src="{{asset('/img/camera.png')}}" alt="icon caméra">
-        <p>Caméra de surveillance</p>
-        </div>
-        <div class="convenience">
-        <img src="{{asset('/img/swimmingpool.png')}}" alt="icon piscine">
-        <p>Piscine</p>
-        </div>
-        <div class="convenience">
-        <img src="{{asset('/img/iconParking.png')}}" alt="icon parking">
-        <p>Parking  </p>
-        </div>
-
-        <h4>Calendrier</h4>
-        <div id="calendar"></div>
-
-
-
-
-</div>
 
 	</section>
 
