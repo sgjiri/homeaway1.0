@@ -132,6 +132,7 @@
 .content .contentPage {
   width: 70%;
   margin: 0 auto;
+  display: none;
 }
 .content .contentPage .card {
   width: 100%;
@@ -222,4 +223,7 @@
 }
 .content .contentPage .cardInfoPerso {
   background-color: #017c8e;
+}
+.content .contentPage.contentPageActive {
+  display: block;
 }/*# sourceMappingURL=dashboard.css.map */
