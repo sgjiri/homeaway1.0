@@ -6,7 +6,6 @@ class HomePageController extends Controller
         $model = new HomePageModel;
         $citiesBeach = $model->getCityBeach();
         $cityMountain = $model->getCityMountains();
-        // var_dump($citiesBeach);
         $twig = $this->getTwig();
         echo $twig->render('homePage.html.twig', ['cityBeach' => $citiesBeach, 'cityMountain' => $cityMountain]);
     }

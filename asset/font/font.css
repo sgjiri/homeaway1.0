@@ -1,35 +1,41 @@
 @font-face {
     font-family: "Roboto-Black";
-    src:url(./Roboto-Black.ttf) format("ttf");
+    src:url(./Roboto-Black.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Roboto-Bold";
-    src: url(./Roboto-Bold.ttf) format("ttf");
+    src: url(./Roboto-Bold.ttf) format("truetype");
 
 }
 
 @font-face {
     font-family: "Roboto-Light";
-    src:  url(./Roboto-Light.ttf) format("ttf");
+    src:  url(./Roboto-Light.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Roboto-Medium";
-    src: url(./Roboto-Medium.ttf) format("ttf");
+    src: url(./Roboto-Medium.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Roboto-regular";
-    src:  url(./Roboto-regular.ttf) format("ttf");
+    src:  url(./Roboto-regular.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Roboto-Thin";
-    src:url(./Roboto-Thin.ttf) format("ttf");
+    src:url(./Roboto-Thin.ttf) format("truetype");
 }
 @font-face {
     font-family: "Righteous-Regular";
-    src:url(./Righteous-Regular.ttf) format("ttf");
+    src:url(./Righteous-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Righteous";
+    src:url(./Righteous.ttf) format("truetype");
+    src:url(./Righteous.woff) format("woff");
+    src:url(./Righteous.woff2) format("woff2");
 }
 

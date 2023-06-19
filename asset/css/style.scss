@@ -1,6 +1,5 @@
 $roboto: 'Roboto', sans-serif;
-$fontTitle : 'righteous',
-sans-serif;
+$fontTitle : 'Righteous', cursive;
 $blueDark : #017C8E;
 $bluelight: #01949C;
 $grey: #6a6f8c;
@@ -507,6 +506,7 @@ header {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        font-weight: 100;
 
     }
 
@@ -628,20 +628,32 @@ header {
         }
 
         .imgDestination {
-            a {
-                width: 200px;
-                height: 168px;
-                margin: 25px auto;
-                display: block;
+            div {
+                position: relative;
+                a {
+                    img {
+                        border-radius: 5px;
+                        width: 200px;
+                        height: 168px;
+                        margin: 25px auto;
+                        display: block;
+                        
+                    }
 
-                img {
-                    border-radius: 5px;
                 }
 
-            }
-
-            a:last-child {
-                margin-bottom: 100px;
+                h4 {
+                    position: absolute;
+                    white-space: nowrap;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    color: $white;
+                    font-family: $fontTitle;
+                    font-size: 1.2rem;
+                    -webkit-text-stroke: .5px  #000;
+                    
+                }
             }
         }
     }
@@ -656,10 +668,14 @@ header {
             .imgDestination {
                 display: flex;
                 flex-wrap: wrap;
+                justify-content: space-between;
                 width: 80%;
                 margin: 0 auto;
-
-
+                div {
+                    h4 {                      
+                        bottom: 50px;                      
+                    }
+                }
             }
         }
     }
@@ -671,8 +687,7 @@ header {
 
             .imgDestination {
 
-                width: 70%;
-
+               width: 70%;
 
             }
         }
@@ -685,18 +700,63 @@ header {
 
             .imgDestination {
 
-                width: 100%;
+              width: 60%;
 
+            }
+        }
+    }
+}
+@media screen and (min-width:980px) {
+    #destination {
+        .destinationContainer {
+
+            .imgDestination {
+
+              width: 80%;
+
+            }
+        }
+    }
+}
+@media screen and (min-width:980px) {
+    #destination {
+        .destinationContainer {
+
+            .imgDestination {
+
+              width: 90%;
 
             }
         }
     }
 }
 
+/*oneLogements phone*/
+#oneLogement {
+    div{
+        width: 90%;
+        margin: 0 auto;
+        #list-slide {
+            width: 100%;
+            img {
+               width: 100%; 
+            }
+            
+        }
+        h4,p {
+            width: 90%;
+            display: block;
+            margin: 0 auto;
+            font-family: $roboto;
+        }
+      
+    }
+}
+
 /*footer phone*/
 
 footer {
-    margin-bottom: 50px;
+    margin:100px 0  50px 0;
 
     #firstContainerFooter,
     #secondContainerFooter {
@@ -714,7 +774,7 @@ footer {
             color: $white;
             font-family: $fontTitle;
             font-size: 1.2rem;
-            font-weight: 700;
+            font-weight: 500;
             background-color: $blueDark;
             border: 1px solid $white;
             border-radius: 25px;
@@ -747,10 +807,12 @@ footer {
             font-family: $fontTitle;
             color: $white;
             font-size: 1.2rem;
-            font-weight: 700
+            font-weight: 500
         }
     }
 }
+
+
 
 /*footer desktop */
 
@@ -828,7 +890,7 @@ footer {
 /*resultsearch phone*/
 
 #resultResearch {
-   
+
 
     .marker.leaflet-popup {
         margin-bottom: 16px;
@@ -874,26 +936,31 @@ footer {
         color: inherit;
         margin: 0;
     }
-    .marker.is-active  {
+
+    .marker.is-active {
         background-color: $blueDark;
         color: $white;
         z-index: 300;
+
         &::after {
             border-top-color: $blueDark;
         }
     }
+
     .marker:hover {
         background-color: $blueDark;
         color: $white;
         z-index: 300;
+
         &::after {
             border-top-color: $blueDark;
         }
     }
-    .marker.is-expended  {
-       
+
+    .marker.is-expended {
+
         z-index: 301;
-       text-align: left;
+        text-align: left;
     }
 
     #resumSearchPhone {
