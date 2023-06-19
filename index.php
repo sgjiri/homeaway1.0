@@ -42,7 +42,7 @@ $router->map('GET', '/one', 'LogementController#getOneLogement', 'one');
 
 $match = $router->match();
 
-var_dump($match);
+// var_dump($match);
 
 
 
