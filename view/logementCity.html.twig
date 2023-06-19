@@ -7,15 +7,21 @@
 {% block content %}
     <section id="logements">
         <h2>Tous les logements</h2>
-        {% for logement in logements %}
+        {# {% for all in logements %}
             <div class="logement">
 			<li>
-				<a href="{{ path('logements') }}{{ logement.title }}</a>
+				<a href="{{ path('logements') }}">{{ logement.title }}</a>
 			</li>
                 {# <h3>{{ logement.title }}</h3> #}
-                <p>Nombre de personnes : {{ logement.number_of_person }}</p>
-                <p>Ville : {{ logement.id_ville }}</p>
+                {# <p>Nombre de personnes : {{ logement.number_of_person }}</p>
+                <p>Ville : {{ logement.id_city }}</p>
             </div>
-        {% endfor %}
+        {% endfor %} #} 
+        		{% for oneCityBeach in cityBeach %}
+				<div>
+					{# <a href='{{path('baseLogement')}}{{oneCityBeach.id_ville }}'><img src="{{asset('/img/montpellier.png')}}" alt="Montpellier"></a> #}
+					<h2>{{oneCityBeach.ville_nom}}</h2>
+				</div>
+				 {% endfor %}
     </section>
 {% endblock %}

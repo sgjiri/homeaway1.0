@@ -1,17 +1,6 @@
 <?php
 class LogementController extends Controller
 {
-    public function homepage()
-    {
-
-        echo self::getRender('homePage.html.twig', []);
-    }
-    public function legalNotices()
-    {
-        $twig = $this->getTwig();
-        echo $twig->render('legalNotices.html.twig', []);
-    }
-
     public function addLogement()
     {
 
@@ -74,7 +63,7 @@ class LogementController extends Controller
 
         $model = new LogementModel();
         $logement = $model->getCity($id_ville);
-        $oneLogement = $router->generate('baseLogement', ['id' => $id_ville]);
+        $oneLogement = $router->generate('city', ['id' => $id_ville]);
 
         echo self::getRender('logementCity.html.twig', ['logement' => $logement, 'oneLogement' => $oneLogement]);
     }
@@ -87,8 +76,7 @@ class LogementController extends Controller
         $model = new LogementModel();
         $ville = $model->getAll();
         
-        $Logements = $router->generate('logements');
-        echo self::getRender('logementCity.html.twig', ['logements' => $ville, 'logementsUrl' => $Logements]);
+        echo self::getRender('logementCity.html.twig', ['logements' => $ville]);
     }
 
 
@@ -99,3 +87,4 @@ class LogementController extends Controller
    
 }
 
+}
