@@ -10,10 +10,9 @@ $router = new AltoRouter();
 $router->setBasePath('/Projet/homeaway1.0');
 
 $router->map('GET', '/', 'HomePageController#homepage', 'home' );
-
+// $router->map('GET', '/', 'HomePageController#cityBeach', 'home' );
 $router->map('GET', '/logement/', '', 'baseLogement');
-$router->map('GET', '/logement/[i:id_ville]', 'HomePageController#cityBeach', '');
-$router->map('GET', '/logement/[i:id_ville]', 'HomePageController#cityMountains', '');
+$router->map('GET', '/logement/[i:id_ville]', 'HomePageController#cityBeach', 'city');
 $router->map('GET','/all/','LogementController#getAllLogement','logements');
 
 
@@ -42,7 +41,7 @@ $router->map('GET', '/one', 'LogementController#getOneLogement', 'one');
 
 $match = $router->match();
 
-var_dump($match);
+// var_dump($match);
 
 
 
