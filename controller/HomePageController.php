@@ -6,9 +6,11 @@ class HomePageController extends Controller
         $model = new HomePageModel;
         $citiesBeach = $model->getCityBeach();
         $cityMountain = $model->getCityMountains();
+        $cityUnusual = $model->getCityUnusual();
         $twig = $this->getTwig();
-        echo $twig->render('homePage.html.twig', ['cityBeach' => $citiesBeach, 'cityMountain' => $cityMountain]);
+        echo $twig->render('homePage.html.twig', ['cityBeach' => $citiesBeach, 'cityMountain' => $cityMountain, 'cityUnusual'=>$cityUnusual]);
     }
+    // -*-*-*-*METHOD FOOTER LEGAL NOTICE  -*-*-*-*//
     public function legalNotices()
     {
         $twig = $this->getTwig();
