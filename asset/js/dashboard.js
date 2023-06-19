@@ -14,8 +14,24 @@ like.addEventListener('click', function () {
 info.addEventListener('click', function () {
     info.classList.add('infoActive');
     like.classList.remove('likeActive');
-    iconInfo.classList.add('iconInfo')
+
 })
+
+
+
+
+//activation of contentInfoPerso if #perso is selected
+let liInfo = document.getElementsByClassName('liInfo');
+let contentPage = document.getElementsByClassName('contentPage');
+
+for (let i = 0; i < liInfo.length; i++) {
+    (function (index) {
+        liInfo[index].addEventListener('click', function () {
+            contentPage[index - 1].classList.add('contentPageActive');
+            console.log(contentPage[index - 1]);
+        })
+    })(i);
+}
 
 
 
@@ -46,10 +62,10 @@ for (let i = 0; i < classFigureModifier.length; i++) {
             for (let i = 0; i < classImgModifier[index]; i++) {
                 if (classImgModifier[i].classList.contains('activeModifie')) {
                     activeBehindCount++;
-                    
+
                 }
             }
-            
+
 
 
 
@@ -57,8 +73,8 @@ for (let i = 0; i < classFigureModifier.length; i++) {
                 if (classImgModifier[index].classList.contains('activeModifie')) {
 
 
-                    classCard[i].style.transform = "translateY(" + ((p + 90) - (activeBeforeCount*90)) + "px)";
-                    classInput[i].style.transform = "translateY(" + ((y + 90)- (activeBeforeCount*90)) + "px)";
+                    classCard[i].style.transform = "translateY(" + ((p + 90) - (activeBeforeCount * 90)) + "px)";
+                    classInput[i].style.transform = "translateY(" + ((y + 90) - (activeBeforeCount * 90)) + "px)";
 
                 } else {
                     if (classImgModifier[i].classList.contains('activeModifie')) { }
@@ -71,7 +87,7 @@ for (let i = 0; i < classFigureModifier.length; i++) {
                 p = p + 90;
                 y = y + 90;
                 console.log(activeBeforeCount)
-                classInput[index].style.transform = "translateY(" + ((y) - (activeBeforeCount*90)) +"px)";
+                classInput[index].style.transform = "translateY(" + ((y) - (activeBeforeCount * 90)) + "px)";
 
 
             } else {

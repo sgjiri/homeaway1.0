@@ -179,6 +179,7 @@ sans-serif;
     .contentPage {
         width: 70%;
         margin: 0 auto;
+        display: none;
 
         .card {
             width: 100%;
@@ -292,5 +293,11 @@ sans-serif;
             background-color: $turque;
 
         }
+
+        &.contentPageActive{
+            display: block;
+        }
     }
+
+
 }
