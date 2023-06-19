@@ -61,10 +61,14 @@
 				</h2>
 			</article>
 			<div class="imgDestination">
-				<a href=""><img src="{{asset('/img/ValThorrens.png')}}" alt="Val Thorens"></a>
-				<a href=""><img src="{{asset('/img/ChamonixMtBlanc.png')}}" alt="Chamonix-Mont-Blanc"></a>
-				<a href=""><img src="{{asset('/img/Saorge.png')}}" alt="Saorge"></a>
-				<a href=""><img src="{{asset('/img/Castelnou.png')}}" alt="Castelnou"></a>
+				{% for oneCityMountain in cityMountain %}
+					<div>
+						<a href="{{ path('baseLogement') ~ oneCityMountain.id_ville }}">
+							<img src="{{ asset('/img/' ~ oneCityMountain.img) }}" alt="Chamonix">
+						</a>
+						<h2>{{oneCityMountain.ville_nom}}</h2>
+					</div>
+				{% endfor %}
 			</div>
 		</div>
 		<div class="destinationContainer">

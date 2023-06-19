@@ -8,7 +8,8 @@ class LogementController extends Controller
         global $router;
 
         if (!$_POST) {
-            echo self::getRender('addLogement.html.twig', []);
+            $twig = $this->getTwig();
+        echo $twig->render('addLogement.html.twig', []);
         } else {
 
             if (isset($_POST['submt'])) {
@@ -43,14 +44,17 @@ class LogementController extends Controller
 
                     $logementmodel = new LogementModel();
                     $logementmodel->addFlat($id_person, $title, $type, $surface, $description, $adress, $city, $price_by_night, $number_of_person, $number_of_beds, $parking, $wifi, $piscine, $animals, $kitchen, $garden, $tv, $climatisation, $camera, $home_textiles, $spa, $jacuzzi);
-                    echo self::getRender('addLogement.html.twig', []);
+                    $twig = $this->getTwig();
+                     echo $twig->render('addLogement.html.twig', []);
                 } else {
 
-                    echo self::getRender('addLogement.html.twig', []);
+                    $twig = $this->getTwig();
+                    echo $twig->render('addLogement.html.twig', []);
                 }
             } else {
                 $message = 'Oops, something went wrong sorry. Try again later';
-                echo self::getRender('homePage.html.twig', ['message' => $message]);
+                $twig = $this->getTwig();
+                echo $twig->render('homePage.html.twig', ['message' => $message]);
             }
         }
     }
@@ -65,7 +69,8 @@ class LogementController extends Controller
         $logement = $model->getCity($id_ville);
         $oneLogement = $router->generate('city', ['id' => $id_ville]);
 
-        echo self::getRender('logementCity.html.twig', ['logement' => $logement, 'oneLogement' => $oneLogement]);
+        $twig = $this->getTwig();
+        echo $twig->render('logementCity.html.twig', ['logement' => $logement, 'oneLogement' => $oneLogement]);
     }
 
 
@@ -76,13 +81,16 @@ class LogementController extends Controller
         $model = new LogementModel();
         $ville = $model->getAll();
         
-        echo self::getRender('logementCity.html.twig', ['logements' => $ville]);
+        $twig = $this->getTwig();
+       
+         echo $twig->render('logementCity.html.twig', ['logements' => $ville]);
     }
 
 
 
   public function getOneLogement () {
-        echo self::getRender('oneLogement.html.twig', []);
+    $twig = $this->getTwig();
+    echo $twig->render('oneLogement.html.twig', []);
     }
    
 }

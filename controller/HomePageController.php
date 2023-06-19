@@ -4,7 +4,7 @@ class HomePageController extends Controller{
     {
         $model = new HomePageModel;
         $citiesBeach = $model->getCityBeach();
-        var_dump($citiesBeach);
+        // var_dump($citiesBeach);
        
         $twig = $this->getTwig();
         echo $twig->render('homePage.html.twig', ['cityBeach' => $citiesBeach]);
@@ -16,9 +16,14 @@ class HomePageController extends Controller{
         echo $twig->render('legalNotices.html.twig', []);
     }
 
-//     public function cityBeach(){
-       
-        
+    public function cityMountains(){
+    $model = new HomePageModel;
+    $citiesMountain = $model->getCityMountains();
+    // var_dump($citiesMountain);
 
-//     }
+    $twig = $this->getTwig();
+    echo $twig->render('homePage.html.twig', ['cityMountain' => $citiesMountain]);
+     
+
+}
 }
