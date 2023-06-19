@@ -42,7 +42,7 @@ class LogementModel extends Model
 
 
     public function getCity(int $id_ville){
-        $req = $this->getDb()->prepare('SELECT  `title`,`id_ville`,`number_of_person` FROM `logement` WHERE `id_ville`= :id_ville');
+        $req = $this->getDb()->prepare('SELECT  `title`,`id_city`,`number_of_person` FROM `logement` WHERE `id_city`= :id_ville');
         $req->bindParam('id_ville',$id_ville,PDO::PARAM_INT);
         $req->execute();
 
@@ -55,7 +55,7 @@ class LogementModel extends Model
     {
         $logements = [];
 
-        $req = $this->getDb()->prepare('SELECT `title`,`id_ville`,`number_of_person` FROM `logement` ORDER BY `id_ville` DESC');
+        $req = $this->getDb()->prepare('SELECT `title`,`id_city`,`number_of_person` FROM `logement` ORDER BY `id_city` DESC');
             
         while ($all = $req->fetch(PDO::FETCH_ASSOC)) {
             $logements[] = new Logement($all);
