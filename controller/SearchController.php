@@ -7,7 +7,8 @@ public function searchLogement (){
         $model = new SearchModel();
         $datas = $model->getSearch($searchResult);
     }
-    echo self::getRender('resultsearch.html.twig', []);
+    $twig = $this->getTwig();
+    echo $twig->render('resultsearch.html.twig', []);
 }
 
 
