@@ -2,7 +2,7 @@
 abstract class Controller{
     private static $loader;
     private static $twig;
-    private static $render;
+    
 
     private static function getLoader(){
         if (self::$loader === null) {
