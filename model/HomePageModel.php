@@ -26,15 +26,16 @@ class HomePageModel extends Model{
     // -*-*-*-*METHOD LOGEMENT UNUSUAL -*-*-*-*//
     public function getCityUnusual(){
         $cityUnusual = [];
-        $req = $this->getDb()->query("SELECT `ville_nom`,`id_ville`,`img` FROM `villes_france` WHERE `place`= 'dôme'
-        OR `place`= 'Peniche'
-        OR `place` = 'cabane'
-        OR `place` = 'yourte'
-        ORDER BY RAND() LIMIT 4");
+        $req = $this->getDb()->query("SELECT `logement`.`type`,`logement`.`id_logement`
+        FROM `logement` 
+        WHERE `logement`.`type`
+        IN ('Peniche', 'Cabane', 'Yourte', 'Dome')");
+
         $req->execute();
         while ($oneCityUnusual = $req->fetch(PDO::FETCH_ASSOC)){
-            $cityUnusual[] = new City($oneCityUnusual);
+            $cityUnusual[] = new Logement($oneCityUnusual);
         }
         return $cityUnusual;
+         
     }
 }

@@ -7,8 +7,12 @@ class HomePageController extends Controller
         $citiesBeach = $model->getCityBeach();
         $cityMountain = $model->getCityMountains();
         $cityUnusual = $model->getCityUnusual();
+        var_dump($cityUnusual);
+        $modelImg = new ImageModel;
+        $images = $modelImg->getImg();
+       
         $twig = $this->getTwig();
-        echo $twig->render('homePage.html.twig', ['cityBeach' => $citiesBeach, 'cityMountain' => $cityMountain, 'cityUnusual'=>$cityUnusual]);
+        echo $twig->render('homePage.html.twig', ['cityBeach' => $citiesBeach, 'cityMountain' => $cityMountain, 'cityUnusual'=>$cityUnusual,'images'=>$images]);
     }
     // -*-*-*-*METHOD FOOTER LEGAL NOTICE  -*-*-*-*//
     public function legalNotices()
