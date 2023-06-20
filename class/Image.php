@@ -28,7 +28,7 @@ class Image
 
     // *-*-*-*-*-*-*-* GETTERS *-*-*-*-*-*-*-*//
 
-    public function getIdImage()
+    public function getId_image()
     {
         return $this->id_image;
     }
@@ -38,14 +38,14 @@ class Image
         return $this->thumbnail;
     }
 
-    public function getIdLogement()
+    public function getId_logement()
     {
         return $this->id_logement;
     }
 
     // *-*-*-*-*-*-*-* SETTERS *-*-*-*-*-*-*-*//
 
-    public function setIdImage(INT $id_image)
+    public function setId_image(INT $id_image)
     {
         $this->id_image = $id_image;
     }
@@ -55,7 +55,7 @@ class Image
         $this->thumbnail = $thumbnail;
     }
 
-    public function setIdLogement(INT $id_logement)
+    public function setId_logement(INT $id_logement)
     {
         $this->id_logement = $id_logement;
     }

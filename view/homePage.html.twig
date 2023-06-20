@@ -5,7 +5,7 @@
 	HomeAway
 {% endblock %}
 {% block content %}
-	<section id="hero">  
+	<section id="hero">
 		<figure>
 			<img src="{{asset('/img/heroMontainPhone.jpg')}}" alt=""></figure>
 		<h1>Détendez-vous et explorez !</h1>
@@ -78,15 +78,22 @@
 				</h2>
 			</article>
 			<div class="imgDestination">
-			{% for oneCityUnusual in cityUnusual %}
+				{% for image in images %}
+
 					<div>
-						<a href="{{ path('baseLogement') ~ oneCityUnusual.id_ville }}">
-							<img src="{{ asset('/img/' ~ oneCityUnusual.img) }}" alt="Paris">
-						</a>
-						<h2>{{oneCityUnusual.ville_nom}}</h2>
-					</div>
-				{% endfor %}
+						<a href="{{ path('baseLogement') ~ image.id_logement }}">
+
+						
+								<img src="{{ asset('/img/' ~ image.thumbnail) }}"
+								 alt="{{oneCityUnusual.type}}">
+							</a>
+							
+						</div>
+					{% endfor %}
+					{% for oneCityUnusual in oneCityUnusuals %}
+					<h2>{{oneCityUnusual.type}}</h2>
+					{% endfor %}
+				</div>
 			</div>
-		</div>
-	</section>
-{% endblock %}
+		</section>
+	{% endblock %}
