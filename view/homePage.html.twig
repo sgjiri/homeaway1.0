@@ -85,13 +85,11 @@
 
 						
 								<img src="{{ asset('/img/' ~ image.thumbnail) }}"
-								 alt="{{oneCityUnusual.type}}">
+								 alt="{{image.type}}">
 							</a>
+							<h2>{{image.type}}</h2>
 							
 						</div>
-					{% endfor %}
-					{% for oneCityUnusual in oneCityUnusuals %}
-					<h2>{{oneCityUnusual.type}}</h2>
 					{% endfor %}
 				</div>
 			</div>

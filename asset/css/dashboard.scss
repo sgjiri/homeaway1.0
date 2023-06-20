@@ -13,6 +13,8 @@ sans-serif;
     font-family: $roboto;
 }
 
+
+
 .content {
     width: 100%;
     display: flex;
@@ -193,19 +195,58 @@ sans-serif;
         margin: 0 auto;
         display: none;
 
+        h1{
+            margin-top: 50px;
+            color: #454545;
+            font-size: 2.5em;
+        }
+
         .divBarreDeRecherche {
+            height: 50px;
+            margin: 50px 0;
+
             form {
-                background-color: $turque
+                background-color: $turque;
                 border-radius: 20px;
-                margin: 20px 0;
+
                 height: 50px;
 
                 #searchHistoric {
                     float: left;
+                    height: 100%;
+                    background-color: $turque;
+                    border: $turque 3px solid;
+                    margin-left: 20px;
+                    width: 70%;
+                    color: #fff;
+                    font-size: 1.5em;
+
+                    &::placeholder {
+                        color: #e3dada;
+                    }
+
+                    &::-webkit-search-cancel-button{
+                        display: none;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
                 }
 
                 #rechercherHistoric {
                     float: right;
+                    background: url(../img/lupe.png) center center no-repeat;
+                    height: 50px;
+                    width: 50px;
+                    transition: all 0.1s ease-in;
+                    border: none;
+                    margin-right: 20px;
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: scale(1.1);
+                    }
                 }
             }
         }
