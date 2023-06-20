@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 20 juin 2023 à 06:45
+-- Généré le : lun. 19 juin 2023 à 06:36
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -111,14 +111,6 @@ CREATE TABLE IF NOT EXISTS `logement` (
 --
 
 INSERT INTO `logement` (`id_logement`, `id_person`, `id_city`, `title`, `type`, `surface`, `description`, `adress`, `price_by_night`, `number_of_person`, `number_of_beds`, `parking`, `wifi`, `piscine`, `animals`, `kitchen`, `garden`, `tv`, `climatisation`, `camera`, `home_textiles`, `spa`, `jacuzzi`) VALUES
-(3, 3, 30438, 'DORMIR SUR UNE PÉNICHE À PARIS', 'Peniche', 50, 'Au pied de la Passerelle Solférino, la péniche Johanna vous offre la Seine.\\r\\n\\r\\nJuste en face du jardin des Tuileries, à quelques mètres du Musée d\\\'Orsay, voici un point de départ parfait pour visiter Paris à pied.\\r\\n\\r\\nA bord de cette péniche que nous aimons tant, vous trouverez les deux magnifiques cabines aux boiseries laquées de 1930, le charme du petit salon et profiterez également de la timonerie avec vue sur la Seine pour prendre votre petit-déjeuner.\\r\\nA coté des chambres une salle d\\\'eau, douche et toilettes privées. Vous serez donc seul(s) à bord pour la durée de votre séjour, idéal pour une escapade parisienne entre amis ou un sage tête à tête.', '\'Quai Anatole France\\r\\n75007', 110, 2, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0),
-(4, 3, 16882, 'Péniche  à quai Rem’Ann', 'Peniche ', 50, 'Réservez ce logement atypique pour un séjour à quai dans la commune de Briare à 2 pas de son fameux pont canal.\r\nNotre bateau est équipé comme une petite maison, avec tous les équipements de confort.\r\nLe bateau est disponible pour les nuits à quai, il ne sera pas possible de naviguer avec.\r\nCependant, si vous souhaitez passer une nuit en dehors du port, dans la nature, je pourrai déplacer le bateau et vous emmener naviguer sur le canal. C’est une prestation en supplément, appelez moi pour les modalités.\r\nAccès des voyageurs\r\nLe port est situé à 2km de la gare, mais il y a possibilité de vous récupérer à la gare.\r\nEn 1h30 vous êtes arrivés !\r\nNous n’aimons pas les restrictions quand nous louons nous mêmes des gîtes, mais nous devons préciser que nous n’acceptons pas les animaux et il n’est pas autorisé de fumer dans le bateau.\r\n', '\r\n\r\nBriare, Centre-Val de Loire, France', 70, 2, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0),
-(5, 4, 15817, 'Bulle \"La Grande Ourse\"', 'dôme', 15, 'A 1 km du zoo de Beauval et à proximité des châteaux de la Loire, rapprochez-vous de la nature et des étoiles. Passez une nuit dans une bulle tout confort à la belle étoile.\r\nElle comprend un lit 160x200, un espace salon, une salle de douche séparée ainsi qu\'une terrasse. Petit déjeuner compris servi dans la bulle. \r\nDans un but écologique, la bulle est équipée de toilettes sèches.\r\nIdéal pour un couple.', 'Seigy, Centre-Val de Loire, France', 145, 2, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0),
-(6, 5, 19055, 'Dôme géodésique, Demeure de la Garenne', 'dôme', 15, 'La Tanière du Renard est un dôme géodésique dont la structure sphérique est en bois et matériaux recyclés. Ce dôme possède une grande ouverture lumineuse sur le devant, ce qui lui confère une vue imprenable sur la vallée du Petit Morin. La nuit tombée, vous pourrez admirer les étoiles. Cette habitation offre confort et modernité, il dispose d\'une salle d\'eau et toilettes privées ainsi que de la climatisation.\r\nVous adorerez cette escapade unique et romantique.', 'Montmirail, Grand Est, France', 225, 2, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0),
-(7, 2, 2012, 'Yourte contemporaine en pleine foret', 'yourte', 40, '\r\nSitué en pleine forêt dans les gorges de la Siagne situé dans la parc naturel des préalpes d\'azur et le parc Natura 2000, la yourte est nicher au sein de mon exploitation agricole \" la ferme Terra Abelha\" qui elle même est situé à 7 Km du village de St Vallier de Thiey.\r\nLa ferme est situé en plein GR 406/510, qui est aussi le vraie chemin Napoléon.\r\nLa rivière \"La Siagne\" est sur ce GR et à 10-15 minutes à pied de la yourte.', 'Saint-Vallier-de-Thiey, Alpes-Maritimes, Provence-Alpes-Côte d\'Azur', 145, 5, 3, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0),
-(8, 3, 3077, 'Yourte Rosane', 'yourte', 60, '\r\nUne grande yourte mongole de 60 m2 pour 2 à 6 personnes avec son bâtiment annexe kitchenette et sanitaires pour un séjour en autonomie (table d\'hôtes sur demande) dans le Parc Naturel Régional des Pyrenées Ariègeoises, à 850 m d\'altitude, face à une vue panoramique sur les montagnes. Venez poser vos bagages dans un habitat cocooning pour profiter d\'un séjour ressourçant au calme en pleine nature !\r\nLa yourte est bien isolée. L\'été, elle profite de l\'ombrage des arbres le matin. L\'hiver le poêle à bois donne une bonne chaleur confortable.', 'Biert, Ariège, Occitanie', 86, 6, 5, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0),
-(9, 2, 35486, 'Cabane jacuzzi \"Plume\", nuit insolite proche Paris', 'cabane', 25, 'Vous serez seuls au monde dans votre cabane suspendue dans les arbres. Vous observez la forêt à travers les hublots de votre nid douillet. Le jacuzzi est chauffé à 38°C sur votre terrasse. Au petit matin, savourez un petit-déjeuner gourmand avec le chant des oiseaux. Pour votre confort, vous disposez au sol d\'une petite cabane avec salle de bain privée et coin repas. Idéal pour une parenthèse de nature à 1h de Paris et 30 min de Disney.\r\n Piscine ouverte de mi-avril à mi-septembre.', 'Rosoy-en-Multien, Hauts-de-France, France', 315, 2, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1),
-(10, 20, 28780, 'Cabane Duo Perchée Reflet', 'cabane', 25, 'Imaginez la rivière qui coule au pied de votre chêne…\r\n\r\nA 9 mètres de haut dans les branches de votre majestueux chêne centenaire, la cabane Reflet est la cabane idéale pour passer une nuit romantique et insolite… Mais attention, ne vous penchez pas trop pour voir votre reflet dans l’eau des grands lacs !\r\n\r\nUne douche est disponible à l\'éco-hutte. Le petit-déjeuner est inclus dans le tarif.\r\nAutres remarques\r\nCette cabane est équipée de toilettes sèches. Nos salles de bain spacieuses, individuelles et toutes équipées se trouvent dans l’éco-hutte et sont accessibles 24h/24.', 'Chassey-lès-Montbozon, Bourgogne-Franche-Comté, France', 180, 2, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0),
 (26, 5, 13339, 'appartement vue sur mer ', 'appartement ', 70, 'bel appartement avec vue sur la mer ', 'Bd Henri IV, 34000 Montpellier', 75, 4, 2, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0),
 (27, 4, 13339, 'Appartement ', 'appartement ', 25, 'Appartement de qualité et ensoleillé avec une belle vue, wifi rapide, emplacement central.\r\nCet appartement est situé dans le quartier d\'Antigone, dans une rue calme à moins de 3 min à pied du centre commercial Polygone et à 10 min du centre de comédie et du centre historique de Montpellier.\r\nLa Rive du lez est à seulement 5 minutes à pied.\r\nTout ce que vous avez à faire à votre arrivée, c\'est défaire vos valises et commencer à explorer la ville.\r\n1 chambre avec canapé convertible double (très confortable). Cuisine ouverte et entièrement meublée, table à manger, toilettes séparées et salle de réunion.\r\nPiano, TV, Imprimante, Nespresso\r\nVous avez accès à tout l\'appartement sauf ma chambre.', '3 bis Rue de la Vieille 34000', 64, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0);
 
@@ -176,9 +168,9 @@ CREATE TABLE IF NOT EXISTS `villes_france` (
 --
 
 INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
-(1, 'OZAN', 4.91667, 46.3833, '', ''),
-(2, 'CORMORANCHE-SUR-SAONE', 4.83333, 46.2333, 'téléchargé (4).jpg', ''),
-(3, 'PLAGNE', 5.73333, 46.1833, '', 'mountain'),
+(1, 'OZAN', 4.91667, 46.3833, 'téléchargé (5).jpg', 'plage'),
+(2, 'CORMORANCHE-SUR-SAONE', 4.83333, 46.2333, 'téléchargé (4).jpg', 'plage'),
+(3, 'PLAGNE', 5.73333, 46.1833, '18-Famous.jpg', 'mountain'),
 (4, 'TOSSIAT', 5.31667, 46.1333, '', ''),
 (5, 'POUILLAT', 5.43333, 46.3333, '602444213-H-1024x700.webp', 'mountain'),
 (6, 'TORCIEU', 5.4, 45.9167, 'Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg', 'mountain'),
@@ -1292,9 +1284,9 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (1114, 'SAINT-CHRISTOPHE-A-BERRY', 3.13333, 49.4167, '', ''),
 (1115, 'GRONARD', 3.88333, 49.7833, '', ''),
 (1116, 'CREPY', 3.51389, 49.6042, '', ''),
-(1117, 'BRUYERES-ET-MONTBERAULT', 3.66667, 49.5167, '', ''),
-(1118, 'BETHANCOURT-EN-VAUX', 3.15, 49.6167, '', '');
+(1117, 'BRUYERES-ET-MONTBERAULT', 3.66667, 49.5167, '', '');
 INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
+(1118, 'BETHANCOURT-EN-VAUX', 3.15, 49.6167, '', ''),
 (1119, 'VAUXAILLON', 3.4, 49.4833, '', ''),
 (1120, 'CHARTEVES', 3.5, 49.0833, '', ''),
 (1121, 'MARCY-SOUS-MARLE', 3.73333, 49.7333, '', ''),
@@ -2188,10 +2180,10 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (2009, 'ISOLA', 7.05, 44.1833, '', ''),
 (2010, 'LA PENNE', 6.95, 43.9333, '', ''),
 (2011, 'CHATEAUNEUF-D\'ENTRAUNES', 6.83333, 44.1333, '', ''),
-(2012, 'SAINT-VALLIER-DE-THIEY', 6.85, 43.7, 'yourte.jpg', 'yourte'),
+(2012, 'SAINT-VALLIER-DE-THIEY', 6.85, 43.7, '', ''),
 (2013, 'TOURNEFORT', 7.15, 43.95, '', ''),
 (2014, 'MOUGINS', 7, 43.6, '', ''),
-(2015, 'SAORGE', 7.55, 43.9833, 'saorge.jpg', 'montagne'),
+(2015, 'SAORGE', 7.55, 43.9833, '', ''),
 (2016, 'CHATEAUNEUF-VILLEVIEILLE', 7.2964, 43.8084, '', ''),
 (2017, 'RIMPLAS', 7.13333, 44.0667, '', ''),
 (2018, 'LE CANNET', 7.01667, 43.5667, '', ''),
@@ -2385,9 +2377,9 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (2206, 'TAURIERS', 4.28333, 44.55, '', ''),
 (2207, 'PEYRAUD', 4.78778, 45.3031, '', ''),
 (2208, 'SAINT-PIERRE-LA-ROCHE', 4.61667, 44.65, '', ''),
-(2209, 'SAINT-ROMAIN-D\'AY', 4.66667, 45.1667, '', ''),
-(2210, 'VERNON', 4.23333, 44.5, '', '');
+(2209, 'SAINT-ROMAIN-D\'AY', 4.66667, 45.1667, '', '');
 INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
+(2210, 'VERNON', 4.23333, 44.5, '', ''),
 (2211, 'SAINT-MAURICE-EN-CHALENCON', 4.58945, 44.8589, '', ''),
 (2212, 'RIBES', 4.21667, 44.4833, '', ''),
 (2213, 'SAINT-BAUZILE', 4.66667, 44.6667, '', ''),
@@ -3254,7 +3246,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (3074, 'LAVELANET', 1.85, 42.9333, '', ''),
 (3075, 'SAINT-AMANS', 1.55, 43.15, '', ''),
 (3076, 'MONTGAUCH', 1.08333, 43, '', ''),
-(3077, 'BIERT', 1.31667, 42.9, 'yourte1.jpg', 'yourte'),
+(3077, 'BIERT', 1.31667, 42.9, '', ''),
 (3078, 'SAINT-JEAN-DE-VERGES', 1.61667, 43.0167, '', ''),
 (3079, 'DAUMAZAN-SUR-ARIZE', 1.31667, 43.15, '', ''),
 (3080, 'SENTEIN', 0.95, 42.8667, '', ''),
@@ -3492,9 +3484,9 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (3312, 'MESNIL-SAINT-LOUP', 3.76667, 48.3, '', ''),
 (3313, 'LES BORDES-AUMONT', 4.11667, 48.1833, '', ''),
 (3314, 'COUSSEGREY', 4.01667, 47.95, '', ''),
-(3315, 'JUVANCOURT', 4.8, 48.1167, '', ''),
-(3316, 'SAINT-MARTIN-DE-BOSSENAY', 3.68333, 48.4333, '', '');
+(3315, 'JUVANCOURT', 4.8, 48.1167, '', '');
 INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
+(3316, 'SAINT-MARTIN-DE-BOSSENAY', 3.68333, 48.4333, '', ''),
 (3317, 'VIVIERS-SUR-ARTAUT', 4.5, 48.1, '', ''),
 (3318, 'BOUY-SUR-ORVIN', 3.5, 48.4167, '', ''),
 (3319, 'MAIZIERES-LES-BRIENNE', 4.58333, 48.4333, '', ''),
@@ -4574,10 +4566,10 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (4393, 'PIERREFICHE', 2.95, 44.45, '', ''),
 (4394, 'SAINT-COME-D\'OLT', 2.81667, 44.5167, '', ''),
 (4395, 'SAINT-CYPRIEN-SUR-DOURDOU', 2.41667, 44.55, '', ''),
-(4396, 'BOZOULS', 2.71667, 44.4667, '', ''),
-(4397, 'OLEMPS', 2.56667, 44.35, '', ''),
-(4398, 'LASSOUTS', 2.86667, 44.5, '', '');
+(4396, 'BOZOULS', 2.71667, 44.4667, '', '');
 INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
+(4397, 'OLEMPS', 2.56667, 44.35, '', ''),
+(4398, 'LASSOUTS', 2.86667, 44.5, '', ''),
 (4399, 'LAPANOUSE-DE-CERNON', 3.1, 44, '', ''),
 (4400, 'CANTOIN', 2.81667, 44.8333, '', ''),
 (4401, 'ARNAC-SUR-DOURDOU', 2.93333, 43.7333, '', ''),
@@ -4619,7 +4611,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (4437, 'SALON-DE-PROVENCE', 5.1, 43.6333, '', ''),
 (4438, 'LAMANON', 5.08333, 43.7, '', ''),
 (4439, 'CEYRESTE', 5.63333, 43.2167, '', ''),
-(4440, 'MARSEILLE', 5.37639, 43.2967, 'marseille.jpg', 'plage'),
+(4440, 'MARSEILLE', 5.37639, 43.2967, '', ''),
 (4441, 'ROGNES', 5.35, 43.6667, '', ''),
 (4442, 'EYRAGUES', 4.83333, 43.8333, '', ''),
 (4443, 'PORT-SAINT-LOUIS-DU-RHONE', 4.8, 43.3833, '', ''),
@@ -5620,9 +5612,9 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (5438, 'YDES', 2.46667, 45.3333, '', ''),
 (5439, 'YOLET', 2.53333, 44.9333, '', ''),
 (5440, 'MENET', 2.58333, 45.3167, '', ''),
-(5441, 'LE CLAUX', 2.71667, 45.1667, '', ''),
-(5442, 'SAINT-SATURNIN', 2.8, 45.2833, '', '');
+(5441, 'LE CLAUX', 2.71667, 45.1667, '', '');
 INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
+(5442, 'SAINT-SATURNIN', 2.8, 45.2833, '', ''),
 (5443, 'SAINT-CONSTANT', 2.23333, 44.6833, '', ''),
 (5444, 'AUZERS', 2.46667, 45.2667, '', ''),
 (5445, 'ORADOUR', 2.95, 44.9167, '', ''),
@@ -6689,9 +6681,9 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (6506, 'OSMERY', 2.65, 46.9333, '', ''),
 (6507, 'CUFFY', 3.05, 46.95, '', ''),
 (6508, 'VIGNOUX-SUR-BARANGEON', 2.18333, 47.2167, '', ''),
-(6509, 'SAINT-PRIEST-LA-MARCHE', 2.16667, 46.45, '', ''),
-(6510, 'IGNOL', 2.85, 46.9667, '', '');
+(6509, 'SAINT-PRIEST-LA-MARCHE', 2.16667, 46.45, '', '');
 INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
+(6510, 'IGNOL', 2.85, 46.9667, '', ''),
 (6511, 'LURY-SUR-ARNON', 2.05, 47.1167, '', ''),
 (6512, 'AZY', 2.71667, 47.1833, '', ''),
 (6513, 'LES AIX-D\'ANGILLON', 2.56667, 47.2, '', ''),
@@ -7706,7 +7698,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (7522, 'LABERGEMENT-FOIGNEY', 5.25, 47.25, '', ''),
 (7523, 'BRESSEY-SUR-TILLE', 5.18333, 47.3, '', ''),
 (7524, 'CORCELLES-LES-MONTS', 4.93333, 47.3, '', ''),
-(7525, 'SEIGNY', 4.43333, 47.5833, 'dome.webp', 'dôme'),
+(7525, 'SEIGNY', 4.43333, 47.5833, '', ''),
 (7526, 'BLANCEY', 4.46667, 47.3, '', ''),
 (7527, 'ARNAY-SOUS-VITTEAUX', 4.5, 47.45, '', ''),
 (7528, 'ECHIGEY', 5.2, 47.1833, '', ''),
@@ -9049,7 +9041,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (8863, 'ORVE', 6.55, 47.3333, '', ''),
 (8864, 'PASSAVANT', 6.38333, 47.2833, '', ''),
 (8865, 'REMONDANS-VAIVRE', 6.71334, 47.3753, '', ''),
-(8866, 'MONTPERREUX', 6.33333, 46.8333, '', ''),
+(8866, 'MONTPERREUX', 6.33333, 46.8333, 'MONTPERREUX.webp', 'plage'),
 (8867, 'AUTECHAUX', 6.38333, 47.3833, '', ''),
 (8868, 'THORAISE', 5.9, 47.1667, '', ''),
 (8869, 'L\'HOPITAL-SAINT-LIEFFROY', 6.45, 47.4, '', ''),
@@ -13526,7 +13518,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (13336, 'MARSEILLAN', 3.53333, 43.35, '', ''),
 (13337, 'SAINT-MAURICE-NAVACELLES', 3.5, 43.8333, '', ''),
 (13338, 'LE CRES', 3.93333, 43.65, '', ''),
-(13339, 'MONTPELLIER', 3.88333, 43.6, 'montpellier.jpg', 'plage'),
+(13339, 'MONTPELLIER', 3.88333, 43.6, '', 'plage'),
 (13340, 'AUMELAS', 3.59861, 43.6028, '', ''),
 (13341, 'PLAISSAN', 3.53333, 43.55, '', ''),
 (13342, 'USCLAS-D\'HERAULT', 3.46417, 43.5187, '', ''),
@@ -13579,7 +13571,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (13389, 'GORNIES', 3.63333, 43.9, '', ''),
 (13390, 'SAINT-MATHIEU-DE-TREVIERS', 3.85, 43.7667, '', ''),
 (13391, 'CERS', 3.3, 43.3167, '', ''),
-(13392, 'MONTPEYROUX', 3.5, 43.6833, '', ''),
+(13392, 'MONTPEYROUX', 3.5, 43.6833, 'téléchargé.jpg', 'plage'),
 (13393, 'SAINT-GENIES-DE-FONTEDIT', 3.17889, 43.4684, '', ''),
 (13394, 'POPIAN', 3.53333, 43.6167, '', ''),
 (13395, 'MURLES', 3.76667, 43.6833, '', ''),
@@ -17072,7 +17064,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (16879, 'MAINVILLIERS', 2.28333, 48.3, '', ''),
 (16880, 'CHAMPOULET', 2.91667, 47.6667, '', ''),
 (16881, 'LE BARDON', 1.65, 47.85, '', ''),
-(16882, 'BRIARE', 2.73333, 47.6333, 'peniche.webp', 'Peniche'),
+(16882, 'BRIARE', 2.73333, 47.6333, '', ''),
 (16883, 'VARENNES-CHANGY', 2.66056, 47.8653, '', ''),
 (16884, 'BATILLY-EN-PUISAYE', 2.88334, 47.6123, '', ''),
 (16885, 'CEPOY', 2.73333, 48.05, '', ''),
@@ -19247,7 +19239,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (19052, 'CUPERLY', 4.43333, 49.0667, '', ''),
 (19053, 'BROUILLET', 3.73333, 49.2167, '', ''),
 (19054, 'BREUVERY-SUR-COOLE', 4.31667, 48.8667, '', ''),
-(19055, 'MONTMIRAIL', 3.53333, 48.8667, 'dome1.webp', 'dôme'),
+(19055, 'MONTMIRAIL', 3.53333, 48.8667, '', ''),
 (19056, 'SAINT-MASMES', 4.26667, 49.3167, '', ''),
 (19057, 'VOUILLERS', 4.83333, 48.6833, '', ''),
 (19058, 'CUCHERY', 3.81667, 49.1333, '', ''),
@@ -19361,9 +19353,9 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (19166, 'ORBAIS-L\'ABBAYE', 3.69861, 48.95, '', ''),
 (19167, 'DROSNAY', 4.61667, 48.5833, '', ''),
 (19168, 'ARCIS-LE-PONSART', 3.7, 49.2333, '', ''),
-(19169, 'L\'EPINE', 4.46667, 48.9833, '', '');
+(19169, 'L\'EPINE', 4.46667, 48.9833, '', ''),
+(19170, 'LINTHES', 3.85, 48.7333, '', '');
 INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
-(19170, 'LINTHES', 3.85, 48.7333, '', ''),
 (19171, 'CHAMPFLEURY', 4.01667, 49.1987, '', ''),
 (19172, 'CONFLANS-SUR-SEINE', 3.68333, 48.55, '', ''),
 (19173, 'SERMAIZE-LES-BAINS', 4.91667, 48.7833, '', ''),
@@ -20375,7 +20367,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (20179, 'QUELAINES-SAINT-GAULT', -0.8025, 47.9245, '', ''),
 (20180, 'AZE', -0.683333, 47.8167, '', ''),
 (20181, 'LA BAZOUGE-DE-CHEMERE', -0.5, 48.0167, '', ''),
-(20182, 'MONTOURTIER', -0.55, 48.2, '', ''),
+(20182, 'MONTOURTIER', -0.55, 48.2, 'téléchargé (2).jpg', 'plage'),
 (20183, 'DESERTINES', -0.866667, 48.4667, '', ''),
 (20184, 'CRENNES-SUR-FRAUBEE', -0.283333, 48.3833, '', ''),
 (20185, 'SAINT-AUBIN-FOSSE-LOUVAIN', -0.833333, 48.4667, '', ''),
@@ -20407,9 +20399,9 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (20211, 'BOUCHAMPS-LES-CRAON', -1, 47.8167, '', ''),
 (20212, 'SAINT-DENIS-D\'ANJOU', -0.45, 47.7833, '', ''),
 (20213, 'SAINT-GERMAIN-D\'ANXURE', -0.733333, 48.2167, '', ''),
-(20214, 'OLIVET', -0.916667, 48.1167, '', '');
+(20214, 'OLIVET', -0.916667, 48.1167, '', ''),
+(20215, 'GESNES', -0.583333, 48.15, '', '');
 INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
-(20215, 'GESNES', -0.583333, 48.15, '', ''),
 (20216, 'HAMBERS', -0.416667, 48.25, '', ''),
 (20217, 'VIEUVY', -0.866667, 48.45, '', ''),
 (20218, 'GRAZAY', -0.483333, 48.2833, '', ''),
@@ -26181,7 +26173,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (25979, 'POEY-DE-LESCAR', -0.466667, 43.35, '', ''),
 (25980, 'GER', -0.05, 43.25, '', ''),
 (25981, 'SARE', -1.58333, 43.3167, '', ''),
-(25982, 'HENDAYE', -1.775, 43.3583, 'hendaye.jpg', 'plage'),
+(25982, 'HENDAYE', -1.775, 43.3583, '', ''),
 (25983, 'AINCILLE', -1.2, 43.15, '', ''),
 (25984, 'LASSEUBE', -0.483333, 43.2333, '', ''),
 (25985, 'LUCGARIER', -0.183333, 43.2333, '', ''),
@@ -27147,7 +27139,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (26944, 'CAUDIES-DE-CONFLENT', 2.16139, 42.5673, '', ''),
 (26945, 'CORNEILLA-DE-CONFLENT', 2.38333, 42.5667, '', ''),
 (26946, 'SAINT-JEAN-PLA-DE-CORTS', 2.78333, 42.5167, '', ''),
-(26947, 'CASTELNOU', 2.7, 42.6167, 'castelnou.jpg', 'montagne'),
+(26947, 'CASTELNOU', 2.7, 42.6167, '', ''),
 (26948, 'ARBOUSSOLS', 2.48333, 42.6667, '', ''),
 (26949, 'ENVEITG', 1.91667, 42.4667, '', ''),
 (26950, 'TARERACH', 2.5, 42.7, '', ''),
@@ -27926,9 +27918,9 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (27723, 'NIFFER', 7.51667, 47.7167, '', ''),
 (27724, 'SCHLIERBACH', 7.4, 47.6833, '', ''),
 (27725, 'JUNGHOLTZ', 7.18333, 47.8833, '', ''),
-(27726, 'ZILLISHEIM', 7.26667, 47.6833, '', '');
+(27726, 'ZILLISHEIM', 7.26667, 47.6833, '', ''),
+(27727, 'SPECHBACH-LE-HAUT', 7.21667, 47.6833, '', '');
 INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
-(27727, 'SPECHBACH-LE-HAUT', 7.21667, 47.6833, '', ''),
 (27728, 'REININGUE', 7.23333, 47.75, '', ''),
 (27729, 'KNOERINGUE', 7.4, 47.5667, '', ''),
 (27730, 'ANDOLSHEIM', 7.41667, 48.0667, '', ''),
@@ -28677,7 +28669,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (28473, 'BUTHIERS', 6.03333, 47.35, '', ''),
 (28474, 'CLANS', 6.03333, 47.6, '', ''),
 (28475, 'PONTCEY', 6.03333, 47.6333, '', ''),
-(28476, 'MONTOT', 5.61667, 47.5667, '', ''),
+(28476, 'MONTOT', 5.61667, 47.5667, 'téléchargé (3).jpg', 'plage'),
 (28477, 'VANNE', 5.83333, 47.6, '', ''),
 (28478, 'MAGNY-JOBERT', 6.6, 47.65, '', ''),
 (28479, 'BREUCHES', 6.33333, 47.8, '', ''),
@@ -28981,15 +28973,15 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (28777, 'OPPENANS', 6.38333, 47.5833, '', ''),
 (28778, 'SAINT-FERJEUX', 6.51667, 47.55, '', ''),
 (28779, 'MALVILLERS', 5.78333, 47.7333, '', ''),
-(28780, 'CHASSEY-LES-MONTBOZON', 6.33333, 47.5167, 'cabane1.webp', 'cabane'),
+(28780, 'CHASSEY-LES-MONTBOZON', 6.33333, 47.5167, '', ''),
 (28781, 'MOLAY', 5.74112, 47.7323, '', ''),
 (28782, 'MALANS', 5.59389, 47.2637, '', ''),
 (28783, 'GRANDVELLE-ET-LE-PERRENOT', 5.99528, 47.5089, '', ''),
 (28784, 'VELESMES-ECHEVANNE', 5.70139, 47.4198, '', ''),
 (28785, 'VAROGNE', 6.2, 47.7167, '', ''),
-(28786, 'VELLEFRIE', 6.21667, 47.7, '', '');
+(28786, 'VELLEFRIE', 6.21667, 47.7, '', ''),
+(28787, 'FLEUREY-LES-SAINT-LOUP', 6.3, 47.9167, '', '');
 INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
-(28787, 'FLEUREY-LES-SAINT-LOUP', 6.3, 47.9167, '', ''),
 (28788, 'MONTBOILLON', 5.91667, 47.3667, '', ''),
 (28789, 'GEVIGNEY-ET-MERCEY', 5.93333, 47.8, '', ''),
 (28790, 'GENEVREUILLE', 6.38333, 47.6667, '', ''),
@@ -30026,9 +30018,9 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (29821, 'PREVAL', 0.616667, 48.2333, '', ''),
 (29822, 'VILLAINES-LA-CARELLE', 0.3, 48.3833, '', ''),
 (29823, 'LA BAZOGE', 0.15, 48.1, '', ''),
-(29824, 'CHERREAU', 0.683333, 48.2, '', '');
+(29824, 'CHERREAU', 0.683333, 48.2, '', ''),
+(29825, 'CHERRE', 0.658333, 48.1725, '', '');
 INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
-(29825, 'CHERRE', 0.658333, 48.1725, '', ''),
 (29826, 'SAINTE-CEROTTE', 0.683333, 47.9, '', ''),
 (29827, 'LES AULNEAUX', 0.333333, 48.4333, '', ''),
 (29828, 'MAREIL-SUR-LOIR', 0.016667, 47.7167, '', ''),
@@ -30420,7 +30412,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (30214, 'MESIGNY', 6, 45.9833, '', ''),
 (30215, 'MENTHONNEX-EN-BORNES', 6.18333, 46.05, '', ''),
 (30216, 'VILLY-LE-PELLOUX', 6.13333, 46, '', ''),
-(30217, 'EVIAN-LES-BAINS', 6.58333, 46.3833, 'evian.jpg', 'montagne'),
+(30217, 'EVIAN-LES-BAINS', 6.58333, 46.3833, '', ''),
 (30218, 'LA CLUSAZ', 6.41667, 45.9, '', ''),
 (30219, 'DRAILLANT', 6.45, 46.3, '', ''),
 (30220, 'MENTHONNEX-SOUS-CLERMONT', 5.93333, 45.9667, '', ''),
@@ -30579,7 +30571,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (30373, 'NAVES-PARMELAN', 6.18333, 45.9333, '', ''),
 (30374, 'ANNEMASSE', 6.25, 46.2, '', ''),
 (30375, 'VINZIER', 6.63333, 46.35, '', ''),
-(30376, 'CHAMONIX-MONT-BLANC', 6.86667, 45.9167, 'chamonix.jpg', 'montagne'),
+(30376, 'CHAMONIX-MONT-BLANC', 6.86667, 45.9167, '', ''),
 (30377, 'DOMANCY', 6.65, 45.9167, '', ''),
 (30378, 'VETRAZ-MONTHOUX', 6.26667, 46.1667, '', ''),
 (30379, 'DINGY-SAINT-CLAIR', 6.21667, 45.9, '', ''),
@@ -30641,7 +30633,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (30435, 'QUINTAL', 6.08333, 45.8333, '', ''),
 (30436, 'AMBILLY', 6.22417, 46.195, '', ''),
 (30437, 'TALLOIRES', 6.21667, 45.85, '', ''),
-(30438, 'PARIS', 2.34445, 48.86, 'peniche1.webp', 'Peniche'),
+(30438, 'PARIS', 2.34445, 48.86, '', ''),
 (30439, 'ESLETTES', 1.05, 49.55, '', ''),
 (30440, 'ROSAY', 1.25, 49.7, '', ''),
 (30441, 'VARENGEVILLE-SUR-MER', 0.983333, 49.9167, '', ''),
@@ -30814,7 +30806,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (30608, 'SAHURS', 0.933333, 49.35, '', ''),
 (30609, 'SAINT-EUSTACHE-LA-FORET', 0.466667, 49.55, '', ''),
 (30610, 'SAINTE-MARIE-AU-BOSC', 0.2, 49.6667, '', ''),
-(30611, 'ETRETAT', 0.2, 49.7, 'etretat.jpg', 'plage'),
+(30611, 'ETRETAT', 0.2, 49.7, '', ''),
 (30612, 'SAINT-AUBIN-EPINAY', 1.16667, 49.4167, '', ''),
 (30613, 'DOUVREND', 1.31667, 49.8667, '', ''),
 (30614, 'LA FEUILLIE', 1.51667, 49.4667, '', ''),
@@ -31072,10 +31064,10 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (30866, 'PONTS-ET-MARAIS', 1.45, 50.05, '', ''),
 (30867, 'PARC-D\'ANXTOT', 0.383333, 49.5833, '', ''),
 (30868, 'THEROULDEVILLE', 0.516667, 49.7667, '', ''),
-(30869, 'SAINT-NICOLAS-DE-BLIQUETUIT', 0.733333, 49.5167, '', '');
-INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
+(30869, 'SAINT-NICOLAS-DE-BLIQUETUIT', 0.733333, 49.5167, '', ''),
 (30870, 'LA CHAPELLE-SAINT-OUEN', 1.43445, 49.5353, '', ''),
-(30871, 'LE MESNIL-SOUS-JUMIEGES', 0.866667, 49.4167, '', ''),
+(30871, 'LE MESNIL-SOUS-JUMIEGES', 0.866667, 49.4167, '', '');
+INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
 (30872, 'SAINT-HELLIER', 1.18333, 49.7333, '', ''),
 (30873, 'BERTHEAUVILLE', 0.65, 49.85, '', ''),
 (30874, 'BERMONVILLE', 0.633333, 49.6333, '', ''),
@@ -31682,7 +31674,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (31475, 'LES MARETS', 3.31667, 48.6667, '', ''),
 (31476, 'ESMANS', 2.96667, 48.35, '', ''),
 (31477, 'COULOMMIERS', 3.08333, 48.8167, '', ''),
-(31478, 'MONTOLIVET', 3.43333, 48.8333, '', ''),
+(31478, 'MONTOLIVET', 3.43333, 48.8333, 'téléchargé (1).jpg', 'plage'),
 (31479, 'FAREMOUTIERS', 3, 48.8, '', ''),
 (31480, 'LA BROSSE-MONTCEAUX', 3.01667, 48.3333, '', ''),
 (31481, 'FORGES', 2.95, 48.4167, '', ''),
@@ -32106,10 +32098,10 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (31899, 'VOISINS-LE-BRETONNEUX', 2.05, 48.75, '', ''),
 (31900, 'POIGNY-LA-FORET', 1.75, 48.6833, '', ''),
 (31901, 'ORVILLIERS', 1.63333, 48.8667, '', ''),
-(31902, 'MITTAINVILLE', 1.65, 48.6667, '', '');
-INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
+(31902, 'MITTAINVILLE', 1.65, 48.6667, '', ''),
 (31903, 'MAURECOURT', 2.06667, 49, '', ''),
-(31904, 'LES CLAYES-SOUS-BOIS', 1.98333, 48.8167, '', ''),
+(31904, 'LES CLAYES-SOUS-BOIS', 1.98333, 48.8167, '', '');
+INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
 (31905, 'CRAVENT', 1.48333, 49, '', ''),
 (31906, 'LE PECQ', 2.1, 48.9, '', ''),
 (31907, 'LE PERRAY-EN-YVELINES', 1.85, 48.7, '', ''),
@@ -33163,10 +33155,10 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (32955, 'ETINEHEM', 2.68333, 49.9333, '', ''),
 (32956, 'FROHEN-SUR-AUTHIE', 2.2, 50.2, '', ''),
 (32957, 'MENESLIES', 1.5, 50.05, '', ''),
-(32958, 'COULONVILLERS', 2, 50.1333, '', '');
-INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
+(32958, 'COULONVILLERS', 2, 50.1333, '', ''),
 (32959, 'BETHENCOURT-SUR-MER', 1.5, 50.0833, '', ''),
-(32960, 'BERMESNIL', 1.735, 49.8987, '', ''),
+(32960, 'BERMESNIL', 1.735, 49.8987, '', '');
+INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
 (32961, 'POULAINVILLE', 2.31667, 49.9333, '', ''),
 (32962, 'VAUCHELLES-LES-AUTHIE', 2.47472, 50.0978, '', ''),
 (32963, 'FIEFFES-MONTRELET', 2.23, 50.0862, '', ''),
@@ -33909,7 +33901,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (33700, 'GONFARON', 6.28333, 43.3167, '', ''),
 (33701, 'COTIGNAC', 6.15, 43.5333, '', ''),
 (33702, 'TOURVES', 5.93333, 43.4, '', ''),
-(33703, 'SAINT-TROPEZ', 6.63333, 43.2667, 'sttropez.jpg', 'plage'),
+(33703, 'SAINT-TROPEZ', 6.63333, 43.2667, '', ''),
 (33704, 'PIERREFEU-DU-VAR', 6.13333, 43.2167, '', ''),
 (33705, 'LE REVEST-LES-EAUX', 6.56667, 43.3667, '', ''),
 (33706, 'LA FARLEDE', 6.03333, 43.1667, '', ''),
@@ -34231,11 +34223,11 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (34022, 'SAINT-GILLES-CROIX-DE-VIE', -1.93944, 46.6983, '', ''),
 (34023, 'LES BROUZILS', -1.31667, 46.8833, '', ''),
 (34024, 'ANGLES', -1.4, 46.4, '', ''),
-(34025, 'SAINT-AUBIN-LA-PLAINE', -1.05, 46.5167, '', '');
-INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
+(34025, 'SAINT-AUBIN-LA-PLAINE', -1.05, 46.5167, '', ''),
 (34026, 'FALLERON', -1.7, 46.8833, '', ''),
 (34027, 'CHAIX', -0.866667, 46.4333, '', ''),
-(34028, 'MARILLET', -0.65, 46.5667, '', ''),
+(34028, 'MARILLET', -0.65, 46.5667, '', '');
+INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
 (34029, 'LA MEILLERAIE-TILLAY', -0.85, 46.7333, '', ''),
 (34030, 'MACHE', -1.68333, 46.75, '', ''),
 (34031, 'CHASNAIS', -1.21667, 46.4667, '', ''),
@@ -35281,11 +35273,11 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (35071, 'LE VERMONT', 7.06667, 48.3833, '', ''),
 (35072, 'DESTORD', 6.61667, 48.2667, '', ''),
 (35073, 'LAVAL-SUR-VOLOGNE', 6.7, 48.2, '', ''),
-(35074, 'LUBINE', 7.15, 48.3167, '', '');
-INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
+(35074, 'LUBINE', 7.15, 48.3167, '', ''),
 (35075, 'BADMENIL-AUX-BOIS', 6.51667, 48.3, '', ''),
 (35076, 'AOUZE', 5.86667, 48.3833, '', ''),
-(35077, 'TOLLAINCOURT', 5.73333, 48.1, '', ''),
+(35077, 'TOLLAINCOURT', 5.73333, 48.1, '', '');
+INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
 (35078, 'VILLOUXEL', 5.58333, 48.35, '', ''),
 (35079, 'SAINT-MENGE', 5.95, 48.2833, '', ''),
 (35080, 'DARNIEULLES', 6.35, 48.2, '', ''),
@@ -35694,7 +35686,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (35483, 'MERRY-SUR-YONNE', 3.65, 47.5667, '', ''),
 (35484, 'VILLENEUVE-LA-GUYARD', 3.06667, 48.3333, '', ''),
 (35485, 'COULANGES-SUR-YONNE', 3.53333, 47.5167, '', ''),
-(35486, 'ROSOY', 3.31667, 48.15, 'cabane.webp', 'cabane'),
+(35486, 'ROSOY', 3.31667, 48.15, '', ''),
 (35487, 'PIFFONDS', 3.15, 48.05, '', ''),
 (35488, 'THOREY', 4.12223, 47.9034, '', ''),
 (35489, 'CERISIERS', 3.48333, 48.1333, '', ''),
@@ -36354,11 +36346,11 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `vi
 (36143, 'CHAMPAGNE-SUR-OISE', 2.25, 49.1333, '', ''),
 (36144, 'BOISEMONT', 2, 49.0167, '', ''),
 (36145, 'CHAUVRY', 2.26667, 49.05, '', ''),
-(36146, 'AMBLEVILLE', 1.7, 49.15, '', '');
-INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
+(36146, 'AMBLEVILLE', 1.7, 49.15, '', ''),
 (36147, 'BETHEMONT-LA-FORET', 2.25, 49.05, '', ''),
 (36148, 'LE THILLAY', 2.46667, 49, '', ''),
-(36149, 'SAINT-OUEN-L\'AUMONE', 2.11667, 49.05, '', ''),
+(36149, 'SAINT-OUEN-L\'AUMONE', 2.11667, 49.05, '', '');
+INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `ville_longitude_deg`, `ville_latitude_deg`, `img`, `place`) VALUES
 (36150, 'MAFFLIERS', 2.31667, 49.0833, '', ''),
 (36151, 'NOISY-SUR-OISE', 2.33333, 49.1333, '', ''),
 (36152, 'NERVILLE-LA-FORET', 2.28333, 49.0833, '', ''),
