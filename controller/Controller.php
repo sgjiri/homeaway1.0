@@ -2,7 +2,7 @@
 abstract class Controller{
     private static $loader;
     private static $twig;
-    private static $render;
+    
 
     private static function getLoader(){
         if (self::$loader === null) {
@@ -35,25 +35,5 @@ abstract class Controller{
     }
     
 
-    protected static function setRender(string $template, $datas){
-
-        global $router;
-
-        // LINKS      
-
-        // LINKS TABLE + NEW ONES
-        $new = [
-        
-           
-         ] + $datas;
-        
-        echo self::getTwig()->render($template);
-    }
-
-    protected static function getRender($template, $datas){
-        if (self::$render === null) {
-            self::setRender($template, $datas);
-        }
-        return self::$render;
-    }
+    
 }

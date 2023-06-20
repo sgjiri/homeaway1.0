@@ -19,34 +19,34 @@
 					<ul>
 						<li id='info'>
 							<ul>
-								<li id='infoPerso'>
+								<li id='infoPerso' class='liInfo'>
 									<figure class='icon'>
 										<img src="{{ asset('/img/🦆 icon _person_.png') }}" alt="icon _person">
 									</figure>
 								</li>
-								<li id='perso'>
+								<li id='perso' class='liInfo'>
 									<figure class='icon'>
 										<img src="{{ asset('/img/Perso.png') }}" alt="Perso">
 									</figure>
 								</li>
-								<li id='historic'>
+								<li id='historic' class='liInfo'>
 									<figure class='icon'>
 										<img src="{{ asset('/img/group.png') }}" alt="group">
 									</figure>
 								</li>
 
 
-								<li id='gestionBien'>
+								<li id='gestionBien' class='liInfo'>
 									<figure class='icon'>
 										<img src="{{ asset('/img/gestion.png') }}" alt="Perso">
 									</figure>
 								</li>
-								<li id='ajouterBien'>
+								<li id='ajouterBien' class='liInfo'>
 									<figure class='icon'>
 										<img src="{{ asset('/img/ajouter.png') }}" alt="add house">
 									</figure>
 								</li>
-								<li id='gestionReservation'>
+								<li id='gestionReservation' class='liInfo'>
 									<figure class='icon'>
 										<img src="{{ asset('/img/gestionReservation.png') }}" alt="reservation">
 									</figure>
@@ -73,7 +73,7 @@
 						</li>
 					</ul>
 				</nav>
-				<div class='contentPage contentInfoPerso'>
+				<div class='contentPage' id='contentInfoPerso'>
 					<div class='card cardInfoPerso'>
 						<div>
 							<h3>Nom légal</h3>
@@ -141,6 +141,8 @@
 						<input type="text" class'changetext' placeholder="ville">
 						<input type="submit" name="valider" class="valider" value="">
 					</div>
+				</div>
+				<div class='contentPage' id='contentHistorique'>
 				</div>
 				</div>
 				
