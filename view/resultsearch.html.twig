@@ -121,11 +121,11 @@
 
 		</form>
 		<div id="containerResultSearch">
-			<div id="map"></div>
+			<div class="map" id="map"></div>
 
 			<div class="listResult">
 				{# {% for logement in logements %} #}
-				<article class="postSearch item js-marker" data-lat="43.57639" data-lng="3.96309" data-price="58">
+				<article class="item js-marker" data-lat="43.57639" data-lng="3.96309" data-price="58">
 					<img src="{{asset('/img/logement/appartMontpellier1.1.webp')}}" alt="appartement montpelier">
 					<h4>Appartement &nbsp;-&nbsp;Montpellier</h4>
 					<p>
@@ -134,7 +134,7 @@
 						<span>58€
 						</span>par nuit - &nbsp; 294€ au total</p>
 				</article>
-				<article class="postSearch item js-marker" data-lat="43.58639" data-lng="3.98309" data-price="58">
+				<article class="item js-marker" data-lat="43.58639" data-lng="3.98309" data-price="58">
 					<img src="{{asset('/img/logement/appartMontpellier1.1.webp')}}" alt="appartement montpelier">
 					<h4>Appartement &nbsp;-&nbsp;Montpellier</h4>
 					<p>
@@ -143,7 +143,7 @@
 						<span>58€
 						</span>par nuit - &nbsp; 294€ au total</p>
 				</article>
-				<article class="postSearch">
+				<article class="item">
 					<img src="{{asset('/img/logement/appartMontpellier1.1.webp')}}" alt="appartement montpelier">
 					<h4>Appartement &nbsp;-&nbsp;Montpellier</h4>
 					<p>
@@ -152,7 +152,7 @@
 						<span>58€
 						</span>par nuit - &nbsp; 294€ au total</p>
 				</article>
-				<article class="postSearch">
+				<article class="item">
 					<img src="{{asset('/img/logement/appartMontpellier1.1.webp')}}" alt="appartement montpelier">
 					<h4>Appartement &nbsp;-&nbsp;Montpellier</h4>
 					<p>
@@ -165,7 +165,7 @@
 			</div>
 		</div>
 	</section>
-{# <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> #}
+
 <script src="{{asset('/js/vendor.js')}}"></script>
 <script src="{{asset('/js/map.js')}}"></script>
 {% endblock %}
