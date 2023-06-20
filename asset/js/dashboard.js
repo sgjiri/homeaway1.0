@@ -27,8 +27,11 @@ let contentPage = document.getElementsByClassName('contentPage');
 for (let i = 0; i < liInfo.length; i++) {
     (function (index) {
         liInfo[index].addEventListener('click', function () {
+            for (let j = 0; j < contentPage.length; j++) {
+                contentPage[j].classList.remove('contentPageActive');
+            }
             contentPage[index - 1].classList.add('contentPageActive');
-            console.log(contentPage[index - 1]);
+            console.log(contentPage);
         })
     })(i);
 }

@@ -239,6 +239,40 @@ sans-serif;
                 
             }
         }
+        .cardHistoric{
+            display: flex;
+            .cardHistoriqueContentLeft{
+                width: 40%;
+                figure{
+                    height: 250px;
+                    width: 400px;
+                    margin: 20px auto;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            .cardHistoriqueContentRight{
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+
+                .oneRightContent{
+                    height: 33.3%;
+                    width: 100%;
+                }
+                h2{
+                    color: #fff;
+                    line-height: 100%;
+                    
+                }
+            }
+
+
+
+        }
         .input{
             background-color: $turque;
             padding: 20px;
@@ -298,6 +332,8 @@ sans-serif;
             display: block;
         }
     }
+
+    
 
 
 }

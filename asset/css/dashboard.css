@@ -176,6 +176,34 @@
 .content .contentPage .card .figureModifier .imgModifier.activeModifie {
   transform: rotate(-90deg);
 }
+.content .contentPage .cardHistoric {
+  display: flex;
+}
+.content .contentPage .cardHistoric .cardHistoriqueContentLeft {
+  width: 40%;
+}
+.content .contentPage .cardHistoric .cardHistoriqueContentLeft figure {
+  height: 250px;
+  width: 400px;
+  margin: 20px auto;
+}
+.content .contentPage .cardHistoric .cardHistoriqueContentLeft figure img {
+  width: 100%;
+  height: 100%;
+}
+.content .contentPage .cardHistoric .cardHistoriqueContentRight {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent {
+  height: 33.3%;
+  width: 100%;
+}
+.content .contentPage .cardHistoric .cardHistoriqueContentRight h2 {
+  color: #fff;
+  line-height: 100%;
+}
 .content .contentPage .input {
   background-color: #017c8e;
   padding: 20px;
