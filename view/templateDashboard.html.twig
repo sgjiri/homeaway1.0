@@ -126,7 +126,7 @@
 						<input type="submit" name="valider" class="valider" value="">
 					</div>
 					<div class='card cardInfoPerso'>
-					<div>
+						<div>
 							<h3>Adresse</h3>
 							<p>Adresse de bdd</p>
 						</div>
@@ -142,12 +142,21 @@
 						<input type="submit" name="valider" class="valider" value="">
 					</div>
 				</div>
-				<div class='contentPage' id='contentHistorique'>
+				<div class='contentPage'>
+					<div class='card cardInfoPerso cardHistoric'>
+						<div class='cardHistoriqueContentLeft'>
+							<figure>
+								<img src="{{ asset('/img/evian.png') }}" alt="">
+							</figure>
+						</div>
+						<div class='cardHistoriqueContentRight'>
+							<h2 class='oneRightContent'> Nom de logement de la bdd</h2>
+							<div class='oneRightContent'></div>
+							<div class='oneRightContent'></div>
+						</div>
+					</div>
 				</div>
-				</div>
-				
 			</div>
 		</body>
 	</html>
-</div>{% endblock %}{% block js %}
-<script src="{{ asset('/js/dashboard.js') }}"></script>{% endblock %}</body></html>
+</div></body></html></div>{% endblock %}{% block js %}<script src="{{ asset('/js/dashboard.js') }}"></script>{% endblock %}</body></html>
