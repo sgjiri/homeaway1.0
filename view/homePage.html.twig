@@ -78,10 +78,14 @@
 				</h2>
 			</article>
 			<div class="imgDestination">
-				<a href=""><img src="{{asset('/img/Peniche.png')}}" alt="Péniche"></a>
-				<a href=""><img src="{{asset('/img/Tipi.png')}}" alt="Tipi"></a>
-				<a href=""><img src="{{asset('/img/Yourte.png')}}" alt="Yourte"></a>
-				<a href=""><img src="{{asset('/img/Cabane.png')}}" alt="Cabane"></a>
+			{% for oneCityUnusual in cityUnusual %}
+					<div>
+						<a href="{{ path('baseLogement') ~ oneCityUnusual.id_ville }}">
+							<img src="{{ asset('/img/' ~ oneCityUnusual.img) }}" alt="Paris">
+						</a>
+						<h2>{{oneCityUnusual.ville_nom}}</h2>
+					</div>
+				{% endfor %}
 			</div>
 		</div>
 	</section>
