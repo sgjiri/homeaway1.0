@@ -23,19 +23,4 @@ class HomePageModel extends Model{
         }
         return $cityMountain;
     }
-    // -*-*-*-*METHOD LOGEMENT UNUSUAL -*-*-*-*//
-    public function getCityUnusual(){
-        $cityUnusual = [];
-        $req = $this->getDb()->query("SELECT `logement`.`type`,`logement`.`id_logement`
-        FROM `logement` 
-        WHERE `logement`.`type`
-        IN ('Peniche', 'Cabane', 'Yourte', 'Dome')");
-
-        $req->execute();
-        while ($oneCityUnusual = $req->fetch(PDO::FETCH_ASSOC)){
-            $cityUnusual[] = new Logement($oneCityUnusual);
-        }
-        return $cityUnusual;
-         
-    }
 }

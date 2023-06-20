@@ -134,17 +134,54 @@
   margin: 0 auto;
   display: none;
 }
+.content .contentPage h1 {
+  margin-top: 50px;
+  color: #454545;
+  font-size: 2.5em;
+}
+.content .contentPage .divBarreDeRecherche {
+  height: 50px;
+  margin: 50px 0;
+}
 .content .contentPage .divBarreDeRecherche form {
   background-color: #017c8e;
   border-radius: 20px;
-  margin: 20px 0;
   height: 50px;
 }
 .content .contentPage .divBarreDeRecherche form #searchHistoric {
   float: left;
+  height: 100%;
+  background-color: #017c8e;
+  border: #017c8e 3px solid;
+  margin-left: 20px;
+  width: 70%;
+  color: #fff;
+  font-size: 1.5em;
+}
+.content .contentPage .divBarreDeRecherche form #searchHistoric::-moz-placeholder {
+  color: #e3dada;
+}
+.content .contentPage .divBarreDeRecherche form #searchHistoric::placeholder {
+  color: #e3dada;
+}
+.content .contentPage .divBarreDeRecherche form #searchHistoric::-webkit-search-cancel-button {
+  display: none;
+}
+.content .contentPage .divBarreDeRecherche form #searchHistoric:focus {
+  outline: none;
 }
 .content .contentPage .divBarreDeRecherche form #rechercherHistoric {
   float: right;
+  background: url(../img/lupe.png) center center no-repeat;
+  height: 50px;
+  width: 50px;
+  transition: all 0.1s ease-in;
+  border: none;
+  margin-right: 20px;
+}
+.content .contentPage .divBarreDeRecherche form #rechercherHistoric:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 .content .contentPage .card {
   width: 100%;
