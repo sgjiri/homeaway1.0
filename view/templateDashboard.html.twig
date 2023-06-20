@@ -143,16 +143,37 @@
 					</div>
 				</div>
 				<div class='contentPage'>
+					<div class='divBarreDeRecherche'>
+						<form action="" method='GET'>
+							<input type="search" name='search' placeholder='Rechercher dans votre historique' id='searchHistoric'>
+							<input type="submit" name='rechercher' value id='rechercherHistoric'>
+						</form>
+					</div>
 					<div class='card cardInfoPerso cardHistoric'>
 						<div class='cardHistoriqueContentLeft'>
 							<figure>
-								<img src="{{ asset('/img/evian.png') }}" alt="">
+								<img src="{{ asset('/img/montpellier.jpg') }}" alt="">
 							</figure>
 						</div>
 						<div class='cardHistoriqueContentRight'>
-							<h2 class='oneRightContent'> Nom de logement de la bdd</h2>
-							<div class='oneRightContent'></div>
-							<div class='oneRightContent'></div>
+							<div class='oneRightContent'>
+								<h2> Nom de logement de la bdd</h2>
+							</div>				
+							<div class='oneRightContent'>
+								<figure class="iconRightContent">
+									<img src="{{ asset('/img/calendar.png') }}" alt="">
+								</figure>
+								<p class='dateRightContent infoRightContent'>du 00/00/0000 au 00/00/0000</p>
+							</div>
+							<div class='oneRightContent'>
+								<figure class="iconRightContent">
+									<img src="{{ asset('/img/avis-client.png') }}" alt="">
+								</figure>
+								<button class='avis infoRightContent'>
+									<span>Laiser votre avis</span>
+								</button>
+
+							</div>
 						</div>
 					</div>
 				</div>

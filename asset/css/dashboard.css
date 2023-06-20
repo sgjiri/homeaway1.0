@@ -134,6 +134,18 @@
   margin: 0 auto;
   display: none;
 }
+.content .contentPage .divBarreDeRecherche form {
+  background-color: #017c8e;
+  border-radius: 20px;
+  margin: 20px 0;
+  height: 50px;
+}
+.content .contentPage .divBarreDeRecherche form #searchHistoric {
+  float: left;
+}
+.content .contentPage .divBarreDeRecherche form #rechercherHistoric {
+  float: right;
+}
 .content .contentPage .card {
   width: 100%;
   margin-top: 0px;
@@ -143,6 +155,7 @@
   position: relative;
   z-index: 100;
   transition: all 0.2s ease-in;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .content .contentPage .card:first-child {
   margin-top: 50px;
@@ -190,19 +203,57 @@
 .content .contentPage .cardHistoric .cardHistoriqueContentLeft figure img {
   width: 100%;
   height: 100%;
+  filter: drop-shadow(14px 6px 4px rgba(0, 0, 0, 0.25));
 }
 .content .contentPage .cardHistoric .cardHistoriqueContentRight {
   width: 60%;
-  display: flex;
-  flex-direction: column;
 }
 .content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent {
   height: 33.3%;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
-.content .contentPage .cardHistoric .cardHistoriqueContentRight h2 {
+.content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent h2 {
   color: #fff;
-  line-height: 100%;
+  width: 100%;
+  font-size: 2em;
+}
+.content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent figure {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent p {
+  font-size: 2em;
+}
+.content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent .infoRightContent {
+  margin-left: 50px;
+}
+.content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent button {
+  background-color: #017c8e;
+  width: 250px;
+  height: 50px;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent button span {
+  color: #fff;
+  font-size: 2em;
+  transition: all 0.3s ease-in-out;
+}
+.content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent button:hover {
+  transform: scale(1.1);
+  background-color: #fff;
+}
+.content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent button:hover span {
+  color: #017c8e;
+  transform: scale(1.1);
 }
 .content .contentPage .input {
   background-color: #017c8e;
