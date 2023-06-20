@@ -35,6 +35,7 @@ class LeafletMap {
 }
 class LeafletMarker {
     constructor(point, text, map) {
+        this.text=text
         this.popup= L.popup({
             autoClose:false, 
             closeOnEscapeKey :false,
@@ -59,13 +60,14 @@ class LeafletMarker {
         })        
     }
     setContent (text) {
-        this.popup.setContent(this.text)
+       
+        this.popup.setContent(text)
         this.popup.getElement().classList.add('is-expended')
         this.popup.update()
 
     }
     resetContent () {
-        this.popup.setContent(this.text)
+        this.popup.setContent(this. text)
         this.popup.getElement().classList.remove('is-expended')
         this.popup.update()
 
@@ -92,6 +94,7 @@ const initMap = async function () {
             }
         })
         marker.addEventListener('click', function () {
+        
             if(activeMarker !== null){
                 activeMarker.resetContent()
             }

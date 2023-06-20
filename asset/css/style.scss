@@ -1,5 +1,6 @@
 $roboto: 'Roboto', sans-serif;
-$fontTitle : 'Righteous', cursive;
+$fontTitle : 'Righteous',
+cursive;
 $blueDark : #017C8E;
 $bluelight: #01949C;
 $grey: #6a6f8c;
@@ -630,6 +631,7 @@ header {
         .imgDestination {
             div {
                 position: relative;
+
                 a {
                     img {
                         border-radius: 5px;
@@ -637,7 +639,7 @@ header {
                         height: 168px;
                         margin: 25px auto;
                         display: block;
-                        
+
                     }
 
                 }
@@ -651,8 +653,8 @@ header {
                     color: $white;
                     font-family: $fontTitle;
                     font-size: 1.2rem;
-                    -webkit-text-stroke: .5px  #000;
-                    
+                    -webkit-text-stroke: .5px #000;
+
                 }
             }
         }
@@ -671,9 +673,10 @@ header {
                 justify-content: space-between;
                 width: 80%;
                 margin: 0 auto;
+
                 div {
-                    h4 {                      
-                        bottom: 50px;                      
+                    h4 {
+                        bottom: 50px;
                     }
                 }
             }
@@ -687,7 +690,7 @@ header {
 
             .imgDestination {
 
-               width: 70%;
+                width: 70%;
 
             }
         }
@@ -700,31 +703,33 @@ header {
 
             .imgDestination {
 
-              width: 60%;
+                width: 60%;
 
             }
         }
     }
 }
+
 @media screen and (min-width:980px) {
     #destination {
         .destinationContainer {
 
             .imgDestination {
 
-              width: 80%;
+                width: 80%;
 
             }
         }
     }
 }
+
 @media screen and (min-width:980px) {
     #destination {
         .destinationContainer {
 
             .imgDestination {
 
-              width: 90%;
+                width: 90%;
 
             }
         }
@@ -733,30 +738,53 @@ header {
 
 /*oneLogements phone*/
 #oneLogement {
-    div{
+    padding-top: 50px;
+    div {
         width: 90%;
         margin: 0 auto;
+
         #list-slide {
             width: 100%;
+
             img {
-               width: 100%; 
+                width: 100%;
+                
             }
-            
+
         }
-        h4,p {
+
+        h4,
+        p {
             width: 90%;
             display: block;
             margin: 0 auto;
             font-family: $roboto;
         }
-      
+
+    }
+   .fc {
+        font-size: 0.6rem;
+        font-family: $roboto;
+    }
+    .fc-button-group {
+       width: 50px;
+       
+    }
+    .fc-today-button {
+        display: none;
+    }
+    .fc-prev-button {
+        background-color: $blueDark;
+    }
+    .fc-next-button {
+        background-color: $bluelight;
     }
 }
 
 /*footer phone*/
 
 footer {
-    margin:100px 0  50px 0;
+    margin: 100px 0 50px 0;
 
     #firstContainerFooter,
     #secondContainerFooter {
@@ -957,10 +985,27 @@ footer {
         }
     }
 
-    .marker.is-expended {
-
+    .marker, .marker.is-expended {
         z-index: 301;
-        text-align: left;
+
+        .leaflet-popup-content-wrapper .leaflet-popup-content {
+
+
+            text-align: left;
+
+            img {
+                width: 220px;
+                height: 200px;
+            }
+
+            h4,
+            p {
+                font-family: $roboto;
+                font-size: 0.8rem;
+            }
+
+
+        }
     }
 
     #resumSearchPhone {
@@ -1015,19 +1060,27 @@ footer {
     }
 
     #containerResultSearch {
-        #map {
+        .map {
             height: 350px;
         }
     }
 
     .listResult {
-        .postSearch {
-            width: 200px;
+        .item {
+            width: 240px;
             margin: 50px auto;
+            cursor: pointer;
+            transition: box-shadow .3s;
+            padding: 0 20px;
+            &:hover{
+                box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+                background-color: $white;
+            }
 
             img {
                 width: 100%;
                 height: 200px;
+                display: block;
 
             }
 
@@ -1035,6 +1088,7 @@ footer {
             p {
                 font-family: $roboto;
                 font-size: 0.8rem;
+               
             }
 
             h4,
@@ -1060,30 +1114,34 @@ footer {
         .listResult {
             margin: 0 auto;
 
-            .postSearch {
-                margin: 30px;
+            .item {
+                margin: unset;
             }
         }
 
         #containerResultSearch {
-            display: flex;
-            flex-direction: row-reverse;
+            display: grid;
+            grid-template-columns: 4fr 7fr;            
             position: relative;
 
-            #map {
-                width: 40%;
-                margin: 50px 20px 0 0;
+            .map {
+              
+             
                 position: sticky;
                 top: 0;
-                height: 500px;
+                right: 0;
+                left: 0;
+                height: 100vh;
 
             }
 
             .listResult {
-                width: 60%;
+             
 
-                display: flex;
-                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr) ;
+                grid-column-gap: 30px;
+                padding: 0 30px;
 
             }
         }

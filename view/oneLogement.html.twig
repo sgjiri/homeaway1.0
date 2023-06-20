@@ -22,11 +22,12 @@
 				<p>
 					nb de voyageurs - nb lit</p>
 			</article>
-      <div id="cancel">
-      <img src="{{asset('/img/iconCalendar.png')}}" alt="icon calendrier">
-      <p>Annulation gratuite 5j avt</p>
-      </div>
-			
+
+			<div id="cancel">
+				<img src="{{asset('/img/iconCalendar.png')}}" alt="icon calendrier">
+				<p>Annulation gratuite 5j avt</p>
+			</div>
+
 			<h4>A propos de ce logement :</h4>
 			<p>Logement T2 au premier étage en centre ville à côté de la Gare St Roch, à 3-4 min à pied. Le logement dispose d'une petite chambre avec un lit 2 places. Le salon est ouvert sur la cuisine et dispose d'un tout petit balcon donnant sur la rue. Plusieurs arrêts de tram et de bus sont à côté du logement, les plus proches étant Observatoire et Gare St Roch. Epicerie, Tabac, Carrefour accessible à 50 mètres. Le logement est ancien et parfait pour un passage à Montpellier. Ne convient pas aux enfants.</p>
 
@@ -90,5 +91,7 @@
 		</div>
 
 	</section>
+	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
 
+	<script src="{{asset('/js/calendar.js')}}"></script>
 {% endblock %}
