@@ -165,7 +165,18 @@
 			</div>
 		</div>
 	</section>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script>
 
 <script src="{{asset('/js/vendor.js')}}"></script>
 <script src="{{asset('/js/map.js')}}"></script>
 {% endblock %}
+
+
+    {# <?php if ($coordinates): ?>
+        <h1>Coordonnées géographiques</h1>
+        <p>Latitude: <?php echo $coordinates['latitude']; ?></p>
+        <p>Longitude: <?php echo $coordinates['longitude']; ?></p>
+    <?php else: ?>
+        <h1>Erreur de géocodage</h1>
+        <p>Impossible de récupérer les coordonnées pour cette adresse.</p>
+    <?php endif; ?> #}

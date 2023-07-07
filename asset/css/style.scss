@@ -371,7 +371,7 @@ header {
 
             .input {
                 width: 100%;
-                color: $white;
+                color: #000;
                 display: block;
                 border: none;
                 padding: 15px 20px;
@@ -739,6 +739,7 @@ header {
 /*oneLogements phone*/
 #oneLogement {
     padding-top: 50px;
+
     div {
         width: 90%;
         margin: 0 auto;
@@ -748,7 +749,7 @@ header {
 
             img {
                 width: 100%;
-                
+
             }
 
         }
@@ -762,20 +763,25 @@ header {
         }
 
     }
-   .fc {
+
+    .fc {
         font-size: 0.6rem;
         font-family: $roboto;
     }
+
     .fc-button-group {
-       width: 50px;
-       
+        width: 50px;
+
     }
+
     .fc-today-button {
         display: none;
     }
+
     .fc-prev-button {
         background-color: $blueDark;
     }
+
     .fc-next-button {
         background-color: $bluelight;
     }
@@ -985,7 +991,8 @@ footer {
         }
     }
 
-    .marker, .marker.is-expended {
+    .marker,
+    .marker.is-expended {
         z-index: 301;
 
         .leaflet-popup-content-wrapper .leaflet-popup-content {
@@ -1072,7 +1079,8 @@ footer {
             cursor: pointer;
             transition: box-shadow .3s;
             padding: 0 20px;
-            &:hover{
+
+            &:hover {
                 box-shadow: 0 0 10px rgba(0, 0, 0, .1);
                 background-color: $white;
             }
@@ -1088,7 +1096,7 @@ footer {
             p {
                 font-family: $roboto;
                 font-size: 0.8rem;
-               
+
             }
 
             h4,
@@ -1121,12 +1129,12 @@ footer {
 
         #containerResultSearch {
             display: grid;
-            grid-template-columns: 4fr 7fr;            
+            grid-template-columns: 4fr 7fr;
             position: relative;
 
             .map {
-              
-             
+
+
                 position: sticky;
                 top: 0;
                 right: 0;
@@ -1136,14 +1144,44 @@ footer {
             }
 
             .listResult {
-             
+
 
                 display: grid;
-                grid-template-columns: repeat(3, 1fr) ;
+                grid-template-columns: repeat(3, 1fr);
                 grid-column-gap: 30px;
                 padding: 0 30px;
 
             }
+        }
+    }
+}
+
+/* section formAddLogement phone*/
+
+#formAddLogement {
+    fieldset {
+        width: 90%;
+        margin: 50px auto 0 auto;
+        border: 1px solid $blueDark;
+
+        legend {
+            color: $blueDark;
+            font-family: $fontTitle;
+        }
+
+        form {
+            width: 90%;
+            margin: 0 auto;
+
+            #textField {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                height: 1000px;
+            }
+
+
+
         }
     }
 
