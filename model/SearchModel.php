@@ -15,18 +15,19 @@ $number_of_person = $_POST['number_of_person'];
 
 
 // Préparation et exécution de la requête
-$stmt = $this->getDb()->prepare("SELECT logement.*
-FROM logement
-INNER JOIN villes_france ON logement.city = villes_france.ville_nom
-LEFT JOIN book ON logement.id_logement = book.id_logement
-WHERE villes_france.ville_nom = ?
-AND logement.number_of_person >= ?
+$stmt = $this->getDb()->prepare("SELECT *
+FROM `logement`
+INNER JOIN `villes_france` ON `logement`.city = `villes_france`.ville_nom
+LEFT JOIN `book` ON `logement`.id_logement = `book`.id_logement
+WHERE `villes_france`.ville_nom = 'lyon'
+AND `logement`.number_of_person >= 2
 AND (
-    (book.start_date IS NULL AND book.end_date IS NULL)
-    OR (book.start_date > ? OR book.end_date < ?)
-    OR (book.start_date > ? AND book.end_date < ?)
-    OR (? > book.start_date AND ? < book.end_date)
+    (`book`.`start_date` IS NULL AND `book`.`end_date` IS NULL)
+    OR (`book`.`start_date` > '2023-07-23' OR `book`.`end_date` < '2023-07-28')
+    OR (`book`.`start_date` > '2023-07-21' AND `book`.`end_date` < '2023-07-28')
+    OR ('2023-07-25' > `book`.`start_date` AND '2023-07-23' < `book`.`end_date`)
 )");
+
 $stmt->execute([
     $city,
     $number_of_person,
