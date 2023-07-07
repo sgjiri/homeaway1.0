@@ -3,11 +3,11 @@
 class LogementModel extends Model
 {
 
-    public function addFlat($id_person, $title, $type, $surface, $description, $adress, $city, $price_by_night, $number_of_person, $number_of_beds, $parking, $wifi, $piscine, $animals, $kitchen, $garden, $tv, $climatisation, $camera, $home_textiles, $spa, $jacuzzi)
+    public function addFlat($id_person, $title, $type, $surface, $description, $adress, $price_by_night, $number_of_person, $number_of_beds, $parking, $wifi, $piscine, $animals, $kitchen, $garden, $tv, $climatisation, $camera, $home_textiles, $spa, $jacuzzi)
     {
 
 
-        $req = $this->getDb()->prepare('INSERT INTO `logement` (`id_person`, `title`, `type`, `surface`, `description`, `adress`, `city`, `price_by_night`, `number_of_person`, `number_of_beds`, `parking`, `wifi`, `piscine`, `animals`, `kitchen`, `garden`, `tv`, `climatisation`, `camera`, `home_textiles`, `spa`, `jacuzzi`) VALUES (:id_person, :title,:type, :surface, :description, :adress, :city, :price_by_night, :number_of_person, :number_of_beds, :parking, :wifi, :piscine, :animals, :kitchen, :garden, :tv, :climatisation, :camera, :home_textiles, :spa, :jacuzzi)');
+        $req = $this->getDb()->prepare('INSERT INTO `logement` (`id_person`, `title`, `type`, `surface`, `description`, `adress`, `price_by_night`, `number_of_person`, `number_of_beds`, `parking`, `wifi`, `piscine`, `animals`, `kitchen`, `garden`, `tv`, `climatisation`, `camera`, `home_textiles`, `spa`, `jacuzzi`) VALUES (:id_person, :title,:type, :surface, :description, :adress, :price_by_night, :number_of_person, :number_of_beds, :parking, :wifi, :piscine, :animals, :kitchen, :garden, :tv, :climatisation, :camera, :home_textiles, :spa, :jacuzzi)');
 
 
 
@@ -17,7 +17,7 @@ class LogementModel extends Model
         $req->bindParam(":surface", $surface, PDO::PARAM_INT);
         $req->bindParam(":description", $description, PDO::PARAM_STR);
         $req->bindParam(":adress", $adress, PDO::PARAM_STR);
-        $req->bindParam(":city", $city, PDO::PARAM_STR);
+        // $req->bindParam(":city", $city, PDO::PARAM_STR);
         $req->bindParam(":price_by_night", $price_by_night, PDO::PARAM_INT);
         $req->bindParam(":number_of_person", $number_of_person, PDO::PARAM_INT);
         $req->bindParam(":number_of_beds", $number_of_beds, PDO::PARAM_INT);

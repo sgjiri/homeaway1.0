@@ -24,7 +24,7 @@ class LogementController extends Controller
                     $surface = $_POST['surface'];
                     $description = $_POST['description'];
                     $adress = $_POST['adress'];
-                    $city = $_POST['city'];
+                    // $city = $_POST['city'];
                     $price_by_night = $_POST['price_by_night'];
                     $number_of_person = $_POST['number_of_person'];
                     $number_of_beds = $_POST['number_of_beds'];
@@ -43,7 +43,7 @@ class LogementController extends Controller
 
 
                     $logementmodel = new LogementModel();
-                    $logementmodel->addFlat($id_person, $title, $type, $surface, $description, $adress, $city, $price_by_night, $number_of_person, $number_of_beds, $parking, $wifi, $piscine, $animals, $kitchen, $garden, $tv, $climatisation, $camera, $home_textiles, $spa, $jacuzzi);
+                    $logementmodel->addFlat($id_person, $title, $type, $surface, $description, $adress, $price_by_night, $number_of_person, $number_of_beds, $parking, $wifi, $piscine, $animals, $kitchen, $garden, $tv, $climatisation, $camera, $home_textiles, $spa, $jacuzzi);
                     $twig = $this->getTwig();
                      echo $twig->render('addLogement.html.twig', []);
                 } else {

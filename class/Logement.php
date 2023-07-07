@@ -8,7 +8,11 @@ class Logement
     private $surface;
     private $description;
     private $adress;
+    private $adressCode;
     private $city;
+    private $location;
+    private $latitude;
+    private $longitude;
     private $price_by_night;
     private $number_of_person;
     private $number_of_beds;
@@ -81,10 +85,27 @@ class Logement
     {
         return $this->adress;
     }
+    public function getAdressCode()
+    {
+        return $this->adressCode;
+    }
 
     public function getCity()
     {
         return $this->city;
+    }
+    public function getLocation()
+    {
+        return $this->location;
+    }
+    public function getLatitude()
+    {
+        return $this->latitude;
+    }
+
+    public function getLongitude()
+    {
+        return $this->longitude;
     }
 
     public function getPrice_by_night()
@@ -138,7 +159,7 @@ class Logement
     {
         return $this->climatisation;
     }
- 
+
     public function getCamera()
     {
         return $this->camera;
@@ -197,9 +218,30 @@ class Logement
         $this->adress = $address;
     }
 
+    public function setAdressCode(INT $adressCode)
+    {
+        $this->adressCode = $adressCode;
+    }
+
     public function setCity(STRING $city)
     {
         $this->city = $city;
+    }
+    public function setLocation(STRING $location)
+    {
+        $this->location = $location;
+    }
+
+    public function setLatitude(int $latitude)
+    {
+        $this->latitude = $latitude;
+
+    }
+
+    public function setLongitude(int $longitude)
+    {
+        $this->longitude = $longitude;
+
     }
 
     public function setPrice_by_night(int $price_by_night)
@@ -253,7 +295,7 @@ class Logement
         $this->climatisation = $climatisation;
     }
 
-   
+
     public function setCamera(BOOL $camera)
     {
         $this->camera = $camera;
@@ -273,4 +315,7 @@ class Logement
     {
         $this->jacuzzi = $jacuzzi;
     }
+
+   
+    
 }
