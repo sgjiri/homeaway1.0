@@ -35,13 +35,11 @@ class City
     {
         return $this->id_ville ;
     }
-
    
     public function getVille_nom()
     {
         return $this->ville_nom;
     }
-
     
 
     public function getImg()
@@ -63,14 +61,12 @@ class City
     {
         $this->id_ville = $id_ville;
     }
-
   
     public function setVille_nom(string $ville_nom)
     {
         $this->ville_nom = $ville_nom;
     }
   
-
     public function setImg(string $img)
     {
         $this->img = $img;
