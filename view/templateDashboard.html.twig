@@ -75,41 +75,46 @@
 				</nav>
 				<div class='contentPage' id='contentInfoPerso'>
 					<div class='card cardInfoPerso'>
-						<div>
-							<h3>Nom légal</h3>
-							<p>Nom de bdd</p>
+						<div class='contentFixCard contentFixCardInfoPerso'>
+							<div>
+								<h3>Nom légal</h3>
+								<p>Nom de bdd</p>
 
+							</div>
+
+							<figure class="figureModifier">
+								<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
+							</figure>
 						</div>
 
-						<figure class="figureModifier">
-							<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
-						</figure>
-
-					</div>
-					<div class='input'>
-
-						<input type="text" class'changetext' placeholder="Votre nom...">
-						<input type="text" class'changetext' placeholder="Votre prenom...">
-						<input type="submit" name="valider" class="valider" value="">
-
-					</div>
-					<div class='card cardInfoPerso'>
-						<div>
-							<h3>Adresse mail</h3>
-							<p>Mail de bdd</p>
-
+						<div class='input'>
+							<input type="text" class'changetext' placeholder="Votre nom...">
+							<input type="text" class'changetext' placeholder="Votre prenom...">
+							<input type="submit" name="valider" class="valider" value="">
 						</div>
-
-						<figure class="figureModifier">
-							<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
-						</figure>
 					</div>
-					<div class='input'>
 
-						<input type="text" class'changetext' placeholder="Votre mail...">
-						<input type="submit" name="valider" class="valider" value="">
-					</div>
 					<div class='card cardInfoPerso'>
+						<div class='contentFixCard contentFixCardInfoPerso'>
+							<div>
+								<h3>Adresse mail</h3>
+								<p>Mail de bdd</p>
+
+							</div>
+
+							<figure class="figureModifier">
+								<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
+							</figure>
+						</div>
+						<div class='input'>
+
+							<input type="text" class'changetext' placeholder="Votre mail...">
+							<input type="submit" name="valider" class="valider" value="">
+						</div>
+					</div>
+
+					<div class='card cardInfoPerso'>
+					<div class='contentFixCard contentFixCardInfoPerso'>
 						<div>
 							<h3>Numero de telophone</h3>
 							<p>Tel de bdd</p>
@@ -119,13 +124,16 @@
 						<figure class="figureModifier">
 							<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
 						</figure>
-					</div>
-					<div class='input'>
+						</div>
+						<div class='input'>
 
-						<input type="text" class'changetext' placeholder="Votre numero de telephone...">
-						<input type="submit" name="valider" class="valider" value="">
+							<input type="text" class'changetext' placeholder="Votre numero de telephone...">
+							<input type="submit" name="valider" class="valider" value="">
+						</div>
 					</div>
+
 					<div class='card cardInfoPerso'>
+					<div class='contentFixCard contentFixCardInfoPerso'>
 						<div>
 							<h3>Adresse</h3>
 							<p>Adresse de bdd</p>
@@ -133,14 +141,16 @@
 						<figure class="figureModifier">
 							<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
 						</figure>
+						</div>
+						<div class='input'>
+							<input type="text" class'changetext' placeholder="Votre rue">
+							<input type="text" class'changetext' placeholder="N° de batiment">
+							<input type="text" class'changetext' placeholder="code postale">
+							<input type="text" class'changetext' placeholder="ville">
+							<input type="submit" name="valider" class="valider" value="">
+						</div>
 					</div>
-					<div class='input'>
-						<input type="text" class'changetext' placeholder="Votre rue">
-						<input type="text" class'changetext' placeholder="N° de batiment">
-						<input type="text" class'changetext' placeholder="code postale">
-						<input type="text" class'changetext' placeholder="ville">
-						<input type="submit" name="valider" class="valider" value="">
-					</div>
+
 				</div>
 				<div class='contentPage'>
 					<h1>Historique des réservations</h1>
@@ -158,8 +168,9 @@
 						</div>
 						<div class='cardHistoriqueContentRight'>
 							<div class='oneRightContent'>
-								<h2> Nom de logement de la bdd</h2>
-							</div>				
+								<h2>
+									Nom de logement de la bdd</h2>
+							</div>
 							<div class='oneRightContent'>
 								<figure class="iconRightContent">
 									<img src="{{ asset('/img/calendar.png') }}" alt="">
