@@ -483,8 +483,8 @@ header .login-form .group label .icon:after {
 }
 #destination .destinationContainer .imgDestination div a img {
   border-radius: 5px;
-  width: 200px;
-  height: 168px;
+  width: 250px;
+  height: 208px;
   margin: 25px auto;
   display: block;
 }
@@ -494,10 +494,11 @@ header .login-form .group label .icon:after {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  color: #fff;
+  color: #000;
   font-family: "Righteous", cursive;
   font-size: 1.2rem;
-  -webkit-text-stroke: 0.5px #000;
+  -webkit-text-stroke: 1px #fff;
+  text-transform: uppercase;
 }
 
 /* section destination tablet desketop*/

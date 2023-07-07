@@ -637,8 +637,8 @@ header {
                 a {
                     img {
                         border-radius: 5px;
-                        width: 200px;
-                        height: 168px;
+                        width: 250px;
+                        height: 208px;
                         margin: 25px auto;
                         display: block;
 
@@ -652,10 +652,12 @@ header {
                     bottom: 20px;
                     left: 50%;
                     transform: translateX(-50%);
-                    color: $white;
+                    color: #000;
                     font-family: $fontTitle;
                     font-size: 1.2rem;
-                    -webkit-text-stroke: .5px #000;
+                    -webkit-text-stroke: 1px $white;
+                    text-transform: uppercase;
+                    
 
                 }
             }
