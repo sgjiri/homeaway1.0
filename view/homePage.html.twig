@@ -78,10 +78,44 @@
 				</h2>
 			</article>
 			<div class="imgDestination">
-				<a href=""><img src="{{asset('/img/Peniche.png')}}" alt="Péniche"></a>
-				<a href=""><img src="{{asset('/img/Tipi.png')}}" alt="Tipi"></a>
-				<a href=""><img src="{{asset('/img/Yourte.png')}}" alt="Yourte"></a>
-				<a href=""><img src="{{asset('/img/Cabane.png')}}" alt="Cabane"></a>
+
+				<div>
+					<a href="{{ path('baseLogement') ~ images.id_logement }}">
+
+						<img src="{{ asset('/img/' ~ images.thumbnail) }}" alt="{{images.type}}">
+					</a>
+
+					<h2>{{images.type}}</h2>
+
+				</div>
+
+				<div>
+					<a href="{{ path('baseLogement') ~ imagesDome.id_logement }}">
+						<img src="{{ asset('/img/' ~ imagesDome.thumbnail) }}" alt="{{imagesDome.type}}">
+					</a>
+
+					<h2>{{imagesDome.type}}</h2>
+
+				</div>
+
+				<div>
+					<a href="{{ path('baseLogement') ~ imagesPeniche.id_logement }}">
+						<img src="{{ asset('/img/' ~ imagesPeniche.thumbnail) }}" alt="{{imagesPeniche.type}}">
+					</a>
+
+					<h2>{{imagesPeniche.type}}</h2>
+
+				</div>
+
+				<div>
+					<a href="{{ path('baseLogement') ~ imagesYourte.id_logement }}">
+					<img src="{{ asset('/img/' ~ imagesYourte.thumbnail) }}" alt="{{imagesYourte.type}}">
+					</a>
+
+					<h2>{{imagesYourte.type}}</h2>
+
+				</div>
+
 			</div>
 		</div>
 	</section>
