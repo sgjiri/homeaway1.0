@@ -273,7 +273,7 @@ header .login-form .group .button {
 }
 header .login-form .group .input {
   width: 100%;
-  color: #fff;
+  color: #000;
   display: block;
   border: none;
   padding: 15px 20px;
@@ -726,18 +726,22 @@ footer #secondContainerFooter a {
 #resultResearch .marker:hover::after {
   border-top-color: #017C8E;
 }
-#resultResearch .marker, #resultResearch .marker.is-expended {
+#resultResearch .marker,
+#resultResearch .marker.is-expended {
   z-index: 301;
 }
-#resultResearch .marker .leaflet-popup-content-wrapper .leaflet-popup-content, #resultResearch .marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content {
+#resultResearch .marker .leaflet-popup-content-wrapper .leaflet-popup-content,
+#resultResearch .marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content {
   text-align: left;
 }
-#resultResearch .marker .leaflet-popup-content-wrapper .leaflet-popup-content img, #resultResearch .marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content img {
+#resultResearch .marker .leaflet-popup-content-wrapper .leaflet-popup-content img,
+#resultResearch .marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content img {
   width: 220px;
   height: 200px;
 }
 #resultResearch .marker .leaflet-popup-content-wrapper .leaflet-popup-content h4,
-#resultResearch .marker .leaflet-popup-content-wrapper .leaflet-popup-content p, #resultResearch .marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content h4,
+#resultResearch .marker .leaflet-popup-content-wrapper .leaflet-popup-content p,
+#resultResearch .marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content h4,
 #resultResearch .marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content p {
   font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
@@ -835,4 +839,24 @@ footer #secondContainerFooter a {
     grid-column-gap: 30px;
     padding: 0 30px;
   }
+}
+/* section formAddLogement phone*/
+#formAddLogement fieldset {
+  width: 90%;
+  margin: 50px auto 0 auto;
+  border: 1px solid #017C8E;
+}
+#formAddLogement fieldset legend {
+  color: #017C8E;
+  font-family: "Righteous", cursive;
+}
+#formAddLogement fieldset form {
+  width: 90%;
+  margin: 0 auto;
+}
+#formAddLogement fieldset form #textField {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 1000px;
 }/*# sourceMappingURL=style.css.map */

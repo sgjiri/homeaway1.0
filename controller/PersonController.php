@@ -15,7 +15,8 @@ class PersonController extends Controller
         //  vérifie si le tableau $_POST est vide, si oui affiche la page login
 
         if (!$_POST) {
-            echo self::getRender('homePage.html.twig', []);
+             $twig = $this->getTwig();
+            echo $twig->render('homePage.html.twig', []);
         } else {
 
             // si $post non vide recuperation des valeurs des champs dans le formulaire a travers variable $mail et $password
@@ -47,7 +48,8 @@ class PersonController extends Controller
             } else {
                 // si password non ok affiche message erreur avec redirection 
                 $message = "mail ou mot de passe incorrect !";
-                echo self::getRender('homepage.html.twig', []);
+                 $twig = $this->getTwig();
+            echo $twig->render('homepage.html.twig', []);
             }
         }
     }
@@ -96,7 +98,8 @@ class PersonController extends Controller
             // si formulaire non soumis cad si method $server...... non abouti cad false affichage du template header avec getrender 
         } else {
 
-            echo self::getRender('homepage.html.twig', []);
+             $twig = $this->getTwig();
+            echo $twig->render('homepage.html.twig', []);
         }
     }
 
