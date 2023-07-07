@@ -63,6 +63,7 @@ header {
 
         #menuBurger {
             background-color: $blueDark;
+            border-top: 1px solid $white;
 
             #navConnectPhone,
             #navDisconnectPhone {
@@ -98,6 +99,7 @@ header {
 
         #searchPhone {
             background-color: $bluelight;
+            border-top: 1px solid $white;
         }
 
     }
@@ -1172,19 +1174,64 @@ footer {
         form {
             width: 90%;
             margin: 0 auto;
+            font-family: $roboto;
 
             #textField {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
                 height: 1000px;
+                input[type=text], input[type=number], select {
+                    padding: 10px 0;
+                }
             }
-
-
-
+            #checkbox {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                height: 500px;
+                div {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+            input[type=submit] {
+                width: 100%;
+                padding: 20px 0;
+                background: linear-gradient(90deg, rgba(1, 124, 142, 1) 50%, rgba(1, 148, 156, 1) 50%);
+                color: $white;
+                font-family: $fontTitle;
+                font-size: 1.2rem;
+                margin: 20px 0;
+                border-radius: 5px;
+            }
         }
     }
-
-
-
 }
+
+/* section formAddLogement phone*/
+
+@media screen and (min-width: 800px) {
+    #formAddLogement {
+        fieldset {
+           legend{
+            font-size: 1.2rem;
+           }
+            form {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content:space-between ;
+    
+                #textField ,   #checkbox  {
+                   width: 45%;                  
+                }
+                #checkbox {
+                    
+                    height: 1000px;
+                }
+              
+                }
+           
+            }
+        }
+    }

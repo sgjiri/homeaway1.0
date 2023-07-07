@@ -46,6 +46,7 @@ header #burgerPhone #searchPhone .iconMenuPhone {
 }
 header #burgerPhone #menuBurger {
   background-color: #017C8E;
+  border-top: 1px solid #fff;
 }
 header #burgerPhone #menuBurger #navConnectPhone,
 header #burgerPhone #menuBurger #navDisconnectPhone {
@@ -73,6 +74,7 @@ header #burgerPhone #menuBurger #navConnectPhone.loginActive ul li a {
 }
 header #burgerPhone #searchPhone {
   background-color: #01949C;
+  border-top: 1px solid #fff;
 }
 header .clearfix:after {
   content: "";
@@ -853,10 +855,52 @@ footer #secondContainerFooter a {
 #formAddLogement fieldset form {
   width: 90%;
   margin: 0 auto;
+  font-family: "Roboto", sans-serif;
 }
 #formAddLogement fieldset form #textField {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 1000px;
+}
+#formAddLogement fieldset form #textField input[type=text], #formAddLogement fieldset form #textField input[type=number], #formAddLogement fieldset form #textField select {
+  padding: 10px 0;
+}
+#formAddLogement fieldset form #checkbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 500px;
+}
+#formAddLogement fieldset form #checkbox div {
+  display: flex;
+  justify-content: space-between;
+}
+#formAddLogement fieldset form input[type=submit] {
+  width: 100%;
+  padding: 20px 0;
+  background: linear-gradient(90deg, rgb(1, 124, 142) 50%, rgb(1, 148, 156) 50%);
+  color: #fff;
+  font-family: "Righteous", cursive;
+  font-size: 1.2rem;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+/* section formAddLogement phone*/
+@media screen and (min-width: 800px) {
+  #formAddLogement fieldset legend {
+    font-size: 1.2rem;
+  }
+  #formAddLogement fieldset form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #formAddLogement fieldset form #textField, #formAddLogement fieldset form #checkbox {
+    width: 45%;
+  }
+  #formAddLogement fieldset form #checkbox {
+    height: 1000px;
+  }
 }/*# sourceMappingURL=style.css.map */
