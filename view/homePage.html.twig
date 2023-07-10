@@ -10,7 +10,7 @@
 			<img src="{{asset('/img/heroMontainPhone.jpg')}}" alt=""></figure>
 		<h1>Détendez-vous et explorez !</h1>
 		<div class="searchBoxDesktop">
-			<form action="{{path('search')}}" class="searchformDesktop">
+			<form action="{{path('search')}}" method="POST" class="searchformDesktop">
 				<div class="searchFormBox">
 					<label for="city">Destination</label>
 					<input type="text" name="city" id="city">
@@ -28,7 +28,7 @@
 					<input type="number" name="number_of_person" id="number_of_person">
 				</div>
 				<div id="buttonSearch">
-					<input type="submit" value="Rechercher">
+					<input type="submit" name="submit" id="submit" value="Rechercher">
 				</div>
 			</form>
 		</div>

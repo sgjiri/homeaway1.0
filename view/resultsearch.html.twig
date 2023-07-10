@@ -124,44 +124,18 @@
 			<div class="map" id="map"></div>
 
 			<div class="listResult">
-				{# {% for logement in logements %} #}
+				{% for result in logementDispo %}
 				<article class="item js-marker" data-lat="43.57639" data-lng="3.96309" data-price="58">
 					<img src="{{asset('/img/logement/appartMontpellier1.1.webp')}}" alt="appartement montpelier">
-					<h4>Appartement &nbsp;-&nbsp;Montpellier</h4>
+					<h4>{{result.title}} &nbsp;-&nbsp;Montpellier</h4>
 					<p>
 						Début description</p>
 					<p>
 						<span>58€
 						</span>par nuit - &nbsp; 294€ au total</p>
 				</article>
-				<article class="item js-marker" data-lat="43.58639" data-lng="3.98309" data-price="58">
-					<img src="{{asset('/img/logement/appartMontpellier1.1.webp')}}" alt="appartement montpelier">
-					<h4>Appartement &nbsp;-&nbsp;Montpellier</h4>
-					<p>
-						Début description</p>
-					<p>
-						<span>58€
-						</span>par nuit - &nbsp; 294€ au total</p>
-				</article>
-				<article class="item">
-					<img src="{{asset('/img/logement/appartMontpellier1.1.webp')}}" alt="appartement montpelier">
-					<h4>Appartement &nbsp;-&nbsp;Montpellier</h4>
-					<p>
-						Début description</p>
-					<p>
-						<span>58€
-						</span>par nuit - &nbsp; 294€ au total</p>
-				</article>
-				<article class="item">
-					<img src="{{asset('/img/logement/appartMontpellier1.1.webp')}}" alt="appartement montpelier">
-					<h4>Appartement &nbsp;-&nbsp;Montpellier</h4>
-					<p>
-						Début description</p>
-					<p>
-						<span>58€
-						</span>par nuit - &nbsp; 294€ au total</p>
-				</article>
-				{# {% endfor %} #}
+				
+				{% endfor %}
 			</div>
 		</div>
 	</section>
