@@ -14,6 +14,8 @@ class Logement
     private $latitude;
     private $longitude;
     private $price_by_night;
+    private $number_of_days;
+    private $total_price;
     private $number_of_person;
     private $number_of_beds;
     private $parking;
@@ -111,6 +113,14 @@ class Logement
     public function getPrice_by_night()
     {
         return $this->price_by_night;
+    }
+    public function getNumberOfDays()
+    {
+        return $this->number_of_days;
+    }
+    public function getTotalPrice()
+    {
+        return $this->total_price;
     }
 
     public function getNumber_of_person()
@@ -232,21 +242,29 @@ class Logement
         $this->location = $location;
     }
 
-    public function setLatitude(int $latitude)
+    public function setLatitude(STRING $latitude)
     {
         $this->latitude = $latitude;
-
     }
 
-    public function setLongitude(int $longitude)
+    public function setLongitude(STRING $longitude)
     {
         $this->longitude = $longitude;
-
     }
 
     public function setPrice_by_night(int $price_by_night)
     {
         $this->price_by_night = $price_by_night;
+    }
+
+    public function setNumberOfDays(int $number_of_days)
+    {
+        $this->number_of_days = $number_of_days;
+    }
+
+    public function setTotalPrice(int $total_price)
+    {
+        $this->total_price = $total_price;
     }
 
     public function setNumber_of_person(int  $number_of_person)
@@ -316,6 +334,5 @@ class Logement
         $this->jacuzzi = $jacuzzi;
     }
 
-   
     
 }
