@@ -762,8 +762,39 @@ header {
         p {
             width: 90%;
             display: block;
-            margin: 0 auto;
+            margin: 10px auto;
             font-family: $roboto;
+        }
+        #cancel {
+            display: flex;
+            justify-content: space-between;
+             margin: 20px 5%;
+             img{
+                width: 25px;
+                height: 25px;
+             }
+             p {
+                width: 70%;
+             }
+        }
+        #about {
+            p{
+                text-align: justify;
+            }
+        }
+        #boxFilter {
+            margin: 50px 0;
+        }
+        .convenience {
+            display: flex;
+            img{
+                width: 25px;
+                height: 25px;
+             }
+             p {
+                width: 70%;
+             }
+
         }
 
     }
