@@ -12,7 +12,6 @@ class SearchController extends Controller{
     
                 $model = new SearchModel;
                 $datas = $model->getSearch($city, $start_date, $end_date, $number_of_person);
-                var_dump($datas[0]->getPrice_by_night());
                 $totalPrices =[];
                 foreach ($datas as $data) {
                     $logement = $data; // Récupérer l'objet Logement depuis $data
@@ -23,10 +22,11 @@ class SearchController extends Controller{
                     $number_of_days = $start->diff($end)->days;
                     array_push($totalPrices, $price_by_night * $number_of_days);
                 }
-                var_dump($totalPrices);
+                var_dump($number_of_days);
+
             }
             $twig = $this->getTwig();
-            echo $twig->render('resultsearch.html.twig', ['logementDispo' => $datas, 'totalPrices' => $totalPrices]);
+            echo $twig->render('resultsearch.html.twig', ['logementDispo' => $datas, 'totalPrices' => $totalPrices, 'nbDays' => $number_of_days]);
     
             if (empty($datas)) {
                 echo "Aucun logement ne correspond à votre recherche.";
