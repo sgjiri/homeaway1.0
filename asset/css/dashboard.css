@@ -193,7 +193,6 @@
   position: relative;
   z-index: 100;
   transition: all 0.5s ease-in;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-top: 50px;
 }
 .content .contentPage .card:first-child {
@@ -244,15 +243,20 @@
 }
 .content .contentPage .card .input {
   background-color: #017c8e;
-  transform: translateY(-90px);
+  transform: translateY(-44px);
   transition: all 0.5s ease-in;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-  height: 0px;
+  height: 90px;
   padding-left: 20px;
+}
+@media screen and (max-width: 800px) {
+  .content .contentPage .card .input {
+    flex-direction: column;
+  }
 }
 .content .contentPage .card .input input {
   font-size: 1.5em;
@@ -276,6 +280,25 @@
 .content .contentPage .card .input input:first-child {
   margin-left: 0;
 }
+.content .contentPage .card .input input:nth-child(4) {
+  margin-left: 0;
+}
+@media screen and (max-width: 1100px) {
+  .content .contentPage .card .input input {
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 950px) {
+  .content .contentPage .card .input input {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 950px) {
+  .content .contentPage .card .input input {
+    height: 38%;
+    margin-bottom: 10px;
+  }
+}
 .content .contentPage .card .input .valider {
   background: url(../img/valider.png) center center no-repeat;
   border-radius: 50%;
@@ -292,8 +315,37 @@
   transform: translateY(0px);
   height: 90px;
 }
+.content .contentPage .card .input2ligne {
+  height: 0px;
+  transform: translateY(-132px);
+  height: 129px;
+}
+.content .contentPage .card .input2ligne input {
+  height: 25%;
+  margin: 20px;
+}
+.content .contentPage .card .input2ligne.activeInput {
+  height: 180px;
+}
+.content .contentPage .cardInfoPerso {
+  height: 130px;
+}
+.content .contentPage .cardInfoPerso.active {
+  height: 220px;
+  box-shadow: none;
+}
+.content .contentPage .card2ligneInfoPerso.active {
+  height: 300px;
+}
+.content .contentPage.contentPageActive {
+  display: block;
+}
 .content .contentPage .cardHistoric {
   display: flex;
+  flex-direction: row;
+  background-color: #017c8e;
+  height: 330px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .content .contentPage .cardHistoric .cardHistoriqueContentLeft {
   width: 40%;
@@ -301,7 +353,7 @@
 .content .contentPage .cardHistoric .cardHistoriqueContentLeft figure {
   height: 250px;
   width: 400px;
-  margin: 20px auto;
+  margin: 40px auto;
 }
 .content .contentPage .cardHistoric .cardHistoriqueContentLeft figure img {
   width: 100%;
@@ -357,15 +409,4 @@
 .content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent button:hover span {
   color: #017c8e;
   transform: scale(1.1);
-}
-.content .contentPage .cardInfoPerso {
-  background-color: none;
-  height: 130px;
-}
-.content .contentPage .cardInfoPerso.active {
-  height: 220px;
-  box-shadow: none;
-}
-.content .contentPage.contentPageActive {
-  display: block;
 }/*# sourceMappingURL=dashboard.css.map */
