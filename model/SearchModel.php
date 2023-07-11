@@ -28,13 +28,26 @@ class SearchModel extends Model
         // Récupérer les résultats de la requête
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Utilisez les résultats comme vous le souhaitez (par exemple, affichage des résultats)
+        
         foreach ($results as $result) {
-            $logementDispo[] = new Logement($result);
-            // Afficher les autres informations du logement
+           
+            $logementFlat = new Logement($result);
+
+            $price_by_night = $logementFlat->getPrice_by_night();
+            $startDate = new DateTime($start_date);
+            $endDate = new DateTime($end_date);
+            $number_of_days = $startDate->diff($endDate)->days;
+            $total_price = $price_by_night * $number_of_days;
+            
+            // Ajouter le prix total au logement
+            $logementFlat->setTotalPrice($total_price);
+
+            $logementDispo[] = $logementFlat;
+
+            
         }
 
-        $stmt->closeCursor();
+        
         return $logementDispo;
     }
 }
