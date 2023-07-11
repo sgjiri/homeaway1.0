@@ -34,9 +34,9 @@ class SearchController extends Controller{
             if (empty($datas)) {
                 echo "Aucun logement ne correspond à votre recherche.";
             }
-        }
+        
     }
-    
+    }
 // public function searchLogement (){
 //     if(isset($_POST['submit'])) {
 //         $city = $_POST['city'];

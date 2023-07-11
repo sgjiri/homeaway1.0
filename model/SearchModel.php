@@ -39,6 +39,7 @@ class SearchModel extends Model
             $number_of_days = $startDate->diff($endDate)->days;
             $total_price = $price_by_night * $number_of_days;
             
+            var_dump($number_of_days);
             // Ajouter le prix total au logement
             $logementFlat->setTotalPrice($total_price);
 

@@ -127,7 +127,7 @@
 				{% if logementDispo is empty %}
 					<p>Aucun logement ne correspond à votre recherche.</p>
 				{% else %}
-					{% for result in logementDispo %}
+					{# {% for result in logementDispo %}
 						<article class="item js-marker" data-lat="{{ result.latitude }}" data-lng="{{ result.longitude }}" data-price="{{ result.price_by_night }}">
 							<img src="{{ asset('/img/logement/appartMontpellier1.1.webp') }}" alt="appartement montpelier">
 							<h4>{{ result.title }}
@@ -139,7 +139,24 @@
 								{{ result.price_by_night * result.number_of_days }}€ au total
 							</p>
 						</article>
-					{% endfor %}
+					{% endfor %} #}
+					{% for result in logementDispo %}
+    <article class="item js-marker" data-lat="{{ result.latitude }}" data-lng="{{ result.longitude }}" data-price="{{ result.price_by_night }}">
+        <img src="{{ asset('/img/logement/appartMontpellier1.1.webp') }}" alt="appartement montpelier">
+        <h4>{{ result.title }}
+            &nbsp;-&nbsp;{{ result.city }}</h4>
+        <p>{{ result.description }}</p>
+        <p>
+            <span>{{ result.price_by_night }}€</span>
+            par nuit - &nbsp;
+            {{ result.total_price }}€ au total
+        </p>
+        <p>
+            Nombre de jours : {{ result.number_of_days }}
+        </p>
+    </article>
+{% endfor %}
+
 				{% endif %}
 			</div>
 
