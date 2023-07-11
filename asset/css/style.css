@@ -538,49 +538,49 @@ header .login-form .group label .icon:after {
 #oneLogement {
   padding-top: 50px;
 }
-#oneLogement div {
+#oneLogement #firstPartOne {
   width: 90%;
   margin: 0 auto;
 }
-#oneLogement div #list-slide {
+#oneLogement #firstPartOne #list-slide {
   width: 100%;
 }
-#oneLogement div #list-slide img {
+#oneLogement #firstPartOne #list-slide img {
   width: 100%;
 }
-#oneLogement div h4,
-#oneLogement div p {
+#oneLogement #firstPartOne h4,
+#oneLogement #firstPartOne p {
   width: 90%;
   display: block;
   margin: 10px auto;
   font-family: "Roboto", sans-serif;
 }
-#oneLogement div #cancel {
+#oneLogement #firstPartOne #cancel {
   display: flex;
   justify-content: space-between;
   margin: 20px 5%;
 }
-#oneLogement div #cancel img {
+#oneLogement #firstPartOne #cancel img {
   width: 25px;
   height: 25px;
 }
-#oneLogement div #cancel p {
+#oneLogement #firstPartOne #cancel p {
   width: 70%;
 }
-#oneLogement div #about p {
+#oneLogement #firstPartOne #about p {
   text-align: justify;
 }
-#oneLogement div #boxFilter {
+#oneLogement #firstPartOne #boxFilter {
   margin: 50px 0;
 }
-#oneLogement div .convenience {
+#oneLogement #firstPartOne .convenience {
   display: flex;
 }
-#oneLogement div .convenience img {
+#oneLogement #firstPartOne .convenience img {
   width: 25px;
   height: 25px;
 }
-#oneLogement div .convenience p {
+#oneLogement #firstPartOne .convenience p {
   width: 70%;
 }
 #oneLogement .fc {
@@ -598,6 +598,9 @@ header .login-form .group label .icon:after {
 }
 #oneLogement .fc-next-button {
   background-color: #01949C;
+}
+#oneLogement #locationOne #map {
+  height: 400px;
 }
 
 /*footer phone*/
@@ -704,7 +707,7 @@ footer #secondContainerFooter a {
 }
 
 /*resultsearch phone*/
-#resultResearch .marker.leaflet-popup {
+.marker.leaflet-popup {
   margin-bottom: 16px;
   cursor: pointer;
   font-size: 1rem;
@@ -715,7 +718,7 @@ footer #secondContainerFooter a {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   background-color: #fff;
 }
-#resultResearch .marker.leaflet-popup::after {
+.marker.leaflet-popup::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -727,56 +730,65 @@ footer #secondContainerFooter a {
   border-right: 8px solid transparent;
   border-top: 8px solid #fff;
 }
-#resultResearch .marker.leaflet-popup .leaflet-popup-content-wrapper {
+.marker.leaflet-popup .leaflet-popup-content-wrapper {
   background: transparent;
   color: inherit;
   box-shadow: none;
   text-align: inherit;
 }
-#resultResearch .marker.leaflet-popup .leaflet-popup-tip-container {
+.marker.leaflet-popup .leaflet-popup-tip-container {
   display: none;
 }
-#resultResearch .marker .leaflet-popup-content {
+
+.marker .leaflet-popup-content {
   text-align: inherit;
   color: inherit;
   margin: 0;
 }
-#resultResearch .marker.is-active {
+
+.marker.is-active {
   background-color: #017C8E;
   color: #fff;
   z-index: 300;
 }
-#resultResearch .marker.is-active::after {
+.marker.is-active::after {
   border-top-color: #017C8E;
 }
-#resultResearch .marker:hover {
+
+.marker:hover {
   background-color: #017C8E;
   color: #fff;
   z-index: 300;
 }
-#resultResearch .marker:hover::after {
+.marker:hover::after {
   border-top-color: #017C8E;
 }
-#resultResearch .marker,
-#resultResearch .marker.is-expended {
+
+.marker,
+.marker.is-expended {
   z-index: 301;
 }
-#resultResearch .marker .leaflet-popup-content-wrapper .leaflet-popup-content,
-#resultResearch .marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content {
+.marker .leaflet-popup-content-wrapper .leaflet-popup-content,
+.marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content {
   text-align: left;
 }
-#resultResearch .marker .leaflet-popup-content-wrapper .leaflet-popup-content img,
-#resultResearch .marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content img {
+.marker .leaflet-popup-content-wrapper .leaflet-popup-content img,
+.marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content img {
   width: 220px;
   height: 200px;
 }
-#resultResearch .marker .leaflet-popup-content-wrapper .leaflet-popup-content h4,
-#resultResearch .marker .leaflet-popup-content-wrapper .leaflet-popup-content p,
-#resultResearch .marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content h4,
-#resultResearch .marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content p {
+.marker .leaflet-popup-content-wrapper .leaflet-popup-content h4,
+.marker .leaflet-popup-content-wrapper .leaflet-popup-content p,
+.marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content h4,
+.marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content p {
   font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
 }
+
+#containerResultSearch .map {
+  height: 350px;
+}
+
 #resultResearch #resumSearchPhone {
   width: 90%;
   margin: 50px auto;
@@ -812,9 +824,6 @@ footer #secondContainerFooter a {
 }
 #resultResearch #formFilter.formFilterActive {
   display: block;
-}
-#resultResearch #containerResultSearch .map {
-  height: 350px;
 }
 #resultResearch .listResult .item {
   width: 240px;

@@ -744,7 +744,7 @@ header {
 #oneLogement {
     padding-top: 50px;
 
-    div {
+    #firstPartOne {
         width: 90%;
         margin: 0 auto;
 
@@ -819,6 +819,11 @@ header {
 
     .fc-next-button {
         background-color: $bluelight;
+    }
+    #locationOne {
+        #map{
+            height: 400px;
+        }
     }
 }
 
@@ -958,9 +963,6 @@ footer {
 
 /*resultsearch phone*/
 
-#resultResearch {
-
-
     .marker.leaflet-popup {
         margin-bottom: 16px;
         cursor: pointer;
@@ -1049,6 +1051,15 @@ footer {
 
         }
     }
+    #containerResultSearch {
+        .map {
+            height: 350px;
+        }
+    }
+
+#resultResearch {
+
+
 
     #resumSearchPhone {
         width: 90%;
@@ -1101,12 +1112,7 @@ footer {
         display: block;
     }
 
-    #containerResultSearch {
-        .map {
-            height: 350px;
-        }
-    }
-
+    
     .listResult {
         .item {
             width: 240px;

@@ -7,12 +7,12 @@
 
 {% block content %}
 	<section id="oneLogement" class="row-limit-size">
-		<div>
+		<div id="firstPartOne">
 			<article>
 				<div
 					id="list-slide">
 					{# boucle slide #}
-					<div class="slide" class="item js-marker" data-lat="43.57639" data-lng="3.96309" data-price="58">
+					<div class="slide" >
 						<img src="{{asset('/img/logement/appartementMarseille1.1.webp')}}" alt="nom de l'image">
 
 					</div>
@@ -87,8 +87,8 @@
 			<h4>Calendrier</h4>
 			<div id="calendar"></div>
 			<div id="locationOne">
-				<h4>Location</h4>
-				<div class="map" id="map"></div>
+				<h4 >Location</h4>
+				<div id="map" class="item js-marker map" data-lat="43.57639" data-lng="3.96309" data-price="58"></div>
 			</div>
 
 		</div>
