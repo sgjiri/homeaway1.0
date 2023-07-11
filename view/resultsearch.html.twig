@@ -124,6 +124,7 @@
 			<div class="map" id="map"></div>
 
 			<div class="listResult">
+
 				{% if logementDispo is empty %}
 					<p>Aucun logement ne correspond à votre recherche.</p>
 				{% else %}
@@ -145,6 +146,7 @@
 {% endfor %}
 
 				{% endif %}
+
 			</div>
 
 
@@ -186,3 +188,4 @@
 	        <h1>Erreur de géocodage</h1>
 	        <p>Impossible de récupérer les coordonnées pour cette adresse.</p>
 	    <?php endif; ?> #}
+
