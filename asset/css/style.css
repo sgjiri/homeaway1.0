@@ -552,8 +552,36 @@ header .login-form .group label .icon:after {
 #oneLogement div p {
   width: 90%;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   font-family: "Roboto", sans-serif;
+}
+#oneLogement div #cancel {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 5%;
+}
+#oneLogement div #cancel img {
+  width: 25px;
+  height: 25px;
+}
+#oneLogement div #cancel p {
+  width: 70%;
+}
+#oneLogement div #about p {
+  text-align: justify;
+}
+#oneLogement div #boxFilter {
+  margin: 50px 0;
+}
+#oneLogement div .convenience {
+  display: flex;
+}
+#oneLogement div .convenience img {
+  width: 25px;
+  height: 25px;
+}
+#oneLogement div .convenience p {
+  width: 70%;
 }
 #oneLogement .fc {
   font-size: 0.6rem;
