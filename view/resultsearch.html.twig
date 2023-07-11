@@ -124,7 +124,7 @@
 			<div class="map" id="map"></div>
 
 			<div class="listResult">
-				{# {% for result in logementDispo %} #}
+				 {% for result in logementDispo %} 
 				<article class="item js-marker" data-lat="43.57639" data-lng="3.96309" data-price="58">
 					<img src="{{asset('/img/logement/appartMontpellier1.1.webp')}}" alt="appartement montpelier">
 					<h4>{{result.title}} &nbsp;-&nbsp;Montpellier</h4>
@@ -135,7 +135,7 @@
 						</span>par nuit - &nbsp; 294€ au total</p>
 				</article>
 				
-				{# {% endfor %} #}
+				{% endfor %} 
 			</div>
 		</div>
 	</section>
