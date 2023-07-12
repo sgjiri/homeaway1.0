@@ -130,15 +130,15 @@
 				{% else %}
 
 					{% for i in 0..(logementDispo|length - 1) %}  
-    <article class="item js-marker" data-lat="{{ logementDispo[i].latitude }}" data-lng="{{ logementDispo[i].longitude }}" data-price="{{ logementDispo[i].price_by_night }}">
-         <img src="{{ asset('img/logement/' ~ logementDispo[i].image) }}" alt="{{ 'Appartement ' ~ logementDispo[i].nom }}">
-        <h4>{{ logementDispo[i].title }}
+    <article class="item js-marker" data-lat="{{ logementDispo[i][0].latitude }}" data-lng="{{ logementDispo[i][0].longitude }}" data-price="{{ logementDispo[i][0].price_by_night }}">
+         <img src="{{ asset('/img/logement/' ~ logementDispo[i][1].thumbnail) }}" alt="{{ 'Appartement ' ~ logementDispo[i].nom }}">
+        <h4>{{ logementDispo[i][0].title }}
             &nbsp;-&nbsp;{{ logementDispo[i].city }}</h4>
-        <p>{{ logementDispo[i].description }}</p>
+        <p>{{ logementDispo[i][0].description }}</p>
         <p>
-            <span>{{ logementDispo[i].price_by_night }}€</span>
+            <span>{{ logementDispo[i][0].price_by_night }}€</span>
             par nuit - &nbsp;
-            {{ totalPrices[i]}}€ au total
+            {{ totalPrices[i] }}€ au total
         </p>
         <p>
             Nombre de jours : {{ nbDays }}
