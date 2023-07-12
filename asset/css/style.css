@@ -14,6 +14,17 @@
   margin: 0 auto;
 }
 
+.button {
+  width: 90%;
+  border-radius: 25px;
+  background: linear-gradient(90deg, rgb(1, 124, 142) 50%, rgb(1, 148, 156) 50%);
+  display: block;
+  color: #fff;
+  padding: 15px 0;
+  font-size: 1.2rem;
+  font-family: "Righteous", cursive;
+}
+
 /*header phone*/
 header #logo img {
   width: 200px;
@@ -28,7 +39,7 @@ header #burgerPhone {
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 900;
 }
 header #burgerPhone #menuBurger,
 header #burgerPhone #searchPhone {
@@ -542,10 +553,15 @@ header .login-form .group label .icon:after {
   width: 90%;
   margin: 0 auto;
 }
-#oneLogement #firstPartOne #list-slide {
-  width: 100%;
+#oneLogement #firstPartOne #window-slider {
+  width: 270px;
+  height: 190px;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: block;
 }
-#oneLogement #firstPartOne #list-slide img {
+#oneLogement #firstPartOne #window-slider #list-slide .slide img {
   width: 100%;
 }
 #oneLogement #firstPartOne h4,
@@ -583,6 +599,28 @@ header .login-form .group label .icon:after {
 #oneLogement #firstPartOne .convenience p {
   width: 70%;
 }
+#oneLogement #firstPartOne button {
+  margin: 50px auto;
+}
+#oneLogement #secondPartOne {
+  width: 100%;
+  position: fixed;
+  bottom: 50px;
+  background-color: #fff;
+  z-index: 900;
+  border-top: 1px solid #017C8E;
+}
+#oneLogement #secondPartOne h4 {
+  font-size: 1.2rem;
+}
+#oneLogement #secondPartOne h4,
+#oneLogement #secondPartOne p {
+  margin: 10px 5%;
+  font-family: "Roboto", sans-serif;
+}
+#oneLogement #secondPartOne input[type=submit] {
+  margin: 25px auto;
+}
 #oneLogement .fc {
   font-size: 0.6rem;
   font-family: "Roboto", sans-serif;
@@ -602,10 +640,39 @@ header .login-form .group label .icon:after {
 #oneLogement #locationOne #map {
   height: 400px;
 }
+#oneLogement #locationOne #map .leaflet-top,
+#oneLogement #locationOne #map .leaflet-bottom {
+  z-index: 500;
+}
 
+/*oneLogement tablet*/
+@media screen and (min-width: 800px) {
+  #onelogement {
+    margin: unset;
+  }
+  #onelogement #firstPartOne #window-slider {
+    width: 270px;
+    height: 190px;
+    overflow: hidden;
+    margin: 0 5%;
+    margin-top: 50px;
+    display: block;
+  }
+  #onelogement #firstPartOne #window-slider #list-slide .slide img {
+    width: 100%;
+  }
+  #onelogement #secondPartOne {
+    bottom: unset;
+    top: 100px;
+    right: 5%;
+    width: 30%;
+    border: 2px solid #017C8E;
+    height: 200px;
+  }
+}
 /*footer phone*/
 footer {
-  margin: 100px 0 50px 0;
+  margin: 100px 0 248px 0;
 }
 footer #firstContainerFooter,
 footer #secondContainerFooter {
@@ -901,7 +968,9 @@ footer #secondContainerFooter a {
   justify-content: space-evenly;
   height: 1000px;
 }
-#formAddLogement fieldset form #textField input[type=text], #formAddLogement fieldset form #textField input[type=number], #formAddLogement fieldset form #textField select {
+#formAddLogement fieldset form #textField input[type=text],
+#formAddLogement fieldset form #textField input[type=number],
+#formAddLogement fieldset form #textField select {
   padding: 10px 0;
 }
 #formAddLogement fieldset form #checkbox {
@@ -935,7 +1004,8 @@ footer #secondContainerFooter a {
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  #formAddLogement fieldset form #textField, #formAddLogement fieldset form #checkbox {
+  #formAddLogement fieldset form #textField,
+  #formAddLogement fieldset form #checkbox {
     width: 45%;
   }
   #formAddLogement fieldset form #checkbox {

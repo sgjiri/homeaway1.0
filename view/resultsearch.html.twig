@@ -151,27 +151,7 @@
 			</div>
 
 
-			{# <div class="listResult">
-						
-										{% if logementDispo is empty %}
-											<p>Aucun logement ne correspond à votre recherche.</p>
-										{% else %}
-						
-											{% for result in logementDispo %}
-												<article class="item js-marker" data-lat="43.57639" data-lng="3.96309" data-price="58">
-													<img src="{{asset('/img/logement/appartMontpellier1.1.webp')}}" alt="appartement montpelier">
-													<h4>{{result.title}}
-														&nbsp;-&nbsp;Montpellier</h4>
-													<p>
-														Début description</p>
-													<p>
-														<span>58€
-														</span>par nuit - &nbsp; 294€ au total</p>
-												</article>
-						
-											{% endfor %}
-											 {% endif %}
-										</div> #}
+		
 		</div>
 	</section>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script>
@@ -181,12 +161,4 @@
 {% endblock %}
 
 
-{# <?php if ($coordinates): ?>
-	        <h1>Coordonnées géographiques</h1>
-	        <p>Latitude: <?php echo $coordinates['latitude']; ?></p>
-	        <p>Longitude: <?php echo $coordinates['longitude']; ?></p>
-	    <?php else: ?>
-	        <h1>Erreur de géocodage</h1>
-	        <p>Impossible de récupérer les coordonnées pour cette adresse.</p>
-	    <?php endif; ?> #}
 
