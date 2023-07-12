@@ -20,13 +20,13 @@
 						<li id='info'>
 							<ul>
 								<li id='infoPerso' class='liInfo'>
-									<figure class='icon'>
-										<img src="{{ asset('/img/🦆 icon _person_.png') }}" alt="icon _person">
+									<figure class='icon' >
+										<img  src="{{ asset('/img/🦆 icon _person_.png') }}" alt="icon _person">
 									</figure>
 								</li>
 								<li id='perso' class='liInfo'>
 									<figure class='icon'>
-										<img src="{{ asset('/img/Perso.png') }}" alt="Perso">
+										<img id='iconInfo' src="{{ asset('/img/Perso.png') }}" alt="Perso">
 									</figure>
 								</li>
 								<li id='historic' class='liInfo'>
@@ -51,7 +51,6 @@
 										<img src="{{ asset('/img/gestionReservation.png') }}" alt="reservation">
 									</figure>
 								</li>
-								{# <li></li> #}
 
 
 							</ul>
@@ -68,7 +67,7 @@
 						</li>
 						<li id='messagerie'>
 							<figure class='icon'>
-								<img src="{{ asset('/img/iconMessage.png') }}" alt="">
+								<img id='imgMesagerie' src="{{ asset('/img/iconMessage.png') }}" alt="">
 							</figure>
 						</li>
 					</ul>
@@ -87,7 +86,7 @@
 							</figure>
 						</div>
 
-						<div class='input'>
+						<div class='input input2info height'>
 							<input type="text" class'changetext' placeholder="Votre nom...">
 							<input type="text" class'changetext' placeholder="Votre prenom...">
 							<input type="submit" name="valider" class="valider" value="">
@@ -106,7 +105,7 @@
 								<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
 							</figure>
 						</div>
-						<div class='input'>
+						<div class='input height'>
 
 							<input type="text" class'changetext' placeholder="Votre mail...">
 							<input type="submit" name="valider" class="valider" value="">
@@ -125,7 +124,7 @@
 							<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
 						</figure>
 						</div>
-						<div class='input'>
+						<div class='input height'>
 
 							<input type="text" class'changetext' placeholder="Votre numero de telephone...">
 							<input type="submit" name="valider" class="valider" value="">
