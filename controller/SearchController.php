@@ -13,9 +13,8 @@ class SearchController extends Controller{
                 $model = new SearchModel;
                 $datas = $model->getSearch($city, $start_date, $end_date, $number_of_person);
                 $totalPrices =[];
-                foreach ($datas as $data) {
-                    $logement = $data; // Récupérer l'objet Logement depuis $data
-    
+                foreach ($datas as $logementComplet) {
+                    $logement = $logementComplet[0]; // Récupérer l'objet Logement depuis $data    
                     $price_by_night = $logement->getPrice_by_night();
                     $start = new DateTime($start_date);
                     $end = new DateTime($end_date);
