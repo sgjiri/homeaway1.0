@@ -26,6 +26,17 @@ $border-blue: #1161ee;
     margin: 0 auto;
 }
 
+.button {
+    width: 90%;
+    border-radius: 25px;
+    background: linear-gradient(90deg, rgba(1, 124, 142, 1) 50%, rgba(1, 148, 156, 1) 50%);
+    display: block;
+    color: $white;
+    padding: 15px 0;
+    font-size: 1.2rem;
+    font-family: $fontTitle;
+}
+
 /*header phone*/
 
 header {
@@ -44,7 +55,7 @@ header {
         position: fixed;
         bottom: 0;
         width: 100%;
-        z-index: 1;
+        z-index: 900;
 
         #menuBurger,
         #searchPhone {
@@ -657,7 +668,7 @@ header {
                     font-size: 1.2rem;
                     -webkit-text-stroke: 1px $white;
                     text-transform: uppercase;
-                    
+
 
                 }
             }
@@ -741,20 +752,27 @@ header {
 }
 
 /*oneLogements phone*/
+
 #oneLogement {
     padding-top: 50px;
+
 
     #firstPartOne {
         width: 90%;
         margin: 0 auto;
 
-        #list-slide {
-            width: 100%;
+        #window-slider {
+            width: 270px;
+            height: 190px;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: 50px;
+            display: block;
 
-            img {
+            #list-slide .slide img {
                 width: 100%;
-
             }
+
 
         }
 
@@ -765,38 +783,76 @@ header {
             margin: 10px auto;
             font-family: $roboto;
         }
+
         #cancel {
             display: flex;
             justify-content: space-between;
-             margin: 20px 5%;
-             img{
+            margin: 20px 5%;
+
+            img {
                 width: 25px;
                 height: 25px;
-             }
-             p {
+            }
+
+            p {
                 width: 70%;
-             }
+            }
         }
+
         #about {
-            p{
+            p {
                 text-align: justify;
             }
         }
+
         #boxFilter {
             margin: 50px 0;
         }
+
         .convenience {
             display: flex;
-            img{
+
+            img {
                 width: 25px;
                 height: 25px;
-             }
-             p {
+            }
+
+            p {
                 width: 70%;
-             }
+            }
 
         }
 
+        button {
+            margin: 50px auto;
+        }
+
+    }
+
+    #secondPartOne {
+        width: 100%;
+        position: fixed;
+        bottom: 50px;
+        background-color: $white;
+        z-index: 900;
+        border-top: 1px solid $blueDark;
+
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        h4,
+        p {
+            margin: 10px 5%;
+            font-family: $roboto;
+        }
+
+        input[type=submit] {
+
+            margin: 25px auto;
+
+
+        }
     }
 
     .fc {
@@ -820,17 +876,58 @@ header {
     .fc-next-button {
         background-color: $bluelight;
     }
+
     #locationOne {
-        #map{
+        #map {
             height: 400px;
+
+            .leaflet-top,
+            .leaflet-bottom {
+                z-index: 500;
+            }
         }
     }
 }
 
+/*oneLogement tablet*/
+@media screen and (min-width:800px) {
+    #onelogement {
+      margin: unset;
+        #firstPartOne {
+           
+
+            #window-slider {
+                width: 270px;
+                height: 190px;
+                overflow: hidden;
+                margin: 0 5%;
+                margin-top: 50px;
+                display: block;
+
+                #list-slide .slide img {
+                    width: 100%;
+                }
+
+            }
+        }
+
+        #secondPartOne {
+            bottom: unset;
+            top: 100px;
+            right: 5%;
+            width: 30%;
+            border: 2px solid $blueDark;
+            height: 200px;
+
+        }
+    }
+}
+
+
 /*footer phone*/
 
 footer {
-    margin: 100px 0 50px 0;
+    margin: 100px 0 248px 0;
 
     #firstContainerFooter,
     #secondContainerFooter {
@@ -963,99 +1060,100 @@ footer {
 
 /*resultsearch phone*/
 
-    .marker.leaflet-popup {
-        margin-bottom: 16px;
-        cursor: pointer;
-        font-size: 1rem;
-        font-weight: bold;
-        padding: 5px 10px;
-        font-family: $roboto;
-        text-align: center;
-        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-        background-color: $white;
+.marker.leaflet-popup {
+    margin-bottom: 16px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-family: $roboto;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    background-color: $white;
 
-        &::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -8px;
-            width: 0;
-            height: 0;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-top: 8px solid $white;
-        }
-
-        .leaflet-popup-content-wrapper {
-            background: transparent;
-            color: inherit;
-            box-shadow: none;
-            text-align: inherit;
-        }
-
-        .leaflet-popup-tip-container {
-            display: none;
-        }
-
+    &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -8px;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid $white;
     }
 
-
-
-    .marker .leaflet-popup-content {
-        text-align: inherit;
+    .leaflet-popup-content-wrapper {
+        background: transparent;
         color: inherit;
-        margin: 0;
+        box-shadow: none;
+        text-align: inherit;
     }
 
-    .marker.is-active {
-        background-color: $blueDark;
-        color: $white;
-        z-index: 300;
+    .leaflet-popup-tip-container {
+        display: none;
+    }
 
-        &::after {
-            border-top-color: $blueDark;
+}
+
+
+
+.marker .leaflet-popup-content {
+    text-align: inherit;
+    color: inherit;
+    margin: 0;
+}
+
+.marker.is-active {
+    background-color: $blueDark;
+    color: $white;
+    z-index: 300;
+
+    &::after {
+        border-top-color: $blueDark;
+    }
+}
+
+.marker:hover {
+    background-color: $blueDark;
+    color: $white;
+    z-index: 300;
+
+    &::after {
+        border-top-color: $blueDark;
+    }
+}
+
+.marker,
+.marker.is-expended {
+    z-index: 301;
+
+    .leaflet-popup-content-wrapper .leaflet-popup-content {
+
+
+        text-align: left;
+
+        img {
+            width: 220px;
+            height: 200px;
         }
-    }
 
-    .marker:hover {
-        background-color: $blueDark;
-        color: $white;
-        z-index: 300;
-
-        &::after {
-            border-top-color: $blueDark;
+        h4,
+        p {
+            font-family: $roboto;
+            font-size: 0.8rem;
         }
+
+
     }
+}
 
-    .marker,
-    .marker.is-expended {
-        z-index: 301;
-
-        .leaflet-popup-content-wrapper .leaflet-popup-content {
-
-
-            text-align: left;
-
-            img {
-                width: 220px;
-                height: 200px;
-            }
-
-            h4,
-            p {
-                font-family: $roboto;
-                font-size: 0.8rem;
-            }
-
-
-        }
+#containerResultSearch {
+    .map {
+        height: 350px;
     }
-    #containerResultSearch {
-        .map {
-            height: 350px;
-        }
-    }
+}
 
 #resultResearch {
 
@@ -1112,7 +1210,7 @@ footer {
         display: block;
     }
 
-    
+
     .listResult {
         .item {
             width: 240px;
@@ -1220,20 +1318,26 @@ footer {
                 flex-direction: column;
                 justify-content: space-evenly;
                 height: 1000px;
-                input[type=text], input[type=number], select {
+
+                input[type=text],
+                input[type=number],
+                select {
                     padding: 10px 0;
                 }
             }
+
             #checkbox {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
                 height: 500px;
+
                 div {
                     display: flex;
                     justify-content: space-between;
                 }
             }
+
             input[type=submit] {
                 width: 100%;
                 padding: 20px 0;
@@ -1253,24 +1357,27 @@ footer {
 @media screen and (min-width: 800px) {
     #formAddLogement {
         fieldset {
-           legend{
-            font-size: 1.2rem;
-           }
+            legend {
+                font-size: 1.2rem;
+            }
+
             form {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content:space-between ;
-    
-                #textField ,   #checkbox  {
-                   width: 45%;                  
-                }
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                #textField,
                 #checkbox {
-                    
+                    width: 45%;
+                }
+
+                #checkbox {
+
                     height: 1000px;
                 }
-              
-                }
-           
+
             }
+
         }
     }
+}
