@@ -234,20 +234,20 @@ class Logement
     {
         $this->city = $city;
     }
-    public function setLocation(NULL $location)
+    public function setLocation(STRING $location)
     {
         $this->location = $location;
     }
 
 
-    public function setLatitude(NULL $latitude)
+    public function setLatitude(STRING $latitude)
 
     {
         $this->latitude = $latitude;
     }
 
 
-    public function setLongitude(NULL $longitude)
+    public function setLongitude(STRING $longitude)
 
     {
         $this->longitude = $longitude;

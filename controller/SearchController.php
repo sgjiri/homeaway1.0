@@ -22,7 +22,7 @@ class SearchController extends Controller{
                     $number_of_days = $start->diff($end)->days;
                     array_push($totalPrices, $price_by_night * $number_of_days);
                 }
-                var_dump($number_of_days);
+               
 
             }
             $twig = $this->getTwig();
