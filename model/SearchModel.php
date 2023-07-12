@@ -33,12 +33,7 @@ class SearchModel extends Model
            
             $logementFlat = new Logement($result);
 
-            // $price_by_night = $logementFlat->getPrice_by_night();
-            // $startDate = new DateTime($start_date);
-            // $endDate = new DateTime($end_date);
-            // $number_of_days = $startDate->diff($endDate)->days;
-            // $total_price = $price_by_night * $number_of_days;
-            
+           
 
 
             $logementDispo[] = $logementFlat;

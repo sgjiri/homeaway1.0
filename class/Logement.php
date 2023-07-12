@@ -118,10 +118,7 @@ class Logement
     {
         return $this->number_of_days;
     }
-    public function getTotalPrice()
-    {
-        return $this->total_price;
-    }
+    
 
     public function getNumber_of_person()
     {
@@ -266,11 +263,7 @@ class Logement
         $this->number_of_days = $number_of_days;
     }
 
-    public function setTotalPrice(int $total_price)
-    {
-        $this->total_price = $total_price;
-    }
-
+   
     public function setNumber_of_person(int  $number_of_person)
     {
         $this->number_of_person = $number_of_person;

@@ -128,9 +128,10 @@
 				{% if logementDispo is empty %}
 					<p>Aucun logement ne correspond à votre recherche.</p>
 				{% else %}
+
 					{% for i in 0..(logementDispo|length - 1) %}  
     <article class="item js-marker" data-lat="{{ logementDispo[i].latitude }}" data-lng="{{ logementDispo[i].longitude }}" data-price="{{ logementDispo[i].price_by_night }}">
-        <img src="{{ asset('/img/logement/appartMontpellier1.1.webp') }}" alt="appartement montpelier">
+         <img src="{{ asset('img/logement/' ~ logementDispo[i].image) }}" alt="{{ 'Appartement ' ~ logementDispo[i].nom }}">
         <h4>{{ logementDispo[i].title }}
             &nbsp;-&nbsp;{{ logementDispo[i].city }}</h4>
         <p>{{ logementDispo[i].description }}</p>
