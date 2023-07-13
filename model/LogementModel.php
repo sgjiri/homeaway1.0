@@ -5,11 +5,11 @@ class LogementModel extends Model
 
 
 
-    public function addFlat($id_person, $title, $type, $surface, $description, $adress, $adressCode, $city, $location,  $price_by_night, $number_of_person, $number_of_beds, $parking, $wifi, $piscine, $animals, $kitchen, $garden, $tv, $climatisation, $camera, $home_textiles, $spa, $jacuzzi, $latitude, $longitude)
+    public function addFlat($id_person, $title, $type, $surface, $resume, $description, $adress, $adressCode, $city, $location,  $price_by_night, $number_of_person, $number_of_beds, $parking, $wifi, $piscine, $animals, $kitchen, $garden, $tv, $climatisation, $camera, $home_textiles, $spa, $jacuzzi, $latitude, $longitude)
     {
 
 
-        $req = $this->getDb()->prepare('INSERT INTO `logement` (`id_person`, `title`, `type`, `surface`, `description`, `adress`, `adressCode`,`city`, `location`,  `price_by_night`, `number_of_person`, `number_of_beds`, `parking`, `wifi`, `piscine`, `animals`, `kitchen`, `garden`, `tv`, `climatisation`, `camera`, `home_textiles`, `spa`, `jacuzzi`,`latitude`, `longitude`) VALUES (:id_person, :title,:type, :surface, :description, :adress,:adressCode, :city, :location,   :price_by_night, :number_of_person, :number_of_beds, :parking, :wifi, :piscine, :animals, :kitchen, :garden, :tv, :climatisation, :camera, :home_textiles, :spa, :jacuzzi, :latitude, :longitude )');
+        $req = $this->getDb()->prepare('INSERT INTO `logement` (`id_person`, `title`, `type`, `surface`,`resume`, `description`, `adress`, `adressCode`,`city`, `location`,  `price_by_night`, `number_of_person`, `number_of_beds`, `parking`, `wifi`, `piscine`, `animals`, `kitchen`, `garden`, `tv`, `climatisation`, `camera`, `home_textiles`, `spa`, `jacuzzi`,`latitude`, `longitude`) VALUES (:id_person, :title,:type, :surface, :resume, :description, :adress,:adressCode, :city, :location,   :price_by_night, :number_of_person, :number_of_beds, :parking, :wifi, :piscine, :animals, :kitchen, :garden, :tv, :climatisation, :camera, :home_textiles, :spa, :jacuzzi, :latitude, :longitude )');
 
 
         $req->bindParam(":id_person", $id_person, PDO::PARAM_INT);
@@ -17,6 +17,7 @@ class LogementModel extends Model
         $req->bindParam(":type", $type, PDO::PARAM_STR);
 
         $req->bindParam(":surface", $surface, PDO::PARAM_INT);
+        $req->bindParam(":resume", $resume, PDO::PARAM_STR);
         $req->bindParam(":description", $description, PDO::PARAM_STR);
         $req->bindParam(":adress", $adress, PDO::PARAM_STR);
         $req->bindParam(":adressCode", $adressCode, PDO::PARAM_STR);

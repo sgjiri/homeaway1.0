@@ -131,10 +131,10 @@
 
 					{% for i in 0..(logementDispo|length - 1) %}  
     <article class="item js-marker" data-lat="{{ logementDispo[i][0].latitude }}" data-lng="{{ logementDispo[i][0].longitude }}" data-price="{{ logementDispo[i][0].price_by_night }}">
-         <img src="{{ asset('/img/logement/' ~ logementDispo[i][1].thumbnail) }}" alt="{{ 'Appartement ' ~ logementDispo[i].nom }}">
+         <img src="{{ asset('/img/logement/' ~ logementDispo[i][1].thumbnail) }}" alt="{{ 'Appartement ' ~ logementDispo[i].ville_nom }}">
         <h4>{{ logementDispo[i][0].title }}
-            &nbsp;-&nbsp;{{ logementDispo[i].city }}</h4>
-        <p>{{ logementDispo[i][0].description }}</p>
+            &nbsp;-&nbsp;{{ logementDispo[i][0].city }}</h4>
+        <p>{{ logementDispo[i][0].resume}}</p>
         <p>
             <span>{{ logementDispo[i][0].price_by_night }}€</span>
             par nuit - &nbsp;

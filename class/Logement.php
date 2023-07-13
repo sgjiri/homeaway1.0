@@ -6,6 +6,7 @@ class Logement
     private $title;
     private $type;
     private $surface;
+    private $resume;
     private $description;
     private $adress;
     private $adressCode;
@@ -14,8 +15,7 @@ class Logement
     private $latitude;
     private $longitude;
     private $price_by_night;
-    private $number_of_days;
-    private $total_price;
+    
     private $number_of_person;
     private $number_of_beds;
     private $parking;
@@ -78,6 +78,11 @@ class Logement
         return $this->surface;
     }
 
+    public function getResume()
+    {
+        return $this->resume;
+    }
+
     public function getDescription()
     {
         return $this->description;
@@ -114,11 +119,8 @@ class Logement
     {
         return $this->price_by_night;
     }
-    public function getNumberOfDays()
-    {
-        return $this->number_of_days;
-    }
-    
+  
+
 
     public function getNumber_of_person()
     {
@@ -215,6 +217,11 @@ class Logement
         $this->surface = $surface;
     }
 
+    public function setResume(STRING $resume)
+    {
+        $this->resume = $resume;
+    }
+
     public function setDescription(STRING $description)
     {
         $this->description = $description;
@@ -239,13 +246,11 @@ class Logement
         $this->location = $location;
     }
 
-
     public function setLatitude(STRING $latitude)
 
     {
         $this->latitude = $latitude;
     }
-
 
     public function setLongitude(STRING $longitude)
 
@@ -258,12 +263,8 @@ class Logement
         $this->price_by_night = $price_by_night;
     }
 
-    public function setNumberOfDays(int $number_of_days)
-    {
-        $this->number_of_days = $number_of_days;
-    }
 
-   
+
     public function setNumber_of_person(int  $number_of_person)
     {
         $this->number_of_person = $number_of_person;
@@ -310,7 +311,6 @@ class Logement
         $this->climatisation = $climatisation;
     }
 
-
     public function setCamera(BOOL $camera)
     {
         $this->camera = $camera;
@@ -330,6 +330,5 @@ class Logement
     {
         $this->jacuzzi = $jacuzzi;
     }
-
     
 }
