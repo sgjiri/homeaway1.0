@@ -119,7 +119,7 @@ sans-serif;
                                 
                             }
                             @media screen and (max-width:550px){
-                                height: 35px;
+                                height: 30px;
 
                                 
                                 
@@ -128,7 +128,7 @@ sans-serif;
 
                         #iconInfo{
                             @media screen and (max-width:550px){
-                                height: 27px;  
+                                height: 25px;  
                             }
                         }
                     }
@@ -236,7 +236,7 @@ sans-serif;
     }
 
     .contentPage {
-        width: 70%;
+        width: 1300px;
         margin: 0 auto;
         display: none;
 
@@ -332,7 +332,6 @@ sans-serif;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-around;
-                    align-items: center;
                     padding-left: 20px;
 
                     h3 {
@@ -340,21 +339,34 @@ sans-serif;
                         font-family: $roboto;
 
                         font-size: 1.5em;
+
+                        @media screen  and (max-width: 500px){
+                            font-size: 1.2em;
+                        }
                     }
 
                     p {
                         color: #fff;
                         font-size: 1.2em;
+                        @media screen  and (max-width: 500px){
+                            font-size: 1em;
+                        }
                     }
+
+                    
                 }
 
                 .figureModifier {
                   
                     cursor: pointer;
                     height: 130px;
-                    padding-right: 20px;
+                    padding: 0 20px;
                     display: flex;
                     align-items: center;
+
+                    @media screen and (max-width: 600px){
+                        align-items: flex-start;
+                    }
 
                     .imgModifier {
                         transition: all 0.5s;
@@ -363,6 +375,7 @@ sans-serif;
                         
                         @media screen  and (max-width: 600px){
                             height: 35%;
+                            margin-top: 15px;
                         }
 
                         &.activeModifie {
@@ -439,6 +452,9 @@ sans-serif;
                         height: 38%;
                         margin-bottom: 10px;
                     }
+                    @media screen  and (max-width: 500px){
+                        height: 20%; 
+                    }
 
                     
                 }
@@ -463,6 +479,9 @@ sans-serif;
 
                     @media screen and (max-width: 800px) {
                         transform: translateY(-1px);
+                    }
+                    @media screen and (max-width: 500px) {
+                        height: 160px;
                     }
                 }
             }
@@ -507,12 +526,12 @@ sans-serif;
 
             .input2info{
                 @media screen and (max-width:800px){
-                    transform: translateY(-80px); 
+                    transform: translateY(-120px); 
                     
                 }
             }
             .height{
-                height: 90px;
+                height: 138px;
             }
         }
 
@@ -527,6 +546,11 @@ sans-serif;
             &.active{
                 height: 220px;
                 box-shadow: none;
+
+                @media screen and (max-width:500px){
+                    height: 280px;; 
+                    
+                }
             }
 
         }
@@ -558,13 +582,14 @@ sans-serif;
 
                 figure {
                     height: 250px;
-                    width: 400px;
+                    width: 80%;
                     margin: 40px auto;
 
 
                     img {
                         width: 100%;
                         height: 100%;
+                        object-fit: cover;
                         filter: drop-shadow(14px 6px 4px rgba(0, 0, 0, 0.25));
 
                     }
@@ -602,6 +627,7 @@ sans-serif;
 
                     .infoRightContent {
                         margin-left: 50px;
+                        color: #fff;
                     }
 
                     button {

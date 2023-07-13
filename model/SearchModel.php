@@ -35,20 +35,7 @@ class SearchModel extends Model
             array_push($logementDispo[$i], new Logement($results[$i]));
             array_push($logementDispo[$i], new Image($results[$i]));
 
-
         }
-        // foreach ($results as $result) {
-           
-        //     $logementFlat = new Logement($result);
-        //     $imageFlat = new Image($result);
-
-           
-
-
-
-            
-        // }
-        var_dump($logementDispo[0][1]);
         return $logementDispo;
     }
 }
