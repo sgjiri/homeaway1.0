@@ -6,7 +6,7 @@ class SearchModel extends Model
     {
         $logementDispo = [];
 
-        $stmt = $this->getDb()->prepare("SELECT *
+        $stmt = $this->getDb()->prepare("SELECT DISTINCT  `id_logement`, `title`, `city`,`resume`,`latitude`,`longitude`,`price_by_night`,`thumbnail`
     FROM `logement`
     INNER JOIN `image` ON `logement`.id_logement = `image`.id_logement
     LEFT JOIN `book` ON `logement`.id_logement = `book`.logement_id
@@ -27,28 +27,18 @@ class SearchModel extends Model
         
         // Récupérer les résultats de la requête
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+        // var_dump($city);
         $length = (count($results));
+        var_dump(count($results));
 
         for($i=0; $i< $length; $i++){
             $logementDispo[$i] = [];
             array_push($logementDispo[$i], new Logement($results[$i]));
             array_push($logementDispo[$i], new Image($results[$i]));
 
-
         }
-        // foreach ($results as $result) {
-           
-        //     $logementFlat = new Logement($result);
-        //     $imageFlat = new Image($result);
-
-           
-
-
-
-            
-        // }
-        var_dump($logementDispo[0][1]);
+                    
+        // var_dump($logementDispo);
         return $logementDispo;
     }
 }

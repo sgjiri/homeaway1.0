@@ -2,7 +2,6 @@
 class City
 {
     private $id_ville;
-   
     private $ville_nom;
     private $img;
     private $place;

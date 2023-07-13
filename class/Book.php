@@ -5,8 +5,8 @@ class Book
     private $start_date;
     private $end_date;
     private $firstname;
-    private $id_person;
-    private $id_logement;
+    private $person_id2;
+    private $logement_id;
 
 
 
@@ -53,14 +53,14 @@ class Book
         return $this->firstname;
     }
 
-    public function getIdPerson()
+    public function getPersonId2()
     {
-        return $this->id_person;
+        return $this->person_id2;
     }
 
-    public function getIdLogement()
+    public function getLogementId()
     {
-        return $this->id_logement;
+        return $this->logement_id;
     }
 
     // -*-*-*-*-*-*-SETTERS-*-*-*-*-*-*-//
@@ -86,14 +86,14 @@ class Book
         $this->firstname = $firstname;
     }
 
-    public function setIdPerson(INT $id_person)
+    public function setPersonId2(INT $person_id2)
     {
-        $this->id_person = $id_person;
+        $this->person_id2 = $person_id2;
     }
 
-    public function setIdLogement(INT $id_logement)
+    public function setLogementId(INT $logement_id)
     {
-        $this->id_logement = $id_logement;
+        $this->logement_id = $logement_id;
     }
 
 
