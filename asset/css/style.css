@@ -554,7 +554,7 @@ header .login-form .group label .icon:after {
   margin: 0 auto;
 }
 #oneLogement #firstPartOne #window-slider {
-  width: 270px;
+  width: 90%;
   height: 190px;
   overflow: hidden;
   margin: 0 auto;
@@ -563,6 +563,9 @@ header .login-form .group label .icon:after {
 }
 #oneLogement #firstPartOne #window-slider #list-slide .slide img {
   width: 100%;
+}
+#oneLogement #firstPartOne #boxGallery {
+  display: none;
 }
 #oneLogement #firstPartOne h4,
 #oneLogement #firstPartOne p {
@@ -645,25 +648,79 @@ header .login-form .group label .icon:after {
   z-index: 500;
 }
 
+@media screen and (min-width: 400px) {
+  #oneLogement #firstPartOne #window-slider {
+    height: 250px;
+  }
+}
+@media screen and (min-width: 500px) {
+  #oneLogement #firstPartOne #window-slider {
+    height: 300px;
+  }
+}
+@media screen and (min-width: 600px) {
+  #oneLogement #firstPartOne #window-slider {
+    height: 350px;
+  }
+}
+@media screen and (min-width: 700px) {
+  #oneLogement #firstPartOne #window-slider {
+    height: 400px;
+  }
+}
 /*oneLogement tablet*/
 @media screen and (min-width: 800px) {
   #onelogement {
     margin: unset;
+    margin-left: 5%;
+    width: 90%;
   }
-  #onelogement #firstPartOne #window-slider {
-    width: 270px;
-    height: 190px;
-    overflow: hidden;
-    margin: 0 5%;
-    margin-top: 50px;
+  #onelogement #firstPartOne {
+    width: 60%;
+    margin: unset;
+  }
+  #onelogement #firstPartOne #boxGallery {
     display: block;
-  }
-  #onelogement #firstPartOne #window-slider #list-slide .slide img {
     width: 100%;
+    height: 800px;
+    position: relative;
+  }
+  #onelogement #firstPartOne #boxGallery #bigImg img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 500px;
+  }
+  #onelogement #firstPartOne #boxGallery #scrollbar {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    height: 200px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    position: absolute;
+    top: 550px;
+  }
+  #onelogement #firstPartOne #boxGallery #scrollbar img {
+    width: 250px;
+    margin-right: 20px;
+    display: inline-block;
+  }
+  #onelogement #firstPartOne #slider {
+    display: none;
+  }
+  #onelogement #firstPartOne #cancel {
+    width: 260px;
+  }
+  #onelogement #firstPartOne .convenience {
+    margin: 0 0 20px 5%;
+  }
+  #onelogement #firstPartOne .convenience p {
+    margin: 0 20px;
   }
   #onelogement #secondPartOne {
     bottom: unset;
-    top: 100px;
+    top: 150px;
     right: 5%;
     width: 30%;
     border: 2px solid #017C8E;

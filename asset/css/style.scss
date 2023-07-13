@@ -762,7 +762,7 @@ header {
         margin: 0 auto;
 
         #window-slider {
-            width: 270px;
+            width: 90%;
             height: 190px;
             overflow: hidden;
             margin: 0 auto;
@@ -774,6 +774,9 @@ header {
             }
 
 
+        }
+        #boxGallery {
+            display: none;
         }
 
         h4,
@@ -889,31 +892,93 @@ header {
     }
 }
 
+@media screen and (min-width:400px) {
+    #oneLogement #firstPartOne #window-slider {
+        height: 250px;
+    }
+
+}
+@media screen and (min-width:500px) {
+    #oneLogement #firstPartOne #window-slider {
+        height: 300px;
+    }
+
+}
+@media screen and (min-width:600px) {
+    #oneLogement #firstPartOne #window-slider {
+        height: 350px;
+    }
+
+}
+@media screen and (min-width:700px) {
+    #oneLogement #firstPartOne #window-slider {
+        height: 400px;
+    }
+
+}
+
 /*oneLogement tablet*/
 @media screen and (min-width:800px) {
     #onelogement {
-      margin: unset;
+        margin: unset;
+        margin-left: 5%;
+        width: 90%;
+
         #firstPartOne {
-           
-
-            #window-slider {
-                width: 270px;
-                height: 190px;
-                overflow: hidden;
-                margin: 0 5%;
-                margin-top: 50px;
+            width: 60%;
+            margin: unset;
+            #boxGallery {
                 display: block;
-
-                #list-slide .slide img {
+                width: 100%;
+                height: 800px;
+                position: relative;
+                #bigImg img{
                     width: 100%;
+                    position: absolute;
+                    top: 0;
+                    height: 500px;
                 }
-
+                #scrollbar {
+                    display: flex;
+                    width: 100%;
+                    overflow: hidden;
+                    height: 200px;
+                    overflow-x: scroll;
+                    white-space: nowrap;
+                    position: absolute;
+                    top: 550px;
+                    img{
+                        width: 250px;
+                      
+                        margin-right: 20px;
+                        display: inline-block;
+                    }
+                }
             }
+            #slider {
+              display: none;  
+            } 
+            
+
+            #cancel {
+                width: 260px;
+            }
+
+
+
+            .convenience {
+                margin: 0 0 20px 5%;
+
+                p {
+                    margin: 0 20px;
+                }
+            }
+
         }
 
         #secondPartOne {
             bottom: unset;
-            top: 100px;
+            top: 150px;
             right: 5%;
             width: 30%;
             border: 2px solid $blueDark;
