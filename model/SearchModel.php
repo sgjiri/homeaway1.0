@@ -37,8 +37,9 @@ class SearchModel extends Model
             array_push($logementDispo[$i], new Image($results[$i]));
 
         }
-                    
+
         // var_dump($logementDispo);
+
         return $logementDispo;
     }
 }

@@ -94,12 +94,12 @@
 }
 @media screen and (max-width: 550px) {
   .content nav #info ul li figure img {
-    height: 35px;
+    height: 30px;
   }
 }
 @media screen and (max-width: 550px) {
   .content nav #info ul li figure #iconInfo {
-    height: 27px;
+    height: 25px;
   }
 }
 .content nav #info ul li:hover {
@@ -170,9 +170,14 @@
   margin-top: 20%;
 }
 .content .contentPage {
-  width: 70%;
+  width: 1300px;
   margin: 0 auto;
   display: none;
+}
+@media screen and (max-width: 1500px) {
+  .content .contentPage {
+    width: 80%;
+  }
 }
 .content .contentPage h1 {
   margin-top: 50px;
@@ -253,7 +258,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
   padding-left: 20px;
 }
 .content .contentPage .card .contentFixCard div h3 {
@@ -261,16 +265,31 @@
   font-family: "Roboto", sans-serif;
   font-size: 1.5em;
 }
+@media screen and (max-width: 500px) {
+  .content .contentPage .card .contentFixCard div h3 {
+    font-size: 1.2em;
+  }
+}
 .content .contentPage .card .contentFixCard div p {
   color: #fff;
   font-size: 1.2em;
 }
+@media screen and (max-width: 500px) {
+  .content .contentPage .card .contentFixCard div p {
+    font-size: 1em;
+  }
+}
 .content .contentPage .card .contentFixCard .figureModifier {
   cursor: pointer;
   height: 130px;
-  padding-right: 20px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .content .contentPage .card .contentFixCard .figureModifier {
+    align-items: flex-start;
+  }
 }
 .content .contentPage .card .contentFixCard .figureModifier .imgModifier {
   transition: all 0.5s;
@@ -279,6 +298,7 @@
 @media screen and (max-width: 600px) {
   .content .contentPage .card .contentFixCard .figureModifier .imgModifier {
     height: 35%;
+    margin-top: 15px;
   }
 }
 .content .contentPage .card .contentFixCard .figureModifier .imgModifier.activeModifie {
@@ -341,6 +361,11 @@
     margin-bottom: 10px;
   }
 }
+@media screen and (max-width: 500px) {
+  .content .contentPage .card .input input {
+    height: 20%;
+  }
+}
 .content .contentPage .card .input .valider {
   background: url(../img/valider.png) center center no-repeat;
   border-radius: 50%;
@@ -360,6 +385,11 @@
 @media screen and (max-width: 800px) {
   .content .contentPage .card .input.activeInput {
     transform: translateY(-1px);
+  }
+}
+@media screen and (max-width: 500px) {
+  .content .contentPage .card .input.activeInput {
+    height: 160px;
   }
 }
 .content .contentPage .card .input2ligne {
@@ -396,11 +426,11 @@
 }
 @media screen and (max-width: 800px) {
   .content .contentPage .card .input2info {
-    transform: translateY(-80px);
+    transform: translateY(-120px);
   }
 }
 .content .contentPage .card .height {
-  height: 90px;
+  height: 138px;
 }
 .content .contentPage .cardInfoPerso {
   height: 130px;
@@ -408,6 +438,11 @@
 .content .contentPage .cardInfoPerso.active {
   height: 220px;
   box-shadow: none;
+}
+@media screen and (max-width: 500px) {
+  .content .contentPage .cardInfoPerso.active {
+    height: 280px;
+  }
 }
 .content .contentPage .card2ligneInfoPerso.active {
   height: 300px;
@@ -430,18 +465,30 @@
 .content .contentPage .cardHistoric .cardHistoriqueContentLeft {
   width: 40%;
 }
+@media screen and (max-width: 1500px) {
+  .content .contentPage .cardHistoric .cardHistoriqueContentLeft {
+    width: 45%;
+  }
+}
 .content .contentPage .cardHistoric .cardHistoriqueContentLeft figure {
   height: 250px;
-  width: 400px;
+  width: 80%;
   margin: 40px auto;
 }
 .content .contentPage .cardHistoric .cardHistoriqueContentLeft figure img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   filter: drop-shadow(14px 6px 4px rgba(0, 0, 0, 0.25));
 }
 .content .contentPage .cardHistoric .cardHistoriqueContentRight {
   width: 60%;
+}
+@media screen and (max-width: 1500px) {
+  .content .contentPage .cardHistoric .cardHistoriqueContentRight {
+    width: 55%;
+  }
 }
 .content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent {
   height: 33.3%;
@@ -456,6 +503,11 @@
   width: 100%;
   font-size: 2em;
 }
+@media screen and (max-width: 1300) {
+  .content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent h2 {
+    font-size: 1.7em;
+  }
+}
 .content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent figure {
   width: 100px;
   display: flex;
@@ -467,6 +519,12 @@
 }
 .content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent .infoRightContent {
   margin-left: 50px;
+  color: #fff;
+}
+@media screen and (max-width: 1500px) {
+  .content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent .infoRightContent {
+    margin-left: 20px;
+  }
 }
 .content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent button {
   background-color: #017c8e;
