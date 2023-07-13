@@ -240,6 +240,11 @@ sans-serif;
         margin: 0 auto;
         display: none;
 
+
+        @media screen  and (max-width: 1500px){
+            width: 80%;
+        }
+
         h1 {
             margin-top: 50px;
             color: #454545;
@@ -580,6 +585,10 @@ sans-serif;
             .cardHistoriqueContentLeft {
                 width: 40%;
 
+                @media screen and (max-width:1500px) {
+                    width: 45%;
+                }
+
                 figure {
                     height: 250px;
                     width: 80%;
@@ -599,6 +608,10 @@ sans-serif;
             .cardHistoriqueContentRight {
                 width: 60%;
 
+                @media screen and (max-width: 1500px) {
+                    width: 55%;
+                }
+
 
                 .oneRightContent {
                     height: 33.3%;
@@ -612,6 +625,10 @@ sans-serif;
                         color: #fff;
                         width: 100%;
                         font-size: 2em;
+
+                        @media screen and (max-width: 1300) {
+                            font-size: 1.7em;
+                        }
                     }
 
                     figure {
@@ -628,6 +645,10 @@ sans-serif;
                     .infoRightContent {
                         margin-left: 50px;
                         color: #fff;
+
+                        @media screen and (max-width: 1500px){
+                            margin-left: 20px;
+                        }
                     }
 
                     button {
