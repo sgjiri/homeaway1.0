@@ -174,6 +174,11 @@
   margin: 0 auto;
   display: none;
 }
+@media screen and (max-width: 1500px) {
+  .content .contentPage {
+    width: 80%;
+  }
+}
 .content .contentPage h1 {
   margin-top: 50px;
   color: #454545;
@@ -460,6 +465,11 @@
 .content .contentPage .cardHistoric .cardHistoriqueContentLeft {
   width: 40%;
 }
+@media screen and (max-width: 1500px) {
+  .content .contentPage .cardHistoric .cardHistoriqueContentLeft {
+    width: 45%;
+  }
+}
 .content .contentPage .cardHistoric .cardHistoriqueContentLeft figure {
   height: 250px;
   width: 80%;
@@ -475,6 +485,11 @@
 .content .contentPage .cardHistoric .cardHistoriqueContentRight {
   width: 60%;
 }
+@media screen and (max-width: 1500px) {
+  .content .contentPage .cardHistoric .cardHistoriqueContentRight {
+    width: 55%;
+  }
+}
 .content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent {
   height: 33.3%;
   width: 100%;
@@ -488,6 +503,11 @@
   width: 100%;
   font-size: 2em;
 }
+@media screen and (max-width: 1300) {
+  .content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent h2 {
+    font-size: 1.7em;
+  }
+}
 .content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent figure {
   width: 100px;
   display: flex;
@@ -500,6 +520,11 @@
 .content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent .infoRightContent {
   margin-left: 50px;
   color: #fff;
+}
+@media screen and (max-width: 1500px) {
+  .content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent .infoRightContent {
+    margin-left: 20px;
+  }
 }
 .content .contentPage .cardHistoric .cardHistoriqueContentRight .oneRightContent button {
   background-color: #017c8e;
