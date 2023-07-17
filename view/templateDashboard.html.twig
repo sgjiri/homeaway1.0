@@ -20,8 +20,8 @@
 						<li id='info'>
 							<ul>
 								<li id='infoPerso' class='liInfo'>
-									<figure class='icon' >
-										<img  src="{{ asset('/img/🦆 icon _person_.png') }}" alt="icon _person">
+									<figure class='icon'>
+										<img src="{{ asset('/img/🦆 icon _person_.png') }}" alt="icon _person">
 									</figure>
 								</li>
 								<li id='perso' class='liInfo'>
@@ -73,7 +73,7 @@
 					</ul>
 				</nav>
 				<div class='contentPage' id='contentInfoPerso'>
-					<div class='card cardInfoPerso'>
+					<div class='card cardInfoPerso cardInfoPersoM'>
 						<div class='contentFixCard contentFixCardInfoPerso'>
 							<div>
 								<h3>Nom légal</h3>
@@ -81,19 +81,19 @@
 
 							</div>
 
-							<figure class="figureModifier">
-								<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
+							<figure class="figureModifier figureModifierInfo">
+								<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
 							</figure>
 						</div>
 
-						<div class='input input2info height'>
+						<div class='input inputInfo input2info height'>
 							<input type="text" class'changetext' placeholder="Votre nom...">
 							<input type="text" class'changetext' placeholder="Votre prenom...">
 							<input type="submit" name="valider" class="valider" value="">
 						</div>
 					</div>
 
-					<div class='card cardInfoPerso'>
+					<div class='card cardInfoPerso cardInfoPersoM'>
 						<div class='contentFixCard contentFixCardInfoPerso'>
 							<div>
 								<h3>Adresse mail</h3>
@@ -101,47 +101,47 @@
 
 							</div>
 
-							<figure class="figureModifier">
-								<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
+							<figure class="figureModifier figureModifierInfo">
+								<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
 							</figure>
 						</div>
-						<div class='input height'>
+						<div class='input inputInfo height'>
 
 							<input type="text" class'changetext' placeholder="Votre mail...">
 							<input type="submit" name="valider" class="valider" value="">
 						</div>
 					</div>
 
-					<div class='card cardInfoPerso'>
-					<div class='contentFixCard contentFixCardInfoPerso'>
-						<div>
-							<h3>Numero de telophone</h3>
-							<p>Tel de bdd</p>
+					<div class='card cardInfoPerso cardInfoPersoM'>
+						<div class='contentFixCard contentFixCardInfoPerso'>
+							<div>
+								<h3>Numero de telophone</h3>
+								<p>Tel de bdd</p>
 
-						</div>
+							</div>
 
-						<figure class="figureModifier">
-							<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
-						</figure>
+							<figure class="figureModifier figureModifierInfo">
+								<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
+							</figure>
 						</div>
-						<div class='input height'>
+						<div class='input inputInfo height'>
 
 							<input type="text" class'changetext' placeholder="Votre numero de telephone...">
 							<input type="submit" name="valider" class="valider" value="">
 						</div>
 					</div>
 
-					<div class='card cardInfoPerso card2ligneInfoPerso' >
-					<div class='contentFixCard contentFixCardInfoPerso'>
-						<div>
-							<h3>Adresse</h3>
-							<p>Adresse de bdd</p>
+					<div class='card cardInfoPerso cardInfoPersoM card2ligneInfoPerso'>
+						<div class='contentFixCard contentFixCardInfoPerso'>
+							<div>
+								<h3>Adresse</h3>
+								<p>Adresse de bdd</p>
+							</div>
+							<figure class="figureModifier figureModifierInfo">
+								<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
+							</figure>
 						</div>
-						<figure class="figureModifier">
-							<img class="imgModifier" src="{{ asset('/img/exchange.png') }}" alt="">
-						</figure>
-						</div>
-						<div class='input input2ligne'>
+						<div class='input inputInfo input2ligne'>
 							<input type="text" class'changetext' placeholder="Votre rue">
 							<input type="text" class'changetext' placeholder="N° de batiment">
 							<input type="text" class'changetext' placeholder="code postale">
@@ -155,30 +155,30 @@
 					<h1>Historique des réservations</h1>
 					<div class='divBarreDeRecherche'>
 						<form action="" method='GET'>
-							<input type="search" name='search' placeholder='Rechercher dans votre historique' id='searchHistoric'>
+							<input type="search" name='search' placeholder='Rechercher...' id='searchHistoric'>
 							<input type="submit" name='rechercher' value id='rechercherHistoric' class='valider'>
 						</form>
 					</div>
-					<div class='card cardInfoPerso cardHistoric'>
-						<div class='cardHistoriqueContentLeft'>
+					<div class='card cardInfoPerso cardHG'>
+						<div class='cardContentLeft'>
 							<figure>
 								<img src="{{ asset('/img/montpellier.jpg') }}" alt="">
 							</figure>
 						</div>
-						<div class='cardHistoriqueContentRight'>
+						<div class='cardContentRight'>
 							<div class='oneRightContent'>
 								<h2>
 									Nom de logement de la bdd</h2>
 							</div>
 							<div class='oneRightContent'>
 								<figure class="iconRightContent">
-									<img src="{{ asset('/img/calendar.png') }}" alt="">
+									<img id="iconReservationHistoric" src="{{ asset('/img/calendar.png') }}" alt="">
 								</figure>
 								<p class='dateRightContent infoRightContent'>du 00/00/0000 au 00/00/0000</p>
 							</div>
 							<div class='oneRightContent'>
 								<figure class="iconRightContent">
-									<img src="{{ asset('/img/avis-client.png') }}" alt="">
+									<img id="iconAvis" src="{{ asset('/img/avis-client.png') }}" alt="">
 								</figure>
 								<button class='avis infoRightContent'>
 									<span>Laiser votre avis</span>
@@ -188,6 +188,71 @@
 						</div>
 					</div>
 				</div>
+
+				<div class='contentPage'>
+					<h1>Gestion des bien</h1>
+					<div class='card cardHG cardH cardInfoPerso'>
+						<div class='contentCardGestion'>
+							<div class='cardContentLeft'>
+								<figure>
+									<img src="{{ asset('/img/montpellier.jpg') }}" alt="">
+								</figure>
+							</div>
+							<div class='cardContentRight cardContentRightWithButton'>
+								<div class="oneRightContent oneRightContentGestion">
+									<h2>
+										Nom de logement de la bdd
+									</h2>
+								</div>
+								<div class="oneRightContent oneRightContentGestion">
+									<figure class="iconRightContent">
+										<img id="iconReservationHistoric" src="{{ asset('/img/emplacement 1.png') }}" alt="">
+									</figure>
+									<p class='infoRightContent'>Adresse de la bdd</p>
+								</div>
+								<div class="oneRightContent oneRightContentGestion">
+									<figure class="iconRightContent">
+										<img id="iconReservationHistoric" src="{{ asset('/img/lit.png') }}" alt="">
+									</figure>
+									<p class='infoRightContent'>nombre de lits de la bdd</p>
+								</div>
+								<div class="oneRightContent oneRightContentGestion">
+									<figure class="iconRightContent">
+										<img id="iconReservationHistoric" src="{{ asset('/img/reservation1.png') }}" alt="">
+									</figure>
+									<p class='infoRightContent'>nombre de reservations</p>
+								</div>
+								<figure class="figureModifier figureModifierGestion">
+									<img class="imgModifierGestion" src="{{ asset('/img/exchange.png') }}" alt="">
+								</figure>
+							</div>
+
+
+						</div>
+						<div class="input inputGestion">
+							<div class="contentInput">
+								<div class='infoLogement'>
+									<div class='infoSaisis'>
+										<figure class='contentInfoGestion iconeInputGestion'>
+											<img id="iconReservationHistoric" src="{{ asset('/img/emplacement 1.png') }}" alt="">
+										</figure>
+										<div class='contentInfoGestion 2ndIfo'>
+										<p>Info de bdd</p>
+										</div>
+										<figure class='contentInfoGestion modifierInfo'>
+										<img src="{{ asset('/img/exchange.png') }}" alt="">
+										</figure>
+									</div>
+									<div class='infoModifie'></div>
+								</div>
+							</div>
+							<div class="contentInput"></div>
+						</div>
+
+					</div>
+
+				</div>
+
 			</div>
 		</body>
 	</html>
