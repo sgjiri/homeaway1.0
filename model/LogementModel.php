@@ -41,15 +41,18 @@ class LogementModel extends Model
         return $this->getDb()->lastInsertId();
     }
 
-    public function getUpload($thumbnail,$id_logement)
-    {
-        $reqUpload = $this->getDb()->prepare("INSERT INTO `image`( `thumbnail`, `id_logement`) VALUES (:thumbnail', :id_logement)");
-        $reqUpload->bindParam(':thumbnail',$thumbnail,PDO::PARAM_STR);
-        $reqUpload->bindParam(':id_logement',$id_logement,PDO::PARAM_INT);
-        $reqUpload->execute();
-        
-    }
 
+public function getUpload($thumbnailDatas, $idLogement)
+{
+    foreach ($thumbnailDatas as $thumbnailData) {
+        $reqUpload = $this->getDb()->prepare("INSERT INTO `image` (`thumbnail`, `id_logement`) VALUES (:thumbnail, :id_logement)");
+        $reqUpload->bindParam(':thumbnail', $thumbnailData['thumbnail'], PDO::PARAM_STR);
+        $reqUpload->bindParam(':id_logement', $idLogement, PDO::PARAM_INT);
+        $reqUpload->execute();
+    }
+}
+
+    
     public function getCity(int $id_ville)
     {
         $req = $this->getDb()->prepare('SELECT  `title`,`id_city`,`number_of_person` FROM `logement` WHERE `id_city`= :id_ville');
