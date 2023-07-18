@@ -6,9 +6,9 @@ class SearchModel extends Model
     {
         $logementDispo = [];
 
-        $stmt = $this->getDb()->prepare("SELECT DISTINCT  `logement`.`id_logement`, `title`, `city`,`resume`,`latitude`,`longitude`,`price_by_night`,`thumbnail`
+        $stmt = $this->getDb()->prepare("SELECT DISTINCT  `logement`.`id_logement`, `title`, `city`,`resume`,`latitude`,`longitude`,`price_by_night`
     FROM `logement`
-    INNER JOIN `image` ON `logement`.id_logement = `image`.id_logement
+   
     LEFT JOIN `book` ON `logement`.id_logement = `book`.logement_id
     WHERE `logement`.city = :city
     AND `logement`.number_of_person >= :number_of_person
@@ -29,17 +29,20 @@ class SearchModel extends Model
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // var_dump($city);
         $length = (count($results));
-        var_dump(count($results));
+       
 
-        for($i=0; $i< $length; $i++){
-            $logementDispo[$i] = [];
-            array_push($logementDispo[$i], new Logement($results[$i]));
-            array_push($logementDispo[$i], new Image($results[$i]));
+        $newResult = [];
 
+        foreach ($results as $logement) {
+            $stmt2 = $this->getDb()->prepare("SELECT * FROM `image` WHERE `id_logement` = :logementId ");
+            $stmt2->bindParam(':logementId',$logement['id_logement'],PDO::PARAM_STR);
+            $stmt2 -> execute();
+            $images =  $stmt2->fetchAll(PDO::FETCH_ASSOC);
+           
+            $logement['thumbnails'] = $images;
+            $newResult[]= $logement;
         }
-
-        // var_dump($logementDispo);
-
-        return $logementDispo;
+     
+        return $newResult;
     }
 }

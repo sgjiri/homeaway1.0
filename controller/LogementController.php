@@ -74,7 +74,49 @@ class LogementController extends Controller
 
                     // compte le nombre de fichiers téléchargés dans la superglobale $_FILES et stocke le résultat dans la variable $nb.
                     $nb = count($_FILES);
+                    function resizeImg($tmp_name, $width, $height, $name)
+                    {
+                        // Récupération des dimensions de l'image d'origine
+                        list($x, $y) = getimagesize($tmp_name);
 
+                        // Calcul du ratio de redimensionnement en fonction des dimensions souhaitées
+                        $ratio = min($width / $x, $height / $y);
+                        $new_width = round($x * $ratio);
+                        $new_height = round($y * $ratio);
+
+                        // Récupération de l'extension du fichier
+                        $ext = pathinfo($name, PATHINFO_EXTENSION);
+
+                        switch ($ext) {
+                            case 'jpg':
+                            case 'jpeg':
+                                $imageCreateFrom = 'imagecreatefromjpeg';
+                                $imageExt = 'imagejpeg';
+                                break;
+                            case 'png':
+                                $imageCreateFrom = 'imagecreatefrompng';
+                                $imageExt = 'imagepng';
+                                break;
+                            case 'gif':
+                                $imageCreateFrom = 'imagecreatefromgif';
+                                $imageExt = 'imagegif';
+                                break;
+                            case 'webp':
+                                $imageCreateFrom = 'imagecreatefromwebp';
+                                $imageExt = 'imagewebp';
+                                break;
+                            default:
+                                throw new Exception("Format d'image non pris en charge");
+                        }
+
+                        // Création d'une nouvelle image avec les nouvelles dimensions 
+                        $image = $imageCreateFrom($tmp_name);
+                        $image_p = imagecreatetruecolor($new_width, $new_height);
+                        imagecopyresampled($image_p, $image, 0, 0, 0, 0, $new_width, $new_height, $x, $y);
+
+                        // Sauvegarde de l'image redimensionnée dans le répertoire
+                        $imageExt($image_p, "./asset/img/logement/" . $name);
+                    }
                     // boucle for itère à travers chaque fichier téléchargé en utilisant une variable d'index $i.
                     for ($i = 1; $i <= $nb; $i++) {
 
@@ -95,7 +137,7 @@ class LogementController extends Controller
                             $new_filename = 'thumbnail_' . $i . '_' . $_FILES['thumbnail_' . $i]['name'];
 
                             // Cette ligne génère le nouveau chemin complet où le fichier téléchargé sera déplacé. Dans cet exemple, les fichiers seront stockés dans le répertoire 'C:/wamp64/www/Projet/homeaway1.0/asset/img/' avec le nouveau nom de fichier.
-                            $new_path = '../asset/img/logement/' . $new_filename;
+                            $new_path = './asset/img/logement/' . $new_filename;
 
                             // Cette ligne déplace le fichier téléchargé du chemin temporaire ($tmp_path) vers le nouveau chemin spécifié ($new_path). Ainsi, le fichier est déplacé du répertoire temporaire du serveur vers le répertoire de destination choisi.
                             move_uploaded_file($tmp_path, $new_path);
@@ -108,49 +150,7 @@ class LogementController extends Controller
                             // le tableau $thumbnailDatas contiendra les noms de tous les fichiers des miniatures téléchargées, et vous pouvez utiliser ce tableau pour les enregistrer dans la base de données ou les traiter d'une autre manière dans le modèle LogementModel.
 
 
-                            function resizeImg($tmp_name, $width, $height, $name)
-                            {
-                                // Récupération des dimensions de l'image d'origine
-                                list($x, $y) = getimagesize($tmp_name);
-
-                                // Calcul du ratio de redimensionnement en fonction des dimensions souhaitées
-                                $ratio = min($width / $x, $height / $y);
-                                $new_width = round($x * $ratio);
-                                $new_height = round($y * $ratio);
-
-                                // Récupération de l'extension du fichier
-                                $ext = pathinfo($name, PATHINFO_EXTENSION);
-
-                                switch ($ext) {
-                                    case 'jpg':
-                                    case 'jpeg':
-                                        $imageCreateFrom = 'imagecreatefromjpeg';
-                                        $imageExt = 'imagejpeg';
-                                        break;
-                                    case 'png':
-                                        $imageCreateFrom = 'imagecreatefrompng';
-                                        $imageExt = 'imagepng';
-                                        break;
-                                    case 'gif':
-                                        $imageCreateFrom = 'imagecreatefromgif';
-                                        $imageExt = 'imagegif';
-                                        break;
-                                    case 'webp':
-                                        $imageCreateFrom = 'imagecreatefromwebp';
-                                        $imageExt = 'imagewebp';
-                                        break;
-                                    default:
-                                        throw new Exception("Format d'image non pris en charge");
-                                }
-
-                                // Création d'une nouvelle image avec les nouvelles dimensions 
-                                $image = $imageCreateFrom($tmp_name);
-                                $image_p = imagecreatetruecolor($new_width, $new_height);
-                                imagecopyresampled($image_p, $image, 0, 0, 0, 0, $new_width, $new_height, $x, $y);
-
-                                // Sauvegarde de l'image redimensionnée dans le répertoire
-                                $imageExt($image_p, "./asset/img/logement/" . $name);
-                            }
+                           
 
                             // Appel de la fonction resizeImg() avec les paramètres suivants :
                             // - Le chemin temporaire de l'image dans $_FILES['thumbnail']
@@ -214,6 +214,7 @@ class LogementController extends Controller
     public function getOneLogement($id_logement)
     {
         global $router;
+        
         $modelLogement = new LogementModel();
         $onelogement = $modelLogement->getOne($id_logement);
         $oneFlat = $router->generate('one');
