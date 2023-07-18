@@ -270,6 +270,46 @@
 .content .contentPage .figureModifier .imgModifier.activeModifie {
   transform: rotate(-90deg);
 }
+.content .contentPage .change {
+  font-size: 1.5em;
+  background-color: #017c8e;
+  border: #fff 3px solid;
+  border-radius: 10px;
+  color: #fff;
+  padding: 5px;
+  margin-left: 20px;
+  height: 50%;
+}
+.content .contentPage .change::-moz-placeholder {
+  color: #e3dada;
+}
+.content .contentPage .change::placeholder {
+  color: #e3dada;
+}
+.content .contentPage .change:focus {
+  outline: none;
+}
+@media screen and (max-width: 1140px) {
+  .content .contentPage .change {
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .content .contentPage .change {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 950px) {
+  .content .contentPage .change {
+    height: 38%;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .content .contentPage .change {
+    height: 20%;
+  }
+}
 .content .contentPage .card {
   width: 100%;
   margin-top: 0px;
@@ -361,46 +401,6 @@
   .content .contentPage .card .input {
     flex-direction: column;
     justify-content: center;
-  }
-}
-.content .contentPage .card .input input {
-  font-size: 1.5em;
-  background-color: #017c8e;
-  border: #fff 3px solid;
-  border-radius: 10px;
-  color: #fff;
-  padding: 5px;
-  margin-left: 20px;
-  height: 50%;
-}
-.content .contentPage .card .input input::-moz-placeholder {
-  color: #e3dada;
-}
-.content .contentPage .card .input input::placeholder {
-  color: #e3dada;
-}
-.content .contentPage .card .input input:focus {
-  outline: none;
-}
-@media screen and (max-width: 1140px) {
-  .content .contentPage .card .input input {
-    font-size: 1.2em;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .content .contentPage .card .input input {
-    font-size: 1em;
-  }
-}
-@media screen and (max-width: 950px) {
-  .content .contentPage .card .input input {
-    height: 38%;
-    margin-bottom: 10px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .content .contentPage .card .input input {
-    height: 20%;
   }
 }
 .content .contentPage .card .input .valider {
@@ -734,7 +734,7 @@
   height: 23%;
 }
 .content .contentPage .cardH.active {
-  height: 420px;
+  height: 1900px;
 }
 .content .contentPage .cardH .contentCardGestion {
   width: 100%;
@@ -761,24 +761,75 @@
 .content .contentPage .cardH .input {
   display: flex;
   padding-right: 0;
+  height: 1580px;
 }
 .content .contentPage .cardH .input.activeInput {
   transform: translateY(0);
+  height: 1580px;
   z-index: 10;
 }
 .content .contentPage .cardH .input .contentInput {
   width: 50%;
   height: 100%;
 }
-.content .contentPage .cardH .input .contentInput .infoSaisis {
+.content .contentPage .cardH .input .contentInput .oneInfo {
   display: flex;
-  margin: 0 auto;
-  width: 80%;
-  height: 40px;
+  flex-direction: column;
+  justify-content: space-around;
+  border: #fff 5px solid;
+  margin: 20px 60px;
+  border-radius: 10px;
 }
-.content .contentPage .cardH .input .contentInput .infoSaisis .contentInfoGestion {
+.content .contentPage .cardH .input .contentInput .infoLogement {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding-top: 20px;
+}
+.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis {
+  display: flex;
+  margin: 10px auto;
+  width: 90%;
+  justify-content: space-between;
+}
+.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis .hInputGestion h3 {
+  color: #fff;
+  line-height: 40px;
+  height: 100%;
+  font-size: 1.7em;
+  font-weight: 600;
+}
+.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis .secondIfo {
+  width: 60%;
+}
+.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis .secondIfo p {
+  color: #fff;
+  line-height: 40px;
+  height: 100%;
+  font-size: 1.7em;
+  font-weight: 400;
+  text-align: end;
+}
+.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis .contentInfoGestion {
   height: 100%;
 }
-.content .contentPage .cardH .input .contentInput .infoSaisis .contentInfoGestion img {
+.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis .contentInfoGestion img {
   height: 100%;
+}
+.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis form .changeGestion {
+  height: 100%;
+  margin-left: 0;
+  width: 75%;
+}
+.content .contentPage .cardH .input .contentInputRight .infoLogement .oneInfo .modifierInfo form {
+  align-items: center;
+}
+.content .contentPage .cardH .input .contentInputRight .infoLogement .oneInfo .modifierInfo form .bigModifierInfo {
+  height: 500px;
 }/*# sourceMappingURL=dashboard.css.map */
