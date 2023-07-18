@@ -30,7 +30,7 @@ $router->map('GET|POST', '/search', 'SearchController#searchLogement', 'search')
 // **------ROUTE LOGEMENT ------**//
 
 $router->map('GET|POST', '/add', 'LogementController#addLogement', 'add');
-$router->map('GET', '/one', 'LogementController#getOneLogement', 'one');
+$router->map('GET', '/one/[i:id_logement]', 'LogementController#getOneLogement', 'one');
 $router->map('GET','/all/','LogementController#getAllLogement','logements');
 $router->map('GET|POST','/upload','LogementController#getUploadImg','upload_img');
 
