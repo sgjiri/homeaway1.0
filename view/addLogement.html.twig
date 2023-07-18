@@ -16,10 +16,10 @@
 			<legend>Ajouter un logement
 			</legend>
 
-			<form method="post" action='{{path('add')}}' id="add-flat">
+			<form id="add-flat" method="post" action='{{path('add')}}'enctype="multipart/form-data">
 
 				<div id="textField">
-					<input type="hidden" name="id_person" id="id_person" value="session.id" required>
+					<input type="hidden" name="id_person" id="id_person" value="{{session.id_person}}" required>
 
 					<label for="title">Titre:</label>
 					<input type="text" name="title" id="title" required>
@@ -41,6 +41,9 @@
 
 					<label for="surface">Surface:</label>
 					<input type="number" name="surface" id="surface" placehoder="en m²" required>
+
+					<label for="resume">Résumé :</label>
+					<textarea name="resume" id="resume" cols="30" rows="10"></textarea>
 
 					<label for="description">Description :</label>
 					<textarea name="description" id="description" cols="30" rows="10"></textarea>
@@ -129,13 +132,15 @@
 						<input type="checkbox" name="jacuzzi " id="type" value="1">
 					</div>
 				</div>
+
+
 				<input type="submit" name="submit" value="Envoyer">
 			</fieldset>
 		</form>
-		<form action="POST" id="addImg">
-		<span id="spanPlus"><img src="{{asset('/img/iconPlus.png')}}" alt="plus"></span>
-			<input type="submit" value="Envoyer">
-		</form>
 	</section>
+
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script>
+
+	<script src="./asset/js/input.js"></script>
+
 {% endblock %}
