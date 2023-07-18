@@ -119,9 +119,19 @@ class LogementController extends Controller
 
 
   public function getOneLogement () {
+
+    // global $router;
+
+    // $model = new LogementModel();
+    // $logement = $model->getCity($id_ville);
+    // $oneLogement = $router->generate('city', ['id' => $id_ville]);
     $twig = $this->getTwig();
     echo $twig->render('oneLogement.html.twig', []);
     }
+
+
+
+
   public function legalNotices() {
     $twig = $this->getTwig();
     echo $twig->render('legalNotices.html.twig', []);
