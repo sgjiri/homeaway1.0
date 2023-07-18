@@ -16,10 +16,10 @@
 			<legend>Ajouter un logement
 			</legend>
 
-			<form id="add-flat" method="post" action='{{path('add')}}'>
+			<form id="add-flat" method="post" action='{{path('add')}}'enctype="multipart/form-data">
 
 				<div id="textField">
-					<input type="hidden" name="id_person" id="id_person" value="session.id" required>
+					<input type="hidden" name="id_person" id="id_person" value="{{session.id_person}}" required>
 
 					<label for="title">Titre:</label>
 					<input type="text" name="title" id="title" required>
@@ -132,18 +132,33 @@
 						<input type="checkbox" name="jacuzzi " id="type" value="1">
 					</div>
 				</div>
+				<div id="addImg">
+					<span id="spanPlus"><img src="{{ asset('/img/iconPlus.png') }}" alt="plus"></span>
+					<!-- Champ de téléchargement de fichier pour l'image -->
+					{# <input
+					type="file" name="thumbnail_1"/> #}
+				<!-- 'thumbnail_1' pour la première image -->
+				</div>
 
 				<input type="submit" name="submit" value="Envoyer">
 			</fieldset>
 		</form>
 
-		<div class="form-add">
-			<form action="POST" id="addImg">
-				<span id="spanPlus"><img src="{{asset('/img/iconPlus.png')}}" alt="plus"></span>
+		{# <div class="form-add">
+			<form
+				action="{{ path('upload_img') }}" method="POST" id="addFlat" enctype="multipart/form-data">
+				<!-- Ajoutez un champ input de type 'hidden' pour l'ID du logement -->
+				{# <input
+				type="hidden" name="id_logement" value= "{{ id_logement }}"/> #}
+
+				<!-- Créez un div pour contenir les champs d'images -->
 				
-				<input type="submit" value="Envoyer">
+
+				
+				{# <input type="submit" value="Envoyer">
 			</form>
-		</div>
+		</div> #} 
+
 	</section>
 
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script>
