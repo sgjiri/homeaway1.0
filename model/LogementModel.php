@@ -42,17 +42,17 @@ class LogementModel extends Model
     }
 
 
-public function getUpload($thumbnailDatas, $idLogement)
-{
-    foreach ($thumbnailDatas as $thumbnailData) {
-        $reqUpload = $this->getDb()->prepare("INSERT INTO `image` (`thumbnail`, `id_logement`) VALUES (:thumbnail, :id_logement)");
-        $reqUpload->bindParam(':thumbnail', $thumbnailData['thumbnail'], PDO::PARAM_STR);
-        $reqUpload->bindParam(':id_logement', $idLogement, PDO::PARAM_INT);
-        $reqUpload->execute();
+    public function getUpload($thumbnailDatas, $idLogement)
+    {
+        foreach ($thumbnailDatas as $thumbnailData) {
+            $reqUpload = $this->getDb()->prepare("INSERT INTO `image` (`thumbnail`, `id_logement`) VALUES (:thumbnail, :id_logement)");
+            $reqUpload->bindParam(':thumbnail', $thumbnailData['thumbnail'], PDO::PARAM_STR);
+            $reqUpload->bindParam(':id_logement', $idLogement, PDO::PARAM_INT);
+            $reqUpload->execute();
+        }
     }
-}
 
-    
+
     public function getCity(int $id_ville)
     {
         $req = $this->getDb()->prepare('SELECT  `title`,`id_city`,`number_of_person` FROM `logement` WHERE `id_city`= :id_ville');
@@ -62,6 +62,17 @@ public function getUpload($thumbnailDatas, $idLogement)
         $logements = new Logement($req->fetch(PDO::FETCH_ASSOC));
 
         return $logements;
+    }
+
+    public function getOne(int $id_logement)
+    {
+        $req = $this->getDb()->prepare('SELECT `id_logement`, `title`, `type`, `number_of_person`, `number_of_beds`, `description`,`location` FROM `logement ` WHERE `id_logement `= :id_logement ');
+        $req->bindParam('id_logement ', $id_logement, PDO::PARAM_INT);
+        $req->execute();
+
+        $onelogement = new Logement($req->fetch(PDO::FETCH_ASSOC));
+
+        return $onelogement;
     }
 
     public function getAll()
