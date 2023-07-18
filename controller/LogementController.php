@@ -95,7 +95,7 @@ class LogementController extends Controller
                             $new_filename = 'thumbnail_' . $i . '_' . $_FILES['thumbnail_' . $i]['name'];
 
                             // Cette ligne génère le nouveau chemin complet où le fichier téléchargé sera déplacé. Dans cet exemple, les fichiers seront stockés dans le répertoire 'C:/wamp64/www/Projet/homeaway1.0/asset/img/' avec le nouveau nom de fichier.
-                            $new_path = 'C:/wamp64/www/Projet/homeaway1.0/asset/img/logement/' . $new_filename;
+                            $new_path = '../asset/img/logement/' . $new_filename;
 
                             // Cette ligne déplace le fichier téléchargé du chemin temporaire ($tmp_path) vers le nouveau chemin spécifié ($new_path). Ainsi, le fichier est déplacé du répertoire temporaire du serveur vers le répertoire de destination choisi.
                             move_uploaded_file($tmp_path, $new_path);
@@ -167,8 +167,7 @@ class LogementController extends Controller
                     $logementmodel = new LogementModel();
                     $idLogement = $logementmodel->addFlat($id_person, $title, $type, $surface, $resume, $description, $adress, $adressCode, $city, $location,  $price_by_night, $number_of_person, $number_of_beds, $parking, $wifi, $piscine, $animals, $kitchen, $garden, $tv, $climatisation, $camera, $home_textiles, $spa, $jacuzzi, $latitude, $longitude);
                     $thumbnailImg = $img->getUpload($thumbnailDatas, $idLogement);
-
-                    $thumbnailImg = $img->getUpload($thumbnailDatas, $idLogement);
+               
 
 
                     header('Location:./add');
@@ -183,14 +182,6 @@ class LogementController extends Controller
             }
         }
     }
-
-
-    // public function getUploadImg()
-    // {
-
-    //     global $router;
-
-    //     // instance de la classe LogementModel
 
 
     public function getOneCity($id_ville)
@@ -220,11 +211,19 @@ class LogementController extends Controller
 
 
 
-    public function getOneLogement()
+    public function getOneLogement($id_logement)
     {
+        global $router;
+        $modelLogement = new LogementModel();
+        $onelogement = $modelLogement->getOne($id_logement);
+        $oneFlat = $router->generate('one');
         $twig = $this->getTwig();
-        echo $twig->render('oneLogement.html.twig', []);
+        echo $twig->render('oneLogement.html.twig', ['onelogement'=> $onelogement ,'oneFlat'=> $oneFlat]);
     }
+
+
+
+    
     public function legalNotices()
     {
         $twig = $this->getTwig();
