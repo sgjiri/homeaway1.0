@@ -38,28 +38,34 @@ for (let i = 0; i < liInfo.length; i++) {
 
 
 
-let classFigureModifier = document.getElementsByClassName('figureModifier');
-let classCardInfoPerso = document.getElementsByClassName('cardInfoPerso');
-let classImgModifier = document.getElementsByClassName('imgModifier');
-let classInput = document.getElementsByClassName('input');
-let classCard = document.getElementsByClassName('card');
 
-for (let i = 0; i < classFigureModifier.length; i++) {
-    (function (index) {
+function animationInput(idFigure, idCard, idImg, idInput) {
+    let classFigureModifier = document.getElementsByClassName(idFigure);
+    let classCard = document.getElementsByClassName(idCard);
+    let classImgModifier = document.getElementsByClassName(idImg);
+    let classInput = document.getElementsByClassName(idInput);
 
-        classCard[index].id = index + 1 + 'card';
-        
-        classFigureModifier[index].addEventListener('click', function () {
-
-
-            classImgModifier[index].classList.toggle('activeModifie');
-            classInput[index].classList.toggle('activeInput');
-            classCardInfoPerso[index].classList.toggle('active');
-
-            
-
-
-        });
-    })(i);
+    for (let i = 0; i < classFigureModifier.length; i++) {
+        (function (index) {
+    
+    
+            classFigureModifier[index].addEventListener('click', function () {
+    
+    
+                classImgModifier[index].classList.toggle('activeModifie');
+                classInput[index].classList.toggle('activeInput');
+                classCard[index].classList.toggle('active');
+            });
+        })(i);
+    }
 }
+
+animationInput('figureModifierInfo', 'cardInfoPersoM', 'imgModifierInfo', 'inputInfo');
+animationInput('figureModifierGestion', 'cardH', 'imgModifierGestion','inputGestion');
+
+
+
+
+
+
 
