@@ -64,10 +64,12 @@ class LogementModel extends Model
         return $logements;
     }
 
+    // *-*-*-*-AFFICHAGE UN SEUL LOGEMENT *-*-*-*-//
+
     public function getOne(int $id_logement)
     {
-        $req = $this->getDb()->prepare('SELECT `id_logement`, `title`, `type`, `number_of_person`, `number_of_beds`, `description`,`location` FROM `logement ` WHERE `id_logement `= :id_logement ');
-        $req->bindParam('id_logement ', $id_logement, PDO::PARAM_INT);
+        $req = $this->getDb()->prepare('SELECT * FROM `logement` WHERE `id_logement`= :id_logement');
+        $req->bindParam('id_logement', $id_logement, PDO::PARAM_STR);
         $req->execute();
 
         $onelogement = new Logement($req->fetch(PDO::FETCH_ASSOC));
@@ -87,11 +89,5 @@ class LogementModel extends Model
         return $logements;
     }
 
-    // public function addPosition($latitude, $longitude) {
-
-    //     $reqPosition=$this->getDb()->query("INSERT INTO logement (latitude, longitude) VALUES ('$latitude', '$longitude')");
-    //     $reqPosition->execute();
-
-    // }
-
+   
 }

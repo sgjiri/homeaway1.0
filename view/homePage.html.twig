@@ -45,7 +45,7 @@
 			<div class="imgDestination">
 				{% for oneCityBeach in cityBeach %}
 					<div>
-						<a href="{{ path('baseLogement') ~ oneCityBeach.id_ville }}">
+						<a href="{{ path('baseLogement') ~ oneCityBeach.ville_nom }}">
 							<img src="{{ asset('/img/' ~ oneCityBeach.img) }}" alt="{{oneCityBeach.ville_nom}}">
 						</a>
 						<h4>{{oneCityBeach.ville_nom}}</h4>
