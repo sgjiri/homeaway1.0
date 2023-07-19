@@ -75,6 +75,7 @@ class LogementModel extends Model
         $onelogement = new Logement($req->fetch(PDO::FETCH_ASSOC));
 
         return $onelogement;
+        
     }
 
     public function getAll()

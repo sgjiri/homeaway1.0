@@ -1315,7 +1315,7 @@ footer {
 
 
 }
-
+/*resultsearch tablet*/
 @media screen and (min-width:800px) {
 
     #resumSearchPhone {
@@ -1328,6 +1328,7 @@ footer {
 
             .item {
                 margin: unset;
+               
             }
         }
 
@@ -1351,9 +1352,9 @@ footer {
 
 
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
                 grid-column-gap: 30px;
-                padding: 0 30px;
+                
 
             }
         }

@@ -213,6 +213,7 @@ class LogementController extends Controller
     public function getOneLogement($id_logement)
     {
         global $router;
+        
         $modelLogement = new LogementModel();
         $onelogement = $modelLogement->getOne($id_logement);
         $oneFlat = $router->generate('one');

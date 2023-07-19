@@ -975,6 +975,7 @@ footer #secondContainerFooter a {
   font-weight: 700;
 }
 
+/*resultsearch tablet*/
 @media screen and (min-width: 800px) {
   #resumSearchPhone {
     display: none;
@@ -999,9 +1000,8 @@ footer #secondContainerFooter a {
   }
   #resultresearch #containerResultSearch .listResult {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 30px;
-    padding: 0 30px;
   }
 }
 /* section formAddLogement phone*/

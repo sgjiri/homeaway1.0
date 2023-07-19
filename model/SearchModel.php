@@ -70,18 +70,20 @@ class SearchModel extends Model
         // var_dump($city);
         $length = (count($results));
 
+       
 
         $newResult = [];
 
         foreach ($results as $logement) {
             $stmt2 = $this->getDb()->prepare("SELECT * FROM `image` WHERE `id_logement` = :logementId ");
-            $stmt2->bindParam(':logementId', $logement['id_logement'], PDO::PARAM_STR);
-            $stmt2->execute();
+            $stmt2->bindParam(':logementId',$logement['id_logement'],PDO::PARAM_STR);
+            $stmt2 -> execute();
             $images =  $stmt2->fetchAll(PDO::FETCH_ASSOC);
-
+           
             $logement['thumbnails'] = $images;
-            $newResult[] = $logement;
+            $newResult[]= $logement;
         }
+     
 
         return $newResult;
     }

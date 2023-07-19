@@ -5,7 +5,7 @@ class SearchController extends Controller
 
     public function searchLogement()
     {
-        
+
         if (isset($_POST['submit'])) {
             $city = ucfirst($_POST['city']);
             $start_date = $_POST['start_date'];
@@ -33,10 +33,27 @@ class SearchController extends Controller
             }
         }
         $twig = $this->getTwig();
-        echo $twig->render('resultsearch.html.twig', ['logementDispo' => $datas, 'totalPrices' => $totalPrices, "formValue" => $formValue]);
 
-        if (empty($datas)) {
-            echo "Aucun logement ne correspond à votre recherche.";
+        if ($_POST['check']=true) {
+
+            $resultSearchView = $twig->render('resultsearch.html.twig', [
+                'logementDispo' => $datas,
+                'totalPrices' => $totalPrices,
+                'formValue' => $formValue
+            ]);
+            echo $resultSearchView;
+
+            if (empty($datas)) {
+                echo "Aucun logement ne correspond à votre recherche.";
+            }
+        } else {
+            $oneLogementView = $twig->render('oneLogement.html.twig', [
+                'logementDispo' => $datas,
+                'totalPrices' => $totalPrices,
+                'formValue' => $formValue
+            ]);
+            echo $oneLogementView;
+
         }
     }
 }
