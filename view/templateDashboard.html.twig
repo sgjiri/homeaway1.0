@@ -171,8 +171,8 @@
 					<h1>Historique des réservations</h1>
 					<div class='divBarreDeRecherche'>
 						<form action="" method='GET'>
-							<input type="search" name='search' placeholder='Rechercher...' id='searchHistoric'>
-							<input type="submit" name='rechercher' value id='rechercherHistoric' class='valider change'>
+							<input type="search" name='search' placeholder='Rechercher...' class='search'>
+							<input type="submit" name='rechercher' value class='rechercher' class='valider change'>
 						</form>
 					</div>
 					<div class='card cardInfoPerso cardHG'>
@@ -245,16 +245,17 @@
 
 
 						</div>
-						<div class="input inputGestion">
+						<div class="input inputGA">
 							<div class="contentInput contentInputLeft">
 								<div class='infoLogement infoLogementLeft'>
 									<div class='oneInfo'>
 										<div class='infoSaisis'>
 											<div class='contentInfoGestion hInputGestion'>
-												<h3>Title: <br>Info de Bdd
+												<h3>Title:
+													<br>Info de Bdd
 												</h3>
 											</div>
-											
+
 										</div>
 										<div class='modifierInfo infoSaisis'>
 											<form action="" method='post'>
@@ -269,10 +270,11 @@
 									<div class='oneInfo'>
 										<div class='infoSaisis'>
 											<div class='contentInfoGestion hInputGestion'>
-												<h3>Adresse: <br>Info de Bdd
+												<h3>Adresse:
+													<br>Info de Bdd
 												</h3>
 											</div>
-											
+
 										</div>
 										<div class='modifierInfo infoSaisis'>
 											<form action="" method="post">
@@ -286,10 +288,11 @@
 									<div class='oneInfo'>
 										<div class='infoSaisis'>
 											<div class='contentInfoGestion hInputGestion'>
-												<h3>Type: <br>Info de Bdd
+												<h3>Type:
+													<br>Info de Bdd
 												</h3>
 											</div>
-											
+
 										</div>
 										<div class='modifierInfo infoSaisis'>
 											<form action="" method="post">
@@ -310,10 +313,11 @@
 									<div class='oneInfo'>
 										<div class='infoSaisis'>
 											<div class='contentInfoGestion hInputGestion'>
-												<h3>Surface en m²: <br>Info de Bdd
+												<h3>Surface en m²:
+													<br>Info de Bdd
 												</h3>
 											</div>
-											
+
 										</div>
 										<div class='modifierInfo infoSaisis'>
 											<form action="" method="post">
@@ -330,10 +334,11 @@
 									<div class='oneInfo'>
 										<div class='infoSaisis'>
 											<div class='contentInfoGestion hInputGestion'>
-												<h3>Emplacement: <br>Info de Bdd
+												<h3>Emplacement:
+													<br>Info de Bdd
 												</h3>
 											</div>
-											
+
 										</div>
 										<div class='modifierInfo infoSaisis'>
 											<form action="" method="post">
@@ -354,10 +359,11 @@
 									<div class='oneInfo'>
 										<div class='infoSaisis'>
 											<div class='contentInfoGestion hInputGestion'>
-												<h3>Prix par nuit en €: <br>Info de Bdd
+												<h3>Prix par nuit en €:
+													<br>Info de Bdd
 												</h3>
 											</div>
-											
+
 										</div>
 										<div class='modifierInfo infoSaisis'>
 											<form action="" method="post">
@@ -374,10 +380,11 @@
 									<div class='oneInfo'>
 										<div class='infoSaisis'>
 											<div class='contentInfoGestion hInputGestion'>
-												<h3>Maximume de persones: <br>Info de Bdd
+												<h3>Maximume de persones:
+													<br>Info de Bdd
 												</h3>
 											</div>
-											
+
 										</div>
 										<div class='modifierInfo infoSaisis'>
 											<form action="" method="post">
@@ -393,10 +400,11 @@
 									<div class='oneInfo'>
 										<div class='infoSaisis'>
 											<div class='contentInfoGestion hInputGestion'>
-												<h3>Nombre de lits: <br>Info de Bdd
+												<h3>Nombre de lits:
+													<br>Info de Bdd
 												</h3>
 											</div>
-											
+
 										</div>
 										<div class='modifierInfo infoSaisis'>
 											<form action="" method="post">
@@ -413,7 +421,7 @@
 							</div>
 							<div class="contentInput contentInputRight">
 								<div class="infoLogement">
-								<div class='oneInfo'>
+									<div class='oneInfo'>
 										<div class='infoSaisis'>
 											<div class='contentInfoGestion hInputGestion'>
 												<h3>Description:
@@ -422,8 +430,7 @@
 										</div>
 										<div class='modifierInfo infoSaisis'>
 											<form action="" method='post'>
-												<textarea type="text" class='change changeGestion bigModifierInfo' placeholder="Modifier...">
-												</textarea>
+												<textarea type="text" class='change changeGestion bigModifierInfo' placeholder="Modifier..."></textarea>
 												<input type="submit" name="valider" class="valider change validerGestion" value="">
 
 											</form>
@@ -431,6 +438,23 @@
 										</div>
 
 									</div>
+									{# <div class='oneInfo'>
+																												<div class='infoSaisis'>
+																													<div class='contentInfoGestion hInputGestion'>
+																														<h3>Resumé:
+																														</h3>
+																													</div>
+																												</div>
+																												<div class='modifierInfo infoSaisis'>
+																													<form action="" method='post'>
+																														<textarea type="text" class='change changeGestion bigModifierInfo' placeholder="Modifier..."></textarea>
+																														<input type="submit" name="valider" class="valider change validerGestion" value="">
+																		
+																													</form>
+																		
+																												</div>
+																		
+																											</div> #}
 									<div class='oneInfo'>
 										<div class='infoSaisis'>
 											<div class='contentInfoGestion hInputGestion'>
@@ -441,68 +465,415 @@
 										<div class='modifierInfo infoSaisis'>
 											<form action="" method='post'>
 												<div type="text" class='change changeGestion bigModifierInfo' placeholder="Modifier...">
-												<label class="labelGestionEquipement"for="parking">parking
-													<input type="checkbox" name="parking">
+													<label class="labelGestionEquipement" for="parking">parking
+														<input type="checkbox" name="parking">
 													</label>
 													<label class="labelGestionEquipement" for="wifi">wifi
-													<input type="checkbox" name="wifi">
+														<input type="checkbox" name="wifi">
 													</label>
 													<label class="labelGestionEquipement" for="piscine">piscine
-													<input type="checkbox" name="piscine">
+														<input type="checkbox" name="piscine">
 													</label>
 													<label class="labelGestionEquipement" for="animals">animaux
-													<input type="checkbox" name="animals">
+														<input type="checkbox" name="animals">
 													</label>
 													<label class="labelGestionEquipement" for="kitchen">cuisine
-													<input type="checkbox" name="kitchen">
+														<input type="checkbox" name="kitchen">
 													</label>
 													<label class="labelGestionEquipement" for="garden">jardin
-													<input type="checkbox" name="garden">
+														<input type="checkbox" name="garden">
 													</label>
 													<label class="labelGestionEquipement" for="tv">tv
-													<input type="checkbox" name="tv">
+														<input type="checkbox" name="tv">
 													</label>
 													<label class="labelGestionEquipement" for="climatisation">climatisation
-													<input type="checkbox" name="climatisation">
+														<input type="checkbox" name="climatisation">
 													</label>
 													<label class="labelGestionEquipement" for="camera">camera
-													<input type="checkbox" name="camera">
+														<input type="checkbox" name="camera">
 													</label>
 													<label class="labelGestionEquipement" for="piscine">piscine
-													<input type="checkbox" name="">
+														<input type="checkbox" name="">
 													</label>
 													<label class="labelGestionEquipement" for="home_textiles">draps
-													<input type="checkbox" name="home_textiles">
+														<input type="checkbox" name="home_textiles">
 													</label>
 													<label class="labelGestionEquipement" for="spa">spa
-													<input type="checkbox" name="spa">
+														<input type="checkbox" name="spa">
 													</label>
 													<label class="labelGestionEquipement" for="jacuzzi">jacuzzi
-													<input type="checkbox" name="jacuzzi">
+														<input type="checkbox" name="jacuzzi">
 													</label>
 
-													
+
 												</div>
-												<input type="submit" name="valider" class="valider change" value="">
+												<input type="submit" name="valider" class="valider change validerGestion" value="">
 
 											</form>
 
 										</div>
 
 									</div>
-								
+
+
 								</div>
-								
-							
-							
+
+
 							</div>
 						</div>
 
 					</div>
 
 				</div>
+				<div class="contentPage">
+					<div class='card cardAjout'>
+						<div class="input inputGA">
+							<form id="add-flat" method="post" action='{{path('add')}}' enctype="multipart/form-data">
+								<div class="contentInput contentInputLeft">
+									<div class='infoLogement infoLogementLeft'>
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Title:
+														<br>Info de Bdd
+													</h3>
+												</div>
 
-			</div>
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<label for="title"></label>
+												<input type="text" name='title' id='title' class='change changeGestion' placeholder="Modifier...">
+
+											</div>
+
+										</div>
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Adresse:
+														<br>Info de Bdd
+													</h3>
+												</div>
+
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<label for=""></label>
+												<input type="text" class='change changeGestion' placeholder="Modifier...">
+
+
+											</div>
+
+										</div>
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Type:
+														<br>Info de Bdd
+													</h3>
+												</div>
+
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<label for="type"></label>
+												<select type="select" class='change changeGestion' name='type' id='type' required>
+													<option value=""></option>
+													<option value="housse">Maison</option>
+													<option value="flat">Appartement</option>
+													<option value="studio">Studio</option>
+													<option value="chalet">Chalet</option>
+													<option value="cottage">Gîte</option>
+													<option value="gest house">Maison d'hôte</option>
+													<option value="dome">Dôme</option>
+													<option value="hut">Cabane</option>
+													<option value="yurt">Yourt</option>
+													<option value="barge">Péniche</option>
+												</select>
+
+
+											</div>
+
+										</div>
+
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Surface en m²:
+														<br>Info de Bdd
+													</h3>
+												</div>
+
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<label for="surface"></label>
+												<input type="number" class='change changeGestion' placeholder="Saisisez..." name="surface" id="surface" required>
+											</div>
+
+										</div>
+
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Emplacement:
+														<br>Info de Bdd
+													</h3>
+												</div>
+
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<label for="location"></label>
+												<select type="select" class='change changeGestion' name="location" id="location" required>
+													<option value=""></option>
+													<option value="beach">La plage</option>
+													<option value="river">La rivière/ Un fleuve</option>
+													<option value="forest">La fôret</option>
+													<option value="montain">La montagne</option>
+													<option value="lac">Un lac</option>
+												</select>
+
+
+											</div>
+
+										</div>
+
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Prix par nuit en €:
+														<br>Info de Bdd
+													</h3>
+												</div>
+
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<label for="price_by_night"></label>
+												<input type="number" class='change changeGestion' placeholder="Saisissez..."  name="price_by_night" id="type" required>
+
+
+											</div>
+
+										</div>
+
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Maximume de persones:
+														<br>Info de Bdd
+													</h3>
+												</div>
+
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<label for="number_of_person"></label>
+												<input type="number" class='change changeGestion' placeholder="Saisissez..." name="number_of_person" id="type" required>
+
+
+											</div>
+
+										</div>
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Nombre de lits:
+														<br>Info de Bdd
+													</h3>
+												</div>
+
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<label for="number_of_beds"></label>
+												<input type="number" class='change changeGestion' placeholder="Saisissez..." name="number_of_beds" id="number_of_beds" required>
+
+
+											</div>
+
+										</div>
+									</div>
+								</div>
+								<div class="contentInput contentInputRight">
+									<div class="infoLogement">
+										<div class='oneInfo oneBigInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Description:
+													</h3>
+												</div>
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<label for=""></label>
+												<textarea type="text" class='change changeGestion bigModifierInfo' placeholder="Modifier..."></textarea>
+
+
+											</div>
+
+										</div>
+										<div class='oneInfo oneBigInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Resumé:
+													</h3>
+												</div>
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<label for=""></label>
+												<textarea type="text" class='change changeGestion bigModifierInfo' placeholder="Modifier..."></textarea>
+
+
+											</div>
+
+										</div>
+										<div class='oneInfo oneBigInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Equipement:
+													</h3>
+												</div>
+											</div>
+											<div class='modifierInfo infoSaisis'>
+
+												<div type="text" class='change changeGestion bigModifierInfo' placeholder="Modifier...">
+													<label class="labelGestionEquipement" for="parking">parking
+														<input type="checkbox" name="parking">
+													</label>
+													<label class="labelGestionEquipement" for="wifi">wifi
+														<input type="checkbox" name="wifi">
+													</label>
+													<label class="labelGestionEquipement" for="piscine">piscine
+														<input type="checkbox" name="piscine">
+													</label>
+													<label class="labelGestionEquipement" for="animals">animaux
+														<input type="checkbox" name="animals">
+													</label>
+													<label class="labelGestionEquipement" for="kitchen">cuisine
+														<input type="checkbox" name="kitchen">
+													</label>
+													<label class="labelGestionEquipement" for="garden">jardin
+														<input type="checkbox" name="garden">
+													</label>
+													<label class="labelGestionEquipement" for="tv">tv
+														<input type="checkbox" name="tv">
+													</label>
+													<label class="labelGestionEquipement" for="climatisation">climatisation
+														<input type="checkbox" name="climatisation">
+													</label>
+													<label class="labelGestionEquipement" for="camera">camera
+														<input type="checkbox" name="camera">
+													</label>
+													<label class="labelGestionEquipement" for="piscine">piscine
+														<input type="checkbox" name="">
+													</label>
+													<label class="labelGestionEquipement" for="home_textiles">draps
+														<input type="checkbox" name="home_textiles">
+													</label>
+													<label class="labelGestionEquipement" for="spa">spa
+														<input type="checkbox" name="spa">
+													</label>
+													<label class="labelGestionEquipement" for="jacuzzi">jacuzzi
+														<input type="checkbox" name="jacuzzi">
+													</label>
+
+
+												</div>
+
+
+											</div>
+
+										</div>
+
+
+									</div>
+
+
+								</div>
+								<input type="submit" name="valider" class="valider change validerGestion" value="">
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="contentPage">
+					<h1>Gestion des reservation</h1>
+					<div class='divBarreDeRecherche'>
+						<form action="" method='GET'>
+							<input type="search" name='search' placeholder='Rechercher...' class='search'>
+							<input type="submit" name='rechercher' value class='rechercher' class='valider change'>
+						</form>
+					</div>
+					<h2>Nom de logement</h2>
+					<div class='card cardGestionReservation'>
+						<table class="reservation-table">
+							<thead>
+								<tr class="rowTable">
+									<th class="reservation-date colomTable">Periode</th>
+									<th class="reservation-reseverPar colomTable">Reserver par</th>
+									<th class="reservation-reglement colomTable">Reglement</th>
+									<th class="reservation-nbPresonnes colomTable">Nombre de personnes</th>
+									<th class="reservation-contact colomTable">Contact</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="rowTable">
+									<td data-label="Date">
+										<p>
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nobis architecto totam dolorum deleniti illo, est sed, nisi ad eligendi ab illum deserunt, sint dicta eaque repellendus perspiciatis quam temporibus.</p>
+									</td>
+									<td data-label="Reservar par">
+										<p>
+											#_EVENTTIMES
+										</p>
+									</td>
+									<td data-label="reglement">
+										<p>
+											#_EVENTTIMES
+										</p>
+									</td>
+									<td data-label="Nombre de persones">
+										<p>
+											#_EVENTTIMES
+										</p>
+									</td>
+									<td data-label="Contact">
+										<p>
+											#_EVENTTIMES
+										</p>
+									</td>
+								</tr>
+								<tr class="rowTable">
+									<td data-label="Date">
+										<p>
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nobis architecto totam dolorum deleniti illo, est sed, nisi ad eligendi ab illum deserunt, sint dicta eaque repellendus perspiciatis quam temporibus.
+										</p>
+									</td>
+									<td data-label="Reservar par">
+										<p>
+											#_EVENTTIMES
+										</p>
+									</td>
+									<td data-label="reglement">
+										<p>
+											#_EVENTTIMES
+										</p>
+									</td>
+									<td data-label="Nombre de persones">
+										<p>
+											#_EVENTTIMES
+										</p>
+									</td>
+									<td data-label="Contact">
+										<p>
+											#_EVENTTIMES
+										</p>
+									</td>
+								</tr>
+							</tbody>
+						</div>
+
+
+					</div>
+
+
+				</div>
+				<div class="contentPage"></div>
+				<div class="contentPage"></div>
+			</body>
 		</body>
 	</html>
 </div></body></html></div>{% endblock %}{% block js %}<script src="{{ asset('/js/dashboard.js') }}"></script>{% endblock %}</body></html>

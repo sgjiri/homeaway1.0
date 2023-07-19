@@ -190,6 +190,16 @@
     font-size: 1.8em;
   }
 }
+.content .contentPage h2 {
+  color: #454545;
+  font-size: 2em;
+}
+@media screen and (max-width: 700px) {
+  .content .contentPage h2 {
+    margin-top: 30px;
+    font-size: 1.5em;
+  }
+}
 .content .contentPage .divBarreDeRecherche {
   height: 50px;
   margin: 50px 0;
@@ -210,7 +220,7 @@
     height: 40px;
   }
 }
-.content .contentPage .divBarreDeRecherche form #searchHistoric {
+.content .contentPage .divBarreDeRecherche form .search {
   float: left;
   height: 100%;
   background-color: #017c8e;
@@ -221,23 +231,23 @@
   font-size: 1.5em;
 }
 @media screen and (max-width: 700px) {
-  .content .contentPage .divBarreDeRecherche form #searchHistoric {
+  .content .contentPage .divBarreDeRecherche form .search {
     font-size: 1.2em;
   }
 }
-.content .contentPage .divBarreDeRecherche form #searchHistoric::-moz-placeholder {
+.content .contentPage .divBarreDeRecherche form .search::-moz-placeholder {
   color: #e3dada;
 }
-.content .contentPage .divBarreDeRecherche form #searchHistoric::placeholder {
+.content .contentPage .divBarreDeRecherche form .search::placeholder {
   color: #e3dada;
 }
-.content .contentPage .divBarreDeRecherche form #searchHistoric::-webkit-search-cancel-button {
+.content .contentPage .divBarreDeRecherche form .search::-webkit-search-cancel-button {
   display: none;
 }
-.content .contentPage .divBarreDeRecherche form #searchHistoric:focus {
+.content .contentPage .divBarreDeRecherche form .search:focus {
   outline: none;
 }
-.content .contentPage .divBarreDeRecherche form #rechercherHistoric {
+.content .contentPage .divBarreDeRecherche form .rechercher {
   float: right;
   background: url(../img/lupe.png) center center no-repeat;
   height: 50px;
@@ -247,17 +257,17 @@
   margin-right: 20px;
 }
 @media screen and (max-width: 700px) {
-  .content .contentPage .divBarreDeRecherche form #rechercherHistoric {
+  .content .contentPage .divBarreDeRecherche form .rechercher {
     height: 40px;
     background-size: 25px;
   }
 }
 @media screen and (max-width: 400px) {
-  .content .contentPage .divBarreDeRecherche form #rechercherHistoric {
+  .content .contentPage .divBarreDeRecherche form .rechercher {
     width: 30px;
   }
 }
-.content .contentPage .divBarreDeRecherche form #rechercherHistoric:hover {
+.content .contentPage .divBarreDeRecherche form .rechercher:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
@@ -478,6 +488,293 @@
   .content .contentPage .card .input2info {
     transform: translateY(-120px);
   }
+}
+.content .contentPage .card .inputGA {
+  display: flex;
+  padding-right: 0;
+  height: 1780px;
+}
+@media screen and (max-width: 1200px) {
+  .content .contentPage .card .inputGA {
+    flex-direction: column;
+    height: 3480px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .content .contentPage .card .inputGA {
+    height: 2780px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .content .contentPage .card .inputGA {
+    height: 3180px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content .contentPage .card .inputGA {
+    height: 3750px;
+  }
+}
+.content .contentPage .card .inputGA.activeInput {
+  transform: translateY(0);
+  height: 1780px;
+  z-index: 10;
+}
+@media screen and (max-width: 1200px) {
+  .content .contentPage .card .inputGA.activeInput {
+    height: 3480px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .content .contentPage .card .inputGA.activeInput {
+    height: 2780px;
+    transform: translateY(50px);
+  }
+}
+@media screen and (max-width: 700px) {
+  .content .contentPage .card .inputGA.activeInput {
+    height: 3180px;
+    transform: translateY(200px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .content .contentPage .card .inputGA.activeInput {
+    height: 3750px;
+    transform: translateY(270px);
+  }
+}
+.content .contentPage .card .inputGA .contentInput {
+  width: 50%;
+  height: 100%;
+}
+@media screen and (max-width: 1200px) {
+  .content .contentPage .card .inputGA .contentInput {
+    width: 100%;
+  }
+}
+.content .contentPage .card .inputGA .contentInput .oneInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: #fff 5px solid;
+  margin: 20px 60px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 1200px) {
+  .content .contentPage .card .inputGA .contentInput .oneInfo {
+    margin: 20px 40px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .content .contentPage .card .inputGA .contentInput .oneInfo {
+    height: 180px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content .contentPage .card .inputGA .contentInput .oneInfo {
+    height: 280px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content .contentPage .card .inputGA .contentInput .oneInfo {
+    margin: 20px;
+  }
+}
+.content .contentPage .card .inputGA .contentInput .infoLogement {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding-top: 20px;
+}
+.content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis {
+  display: flex;
+  margin: 10px auto;
+  width: 90%;
+  justify-content: space-between;
+}
+@media screen and (max-width: 800px) {
+  .content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis {
+    height: 75%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis {
+    height: 25%;
+  }
+}
+.content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .hInputGestion h3 {
+  color: #fff;
+  line-height: 40px;
+  height: 100%;
+  font-size: 1.7em;
+  font-weight: 600;
+}
+@media screen and (max-width: 1200px) {
+  .content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .hInputGestion h3 {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 800px) {
+  .content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .hInputGestion h3 {
+    font-size: 1.3em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .hInputGestion h3 {
+    font-size: 1.2em;
+  }
+}
+.content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .secondIfo {
+  width: 60%;
+}
+.content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .secondIfo p {
+  color: #fff;
+  line-height: 40px;
+  height: 100%;
+  font-size: 1.7em;
+  font-weight: 400;
+  text-align: end;
+}
+.content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .contentInfoGestion {
+  height: 100%;
+}
+.content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .contentInfoGestion img {
+  height: 100%;
+}
+.content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+@media screen and (max-width: 800px) {
+  .content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis form {
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis form .valider {
+    margin-left: 44%;
+  }
+}
+.content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis form .changeGestion {
+  height: 100%;
+  margin-left: 0;
+  width: 75%;
+}
+@media screen and (max-width: 1200px) {
+  .content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis form .changeGestion {
+    font-size: 1.3em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .infoSaisis form .changeGestion {
+    height: 40%;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .modifierInfo {
+    height: 30%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .modifierInfo {
+    height: 50%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .content .contentPage .card .inputGA .contentInputLeft {
+    height: 60%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .content .contentPage .card .inputGA .contentInputLeft {
+    height: 64%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .content .contentPage .card .inputGA .contentInputLeft {
+    height: 60%;
+  }
+}
+.content .contentPage .card .inputGA .contentInputRight {
+  padding-bottom: 40px;
+}
+@media screen and (max-width: 1200px) {
+  .content .contentPage .card .inputGA .contentInputRight {
+    height: 40%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .content .contentPage .card .inputGA .contentInputRight {
+    height: 36%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .content .contentPage .card .inputGA .contentInputRight {
+    height: 30%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content .contentPage .card .inputGA .contentInputRight {
+    height: 25%;
+  }
+}
+.content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo {
+  height: 600px;
+}
+@media screen and (max-width: 800px) {
+  .content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .infoSaisis {
+    height: 25%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .infoSaisis {
+    height: 10%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo {
+    height: 75%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo {
+    height: 90%;
+  }
+}
+.content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo form {
+  align-items: center;
+}
+.content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo form .bigModifierInfo {
+  height: 400px;
+  overflow-y: scroll;
+}
+@media screen and (max-width: 1200px) {
+  .content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo form .bigModifierInfo {
+    height: 330px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo form .bigModifierInfo {
+    height: 220px;
+  }
+}
+.content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo form .bigModifierInfo .labelGestionEquipement {
+  display: inline-block;
+  width: 200px;
+  margin: 5px;
+  font-size: 1.2em;
+}
+.content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo form .validerGestion {
+  margin-left: 0px;
 }
 .content .contentPage .card .height {
   height: 138px;
@@ -804,9 +1101,14 @@
     height: 2900px;
   }
 }
+@media screen and (max-width: 700px) {
+  .content .contentPage .cardH.active {
+    height: 3300px;
+  }
+}
 @media screen and (max-width: 600px) {
   .content .contentPage .cardH.active {
-    height: 5100px;
+    height: 3700px;
   }
 }
 .content .contentPage .cardH .contentCardGestion {
@@ -873,240 +1175,154 @@
 .content .contentPage .cardH .contentCardGestion .cardContentRightWithButton .figureModifier .imgModifierGestion.activeModifie {
   transform: rotate(-90deg);
 }
-.content .contentPage .cardH .input {
-  display: flex;
-  padding-right: 0;
-  height: 1780px;
+.content .contentPage .cardGestionReservation {
+  background-color: #017c8e;
 }
-@media screen and (max-width: 1200px) {
-  .content .contentPage .cardH .input {
-    flex-direction: column;
-    height: 3480px;
+.content .contentPage .cardGestionReservation .reservation-table {
+  border-collapse: collapse;
+}
+@media (max-width: 1050px) {
+  .content .contentPage .cardGestionReservation .reservation-table thead {
+    display: none;
   }
 }
-@media screen and (max-width: 800px) {
-  .content .contentPage .cardH .input {
-    height: 2780px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .content .contentPage .cardH .input {
-    height: 4650px;
-  }
-}
-.content .contentPage .cardH .input.activeInput {
-  transform: translateY(0);
-  height: 1780px;
-  z-index: 10;
-}
-@media screen and (max-width: 1200px) {
-  .content .contentPage .cardH .input.activeInput {
-    height: 3480px;
-  }
-}
-@media screen and (max-width: 800px) {
-  .content .contentPage .cardH .input.activeInput {
-    height: 2780px;
-    transform: translateY(50px);
-  }
-}
-@media screen and (max-width: 600px) {
-  .content .contentPage .cardH .input.activeInput {
-    height: 4650px;
-  }
-}
-.content .contentPage .cardH .input .contentInput {
-  width: 50%;
-  height: 100%;
-}
-@media screen and (max-width: 1200px) {
-  .content .contentPage .cardH .input .contentInput {
-    width: 100%;
-  }
-}
-.content .contentPage .cardH .input .contentInput .oneInfo {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  border: #fff 5px solid;
-  margin: 20px 60px;
-  border-radius: 10px;
-}
-@media screen and (max-width: 1200px) {
-  .content .contentPage .cardH .input .contentInput .oneInfo {
-    margin: 20px 40px;
-  }
-}
-@media screen and (max-width: 800px) {
-  .content .contentPage .cardH .input .contentInput .oneInfo {
-    height: 180px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .content .contentPage .cardH .input .contentInput .oneInfo {
-    height: 280px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .content .contentPage .cardH .input .contentInput .oneInfo {
-    margin: 20px;
-  }
-}
-.content .contentPage .cardH .input .contentInput .infoLogement {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
-  padding-top: 20px;
-}
-.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis {
-  display: flex;
-  margin: 10px auto;
-  width: 90%;
-  justify-content: space-between;
-}
-@media screen and (max-width: 800px) {
-  .content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis {
-    height: 75%;
-  }
-}
-@media screen and (max-width: 600px) {
-  .content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis {
-    height: 25%;
-  }
-}
-.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis .hInputGestion h3 {
+.content .contentPage .cardGestionReservation .reservation-table thead .rowTable {
   color: #fff;
-  line-height: 40px;
-  height: 100%;
-  font-size: 1.7em;
-  font-weight: 600;
+  font-size: 1.5em;
+  border-bottom: 1px #fff solid;
 }
-@media screen and (max-width: 1200px) {
-  .content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis .hInputGestion h3 {
-    font-size: 1.5em;
-  }
-}
-@media screen and (max-width: 800px) {
-  .content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis .hInputGestion h3 {
-    font-size: 1.3em;
-  }
-}
-@media screen and (max-width: 600px) {
-  .content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis .hInputGestion h3 {
+@media screen and (max-width: 1050px) {
+  .content .contentPage .cardGestionReservation .reservation-table thead .rowTable {
     font-size: 1.2em;
   }
 }
-.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis .secondIfo {
-  width: 60%;
+@media (max-width: 1050px) {
+  .content .contentPage .cardGestionReservation .reservation-table thead .rowTable {
+    display: block;
+    margin-bottom: 40px;
+  }
 }
-.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis .secondIfo p {
+.content .contentPage .cardGestionReservation .reservation-table thead .rowTable .colomTable {
+  width: 20%;
+  text-align: center;
+  padding: 10px 0;
+}
+.content .contentPage .cardGestionReservation .reservation-table tbody .rowTable {
   color: #fff;
-  line-height: 40px;
-  height: 100%;
-  font-size: 1.7em;
-  font-weight: 400;
-  text-align: end;
+  border-bottom: 1px #fff solid;
+  font-size: 1.2em;
 }
-.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis .contentInfoGestion {
-  height: 100%;
+@media screen and (max-width: 1050px) {
+  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable {
+    font-size: 1em;
+  }
 }
-.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis .contentInfoGestion img {
-  height: 100%;
+@media (max-width: 1050px) {
+  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable {
+    display: block;
+    margin-bottom: 40px;
+  }
 }
-.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis form {
-  display: flex;
-  justify-content: space-between;
+.content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td {
+  max-width: 20%;
+  text-align: center;
+  padding: 10px;
+  word-break: break-word;
+}
+@media (max-width: 1050px) {
+  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td {
+    max-width: 100%;
+    display: block;
+    text-align: right;
+  }
+  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+}
+@media (max-width: 1050px) and (max-width: 450px) {
+  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td {
+    text-align: left;
+  }
+}
+.content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td p {
   width: 100%;
 }
-@media screen and (max-width: 800px) {
-  .content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis form {
-    align-items: flex-start;
-    justify-content: space-around;
+@media (max-width: 1050px) {
+  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td p {
+    width: 60%;
+    margin-left: 38%;
   }
 }
-@media screen and (max-width: 600px) {
-  .content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis form .valider {
-    margin-left: 44%;
+@media (max-width: 700px) {
+  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td p {
+    width: 40%;
+    margin-left: 58%;
   }
 }
-.content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis form .changeGestion {
-  height: 100%;
-  margin-left: 0;
-  width: 75%;
-}
-@media screen and (max-width: 1200px) {
-  .content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis form .changeGestion {
-    font-size: 1.3em;
-  }
-}
-@media screen and (max-width: 600px) {
-  .content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .infoSaisis form .changeGestion {
-    height: 40%;
+@media (max-width: 450px) {
+  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td p {
+    margin-top: 25px;
     width: 100%;
+    margin-left: 0;
   }
 }
-@media screen and (max-width: 800px) {
-  .content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .modifierInfo {
-    height: 30%;
+.content .contentPage .cardAjout {
+  box-shadow: none;
+}
+.content .contentPage .cardAjout .inputGA {
+  height: auto;
+  margin: 50px 0;
+}
+.content .contentPage .cardAjout .inputGA .valider {
+  margin: 50px auto;
+}
+@media screen and (max-width: 1200px) {
+  .content .contentPage .cardAjout .inputGA .valider {
+    margin: 30px auto;
   }
 }
 @media screen and (max-width: 600px) {
-  .content .contentPage .cardH .input .contentInput .infoLogement .oneInfo .modifierInfo {
-    height: 50%;
+  .content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo {
+    height: 170px;
   }
 }
-@media screen and (max-width: 1200px) {
-  .content .contentPage .cardH .input .contentInputLeft {
-    height: 60%;
-  }
-}
-@media screen and (max-width: 800px) {
-  .content .contentPage .cardH .input .contentInputLeft {
-    height: 64%;
-  }
-}
-.content .contentPage .cardH .input .contentInputRight {
-  padding-bottom: 40px;
-}
-@media screen and (max-width: 1200px) {
-  .content .contentPage .cardH .input .contentInputRight {
+@media screen and (max-width: 600px) {
+  .content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .infoSaisis {
     height: 40%;
   }
 }
-@media screen and (max-width: 800px) {
-  .content .contentPage .cardH .input .contentInputRight {
-    height: 36%;
-  }
+.content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .change {
+  width: 100%;
+  margin-left: 0;
+  height: 100%;
 }
-.content .contentPage .cardH .input .contentInputRight .infoLogement .oneInfo {
-  height: 600px;
-}
-@media screen and (max-width: 800px) {
-  .content .contentPage .cardH .input .contentInputRight .infoLogement .oneInfo {
-    height: 400px;
-  }
-}
-@media screen and (max-width: 800px) {
-  .content .contentPage .cardH .input .contentInputRight .infoLogement .oneInfo .infoSaisis {
-    height: 25%;
-  }
-}
-@media screen and (max-width: 800px) {
-  .content .contentPage .cardH .input .contentInputRight .infoLogement .oneInfo .modifierInfo {
-    height: 75%;
-  }
-}
-.content .contentPage .cardH .input .contentInputRight .infoLogement .oneInfo .modifierInfo form {
-  align-items: center;
-}
-.content .contentPage .cardH .input .contentInputRight .infoLogement .oneInfo .modifierInfo form .bigModifierInfo {
-  height: 500px;
+.content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .bigModifierInfo {
+  height: 400px;
   overflow-y: scroll;
 }
-.content .contentPage .cardH .input .contentInputRight .infoLogement .oneInfo .modifierInfo form .bigModifierInfo .labelGestionEquipement {
+@media screen and (max-width: 1200px) {
+  .content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .bigModifierInfo {
+    height: 330px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .bigModifierInfo {
+    height: 220px;
+  }
+}
+.content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .bigModifierInfo .labelGestionEquipement {
   display: inline-block;
   width: 200px;
   margin: 5px;
   font-size: 1.2em;
+}
+@media screen and (max-width: 600px) {
+  .content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .modifierInfo {
+    height: 25%;
+  }
+}
+.content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneBigInfo {
+  height: auto;
 }/*# sourceMappingURL=dashboard.css.map */
