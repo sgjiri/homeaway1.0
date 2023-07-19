@@ -5,6 +5,7 @@ class SearchController extends Controller
 
     public function searchLogement()
     {
+
         if (isset($_POST['submit'])) {
             $city = ucfirst($_POST['city']);
             $start_date = $_POST['start_date'];
@@ -22,6 +23,7 @@ class SearchController extends Controller
             $dataUpdated = [];
             $totalPrices = [];
             foreach ($datas as $logementComplet) {
+
                 $price_by_night = $logementComplet['price_by_night'];
                 $start = new DateTime($start_date);
                 $end = new DateTime($end_date);
@@ -31,6 +33,7 @@ class SearchController extends Controller
             }
         }
         $twig = $this->getTwig();
+
         if ($_POST['check']=true) {
 
             $resultSearchView = $twig->render('resultsearch.html.twig', [
@@ -50,6 +53,7 @@ class SearchController extends Controller
                 'formValue' => $formValue
             ]);
             echo $oneLogementView;
+
         }
     }
 }

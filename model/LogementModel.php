@@ -64,6 +64,8 @@ class LogementModel extends Model
         return $logements;
     }
 
+    // *-*-*-*-AFFICHAGE UN SEUL LOGEMENT *-*-*-*-//
+
     public function getOne(int $id_logement)
     {
         $req = $this->getDb()->prepare('SELECT * FROM `logement` WHERE `id_logement`= :id_logement');
@@ -88,11 +90,5 @@ class LogementModel extends Model
         return $logements;
     }
 
-    // public function addPosition($latitude, $longitude) {
-
-    //     $reqPosition=$this->getDb()->query("INSERT INTO logement (latitude, longitude) VALUES ('$latitude', '$longitude')");
-    //     $reqPosition->execute();
-
-    // }
-
+   
 }

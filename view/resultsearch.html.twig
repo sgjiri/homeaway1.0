@@ -48,7 +48,9 @@
 		<figure id="filter">
 			<img src="{{asset('/img/filter.png')}}" alt="filtre">
 		</figure>
-		<form action="GET" id="formFilter">
+
+
+		<form action="" method="GET" id="formFilter">
 			<div class="convenience">
 				<input type="checkbox" id="wifi" name="wifi">
 				<img src="{{asset('/img/wifi.png')}}" alt="icon wifi">
@@ -129,7 +131,9 @@
 				{% if logementDispo is empty %}
 					<p>Aucun logement ne correspond à votre recherche.</p>
 				{% else %}
+
 					{% for i in 0..(logementDispo|length - 1) %}
+
 						{% set tableauImage = logementDispo[i].thumbnails[1] %}
 						<a href="{{path('one') ~ '/' ~ logementDispo[i].id_logement}}">
 							<article class="item js-marker" data-lat="{{ logementDispo[i].latitude }}" data-lng="{{ logementDispo[i].longitude }}" data-price="{{ logementDispo[i].price_by_night }}">
@@ -150,6 +154,7 @@
 								</p>
 							</article>
 						</a>
+
 					{% endfor %}
 
 				{% endif %}
