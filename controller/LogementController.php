@@ -197,16 +197,16 @@ class LogementController extends Controller
 
 
 
-    public function getAllLogement()
-    {
-        global $router;
-        $model = new LogementModel();
-        $ville = $model->getAll();
+    // public function getAllLogement()
+    // {
+    //     global $router;
+    //     $model = new LogementModel();
+    //     $ville = $model->getAll();
 
-        $twig = $this->getTwig();
+    //     $twig = $this->getTwig();
 
-        echo $twig->render('logementCity.html.twig', ['logements' => $ville]);
-    }
+    //     echo $twig->render('logementCity.html.twig', ['logements' => $ville]);
+    // }
 
 
 
@@ -220,8 +220,6 @@ class LogementController extends Controller
         $twig = $this->getTwig();
         echo $twig->render('oneLogement.html.twig', ['onelogement'=> $onelogement ,'oneFlat'=> $oneFlat]);
     }
-
-
 
     
     public function legalNotices()
