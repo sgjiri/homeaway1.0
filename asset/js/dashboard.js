@@ -61,7 +61,7 @@ function animationInput(idFigure, idCard, idImg, idInput) {
 }
 
 animationInput('figureModifierInfo', 'cardInfoPersoM', 'imgModifierInfo', 'inputInfo');
-animationInput('figureModifierGestion', 'cardH', 'imgModifierGestion','inputGestion');
+animationInput('figureModifierGestion', 'cardH', 'imgModifierGestion','inputGA');
 
 
 
