@@ -44,13 +44,15 @@
 			</article>
 			<div class="imgDestination">
 				{% for oneCityBeach in cityBeach %}
-					<div>
-						<a href="{{ path('baseLogement') ~ oneCityBeach.ville_nom }}">
-							<img src="{{ asset('/img/' ~ oneCityBeach.img) }}" alt="{{oneCityBeach.ville_nom}}">
-						</a>
-						<h4>{{oneCityBeach.ville_nom}}</h4>
-					</div>
-				{% endfor %}
+    <div>
+      <a href="{{ path('beach') ~ '/' ~ oneCityBeach.ville_nom }}">
+    <img src="{{ asset('/img/' ~ oneCityBeach.img) }}" alt="{{ oneCityBeach.ville_nom }}">
+</a>
+
+        <h4>{{ oneCityBeach.ville_nom }}</h4>
+    </div>
+{% endfor %}
+
 
 			</div>
 		</div>
@@ -63,7 +65,7 @@
 			<div class="imgDestination">
 				{% for oneCityMountain in cityMountain %}
 					<div>
-						<a href="{{ path('baseLogement') ~ oneCityMountain.id_ville }}">
+						<a href="{{ path('baseLogement') ~ oneCityMountain.ville_nom}}">
 							<img src="{{ asset('/img/' ~ oneCityMountain.img) }}" alt="Chamonix">
 						</a>
 						<h4>{{oneCityMountain.ville_nom}}</h4>
@@ -80,7 +82,7 @@
 			<div class="imgDestination">
 
 				<div>
-					<a href="{{ path('baseLogement') ~ images.id_logement }}">
+					<a href="{{ path('baseLogement') ~ images.type }}">
 
 						<img src="{{ asset('/img/logement/' ~ images.thumbnail) }}" alt="{{images.type}}">
 					</a>
@@ -90,7 +92,7 @@
 				</div>
 
 				<div>
-					<a href="{{ path('baseLogement') ~ imagesDome.id_logement }}">
+					<a href="{{ path('baseLogement') ~ imagesDome.type }}">
 						<img src="{{ asset('/img/' ~ imagesDome.thumbnail) }}" alt="{{imagesDome.type}}">
 					</a>
 
@@ -99,7 +101,7 @@
 				</div>
 
 				<div>
-					<a href="{{ path('baseLogement') ~ imagesPeniche.id_logement }}">
+					<a href="{{ path('baseLogement') ~ imagesPeniche.type }}">
 						<img src="{{ asset('/img/' ~ imagesPeniche.thumbnail) }}" alt="{{imagesPeniche.type}}">
 					</a>
 
@@ -108,7 +110,7 @@
 				</div>
 
 				<div>
-					<a href="{{ path('baseLogement') ~ imagesYourte.id_logement }}">
+					<a href="{{ path('baseLogement') ~ imagesYourte.type }}">
 					<img src="{{ asset('/img/' ~ imagesYourte.thumbnail) }}" alt="{{imagesYourte.type}}">
 					</a>
 

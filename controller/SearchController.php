@@ -6,7 +6,7 @@ class SearchController extends Controller
     public function searchLogement()
     {
 
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['submit']) || isset($_POST['id_logement'])){
             $city = ucfirst($_POST['city']);
             $start_date = $_POST['start_date'];
             $end_date = $_POST['end_date'];
@@ -19,7 +19,7 @@ class SearchController extends Controller
 
             $model = new SearchModel;
             $datas = $model->getSearch($city, $start_date, $end_date, $number_of_person);
-
+          
             $dataUpdated = [];
             $totalPrices = [];
             foreach ($datas as $logementComplet) {
@@ -32,9 +32,10 @@ class SearchController extends Controller
                 $dataUpdated[] = $logementComplet;
             }
         }
+
         $twig = $this->getTwig();
 
-        if ($_POST['check']=true) {
+        if (isset($_POST['check'])) {
 
             $resultSearchView = $twig->render('resultsearch.html.twig', [
                 'logementDispo' => $datas,
@@ -46,7 +47,7 @@ class SearchController extends Controller
             if (empty($datas)) {
                 echo "Aucun logement ne correspond à votre recherche.";
             }
-        } else {
+        } elseif (isset($_POST['id_logement'])) {
             $oneLogementView = $twig->render('oneLogement.html.twig', [
                 'logementDispo' => $datas,
                 'totalPrices' => $totalPrices,
@@ -56,4 +57,55 @@ class SearchController extends Controller
 
         }
     }
+
+    public function searchBeach()
+{
+    if ($_POST) {
+        // Récupérer les valeurs de $_POST pour $start_date et $end_date
+        $city = ucfirst($_POST['city']);
+        // $start_date = $_POST['start_date'];
+        // $end_date = $_POST['end_date'];
+        // $number_of_person = 2;
+        $modelEnvie = new SearchModel;
+        $datas = $modelEnvie->getLogementsByVille($city); 
+        $villeInfo = $$modelEnvie->getVilleInfo($city);
+    }
+   
+    $twig = $this->getTwig();
+
+    if (isset($_POST['check'])) {
+
+        $resultSearchView = $twig->render('resultsearch.html.twig', []);
+        echo $resultSearchView;
+
+        if (empty($datas)) {
+            echo "Aucun logement ne correspond à votre recherche.";
+        }
+    } elseif (isset($_POST['id_logement'])) {
+        $oneLogementView = $twig->render('resultsearch.html.twig', [
+            'datas' => $datas,
+            'villeInfo' => $villeInfo, ]);
+        echo $oneLogementView;
+
+    }
+}
+
+public function showLogementsByVille($city)
+{
+    $logements = new SearchModel;
+    $logement = $logements->getLogementsByVille($city);
+    $villeInfo = $logements->getVilleInfo($city);
+    $twig = $this->getTwig();
+    $oneLogementCity = $twig->render('resultsearch.html.twig', [
+        'logements' => $logements,
+        'villeInfo' => $villeInfo,
+    ]);
+
+    // Renvoyer la vue
+    echo $oneLogementCity;
+}
+
+          
+
+
 }
