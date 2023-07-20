@@ -217,9 +217,10 @@ class LogementController extends Controller
         
         $modelLogement = new LogementModel();
         $onelogement = $modelLogement->getOne($id_logement);
-        $oneFlat = $router->generate('one');
+        $allImg = $modelLogement->getAllImg($id_logement);
+       
         $twig = $this->getTwig();
-        echo $twig->render('oneLogement.html.twig', ['onelogement'=> $onelogement ,'oneFlat'=> $oneFlat]);
+        echo $twig->render('oneLogement.html.twig', ['onelogement'=> $onelogement , 'allImg'=> $allImg]);
     }
 
 

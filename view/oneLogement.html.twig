@@ -11,49 +11,34 @@
 			<article>
 				<div id="slider">
 					<div id="window-slider">
-						<div
-							id="list-slide">
-							{# boucle slide #}
-							<div class="slide">
-								<img src="{{asset('/img/logement/appartementMarseille1.1.webp')}}" alt="nom de l'image">
+						<div id="list-slide">
 
-							</div>
-							<div class="slide">
-								<img src="{{asset('/img/logement/appartementMarseille1.6.webp')}}" alt="nom de l'image">
+							{% for oneImg in allImg %}
+								<div class="slide">
+									<img src="{{ asset('/img/logement/' ~ oneImg.thumbnail) }}" alt="{{ oneImg.thumbnail }}">
 
-							</div>
-							<div class="slide">
-								<img src="{{asset('/img/logement/appartementMarseille1.1.webp')}}" alt="nom de l'image">
+								</div>
+							{% endfor %}
 
-							</div>
-							<div class="slide">
-								<img src="{{asset('/img/logement/appartementMarseille1.6.webp')}}" alt="nom de l'image">
 
-							</div>
-							<div class="slide">
-								<img src="{{asset('/img/logement/appartementMarseille1.1.webp')}}" alt="nom de l'image">
-
-							</div>
 						</div>
 					</div>
 				</div>
 				<div id="boxGallery">
 					<div id="bigImg">
-						<img class="imgTop" src="{{asset('/img/logement/appartementMarseille1.1.webp')}}" alt="nom de l'image">
+						<img class="imgTop" src="{{asset('/img/logement/' ~ allImg[0].thumbnail)}}" alt="nom de l'image">
 					</div>
 					<div id="scrollbar">
-						<img class="imgGallery" src="{{asset('/img/logement/appartementMarseille1.2.webp')}}" alt="nom de l'image">
-						<img class="imgGallery" src="{{asset('/img/logement/appartementMarseille1.3.webp')}}" alt="nom de l'image">
-						<img class="imgGallery"  src="{{asset('/img/logement/appartementMarseille1.4.webp')}}" alt="nom de l'image">
-						<img class="imgGallery" src="{{asset('/img/logement/appartementMarseille1.5.webp')}}" alt="nom de l'image">
-						<img class="imgGallery" src="{{asset('/img/logement/appartementMarseille1.6.webp')}}" alt="nom de l'image">
-						<img class="imgGallery" src="{{asset('/img/logement/appartementMarseille1.1.webp')}}" alt="nom de l'image">
+						{% for oneImg in allImg %}
+							<img class="imgGallery" src="{{ asset('/img/logement/' ~ oneImg.thumbnail) }}" alt="{ oneImg.thumbnail }}">
+
+						{% endfor %}
 					</div>
 				</div>
 				<h4>
-					titre - type - Chez prenom</h4>
+					{{onelogement.title}} - {{onelogement.type}}</h4>
 				<p>
-					nb de voyageurs - nb lit</p>
+					{{onelogement.number_of_person}}  voyageurs maximum - {{onelogement.number_of_beds}} lit(s)</p>
 			</article>
 
 			<div id="cancel">
@@ -62,60 +47,83 @@
 			</div>
 			<article id="about">
 				<h4>A propos de ce logement :</h4>
-				<p>Logement T2 au premier étage en centre ville à côté de la Gare St Roch, à 3-4 min à pied. Le logement dispose d'une petite chambre avec un lit 2 places. Le salon est ouvert sur la cuisine et dispose d'un tout petit balcon donnant sur la rue. Plusieurs arrêts de tram et de bus sont à côté du logement, les plus proches étant Observatoire et Gare St Roch. Epicerie, Tabac, Carrefour accessible à 50 mètres. Le logement est ancien et parfait pour un passage à Montpellier. Ne convient pas aux enfants.</p>
+				<p>{{onelogement.description}}</p>
 			</article>
 			<div id="boxFilter">
 				<h4>Ce que contient ce logement :</h4>
-
+				{% if onelogement.wifi == true %}
 				<div class="convenience">
 					<img src="{{asset('/img/wifi.png')}}" alt="icon wifi">
 					<p>Wifi</p>
 				</div>
+				{% endif %}
+				{% if onelogement.home_textil == true %}				
 				<div class="convenience">
 					<img src="{{asset('/img/linge.png')}}" alt="icon linge">
 					<p>Linge de maison</p>
 				</div>
+				{% endif %}
+				{% if onelogement.kitchen == true %}
 				<div class="convenience">
 					<img src="{{asset('/img/kitchen.png')}}" alt="icon cuisine">
 					<p>Cuisine</p>
 				</div>
+				{% endif %}
+				{% if onelogement.animals == true %}
 				<div class="convenience">
 					<img src="{{asset('/img/pate.png')}}" alt="icon pate">
 					<p>Animaux</p>
 				</div>
+				{% endif %}
+				{% if onelogement.tv == true %}
 				<div class="convenience">
 					<img src="{{asset('/img/tv.png')}}" alt="icon tv">
 					<p>TV</p>
 				</div>
+				{% endif %}
+				{% if onelogement.climatisation == true %}
 				<div class="convenience">
 					<img src="{{asset('/img/climatisation.png')}}" alt="icon climatisation">
 					<p>Climatisation</p>
 				</div>
+				{% endif %}
+				{% if onelogement.garden == true %}
 				<div class="convenience">
 					<img src="{{asset('/img/garden.png')}}" alt="icon jardin">
 					<p>Jardin</p>
 				</div>
+				{% endif %}
+				{% if onelogement.spa == true %}
 				<div class="convenience">
 					<img src="{{asset('/img/spa.png')}}" alt="icon spa">
 					<p>Spa</p>
 				</div>
+				{% endif %}
+				{% if onelogement.jacuzzi == true %}
 				<div class="convenience">
 					<img src="{{asset('/img/jacuzzi.png')}}" alt="icon jacuzzi">
 					<p>Jacuzzi</p>
 				</div>
+				{% endif %}
+				{% if onelogement.camera == true %}
 				<div class="convenience">
 					<img src="{{asset('/img/camera.png')}}" alt="icon caméra">
 					<p>Caméra de surveillance</p>
 				</div>
+				{% endif %}
+				{% if onelogement.piscine == true %}
 				<div class="convenience">
 					<img src="{{asset('/img/swimmingpool.png')}}" alt="icon piscine">
 					<p>Piscine</p>
 				</div>
+				{% endif %}
+				{% if onelogement.parking == true %}
 				<div class="convenience">
 					<img src="{{asset('/img/iconParking.png')}}" alt="icon parking">
 					<p>Parking
 					</p>
 				</div>
+				{% endif %}
 			</div>
 			<h4>Calendrier</h4>
 			<div id="calendar"></div>
@@ -127,26 +135,25 @@
 
 		</div>
 		<form id="secondPartOne">
-			<h4>
-				<strong>58 €</strong>
-				par nuit</h4>
-			<p>Du
-				<strong>1 août 2023</strong>
-				ou
-				<strong>6 août 2023</strong>
-			</p>
-			<p>
-				<strong>1</strong>
-				personne(s)</p>
-			<input class="button" type="submit" value="Réserver">
-
-		</form>
-
+    <h4>
+        <strong>58 €</strong>
+        par nuit</h4>
+    <p>Du
+        <strong id="startDate"></strong>
+        ou
+        <strong id="endDate"></strong>
+    </p>
+    <p>
+        <strong id="numberOfPerson"></strong>
+        personne(s)</p>
+    <input class="button" type="submit" value="Réserver">
+</form>
 
 	</section>
 
 	<script src="{{asset('/js/slide.js')}}"></script>
 	<script src="{{asset('/js/scrollx.js')}}"></script>
+	<script src="{{asset('/js/localStorage.js')}}"></script>
 
 	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script>
