@@ -48,13 +48,9 @@
 		<figure id="filter">
 			<img src="{{asset('/img/filter.png')}}" alt="filtre">
 		</figure>
-<<<<<<< HEAD
-		<form method="GET" id="formFilter">
-=======
 
 
 		<form action="" method="GET" id="formFilter">
->>>>>>> 30262acd445b418eaa30611adb0b950a82a3fe12
 			<div class="convenience">
 				<input type="checkbox" id="wifi" name="wifi">
 				<img src="{{asset('/img/wifi.png')}}" alt="icon wifi">
@@ -147,7 +143,6 @@
 							<input type="hidden" name="id_logement" value="{{logementDispo[i].id_logement}}">
 
 
-<<<<<<< HEAD
 							
 								
 
@@ -168,20 +163,6 @@
 								
 							
 						</form>
-=======
-								<h4>{{ logementDispo[i].title }}
-									&nbsp;-&nbsp;{{ logementDispo[i].city }}</h4>
-								<p>{{ logementDispo[i].resume}}</p>
-								<p>
-									<span>{{ logementDispo[i].price_by_night }}€</span>
-									par nuit - &nbsp;
-									{{ totalPrices[i] }}€ au total
-								</p>
-								
-							</article>
-						</a>
-
->>>>>>> 30262acd445b418eaa30611adb0b950a82a3fe12
 					{% endfor %}
 
 				{% endif %}
