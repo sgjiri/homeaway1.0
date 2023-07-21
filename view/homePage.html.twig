@@ -65,7 +65,7 @@
 			<div class="imgDestination">
 				{% for oneCityMountain in cityMountain %}
 					<div>
-						<a href="{{ path('beach') ~ oneCityMountain.ville_nom}}">
+						<a href="{{ path('beach') ~ '/' ~oneCityMountain.ville_nom}}">
 							<img src="{{ asset('/img/' ~ oneCityMountain.img) }}" alt="Chamonix">
 						</a>
 						<h4>{{oneCityMountain.ville_nom}}</h4>
