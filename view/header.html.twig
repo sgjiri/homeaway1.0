@@ -65,7 +65,7 @@
 		</div>
 	</div>
 	<div id="searchBoxPhone">
-		<form action "{{path('search')}}" method="POST" id="searchform">
+		<form action ="{{path('search')}}" method="POST" id="searchform">
 			<div class="searchFormBox">
 				<label for="city">Destination</label>
 				<input type="text" name="city" id="city">
@@ -82,8 +82,9 @@
 			<label for="number_of_person">Voyageurs</label>
 			<input type="number" name="number_of_person" id="number_of_person">
 			</div>
+			
 			<div id="buttonSearch">
-			<input type="submit" value="Recherche">
+			<input type="submit" name="submit" id="submit" value="Recherche">
 			</div>
 		</form>
 	</div>
