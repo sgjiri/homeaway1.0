@@ -59,29 +59,30 @@ class SearchController extends Controller
 
     public function searchByCity($city)
     {
-        $start_date = $_POST['start_date'];
-        $end_date = $_POST['end_date'];
-        $number_of_person = 2;
-        $model = new SearchModel();
-        $logements = $model->getLogementsByVille($city, $number_of_person);
-        // var_dump($logements);
-        $dataUpdated = [];
-        $totalPrices = [];
-
-        foreach ($logements as $logementComplet) {
-
-            $price_by_night = $logementComplet['price_by_night'];
-            $start = new DateTime($start_date);
-            $end = new DateTime($end_date);
-            $number_of_days = $start->diff($end)->days;
-            array_push($totalPrices, $price_by_night * $number_of_days);
-            $dataUpdated[] = $logementComplet;
+            
+           
+            $number_of_person = 2;
+            $model = new SearchModel();
+            $logements = $model->getLogementsByVille($city, $number_of_person);
+            // var_dump($logements);
+            $dataUpdated = [];
+            // $totalPrices = [];
+    
+            foreach ($logements as $logementComplet) {
+                $price_by_night = $logementComplet['price_by_night'];
+                // $start = new DateTime($start_date);
+                // $end = new DateTime($end_date);
+                // $number_of_days = $start->diff($end)->days;
+                // array_push($totalPrices, $price_by_night * $number_of_days);
+                $dataUpdated[] = $logementComplet;
+            }
+        
             $twig = $this->getTwig();
             $logementsView = $twig->render('logementCity.html.twig', [
                 'logements' => $logements,
                 'city' => $city,
+                // 'totalPrices' => $totalPrices, 
             ]);
             echo $logementsView;
-        }
-    }
-}
+       } }
+    
