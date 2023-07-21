@@ -29,8 +29,7 @@ class LogementController extends Controller
                     $adress = $_POST['adress'];
                     $adressCode = $_POST['adressCode'];
                     $city = $_POST['city'];
-                    $location = $_POST['location'];
-                    $price_by_night = $_POST['price_by_night'];
+                    $location = $_POST['location'];                    $price_by_night = $_POST['price_by_night'];
                     $number_of_person = $_POST['number_of_person'];
                     $number_of_beds = $_POST['number_of_beds'];
                     $parking = isset($_POST['parking']) && $_POST['parking'] == 1 ? true : false;
