@@ -24,7 +24,7 @@ sans-serif;
 
     nav {
         position: sticky;
-        top: -75px;
+        top: 0px;
         background-color: $turque;
         width: 100px;
         height: 100vh;
@@ -239,6 +239,18 @@ sans-serif;
 
     }
 
+    .logoDash{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        height: 60px;
+        cursor: pointer;
+
+        img{
+            height: 100%;
+        }
+    }
+
     .contentPage {
         width: 1300px;
         margin: 0 auto;
@@ -255,7 +267,7 @@ sans-serif;
             font-size: 2.5em;
 
             @media screen and (max-width: 700px) {
-                margin-top: 30px;
+                margin-top: 100px;
                 font-size: 1.8em;
             }
         }
@@ -414,7 +426,7 @@ sans-serif;
             box-shadow: $shadow;
 
             &:first-child {
-                margin-top: 50px;
+                margin-top: 120px;
             }
 
             &.activeModifie {
@@ -1468,6 +1480,18 @@ sans-serif;
                                     }
                                     .bigModifierInfo{
                                         height: 400px;
+                                        position: relative;
+                                        #spanPlus{
+                                            position: absolute;
+                                            bottom: 20px;
+                                            right: 20px;
+                                            width: 10%;
+                                            cursor: pointer;
+                                            img{
+                                                width: 100%;
+                                            }
+                                        }
+
 
                                         @media screen and (max-width:1200px) {
                                             height: 330px;
@@ -1503,9 +1527,37 @@ sans-serif;
                 
             }
         }
+        
 
 
     }
+    .contentPageReservation{
+        .divBarreDeRecherche{
+            form{
+                background-color: $green;
+                .search{
+                    background-color: $green;
+                    border: $green;
+                }
+            }
+        }
+        .card{
+            background-color: $green;
+            .cardContentRight{
+                .oneRightContent{
+                    height: 25%;
+                    p{
+                        width: 60%;
+                    }
+                }
+            }
+        }
+
+    }
+        
+
+    
+
 
 
 

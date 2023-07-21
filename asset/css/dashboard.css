@@ -12,7 +12,7 @@
 }
 .content nav {
   position: sticky;
-  top: -75px;
+  top: 0px;
   background-color: #017c8e;
   width: 100px;
   height: 100vh;
@@ -169,6 +169,16 @@
 .content nav #messagerie figure img {
   margin-top: 20%;
 }
+.content .logoDash {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  height: 60px;
+  cursor: pointer;
+}
+.content .logoDash img {
+  height: 100%;
+}
 .content .contentPage {
   width: 1300px;
   margin: 0 auto;
@@ -186,7 +196,7 @@
 }
 @media screen and (max-width: 700px) {
   .content .contentPage h1 {
-    margin-top: 30px;
+    margin-top: 100px;
     font-size: 1.8em;
   }
 }
@@ -335,7 +345,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .content .contentPage .card:first-child {
-  margin-top: 50px;
+  margin-top: 120px;
 }
 .content .contentPage .card.activeModifie {
   transform: translateY(50px);
@@ -1300,7 +1310,18 @@
 }
 .content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .bigModifierInfo {
   height: 400px;
+  position: relative;
   overflow-y: scroll;
+}
+.content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .bigModifierInfo #spanPlus {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 10%;
+  cursor: pointer;
+}
+.content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .bigModifierInfo #spanPlus img {
+  width: 100%;
 }
 @media screen and (max-width: 1200px) {
   .content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .bigModifierInfo {
@@ -1325,4 +1346,20 @@
 }
 .content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneBigInfo {
   height: auto;
+}
+.content .contentPageReservation .divBarreDeRecherche form {
+  background-color: #4fb849;
+}
+.content .contentPageReservation .divBarreDeRecherche form .search {
+  background-color: #4fb849;
+  border: #4fb849;
+}
+.content .contentPageReservation .card {
+  background-color: #4fb849;
+}
+.content .contentPageReservation .card .cardContentRight .oneRightContent {
+  height: 25%;
+}
+.content .contentPageReservation .card .cardContentRight .oneRightContent p {
+  width: 60%;
 }/*# sourceMappingURL=dashboard.css.map */

@@ -19,34 +19,34 @@
 					<ul>
 						<li id='info'>
 							<ul>
-								<li id='infoPerso' class='liInfo'>
+								<li id='infoPerso' class='liInfo clickInfo'>
 									<figure class='icon'>
 										<img src="{{ asset('/img/🦆 icon _person_.png') }}" alt="icon _person">
 									</figure>
 								</li>
-								<li id='perso' class='liInfo'>
+								<li id='perso' class='liInfo clickInfo'>
 									<figure class='icon'>
 										<img id='iconInfo' src="{{ asset('/img/Perso.png') }}" alt="Perso">
 									</figure>
 								</li>
-								<li id='historic' class='liInfo'>
+								<li id='historic' class='liInfo clickInfo'>
 									<figure class='icon'>
 										<img src="{{ asset('/img/group.png') }}" alt="group">
 									</figure>
 								</li>
 
 
-								<li id='gestionBien' class='liInfo'>
+								<li id='gestionBien' class='liInfo clickInfo'>
 									<figure class='icon'>
 										<img src="{{ asset('/img/gestion.png') }}" alt="Perso">
 									</figure>
 								</li>
-								<li id='ajouterBien' class='liInfo'>
+								<li id='ajouterBien' class='liInfo clickInfo'>
 									<figure class='icon'>
 										<img src="{{ asset('/img/ajouter.png') }}" alt="add house">
 									</figure>
 								</li>
-								<li id='gestionReservation' class='liInfo'>
+								<li id='gestionReservation' class='liInfo clickInfo'>
 									<figure class='icon'>
 										<img src="{{ asset('/img/gestionReservation.png') }}" alt="reservation">
 									</figure>
@@ -60,7 +60,7 @@
 								<img src="{{ asset('/img/🦆 icon _heart_.png') }}" alt="">
 							</figure>
 						</li>
-						<li id='resevations'>
+						<li id='resevations' class='clickInfo'>
 							<figure class='icon'>
 								<img src="{{ asset('/img/reservation.png') }}" alt="">
 							</figure>
@@ -72,12 +72,15 @@
 						</li>
 					</ul>
 				</nav>
+				<a href='{{path('home')}}' class='logoDash'>
+					<img src="{{ asset('/img/logoDash.png') }}" alt="">
+				</a>
 				<div class='contentPage' id='contentInfoPerso'>
 					<div class='card cardInfoPerso cardInfoPersoM'>
 						<div class='contentFixCard contentFixCardInfoPerso'>
 							<div>
 								<h3>Nom légal</h3>
-								<p>Nom de bdd</p>
+								<p>{{user.firstname}} {{user.name}}</p>
 
 							</div>
 
@@ -102,7 +105,7 @@
 						<div class='contentFixCard contentFixCardInfoPerso'>
 							<div>
 								<h3>Adresse mail</h3>
-								<p>Mail de bdd</p>
+								<p>{{user.mail}}</p>
 
 							</div>
 
@@ -123,7 +126,7 @@
 						<div class='contentFixCard contentFixCardInfoPerso'>
 							<div>
 								<h3>Numero de telophone</h3>
-								<p>Tel de bdd</p>
+								<p>{{user.phone_number}}</p>
 
 							</div>
 
@@ -144,8 +147,8 @@
 					<div class='card cardInfoPerso cardInfoPersoM card2ligneInfoPerso'>
 						<div class='contentFixCard contentFixCardInfoPerso'>
 							<div>
-								<h3>Adresse</h3>
-								<p>Adresse de bdd</p>
+								<h3>Date de naissance</h3>
+								<p>{{user.date_of_birth}}</p>
 							</div>
 							<figure class="figureModifier figureModifierInfo">
 								<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
@@ -167,7 +170,7 @@
 					</div>
 
 				</div>
-				<div class='contentPage'>
+				<div class='contentPage' id='contentHistoricReservation'>
 					<h1>Historique des réservations</h1>
 					<div class='divBarreDeRecherche'>
 						<form action="" method='GET'>
@@ -205,7 +208,7 @@
 					</div>
 				</div>
 
-				<div class='contentPage'>
+				<div class='contentPage' id='contentGestionLogement'>
 					<h1>Gestion des bien</h1>
 					<div class='card cardHG cardH cardInfoPerso'>
 						<div class='contentCardGestion'>
@@ -439,22 +442,22 @@
 
 									</div>
 									{# <div class='oneInfo'>
-																												<div class='infoSaisis'>
-																													<div class='contentInfoGestion hInputGestion'>
-																														<h3>Resumé:
-																														</h3>
-																													</div>
-																												</div>
-																												<div class='modifierInfo infoSaisis'>
-																													<form action="" method='post'>
-																														<textarea type="text" class='change changeGestion bigModifierInfo' placeholder="Modifier..."></textarea>
-																														<input type="submit" name="valider" class="valider change validerGestion" value="">
-																		
-																													</form>
-																		
-																												</div>
-																		
-																											</div> #}
+																																														<div class='infoSaisis'>
+																																															<div class='contentInfoGestion hInputGestion'>
+																																																<h3>Resumé:
+																																																</h3>
+																																															</div>
+																																														</div>
+																																														<div class='modifierInfo infoSaisis'>
+																																															<form action="" method='post'>
+																																																<textarea type="text" class='change changeGestion bigModifierInfo' placeholder="Modifier..."></textarea>
+																																																<input type="submit" name="valider" class="valider change validerGestion" value="">
+																																				
+																																															</form>
+																																				
+																																														</div>
+																																				
+																																													</div> #}
 									<div class='oneInfo'>
 										<div class='infoSaisis'>
 											<div class='contentInfoGestion hInputGestion'>
@@ -525,7 +528,8 @@
 					</div>
 
 				</div>
-				<div class="contentPage">
+				<div class="contentPage" id='contentAjoutLogement'>
+					<h1>Ajoutez un bien</h1>
 					<div class='card cardAjout'>
 						<div class="input inputGA">
 							<form id="add-flat" method="post" action='{{path('add')}}' enctype="multipart/form-data">
@@ -646,7 +650,7 @@
 											</div>
 											<div class='modifierInfo infoSaisis'>
 												<label for="price_by_night"></label>
-												<input type="number" class='change changeGestion' placeholder="Saisissez..."  name="price_by_night" id="type" required>
+												<input type="number" class='change changeGestion' placeholder="Saisissez..." name="price_by_night" id="type" required>
 
 
 											</div>
@@ -699,8 +703,8 @@
 												</div>
 											</div>
 											<div class='modifierInfo infoSaisis'>
-												<label for=""></label>
-												<textarea type="text" class='change changeGestion bigModifierInfo' placeholder="Modifier..."></textarea>
+												<label for="description"></label>
+												<textarea type="text" class='change changeGestion bigModifierInfo' placeholder="Saisissez..." name="description" id="description"></textarea>
 
 
 											</div>
@@ -714,8 +718,24 @@
 												</div>
 											</div>
 											<div class='modifierInfo infoSaisis'>
-												<label for=""></label>
-												<textarea type="text" class='change changeGestion bigModifierInfo' placeholder="Modifier..."></textarea>
+												<label for="resume"></label>
+												<textarea type="text" class='change changeGestion bigModifierInfo' placeholder="Saisissez..." name="resume" id="resume"></textarea>
+
+
+											</div>
+
+										</div>
+										<div class='oneInfo oneBigInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Images:
+													</h3>
+												</div>
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<div class='change changeGestion bigModifierInfo' id="addImg">
+													<span id="spanPlus"><img src="{{ asset('/img/iconPlus.png') }}" alt="plus"></span>
+												</div>
 
 
 											</div>
@@ -784,12 +804,12 @@
 
 
 								</div>
-								<input type="submit" name="valider" class="valider change validerGestion" value="">
+								<input type="submit" name="submit" class="valider change validerGestion" value="">
 							</form>
 						</div>
 					</div>
 				</div>
-				<div class="contentPage">
+				<div class="contentPage" id='contentGestionReservation'>
 					<h1>Gestion des reservation</h1>
 					<div class='divBarreDeRecherche'>
 						<form action="" method='GET'>
@@ -864,16 +884,60 @@
 									</td>
 								</tr>
 							</tbody>
-						</div>
-
-
+						</table>
 					</div>
 
 
 				</div>
-				<div class="contentPage"></div>
-				<div class="contentPage"></div>
-			</body>
+				<div class="contentPage contentPageReservation" id='contentMesReservation'>
+					<h1>Mes Reservation</h1>
+					<div class='divBarreDeRecherche'>
+						<form action="" method='GET'>
+							<input type="search" name='search' placeholder='Rechercher...' class='search'>
+							<input type="submit" name='rechercher' value class='rechercher' class='valider change'>
+						</form>
+					</div>
+					<div class='card cardInfoPerso cardHG cardReservation'>
+						<div class='cardContentLeft'>
+							<figure>
+								<img src="{{ asset('/img/montpellier.jpg') }}" alt="">
+							</figure>
+						</div>
+						<div class='cardContentRight'>
+							<div class='oneRightContent oneRightContentResqervation'>
+								<h2>
+									Nom de logement de la bdd</h2>
+							</div>
+							<div class='oneRightContent oneRightContentResqervation'>
+								<figure class="iconRightContent">
+									<img id="iconReservationHistoric" src="{{ asset('/img/calendar.png') }}" alt="">
+								</figure>
+								<p class='dateRightContent infoRightContent'>du 00/00/0000 au 00/00/0000</p>
+							</div>
+							<div class='oneRightContent oneRightContentResqervation'>
+								<figure class="iconRightContent">
+									<img id="iconReservationHistoric" src="{{ asset('/img/argent.png') }}" alt="">
+								</figure>
+								<p class='dateRightContent infoRightContent'>du 00/00/0000 au 00/00/0000</p>
+							</div>
+							<div class='oneRightContent oneRightContentResqervation'>
+								<figure class="iconRightContent">
+									<img id="iconReservationHistoric" src="{{ asset('/img/people.png') }}" alt="">
+								</figure>
+								<p class='dateRightContent infoRightContent'>du 00/00/0000 au 00/00/0000</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="contentPage" id='con'></div>
+			</div>
 		</body>
-	</html>
-</div></body></html></div>{% endblock %}{% block js %}<script src="{{ asset('/js/dashboard.js') }}"></script>{% endblock %}</body></html>
+
+	{% endblock %}
+	{% block js %}
+		<script src="{{ asset('/js/dashboard.js') }}"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script>
+		<script src="./asset/js/input.js"></script>
+	{% endblock %}
+
+</html>
