@@ -20,6 +20,7 @@
 		{% include 'footer.html.twig' %}
 		
 		<script src="{{asset('/js/main.js')}}"></script>
+		<script src="{{ asset('/js/dashboard.js') }}"></script>
 		
 		{% if session.connect is defined and session.connect == true %}
 			<script src="{{asset('/js/login.js')}}"></script>

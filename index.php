@@ -50,7 +50,7 @@ $match = $router->match();
 // Afficher la liste des routes enregistrées
 //var_dump($router);
 
- var_dump($match);
+//  var_dump($match);
 
 if (is_array($match)) {
     list($controller, $action) = explode('#', $match['target']);
