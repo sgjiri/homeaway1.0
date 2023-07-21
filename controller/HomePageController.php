@@ -17,6 +17,7 @@ class HomePageController extends Controller
        
 
         $twig = $this->getTwig();
+        // var_dump(($citiesBeach));
         echo $twig->render('homePage.html.twig', ['cityBeach' => $citiesBeach, 'cityMountain' => $cityMountain, 'imagesDome'=>$imagesDome,'imagesPeniche'=>$imagesPeniche,'images'=>$images,'imagesYourte'=>$imagesYourte]);
     }
     // -*-*-*-*METHOD FOOTER LEGAL NOTICE  -*-*-*-*//
@@ -25,4 +26,7 @@ class HomePageController extends Controller
         $twig = $this->getTwig();
         echo $twig->render('legalNotices.html.twig', []);
     }
+
+
+    
 }

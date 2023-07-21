@@ -25,7 +25,10 @@ $router->map('GET', '/dashboard', 'DashboardController#dashboard', 'dashboard');
 
 // **-------ROUTE RECHERCHE-------**//
 $router->map('GET|POST', '/search', 'SearchController#searchLogement', 'search');
+
 $router->map('GET|POST', '/one[i:id_logement]?', 'LogementController#getOneLogement', 'one');
+
+$router->map('GET','/beach/[a:city]?', 'SearchController#searchByCity','beach');
 
 
 
@@ -34,15 +37,12 @@ $router->map('GET|POST', '/one[i:id_logement]?', 'LogementController#getOneLogem
 
 $router->map('GET|POST', '/add', 'LogementController#addLogement', 'add');
 
-<<<<<<< HEAD
-// $router->map('GET|POST', '/one', 'LogementController#getOneLogement', 'one');
-=======
-$router->map('GET', '/one/[i:id_logement]?', 'LogementController#getOneLogement', 'one');
 
->>>>>>> 30262acd445b418eaa30611adb0b950a82a3fe12
+
+
 $router->map('GET','/all/','LogementController#getAllLogement','logements');
-$router->map('GET|POST','/upload','LogementController#getUploadImg','upload_img');
 
+$router->map('GET|POST','/upload','LogementController#getUploadImg','upload_img');
 
 
 // **------ROUTE FOOTER------**//

@@ -21,17 +21,17 @@ info.addEventListener('click', function () {
 
 
 //activation of contentInfoPerso if #perso is selected
-let liInfo = document.getElementsByClassName('liInfo');
+let clickInfo = document.getElementsByClassName('clickInfo');
 let contentPage = document.getElementsByClassName('contentPage');
-
-for (let i = 0; i < liInfo.length; i++) {
+console.log(clickInfo.length);
+console.log(contentPage.length);
+for (let i = 0; i < clickInfo.length; i++) {
     (function (index) {
-        liInfo[index].addEventListener('click', function () {
+        clickInfo[index].addEventListener('click', function () {
             for (let j = 0; j < contentPage.length; j++) {
                 contentPage[j].classList.remove('contentPageActive');
             }
             contentPage[index - 1].classList.add('contentPageActive');
-            console.log(contentPage);
         })
     })(i);
 }
@@ -61,7 +61,23 @@ function animationInput(idFigure, idCard, idImg, idInput) {
 }
 
 animationInput('figureModifierInfo', 'cardInfoPersoM', 'imgModifierInfo', 'inputInfo');
-animationInput('figureModifierGestion', 'cardH', 'imgModifierGestion','inputGestion');
+animationInput('figureModifierGestion', 'cardH', 'imgModifierGestion','inputGA');
+
+
+
+window.addEventListener('load', function() {
+    // Obtenez la valeur du paramètre de requête 'activeElement' depuis l'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const activeElement = urlParams.get('activeElement');
+
+    if (activeElement) {
+        // Ajoutez la classe 'contentPageActive' à l'élément correspondant à l'ID
+        const elementToActivate = document.getElementById(activeElement);
+        if (elementToActivate) {
+            elementToActivate.classList.add('contentPageActive');
+        }
+    }
+});
 
 
 
