@@ -17,6 +17,7 @@ abstract class Controller{
             self::$twig = new \Twig\Environment($loader);
             self::$twig->addGlobal('session', $_SESSION);
             self::$twig->addGlobal('get', $_GET);
+            
     
             // Add the path function to Twig environment
             self::$twig->addFunction(new \Twig\TwigFunction('path', function ($routeName) {

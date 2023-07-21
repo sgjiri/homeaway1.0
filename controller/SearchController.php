@@ -6,11 +6,16 @@ class SearchController extends Controller
     public function searchLogement()
     {
 
+
         if (isset($_POST['submit']) || isset($_POST['id_logement'])) {
+
+        if (isset($_POST['submit']) || isset($_POST['id_logement'])) {
+
             $city = ucfirst($_POST['city']);
             $start_date = $_POST['start_date'];
             $end_date = $_POST['end_date'];
             $number_of_person = $_POST['number_of_person'];
+   
             $formValue = [];
             $formValue['city'] = $city;
             $formValue['start'] = $start_date;
@@ -35,7 +40,9 @@ class SearchController extends Controller
 
         $twig = $this->getTwig();
 
+      
         if (isset($_POST['check'])) {
+
 
             $resultSearchView = $twig->render('resultsearch.html.twig', [
                 'logementDispo' => $datas,
@@ -47,14 +54,18 @@ class SearchController extends Controller
             if (empty($datas)) {
                 echo "Aucun logement ne correspond à votre recherche.";
             }
-        } elseif (isset($_POST['id_logement'])) {
-            $oneLogementView = $twig->render('oneLogement.html.twig', [
-                'logementDispo' => $datas,
-                'totalPrices' => $totalPrices,
-                'formValue' => $formValue
-            ]);
-            echo $oneLogementView;
+
         }
+        //  elseif (isset($_POST['id_logement'])) {
+           
+           
+        //     $oneLogementView = $twig->render('oneLogement.html.twig', [
+        //         'logementDispo' => $datas,
+        //         'totalPrices' => $totalPrices,
+        //         'formValue' => $formValue
+        //     ]);
+        //     echo $oneLogementView;
+        // }
     }
 
     public function searchByCity($city)

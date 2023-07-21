@@ -7,7 +7,8 @@ class SearchModel extends Model
     {
         $logements = [];
 
-        $stmt = $this->getDb()->prepare("SELECT DISTINCT  `logement`.`id_logement`, `title`, `city`,`resume`,`latitude`,`longitude`,`price_by_night`
+        $stmt = $this->getDb()->prepare("SELECT DISTINCT  *
+       
     FROM `logement`
    
     LEFT JOIN `book` ON `logement`.id_logement = `book`.logement_id
