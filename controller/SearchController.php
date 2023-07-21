@@ -35,7 +35,7 @@ class SearchController extends Controller
 
         $twig = $this->getTwig();
 
-        if (isset($_POST['check'])) {
+        
 
             $resultSearchView = $twig->render('resultsearch.html.twig', [
                 'logementDispo' => $datas,
@@ -47,14 +47,6 @@ class SearchController extends Controller
             if (empty($datas)) {
                 echo "Aucun logement ne correspond à votre recherche.";
             }
-        } elseif (isset($_POST['id_logement'])) {
-            $oneLogementView = $twig->render('oneLogement.html.twig', [
-                'logementDispo' => $datas,
-                'totalPrices' => $totalPrices,
-                'formValue' => $formValue
-            ]);
-            echo $oneLogementView;
-        }
     }
 
     public function searchByCity($city)
@@ -84,5 +76,40 @@ class SearchController extends Controller
                 // 'totalPrices' => $totalPrices, 
             ]);
             echo $logementsView;
-       } }
+       } 
+    
+       public function searchByType($type)
+       {
+                             
+               $number_of_person = 2;
+               $model = new SearchModel();
+               $logementsTypes = $model->getLogementsByType($type, $number_of_person);
+               // var_dump($logements);
+               $dataUpdated = [];
+               // $totalPrices = [];
+       
+               foreach ($logementsTypes as $logementComplet) {
+                   $price_by_night = $logementComplet['price_by_night'];
+                   // $start = new DateTime($start_date);
+                   // $end = new DateTime($end_date);
+                   // $number_of_days = $start->diff($end)->days;
+                   // array_push($totalPrices, $price_by_night * $number_of_days);
+                   $dataUpdated[] = $logementComplet;
+               }
+           
+               $twig = $this->getTwig();
+               $logementsTypeView = $twig->render('logementType.html.twig', [
+                   'logementsTypes' => $logementsTypes,
+                   'type' => $type,
+                   // 'totalPrices' => $totalPrices, 
+               ]);
+               echo $logementsTypeView;
+          } 
+        
+        
+        }
+       
+    
+    
+    
     

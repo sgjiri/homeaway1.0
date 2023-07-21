@@ -33,7 +33,7 @@ class SearchModel extends Model
         $stmt->bindParam(':end_date', $end_date, PDO::PARAM_STR);
         $stmt->bindParam(':number_of_person', $number_of_person, PDO::PARAM_INT);
         $stmt->execute();
-        
+
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // var_dump($city);
         $length = (count($results));
@@ -98,5 +98,49 @@ class SearchModel extends Model
         }
 
         return $logements;
+    }
+
+
+    public function getLogementsByType($type, $number_of_person)
+    {
+        $logementsType = [];
+
+        $reqByType = $this->getDb()->prepare(
+            "SELECT DISTINCT  `logement`.`id_logement`, `title`, `city`, `resume`, `latitude`, `longitude`, `price_by_night` 
+        FROM `logement` 
+        LEFT JOIN `book` ON `logement`.id_logement = `book`.logement_id
+       
+        WHERE (
+             `logement`.type = :type)
+        AND `number_of_person` >= :number_of_person 
+        AND 
+        NOT EXISTS (
+            SELECT 1 
+            FROM `book`
+            WHERE `book`.`logement_id` = `logement`.`id_logement`
+            AND `book`.`start_date` >= :start_date 
+            AND `book`.`end_date` <= DATE_ADD(:start_date, INTERVAL 4 DAY)
+        )
+    "
+        );
+    
+        $reqByType->bindParam(':number_of_person', $number_of_person, PDO::PARAM_INT);
+        $reqByType->bindParam(':type', $type, PDO::PARAM_STR);
+        $reqByType->bindParam(':start_date', $start_date, PDO::PARAM_STR);
+        $reqByType->execute();
+
+        $results = $reqByType->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($results as $logement) {
+            $reqByTypes = $this->getDb()->prepare("SELECT * FROM `image` WHERE `id_logement` = :logementId");
+            $reqByTypes->bindParam(':logementId', $logement['id_logement'], PDO::PARAM_INT);
+            $reqByTypes->execute();
+            $images = $reqByTypes->fetchAll(PDO::FETCH_ASSOC);
+
+            $logement['thumbnails'] = $images;
+            $logementsType[] = $logement;
+        }
+
+        return $logementsType;
     }
 }

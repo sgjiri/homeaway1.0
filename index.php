@@ -26,6 +26,7 @@ $router->map('GET', '/dashboard', 'DashboardController#dashboard', 'dashboard');
 // **-------ROUTE RECHERCHE-------**//
 $router->map('GET|POST', '/search', 'SearchController#searchLogement', 'search');
 $router->map('GET','/beach/[a:city]?', 'SearchController#searchByCity','beach');
+$router->map('GET','/type/[a:type]?', 'SearchController#searchByType','type');
 
 
 // **------ROUTE LOGEMENT ------**//

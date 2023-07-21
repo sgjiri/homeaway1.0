@@ -78,17 +78,24 @@ class LogementModel extends Model
         
     }
 
-    // public function getAll()
-    // {
-    //     $logements = [];
+    // -*-*-*-*-DELETE LOGEMENT-*-*-*-*
 
-    //     $req = $this->getDb()->prepare('SELECT `title`,`id_city`,`number_of_person` FROM `logement` ORDER BY `id_city` DESC');
+    public function deleteLogement(int $id_logement){
+        $this->getDb()->beginTransaction();
 
-    //     while ($all = $req->fetch(PDO::FETCH_ASSOC)) {
-    //         $logements[] = new Logement($all);
-    //     }
-    //     return $logements;
-    // }
+        try{
+            $reqDelete = $this->getdb()->prepare('DELETE FROM `logement` WHERE `id_logement` = :id');
+            $reqDelete->bindParam('id_logement',$id_logement,PDO::PARAM_INT);
+            $reqDelete->execute();
 
+            $this->getDb()->commit();
+
+
+        }catch(Exception $e) {
+            $this->getDB()->rollBack();
+            throw $e; 
+        }
+
+    }
    
 }
