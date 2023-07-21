@@ -78,17 +78,17 @@ class LogementModel extends Model
         
     }
 
-    public function getAll()
-    {
-        $logements = [];
+    // public function getAll()
+    // {
+    //     $logements = [];
 
-        $req = $this->getDb()->prepare('SELECT `title`,`id_city`,`number_of_person` FROM `logement` ORDER BY `id_city` DESC');
+    //     $req = $this->getDb()->prepare('SELECT `title`,`id_city`,`number_of_person` FROM `logement` ORDER BY `id_city` DESC');
 
-        while ($all = $req->fetch(PDO::FETCH_ASSOC)) {
-            $logements[] = new Logement($all);
-        }
-        return $logements;
-    }
+    //     while ($all = $req->fetch(PDO::FETCH_ASSOC)) {
+    //         $logements[] = new Logement($all);
+    //     }
+    //     return $logements;
+    // }
 
    
 }

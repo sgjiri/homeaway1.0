@@ -25,11 +25,7 @@ $router->map('GET', '/dashboard', 'DashboardController#dashboard', 'dashboard');
 
 // **-------ROUTE RECHERCHE-------**//
 $router->map('GET|POST', '/search', 'SearchController#searchLogement', 'search');
-// $router->map('GET', '/searchenvie/[i:ville_nom]?', 'SearchController#searchEnvie', 'searchEnvie');
-$router->map('GET','/beach/[a:ville_nom]?', 'SearchController#searchBeach','beach');
-// $router->map('GET','/logements/[a:city]?', 'SearchController#showLogementsByVille','showcity');
-
-
+$router->map('GET','/beach/[a:city]?', 'SearchController#searchByCity','beach');
 
 
 // **------ROUTE LOGEMENT ------**//
@@ -37,9 +33,7 @@ $router->map('GET','/beach/[a:ville_nom]?', 'SearchController#searchBeach','beac
 
 $router->map('GET|POST', '/add', 'LogementController#addLogement', 'add');
 $router->map('GET', '/one', 'LogementController#getOneLogement', 'one');
-// $router->map('GET','/all/','LogementController#getAllLogement','logements');
 $router->map('GET|POST','/upload','LogementController#getUploadImg','upload_img');
-
 
 
 // **------ROUTE FOOTER------**//
@@ -47,8 +41,6 @@ $router->map('GET', '/legalNotices', 'HomePageController#legalNotices', 'legalNo
 
 
 $match = $router->match();
-// Afficher la liste des routes enregistrées
-//var_dump($router);
 
 //  var_dump($match);
 
