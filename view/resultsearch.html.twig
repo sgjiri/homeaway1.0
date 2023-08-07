@@ -146,9 +146,10 @@
 							
 								
 
+									<a href="{{ path('one') ~ logementDispo[i].id_logement}}">
 									<article class="item js-marker" data-lat="{{ logementDispo[i].latitude }}" data-lng="{{ logementDispo[i].longitude }}" data-price="{{ logementDispo[i].price_by_night }}">
 
-										<a href="{{ path('one') ~ logementDispo[i].id_logement}}"><img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'Appartement ' ~ logementDispo[i].ville_nom }}"></a>
+										<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'Appartement ' ~ logementDispo[i].ville_nom }}">
 
 										<h4>{{ logementDispo[i].title }}
 											&nbsp;-&nbsp;{{ logementDispo[i].city }}</h4>
@@ -160,7 +161,7 @@
 										</p>
 
 									</article>
-								
+								</a>
 							
 						</form>
 					{% endfor %}

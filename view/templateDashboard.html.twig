@@ -92,10 +92,10 @@
 						<div class='input inputInfo input2info height'>
 							<form action="" method="post">
 								<label for="lastname"></label>
-								<input type="text" class='change' name="lastname" placeholder="Votre nom...">
+								<input type="text" class='change' name="lastname" id='lastname' placeholder="Votre nom..." required>
 								<label for="firstname"></label>
-								<input type="text" class='change' name="firstname" placeholder="Votre prenom...">
-								<input type="submit" name="valider" class="valider change" value="">
+								<input type="text" class='change' name="firstname" id='firstname' placeholder="Votre prenom...">
+								<input type="submit" name="validerName" class="valider change" value="" required>
 							</form>
 
 						</div>
@@ -116,8 +116,8 @@
 						<div class='input inputInfo height'>
 							<form action="" method="post">
 								<label for="mail"></label>
-								<input type="text" name='name' class='change' placeholder="Votre mail...">
-								<input type="submit" name="valider" class="valider change" value="">
+								<input type="text" name='mail' id='mail' class='change' placeholder="Votre mail..." required>
+								<input type="submit" name="validerMail" class="valider change" value="">
 							</form>
 						</div>
 					</div>
@@ -138,13 +138,56 @@
 
 							<form action="" method="post">
 								<label for="tel"></label>
-								<input type="text" name='tel' class='change' placeholder="Votre numero de telephone...">
-								<input type="submit" name="valider" class="valider change" value="">
+								<input type="text" name='tel' id='tel'class='change' placeholder="Votre numero de telephone...">
+								<input type="submit" name="validerTel" class="valider change" value="" required>
 							</form>
 						</div>
 					</div>
+					<div class='card cardInfoPerso cardInfoPersoM'>
+						<div class='contentFixCard contentFixCardInfoPerso'>
+							<div>
+								<h3>Date de naissance</h3>
+								<p>{{user.date_of_birth}}</p>
 
-					<div class='card cardInfoPerso cardInfoPersoM card2ligneInfoPerso'>
+							</div>
+
+							<figure class="figureModifier figureModifierInfo">
+								<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
+							</figure>
+						</div>
+						<div class='input inputInfo height'>
+
+							<form action="" method="post">
+								<label for="date_of_birth"></label>
+								<input type="text" name='date_of_birth' id='date_of_birth' class='change' placeholder="Modifier">
+								<input type="submit" name="validerDateOfBird" class="valider change" value="" required>
+							</form>
+						</div>
+					</div>
+					<div class='card cardInfoPerso cardInfoPersoM'>
+						<div class='contentFixCard contentFixCardInfoPerso'>
+							<div>
+								<h3>Mot de passe</h3>
+							</div>
+
+							<figure class="figureModifier figureModifierInfo">
+								<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
+							</figure>
+						</div>
+
+						<div class='input inputInfo input2info height'>
+							<form action="" method="post">
+								<label for="password"></label>
+								<input type="text" class='change' name="password"  id='password'placeholder="Modifier...">
+								<label for="passwordConfirm"></label>
+								<input type="text" class='change' name="passwordConfirm" id='passwordConfirm' placeholder="Confirmer...">
+								<input type="submit" name="validerPassword" class="valider change" value="">
+							</form>
+
+						</div>
+					</div>
+
+					{# <div class='card cardInfoPerso cardInfoPersoM card2ligneInfoPerso'>
 						<div class='contentFixCard contentFixCardInfoPerso'>
 							<div>
 								<h3>Date de naissance</h3>
@@ -167,7 +210,7 @@
 								<input type="submit" name="valider" class="valider change" value="">
 							</form>
 						</div>
-					</div>
+					</div> #}
 
 				</div>
 				<div class='contentPage' id='contentHistoricReservation'>
@@ -262,8 +305,9 @@
 										</div>
 										<div class='modifierInfo infoSaisis'>
 											<form action="" method='post'>
-												<input type="text" class='change changeGestion' placeholder="Modifier...">
-												<input type="submit" name="valider" class="valider change" value="">
+												<label for="title"></label>
+												<input type="text" name='title' id='title' class='change changeGestion' placeholder="Modifier...">
+												<input type="submit" name="validerTitle" class="valider change" value="">
 
 											</form>
 
