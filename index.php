@@ -20,7 +20,9 @@ $router->map('GET', '/logement/[i:id_ville]', 'HomePageController#cityBeach', 'c
 $router->map('GET|POST', '/login', 'PersonController#userLogin', 'login');
 $router->map('GET', '/logout', 'PersonController#logout', 'logout');
 $router->map('GET|POST', '/register', 'PersonController#createPerson', 'register');
-$router->map('GET', '/dashboard', 'DashboardController#dashboard', 'dashboard');
+$router->map('GET|POST', '/dashboard', 'DashboardController#dashboard', 'dashboard');
+$router->map('GET', '/dashboard', 'DashboardUpdateLogementController#DashboardUpdateLogement', 'DashboardUpdateLogement');
+
 
 
 // **-------ROUTE RECHERCHE-------**//

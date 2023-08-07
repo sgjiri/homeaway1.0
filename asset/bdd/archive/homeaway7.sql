@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 20 juil. 2023 à 14:10
+-- Généré le : mar. 18 juil. 2023 à 08:04
 -- Version du serveur : 8.0.31
--- Version de PHP : 8.2.0
+-- Version de PHP : 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `image` (
   `id_logement` int NOT NULL,
   PRIMARY KEY (`id_image`),
   KEY `logement` (`id_logement`)
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `image`
@@ -87,27 +87,7 @@ INSERT INTO `image` (`id_image`, `thumbnail`, `id_logement`) VALUES
 (10, 'appartementMarseille1.2.webp', 3),
 (49, 'thumbnail_1_parisappart.webp', 138),
 (50, 'thumbnail_2_paris2.webp', 138),
-(51, 'thumbnail_3_paris4.webp', 138),
-(52, 'thumbnail_1_appartementMarseille1.1.webp', 139),
-(53, 'thumbnail_2_appartementMarseille1.2.webp', 139),
-(54, 'thumbnail_3_appartementMarseille1.4.webp', 139),
-(55, 'thumbnail_1_appartementMarseille2.2.webp', 140),
-(56, 'thumbnail_2_appartementMarseille2.1.webp', 140),
-(57, 'thumbnail_3_appartementMarseille2.3.webp', 140),
-(58, 'thumbnail_4_appartementMarseille2.4.webp', 140),
-(59, 'thumbnail_1_appartementMontpellier2.1.webp', 141),
-(60, 'thumbnail_2_appartementMontpellier2.2.webp', 141),
-(61, 'thumbnail_3_appartementMontpellier2.6.jpg', 141),
-(62, 'thumbnail_4_appartementMontpellier2.3.webp', 141),
-(63, 'thumbnail_1_chamonix1.webp', 142),
-(64, 'thumbnail_2_chamonix2.webp', 142),
-(65, 'thumbnail_3_chamonix3.webp', 142),
-(66, 'thumbnail_4_chamonix4.webp', 142),
-(67, 'thumbnail_5_chamonix5.webp', 142),
-(68, 'thumbnail_1_yourte1.webp', 143),
-(69, 'thumbnail_2_y2.webp', 143),
-(70, 'thumbnail_3_y3.webp', 143),
-(71, 'thumbnail_4_y4.jpg', 143);
+(51, 'thumbnail_3_paris4.webp', 138);
 
 -- --------------------------------------------------------
 
@@ -147,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `logement` (
   `jacuzzi` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_logement`),
   KEY `person` (`id_person`)
-) ENGINE=InnoDB AUTO_INCREMENT=144 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=139 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `logement`
@@ -189,12 +169,7 @@ INSERT INTO `logement` (`id_logement`, `id_person`, `title`, `type`, `surface`, 
 (90, 2, 'Maison plain pied ', 'Maison ', 60, 'Bienvenue dans cette maison de plain-pied accueillante à Eycheil. Profitez de la simplicité d\'un agencement sans escaliers, où chaque pièce est facilement accessible.', 'Découvrez cette charmante maison de plain-pied à Eycheil. Profitez de la commodité et du confort d\'une maison sans escaliers, offrant un espace de vie spacieux et fonctionnel. Avec une disposition pratique et des aménagements modernes, cette maison vous offre une expérience agréable et pratique. Profitez de la facilité d\'accès à toutes les pièces et de la convivialité d\'une maison de plain-pied à Eycheil.\r\nProfitez d\'un espace de vie ouvert et lumineux, avec des aménagements modernes qui vous offrent tout le confort dont vous avez besoin. Profitez de la praticité et de la convivialité d\'une maison de plain-pied, idéale pour profiter pleinement de votre séjour à Eycheil.\r\n', 'Hôtel de Ville, Place de la Mairie', '09200', 'Eycheil', 'montain', '42.9759463', '1.1595229', 90, 7, 3, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0),
 (91, 2, 'Appartement centre ville Paris ', 'Appartement ', 99, 'Bienvenue dans cet appartement au cœur du centre-ville de Paris. Profitez de l\'effervescence de la capitale en vous installant dans ce logement moderne et confortable. ', 'Vivez en plein centre de Paris avec ce 3 pièces situé Auteuil .\r\nDémarrez votre nouvelle vie avec cet appartement meublé qui propose un mobilier design et tendance . \r\nNB : Nos appartements sont proposés en résidences secondaires ou baux sociétés et pour un an maximum.\r\n\r\nUn appartement conçu spécialement pour vous\r\n\r\nConçu avec soin avec des finitions sur mesure, des meubles tendances et une cuisine entièrement équipée et aménagée. Profitez d’un moment de détente dans votre salon avec nos TV connectée ou nos enceintes Marshall wifi, ou d’un peu de repos bien mérité sur nos matelas haut de gamme ! Vous tomberez amoureux de cet appartement situé Auteuil.\r\n\r\nÉquipements\r\n\r\nLes équipements de l’immeuble propres à ce 3 pièces sont:\r\n\r\nAscenseur\r\nAssistance à l’arrivée et au quotidien\r\nVous pouvez commander des prestations de ménage supplémentaires, soumettre des demandes de maintenance et en savoir plus sur votre nouveau chez-vous en quelques clics.\r\n\r\n', 'Quartier Auteuil Sud ', '75016', 'Paris ', 'river', '48.8530933', '2.2487626', 120, 2, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0),
 (92, 2, 'Chambre d\'hôte', 'gest house', 12, 'Découvrez l\'élégance parisienne dans notre ravissante chambre d\'hôte, nichée dans un quartier pittoresque de la capitale. ', 'Bienvenue dans notre charmante chambre d\'hôte, idéalement située au cœur de Paris. Que vous soyez un voyageur passionné ou un couple en quête d\'une escapade romantique, notre établissement offre un cadre enchanteur pour votre séjour dans la Ville Lumière. Emplacement privilégié : Nichée dans un quartier pittoresque, notre chambre d\'hôte vous permettra de vous immerger pleinement dans l\'atmosphère unique de Paris. À quelques pas seulement des monuments emblématiques tels que la Tour Eiffel, le Louvre et Notre-Dame, vous serez au centre de toutes les merveilles que cette ville a à offrir.', '14 Rue Houdon', '75018', 'Paris', 'lac', '48.8833146', '2.3387702', 80, 2, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0),
-(138, 2, 'Studio autonome', 'studio', 30, 'Grand studio indépendant avec accès autonome par boîte à clé codée et parking cuisine équipée ', 'Grand studio indépendant avec accès autonome par boîte à clé codée et parking Cuisine équipée avec frigidaire et petit congélateur Machine à café Tassimo capsule fourni\r\nCarafe d\'eau Brita\r\nMicro onde\r\nGrille pain\r\nPossibilité de cuisiner sur place\r\nPouvant accueillir jusqu\'à un couple avec 2 enfants + 1 bébé ou 4 adultes désireux de visiter Paris et ses attractions..\r\nCasino à 5mn\r\nCarrefour 10mn\r\nAuchan 5mn\r\nCentre commercial Aéroville à 5mn soit 3 km\r\nIPTV le bouquet Complet Internet fibre illimité\r\nLe logement\r\nContact 0637463511...Situé à 10 mn de l\'aéroport Roissy CDG, à 20 mn de Paris, Parc Astérix à 15 mn , Mer de sable à 30 mn, Centre commercial Aéroville à 5 mn, Parinor et Parinor 2 à 10 mn, Disneyland Paris à 30 mn, Parcours de santé, Forêt + Golf de Roissy derrière l\'appartement, 15 mn du Stade de France, idéalement située pour visiter Paris et sa région (RER D et B à 10 mn en voiture). Tout équipé WIFI et fibre, place de parking extérieur et gratuite au pied de l\'apparteme', '66 Rue du Père Corentin', '75014', 'Paris', 'lac', '48.8240192', '2.3273560', 85, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0),
-(139, 16, 'Bel appartement à Marseille ', 'appartement', 50, 'Coquet T2 sur arrière cour,  calme, 25 m2, deux baies vitrées sur petite terrasse dans immeuble ancien.  Entièrement refait à neuf et bien équipé.', 'Ce logement vous permettra de vous rendre dans les lieux stratégiques à pied :\r\nVieux Port 7mn, gare Saint Charles 5 mn, Canebière 3 mn, Panier 7 mn bibliothèue Alcazar 2 mn, et toutes directions avec tramway à 100 m et métro à 4 mn.\r\nQuartier populaire, nombreux commerces, immeuble très calme et propre.\r\nLe logement\r\nJe porte une attention particulière au confort et aux conditions d\'hygiène des lieux. Une désinfection du linge, mobilier et surfaces est réalisée avant votre arrivée. Je vous remercie de respecter l\'hygiène du logement en retour.\r\nAccès des voyageurs\r\nVous aurez accès à l\'ensemble du logement.', '6 Place Henri Verneuil', '13002', 'Marseille', 'beach', '43.3095482', '5.3672664', 80, 2, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0),
-(140, 16, 'Appartement ensoleillé ', 'flat', 45, 'Quartier baille, bel appartement T2 refait à neuf, au calme et lumineux situé au 2eme étage d’un petit immeuble dans le 5ème arrondissement de Marseille.\r\n', 'L’appartement est à 2eme étage, porte à droite\r\nLe logement\r\nAgencé sur 35M2 :\r\nSalon avec canapé lit (140/190), meuble, rangements- avec un coin cuisine tout équipée, frigo, machine à laver, micro-onde, table et chaise\r\nAccès des voyageurs\r\nSi vous venez par le train, l\'appartement est à 5 stations sans changement, ligne 2(BLEU), descendez à la station \"Baille\"\r\nA la sortie de métro, vous avez 5 mins de marche :\r\n- tourner directement à droit à la sortie du métro\r\n- 1er tournant à gauche\r\n- premier tournant à droit, l\'appartement est situé 2 rue plus loin à votre droit\r\n\r\nPour se rendre sur quelques lieux touristiques :\r\nCastelane : 10mins de marche ou par métro, 1 station, ligne 1 (BLEU)\r\nLa Timone (la faculté de médecine, l\'hôpital de la Timone) : 10mins de marche ou par métro, 1 station, ligne 1 (BLEU)\r\nVélodrome : métro à Castelane puis 2 stations de métro ligne2(rouge) jusqu\'à \"rond-point du Prado\"\r\nAutres remarques\r\nL’appartement est à 2eme étage à droit et le dernier étage de l', '7 Square des Frères Ambrogiani', '13008', 'Marseille', 'beach', '43.2808782', '5.3881066', 85, 2, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0),
-(141, 16, 'Studio meublé T2', 'studio', 40, 'Profitez d\'un logement élégant et central.Studio pouvant accueillir jusqu\'à 4 personnes. A 15 minutes en vélo de la plage de Carnon. ', 'A 3 minutes à pieds du centre ville de Pérols avec restaurant, tabac, banque, médecins, commerce de proximité et marché (le samedi). Tramway à 3 minutes à pieds pour se rendre à Montpellier centre (gare Montpellier saint Roch). Aéroport et gare Montpellier Sud France à 10 minutes en voiture. Parcours santé, Parc Expo à 10 minutes en vélo.', 'Chemin de Saint-Hubert', ' 34970', 'Lattes', 'beach', '43.5844240', '3.8971450', 70, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0),
-(142, 16, 'Appartement chaleureux et calme Chamonix', 'flat', 35, 'Appartement moderne et au calme, en rez-de-chaussée , situé aux Houches , à 5 min en voiture de Chamonix.', 'Venez vous relaxer dans cet appartement fraichement rénové et idéalement placé.\r\nVillage du Départ du tour du Mont blanc et de nombreux itinéraires de montagne. Ligne de bus vers Chamonix à 1min à pied de l\'appartement.\r\nA 5min à pied du supermarché et du marché de Chibon (tous les mercredis). Belle exposition et vue sur l\'aiguille du midi.\r\nLe logement\r\nL\'appartement d\'une surface de 33m2 est entièrement équipé avec tout le nécessaire pour passer un séjour merveilleux .\r\nLa chambre dispose d\'un lit double et d\'une grande armoire pour vos affaires.\r\nLe canapé lit, convertible est adapté pour les enfants .\r\nAccès des voyageurs\r\nL\'appartement est situé à 1 minute à pied de la ligne de Bus vers Chamonix.\r\nSi vous venez en voiture, un parking gratuit est mis à disposition .\r\nAutres remarques\r\nVos hôtes Daphné et Loïc , passionnés de montagne et épicuriens dans l\'âme sauront vous partager tous les plus beaux itinéraires et les meilleures adresses de la vallée.', 'Route de Perpignan', '66300 ', 'Thuir', 'montain', '42.6324300', '2.7563480', 85, 2, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0),
-(143, 16, 'Yourte au cœur de la nature', 'yurt', 30, 'Laissez-vous bercer par les sons de la nature dans ce logement unique.\r\ncouchages au sol sur futon.\r\nVivez une expérience en retrouvant la simplicité de cet habitat insolite.', 'Petit coin repas avec camping gaz 2 feux.\r\nDouche solaire. ( qui fonctionne qu’en été)\r\nToilettes sèches.\r\nRivière à proximité.\r\nAccès à pied par un chemin de terre.\r\nNi eau courante ni d\'électricité.\r\nRetrouvez la simplicité des éléments naturels.\r\nLe logement\r\nConfort et sécurité d’une yourte en pleine nature avec les atouts du camping\r\nAutres remarques\r\nEau potable à apporter ou utiliser un système de filtration de l’eau de la rivière.\r\nYourte sur terrasse surélevée avec barrière en bois flottés. ( attention : inadaptée aux enfants de moins 7 ans )', '50 Impasse de l\'Étang', '74800', 'La Roche-sur-Foron', 'montain', '46.0759813', '6.3061311', 100, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0);
+(138, 2, 'Studio autonome', 'studio', 30, 'Grand studio indépendant avec accès autonome par boîte à clé codée et parking cuisine équipée ', 'Grand studio indépendant avec accès autonome par boîte à clé codée et parking Cuisine équipée avec frigidaire et petit congélateur Machine à café Tassimo capsule fourni\r\nCarafe d\'eau Brita\r\nMicro onde\r\nGrille pain\r\nPossibilité de cuisiner sur place\r\nPouvant accueillir jusqu\'à un couple avec 2 enfants + 1 bébé ou 4 adultes désireux de visiter Paris et ses attractions..\r\nCasino à 5mn\r\nCarrefour 10mn\r\nAuchan 5mn\r\nCentre commercial Aéroville à 5mn soit 3 km\r\nIPTV le bouquet Complet Internet fibre illimité\r\nLe logement\r\nContact 0637463511...Situé à 10 mn de l\'aéroport Roissy CDG, à 20 mn de Paris, Parc Astérix à 15 mn , Mer de sable à 30 mn, Centre commercial Aéroville à 5 mn, Parinor et Parinor 2 à 10 mn, Disneyland Paris à 30 mn, Parcours de santé, Forêt + Golf de Roissy derrière l\'appartement, 15 mn du Stade de France, idéalement située pour visiter Paris et sa région (RER D et B à 10 mn en voiture). Tout équipé WIFI et fibre, place de parking extérieur et gratuite au pied de l\'apparteme', '66 Rue du Père Corentin', '75014', 'Paris', 'lac', '48.8240192', '2.3273560', 85, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -212,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `person` (
   `phone_number` int NOT NULL,
   `mail` varchar(50) NOT NULL,
   PRIMARY KEY (`id_person`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `person`
@@ -223,8 +198,7 @@ INSERT INTO `person` (`id_person`, `name`, `firstname`, `date_of_birth`, `passwo
 (16, 'bek', 'najia', '1986-09-05', '$2y$10$av84a5gILnZ8avm/XBsrTOWjhc5NR6zX8I4whMEhEGWd7X92J7oba', 652658969, 'macocotte01250@gmail.com'),
 (18, 'ligali', 'najia', '1987-09-08', '$2y$10$Y8bXHwrWYxSCGN6oiN2kHOKYr.0tmAkZcptOxuZ0j.633m6GFUl9e', 652658969, 'Najia@gmail.com'),
 (19, 'buy', 'diams', '1958-06-02', '$2y$10$k6PgHaGKlOFRA2JCXoyZCe19Db51IHJZk6/HF1.rnp.jqKMCOjP/O', 685969878, 'live@live.fr'),
-(20, 'telemaque', 'walesca', '1985-06-05', '$2y$10$2tlVVsRM2bUpKuztfhm3y.WKdHztj1gAarrZxIJczHljuQZYcxZ26', 789693696, 'walou@gmail.com'),
-(23, 'SEQUEIRA', 'ALEXANDRE', '2023-06-29', '$2y$10$C1.yV5A5FQOmHqi6JG7Xruc0aGPUXllnMhk2znTkVUkyLPwNU6d5e', 628657515, 'bobas@gmail.com');
+(20, 'telemaque', 'walesca', '1985-06-05', '$2y$10$2tlVVsRM2bUpKuztfhm3y.WKdHztj1gAarrZxIJczHljuQZYcxZ26', 789693696, 'walou@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -36992,6 +36966,12 @@ ALTER TABLE `cancel`
 --
 ALTER TABLE `image`
   ADD CONSTRAINT `image_ibfk_1` FOREIGN KEY (`id_logement`) REFERENCES `logement` (`id_logement`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `person`
+--
+ALTER TABLE `person`
+  ADD CONSTRAINT `person_ibfk_1` FOREIGN KEY (`id_person`) REFERENCES `logement` (`id_person`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
