@@ -74,9 +74,27 @@ class LogementModel extends Model
 
         $onelogement = new Logement($req->fetch(PDO::FETCH_ASSOC));
 
+        
+
         return $onelogement;
         
     }
+    public function getAllImg($id_logement) {
+        $allImg=[];
+        $reqAllImg= $this->getDb()->prepare("SELECT * FROM `image` WHERE `id_logement` = :logementId ");
+        $reqAllImg->bindParam(':logementId',$id_logement,PDO::PARAM_STR);
+        $reqAllImg -> execute();
+        // Utilisez fetchAll pour obtenir toutes les lignes résultantes
+    $allImages = $reqAllImg->fetchAll(PDO::FETCH_ASSOC);
+    
+    // Parcourez les résultats et créez les objets Logement
+    foreach ($allImages as $oneImg) {
+        $allImg[] = new Image($oneImg);
+    }
+        return $allImg;
+    }
+
+    
 
     // -*-*-*-*-DELETE LOGEMENT-*-*-*-*
 
