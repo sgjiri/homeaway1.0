@@ -7,7 +7,7 @@ class SearchController extends Controller
     {
 
 
-        if (isset($_POST['submit']) || isset($_POST['id_logement'])) {
+        
 
         if (isset($_POST['submit']) || isset($_POST['id_logement'])) {
 
