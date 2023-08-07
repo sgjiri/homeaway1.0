@@ -10,10 +10,10 @@
 			<img id="imgConnectDesktop" src="{{asset('/img/divBurgerConnect')}}" alt="burger">
 			<nav id='navConnect'>
 				<ul>
-					<li><a href='#'>Vos informations</a></li>
+					<li><a id="lienInformation"href='{{path('dashboard')}}?activeElement=contentInfoPerso'>Vos informations</a></li>
 					<li><a href='#'>Messages</a></li>
-					<li><a href='#'>Vos réservations</a></li>
-					<li><a href='{{path('add')}}'>Ajouter un logement en ligne</a></li>
+					<li><a href='{{path('dashboard')}}?activeElement=contentMesReservation'>Vos réservations</a></li>
+					<li><a href='{{path('dashboard')}}?activeElement=contentAjoutLogement'>Ajouter un logement en ligne</a></li>
 					<li><a href='#'>Vos favoris</a></li>
 					<li><a href='#'>FAQ</a></li>
 					<li><a href='{{path('logout')}}'>Déconnexion</a></li>
@@ -65,7 +65,11 @@
 		</div>
 	</div>
 	<div id="searchBoxPhone">
+<<<<<<< HEAD
 		<form action= "{{path('search')}}" method="POST" id="searchform">
+=======
+		<form action = "{{path('search')}}" method="POST" id="searchform">
+>>>>>>> 588bf3c5420a4977a9e817728812a20dedf3a425
 			<div class="searchFormBox">
 				<label for="city">Destination</label>
 				<input type="text" name="city" id="city">

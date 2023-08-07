@@ -20,20 +20,31 @@ $router->map('GET', '/logement/[i:id_ville]', 'HomePageController#cityBeach', 'c
 $router->map('GET|POST', '/login', 'PersonController#userLogin', 'login');
 $router->map('GET', '/logout', 'PersonController#logout', 'logout');
 $router->map('GET|POST', '/register', 'PersonController#createPerson', 'register');
-$router->map('GET', '/dashboard', 'DashboardController#dashboard', 'dashboard');
+$router->map('GET|POST', '/dashboard', 'DashboardController#dashboard', 'dashboard');
+$router->map('GET', '/dashboard', 'DashboardUpdateLogementController#DashboardUpdateLogement', 'DashboardUpdateLogement');
+
 
 
 // **-------ROUTE RECHERCHE-------**//
 $router->map('GET|POST', '/search', 'SearchController#searchLogement', 'search');
+
+$router->map('GET|POST', '/one[i:id_logement]?', 'LogementController#getOneLogement', 'one');
+
 $router->map('GET','/beach/[a:city]?', 'SearchController#searchByCity','beach');
 $router->map('GET','/type/[a:type]?', 'SearchController#searchByType','type');
+
 
 
 // **------ROUTE LOGEMENT ------**//
 
 
 $router->map('GET|POST', '/add', 'LogementController#addLogement', 'add');
-$router->map('GET', '/one', 'LogementController#getOneLogement', 'one');
+
+
+
+
+$router->map('GET','/all/','LogementController#getAllLogement','logements');
+
 $router->map('GET|POST','/upload','LogementController#getUploadImg','upload_img');
 
 
