@@ -73,47 +73,111 @@ class LogementModel extends Model
         $req->execute();
 
         $onelogement = new Logement($req->fetch(PDO::FETCH_ASSOC));
-
-        
-
         return $onelogement;
-        
     }
-    public function getAllImg($id_logement) {
-        $allImg=[];
-        $reqAllImg= $this->getDb()->prepare("SELECT * FROM `image` WHERE `id_logement` = :logementId ");
-        $reqAllImg->bindParam(':logementId',$id_logement,PDO::PARAM_STR);
-        $reqAllImg -> execute();
+
+    public function getAllImg($id_logement)
+    {
+        $allImg = [];
+        $reqAllImg = $this->getDb()->prepare("SELECT * FROM `image` WHERE `id_logement` = :logementId ");
+        $reqAllImg->bindParam(':logementId', $id_logement, PDO::PARAM_STR);
+        $reqAllImg->execute();
         // Utilisez fetchAll pour obtenir toutes les lignes résultantes
-    $allImages = $reqAllImg->fetchAll(PDO::FETCH_ASSOC);
-    
-    // Parcourez les résultats et créez les objets Logement
-    foreach ($allImages as $oneImg) {
-        $allImg[] = new Image($oneImg);
-    }
+        $allImages = $reqAllImg->fetchAll(PDO::FETCH_ASSOC);
+
+        // Parcourez les résultats et créez les objets Logement
+        foreach ($allImages as $oneImg) {
+            $allImg[] = new Image($oneImg);
+        }
         return $allImg;
     }
 
-    
+
 
     // -*-*-*-*-DELETE LOGEMENT-*-*-*-*
 
-    public function deleteLogement(int $id_logement){
-        $this->getDb()->beginTransaction();
+    public function delete(int $id_logement)
+    {
+        $reqDelete = $this->getDb()->prepare('DELETE FROM `logement` WHERE `id_logement` = :id');
 
-        try{
-            $reqDelete = $this->getdb()->prepare('DELETE FROM `logement` WHERE `id_logement` = :id');
-            $reqDelete->bindParam('id_logement',$id_logement,PDO::PARAM_INT);
-            $reqDelete->execute();
+        $reqDelete->bindParam('id_logement', $id_logement, PDO::PARAM_INT);
 
-            $this->getDb()->commit();
+        $reqDelete->execute();
+    }
 
+    // -*-*-*-*-*-FILTRES RECHERCHE-*-*-*-*-*
+    public function logementFilters($selectedFilters,$city)
+    {
+      
+        // Sélectionne toutes les colonnes de la table logement avec une condition initiale WHERE 1, qui est toujours vraie.
+        $reqFilter = "SELECT * FROM `logement` WHERE 1";
 
-        }catch(Exception $e) {
-            $this->getDB()->rollBack();
-            throw $e; 
+        // Vérifie si l'utilisateur a sélectionné le filtre wifi, et si oui, ajoute la condition au niveau de la requête SQL.
+        if (isset($selectedFilters['wifi'])) {
+            $conditions[] = "wifi = :wifi";
+            $queryParams[':wifi'] = 1;
+        }
+        if (isset($selectedFilters['parking'])) {
+            $conditions[] = "parking = :parking";
+            $queryParams[':parking'] = 1;
+        }
+        if (isset($selectedFilters['piscine'])) {
+            $conditions[] = "piscine = :piscine";
+            $queryParams[':piscine'] = 1;
+        }
+        if (isset($selectedFilters['animals'])) {
+            $conditions[] = "animals = :animals";
+            $queryParams[':animals'] = 1;
+        }
+        if (isset($selectedFilters['kitchen'])) {
+            $conditions[] = "kitchen = :kitchen";
+            $queryParams[':kitchen'] = 1;
+        }
+        if (isset($selectedFilters['garden'])) {
+            $conditions[] = "garden = :garden";
+            $queryParams[':garden'] = 1;
+        }
+        if (isset($selectedFilters['tv'])) {
+            $conditions[] = "tv = :tv";
+            $queryParams[':tv'] = 1;
+        }
+        if (isset($selectedFilters['climatisation'])) {
+            $conditions[] = "climatisation = :climatisation";
+            $queryParams[':climatisation'] = 1;
+        }
+        if (isset($selectedFilters['camera'])) {
+            $conditions[] = "camera = :camera";
+            $queryParams[':camera'] = 1;
+        }
+        if (isset($selectedFilters['home_textiles'])) {
+            $conditions[] = "home_textiles = :home_textiles";
+            $queryParams[':home_textiles'] = 1;
+        }
+        if (isset($selectedFilters['spa'])) {
+            $conditions[] = "spa = :spa";
+            $queryParams[':spa'] = 1;
+        }
+        if (isset($selectedFilters['jacuzzi'])) {
+            $conditions[] = "jacuzzi = :jacuzzi";
+            $queryParams[':jacuzzi'] = 1;
         }
 
+
+
+        if (!empty($conditions)) {
+            $reqFilter .= " AND " . implode(" AND ", $conditions);
+        }
+
+        $conditions[] = "city = :city";
+        $queryParams[':city'] = $city;
+        // Exécution de la requête préparée
+        $stmtFiltre = $this->getDb()->prepare($reqFilter);
+        $stmtFiltre->execute($queryParams);
+
+        // Récupération des résultats
+        $results = $stmtFiltre->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $results;
     }
-   
+
 }
