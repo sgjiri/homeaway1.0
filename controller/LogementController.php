@@ -29,7 +29,8 @@ class LogementController extends Controller
                     $adress = $_POST['adress'];
                     $adressCode = $_POST['adressCode'];
                     $city = $_POST['city'];
-                    $location = $_POST['location'];                    $price_by_night = $_POST['price_by_night'];
+                    $location = $_POST['location'];
+                    $price_by_night = $_POST['price_by_night'];
                     $number_of_person = $_POST['number_of_person'];
                     $number_of_beds = $_POST['number_of_beds'];
                     $parking = isset($_POST['parking']) && $_POST['parking'] == 1 ? true : false;
@@ -122,9 +123,9 @@ class LogementController extends Controller
                         // : Cette condition vérifie si le fichier téléchargé associé à l'index $i a été téléchargé sans erreur (UPLOAD_ERR_OK). Si c'est le cas, le bloc suivant est exécuté.
 
                         if ($_FILES['thumbnail_' . $i]['error'] === UPLOAD_ERR_OK) {
-                            
+
                             // Cette condition vérifie si le nom du fichier téléchargé pour l'index $i est défini. 
-                            
+
                             if (isset($_FILES['thumbnail_' . $i]['name'])) {;
                             }
 
@@ -149,8 +150,6 @@ class LogementController extends Controller
                             // le tableau $thumbnailDatas contiendra les noms de tous les fichiers des miniatures téléchargées, et vous pouvez utiliser ce tableau pour les enregistrer dans la base de données ou les traiter d'une autre manière dans le modèle LogementModel.
 
 
-                           
-
                             // Appel de la fonction resizeImg() avec les paramètres suivants :
                             // - Le chemin temporaire de l'image dans $_FILES['thumbnail']
                             // - Les dimensions de largeur et de hauteur souhaitées (300x300 dans ce cas)
@@ -166,8 +165,6 @@ class LogementController extends Controller
                     $logementmodel = new LogementModel();
                     $idLogement = $logementmodel->addFlat($id_person, $title, $type, $surface, $resume, $description, $adress, $adressCode, $city, $location,  $price_by_night, $number_of_person, $number_of_beds, $parking, $wifi, $piscine, $animals, $kitchen, $garden, $tv, $climatisation, $camera, $home_textiles, $spa, $jacuzzi, $latitude, $longitude);
                     $thumbnailImg = $img->getUpload($thumbnailDatas, $idLogement);
-               
-
 
                     header('Location:./add');
                 } else {
@@ -182,6 +179,14 @@ class LogementController extends Controller
         }
     }
 
+    public function deleteLogement()
+    {
+        $id_logement = $_GET['id'];
+        $delModel = new LogementModel();
+        $delModel->delete($id_logement);
+        header('Location:./dashboard');
+        exit();
+    }
 
     public function getOneCity($id_ville)
     {
@@ -196,8 +201,45 @@ class LogementController extends Controller
     }
 
 
+    public function getOneLogement($id_logement)
+    {
+        global $router;
 
-    // public function getAllLogement()
+        $modelLogement = new LogementModel();
+        $onelogement = $modelLogement->getOne($id_logement);
+        $allImg = $modelLogement->getAllImg($id_logement);
+
+        $twig = $this->getTwig();
+        echo $twig->render('oneLogement.html.twig', ['onelogement' => $onelogement, 'allImg' => $allImg]);
+    }
+
+    public function filterLogement()
+    {
+        global $router;
+        $city = $_GET['city'];
+        // Récupérez les filtres sélectionnés depuis le formulaire
+        $selectedFilters = $_POST['filters'] ?? [];
+
+        var_dump($_POST);
+
+        $logementModel = new LogementModel();
+        $filterLogement = $logementModel->logementFilters($selectedFilters,$city);
+
+        // header('Location:./search');
+        // exit();
+
+        $twig = $this->getTwig();
+        echo $twig->render('resultsearch.html.twig', ['filterLogement' => $filterLogement]);
+    }
+
+
+    public function legalNotices()
+    {
+        $twig = $this->getTwig();
+        echo $twig->render('legalNotices.html.twig', []);
+    }
+}
+// public function getAllLogement()
     // {
     //     global $router;
     //     $model = new LogementModel();
@@ -207,25 +249,3 @@ class LogementController extends Controller
 
     //     echo $twig->render('logementCity.html.twig', ['logements' => $ville]);
     // }
-
-
-
-    public function getOneLogement($id_logement)
-    {
-        global $router;
-        
-        $modelLogement = new LogementModel();
-        $onelogement = $modelLogement->getOne($id_logement);
-        $allImg = $modelLogement->getAllImg($id_logement);
-       
-        $twig = $this->getTwig();
-        echo $twig->render('oneLogement.html.twig', ['onelogement'=> $onelogement , 'allImg'=> $allImg]);
-    }
-
-    
-    public function legalNotices()
-    {
-        $twig = $this->getTwig();
-        echo $twig->render('legalNotices.html.twig', []);
-    }
-}

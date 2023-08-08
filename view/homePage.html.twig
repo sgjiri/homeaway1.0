@@ -30,6 +30,7 @@
 				</div>
 				<input type="hidden" name="check">
 				<div id="buttonSearch">
+				
 					<input type="submit" name="submit" id="submit" value="Rechercher">
 				</div>
 			</form>
@@ -84,7 +85,7 @@
 			<div class="imgDestination">
 
 				<div>
-					<a href="{{ path('baseLogement') ~ images.type }}">
+					<a href="{{ path('type') ~ '/'  ~ images.type }}">
 
 						<img src="{{ asset('/img/logement/' ~ images.thumbnail) }}" alt="{{images.type}}">
 					</a>
@@ -94,8 +95,8 @@
 				</div>
 
 				<div>
-					<a href="{{ path('baseLogement') ~ imagesDome.type }}">
-						<img src="{{ asset('/img/' ~ imagesDome.thumbnail) }}" alt="{{imagesDome.type}}">
+					<a href="{{ path('type')  ~ '/' ~ imagesDome.type }}">
+						<img src="{{ asset('/img/logement/' ~ imagesDome.thumbnail) }}" alt="{{imagesDome.type}}">
 					</a>
 
 					<h4>{{imagesDome.type}}</h4>
@@ -103,7 +104,7 @@
 				</div>
 
 				<div>
-					<a href="{{ path('baseLogement') ~ imagesPeniche.type }}">
+					<a href="{{ path('type')  ~ '/' ~ imagesPeniche.type }}">
 						<img src="{{ asset('/img/' ~ imagesPeniche.thumbnail) }}" alt="{{imagesPeniche.type}}">
 					</a>
 
@@ -112,7 +113,7 @@
 				</div>
 
 				<div>
-					<a href="{{ path('baseLogement') ~ imagesYourte.type }}">
+					<a href="{{ path('type')  ~ '/' ~ imagesYourte.type }}">
 					<img src="{{ asset('/img/' ~ imagesYourte.thumbnail) }}" alt="{{imagesYourte.type}}">
 					</a>
 

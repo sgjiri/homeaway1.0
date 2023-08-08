@@ -15,7 +15,7 @@ class ImageModel extends Model {
         
     $reqDome = $this->getDb()->query("SELECT`id_image`,`thumbnail`,`image`.`id_logement`, `logement`.`type` FROM `image`
     INNER JOIN `logement` 
-    ON `image`.`id_logement` = `logement`.`id_logement` WHERE `type`= 'Dôme'  " );
+    ON `image`.`id_logement` = `logement`.`id_logement` WHERE `type`= 'Dome'  " );
     $imagesDome = $reqDome->fetch(PDO::FETCH_ASSOC);
     return $imagesDome;
     }
