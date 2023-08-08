@@ -7,7 +7,6 @@ class SearchController extends Controller
     {
 
 
-        
 
         if (isset($_POST['submit']) || isset($_POST['id_logement'])) {
 
@@ -41,7 +40,7 @@ class SearchController extends Controller
         $twig = $this->getTwig();
 
       
-        if (isset($_POST['check'])) {
+       
 
 
             $resultSearchView = $twig->render('resultsearch.html.twig', [
@@ -55,17 +54,8 @@ class SearchController extends Controller
                 echo "Aucun logement ne correspond à votre recherche.";
             }
 
-        }
-        //  elseif (isset($_POST['id_logement'])) {
-           
-           
-        //     $oneLogementView = $twig->render('oneLogement.html.twig', [
-        //         'logementDispo' => $datas,
-        //         'totalPrices' => $totalPrices,
-        //         'formValue' => $formValue
-        //     ]);
-        //     echo $oneLogementView;
-        // }
+        
+   
     }
 
     public function searchByCity($city)
