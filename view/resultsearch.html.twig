@@ -22,22 +22,22 @@
 			</ul>
 		</div>
 		<div class="searchBoxDesktop">
-			<form action="{{path('search')}}" class="searchformDesktop">
+			<form action="{{path('search')}}" class="searchformDesktop articleM">
 				<div class="searchFormBox">
 					<label for="city">Destination</label>
-					<input type="text" name="city" id="city" value="{{ formValue['city']}}">
+					<input type="text" name="city" id="cityM" value="{{ formValue['city']}}">
 				</div>
 				<div class="searchFormBox">
 					<label for="start_date">Date d'arrivée</label>
-					<input type="date" name="start_date" id="start_date" value="{{ formValue['start']}}">
+					<input type="date" name="start_date" id="start_dateM" value="{{ formValue['start']}}">
 				</div>
 				<div class="searchFormBox">
 					<label for="end_date">Date de retour</label>
-					<input type="date" name="end_date" id="end_date" value="{{ formValue['end']}}">
+					<input type="date" name="end_date" id="end_dateM" value="{{ formValue['end']}}">
 				</div>
 				<div class="searchFormBox">
 					<label for="number_of_person">Voyageurs</label>
-					<input type="number" name="number_of_person" id="number_of_person" value="{{ formValue['person']}}">
+					<input type="number" name="number_of_person" id="number_of_personM" value="{{ formValue['person']}}">
 				</div>
 
 				<div id="buttonSearch">
@@ -139,18 +139,15 @@
 					{% for i in 0..(logementDispo|length - 1) %}
 
 						{% set tableauImage = logementDispo[i].thumbnails[1] %}
-						<form action=" {{path('one')}}" method="post">
-							<input type="hidden" name="city" id="city" value="{{ formValue['city']}}">
-							<input type="hidden" name="start_date" id="start_date" value="{{ formValue['start']}}">
-							<input type="hidden" name="end_date" id="end_date" value="{{ formValue['end']}}">
-							<input type="hidden" name="number_of_person" id="number_of_person" value="{{ formValue['person']}}">
-							<input type="hidden" name="id_logement" value="{{logementDispo[i].id_logement}}">
+						<form action=" {{path('one')}}" method="post" id='searchForm'>
+					
 
 
 							<a href="{{ path('one') ~ logementDispo[i].id_logement}}">
 								<article class="item js-marker" data-lat="{{ logementDispo[i].latitude }}" data-lng="{{ logementDispo[i].longitude }}" data-price="{{ logementDispo[i].price_by_night }}">
 
 									<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'Appartement ' ~ logementDispo[i].ville_nom }}">
+
 
 									<h4>{{ logementDispo[i].title }}
 										&nbsp;-&nbsp;{{ logementDispo[i].city }}</h4>
@@ -161,8 +158,20 @@
 										{{ totalPrices[i] }}€ au total
 									</p>
 
+
 								</article>
 							</a>
+
+										<h4>{{ logementDispo[i].title }}
+											&nbsp;-&nbsp;{{ logementDispo[i].city }}</h4>
+											<span class="idLogement">{{logementDispo[i].id_logement}}</span>
+										<p>{{ logementDispo[i].resume}}</p>
+										<p>
+											<span>{{ logementDispo[i].price_by_night }}€</span>
+											par nuit - &nbsp;
+											<span class='priceByNight'>{{ totalPrices[i] }}€ </span> au total
+										</p>
+
 
 						</form>
 					{% endfor %}

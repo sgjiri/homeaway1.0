@@ -5,6 +5,7 @@ class SearchController extends Controller
 
     public function searchLogement()
     {
+
         if (isset($_POST['submit']) || isset($_POST['id_logement'])) {
 
             $city = ucfirst($_POST['city']);
@@ -35,7 +36,7 @@ class SearchController extends Controller
         }
 
         $twig = $this->getTwig();
-     
+
             $resultSearchView = $twig->render('resultsearch.html.twig', [
                 'logementDispo' => $datas,
                 'totalPrices' => $totalPrices,
@@ -46,9 +47,12 @@ class SearchController extends Controller
             if (empty($datas)) {
                 echo "Aucun logement ne correspond à votre recherche.";
             }
-        }
+
+
         
-    
+   
+    }
+
     public function searchByCity($city)
     {
                        
