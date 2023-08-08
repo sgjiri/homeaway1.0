@@ -206,11 +206,13 @@ class LogementController extends Controller
         global $router;
 
         $modelLogement = new LogementModel();
+        $modelBook= new BookModel();
         $onelogement = $modelLogement->getOne($id_logement);
         $allImg = $modelLogement->getAllImg($id_logement);
+        $allBook=$modelBook->getBookHold($id_logement);
 
         $twig = $this->getTwig();
-        echo $twig->render('oneLogement.html.twig', ['onelogement' => $onelogement, 'allImg' => $allImg]);
+        echo $twig->render('oneLogement.html.twig', ['onelogement' => $onelogement, 'allImg' => $allImg, 'books' =>$allBook]);
     }
 
     public function filterLogement()

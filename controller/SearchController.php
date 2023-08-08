@@ -46,11 +46,7 @@ class SearchController extends Controller
 
             if (empty($datas)) {
                 echo "Aucun logement ne correspond à votre recherche.";
-            }
-
-
-        
-   
+            }   
     }
 
     public function searchByCity($city)
