@@ -11,18 +11,18 @@
 		<div id="resumSearchPhone">
 			<ul>
 				<li>Destination :
-					<span>Montpellier</span>
+					<span>{{ formValue['city']}}</span>
 				</li>
 				<li>Date :
-					<span>1 aôut 2023 au 6 août 2023</span>
+					<span>{{ formValue['start']}} au {{formValue['end']}}</span>
 				</li>
 				<li>Nombre de personne :
-					<span>1</span>
+					<span>{{ formValue['person']}}</span>
 				</li>
 			</ul>
 		</div>
 		<div class="searchBoxDesktop">
-			<form action="{{path('search')}}" class="searchformDesktop articleM">
+			<form action="{{path('search')}}" method="POST"  class="searchformDesktop articleM">
 				<div class="searchFormBox">
 					<label for="city">Destination</label>
 					<input type="text" name="city" id="cityM" value="{{ formValue['city']}}">
@@ -41,7 +41,7 @@
 				</div>
 
 				<div id="buttonSearch">
-					<input type="submit" value="Modifier">
+					<input type="submit" name="submit" value="Modifier">
 				</div>
 			</form>
 		</div>
