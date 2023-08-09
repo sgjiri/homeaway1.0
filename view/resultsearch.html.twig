@@ -11,18 +11,18 @@
 		<div id="resumSearchPhone">
 			<ul>
 				<li>Destination :
-					<span>{{ formValue['city']}}</span>
+					<span id="spanCity">{{ formValue['city']}}</span>
 				</li>
 				<li>Date :
-					<span>{{ formValue['start']}} au {{formValue['end']}}</span>
+					<span id="spanStart">{{ formValue['start']}}</span> au <span id="spanEnd">{{formValue['end']}}</span>
 				</li>
 				<li>Nombre de personne :
-					<span>{{ formValue['person']}}</span>
+					<span id="spanValue">{{ formValue['person']}}</span>
 				</li>
 			</ul>
 		</div>
 		<div class="searchBoxDesktop">
-			<form action="{{path('search')}}" method="POST"  class="searchformDesktop articleM">
+			<form action="{{path('search')}}" method="POST"  class="searchformDesktop article">
 				<div class="searchFormBox">
 					<label for="city">Destination</label>
 					<input type="text" name="city" id="cityM" value="{{ formValue['city']}}">
@@ -51,6 +51,13 @@
 
 
 		<form action="{{ path('search') }}" method="POST" id="formFilter">
+
+		<input type="hidden" name="city"  value="{{ formValue['city']}}">
+		<input type="hidden" name="start_date"  value="{{ formValue['start']}}">
+		<input type="hidden" name="end_date" id="end_dateM" value="{{ formValue['end']}}">
+		<input type="hidden" name="number_of_person" id="number_of_personM" value="{{ formValue['person']}}">
+				</div>
+
 			<div class="convenience">
 				<input type="checkbox" id="wifi" name="filters[]" value="wifi">
 				<img src="{{asset('/img/wifi.png')}}" alt="icon wifi">
@@ -139,8 +146,10 @@
 					{% for i in 0..(logementDispo|length - 1) %}
 
 						{% set tableauImage = logementDispo[i].thumbnails[1] %}
+
 						<form action=" {{path('one')}}" method="post" id='searchForm'>
 					
+
 							<a href="{{ path('one') ~ logementDispo[i].id_logement}}">
 								<article class="item js-marker" data-lat="{{ logementDispo[i].latitude }}" data-lng="{{ logementDispo[i].longitude }}" data-price="{{ logementDispo[i].price_by_night }}">
 
@@ -149,19 +158,21 @@
 
 									<h4>{{ logementDispo[i].title }}
 										&nbsp;-&nbsp;{{ logementDispo[i].city }}</h4>
+										<span class="idLogement">{{logementDispo[i].id_logement}}</span>
 									<p>{{ logementDispo[i].resume}}</p>
-									<p>
-										<span>{{ logementDispo[i].price_by_night }}€</span>
-										par nuit - &nbsp;
-										{{ totalPrices[i] }}€ au total
-									</p>
+									
+										<p>
+											<span class='priceByNight'>{{ logementDispo[i].price_by_night }}€</span>
+											par nuit - &nbsp;
+											<span class='totalPrices'>{{ totalPrices[i] }}€ </span> au total
+										</p>
 
 
 								</article>
 							</a>
 
 
-						</form>
+						{# </form> #}
 					{% endfor %}
 
 				{% endif %}

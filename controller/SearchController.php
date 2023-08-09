@@ -197,6 +197,7 @@ class SearchController extends Controller
             echo $resultSearchView;
     
             if (empty($datas)) {
+
                 $resultSearchView .= "Aucun logement ne correspond à votre recherche.";
             }
     
@@ -239,6 +240,7 @@ class SearchController extends Controller
     
             return $resultSearchView;
         }
+
     }
     
 

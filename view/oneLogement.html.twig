@@ -137,18 +137,18 @@
 		<form id="secondPartOne">
 
     <h4>
-        <strong>58 €</strong>
+        <strong id="priceByNight"> €</strong>
         par nuit</h4>
     <p>Du
         <strong id="startDate"></strong>
-        ou
+        au
         <strong id="endDate"></strong>
     </p>
     <p>
         <strong id="numberOfPerson"></strong>
         personne(s)</p>
     <p>
-        <strong id="priceByNight"></strong>
+        <strong id="totalPrices"></strong>
         € au total</p>
 		
     <input class="button" type="submit" value="Réserver">
@@ -156,7 +156,9 @@
 
 
 	</section>
-
+	<script>
+	const books = {{ books|json_encode|raw }}
+	</script>
 	<script src="{{asset('/js/slide.js')}}"></script>
 	<script src="{{asset('/js/scrollx.js')}}"></script>
 	<script src="{{asset('/js/localStorage.js')}}"></script>

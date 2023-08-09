@@ -37,7 +37,7 @@ $router->map('GET','/type/[a:type]?', 'SearchController#searchByType','type');
 // **------ROUTE LOGEMENT ------**//
 
 
-$router->map('GET|POST', '/add', 'LogementController#addLogement', 'add');
+$router->map('GET|POST', '/add', 'DashboardController#addLogement', 'add');
 $router->map('GET|POST', '/deleteLogement', 'LogementController#deleteLogement', 'deleteLogement');
 $router->map('GET','/all/','LogementController#getAllLogement','logements');
 $router->map('GET|POST','/upload','LogementController#getUploadImg','upload_img');
@@ -50,7 +50,7 @@ $router->map('GET', '/legalNotices', 'HomePageController#legalNotices', 'legalNo
 
 $match = $router->match();
 
- var_dump($match);
+//  var_dump($match);
 
 if (is_array($match)) {
     list($controller, $action) = explode('#', $match['target']);
