@@ -877,6 +877,7 @@ sans-serif;
 
                                     .bigModifierInfo {
                                         height: 400px;
+                                        
 
                                         @media screen and (max-width:1200px) {
                                             height: 330px;
@@ -895,6 +896,19 @@ sans-serif;
                                             
                                         }
 
+                                        figure{
+                                            width: 30%;
+                                            height: 20%;
+                                            cursor: pointer;
+                                            img{
+                                                height: 100%;
+                                                width: 100%;
+                                            }
+                                        }
+
+                                    }
+                                    .bigModifierInfoImg{
+                                        display: flex;
                                     }
                                     .validerGestion{
                                         margin-left: 0px;

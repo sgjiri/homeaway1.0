@@ -11,15 +11,13 @@
 		<div id="resumSearchPhone">
 			<ul>
 				<li>Destination :
-					<span>{{ formValue['city']}}</span>
+					<span id="spanCity">{{ formValue['city']}}</span>
 				</li>
 				<li>Date :
-					<span>{{ formValue['start']}}
-						au
-						{{formValue['end']}}</span>
+					<span>{{ formValue['start']}} au {{formValue['end']}}</span>
 				</li>
 				<li>Nombre de personne :
-					<span>{{ formValue['person']}}</span>
+					<span id="spanValue">{{ formValue['person']}}</span>
 				</li>
 			</ul>
 		</div>
@@ -145,6 +143,7 @@
 					{% for i in 0..(logementDispo|length - 1) %}
 
 						{% set tableauImage = logementDispo[i].thumbnails[1] %}
+
 						<form action=" {{path('one')}}" method="post" id='searchForm'>
 
 							<a href="{{ path('one') ~ logementDispo[i].id_logement}}">
@@ -155,11 +154,15 @@
 
 									<h4>{{ logementDispo[i].title }}
 										&nbsp;-&nbsp;{{ logementDispo[i].city }}</h4>
+									<span class="idLogement">{{logementDispo[i].id_logement}}</span>
 									<p>{{ logementDispo[i].resume}}</p>
+
 									<p>
-										<span>{{ logementDispo[i].price_by_night }}€</span>
+										<span class='priceByNight'>{{ logementDispo[i].price_by_night }}€</span>
 										par nuit - &nbsp;
-										{{ totalPrices[i] }}€ au total
+										<span class='totalPrices'>{{ totalPrices[i] }}€
+										</span>
+										au total
 									</p>
 
 
@@ -167,22 +170,22 @@
 							</a>
 
 
-						</form>
-					{% endfor %}
+							{# </form> #}
+						{% endfor %}
 
-				{% endif %}
+					{% endif %}
+
+
+				</div>
 
 
 			</div>
+		</section>
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script>
+		<script src="{{asset('/js/localStorage.js')}}"></script>
+		<script src="{{asset('/js/vendor.js')}}"></script>
+		<script src="{{asset('/js/map.js')}}"></script>
 
 
-		</div>
-	</section>
-
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script>
-	<script src="{{asset('/js/localStorage.js')}}"></script>
-	<script src="{{asset('/js/vendor.js')}}"></script>
-	<script src="{{asset('/js/map.js')}}"></script>
-
-
-{% endblock %}
+	{% endblock %}

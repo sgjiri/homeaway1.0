@@ -17,4 +17,5 @@ class BookController extends Controller
             echo $twig->render('oneLogement.html.twig', []);
         }
     }
+    
 }

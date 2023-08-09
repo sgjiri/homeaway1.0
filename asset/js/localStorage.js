@@ -1,6 +1,9 @@
+
+
 if (document.getElementsByClassName('article')) {
-    const searchForm = document.getElementsByClassName('item');
-  
+    const searchForm = document.getElementsByClassName('article');
+    console.log(searchForm);
+
     for (let i = 0; i < searchForm.length; i++) {
       searchForm[i].addEventListener('click', (event) => {
         event.preventDefault();
