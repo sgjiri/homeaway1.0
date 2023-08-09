@@ -106,11 +106,14 @@ class LogementModel extends Model
     }
 
     // -*-*-*-*-*-FILTRES RECHERCHE-*-*-*-*-*
-    public function logementFilters($selectedFilters,$city)
+    public function logementFilters($selectedFilters)
     {
-      
+
         // Sélectionne toutes les colonnes de la table logement avec une condition initiale WHERE 1, qui est toujours vraie.
         $reqFilter = "SELECT * FROM `logement` WHERE 1";
+        // Initialisation de l'array pour les conditions et les paramètres de requête
+        $conditions = [];
+        $queryParams = [];
 
         // Vérifie si l'utilisateur a sélectionné le filtre wifi, et si oui, ajoute la condition au niveau de la requête SQL.
         if (isset($selectedFilters['wifi'])) {
@@ -168,16 +171,14 @@ class LogementModel extends Model
             $reqFilter .= " AND " . implode(" AND ", $conditions);
         }
 
-        $conditions[] = "city = :city";
-        $queryParams[':city'] = $city;
+
         // Exécution de la requête préparée
         $stmtFiltre = $this->getDb()->prepare($reqFilter);
         $stmtFiltre->execute($queryParams);
 
         // Récupération des résultats
-        $results = $stmtFiltre->fetchAll(\PDO::FETCH_ASSOC);
+        $results = $stmtFiltre->fetchAll(PDO::FETCH_ASSOC);
 
         return $results;
     }
-
 }

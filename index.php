@@ -41,7 +41,7 @@ $router->map('GET|POST', '/add', 'LogementController#addLogement', 'add');
 $router->map('GET|POST', '/deleteLogement', 'LogementController#deleteLogement', 'deleteLogement');
 $router->map('GET','/all/','LogementController#getAllLogement','logements');
 $router->map('GET|POST','/upload','LogementController#getUploadImg','upload_img');
-$router->map('POST','/filter/','LogementController#filterLogement','searchWithFilters');
+// $router->map('POST','/filter/','LogementController#filterLogement','searchWithFilters');
 
 
 // **------ROUTE FOOTER------**//

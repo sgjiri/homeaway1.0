@@ -122,7 +122,13 @@
 				<label for="parking">parking</label>
 			</div>
 
+			<div id="ApplyFilters">
+				<input type="submit" name="submit" value="Appliquer les filtres">
+			</div>
 		</form>
+
+
+		
 		<div id="containerResultSearch">
 			<div class="map" id="map"></div>
 
@@ -130,8 +136,8 @@
 				class="listResult">
 
 				{# {% if logement is empty %}
-													<p>Aucun logement ne correspond à votre recherche.</p>
-												{% else %} #}
+																	<p>Aucun logement ne correspond à votre recherche.</p>
+																{% else %} #}
 
 				{% for i in 0..(logementsTypes|length - 1) %}
 
@@ -152,7 +158,7 @@
 
 				{% endfor %}
 
-				
+
 			</div>
 
 

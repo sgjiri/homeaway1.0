@@ -50,7 +50,7 @@
 		</figure>
 
 
-		<form action="{{ path('searchWithFilters') }}" method="POST" id="formFilter">
+		<form action="{{ path('search') }}" method="POST" id="formFilter">
 			<div class="convenience">
 				<input type="checkbox" id="wifi" name="filters[]" value="wifi">
 				<img src="{{asset('/img/wifi.png')}}" alt="icon wifi">
@@ -141,8 +141,6 @@
 						{% set tableauImage = logementDispo[i].thumbnails[1] %}
 						<form action=" {{path('one')}}" method="post" id='searchForm'>
 					
-
-
 							<a href="{{ path('one') ~ logementDispo[i].id_logement}}">
 								<article class="item js-marker" data-lat="{{ logementDispo[i].latitude }}" data-lng="{{ logementDispo[i].longitude }}" data-price="{{ logementDispo[i].price_by_night }}">
 
@@ -162,23 +160,13 @@
 								</article>
 							</a>
 
-										<h4>{{ logementDispo[i].title }}
-											&nbsp;-&nbsp;{{ logementDispo[i].city }}</h4>
-											<span class="idLogement">{{logementDispo[i].id_logement}}</span>
-										<p>{{ logementDispo[i].resume}}</p>
-										<p>
-											<span>{{ logementDispo[i].price_by_night }}€</span>
-											par nuit - &nbsp;
-											<span class='priceByNight'>{{ totalPrices[i] }}€ </span> au total
-										</p>
-
 
 						</form>
 					{% endfor %}
 
 				{% endif %}
 				
-
+ 
 			</div>
 
 

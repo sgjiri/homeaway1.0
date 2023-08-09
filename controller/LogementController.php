@@ -216,20 +216,21 @@ class LogementController extends Controller
     public function filterLogement()
     {
         global $router;
-        $city = $_GET['city'];
+      
         // Récupérez les filtres sélectionnés depuis le formulaire
-        $selectedFilters = $_POST['filters'] ?? [];
+        $selectedFilters = $_POST["filters"] ?? [];
+        $submit = $_POST["submit"];
 
         var_dump($_POST);
 
         $logementModel = new LogementModel();
-        $filterLogement = $logementModel->logementFilters($selectedFilters,$city);
+        $filterLogement = $logementModel->logementFilters($selectedFilters);
 
-        // header('Location:./search');
-        // exit();
+        header('Location:./search');
+        exit();
 
-        $twig = $this->getTwig();
-        echo $twig->render('resultsearch.html.twig', ['filterLogement' => $filterLogement]);
+        // $twig = $this->getTwig();
+        // echo $twig->render('resultsearch.html.twig', ['filterLogement' => $filterLogement]);
     }
 
 
