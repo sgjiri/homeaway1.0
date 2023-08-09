@@ -783,6 +783,18 @@
   margin: 5px;
   font-size: 1.2em;
 }
+.content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo form .bigModifierInfo figure {
+  width: 30%;
+  height: 20%;
+  cursor: pointer;
+}
+.content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo form .bigModifierInfo figure img {
+  height: 100%;
+  width: 100%;
+}
+.content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo form .bigModifierInfoImg {
+  display: flex;
+}
 .content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo form .validerGestion {
   margin-left: 0px;
 }
