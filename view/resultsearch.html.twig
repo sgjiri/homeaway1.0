@@ -14,7 +14,9 @@
 					<span>{{ formValue['city']}}</span>
 				</li>
 				<li>Date :
-					<span>{{ formValue['start']}} au {{formValue['end']}}</span>
+					<span>{{ formValue['start']}}
+						au
+						{{formValue['end']}}</span>
 				</li>
 				<li>Nombre de personne :
 					<span>{{ formValue['person']}}</span>
@@ -22,7 +24,7 @@
 			</ul>
 		</div>
 		<div class="searchBoxDesktop">
-			<form action="{{path('search')}}" method="POST"  class="searchformDesktop articleM">
+			<form action="{{path('search')}}" method="POST" class="searchformDesktop articleM">
 				<div class="searchFormBox">
 					<label for="city">Destination</label>
 					<input type="text" name="city" id="cityM" value="{{ formValue['city']}}">
@@ -50,17 +52,21 @@
 		</figure>
 
 
-		<form action="{{ path('search') }}" method="POST" id="formFilter">
+		<form action="{{ path('searchWithFilters') }}" method="POST" id="formFilter">
 			<div class="convenience">
+				<input type="hidden" name="city" id="cityHidden" value="">
+				<input type="hidden" name="start_date" id="startDateHidden" value="">
+				<input type="hidden" name="end_date" id="endDateHidden" value="">
+				<input type="hidden" name="number_of_person" id="numberOfPersonHidden" value="">
 				<input type="checkbox" id="wifi" name="filters[]" value="wifi">
 				<img src="{{asset('/img/wifi.png')}}" alt="icon wifi">
 				<label for="wifi">Wifi</label>
 			</div>
 
 			<div class="convenience">
-				<input type="checkbox" id="home_textile" name="filters[]" value="textile">
+				<input type="checkbox" id="home_textiles" name="filters[]" value="textile">
 				<img src="{{asset('/img/linge.png')}}" alt="icon linge">
-				<label for="home_textile">Linge de maison</label>
+				<label for="home_textiles">Linge de maison</label>
 			</div>
 
 			<div class="convenience">
@@ -121,10 +127,10 @@
 				<img src="{{asset('/img/iconParking.png')}}" alt="icon parking">
 				<label for="parking">parking</label>
 			</div>
-			
+
 			<div id="ApplyFilters">
-                <input type="submit" name="submit" value="Appliquer les filtres">
-            </div>
+				<input type="submit" name="submit" value="Appliquer les filtres">
+			</div>
 
 		</form>
 		<div id="containerResultSearch">
@@ -140,7 +146,7 @@
 
 						{% set tableauImage = logementDispo[i].thumbnails[1] %}
 						<form action=" {{path('one')}}" method="post" id='searchForm'>
-					
+
 							<a href="{{ path('one') ~ logementDispo[i].id_logement}}">
 								<article class="item js-marker" data-lat="{{ logementDispo[i].latitude }}" data-lng="{{ logementDispo[i].longitude }}" data-price="{{ logementDispo[i].price_by_night }}">
 
@@ -165,8 +171,8 @@
 					{% endfor %}
 
 				{% endif %}
-				
- 
+
+
 			</div>
 
 
