@@ -3,9 +3,22 @@
 class SearchModel extends Model
 {
 
-    public function getSearch($city, $start_date, $end_date, $number_of_person)
+    public function getSearch($city, $start_date, $end_date, $number_of_person, $selectedFilters)
     {
         $logements = [];
+        $filterConditions = [];
+        $filterParams = [];
+      
+        foreach ($selectedFilters as $filter) {
+            $filterConditions[] = "(`logement`.`$filter` = 1)";
+            $filterParams[":$filter"] = 1;
+        }
+
+        $sqlFilters = '';
+        if (!empty($filterConditions)) {
+            $sqlFilters = ' AND (' . implode(' OR ', $filterConditions) . ')';
+        }
+
 
         $stmt = $this->getDb()->prepare("SELECT DISTINCT  *
        
@@ -20,19 +33,49 @@ class SearchModel extends Model
         OR (`book`.`start_date` > :start_date AND `book`.`end_date` < :end_date)
         OR (:start_date > `book`.`start_date` AND :end_date < `book`.`end_date`)
           -- Condition pour vérifier les réservations sur 5 jours
+        
     OR (
         -- Réservation sur 5 jours
        
         (:start_date = CURDATE() AND `book`.`start_date` = CURDATE() AND `book`.`end_date` = DATE_ADD(CURDATE(), INTERVAL 4 DAY))
         -- Réservation couvrant complètement l'intervalle de 5 jours
         OR (`book`.`start_date` <= :start_date AND `book`.`end_date` >= DATE_ADD(:start_date, INTERVAL 4 DAY))
+
+        AND (`logement`.`wifi` = :wifi OR :wifi = 0)
+
+        AND (`logement`.`parking` = :parking OR :parking = 0)
+
+        AND (`logement`.`kitchen` = :kitchen OR :kitchen = 0)
+
+        AND (`logement`.`garden` = :garden OR :garden = 0)
+        AND (`logement`.`piscine` = :piscine OR :piscine = 0)
+        AND (`logement`.`animals` = :animals OR :animals = 0)
+        AND (`logement`.`tv` = :tv OR :tv = 0)
+        AND (`logement`.`climatisation` = :climatisation OR :climatisation = 0)
+        AND (`logement`.`camera` = :camera OR :camera = 0)
+        AND (`logement`.`home_textiles` = :home_textiles OR :home_textiles = 0)
+        AND (`logement`.`spa` = :spa OR :spa = 0)
+        AND (`logement`.`jacuzzi` = :jacuzzi OR :jacuzzi = 0)
+        
     )
-    )");
+    )$sqlFilters");
 
         $stmt->bindParam(':city', $city, PDO::PARAM_STR);
-        $stmt->bindParam(':start_date', $start_date, PDO::PARAM_STR);
-        $stmt->bindParam(':end_date', $end_date, PDO::PARAM_STR);
         $stmt->bindParam(':number_of_person', $number_of_person, PDO::PARAM_INT);
+
+        if (!empty($start_date)) {
+            $stmt->bindParam(':start_date', $start_date, PDO::PARAM_STR);
+            $stmt->bindParam(':end_date', $end_date, PDO::PARAM_STR);
+        } else {
+            $today = date("Y-m-d");
+            $stmt->bindParam(':start_date', $today, PDO::PARAM_STR);
+            $stmt->bindParam(':end_date', $today, PDO::PARAM_STR);
+        }
+
+       
+        // $stmt->bindParam(':start_date', $start_date, PDO::PARAM_STR);
+        // $stmt->bindParam(':end_date', $end_date, PDO::PARAM_STR);
+
         $stmt->execute();
 
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -124,7 +167,7 @@ class SearchModel extends Model
         )
     "
         );
-    
+
         $reqByType->bindParam(':number_of_person', $number_of_person, PDO::PARAM_INT);
         $reqByType->bindParam(':type', $type, PDO::PARAM_STR);
         $reqByType->bindParam(':start_date', $start_date, PDO::PARAM_STR);
