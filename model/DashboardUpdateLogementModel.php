@@ -1,7 +1,8 @@
 <?php 
 class DashboardUpdateLogementModel extends Model{
     public function getLogement($idUser){
-        $reqLogement = $this->getDb()->prepare('SELECT * FROM `logement` WHERE `id_person` = :idUser');
+        $reqLogement = $this->getDb()->prepare('SELECT *, GROUP_CONCAT(DISTINCT `image`.`thumbnail` ORDER BY `image`.`id_logement`)  AS `images` FROM `logement` INNER JOIN `image`
+        ON `logement`.`id_logement` =`image`.`id_logement`WHERE `id_person` = :idUser GROUP BY `logement`.`id_logement`');
         $reqLogement->bindParam(':idUser', $idUser, PDO::PARAM_STR);
         $reqLogement->execute();
         $Logement = $reqLogement->fetchAll(PDO::FETCH_ASSOC);

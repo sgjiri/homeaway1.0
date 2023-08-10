@@ -189,29 +189,29 @@
 					</div>
 
 					{# <div class='card cardInfoPerso cardInfoPersoM card2ligneInfoPerso'>
-																																				<div class='contentFixCard contentFixCardInfoPerso'>
-																																					<div>
-																																						<h3>Date de naissance</h3>
-																																						<p>{{user.date_of_birth}}</p>
-																																					</div>
-																																					<figure class="figureModifier figureModifierInfo">
-																																						<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
-																																					</figure>
-																																				</div>
-																																				<div class='input inputInfo input2ligne'>
-																																					<form action="" method="post">
-																																						<label for="rue"></label>
-																																						<input type="text" name="rue" class='change' placeholder="Votre rue">
-																																						<label for="numeroBatiment"></label>
-																																						<input type="text" name='numeroBatiment' class='change' placeholder="N° de batiment">
-																																						<label for="codePostale"></label>
-																																						<input type="text" name='codePostale' class='change' placeholder="code postale">
-																																						<label for="ville"></label>
-																																						<input type="text" name='ville' class='change' placeholder="ville">
-																																						<input type="submit" name="valider" class="valider change" value="">
-																																					</form>
-																																				</div>
-																																			</div> #}
+																																									<div class='contentFixCard contentFixCardInfoPerso'>
+																																										<div>
+																																											<h3>Date de naissance</h3>
+																																											<p>{{user.date_of_birth}}</p>
+																																										</div>
+																																										<figure class="figureModifier figureModifierInfo">
+																																											<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
+																																										</figure>
+																																									</div>
+																																									<div class='input inputInfo input2ligne'>
+																																										<form action="" method="post">
+																																											<label for="rue"></label>
+																																											<input type="text" name="rue" class='change' placeholder="Votre rue">
+																																											<label for="numeroBatiment"></label>
+																																											<input type="text" name='numeroBatiment' class='change' placeholder="N° de batiment">
+																																											<label for="codePostale"></label>
+																																											<input type="text" name='codePostale' class='change' placeholder="code postale">
+																																											<label for="ville"></label>
+																																											<input type="text" name='ville' class='change' placeholder="ville">
+																																											<input type="submit" name="valider" class="valider change" value="">
+																																										</form>
+																																									</div>
+																																								</div> #}
 
 				</div>
 				<div class='contentPage' id='contentHistoricReservation'>
@@ -520,9 +520,9 @@
 													</div>
 													<div class='modifierInfo infoSaisis'>
 														<form action="" method='post'>
-														<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
-															<textarea type="text" class='change changeGestion bigModifierInfo' name="resume"placeholder="Modifier..."></textarea>
-															<input type="submit" name="validerResume"  class="valider change validerGestion" value="">
+															<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
+															<textarea type="text" class='change changeGestion bigModifierInfo' name="resume" placeholder="Modifier..."></textarea>
+															<input type="submit" name="validerResume" class="valider change validerGestion" value="">
 
 														</form>
 
@@ -539,18 +539,28 @@
 													</div>
 													<div class='modifierInfo infoSaisis'>
 														<form action="" method='post'>
-														<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
-															<div  class='change changeGestion bigModifierInfo bigModifierInfoImg' >
-															<figure>
-																<img src="{{asset('/img/heroMontainPhone.jpg')}}" alt="">
-															</figure>
-															<figure>
-																<img src="{{asset('/img/heroMontainPhone.jpg')}}" alt="">
-															</figure>
-															
-															
+															<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
+															<div class='change changeGestion bigModifierInfo bigModifierInfoImg'>
+																{% for j in 0..(images[i]|length - 1) %}
+																	<div class="updateImg">
+																		<label for="selectImage" class = 'labelSelectImage'>
+																			<figure>
+																				<img src=" {{ asset('/img/logement/' ~ images[i][j]) }}" alt="">
+																			</figure>
+																			<input type="checkbox" name="selectImage" class="InputSelectImage">
+																		</label>
+																		
+
+
+																	</div>
+
+																{% endfor %}
+
+
 															</div>
-															<input type="submit" name="validerResume"  class="valider change validerGestion" value="">
+															<input type="submit" name="validerImages" class="valider change validerGestion" value="">
+															<input type="submit" name="suprimerImages" class="suprimer change validerGestion" value="">
+															<input type="submit" name="validerImages" class="valider change validerGestion" value="">
 
 														</form>
 
