@@ -84,6 +84,25 @@ window.addEventListener('load', function() {
 });
 
 
+// Sélectionnez tous les éléments avec la classe 'labelSelectImage'
+let classLabelSelectImage = document.getElementsByClassName('labelSelectImage');
+// Sélectionnez tous les éléments avec la classe 'InputSelectImage'
+let classInputSelectImage = document.getElementsByClassName('InputSelectImage');
+
+// Parcourez chaque élément 'labelSelectImage'
+for (let i = 0; i < classLabelSelectImage.length; i++) {
+    // Utilisez une fonction anonyme pour capturer la valeur de 'i'
+    (function (index) {
+        // Ajoutez un écouteur d'événement 'click' à chaque élément 'labelSelectImage'
+        classLabelSelectImage[index].addEventListener('click', function () {
+            // Inversez l'état de la propriété 'checked' de l'élément 'InputSelectImage' correspondant
+            classInputSelectImage[index].checked = !classInputSelectImage[index].checked;
+        });
+    })(i);
+}
+
+
+
 
 
 

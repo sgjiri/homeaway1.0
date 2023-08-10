@@ -11,7 +11,16 @@ class DashboardController extends Controller
         if (!$_POST) {
             $datas = $model->getUser($idUser);
             $datasLogement = $modelUpdate->getLogement($idUser);
-            echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement]);
+            $imageArray = [];
+            for($i=0; $i< count($datasLogement); $i++){
+                $images = $datasLogement[$i]['images'];
+                $arrayImage = explode(',', $images);
+                
+                $imageArray[]= $arrayImage;
+
+            }
+            
+            echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images'=>$imageArray]);
         }
         if (isset($_POST['validerName'])) {
             $firstname = ($_POST['firstname']);
@@ -386,8 +395,28 @@ class DashboardController extends Controller
                 echo $twig->render('templateDashboard.html.twig', []);
             }
         }
-    }
+        if (isset($_POST['suprimerImages'])) {
+            $suprimerImage = [];
 
-   
+            // $nb = count($_POST['selectImage']);
+            // var_dump($nb);
+
+
+            foreach ($_POST as $images) {
+                $suprimerImage[] = $images;
+            }
+            var_dump($suprimerImage);
+            // $suprimerImage[] = $_POST['selectImage'];
+            // var_dump($suprimerImage);
+            // $idLogement = ($_POST['idLogement']);
+            // $return = $modelUpdate->setResume($resume, $idUser, $idLogement);
+
+            // if ($return) {
+            //     $datas = $model->getUser($idUser);
+            //     header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");
+            //     echo $twig->render('templateDashboard.html.twig', ['user' => $datas]);
+            // }
+        }
     }
+}
 

@@ -239,14 +239,14 @@ sans-serif;
 
     }
 
-    .logoDash{
+    .logoDash {
         position: absolute;
         right: 20px;
         top: 20px;
         height: 60px;
         cursor: pointer;
 
-        img{
+        img {
             height: 100%;
         }
     }
@@ -272,14 +272,16 @@ sans-serif;
             }
         }
 
-        h2{
+        h2 {
             color: #454545;
             font-size: 2em;
+
             @media screen and (max-width: 700px) {
                 margin-top: 30px;
                 font-size: 1.5em;
-            
-        }}
+
+            }
+        }
 
         .divBarreDeRecherche {
             height: 50px;
@@ -328,7 +330,7 @@ sans-serif;
                     }
                 }
 
-                .rechercher{
+                .rechercher {
                     float: right;
                     background: url(../img/lupe.png) center center no-repeat;
                     height: 50px;
@@ -531,7 +533,7 @@ sans-serif;
                     justify-content: center;
                 }
 
-                form{
+                form {
                     display: flex;
                     align-items: center;
                     flex-wrap: wrap;
@@ -555,6 +557,20 @@ sans-serif;
                     &:hover {
                         cursor: pointer;
                         background-color: $green;
+                        transform: scale(1.1);
+                    }
+                }
+
+                .suprimer{
+                    background: url(../img/icon\ _trash_.png) center center no-repeat;
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;
+                    transition: all 0.1s ease-in;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $red;
                         transform: scale(1.1);
                     }
                 }
@@ -618,6 +634,7 @@ sans-serif;
 
                 }
             }
+
             .inputGA {
                 display: flex;
                 padding-right: 0;
@@ -627,9 +644,11 @@ sans-serif;
                     flex-direction: column;
                     height: 3480px;
                 }
+
                 @media screen and (max-width:800px) {
                     height: 2780px;
                 }
+
                 @media screen and (max-width:700px) {
                     height: 3180px;
                 }
@@ -638,7 +657,7 @@ sans-serif;
                     height: 3750px;
                 }
 
-   
+
 
                 &.activeInput {
                     transform: translateY(0);
@@ -648,6 +667,7 @@ sans-serif;
                     @media screen and (max-width:1200px) {
                         height: 3480px;
                     }
+
                     @media screen and (max-width:800px) {
                         height: 2780px;
                         transform: translateY(50px);
@@ -657,12 +677,12 @@ sans-serif;
                         height: 3180px;
                         transform: translateY(200px);
                     }
-    
+
                     @media screen and (max-width:600px) {
                         height: 3750px;
                         transform: translateY(270px);
                     }
-             
+
                 }
 
                 .contentInput {
@@ -684,12 +704,15 @@ sans-serif;
                         @media screen and (max-width: 1200px) {
                             margin: 20px 40px;
                         }
+
                         @media screen and (max-width:800px) {
                             height: 180px;
                         }
+
                         @media screen and (max-width:600px) {
                             height: 280px;
                         }
+
                         @media screen and (max-width: 600px) {
                             margin: 20px;
                         }
@@ -712,10 +735,11 @@ sans-serif;
                                 justify-content: space-between;
 
                                 @media screen and (max-width:800px) {
-                                    height: 75%; 
+                                    height: 75%;
                                 }
+
                                 @media screen and (max-width:600px) {
-                                    height: 25%; 
+                                    height: 25%;
                                 }
 
                                 .hInputGestion {
@@ -729,9 +753,11 @@ sans-serif;
                                         @media screen and (max-width: 1200px) {
                                             font-size: 1.5em;
                                         }
+
                                         @media screen and (max-width: 800px) {
                                             font-size: 1.3em;
                                         }
+
                                         @media screen and (max-width: 600px) {
                                             font-size: 1.2em;
                                         }
@@ -772,7 +798,7 @@ sans-serif;
                                         justify-content: space-around;
                                     }
 
-                                    .valider{
+                                    .valider {
                                         @media screen and (max-width:600px) {
                                             margin-left: 44%;
                                         }
@@ -784,14 +810,15 @@ sans-serif;
                                         width: 75%;
 
                                         @media screen and (max-width:1200px) {
-                                            font-size: 1.3em; 
+                                            font-size: 1.3em;
                                         }
+
                                         @media screen and (max-width:600px) {
-                                            height: 40%; 
+                                            height: 40%;
                                             width: 100%;
                                         }
-                                        
-                                        
+
+
 
 
                                     }
@@ -801,14 +828,15 @@ sans-serif;
 
                             }
 
-                            .modifierInfo{
+                            .modifierInfo {
                                 @media screen and (max-width:800px) {
-                                    height: 30%; 
+                                    height: 30%;
                                 }
+
                                 @media screen and (max-width:600px) {
-                                    height: 50%; 
+                                    height: 50%;
                                 }
-                            } 
+                            }
 
                         }
 
@@ -818,32 +846,52 @@ sans-serif;
 
                 }
 
-                .contentInputLeft{
+                .contentInputLeft {
                     @media screen and (max-width:1200px) {
                         height: 60%;
-                    };
+                    }
+
+                    ;
+
                     @media screen and (max-width:800px) {
                         height: 64%;
-                    };
+                    }
+
+                    ;
+
                     @media screen and (max-width:700px) {
                         height: 60%;
-                    };
+                    }
+
+                    ;
                 }
 
-                .contentInputRight{
+                .contentInputRight {
                     padding-bottom: 40px;
+
                     @media screen and (max-width:1200px) {
                         height: 40%;
-                    };
+                    }
+
+                    ;
+
                     @media screen and (max-width:800px) {
                         height: 36%;
-                    };
+                    }
+
+                    ;
+
                     @media screen and (max-width:700px) {
                         height: 30%;
-                    };
+                    }
+
+                    ;
+
                     @media screen and (max-width:600px) {
                         height: 25%;
-                    };
+                    }
+
+                    ;
                 }
 
                 .contentInputRight {
@@ -851,40 +899,61 @@ sans-serif;
                         .oneInfo {
 
                             height: 600px;
+
                             @media screen and (max-width:800px) {
                                 height: 400px;
-                            };
-                            .infoSaisis{
+                            }
+
+                            ;
+
+                            .infoSaisis {
                                 @media screen and (max-width:800px) {
                                     height: 25%;
-                                };
+                                }
+
+                                ;
+
                                 @media screen and (max-width:600px) {
                                     height: 10%;
-                                };
+                                }
+
+                                ;
                             }
+
                             .modifierInfo {
                                 @media screen and (max-width:800px) {
                                     height: 75%;
-                                };
+                                }
+
+                                ;
+
                                 @media screen and (max-width:600px) {
                                     height: 90%;
-                                };
+                                }
+
+                                ;
+
                                 form {
                                     align-items: center;
 
-                                    
+
 
 
                                     .bigModifierInfo {
                                         height: 400px;
-                                        
+
 
                                         @media screen and (max-width:1200px) {
                                             height: 330px;
-                                        };
+                                        }
+
+                                        ;
+
                                         @media screen and (max-width:700px) {
                                             height: 220px;
-                                        };
+                                        }
+
+                                        ;
                                         overflow-y: scroll;
 
                                         .labelGestionEquipement {
@@ -893,24 +962,65 @@ sans-serif;
                                             margin: 5px;
                                             font-size: 1.2em;
 
-                                            
+
                                         }
 
-                                        figure{
+                                        .updateImg {
+
                                             width: 30%;
                                             height: 20%;
-                                            cursor: pointer;
-                                            img{
-                                                height: 100%;
+                                            
+                                            margin: 5px;
+                                            position: relative;
+
+                                            label {
                                                 width: 100%;
+                                                height: 100%;
+                                                cursor: pointer;
+
+                                                figure {
+                                                    width: 100%;
+                                                    height: 100%;
+
+                                                    img {
+                                                        height: 100%;
+                                                        width: 100%;
+                                                        object-fit: cover;
+
+                                                    }
+                                                }
+
                                             }
+                                            
+                                            input{
+                                                position: absolute;
+                                                top: 3px;
+                                                right: 3px;
+                                            }
+
+
+
+
+
+
+
+
                                         }
 
+
+
+
                                     }
-                                    .bigModifierInfoImg{
+
+                                    .bigModifierInfoImg {
                                         display: flex;
+                                        flex-wrap: wrap;
+                                        justify-content: flex-start;
+                                        align-items: flex-start;
+                                        align-content: flex-start;
                                     }
-                                    .validerGestion{
+
+                                    .validerGestion {
                                         margin-left: 0px;
                                     }
                                 }
@@ -1210,39 +1320,42 @@ sans-serif;
                         padding: 0 20px;
                     }
 
-                    h2{
+                    h2 {
                         @media screen and (max-width: 700px) {
-                        margin: 0;
-                        text-align: start;
+                            margin: 0;
+                            text-align: start;
                         }
-                        
+
                     }
 
 
 
-                    p{
+                    p {
                         width: 60%;
 
                         @media screen and (max-width: 1200px) {
                             font-size: 1.4em;
                         }
+
                         @media screen and (max-width: 950px) {
                             font-size: 1.1em;
                         }
                     }
 
-                    .iconRightContent{
+                    .iconRightContent {
 
-                        img{
+                        img {
                             @media screen and (max-width: 1200px) {
                                 width: 100%;
                             }
 
-                            
+
                         }
+
                         @media screen and (max-width: 1200px) {
                             width: 50px;
                         }
+
                         @media screen and (max-width: 950px) {
                             width: 30px;
                         }
@@ -1273,9 +1386,11 @@ sans-serif;
                 @media screen and (max-width: 800px) {
                     height: 2900px;
                 }
+
                 @media screen and (max-width: 700px) {
                     height: 3300px;
                 }
+
                 @media screen and (max-width: 600px) {
                     height: 3700px;
                 }
@@ -1292,21 +1407,22 @@ sans-serif;
                 @media screen and (max-width: 950px) {
                     height: 220px;
                 }
-    
+
                 @media screen and (max-width: 800px) {
                     height: 190px;
                 }
-    
+
                 @media screen and (max-width: 700px) {
                     height: 490px;
                     flex-direction: column;
                 }
 
-                
-                .cardContentLeft{
+
+                .cardContentLeft {
                     @media screen and (max-width: 800px) {
                         width: 45%;
                     }
+
                     @media screen and (max-width: 700px) {
                         width: 100%;
                     }
@@ -1316,14 +1432,15 @@ sans-serif;
                 .cardContentRightWithButton {
                     position: relative;
 
-                    
+
                     @media screen and (max-width: 800px) {
-                            width: 55%;
-                        }
-                        @media screen and (max-width: 700px) {
-                            width: 100%;
-                        }
-                    
+                        width: 55%;
+                    }
+
+                    @media screen and (max-width: 700px) {
+                        width: 100%;
+                    }
+
 
                     .figureModifier {
                         position: absolute;
@@ -1350,36 +1467,41 @@ sans-serif;
                 }
             }
 
-            
+
 
 
 
         }
-        .cardGestionReservation{
-            background-color: $turque;
-            .reservation-table{
-                border-collapse: collapse;
-                thead{
 
-                    @media (max-width: 1050px)
-                    {
+        .cardGestionReservation {
+            background-color: $turque;
+
+            .reservation-table {
+                border-collapse: collapse;
+
+                thead {
+
+                    @media (max-width: 1050px) {
                         display: none;
                     }
-                    .rowTable{
+
+                    .rowTable {
                         color: #fff;
                         font-size: 1.5em;
                         border-bottom: 1px #fff solid;
+
                         @media screen and (max-width: 1050px) {
                             font-size: 1.2em;
                         }
-                        @media (max-width: 1050px)
-                    {
-                        
+
+                        @media (max-width: 1050px) {
+
                             display: block;
                             margin-bottom: 40px;
-                         
-                    }
-                        .colomTable{
+
+                        }
+
+                        .colomTable {
                             width: 20%;
                             text-align: center;
                             padding: 10px 0;
@@ -1387,180 +1509,202 @@ sans-serif;
                     }
 
                 }
-                tbody{
-                    .rowTable{
+
+                tbody {
+                    .rowTable {
                         color: #fff;
                         border-bottom: 1px #fff solid;
                         font-size: 1.2em;
+
                         @media screen and (max-width: 1050px) {
                             font-size: 1em;
                         }
-                        @media (max-width: 1050px)
-                        {
-                            
-                                display: block;
-                                margin-bottom: 40px;
-                             
+
+                        @media (max-width: 1050px) {
+
+                            display: block;
+                            margin-bottom: 40px;
+
                         }
-                        td{
+
+                        td {
                             max-width: 20%;
                             text-align: center;
                             padding: 10px;
                             word-break: break-word;
 
-                            @media (max-width: 1050px)
-                        {
-                            max-width: 100%;
-                            display: block;
-                            text-align: right;
+                            @media (max-width: 1050px) {
+                                max-width: 100%;
+                                display: block;
+                                text-align: right;
 
-                            &:before {
-                                content: attr(data-label);
-                                float: left;
-                                font-weight: bold;
+                                &:before {
+                                    content: attr(data-label);
+                                    float: left;
+                                    font-weight: bold;
                                 }
-                                @media (max-width: 450px)
-                                {
+
+                                @media (max-width: 450px) {
                                     text-align: left;
-                                     
-                                }
-                             
-                        }
-                        p{
-                            width: 100%;
-                            
 
-                            @media (max-width: 1050px)
-                        {
-                            
-                               width: 60%;
-                               margin-left: 38%;
-                             
-                        }
-                        @media (max-width: 700px)
-                        {
-                            
-                               width: 40%;
-                               margin-left: 58%;
-                               
-                             
-                        }
-                        @media (max-width: 450px)
-                        {
-                            margin-top: 25px;
-                            width: 100%;
-                            margin-left: 0;
-                             
-                        }
-                        }
-                            
+                                }
+
+                            }
+
+                            p {
+                                width: 100%;
+
+
+                                @media (max-width: 1050px) {
+
+                                    width: 60%;
+                                    margin-left: 38%;
+
+                                }
+
+                                @media (max-width: 700px) {
+
+                                    width: 40%;
+                                    margin-left: 58%;
+
+
+                                }
+
+                                @media (max-width: 450px) {
+                                    margin-top: 25px;
+                                    width: 100%;
+                                    margin-left: 0;
+
+                                }
+                            }
+
                         }
                     }
-    
-                
+
+
+                }
+
             }
-                
-            }
-            
-              
+
+
         }
-        .cardAjout{
+
+        .cardAjout {
             box-shadow: none;
-            .inputGA{
+
+            .inputGA {
                 height: auto;
                 margin: 50px 0;
-                .valider{
+
+                .valider {
                     margin: 50px auto;
 
                     @media screen and (max-width: 1200px) {
                         margin: 30px auto;
                     }
                 }
-                .contentInput{
-                    .infoLogement{
-                        .oneInfo{
+
+                .contentInput {
+                    .infoLogement {
+                        .oneInfo {
 
                             @media screen and (max-width: 600px) {
                                 height: 170px;
                             }
-                            .infoSaisis{
+
+                            .infoSaisis {
                                 @media screen and (max-width: 600px) {
                                     height: 40%;
                                 }
-                                    .change {
-                                        width: 100%;
-                                        margin-left: 0;
-                                        height: 100%;
-                                    }
-                                    .bigModifierInfo{
-                                        height: 400px;
-                                        position: relative;
-                                        #spanPlus{
-                                            position: absolute;
-                                            bottom: 20px;
-                                            right: 20px;
-                                            width: 10%;
-                                            cursor: pointer;
-                                            img{
-                                                width: 100%;
-                                            }
-                                        }
 
+                                .change {
+                                    width: 100%;
+                                    margin-left: 0;
+                                    height: 100%;
+                                }
 
-                                        @media screen and (max-width:1200px) {
-                                            height: 330px;
-                                        };
-                                        @media screen and (max-width:700px) {
-                                            height: 220px;
-                                        };
-                                        overflow-y: scroll;
+                                .bigModifierInfo {
+                                    height: 400px;
+                                    position: relative;
 
-                                        .labelGestionEquipement {
-                                            display: inline-block;
-                                            width: 200px;
-                                            margin: 5px;
-                                            font-size: 1.2em;
+                                    #spanPlus {
+                                        position: absolute;
+                                        bottom: 20px;
+                                        right: 20px;
+                                        width: 10%;
+                                        cursor: pointer;
 
-                                            
+                                        img {
+                                            width: 100%;
                                         }
                                     }
-                               
+
+
+                                    @media screen and (max-width:1200px) {
+                                        height: 330px;
+                                    }
+
+                                    ;
+
+                                    @media screen and (max-width:700px) {
+                                        height: 220px;
+                                    }
+
+                                    ;
+                                    overflow-y: scroll;
+
+                                    .labelGestionEquipement {
+                                        display: inline-block;
+                                        width: 200px;
+                                        margin: 5px;
+                                        font-size: 1.2em;
+
+
+                                    }
+                                }
+
                             }
 
-                            .modifierInfo{
+                            .modifierInfo {
                                 @media screen and (max-width: 600px) {
                                     height: 25%;
                                 }
                             }
                         }
-                        .oneBigInfo{
+
+                        .oneBigInfo {
                             height: auto;
                         }
                     }
-                } 
-                
+                }
+
             }
         }
-        
+
 
 
     }
-    .contentPageReservation{
-        .divBarreDeRecherche{
-            form{
+
+    .contentPageReservation {
+        .divBarreDeRecherche {
+            form {
                 background-color: $green;
-                .search{
+
+                .search {
                     background-color: $green;
                     border: $green;
                 }
             }
         }
-        .card{
+
+        .card {
             background-color: $green;
-            .cardContentRight{
-                .oneRightContent{
+
+            .cardContentRight {
+                .oneRightContent {
                     height: 25%;
-                    p{
+
+                    p {
                         width: 60%;
                     }
                 }
@@ -1568,9 +1712,9 @@ sans-serif;
         }
 
     }
-        
 
-    
+
+
 
 
 
