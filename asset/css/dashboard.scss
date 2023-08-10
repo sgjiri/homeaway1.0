@@ -661,7 +661,7 @@ sans-serif;
 
                 &.activeInput {
                     transform: translateY(0);
-                    height: 1780px;
+                    height: 3180px;
                     z-index: 10;
 
                     @media screen and (max-width:1200px) {
@@ -687,7 +687,6 @@ sans-serif;
 
                 .contentInput {
                     width: 50%;
-                    height: 100%;
 
                     @media screen and (max-width: 1200px) {
                         width: 100%;
@@ -847,6 +846,8 @@ sans-serif;
                 }
 
                 .contentInputLeft {
+
+                    height: 60%;
                     @media screen and (max-width:1200px) {
                         height: 60%;
                     }
@@ -868,6 +869,8 @@ sans-serif;
 
                 .contentInputRight {
                     padding-bottom: 40px;
+                    height: 74%;
+                }
 
                     @media screen and (max-width:1200px) {
                         height: 40%;
@@ -898,7 +901,7 @@ sans-serif;
                     .infoLogement {
                         .oneInfo {
 
-                            height: 600px;
+                            height: auto !important;
 
                             @media screen and (max-width:800px) {
                                 height: 400px;
@@ -937,6 +940,10 @@ sans-serif;
                                     align-items: center;
 
 
+
+                                    .spanPlus2{
+                                        cursor: pointer;
+                                    }
 
 
                                     .bigModifierInfo {
@@ -1104,7 +1111,7 @@ sans-serif;
                 transform: translateY(0px);
 
                 &.activeInput {
-                    transform: translateY(90px);
+                    transform: translateY(350px);
                 }
             }
 
@@ -1373,7 +1380,7 @@ sans-serif;
         .cardH {
 
             &.active {
-                height: 2100px;
+                height: 2800px;
 
                 @media screen and (max-width: 1200px) {
                     height: 3800px;
@@ -1627,7 +1634,7 @@ sans-serif;
                                     height: 400px;
                                     position: relative;
 
-                                    #spanPlus {
+                                    .spanPlus {
                                         position: absolute;
                                         bottom: 20px;
                                         right: 20px;

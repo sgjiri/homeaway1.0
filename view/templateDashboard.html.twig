@@ -538,16 +538,16 @@
 														</div>
 													</div>
 													<div class='modifierInfo infoSaisis'>
-														<form action="" method='post'>
+														<form action="" method='post' class="formModifierImg" enctype="multipart/form-data">
 															<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
-															<div class='change changeGestion bigModifierInfo bigModifierInfoImg'>
+															<div class='change changeGestion bigModifierInfo bigModifierInfoImg changeImage'>
 																{% for j in 0..(images[i]|length - 1) %}
 																	<div class="updateImg">
 																		<label for="selectImage" class = 'labelSelectImage'>
 																			<figure>
 																				<img src=" {{ asset('/img/logement/' ~ images[i][j]) }}" alt="">
 																			</figure>
-																			<input type="checkbox" name="selectImage" class="InputSelectImage">
+																			<input type="checkbox" name="selectImage[]" class="InputSelectImage" value="{{ images[i][j] }}">
 																		</label>
 																		
 
@@ -560,7 +560,7 @@
 															</div>
 															<input type="submit" name="validerImages" class="valider change validerGestion" value="">
 															<input type="submit" name="suprimerImages" class="suprimer change validerGestion" value="">
-															<input type="submit" name="validerImages" class="valider change validerGestion" value="">
+															<span class="spanPlus2"><img src="{{ asset('/img/iconPlus.png') }}" alt="plus"></span>
 
 														</form>
 
@@ -645,7 +645,7 @@
 							<h1>Ajoutez un bien</h1>
 							<div class='card cardAjout'>
 								<div class="input inputGA">
-									<form id="add-flat" method="post" action='' enctype="multipart/form-data">
+									<form class="add-flat" method="post" action='' enctype="multipart/form-data">
 										<div class="contentInput contentInputLeft">
 											<div class='infoLogement infoLogementLeft'>
 												<div class='oneInfo'>
@@ -880,8 +880,8 @@
 														</div>
 													</div>
 													<div class='modifierInfo infoSaisis'>
-														<div class='change changeGestion bigModifierInfo' id="addImg">
-															<span id="spanPlus"><img src="{{ asset('/img/iconPlus.png') }}" alt="plus"></span>
+														<div class='change changeGestion bigModifierInfo addImg'>
+															<span class="spanPlus"><img src="{{ asset('/img/iconPlus.png') }}" alt="plus"></span>
 														</div>
 
 

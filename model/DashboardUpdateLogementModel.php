@@ -1,14 +1,14 @@
-<?php 
-class DashboardUpdateLogementModel extends Model{
-    public function getLogement($idUser){
+<?php
+class DashboardUpdateLogementModel extends Model
+{
+    public function getLogement($idUser)
+    {
         $reqLogement = $this->getDb()->prepare('SELECT *, GROUP_CONCAT(DISTINCT `image`.`thumbnail` ORDER BY `image`.`id_logement`)  AS `images` FROM `logement` INNER JOIN `image`
         ON `logement`.`id_logement` =`image`.`id_logement`WHERE `id_person` = :idUser GROUP BY `logement`.`id_logement`');
         $reqLogement->bindParam(':idUser', $idUser, PDO::PARAM_STR);
         $reqLogement->execute();
         $Logement = $reqLogement->fetchAll(PDO::FETCH_ASSOC);
         return $Logement;
-        
-
     }
     public function setTitle($title, $idUser, $idLogement)
     {
@@ -41,7 +41,7 @@ class DashboardUpdateLogementModel extends Model{
         $updateType->bindParam(':idLogement', $idLogement, PDO::PARAM_STR);
         return $updateType->execute();
     }
-    
+
     public function setSurface($surface, $idUser, $idLogement)
     {
 
@@ -65,7 +65,7 @@ class DashboardUpdateLogementModel extends Model{
     public function setPrice($price_by_night, $idUser, $idLogement)
     {
 
-        $updatePrice= $this->getDb()->prepare('UPDATE `logement` SET `price_by_night` = :price_by_night WHERE `id_person` = :userId AND `id_logement`= :idLogement');
+        $updatePrice = $this->getDb()->prepare('UPDATE `logement` SET `price_by_night` = :price_by_night WHERE `id_person` = :userId AND `id_logement`= :idLogement');
         $updatePrice->bindParam(':price_by_night', $price_by_night, PDO::PARAM_STR);
         $updatePrice->bindParam(':userId', $idUser, PDO::PARAM_STR);
         $updatePrice->bindParam(':idLogement', $idLogement, PDO::PARAM_STR);
@@ -75,7 +75,7 @@ class DashboardUpdateLogementModel extends Model{
     public function setPersone($number_of_person, $idUser, $idLogement)
     {
 
-        $updatePersone= $this->getDb()->prepare('UPDATE `logement` SET `number_of_person` = :number_of_person WHERE `id_person` = :userId AND `id_logement`= :idLogement');
+        $updatePersone = $this->getDb()->prepare('UPDATE `logement` SET `number_of_person` = :number_of_person WHERE `id_person` = :userId AND `id_logement`= :idLogement');
         $updatePersone->bindParam(':number_of_person', $number_of_person, PDO::PARAM_STR);
         $updatePersone->bindParam(':userId', $idUser, PDO::PARAM_STR);
         $updatePersone->bindParam(':idLogement', $idLogement, PDO::PARAM_STR);
@@ -132,5 +132,20 @@ class DashboardUpdateLogementModel extends Model{
         $updateEquipment->bindParam(':userId', $idUser, PDO::PARAM_STR);
         $updateEquipment->bindParam(':idLogement', $idLogement, PDO::PARAM_STR);
         return $updateEquipment->execute();
+    }
+
+  public function deleteImg($suprimerImage)
+    {
+        $sql = "DELETE FROM `image` WHERE `image`.`thumbnail` IN (";
+
+        for($i = 0; $i < count($suprimerImage); $i++){
+            $sql .= ($i == 0) ? '?' : ',?';
+        }
+        
+        $sql .= ")";
+
+        $deleteImg = $this->getDb()->prepare($sql);
+    
+        return $deleteImg->execute($suprimerImage);
     }
 }

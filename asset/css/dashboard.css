@@ -539,7 +539,7 @@
 }
 .content .contentPage .card .inputGA.activeInput {
   transform: translateY(0);
-  height: 1780px;
+  height: 3180px;
   z-index: 10;
 }
 @media screen and (max-width: 1200px) {
@@ -567,7 +567,6 @@
 }
 .content .contentPage .card .inputGA .contentInput {
   width: 50%;
-  height: 100%;
 }
 @media screen and (max-width: 1200px) {
   .content .contentPage .card .inputGA .contentInput {
@@ -706,6 +705,9 @@
     height: 50%;
   }
 }
+.content .contentPage .card .inputGA .contentInputLeft {
+  height: 60%;
+}
 @media screen and (max-width: 1200px) {
   .content .contentPage .card .inputGA .contentInputLeft {
     height: 60%;
@@ -774,6 +776,9 @@
 }
 .content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo form {
   align-items: center;
+}
+.content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo form .spanPlus2 {
+  cursor: pointer;
 }
 .content .contentPage .card .inputGA .contentInputRight .infoLogement .oneInfo .modifierInfo form .bigModifierInfo {
   height: 400px;
@@ -887,7 +892,7 @@
   transform: translateY(0px);
 }
 .content .contentPage .cardHG .input.activeInput {
-  transform: translateY(90px);
+  transform: translateY(350px);
 }
 .content .contentPage .cardHG .cardContentLeft {
   width: 40%;
@@ -1139,7 +1144,7 @@
   }
 }
 .content .contentPage .cardH.active {
-  height: 2100px;
+  height: 2800px;
 }
 @media screen and (max-width: 1200px) {
   .content .contentPage .cardH.active {
@@ -1358,14 +1363,14 @@
   position: relative;
   overflow-y: scroll;
 }
-.content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .bigModifierInfo #spanPlus {
+.content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .bigModifierInfo .spanPlus {
   position: absolute;
   bottom: 20px;
   right: 20px;
   width: 10%;
   cursor: pointer;
 }
-.content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .bigModifierInfo #spanPlus img {
+.content .contentPage .cardAjout .inputGA .contentInput .infoLogement .oneInfo .infoSaisis .bigModifierInfo .spanPlus img {
   width: 100%;
 }
 @media screen and (max-width: 1200px) {
