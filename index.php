@@ -27,6 +27,8 @@ $router->map('GET|POST', '/dashboard', 'DashboardController#dashboard', 'dashboa
 // **-------ROUTE RECHERCHE-------**//
 $router->map('GET|POST', '/search', 'SearchController#searchLogement', 'search');
 
+$router->map('POST','/filter/','SearchController#applyFilter','searchWithFilters');
+
 $router->map('GET|POST', '/one[i:id_logement]?', 'LogementController#getOneLogement', 'one');
 
 $router->map('GET','/beach/[a:city]?', 'SearchController#searchByCity','beach');
