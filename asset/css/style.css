@@ -1166,4 +1166,28 @@ footer #secondContainerFooter a {
   .notfound h2 {
     font-size: 22px;
   }
+}
+#questions {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+#questions h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 50px;
+}
+#questions .question {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 30px;
+}
+#questions .reponse {
+  font-size: 1rem;
+  font-weight: lighter;
+  margin-top: 10px;
+}
+#questions .text-color {
+  color: #333;
 }/*# sourceMappingURL=style.css.map */

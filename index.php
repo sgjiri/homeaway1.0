@@ -51,6 +51,9 @@ $router->map('POST','/reservation','BookController#getReservation','reservation'
 // **------ROUTE FOOTER------**//
 $router->map('GET', '/legalNotices', 'HomePageController#legalNotices', 'legalNotices' );
 
+// -*-*-*ROUTE FAQ*-*-*-
+$router->map('GET', '/faq', 'HomePageController#faq', 'faq' );
+
 
 $match = $router->match();
 
