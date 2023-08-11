@@ -36,9 +36,14 @@
 					</div>
 				</div>
 				<h4>
-					{{onelogement.title}} - {{onelogement.type}}</h4>
+					{{onelogement.title}}
+					-
+					{{onelogement.type}}</h4>
 				<p>
-					{{onelogement.number_of_person}}  voyageurs maximum - {{onelogement.number_of_beds}} lit(s)</p>
+					{{onelogement.number_of_person}}
+					voyageurs maximum -
+					{{onelogement.number_of_beds}}
+					lit(s)</p>
 			</article>
 
 			<div id="cancel">
@@ -52,77 +57,77 @@
 			<div id="boxFilter">
 				<h4>Ce que contient ce logement :</h4>
 				{% if onelogement.wifi == true %}
-				<div class="convenience">
-					<img src="{{asset('/img/wifi.png')}}" alt="icon wifi">
-					<p>Wifi</p>
-				</div>
+					<div class="convenience">
+						<img src="{{asset('/img/wifi.png')}}" alt="icon wifi">
+						<p>Wifi</p>
+					</div>
 				{% endif %}
-				{% if onelogement.home_textil == true %}				
-				<div class="convenience">
-					<img src="{{asset('/img/linge.png')}}" alt="icon linge">
-					<p>Linge de maison</p>
-				</div>
+				{% if onelogement.home_textil == true %}
+					<div class="convenience">
+						<img src="{{asset('/img/linge.png')}}" alt="icon linge">
+						<p>Linge de maison</p>
+					</div>
 				{% endif %}
 				{% if onelogement.kitchen == true %}
-				<div class="convenience">
-					<img src="{{asset('/img/kitchen.png')}}" alt="icon cuisine">
-					<p>Cuisine</p>
-				</div>
+					<div class="convenience">
+						<img src="{{asset('/img/kitchen.png')}}" alt="icon cuisine">
+						<p>Cuisine</p>
+					</div>
 				{% endif %}
 				{% if onelogement.animals == true %}
-				<div class="convenience">
-					<img src="{{asset('/img/pate.png')}}" alt="icon pate">
-					<p>Animaux</p>
-				</div>
+					<div class="convenience">
+						<img src="{{asset('/img/pate.png')}}" alt="icon pate">
+						<p>Animaux</p>
+					</div>
 				{% endif %}
 				{% if onelogement.tv == true %}
-				<div class="convenience">
-					<img src="{{asset('/img/tv.png')}}" alt="icon tv">
-					<p>TV</p>
-				</div>
+					<div class="convenience">
+						<img src="{{asset('/img/tv.png')}}" alt="icon tv">
+						<p>TV</p>
+					</div>
 				{% endif %}
 				{% if onelogement.climatisation == true %}
-				<div class="convenience">
-					<img src="{{asset('/img/climatisation.png')}}" alt="icon climatisation">
-					<p>Climatisation</p>
-				</div>
+					<div class="convenience">
+						<img src="{{asset('/img/climatisation.png')}}" alt="icon climatisation">
+						<p>Climatisation</p>
+					</div>
 				{% endif %}
 				{% if onelogement.garden == true %}
-				<div class="convenience">
-					<img src="{{asset('/img/garden.png')}}" alt="icon jardin">
-					<p>Jardin</p>
-				</div>
+					<div class="convenience">
+						<img src="{{asset('/img/garden.png')}}" alt="icon jardin">
+						<p>Jardin</p>
+					</div>
 				{% endif %}
 				{% if onelogement.spa == true %}
-				<div class="convenience">
-					<img src="{{asset('/img/spa.png')}}" alt="icon spa">
-					<p>Spa</p>
-				</div>
+					<div class="convenience">
+						<img src="{{asset('/img/spa.png')}}" alt="icon spa">
+						<p>Spa</p>
+					</div>
 				{% endif %}
 				{% if onelogement.jacuzzi == true %}
-				<div class="convenience">
-					<img src="{{asset('/img/jacuzzi.png')}}" alt="icon jacuzzi">
-					<p>Jacuzzi</p>
-				</div>
+					<div class="convenience">
+						<img src="{{asset('/img/jacuzzi.png')}}" alt="icon jacuzzi">
+						<p>Jacuzzi</p>
+					</div>
 				{% endif %}
 				{% if onelogement.camera == true %}
-				<div class="convenience">
-					<img src="{{asset('/img/camera.png')}}" alt="icon caméra">
-					<p>Caméra de surveillance</p>
-				</div>
+					<div class="convenience">
+						<img src="{{asset('/img/camera.png')}}" alt="icon caméra">
+						<p>Caméra de surveillance</p>
+					</div>
 				{% endif %}
 				{% if onelogement.piscine == true %}
-				<div class="convenience">
-					<img src="{{asset('/img/swimmingpool.png')}}" alt="icon piscine">
-					<p>Piscine</p>
-				</div>
+					<div class="convenience">
+						<img src="{{asset('/img/swimmingpool.png')}}" alt="icon piscine">
+						<p>Piscine</p>
+					</div>
 				{% endif %}
 				{% if onelogement.parking == true %}
-				<div class="convenience">
-					<img src="{{asset('/img/iconParking.png')}}" alt="icon parking">
-					<p>Parking
-					</p>
-				</div>
+					<div class="convenience">
+						<img src="{{asset('/img/iconParking.png')}}" alt="icon parking">
+						<p>Parking
+						</p>
+					</div>
 				{% endif %}
 			</div>
 			<h4>Calendrier</h4>
@@ -136,28 +141,39 @@
 		</div>
 		<form id="secondPartOne">
 
-    <h4>
-        <strong id="priceByNight"> €</strong>
-        par nuit</h4>
-    <p>Du
-        <strong id="startDate"></strong>
-        au
-        <strong id="endDate"></strong>
-    </p>
-    <p>
-        <strong id="numberOfPerson"></strong>
-        personne(s)</p>
-    <p>
-        <strong id="totalPrices"></strong>
-        € au total</p>
-		
-    <input class="button" type="submit" value="Réserver">
-</form>
+			<h4>
+				<strong id="priceByNight">
+					€</strong>
+				par nuit</h4>
+			<p>Du
+				<strong id="startDate"></strong>
+				au
+				<strong id="endDate"></strong>
+			</p>
+			<p>
+				<strong id="numberOfPerson"></strong>
+				personne(s)</p>
+			<p>
+				<strong id="totalPrices"></strong>
+				€ au total</p>
+
+			<input class="button" type="submit" value="Réserver" onclick="showConfirmation()">
+		</form>
 
 
 	</section>
 	<script>
-	const books = {{ books|json_encode|raw }}
+	function showConfirmation() {
+    const confirmation = confirm("Êtes-vous sûr de vouloir effectuer cette réservation ?");
+    if (confirmation) {
+        const message = "Votre réservation a bien été prise en compte.";
+        alert(message);
+        // Vous pouvez également rediriger l'utilisateur vers une autre page ici si nécessaire
+    }
+}
+	</script>
+	<script>
+		const books = {{ books|json_encode|raw }}
 	</script>
 	<script src="{{asset('/js/slide.js')}}"></script>
 	<script src="{{asset('/js/scrollx.js')}}"></script>

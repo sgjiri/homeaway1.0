@@ -43,7 +43,9 @@ $router->map('GET|POST', '/add', 'DashboardController#addLogement', 'add');
 $router->map('GET|POST', '/deleteLogement', 'LogementController#deleteLogement', 'deleteLogement');
 $router->map('GET','/all/','LogementController#getAllLogement','logements');
 $router->map('GET|POST','/upload','LogementController#getUploadImg','upload_img');
-// $router->map('POST','/filter/','LogementController#filterLogement','searchWithFilters');
+
+// -*-*-*RESERVATION*-*-*-
+$router->map('POST','/reservation','BookController#getReservation','reservation');
 
 
 // **------ROUTE FOOTER------**//

@@ -1,0 +1,33 @@
+{% extends "template.html.twig" %}
+
+{% block title %}
+	HomeAway logement
+{% endblock %}
+
+
+{% block content %}
+
+
+
+    <h1>Réservation de Logements</h1>
+    <form action="{{ path('reservation') }}" method="post">
+        <label for="start_date">Date de début:</label>
+        <input type="date" name="start_date" required><br>
+        
+        <label for="end_date">Date de fin:</label>
+        <input type="date" name="end_date" required><br>
+        
+        <label for="person_id">ID de la personne:</label>
+        <input type="number" name="person_id" required><br>
+        
+        <label for="logement_id">ID du logement:</label>
+        <input type="number" name="logement_id" required><br>
+        
+        <input type="submit" value="Réserver">
+    </form>
+
+
+
+
+	{% endblock %}
+
