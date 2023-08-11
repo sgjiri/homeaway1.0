@@ -7,10 +7,12 @@ class DashboardController extends Controller
         $idUser = $_SESSION['id_person'];
         $model = new DashboardModel();
         $modelUpdate = new DashboardUpdateLogementModel();
+        $modelReservation = new DashboardReservationModel();
 
         if (!$_POST) {
             $datas = $model->getUser($idUser);
             $datasLogement = $modelUpdate->getLogement($idUser);
+            $datasMesReservation = $modelReservation->getReservation($idUser);
             $imageArray = [];
             for($i=0; $i< count($datasLogement); $i++){
                 $images = $datasLogement[$i]['images'];
@@ -251,6 +253,24 @@ class DashboardController extends Controller
             
         }
 
+        if (isset($_POST['suprimerLogement'])) {
+            var_dump($_POST);
+            var_dump('coucou');
+            $id_logement = ($_POST['idLogement']);;
+            $delModel = new LogementModel();
+            $delModel->delete($id_logement);
+            header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");
+            exit();
+        }
+
+        if (isset($_POST['suprimerUser'])) {
+            var_dump($idUser);
+            $delUser = new PersonModel();
+            $delUser->deleteUser($idUser);
+            header("Location: /Projet/homeaway1.0");
+            exit();
+        }
+
 
 
         if (isset($_POST['submitAddLogement'])) {
@@ -412,6 +432,12 @@ class DashboardController extends Controller
                 echo $twig->render('templateDashboard.html.twig', []);
             }
         }
+
+        
+        
+        
+        
+
 
 
 
