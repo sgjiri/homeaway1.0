@@ -145,11 +145,8 @@
 				<strong id="priceByNight">
 					€</strong>
 				par nuit</h4>
-			<p>Du
-				<strong id="startDate"></strong>
-				au
-				<strong id="endDate"></strong>
-			</p>
+			<input type="date" name="start_date" id="startDate" value="">
+			<input type="date" name="end_date" id="endDate" value="">
 			<p>
 				<strong id="numberOfPerson"></strong>
 				personne(s)</p>
@@ -157,13 +154,12 @@
 				<strong id="totalPrices"></strong>
 				€ au total</p>
 
-				  <input type="hidden" name="start_date" id="start_date" value="{{ start_date }}">
-    <input type="hidden" name="end_date" id="end_date" value="{{ end_date }}">
-    <input type="hidden" name="id_person" id="id_person" value="{{ id_person }}">
-    <input type="hidden" name="logement_id" id="logement_id" value="{{ logement_id }}">
+			
+			<input type="hidden" name="id_person" id="id_person" value="{{session.id_person}}">
 
+			<input type="hidden" name="id_logement" id="id_logement" value="">
 
-			<input class="button" type="submit" value="Réserver" onclick="showConfirmation()">
+			<input class="button" type="submit" name="submit" value="Réserver" onclick="showConfirmation()">
 		</form>
 
 
@@ -173,13 +169,13 @@
     const start_date = document.getElementById("start_date").value;
     const end_date = document.getElementById("end_date").value;
     const id_person = document.getElementById("id_person").value;
-    const logement_id = document.getElementById("logement_id").value;
+    const id_logement = document.getElementById("id_logement").value;
 
     
     document.getElementById("start_date").value = start_date;
     document.getElementById("end_date").value = end_date;
     document.getElementById("id_person").value = id_person;
-    document.getElementById("logement_id").value = logement_id;
+    document.getElementById("id_logement").value = id_logement;
 
     const confirmation = confirm("Êtes-vous sûr de vouloir effectuer cette réservation ?");
     if (confirmation) {

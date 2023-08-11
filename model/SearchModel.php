@@ -10,7 +10,7 @@ class SearchModel extends Model
         $stmt = $this->getDb()->prepare("
             SELECT DISTINCT *
             FROM `logement`
-            LEFT JOIN `book` ON `logement`.id_logement = `book`.logement_id
+            LEFT JOIN `book` ON `logement`.id_logement = `book`.id_logement
             WHERE `logement`.city = :city
             AND `logement`.number_of_person >= :number_of_person
             AND (
