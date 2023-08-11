@@ -123,7 +123,7 @@ for (let i = 0; i < span.length; i++) {
 }
 
 
-// insertImage('spanPlus', 'add-flat', 'addImg');
+insertImage('spanPlus', 'add-flat', 'addImg');
 insertImage('spanPlus2', 'formModifierImg', 'changeImage');
 
 // ****AJAX*****//
