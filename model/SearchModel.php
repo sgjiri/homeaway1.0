@@ -113,8 +113,8 @@ class SearchModel extends Model
             SELECT 1 
             FROM `book`
             WHERE `book`.`logement_id` = `logement`.`id_logement`
-            AND `book`.`start_date` >= ? 
-            AND `book`.`end_date` <= DATE_ADD(?, INTERVAL 4 DAY)
+            AND `book`.`start_date` >= :start_date
+            AND `book`.`end_date` <= DATE_ADD(:start_date, INTERVAL 4 DAY)
             )
             
             "
@@ -125,8 +125,8 @@ class SearchModel extends Model
 
         $stmt->bindParam(':city', $city, PDO::PARAM_STR);
         $stmt->bindParam(':number_of_person', $number_of_person, PDO::PARAM_INT);
-        $stmt->bindParam('?', $start_date, PDO::PARAM_STR);
-        $stmt->bindParam('?', $end_date, PDO::PARAM_STR);
+        $stmt->bindParam('start_date', $start_date, PDO::PARAM_STR);
+        $stmt->bindParam('end_date', $end_date, PDO::PARAM_STR);
         $stmt->execute();
 
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -163,15 +163,15 @@ class SearchModel extends Model
             SELECT 1 
             FROM `book`
             WHERE `book`.`logement_id` = `logement`.`id_logement`
-            AND `book`.`start_date` >= ? 
-            AND `book`.`end_date` <= DATE_ADD(?, INTERVAL 4 DAY)
+            AND `book`.`start_date` >= :start_date
+            AND `book`.`end_date` <= DATE_ADD(:start_date, INTERVAL 4 DAY)
         )
     "
         );
 
         $reqByType->bindParam(':number_of_person', $number_of_person, PDO::PARAM_INT);
         $reqByType->bindParam(':type', $type, PDO::PARAM_STR);
-        $reqByType->bindParam('?', $start_date, PDO::PARAM_STR);
+        $reqByType->bindParam(':start_date', $start_date, PDO::PARAM_STR);
         $reqByType->execute();
 
         $results = $reqByType->fetchAll(PDO::FETCH_ASSOC);
