@@ -277,7 +277,7 @@
 							<div class='contentCardGestion'>
 								<div class='cardContentLeft'>
 									<figure>
-										<img src="{{ asset('/img/montpellier.jpg') }}" alt="">
+										<img src="{{ asset('/img/logement/' ~ logement[i].thumbnail) }}" alt="">
 									</figure>
 								</div>
 								<div class='cardContentRight cardContentRightWithButton'>
@@ -1066,37 +1066,40 @@
 								<input type="submit" name='rechercher' value class='rechercher' class='valider change'>
 							</form>
 						</div>
+
+						{% for reqOneResevation in mesReservations %}
 						<div class='card cardInfoPerso cardHG cardReservation'>
 							<div class='cardContentLeft'>
 								<figure>
-									<img src="{{ asset('/img/montpellier.jpg') }}" alt="">
+									<img src="{{ asset('/img/logement/' ~ reqOneResevation.thumbnail) }}" alt="">
 								</figure>
 							</div>
 							<div class='cardContentRight'>
 								<div class='oneRightContent oneRightContentResqervation'>
 									<h2>
-										Nom de logement de la bdd</h2>
+										{{reqOneResevation.title}}</h2>
 								</div>
 								<div class='oneRightContent oneRightContentResqervation'>
 									<figure class="iconRightContent">
 										<img id="iconReservationHistoric" src="{{ asset('/img/calendar.png') }}" alt="">
 									</figure>
-									<p class='dateRightContent infoRightContent'>du 00/00/0000 au 00/00/0000</p>
+									<p class='dateRightContent infoRightContent'>du {{reqOneResevation.start_date}} au {{reqOneResevation.end_date}}</p>
 								</div>
 								<div class='oneRightContent oneRightContentResqervation'>
 									<figure class="iconRightContent">
 										<img id="iconReservationHistoric" src="{{ asset('/img/argent.png') }}" alt="">
 									</figure>
-									<p class='dateRightContent infoRightContent'>du 00/00/0000 au 00/00/0000</p>
+									<p class='dateRightContent infoRightContent'>reglé</p>
 								</div>
 								<div class='oneRightContent oneRightContentResqervation'>
 									<figure class="iconRightContent">
 										<img id="iconReservationHistoric" src="{{ asset('/img/people.png') }}" alt="">
 									</figure>
-									<p class='dateRightContent infoRightContent'>du 00/00/0000 au 00/00/0000</p>
+									<p class='dateRightContent infoRightContent'>4 persones</p>
 								</div>
 							</div>
 						</div>
+						{% endfor %}
 					</div>
 					<div class="contentPage" id='con'></div>
 				</div>

@@ -13,6 +13,7 @@ class DashboardController extends Controller
             $datas = $model->getUser($idUser);
             $datasLogement = $modelUpdate->getLogement($idUser);
             $datasMesReservation = $modelReservation->getReservation($idUser);
+            $datasReservationChezMoi = $modelReservation->getReservationChezMoi($idUser);
             $imageArray = [];
             for($i=0; $i< count($datasLogement); $i++){
                 $images = $datasLogement[$i]['images'];
@@ -20,9 +21,8 @@ class DashboardController extends Controller
                 
                 $imageArray[]= $arrayImage;
 
-            }
-            
-            echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images'=>$imageArray]);
+            }       
+            echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images'=>$imageArray, 'mesReservations'=>$datasMesReservation],);
         }
         if (isset($_POST['validerName'])) {
             $firstname = ($_POST['firstname']);

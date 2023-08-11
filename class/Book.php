@@ -38,7 +38,7 @@ class Book
         return $this->id_reservation;
     }
 
-    public function getStartDate()
+    public function getStart_date()
     {
         return $this->start_date;
     }
@@ -71,7 +71,7 @@ class Book
         $this->id_reservation = $id_reservation;
     }
 
-    public function setStartDate(STRING $start_date)
+    public function setStart_date(STRING $start_date)
     {
         $this->start_date = $start_date;
     }
