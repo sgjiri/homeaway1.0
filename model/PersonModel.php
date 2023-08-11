@@ -3,7 +3,15 @@ class PersonModel extends Model
 {
     // -------CONNEXION-------//
 
+     
+    public function getPersonById($id)
+{
+    $req = $this->getDb()->prepare("SELECT `mail`, `password`, `id_person` FROM `person` WHERE `id_person` = :id LIMIT 0, 1");
+    $req->bindParam(":id", $id, PDO::PARAM_INT);
+    $req->execute();
 
+    return $req->fetch(PDO::FETCH_ASSOC);
+}
     public function getUserByMail(String $mail)
     {
         $req = $this->getDb()->prepare("SELECT `mail`, `password`, `id_person` FROM `person` WHERE `mail` =:mail LIMIT 0, 25");
@@ -23,8 +31,8 @@ class PersonModel extends Model
         $name = $person->getName();
         $firstname = $person->getFirstname();
         $mail = $person->getMail();
-        $date_of_birth = $person->getDate_of_birth();
-        $phone_number = $person->getPhone_number();
+        $date_of_birth = $person->getDateOfBirth();
+        $phone_number = $person->getPhoneNumber();
         $password = $person->getPassword();
        
 

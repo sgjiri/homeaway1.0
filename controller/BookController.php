@@ -18,28 +18,42 @@ class BookController extends Controller
         }
     }
 
-    public function getReservation(){
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $start_date = $_POST['start_date'];
-            $end_date = $_POST['end_date'];
-            $person_id2 = $_POST['person_id2'];
-            $logement_id = $_POST['logement_id'];   
+    public function getReservation()
+{
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $id_person = $_SESSION['id_person'];
+        $start_date = $_POST['start_date'];
+        $end_date = $_POST['end_date'];
+        $logement_id = $_POST['logement_id'];
+        
+        $reservation = new BookModel();
+        $resultReserve = $reservation->createReservation($start_date, $end_date, $id_person, $logement_id);
 
-            $modelReservation = new BookModel;
-
-            $resultReserve = $modelReservation->createReservation($start_date, $end_date, $person_id2, $logement_id);
-
-           
-            if ($resultReserve) {
-                echo "Réservation effectuée avec succès.";
-            } else {
-                echo "Erreur lors de la réservation.";
-            }
+        if ($resultReserve) {
+            echo "Réservation effectuée avec succès.";
+        } else {
+            echo "Erreur lors de la réservation.";
         }
     }
 }
 
+    // public function getReservation(){
+    //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    //         $start_date = $_POST['start_date'];
+    //         $end_date = $_POST['end_date'];
+    //         $id_person = $_POST['id_person'];
+    //         $logement_id = $_POST['logement_id'];   
 
-    
-    
+    //         $modelReservation = new BookModel;
 
+    //         $resultReserve = $modelReservation->createReservation($start_date, $end_date, $id_person, $logement_id);
+
+
+    //         if ($resultReserve) {
+    //             echo "Réservation effectuée avec succès.";
+    //         } else {
+    //             echo "Erreur lors de la réservation.";
+    //         }
+    //     }
+    // }
+}

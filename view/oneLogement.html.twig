@@ -139,7 +139,7 @@
 			<button class="button">Contacter l'hôte</button>
 
 		</div>
-		<form id="secondPartOne">
+		<form action="{{path('reservation')}}" method="POST" id="secondPartOne">
 
 			<h4>
 				<strong id="priceByNight">
@@ -157,6 +157,12 @@
 				<strong id="totalPrices"></strong>
 				€ au total</p>
 
+				  <input type="hidden" name="start_date" id="start_date" value="{{ start_date }}">
+    <input type="hidden" name="end_date" id="end_date" value="{{ end_date }}">
+    <input type="hidden" name="id_person" id="id_person" value="{{ id_person }}">
+    <input type="hidden" name="logement_id" id="logement_id" value="{{ logement_id }}">
+
+
 			<input class="button" type="submit" value="Réserver" onclick="showConfirmation()">
 		</form>
 
@@ -164,11 +170,23 @@
 	</section>
 	<script>
 	function showConfirmation() {
+    const start_date = document.getElementById("start_date").value;
+    const end_date = document.getElementById("end_date").value;
+    const id_person = document.getElementById("id_person").value;
+    const logement_id = document.getElementById("logement_id").value;
+
+    
+    document.getElementById("start_date").value = start_date;
+    document.getElementById("end_date").value = end_date;
+    document.getElementById("id_person").value = id_person;
+    document.getElementById("logement_id").value = logement_id;
+
     const confirmation = confirm("Êtes-vous sûr de vouloir effectuer cette réservation ?");
     if (confirmation) {
         const message = "Votre réservation a bien été prise en compte.";
         alert(message);
         // Vous pouvez également rediriger l'utilisateur vers une autre page ici si nécessaire
+        document.getElementById("secondPartOne").submit();
     }
 }
 	</script>
