@@ -405,6 +405,18 @@
   background-color: #017c8e;
   height: 130px;
 }
+.content .contentPage .card .contentFixCardInfoPerso .suprimer {
+  background: url(../img/icon\ _trash_.png) center center no-repeat;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  transition: all 0.1s ease-in;
+}
+.content .contentPage .card .contentFixCardInfoPerso .suprimer:hover {
+  cursor: pointer;
+  background-color: #ed1b24;
+  transform: scale(1.1);
+}
 .content .contentPage .card .input {
   background-color: #017c8e;
   transform: translateY(-44px);
@@ -539,7 +551,7 @@
 }
 .content .contentPage .card .inputGA.activeInput {
   transform: translateY(0);
-  height: 3180px;
+  height: 2600px;
   z-index: 10;
 }
 @media screen and (max-width: 1200px) {
@@ -567,6 +579,7 @@
 }
 .content .contentPage .card .inputGA .contentInput {
   width: 50%;
+  height: 60%;
 }
 @media screen and (max-width: 1200px) {
   .content .contentPage .card .inputGA .contentInput {
@@ -704,9 +717,6 @@
   .content .contentPage .card .inputGA .contentInput .infoLogement .oneInfo .modifierInfo {
     height: 50%;
   }
-}
-.content .contentPage .card .inputGA .contentInputLeft {
-  height: 60%;
 }
 @media screen and (max-width: 1200px) {
   .content .contentPage .card .inputGA .contentInputLeft {
@@ -892,7 +902,7 @@
   transform: translateY(0px);
 }
 .content .contentPage .cardHG .input.activeInput {
-  transform: translateY(350px);
+  transform: translateY(160px);
 }
 .content .contentPage .cardHG .cardContentLeft {
   width: 40%;
@@ -1144,7 +1154,7 @@
   }
 }
 .content .contentPage .cardH.active {
-  height: 2800px;
+  height: 2600px;
 }
 @media screen and (max-width: 1200px) {
   .content .contentPage .cardH.active {
@@ -1217,6 +1227,21 @@
   .content .contentPage .cardH .contentCardGestion .cardContentRightWithButton {
     width: 100%;
   }
+}
+.content .contentPage .cardH .contentCardGestion .cardContentRightWithButton .suprimer {
+  background: url(../img/icon\ _trash_.png) center center no-repeat;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  transition: all 0.1s ease-in;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.content .contentPage .cardH .contentCardGestion .cardContentRightWithButton .suprimer:hover {
+  cursor: pointer;
+  background-color: #ed1b24;
+  transform: scale(1.1);
 }
 .content .contentPage .cardH .contentCardGestion .cardContentRightWithButton .figureModifier {
   position: absolute;

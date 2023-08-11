@@ -40,4 +40,13 @@ class PersonModel extends Model
         $req->execute();
     }
 
+    public function deleteUser($idUser)
+    {
+        $reqDelete = $this->getDb()->prepare('DELETE FROM `person` WHERE `id_person` = :idUser');
+
+        $reqDelete->bindParam('idUser', $idUser, PDO::PARAM_INT);
+
+        $reqDelete->execute();
+    }
+
 }

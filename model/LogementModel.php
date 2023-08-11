@@ -98,7 +98,7 @@ class LogementModel extends Model
 
     public function delete(int $id_logement)
     {
-        $reqDelete = $this->getDb()->prepare('DELETE FROM `logement` WHERE `id_logement` = :id');
+        $reqDelete = $this->getDb()->prepare('DELETE FROM `logement` WHERE `id_logement` = :id_logement');
 
         $reqDelete->bindParam('id_logement', $id_logement, PDO::PARAM_INT);
 
