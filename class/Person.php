@@ -34,7 +34,7 @@ class Person
 
     // -*-*-*-*-*-*-*-*-*-*GETTERS*-*-*-*-*-*-*-*-*//
 
-    public function getId_person()
+    public function getIdPerson()
     {
         return $this->id_person;
     }
@@ -50,7 +50,7 @@ class Person
         return $this->firstname;
     }
 
-    public function getDate_of_birth()
+    public function getDateOfBirth()
     {
         return $this->date_of_birth;
     }
@@ -60,7 +60,7 @@ class Person
         return $this->password;
     }
 
-    public function getPhone_number()
+    public function getPhoneNumber()
     {
         return $this->phone_number;
     }
@@ -74,7 +74,7 @@ class Person
     // -*-*-*-*-*-*-*-*-SETTERS-*-*-*-*-*-*-*-*-//
 
 
-    public function setId_person(int $id_person)
+    public function setIdPerson(int $id_person)
     {
         $this->id_person = $id_person;
     }
@@ -90,7 +90,7 @@ class Person
         $this->firstname = $firstname;
     }
 
-    public function setDate_of_birth(string $date_of_birth)
+    public function setDateOfBirth(string $date_of_birth)
     {
         $this->date_of_birth = $date_of_birth;
     }
@@ -100,7 +100,7 @@ class Person
         $this->password = $password;
     }
 
-    public function setPhone_number(int $phone_number)
+    public function setPhoneNumber(int $phone_number)
     {
         $this->phone_number = $phone_number;
     }

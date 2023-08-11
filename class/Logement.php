@@ -55,12 +55,12 @@ class Logement
 
     // -*-*-*-*-*-*-*-* GETTERS *-*-*-*-*-*-*-*-*-//
 
-    public function getId_logement()
+    public function getIdLogement()
     {
         return $this->id_logement;
     }
 
-    public function getId_person()
+    public function getIdPerson()
     {
         return $this->id_person;
     }
@@ -115,19 +115,19 @@ class Logement
         return $this->longitude;
     }
 
-    public function getPrice_by_night()
+    public function getPriceByNight()
     {
         return $this->price_by_night;
     }
   
 
 
-    public function getNumber_of_person()
+    public function getNumberOfPerson()
     {
         return $this->number_of_person;
     }
 
-    public function getNumber_of_beds()
+    public function getNumberOfBeds()
     {
         return $this->number_of_beds;
     }
@@ -174,7 +174,7 @@ class Logement
         return $this->camera;
     }
 
-    public function getHome_textiles()
+    public function getHomeTextiles()
     {
         return $this->home_textiles;
     }
@@ -192,12 +192,12 @@ class Logement
     // -*-*-*-*-*-*-*-*SETTERS-*-*-*-*-*-*-*-*//
 
 
-    public function setId_logement(int $id_logement)
+    public function setIdLogement(int $id_logement)
     {
         $this->id_logement = $id_logement;
     }
 
-    public function setId_person(int $id_person)
+    public function setIdPerson(int $id_person)
     {
         $this->id_person = $id_person;
     }
@@ -258,19 +258,19 @@ class Logement
         $this->longitude = $longitude;
     }
 
-    public function setPrice_by_night(int $price_by_night)
+    public function setPriceByNight(int $price_by_night)
     {
         $this->price_by_night = $price_by_night;
     }
 
 
 
-    public function setNumber_of_person(int  $number_of_person)
+    public function setNumberOfPerson(int  $number_of_person)
     {
         $this->number_of_person = $number_of_person;
     }
 
-    public function setNumber_of_beds(int  $number_of_beds)
+    public function setNumberOfBeds(int  $number_of_beds)
     {
         $this->number_of_beds = $number_of_beds;
     }
@@ -316,7 +316,7 @@ class Logement
         $this->camera = $camera;
     }
 
-    public function setHome_textiles(BOOL $home_textiles)
+    public function setHomeTextiles(BOOL $home_textiles)
     {
         $this->home_textiles = $home_textiles;
     }
