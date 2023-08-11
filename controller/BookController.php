@@ -17,5 +17,29 @@ class BookController extends Controller
             echo $twig->render('oneLogement.html.twig', []);
         }
     }
-    
+
+    public function getReservation(){
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $start_date = $_POST['start_date'];
+            $end_date = $_POST['end_date'];
+            $person_id2 = $_POST['person_id2'];
+            $logement_id = $_POST['logement_id'];   
+
+            $modelReservation = new BookModel;
+
+            $resultReserve = $modelReservation->createReservation($start_date, $end_date, $person_id2, $logement_id);
+
+           
+            if ($resultReserve) {
+                echo "Réservation effectuée avec succès.";
+            } else {
+                echo "Erreur lors de la réservation.";
+            }
+        }
+    }
 }
+
+
+    
+    
+
