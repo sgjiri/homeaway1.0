@@ -179,14 +179,7 @@ class LogementController extends Controller
         }
     }
 
-    public function deleteLogement()
-    {
-        $id_logement = $_GET['id'];
-        $delModel = new LogementModel();
-        $delModel->delete($id_logement);
-        header('Location:./dashboard');
-        exit();
-    }
+    
 
     public function getOneCity($id_ville)
     {

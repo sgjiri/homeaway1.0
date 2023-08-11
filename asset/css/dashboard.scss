@@ -510,6 +510,20 @@ sans-serif;
             .contentFixCardInfoPerso {
                 background-color: $turque;
                 height: 130px;
+
+                .suprimer{
+                    background: url(../img/icon\ _trash_.png) center center no-repeat;
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;
+                    transition: all 0.1s ease-in;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $red;
+                        transform: scale(1.1);
+                    }
+                }
             }
 
 
@@ -661,7 +675,7 @@ sans-serif;
 
                 &.activeInput {
                     transform: translateY(0);
-                    height: 3180px;
+                    height: 2600px;
                     z-index: 10;
 
                     @media screen and (max-width:1200px) {
@@ -687,6 +701,7 @@ sans-serif;
 
                 .contentInput {
                     width: 50%;
+                    height: 60%;
 
                     @media screen and (max-width: 1200px) {
                         width: 100%;
@@ -846,8 +861,6 @@ sans-serif;
                 }
 
                 .contentInputLeft {
-
-                    height: 60%;
                     @media screen and (max-width:1200px) {
                         height: 60%;
                     }
@@ -869,8 +882,6 @@ sans-serif;
 
                 .contentInputRight {
                     padding-bottom: 40px;
-                    height: 74%;
-                }
 
                     @media screen and (max-width:1200px) {
                         height: 40%;
@@ -901,7 +912,7 @@ sans-serif;
                     .infoLogement {
                         .oneInfo {
 
-                            height: auto !important;
+                            height: 600px;
 
                             @media screen and (max-width:800px) {
                                 height: 400px;
@@ -938,8 +949,6 @@ sans-serif;
 
                                 form {
                                     align-items: center;
-
-
 
                                     .spanPlus2{
                                         cursor: pointer;
@@ -1111,7 +1120,7 @@ sans-serif;
                 transform: translateY(0px);
 
                 &.activeInput {
-                    transform: translateY(350px);
+                    transform: translateY(160px);
                 }
             }
 
@@ -1373,7 +1382,7 @@ sans-serif;
         .cardH {
 
             &.active {
-                height: 2800px;
+                height: 2600px;
 
                 @media screen and (max-width: 1200px) {
                     height: 3800px;
@@ -1433,6 +1442,8 @@ sans-serif;
                     position: relative;
 
 
+
+
                     @media screen and (max-width: 800px) {
                         width: 55%;
                     }
@@ -1440,6 +1451,24 @@ sans-serif;
                     @media screen and (max-width: 700px) {
                         width: 100%;
                     }
+
+                    .suprimer{
+                        background: url(../img/icon\ _trash_.png) center center no-repeat;
+                        border-radius: 50%;
+                        height: 40px;
+                        width: 40px;
+                        transition: all 0.1s ease-in;
+                        position: absolute;
+                        right: 20px;
+                        top: 20px;
+    
+                        &:hover {
+                            cursor: pointer;
+                            background-color: $red;
+                            transform: scale(1.1);
+                        }
+                    }
+    
 
 
                     .figureModifier {
@@ -1712,4 +1741,5 @@ sans-serif;
         }
 
     }
+
 
