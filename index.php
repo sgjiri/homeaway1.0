@@ -51,10 +51,13 @@ $router->map('POST','/reservation','BookController#getReservation','reservation'
 // **------ROUTE FOOTER------**//
 $router->map('GET', '/legalNotices', 'HomePageController#legalNotices', 'legalNotices' );
 
+// -*-*-*ROUTE FAQ*-*-*-
+$router->map('GET', '/faq', 'HomePageController#faq', 'faq' );
+
 
 $match = $router->match();
 
-//  var_dump($match);
+ var_dump($match);
 
 if (is_array($match)) {
     list($controller, $action) = explode('#', $match['target']);

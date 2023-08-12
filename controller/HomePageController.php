@@ -27,6 +27,14 @@ class HomePageController extends Controller
         echo $twig->render('legalNotices.html.twig', []);
     }
 
+     // -*-*-*-*METHOD HEADER FAQ -*-*-*-*//
+     public function faq()
+     {
+         $twig = $this->getTwig();
+         echo $twig->render('faq.html.twig', []);
+     }
+ 
+
 
     
 }
