@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 11 août 2023 à 14:59
+-- Généré le : ven. 11 août 2023 à 11:49
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -33,20 +33,19 @@ CREATE TABLE IF NOT EXISTS `book` (
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
   `id_person` int NOT NULL,
-  `id_logement` int NOT NULL,
+  `logement_id` int NOT NULL,
   PRIMARY KEY (`id_reservation`),
   KEY `person` (`id_person`),
-  KEY `logement` (`id_logement`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  KEY `logement` (`logement_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `book`
 --
 
-INSERT INTO `book` (`id_reservation`, `start_date`, `end_date`, `id_person`, `id_logement`) VALUES
+INSERT INTO `book` (`id_reservation`, `start_date`, `end_date`, `id_person`, `logement_id`) VALUES
 (3, '2023-08-20', '2023-08-25', 16, 3),
-(4, '2023-08-27', '2023-08-31', 3, 7),
-(29, '2023-08-30', '2023-09-03', 16, 3);
+(4, '2023-08-27', '2023-08-31', 3, 7);
 
 -- --------------------------------------------------------
 
@@ -36990,7 +36989,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `img`, `place`) VALUES
 --
 ALTER TABLE `book`
   ADD CONSTRAINT `book_ibfk_2` FOREIGN KEY (`id_person`) REFERENCES `person` (`id_person`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `book_ibfk_3` FOREIGN KEY (`id_logement`) REFERENCES `logement` (`id_logement`) ON DELETE CASCADE ON UPDATE RESTRICT;
+  ADD CONSTRAINT `book_ibfk_3` FOREIGN KEY (`logement_id`) REFERENCES `logement` (`id_logement`) ON DELETE CASCADE ON UPDATE RESTRICT;
 
 --
 -- Contraintes pour la table `cancel`

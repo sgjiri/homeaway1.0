@@ -5,6 +5,7 @@ class DashboardController extends Controller
     {
         $twig = $this->getTwig();
         $idUser = $_SESSION['id_person'];
+        var_dump($idUser);
         $model = new DashboardModel();
         $modelUpdate = new DashboardUpdateLogementModel();
         $modelReservation = new DashboardReservationModel();
@@ -21,7 +22,8 @@ class DashboardController extends Controller
                 
                 $imageArray[]= $arrayImage;
 
-            }       
+            }  
+              
             echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images'=>$imageArray, 'mesReservations'=>$datasMesReservation],);
         }
         if (isset($_POST['validerName'])) {

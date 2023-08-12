@@ -8,7 +8,7 @@ class DashboardReservationModel extends Model{
         INNER JOIN `image`
         ON `logement`.`id_logement` =`image`.`id_logement`
         INNER JOIN `book`
-        ON `logement`.`id_logement` = `book`.`logement_id`
+        ON `logement`.`id_logement` = `book`.`id_logement`
         INNER JOIN `person`
         ON `book`.`id_person` = `person`.`id_person`
         WHERE `person`.`id_person` = :idUser");
@@ -31,7 +31,7 @@ class DashboardReservationModel extends Model{
         GROUP_CONCAT(DISTINCT `person`.`name`) AS `name`, 
         GROUP_CONCAT(DISTINCT `person`.`firstname`) AS `firstname`
         FROM `logement`
-        INNER JOIN `book` ON `logement`.`id_logement` = `book`.`logement_id`
+        INNER JOIN `book` ON `logement`.`id_logement` = `book`.`id_logement`
         INNER JOIN `person` ON `book`.`id_person` = `person`.`id_person`
         WHERE `logement`.`id_person`= :idUser
         GROUP BY `title`
