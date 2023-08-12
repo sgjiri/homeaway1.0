@@ -986,7 +986,8 @@
 								<input type="submit" name='rechercher' value class='rechercher' class='valider change'>
 							</form>
 						</div>
-						<h2>Nom de logement</h2>
+						{% for i in 0..(datasReservationChezMoi|length - 1) %}
+						<h2>{{datasReservationChezMoi[i].title}}</h2>
 						<div class='card cardGestionReservation'>
 							<table class="reservation-table">
 								<thead>
@@ -999,62 +1000,39 @@
 									</tr>
 								</thead>
 								<tbody>
+
+									{% for j in 0..(contacts[i]|length - 1) %}
 									<tr class="rowTable">
 										<td data-label="Date">
 											<p>
-												Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nobis architecto totam dolorum deleniti illo, est sed, nisi ad eligendi ab illum deserunt, sint dicta eaque repellendus perspiciatis quam temporibus.</p>
+												de {{start_dates[i][j]}} a {{end_dates[i][j]}}</p>
 										</td>
 										<td data-label="Reservar par">
 											<p>
-												#_EVENTTIMES
+												{{names[i][j]}} {{firstnames[i][j]}}
 											</p>
 										</td>
 										<td data-label="reglement">
 											<p>
-												#_EVENTTIMES
+												reglé
 											</p>
 										</td>
 										<td data-label="Nombre de persones">
 											<p>
-												#_EVENTTIMES
+												4
 											</p>
 										</td>
 										<td data-label="Contact">
 											<p>
-												#_EVENTTIMES
+												{{contacts[i][j]}}
 											</p>
 										</td>
 									</tr>
-									<tr class="rowTable">
-										<td data-label="Date">
-											<p>
-												Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nobis architecto totam dolorum deleniti illo, est sed, nisi ad eligendi ab illum deserunt, sint dicta eaque repellendus perspiciatis quam temporibus.
-											</p>
-										</td>
-										<td data-label="Reservar par">
-											<p>
-												#_EVENTTIMES
-											</p>
-										</td>
-										<td data-label="reglement">
-											<p>
-												#_EVENTTIMES
-											</p>
-										</td>
-										<td data-label="Nombre de persones">
-											<p>
-												#_EVENTTIMES
-											</p>
-										</td>
-										<td data-label="Contact">
-											<p>
-												#_EVENTTIMES
-											</p>
-										</td>
-									</tr>
+									{% endfor %}
 								</tbody>
 							</table>
 						</div>
+						{% endfor  %}
 
 
 					</div>

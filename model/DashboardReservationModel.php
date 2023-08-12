@@ -11,7 +11,8 @@ class DashboardReservationModel extends Model{
         ON `logement`.`id_logement` = `book`.`id_logement`
         INNER JOIN `person`
         ON `book`.`id_person` = `person`.`id_person`
-        WHERE `person`.`id_person` = :idUser");
+        WHERE `person`.`id_person` = :idUser
+        GROUP BY `id_reservation`");
 
         $req->bindParam(':idUser', $idUser, PDO::PARAM_STR);
         $req->execute();
@@ -39,7 +40,6 @@ class DashboardReservationModel extends Model{
         $req->bindParam(':idUser', $idUser, PDO::PARAM_STR);
         $req->execute();
         $ReservationChezMoi= $req->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($ReservationChezMoi);
         return $ReservationChezMoi;
 
 
