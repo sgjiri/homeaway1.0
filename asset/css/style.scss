@@ -8,6 +8,12 @@ $inherit: inherit;
 $white: #fff;
 $color_4: #aaa;
 $border-blue: #1161ee;
+// *-*-*-SCSS FAQ*-*-*-
+$primary-font: Arial, sans-serif;
+$title-font-size: 1.8rem;
+$question-font-size: 1.1rem;
+$answer-font-size: 1rem;
+$text-color: #333;
 
 *,
 ::after,
@@ -1588,4 +1594,39 @@ $background-color_4: #222225;
             font-size: 22px;
         }
     }
+}
+
+// *-*-*-*FAQ*-*-*-*
+#questions {
+    font-family: $primary-font;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  
+  
+  h1 {
+    font-size: $title-font-size;
+    font-weight: bold;
+    margin-top: 50px
+    // margin-bottom: 20px;
+  }
+  
+  .question {
+    font-size: $question-font-size;
+    font-weight:700;
+    margin-top: 30px;
+   
+  }
+  
+  .reponse {
+    font-size: $answer-font-size;
+    font-weight:lighter;
+    margin-top: 10px;
+  }
+  
+  .text-color {
+    color: $text-color;
+  }
+  
+ 
 }
