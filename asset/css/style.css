@@ -602,8 +602,9 @@ header .login-form .group label .icon:after {
 #oneLogement #firstPartOne .convenience p {
   width: 70%;
 }
-#oneLogement #firstPartOne button {
+#oneLogement #firstPartOne a {
   margin: 50px auto;
+  text-align: center;
 }
 #oneLogement #secondPartOne {
   width: 100%;
