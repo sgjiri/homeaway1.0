@@ -13,16 +13,44 @@ class DashboardController extends Controller
             $datas = $model->getUser($idUser);
             $datasLogement = $modelUpdate->getLogement($idUser);
             $datasMesReservation = $modelReservation->getReservation($idUser);
+            $datasReservationChezMoi = $modelReservation->getReservationChezMoi($idUser);
             $imageArray = [];
             for($i=0; $i< count($datasLogement); $i++){
                 $images = $datasLogement[$i]['images'];
                 $arrayImage = explode(',', $images);
                 
                 $imageArray[]= $arrayImage;
+                
 
             }
             
-            echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images'=>$imageArray]);
+
+            $arrayContacts=[];
+            $arrayStart_date=[];
+            $arrayEnd_dateArray=[];
+            $arrayName=[];
+            $arrayFirstname=[];
+            for($i=0; $i< count($datasReservationChezMoi); $i++){
+                $contact = $datasReservationChezMoi[$i]['contact'];
+                $start_date = $datasReservationChezMoi[$i]['start_date'];
+                $end_date = $datasReservationChezMoi[$i]['end_date'];
+                $name = $datasReservationChezMoi[$i]['name'];
+                $firstname = $datasReservationChezMoi[$i]['firstname'];
+                $contactArray = explode(',', $contact);
+                $start_dateArray = explode(',', $start_date);
+                $end_dateArray = explode(',', $end_date);
+                $nameArray = explode(',', $name);
+                $firstnameArray = explode(',', $firstname);
+                
+                $arrayContacts[]=$contactArray;
+                $arrayStart_date[]=$start_dateArray;
+                $arrayEnd_dateArray[]=$end_dateArray;
+                $arrayName[]=$nameArray;
+                $arrayFirstname[]=$firstnameArray;
+
+            }
+            
+            echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images'=>$imageArray, 'mesReservations'=>$datasMesReservation, 'datasReservationChezMoi'=>$datasReservationChezMoi, 'contacts'=>$arrayContacts, 'start_dates'=> $arrayStart_date, 'end_dates'=> $arrayEnd_dateArray, 'names'=>$arrayName, 'firstnames'=> $arrayFirstname]);
         }
         if (isset($_POST['validerName'])) {
             $firstname = ($_POST['firstname']);

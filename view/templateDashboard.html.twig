@@ -277,7 +277,7 @@
 							<div class='contentCardGestion'>
 								<div class='cardContentLeft'>
 									<figure>
-										<img src="{{ asset('/img/montpellier.jpg') }}" alt="">
+										<img src="{{ asset('/img/logement/' ~ logement[i].thumbnail) }}" alt="">
 									</figure>
 								</div>
 								<div class='cardContentRight cardContentRightWithButton'>
@@ -986,7 +986,8 @@
 								<input type="submit" name='rechercher' value class='rechercher' class='valider change'>
 							</form>
 						</div>
-						<h2>Nom de logement</h2>
+						{% for i in 0..(datasReservationChezMoi|length - 1) %}
+						<h2>{{datasReservationChezMoi[i].title}}</h2>
 						<div class='card cardGestionReservation'>
 							<table class="reservation-table">
 								<thead>
@@ -999,62 +1000,39 @@
 									</tr>
 								</thead>
 								<tbody>
+
+									{% for j in 0..(contacts[i]|length - 1) %}
 									<tr class="rowTable">
 										<td data-label="Date">
 											<p>
-												Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nobis architecto totam dolorum deleniti illo, est sed, nisi ad eligendi ab illum deserunt, sint dicta eaque repellendus perspiciatis quam temporibus.</p>
+												de {{start_dates[i][j]}} a {{end_dates[i][j]}}</p>
 										</td>
 										<td data-label="Reservar par">
 											<p>
-												#_EVENTTIMES
+												{{names[i][j]}} {{firstnames[i][j]}}
 											</p>
 										</td>
 										<td data-label="reglement">
 											<p>
-												#_EVENTTIMES
+												reglé
 											</p>
 										</td>
 										<td data-label="Nombre de persones">
 											<p>
-												#_EVENTTIMES
+												4
 											</p>
 										</td>
 										<td data-label="Contact">
 											<p>
-												#_EVENTTIMES
+												{{contacts[i][j]}}
 											</p>
 										</td>
 									</tr>
-									<tr class="rowTable">
-										<td data-label="Date">
-											<p>
-												Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nobis architecto totam dolorum deleniti illo, est sed, nisi ad eligendi ab illum deserunt, sint dicta eaque repellendus perspiciatis quam temporibus.
-											</p>
-										</td>
-										<td data-label="Reservar par">
-											<p>
-												#_EVENTTIMES
-											</p>
-										</td>
-										<td data-label="reglement">
-											<p>
-												#_EVENTTIMES
-											</p>
-										</td>
-										<td data-label="Nombre de persones">
-											<p>
-												#_EVENTTIMES
-											</p>
-										</td>
-										<td data-label="Contact">
-											<p>
-												#_EVENTTIMES
-											</p>
-										</td>
-									</tr>
+									{% endfor %}
 								</tbody>
 							</table>
 						</div>
+						{% endfor  %}
 
 
 					</div>
@@ -1066,37 +1044,40 @@
 								<input type="submit" name='rechercher' value class='rechercher' class='valider change'>
 							</form>
 						</div>
+
+						{% for reqOneResevation in mesReservations %}
 						<div class='card cardInfoPerso cardHG cardReservation'>
 							<div class='cardContentLeft'>
 								<figure>
-									<img src="{{ asset('/img/montpellier.jpg') }}" alt="">
+									<img src="{{ asset('/img/logement/' ~ reqOneResevation.thumbnail) }}" alt="">
 								</figure>
 							</div>
 							<div class='cardContentRight'>
 								<div class='oneRightContent oneRightContentResqervation'>
 									<h2>
-										Nom de logement de la bdd</h2>
+										{{reqOneResevation.title}}</h2>
 								</div>
 								<div class='oneRightContent oneRightContentResqervation'>
 									<figure class="iconRightContent">
 										<img id="iconReservationHistoric" src="{{ asset('/img/calendar.png') }}" alt="">
 									</figure>
-									<p class='dateRightContent infoRightContent'>du 00/00/0000 au 00/00/0000</p>
+									<p class='dateRightContent infoRightContent'>du {{reqOneResevation.start_date}} au {{reqOneResevation.end_date}}</p>
 								</div>
 								<div class='oneRightContent oneRightContentResqervation'>
 									<figure class="iconRightContent">
 										<img id="iconReservationHistoric" src="{{ asset('/img/argent.png') }}" alt="">
 									</figure>
-									<p class='dateRightContent infoRightContent'>du 00/00/0000 au 00/00/0000</p>
+									<p class='dateRightContent infoRightContent'>reglé</p>
 								</div>
 								<div class='oneRightContent oneRightContentResqervation'>
 									<figure class="iconRightContent">
 										<img id="iconReservationHistoric" src="{{ asset('/img/people.png') }}" alt="">
 									</figure>
-									<p class='dateRightContent infoRightContent'>du 00/00/0000 au 00/00/0000</p>
+									<p class='dateRightContent infoRightContent'>4 persones</p>
 								</div>
 							</div>
 						</div>
+						{% endfor %}
 					</div>
 					<div class="contentPage" id='con'></div>
 				</div>
