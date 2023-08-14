@@ -179,7 +179,7 @@ class LogementController extends Controller
         }
     }
 
-    
+
 
     public function getOneCity($id_ville)
     {
@@ -188,7 +188,7 @@ class LogementController extends Controller
         $model = new LogementModel();
         $logement = $model->getCity($id_ville);
         $oneLogement = $router->generate('city', ['id' => $id_ville]);
-
+        
         $twig = $this->getTwig();
         echo $twig->render('logementCity.html.twig', ['logement' => $logement, 'oneLogement' => $oneLogement]);
     }
@@ -199,19 +199,19 @@ class LogementController extends Controller
         global $router;
 
         $modelLogement = new LogementModel();
-        $modelBook= new BookModel();
+        $modelBook = new BookModel();
         $onelogement = $modelLogement->getOne($id_logement);
         $allImg = $modelLogement->getAllImg($id_logement);
-        $allBook=$modelBook->getBookHold($id_logement);
+        $allBook = $modelBook->getBookHold($id_logement);
 
         $twig = $this->getTwig();
-        echo $twig->render('oneLogement.html.twig', ['onelogement' => $onelogement, 'allImg' => $allImg, 'books' =>$allBook]);
+        echo $twig->render('oneLogement.html.twig', ['onelogement' => $onelogement, 'allImg' => $allImg, 'books' => $allBook]);
     }
 
     public function filterLogement()
     {
         global $router;
-      
+
         // Récupérez les filtres sélectionnés depuis le formulaire
         $selectedFilters = $_POST["filters"] ?? [];
         $submit = $_POST["submit"];
@@ -234,14 +234,40 @@ class LogementController extends Controller
         $twig = $this->getTwig();
         echo $twig->render('legalNotices.html.twig', []);
     }
+
+    public function sendMail()
+    {
+        if (!$_POST) {
+
+            $twig = $this->getTwig();
+            echo $twig->render('formContact.html.twig', []);
+        } else {
+
+
+            if (isset($_POST['submit'])) {
+                $name = $_POST['name'];
+                $surname = $_POST['surname'];
+                $phone = $_POST['phone'];
+                $email = $_POST['email'];
+                $message = $_POST['message'];
+var_dump($_POST);
+
+                $entete  = 'MIME-Version: 1.0' . "\r\n";
+                $entete .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+                $entete .= 'From: alexandre.sequeira@bobasdev.com' . "\r\n";
+                $entete .= 'Reply-To: ' . $email . "\r\n";
+
+                $emailContent = "<h3>" . $name . " " . $surname . "</h3>";
+                $emailContent .= "<p>" . htmlspecialchars($message) . "</p>";
+                $emailContent .= $phone;
+
+                $retour = mail('alexandre.sequeira01@gmail.com', 'Envoi depuis page Contact', $emailContent, $entete);
+                if ($retour) {
+                    echo '<p>Votre message a bien été envoyé.</p>';
+                    header('Location:./');
+                    exit();
+                }
+            }
+        }
+    }
 }
-// public function getAllLogement()
-    // {
-    //     global $router;
-    //     $model = new LogementModel();
-    //     $ville = $model->getAll();
-
-    //     $twig = $this->getTwig();
-
-    //     echo $twig->render('logementCity.html.twig', ['logements' => $ville]);
-    // }

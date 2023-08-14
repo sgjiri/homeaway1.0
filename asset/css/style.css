@@ -163,7 +163,7 @@ header #loginBox {
   min-height: 850px;
   display: none;
   position: relative;
-  background: url(../img/logement/appartementMarseille1.1.webp);
+  background: url(../img/logement/thumbnail_1_appartementMarseille1.1.webp);
   background-size: cover;
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
@@ -178,8 +178,8 @@ header #loginBox #close {
 }
 header #loginBox.formActive {
   display: block;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 0;
   z-index: 100;
 }
 header .loginBoxHeader {
@@ -355,7 +355,7 @@ header .login-form .group label .icon:after {
   header #burgerDesktop #navDisconnect.logoutDesktop ul,
   header #burgerDesktop #navConnect.loginDesktopActive ul {
     position: relative;
-    z-index: 100;
+    z-index: 999;
   }
   header #burgerDesktop #navDisconnect.logoutDesktop ul li,
   header #burgerDesktop #navConnect.loginDesktopActive ul li {
@@ -449,10 +449,12 @@ header .login-form .group label .icon:after {
     position: absolute;
     left: 10px;
     bottom: 10px;
-    width: 80%;
+    width: 90%;
+    height: 30px;
     margin: 0 auto;
     border: none;
     border-bottom: 1px solid #017C8E;
+    font-size: 1.1rem;
   }
   .searchBoxDesktop .searchformDesktop #buttonSearch {
     width: 150px;
@@ -602,8 +604,9 @@ header .login-form .group label .icon:after {
 #oneLogement #firstPartOne .convenience p {
   width: 70%;
 }
-#oneLogement #firstPartOne button {
+#oneLogement #firstPartOne a {
   margin: 50px auto;
+  text-align: center;
 }
 #oneLogement #secondPartOne {
   width: 100%;
@@ -729,7 +732,7 @@ header .login-form .group label .icon:after {
 }
 /*footer phone*/
 footer {
-  margin: 100px 0 248px 0;
+  margin: 100px 0 50px 0;
 }
 footer #firstContainerFooter,
 footer #secondContainerFooter {
@@ -739,7 +742,7 @@ footer #firstContainerFooter {
   background-color: #017C8E;
   padding-top: 30px;
 }
-footer #firstContainerFooter button {
+footer #firstContainerFooter #buttonContact {
   width: 80%;
   display: block;
   margin: 0 auto 25px auto;
@@ -751,6 +754,8 @@ footer #firstContainerFooter button {
   border: 1px solid #fff;
   border-radius: 25px;
   height: 50px;
+  text-align: center;
+  padding-top: 10px;
 }
 footer #firstContainerFooter div {
   display: flex;
@@ -908,6 +913,13 @@ footer #secondContainerFooter a {
   font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
 }
+.marker .leaflet-popup-content-wrapper .leaflet-popup-content .close-button,
+.marker.is-expended .leaflet-popup-content-wrapper .leaflet-popup-content .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
 
 #containerResultSearch .map {
   height: 350px;
@@ -934,17 +946,23 @@ footer #secondContainerFooter a {
 }
 #resultResearch #formFilter {
   width: 230px;
-  margin: 0 auto;
-  border: 1px solid #017C8E;
+  margin: 0 auto 50px auto;
   z-index: 1;
   display: none;
 }
-#resultResearch #formFilter .convenience input {
+#resultResearch #formFilter #convenience {
+  border: 1px solid #017C8E;
+}
+#resultResearch #formFilter #convenience .convenience input {
   margin-left: 5px;
 }
-#resultResearch #formFilter .convenience img {
+#resultResearch #formFilter #convenience .convenience img {
   padding: 0 10px;
   width: 45px;
+}
+#resultResearch #formFilter #applyFilters > input {
+  width: 100%;
+  margin-top: 10px;
 }
 #resultResearch #formFilter.formFilterActive {
   display: block;
@@ -979,6 +997,40 @@ footer #secondContainerFooter a {
 @media screen and (min-width: 800px) {
   #resumSearchPhone {
     display: none;
+  }
+  #resultresearch #formFilter {
+    max-width: 1200px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #resultresearch #formFilter #convenience {
+    width: 90%;
+    height: 100px;
+    display: flex;
+    overflow-x: scroll;
+  }
+  #resultresearch #formFilter #convenience .convenience {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  #resultresearch #formFilter #convenience .convenience img {
+    width: 40pxpx;
+    height: 25px;
+  }
+  #resultresearch #formFilter #convenience .convenience label {
+    font-size: 1.1rem;
+  }
+  #resultresearch #formFilter #applyFilters > input {
+    width: 100px;
+    margin: 0 0 0 20px;
+  }
+  #resultresearch #formFilter.formFilterActive {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   #resultresearch .listResult {
     margin: 0 auto;

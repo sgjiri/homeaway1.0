@@ -31,29 +31,12 @@ class BookController extends Controller
 
         if ($resultReserve) {
             echo "Réservation effectuée avec succès.";
+            header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentMesReservation");
         } else {
             echo "Erreur lors de la réservation.";
         }
     }
 }
 
-    // public function getReservation(){
-    //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    //         $start_date = $_POST['start_date'];
-    //         $end_date = $_POST['end_date'];
-    //         $id_person = $_POST['id_person'];
-    //         $logement_id = $_POST['logement_id'];   
-
-    //         $modelReservation = new BookModel;
-
-    //         $resultReserve = $modelReservation->createReservation($start_date, $end_date, $id_person, $logement_id);
-
-
-    //         if ($resultReserve) {
-    //             echo "Réservation effectuée avec succès.";
-    //         } else {
-    //             echo "Erreur lors de la réservation.";
-    //         }
-    //     }
-    // }
+    
 }

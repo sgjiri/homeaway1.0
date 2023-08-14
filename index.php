@@ -48,10 +48,14 @@ $router->map('GET|POST','/upload','LogementController#getUploadImg','upload_img'
 $router->map('POST','/reservation','BookController#getReservation','reservation');
 
 
+// -*-*-*Contact formulaire*-*-*-
+$router->map('POST|GET','/formContact','LogementController#sendMail','formContact');
+
+
 // **------ROUTE FOOTER------**//
 $router->map('GET', '/legalNotices', 'HomePageController#legalNotices', 'legalNotices' );
 
-
+var_dump($_SESSION);
 $match = $router->match();
 
 //  var_dump($match);
