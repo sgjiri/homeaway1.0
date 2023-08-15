@@ -130,18 +130,18 @@
 					</div>
 				{% endif %}
 			</div>
+
+			
 			<h4>Calendrier</h4>
 			<div id="calendar"></div>
 			<div id="locationOne">
 				<h4>Location</h4>
 				<div id="map" class="item js-marker map" data-lat="{{onelogement.latitude}}" data-lng="{{onelogement.longitude}}" data-price="58"></div>
 			</div>
-			<a href="" class="button">Contacter l'hôte</a>
+			<a href="{{path('contact')}}" class="button">Contacter l'hôte</a>
 		</div>
 
 
-
-		
 		<form action="{{path('reservation')}}" method="POST" id="secondPartOne">
 
 			<h4>

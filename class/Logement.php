@@ -15,7 +15,6 @@ class Logement
     private $latitude;
     private $longitude;
     private $price_by_night;
-    
     private $number_of_person;
     private $number_of_beds;
     private $parking;

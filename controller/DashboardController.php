@@ -15,22 +15,18 @@ class DashboardController extends Controller
             $datasMesReservation = $modelReservation->getReservation($idUser);
             $datasReservationChezMoi = $modelReservation->getReservationChezMoi($idUser);
             $imageArray = [];
-            for($i=0; $i< count($datasLogement); $i++){
+            for ($i = 0; $i < count($datasLogement); $i++) {
                 $images = $datasLogement[$i]['images'];
                 $arrayImage = explode(',', $images);
-                
-                $imageArray[]= $arrayImage;
-                
 
+                $imageArray[] = $arrayImage;
             }
-            
-
-            $arrayContacts=[];
-            $arrayStart_date=[];
-            $arrayEnd_dateArray=[];
-            $arrayName=[];
-            $arrayFirstname=[];
-            for($i=0; $i< count($datasReservationChezMoi); $i++){
+            $arrayContacts = [];
+            $arrayStart_date = [];
+            $arrayEnd_dateArray = [];
+            $arrayName = [];
+            $arrayFirstname = [];
+            for ($i = 0; $i < count($datasReservationChezMoi); $i++) {
                 $contact = $datasReservationChezMoi[$i]['contact'];
                 $start_date = $datasReservationChezMoi[$i]['start_date'];
                 $end_date = $datasReservationChezMoi[$i]['end_date'];
@@ -41,16 +37,15 @@ class DashboardController extends Controller
                 $end_dateArray = explode(',', $end_date);
                 $nameArray = explode(',', $name);
                 $firstnameArray = explode(',', $firstname);
-                
-                $arrayContacts[]=$contactArray;
-                $arrayStart_date[]=$start_dateArray;
-                $arrayEnd_dateArray[]=$end_dateArray;
-                $arrayName[]=$nameArray;
-                $arrayFirstname[]=$firstnameArray;
 
+                $arrayContacts[] = $contactArray;
+                $arrayStart_date[] = $start_dateArray;
+                $arrayEnd_dateArray[] = $end_dateArray;
+                $arrayName[] = $nameArray;
+                $arrayFirstname[] = $firstnameArray;
             }
-            
-            echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images'=>$imageArray, 'mesReservations'=>$datasMesReservation, 'datasReservationChezMoi'=>$datasReservationChezMoi, 'contacts'=>$arrayContacts, 'start_dates'=> $arrayStart_date, 'end_dates'=> $arrayEnd_dateArray, 'names'=>$arrayName, 'firstnames'=> $arrayFirstname]);
+
+            echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images' => $imageArray, 'mesReservations' => $datasMesReservation, 'datasReservationChezMoi' => $datasReservationChezMoi, 'contacts' => $arrayContacts, 'start_dates' => $arrayStart_date, 'end_dates' => $arrayEnd_dateArray, 'names' => $arrayName, 'firstnames' => $arrayFirstname]);
         }
         if (isset($_POST['validerName'])) {
             $firstname = ($_POST['firstname']);
@@ -238,8 +233,6 @@ class DashboardController extends Controller
             }
         }
 
-
-
         if (isset($_POST['validerEquipment'])) {
             $parking = isset($_POST['parking']) && $_POST['parking'] == 1 ? true : false;
             $wifi = isset($_POST['wifi']) &&  $_POST['wifi'] == 1 ? true : false;
@@ -261,24 +254,17 @@ class DashboardController extends Controller
                 header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");
                 echo $twig->render('templateDashboard.html.twig', ['user' => $datas]);
             }
-
-
-           
-
         }
-
 
         if (isset($_POST['suprimerImages'])) {
             $suprimerImage = [];
-        
+
             if (isset($_POST['selectImage']) && is_array($_POST['selectImage'])) {
                 foreach ($_POST['selectImage'] as $image) {
                     $suprimerImage[] = $image;
                 }
                 $return = $modelUpdate->deleteImg($suprimerImage);
             }
-        
-            
         }
 
         if (isset($_POST['suprimerLogement'])) {
@@ -298,7 +284,6 @@ class DashboardController extends Controller
             header("Location: /Projet/homeaway1.0");
             exit();
         }
-
 
 
         if (isset($_POST['submitAddLogement'])) {
@@ -461,13 +446,6 @@ class DashboardController extends Controller
             }
         }
 
-        
-        
-        
-        
-
-
-
 
         if (isset($_POST['validerImages'])) {
             var_dump($_POST);
@@ -477,7 +455,7 @@ class DashboardController extends Controller
                 // var_dump('id_person is set');
                 $idLogement = ($_POST['idLogement']);
 
-                
+
 
                 // crée une nouvelle instance de la classe LogementModel et la stocke dans la variable $img
                 $img = new LogementModel();
@@ -487,7 +465,7 @@ class DashboardController extends Controller
 
                 // compte le nombre de fichiers téléchargés dans la superglobale $_FILES et stocke le résultat dans la variable $nb.
                 $nb = count($_FILES);
-               
+
                 function resizeImg($tmp_name, $width, $height, $name)
                 {
                     // Récupération des dimensions de l'image d'origine
@@ -577,7 +555,7 @@ class DashboardController extends Controller
                     }
                 }
                 $logementmodel = new LogementModel();
-                
+
                 $thumbnailImg = $img->getUpload($thumbnailDatas, $idLogement);
 
                 header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");
@@ -586,7 +564,5 @@ class DashboardController extends Controller
                 echo $twig->render('templateDashboard.html.twig', []);
             }
         }
-        
     }
 }
-

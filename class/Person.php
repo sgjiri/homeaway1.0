@@ -2,7 +2,6 @@
 class Person
 {
     private $id_person;
-   
     private $name;
     private $firstname;
     private $date_of_birth;
@@ -39,7 +38,7 @@ class Person
         return $this->id_person;
     }
 
-   
+
     public function getName()
     {
         return $this->name;
@@ -79,7 +78,7 @@ class Person
         $this->id_person = $id_person;
     }
 
-  
+
     public function setName(string $name)
     {
         $this->name = $name;

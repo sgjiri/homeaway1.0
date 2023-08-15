@@ -120,8 +120,6 @@ class SearchModel extends Model
             "
         );
 
-        // -- -- Réservation sur 5 jours
-        // -- (`book`.`start_date` = CURDATE() AND `book`.`end_date` = DATE_ADD(CURDATE(), INTERVAL 4 DAY))
 
         $stmt->bindParam(':city', $city, PDO::PARAM_STR);
         $stmt->bindParam(':number_of_person', $number_of_person, PDO::PARAM_INT);

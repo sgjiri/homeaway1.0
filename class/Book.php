@@ -6,7 +6,7 @@ class Book
     private $end_date;
     private $firstname;
     private $id_person;
-    private $logement_id;
+    private $id_logement;
 
 
 
@@ -38,7 +38,7 @@ class Book
         return $this->id_reservation;
     }
 
-    public function getStart_date()
+    public function getStartDate()
     {
         return $this->start_date;
     }
@@ -58,9 +58,9 @@ class Book
         return $this->id_person;
     }
 
-    public function getLogementId()
+    public function getidLogement()
     {
-        return $this->logement_id;
+        return $this->id_logement;
     }
 
     // -*-*-*-*-*-*-SETTERS-*-*-*-*-*-*-//
@@ -71,7 +71,7 @@ class Book
         $this->id_reservation = $id_reservation;
     }
 
-    public function setStart_date(STRING $start_date)
+    public function setStartDate(STRING $start_date)
     {
         $this->start_date = $start_date;
     }
@@ -91,9 +91,9 @@ class Book
         $this->id_person = $id_person;
     }
 
-    public function setLogementId(INT $logement_id)
+    public function setidLogement(INT $id_logement)
     {
-        $this->logement_id = $logement_id;
+        $this->id_logement = $id_logement;
     }
 
 

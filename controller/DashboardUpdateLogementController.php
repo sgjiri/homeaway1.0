@@ -6,7 +6,7 @@ class DashboardUpdateLogementController extends Controller
         $dashboard = $this->dashboard();
         if (isset($_POST['validerTitle'])) {
             $title = ($_POST['title']);
-            
+
             $return = $modelUpdate->setTitle($title, $idUser);
 
             if ($return) {
@@ -14,7 +14,5 @@ class DashboardUpdateLogementController extends Controller
                 echo $dashboard->render('templateDashboard.html.twig', ['user' => $datas]);
             }
         }
-
-        
     }
 }
