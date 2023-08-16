@@ -157,7 +157,7 @@ header {
             padding-top: 25px;
 
             .searchFormBox {
-                width: 150px;
+                width: 200px;
                 background-color: #fff;
                 height: 75px;
                 margin: 25px auto;
@@ -207,6 +207,10 @@ header {
 
     #searchBoxPhone.formSearchActive {
         display: block;
+        position: fixed;
+        bottom: 50px;
+        z-index: 900;
+        width: 100%;
     }
 
     #loginBox {
@@ -1277,7 +1281,6 @@ footer {
 
         width: 230px;
         margin: 0 auto 50px auto;
-
         z-index: 1;
         display: none;
 
@@ -1356,7 +1359,7 @@ footer {
     }
 
     #resultresearch {
-        #formFilter {
+        #formFilter.formFilterActive  {
             max-width: 1200px;
             width: 80%;
             display: flex;
@@ -1372,7 +1375,7 @@ footer {
                 .convenience {
                     display: flex;
                     align-items: center;
-                    margin-right: 20px;
+                    margin-right: 50px;
 
                     img {
                         width: 40pxpx;

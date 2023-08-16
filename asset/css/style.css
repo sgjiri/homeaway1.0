@@ -115,7 +115,7 @@ header #searchBoxPhone form {
   padding-top: 25px;
 }
 header #searchBoxPhone form .searchFormBox {
-  width: 150px;
+  width: 200px;
   background-color: #fff;
   height: 75px;
   margin: 25px auto;
@@ -155,6 +155,10 @@ header #searchBoxPhone form #buttonSearch input {
 }
 header #searchBoxPhone.formSearchActive {
   display: block;
+  position: fixed;
+  bottom: 50px;
+  z-index: 900;
+  width: 100%;
 }
 header #loginBox {
   width: 100%;
@@ -998,32 +1002,32 @@ footer #secondContainerFooter a {
   #resumSearchPhone {
     display: none;
   }
-  #resultresearch #formFilter {
+  #resultresearch #formFilter.formFilterActive {
     max-width: 1200px;
     width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  #resultresearch #formFilter #convenience {
+  #resultresearch #formFilter.formFilterActive #convenience {
     width: 90%;
     height: 100px;
     display: flex;
     overflow-x: scroll;
   }
-  #resultresearch #formFilter #convenience .convenience {
+  #resultresearch #formFilter.formFilterActive #convenience .convenience {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 50px;
   }
-  #resultresearch #formFilter #convenience .convenience img {
+  #resultresearch #formFilter.formFilterActive #convenience .convenience img {
     width: 40pxpx;
     height: 25px;
   }
-  #resultresearch #formFilter #convenience .convenience label {
+  #resultresearch #formFilter.formFilterActive #convenience .convenience label {
     font-size: 1.1rem;
   }
-  #resultresearch #formFilter #applyFilters > input {
+  #resultresearch #formFilter.formFilterActive #applyFilters > input {
     width: 100px;
     margin: 0 0 0 20px;
   }

@@ -150,20 +150,20 @@ cross.addEventListener('click', function(){
     }
 
 
-    let classInputSuprimerImg = document.getElementsByClassName('suprimerImg');
-    for (let i = 0; i < classInputSuprimerImg.length; i++) {
+//     let classInputSuprimerImg = document.getElementsByClassName('suprimerImg');
+//     for (let i = 0; i < classInputSuprimerImg.length; i++) {
 
 
-        classInputSuprimerLogement[i].addEventListener('click', function() {    
-    for (let i = 0; i < classInputSelectImage.length; i++) {
+//         classInputSuprimerLogement[i].addEventListener('click', function() {    
+//     for (let i = 0; i < classInputSelectImage.length; i++) {
 
-        if(classInputSelectImage[i].checked===true){
-            console.log(classInputSelectImage[i]);
-        }
+//         if(classInputSelectImage[i].checked===true){
+//             console.log(classInputSelectImage[i]);
+//         }
 
-    }
-}
-
+//     }
+// }
+//     }
 
 
 

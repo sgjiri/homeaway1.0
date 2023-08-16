@@ -1,5 +1,5 @@
-const startDateCalendar = document.getElementById('startDate').textContent;
-const endDateCalendar = document.getElementById('endDate').textContent;
+const startDateCalendar = document.getElementById('startDate').value;
+const endDateCalendar = document.getElementById('endDate').value;
 
 
 
