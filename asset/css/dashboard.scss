@@ -289,31 +289,37 @@ sans-serif;
                 div{
                     
                     margin-right: 5px;
-                    .valider {
-                        background: url(../img/valider.png) center center no-repeat;
-                        border-radius: 50%;
-                        height: 40px;
-                        width: 40px;
-                        transition: all 0.1s ease-in;
-    
-                        &:hover {
-                            cursor: pointer;
-                            background-color: $green;
-                            transform: scale(1.1);
+                    form{
+                        display: flex;
+                        .valider {
+                            background: url(../img/valider.png) center center no-repeat;
+                            border-radius: 50%;
+                            height: 40px;
+                            width: 40px;
+                            transition: all 0.1s ease-in;
+        
+                            &:hover {
+                                cursor: pointer;
+                                background-color: $green;
+                                transform: scale(1.1);
+                            }
                         }
-                    }
-                    #cross{
-                        background: url(../img/cross.png) center center no-repeat; 
-                        &:hover {
-                         
-                            background-color: $red;
-                            
+                        #cross{
+                            background: url(../img/cross.png) center center no-repeat;
+                            display: block; 
+                            &:hover {
+                             
+                                background-color: $red;
+                                
+                            }
                         }
+                        .popopCommand{
+                            margin: 0 10px;
+                            border: solid 3px #fff
+                        }
+
                     }
-                    .popopCommand{
-                        margin: 0 10px;
-                        border: solid 3px #fff
-                    }
+                    
 
 
                 }

@@ -4,8 +4,7 @@ class DashboardController extends Controller
     public function dashboard()
     {
         $twig = $this->getTwig();
-        var_dump($_SESSION);
-        $idUser = 16;
+        $idUser = $_SESSION['id_person'];
         $model = new DashboardModel();
         $modelUpdate = new DashboardUpdateLogementModel();
         $modelReservation = new DashboardReservationModel();
@@ -46,7 +45,7 @@ class DashboardController extends Controller
                 $arrayFirstname[] = $firstnameArray;
             }
 
-            echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images' => $imageArray, 'mesReservations' => $datasMesReservation, 'datasReservationChezMoi' => $datasReservationChezMoi, 'contacts' => $arrayContacts, 'start_dates' => $arrayStart_date, 'end_dates' => $arrayEnd_dateArray, 'names' => $arrayName, 'firstnames' => $arrayFirstname]);
+            echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images' => $imageArray, 'mesReservations' => $datasMesReservation, 'datasReservationChezMoi' => $datasReservationChezMoi, 'contacts' => $arrayContacts, 'start_dates' => $arrayStart_date, 'end_dates' => $arrayEnd_dateArray, 'names' => $arrayName, 'firstnames' => $arrayFirstname, 'idUser'=>$idUser]);
         }
         if (isset($_POST['validerName'])) {
             $firstname = ($_POST['firstname']);
@@ -271,7 +270,7 @@ class DashboardController extends Controller
         if (isset($_POST['suprimerLogement'])) {
             var_dump($_POST);
             var_dump('coucou');
-            $id_logement = ($_POST['idLogement']);;
+            $id_logement = ($_POST['inputHiddenPopop']);;
             $delModel = new LogementModel();
             $delModel->delete($id_logement);
             header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");

@@ -33,7 +33,7 @@ class Person
 
     // -*-*-*-*-*-*-*-*-*-*GETTERS*-*-*-*-*-*-*-*-*//
 
-    public function getIdPerson()
+    public function getId_person()
     {
         return $this->id_person;
     }
@@ -73,7 +73,7 @@ class Person
     // -*-*-*-*-*-*-*-*-SETTERS-*-*-*-*-*-*-*-*-//
 
 
-    public function setIdPerson(int $id_person)
+    public function setId_person(int $id_person)
     {
         $this->id_person = $id_person;
     }

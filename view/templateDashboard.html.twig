@@ -19,10 +19,13 @@
 				<div class='contentFixCard contentFixCardInfoPerso'>
 					<div>
 
-						<p>Voulez vous vraiment suprimer...</p>
+						<p id="messagePopop"></p>
 						<div>
-							<input type="submit" name="validerImages" class="valider change validerGestion submitUpdateImg popopCommand" value="">
-							<span class="suprimer change validerGestion submitUpdateImg popopCommand" id='cross'></span>
+							<form action="" method="post">
+								<input type="hidden" name="inputHiddenPopop" id="inputHiddenPopop" value="">
+								<input type="submit" class="valider change validerGestion submitUpdateImg popopCommand" id="popopvalider"value="">
+								<span class="suprimer change validerGestion submitUpdateImg popopCommand" id='cross'></span>
+							</form>
 						</div>
 
 					</div>
@@ -212,7 +215,7 @@
 
 
 						<form action="" method="post" class="figureModifier 	figureModifierInfo">
-							<span class="suprimer change validerGestion"></span>
+							<span class="suprimer change validerGestion" id="spanSuprimerUser" data-idUser="{{idUser}}"></span>
 						</form>
 					</div>
 
@@ -300,7 +303,7 @@
 								<form action="" method="post">
 									<input type="hidden" name="idLogement" id="idLogement" value="{{logement[i].id_logement}}">
 									
-									<span class="suprimer change validerGestion"></span>
+									<span class="suprimer change validerGestion suprimerLogement" data-idLogement="{{logement[i].id_logement}}" data-nameLogement="{{logement[i].title}}"></span>
 								</form>
 
 								<div class="oneRightContent oneRightContentGestion oneRightContentGestionH">
@@ -599,7 +602,7 @@
 													<div class='inputUpdateImg'>
 
 														<input type="submit" name="validerImages" class="valider change validerGestion submitUpdateImg" value="">
-														<span class="suprimer change validerGestion submitUpdateImg"></span>
+														<span class="suprimer change validerGestion submitUpdateImg suprimerImg"></span>
 														<span class="spanPlus2 change validerGestion submitUpdateImg"></span>
 
 
