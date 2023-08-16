@@ -4,7 +4,8 @@ class DashboardController extends Controller
     public function dashboard()
     {
         $twig = $this->getTwig();
-        $idUser = $_SESSION['id_person'];
+        var_dump($_SESSION);
+        $idUser = 16;
         $model = new DashboardModel();
         $modelUpdate = new DashboardUpdateLogementModel();
         $modelReservation = new DashboardReservationModel();
