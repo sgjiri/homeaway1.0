@@ -27,8 +27,7 @@ if(document.getElementById('info')) {
 //activation of contentInfoPerso if #perso is selected
 let clickInfo = document.getElementsByClassName('clickInfo');
 let contentPage = document.getElementsByClassName('contentPage');
-console.log(clickInfo.length);
-console.log(contentPage.length);
+
 for (let i = 0; i < clickInfo.length; i++) {
     (function (index) {
         clickInfo[index].addEventListener('click', function () {
@@ -102,15 +101,20 @@ for (let i = 0; i < classLabelSelectImage.length; i++) {
 }
 
 
-let suprimer = document.getElementsByClassName('suprimer');
-console.log(suprimer)
-let popop = document.getElementById('popop');
 
-for (let i = 0; i < suprimer.length; i++) {
-    suprimer[i].addEventListener('click', function() {
-        popop.classList.add('popopActive');
-    });
-}
+
+let deleteUser=document.getElementById('spanSuprimerUser');
+let popop = document.getElementById('popop');
+let popopValider = document.getElementById('popopvalider');
+
+deleteUser.addEventListener('click', function() {
+    popop.classList.add('popopActive')
+    popopValider.setAttribute("name", "suprimerUser");
+});
+
+
+
+
 
 let addImage = document.getElementsByClassName('spanPlus2');
 
@@ -120,8 +124,8 @@ for (let i = 0; i < addImage.length; i++) {
     });
 }
 
-let cross = document.getElementById('cross');
 
+let cross = document.getElementById('cross');
 cross.addEventListener('click', function(){
 
     popop.classList.remove('popopActive');
@@ -129,6 +133,36 @@ cross.addEventListener('click', function(){
 
 
 
+    let classInputSuprimerLogement = document.getElementsByClassName('suprimerLogement');
+    let inputHidden = document.getElementById('inputHiddenPopop');
+    let getMessagePopop = document.getElementById('messagePopop');
+
+    for (let i = 0; i < classInputSuprimerLogement.length; i++) {
+        
+        classInputSuprimerLogement[i].addEventListener('click', function() {
+            let idLogement = this.getAttribute("data-idLogement");
+            let nameLogement = this.getAttribute("data-nameLogement");
+            getMessagePopop.innerHTML = "Voulez vous vraiment supprimer le logement " + nameLogement + "?";
+            popop.classList.add('popopActive');
+            popopValider.setAttribute("name", "suprimerLogement");
+            inputHidden.setAttribute("value", idLogement)
+        });
+    }
+
+
+    let classInputSuprimerImg = document.getElementsByClassName('suprimerImg');
+    for (let i = 0; i < classInputSuprimerImg.length; i++) {
+
+
+        classInputSuprimerLogement[i].addEventListener('click', function() {    
+    for (let i = 0; i < classInputSelectImage.length; i++) {
+
+        if(classInputSelectImage[i].checked===true){
+            console.log(classInputSelectImage[i]);
+        }
+
+    }
+}
 
 
 

@@ -63,7 +63,7 @@ $router->map('POST', '/sendMail', 'ContactController#sendMail', 'sendMail' );
 
 $match = $router->match();
 
- var_dump($match);
+//  var_dump($match);
 
 if (is_array($match)) {
     list($controller, $action) = explode('#', $match['target']);
