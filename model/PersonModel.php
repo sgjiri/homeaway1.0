@@ -33,7 +33,7 @@ class PersonModel extends Model
         $name = $person->getName();
         $firstname = $person->getFirstname();
         $mail = $person->getMail();
-        $date_of_birth = $person->getDateOfBirth();
+        $dobFormatted = $person->getDateOfBirth();
         $phone_number = $person->getPhoneNumber();
         $password = $person->getPassword();
        
@@ -42,7 +42,7 @@ class PersonModel extends Model
 
         $req->bindParam(":name", $name, PDO::PARAM_STR);
         $req->bindParam(":firstname", $firstname, PDO::PARAM_STR);
-        $req->bindParam(":date_of_birth", $date_of_birth, PDO::PARAM_STR);
+        $req->bindParam(":date_of_birth",  $dobFormatted, PDO::PARAM_STR);
         $req->bindParam(":phone_number", $phone_number, PDO::PARAM_INT);
         $req->bindParam(":password", $password, PDO::PARAM_STR);
         $req->bindParam(":mail", $mail, PDO::PARAM_STR);
