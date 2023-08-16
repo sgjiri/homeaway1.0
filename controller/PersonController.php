@@ -1,5 +1,6 @@
 <?php
 
+
 class PersonController extends Controller
 {
     public function userLogin()
@@ -36,9 +37,9 @@ class PersonController extends Controller
                 if (password_verify($password, $person->getPassword())) {
                      $_SESSION['connect'] = true;
                     $_SESSION['id_person'] = $person->getId_person();
-                    $_SESSION['mail'] = $person->getMail();
-                   
 
+                    $_SESSION['mail'] = $person->getMail();
+                 
                     global $router;
                      header('Location: '. $router->generate('home'));
                    exit();
@@ -49,7 +50,7 @@ class PersonController extends Controller
                 // si password non ok affiche message erreur avec redirection 
                 $message = "mail ou mot de passe incorrect !";
                  $twig = $this->getTwig();
-            echo $twig->render('homepage.html.twig', []);
+            echo $twig->render('homepage.html.twig', ['message' =>$message]);
             }
         }
     }

@@ -50,83 +50,90 @@
 		</figure>
 
 
-		<form action="" method="GET" id="formFilter">
-			<div class="convenience">
-				<input type="checkbox" id="wifi" name="wifi">
-				<img src="{{asset('/img/wifi.png')}}" alt="icon wifi">
-				<label for="wifi">Wifi</label>
+		<form action="{{ path('searchWithFilters') }}" method="POST" id="formFilter">
+			<div id="convenience">
+				<div class="convenience">
+					<input type="hidden" name="city" id="cityHidden" value="{{ formValue['city']}}">
+					<input type="hidden" name="start_date" id="startDateHidden" value="{{ formValue['start']}}">
+					<input type="hidden" name="end_date" id="endDateHidden" value="{{ formValue['end']}}">
+					<input type="hidden" name="number_of_person" id="numberOfPersonHidden" value="{{ formValue['person']}}">
+
+					<input type="checkbox" id="wifi" name="filters[]" value="wifi">
+					<img src="{{asset('/img/wifi.png')}}" alt="icon wifi">
+					<label for="wifi">Wifi</label>
+				</div>
+
+				<div class="convenience">
+					<input type="checkbox" id="home_textiles" name="filters[]" value="textile">
+					<img src="{{asset('/img/linge.png')}}" alt="icon linge">
+					<label for="home_textiles">Linge de maison</label>
+				</div>
+
+				<div class="convenience">
+					<input type="checkbox" id="kitchen" name="filters[]" value="kitchen">
+					<img src="{{asset('/img/kitchen.png')}}" alt="icon cuisine">
+					<label for="kitchen">Cuisine</label>
+				</div>
+
+				<div class="convenience">
+					<input type="checkbox" id="animals" name="filters[]" value="animals">
+					<img src="{{asset('/img/pate.png')}}" alt="icon pate">
+					<label for="Wifi">Animaux autorisés</label>
+				</div>
+
+				<div class="convenience">
+					<input type="checkbox" id="tv" name="filters[]" value="tv">
+					<img src="{{asset('/img/tv.png')}}" alt="icon tv">
+					<label for="tv">TV</label>
+				</div>
+
+				<div class="convenience">
+					<input type="checkbox" id="climatisation" name="filters[]" value="clim">
+					<img src="{{asset('/img/climatisation.png')}}" alt="icon climatisation">
+					<label for="climatisation">Climatisation</label>
+				</div>
+
+				<div class="convenience">
+					<input type="checkbox" id="garden" name="filters[]" value="garden">
+					<img src="{{asset('/img/garden.png')}}" alt="icon jardin">
+					<label for="garden">Jardin</label>
+				</div>
+
+				<div class="convenience">
+					<input type="checkbox" id="spa" name="filters[]" value="spa">
+					<img src="{{asset('/img/spa.png')}}" alt="icon spa">
+					<label for="spa">Spa</label>
+				</div>
+
+				<div class="convenience">
+					<input type="checkbox" id="jacuzzi" name="filters[]" value="jacuzzi">
+					<img src="{{asset('/img/jacuzzi.png')}}" alt="icon jacuzzi">
+					<label for="jacuzzi">Jacuzzi</label>
+				</div>
+				<div class="convenience">
+					<input type="checkbox" id="piscine" name="filters[]" value="piscine">
+					<img src="{{asset('/img/swimmingpool.png')}}" alt="icon piscine">
+					<label for="piscine">piscine</label>
+				</div>
+
+				<div class="convenience">
+					<input type="checkbox" id="camera" name="filters[]" value="camera"><img src="{{asset('/img/camera.png')}}" alt="icon caméra">
+					<label for="camera">Caméra de surveillance</label>
+				</div>
+
+
+				<div class="convenience">
+					<input type="checkbox" id="parking" name="filters[]" value="parking">
+					<img src="{{asset('/img/iconParking.png')}}" alt="icon parking">
+					<label for="parking">parking</label>
+				</div>
 			</div>
 
-			<div class="convenience">
-				<input type="checkbox" id="home_textile" name="home_textile">
-				<img src="{{asset('/img/linge.png')}}" alt="icon linge">
-				<label for="home_textile">Linge de maison</label>
+			<div id="applyFilters">
+				<input class="button" type="submit" name="submit" value="Valider">
 			</div>
 
-			<div class="convenience">
-				<input type="checkbox" id="kitchen" name="kitchen">
-				<img src="{{asset('/img/kitchen.png')}}" alt="icon cuisine">
-				<label for="kitchen">Cuisine</label>
-			</div>
-
-			<div class="convenience">
-				<input type="checkbox" id="animals" name="animals">
-				<img src="{{asset('/img/pate.png')}}" alt="icon pate">
-				<label for="Wifi">Animaux autorisés</label>
-			</div>
-
-			<div class="convenience">
-				<input type="checkbox" id="tv" name="tv">
-				<img src="{{asset('/img/tv.png')}}" alt="icon tv">
-				<label for="tv">TV</label>
-			</div>
-
-			<div class="convenience">
-				<input type="checkbox" id="climatisation" name="climatisation">
-				<img src="{{asset('/img/climatisation.png')}}" alt="icon climatisation">
-				<label for="climatisation">Climatisation</label>
-			</div>
-
-			<div class="convenience">
-				<input type="checkbox" id="garden" name="garden">
-				<img src="{{asset('/img/garden.png')}}" alt="icon jardin">
-				<label for="garden">Jardin</label>
-			</div>
-
-			<div class="convenience">
-				<input type="checkbox" id="spa" name="spa">
-				<img src="{{asset('/img/spa.png')}}" alt="icon spa">
-				<label for="spa">Spa</label>
-			</div>
-
-			<div class="convenience">
-				<input type="checkbox" id="jacuzzi" name="jacuzzi">
-				<img src="{{asset('/img/jacuzzi.png')}}" alt="icon jacuzzi">
-				<label for="jacuzzi">Jacuzzi</label>
-			</div>
-			<div class="convenience">
-				<input type="checkbox" id="piscine" name="piscine">
-				<img src="{{asset('/img/swimmingpool.png')}}" alt="icon piscine">
-				<label for="piscine">piscine</label>
-			</div>
-
-			<div class="convenience">
-				<input type="checkbox" id="camera" name="camera"><img src="{{asset('/img/camera.png')}}" alt="icon caméra">
-				<label for="camera">Caméra de surveillance</label>
-			</div>
-
-
-			<div class="convenience">
-				<input type="checkbox" id="parking" name="parking">
-				<img src="{{asset('/img/iconParking.png')}}" alt="icon parking">
-				<label for="parking">parking</label>
-			</div>
-
-			<div id="ApplyFilters">
-				<input type="submit" name="submit" value="Appliquer les filtres">
-			</div>
 		</form>
-
 
 		
 		<div id="containerResultSearch">
@@ -142,7 +149,7 @@
 				{% for i in 0..(logementsTypes|length - 1) %}
 
 					{% set tableauImage = logementsTypes[i].thumbnails[0] %}
-					<a href="{{ path('type', { 'logementId': logementsTypes[i].id_logement }) }}">
+					<a href="{{ path('one')~ logementsTypes[i].id_logement}}">
 						<article class="item js-marker" data-lat="{{ logementsTypes[i].latitude }}" data-lng="{{ logementsTypes[i].longitude }}" data-price="{{ logementsTypes[i].price_by_night }}">
 							<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'Appartement ' ~ logementsTypes[i].city }}">
 							<h4>{{ logementsTypes[i].title }}

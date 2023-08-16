@@ -19,6 +19,7 @@ class BookController extends Controller
     // }
 
     public function getReservation()
+
     {
         global $router;
         if (isset($_POST['submit'])) {
@@ -44,5 +45,6 @@ class BookController extends Controller
             }
         }
     }
+
     
 }

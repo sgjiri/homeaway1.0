@@ -138,7 +138,9 @@
 				<h4>Location</h4>
 				<div id="map" class="item js-marker map" data-lat="{{onelogement.latitude}}" data-lng="{{onelogement.longitude}}" data-price="58"></div>
 			</div>
+
 			<a href="{{path('contact')}}" class="button">Contacter l'hôte</a>
+
 		</div>
 
 
@@ -168,6 +170,7 @@
 
 	</section>
 	<script>
+
 		function showConfirmation() {
 const start_date = document.getElementById("start_date").value;
 const end_date = document.getElementById("end_date").value;
@@ -187,6 +190,7 @@ alert(message);
 // Vous pouvez également rediriger l'utilisateur vers une autre page ici si nécessaire
 document.getElementById("secondPartOne").submit();
 }
+
 }
 	</script>
 	<script>
@@ -203,4 +207,10 @@ document.getElementById("secondPartOne").submit();
 	<script src="{{asset('/js/map.js')}}"></script>
 
 	<script src="{{asset('/js/calendar.js')}}"></script>
+	<footer>
+	<style>
+	footer{
+		margin-bottom:248px; 
+	}</style>
+	</footer>
 {% endblock %}

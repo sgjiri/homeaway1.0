@@ -216,7 +216,7 @@ header {
         min-height: 850px;
         display: none;
         position: relative;
-        background: url(../img/logement/appartementMarseille1.1.webp);
+        background: url(../img/logement/thumbnail_1_appartementMarseille1.1.webp);
         background-size: cover;
         box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
 
@@ -233,8 +233,9 @@ header {
 
     #loginBox.formActive {
         display: block;
-        position: absolute;
-        top: 100%;
+
+        position: fixed;
+        top: 0;
         z-index: 100;
     }
 
@@ -475,7 +476,7 @@ header {
 
                 ul {
                     position: relative;
-                    z-index: 100;
+                    z-index: 999;
 
                     li {
                         width: 200px;
@@ -590,10 +591,12 @@ header {
                     position: absolute;
                     left: 10px;
                     bottom: 10px;
-                    width: 80%;
+                    width: 90%;
+                    height: 30px;
                     margin: 0 auto;
                     border: none;
                     border-bottom: 1px solid $blueDark;
+                    font-size: 1.1rem;
 
                 }
 
@@ -1007,7 +1010,7 @@ header {
 /*footer phone*/
 
 footer {
-    margin: 100px 0 248px 0;
+    margin: 100px 0 50px 0;
 
     #firstContainerFooter,
     #secondContainerFooter {
@@ -1018,7 +1021,7 @@ footer {
         background-color: $blueDark;
         padding-top: 30px;
 
-        button {
+        #buttonContact {
             width: 80%;
             display: block;
             margin: 0 auto 25px auto;
@@ -1030,6 +1033,8 @@ footer {
             border: 1px solid $white;
             border-radius: 25px;
             height: 50px;
+            text-align: center;
+            padding-top: 10px;
         }
 
         div {
@@ -1210,8 +1215,6 @@ footer {
     z-index: 301;
 
     .leaflet-popup-content-wrapper .leaflet-popup-content {
-
-
         text-align: left;
 
         img {
@@ -1224,7 +1227,12 @@ footer {
             font-family: $roboto;
             font-size: 0.8rem;
         }
-
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+         }
 
     }
 }
@@ -1266,23 +1274,32 @@ footer {
     }
 
     #formFilter {
+
         width: 230px;
-        margin: 0 auto;
-        border: 1px solid $blueDark;
+        margin: 0 auto 50px auto;
+
         z-index: 1;
         display: none;
 
-        .convenience {
-            input {
-                margin-left: 5px;
+        #convenience {
+            border: 1px solid $blueDark;
+
+            .convenience {
+                input {
+                    margin-left: 5px;
+                }
+
+                img {
+                    padding: 0 10px;
+                    width: 45px;
+                }
             }
 
-            img {
-                padding: 0 10px;
-                width: 45px;
-            }
         }
-
+        #applyFilters> input{
+            width: 100%;
+            margin-top: 10px;
+        }
 
     }
 
@@ -1339,6 +1356,48 @@ footer {
     }
 
     #resultresearch {
+        #formFilter {
+            max-width: 1200px;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            #convenience {
+                width: 90%;
+                height: 100px;
+                display: flex;
+                overflow-x: scroll;
+
+                .convenience {
+                    display: flex;
+                    align-items: center;
+                    margin-right: 20px;
+
+                    img {
+                        width: 40pxpx;
+                        height: 25px;
+                    }
+
+                    label {
+                        font-size: 1.1rem;
+                    }
+
+                }
+            }
+            #applyFilters> input{
+                width: 100px;
+                margin: 0 0 0 20px;
+            }
+
+        }
+
+        #formFilter.formFilterActive {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
         .listResult {
             margin: 0 auto;
 

@@ -31,7 +31,7 @@ $router->map('POST','/filter/','SearchController#applyFilter','searchWithFilters
 
 $router->map('GET|POST', '/one[i:id_logement]?', 'LogementController#getOneLogement', 'one');
 
-$router->map('GET','/beach/[a:city]?', 'SearchController#searchByCity','beach');
+$router->map('GET','/beach/[:city]?', 'SearchController#searchByCity','beach');
 $router->map('GET','/type/[a:type]?', 'SearchController#searchByType','type');
 
 
@@ -48,8 +48,13 @@ $router->map('GET|POST','/upload','LogementController#getUploadImg','upload_img'
 $router->map('POST','/reservation','BookController#getReservation','reservation');
 
 
+// -*-*-*Contact formulaire*-*-*-
+$router->map('POST|GET','/formContact','LogementController#sendMail','formContact');
+
+
 // **------ROUTE FOOTER------**//
 $router->map('GET', '/legalNotices', 'HomePageController#legalNotices', 'legalNotices' );
+
 
 // -*-*-*ROUTE FAQ*-*-*-
 $router->map('GET', '/faq', 'HomePageController#faq', 'faq' );
@@ -61,9 +66,11 @@ $router->map('GET|POST', '/contact', 'LogementController#contactMe', 'contact' )
 // *-*-*-*ROUTE ENVOI MAIL CONTACTER L HOTE*-*-*-*
 $router->map('POST', '/sendMail', 'ContactController#sendMail', 'sendMail' );
 
-$match = $router->match();
 
-//  var_dump($match);
+
+$match = $router->match();
+// var_dump($_SESSION);
+
 
 if (is_array($match)) {
     list($controller, $action) = explode('#', $match['target']);
