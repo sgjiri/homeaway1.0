@@ -214,25 +214,29 @@
 .content #popop .contentFixCardInfoPerso div div {
   margin-right: 5px;
 }
-.content #popop .contentFixCardInfoPerso div div .valider {
+.content #popop .contentFixCardInfoPerso div div form {
+  display: flex;
+}
+.content #popop .contentFixCardInfoPerso div div form .valider {
   background: url(../img/valider.png) center center no-repeat;
   border-radius: 50%;
   height: 40px;
   width: 40px;
   transition: all 0.1s ease-in;
 }
-.content #popop .contentFixCardInfoPerso div div .valider:hover {
+.content #popop .contentFixCardInfoPerso div div form .valider:hover {
   cursor: pointer;
   background-color: #4fb849;
   transform: scale(1.1);
 }
-.content #popop .contentFixCardInfoPerso div div #cross {
+.content #popop .contentFixCardInfoPerso div div form #cross {
   background: url(../img/cross.png) center center no-repeat;
+  display: block;
 }
-.content #popop .contentFixCardInfoPerso div div #cross:hover {
+.content #popop .contentFixCardInfoPerso div div form #cross:hover {
   background-color: #ed1b24;
 }
-.content #popop .contentFixCardInfoPerso div div .popopCommand {
+.content #popop .contentFixCardInfoPerso div div form .popopCommand {
   margin: 0 10px;
   border: solid 3px #fff;
 }

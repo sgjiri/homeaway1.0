@@ -98,7 +98,6 @@ const addFlat = document.getElementsByClassName(idForm);
 const addImg = document.getElementsByClassName(idDiv);
 
 let clickCount = 1;
-console.log(addImg);
 
 
 
