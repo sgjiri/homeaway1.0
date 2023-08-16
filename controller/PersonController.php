@@ -36,9 +36,9 @@ class PersonController extends Controller
             if ($person) {
                 if (password_verify($password, $person->getPassword())) {
                      $_SESSION['connect'] = true;
-                    $_SESSION['id_person'] = $person->getIdPerson();
-                    
-                   
+                    $_SESSION['id_person'] = $person->getId_person();
+                    var_dump($_SESSION['id_person'] );
+                   die();
                     $_SESSION['mail'] = $person->getMail();
                  
                     global $router;

@@ -129,9 +129,9 @@ class SearchModel extends Model
 
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // var_dump($results);
-
+        $stmt2 = $this->getDb()->prepare("SELECT * FROM `image` WHERE `id_logement` = :logementId");
         foreach ($results as $logement) {
-            $stmt2 = $this->getDb()->prepare("SELECT * FROM `image` WHERE `id_logement` = :logementId");
+
             $stmt2->bindParam(':logementId', $logement['id_logement'], PDO::PARAM_STR);
             $stmt2->execute();
             $images = $stmt2->fetchAll(PDO::FETCH_ASSOC);
@@ -173,9 +173,9 @@ class SearchModel extends Model
         $reqByType->execute();
 
         $results = $reqByType->fetchAll(PDO::FETCH_ASSOC);
-
+        $reqByTypes = $this->getDb()->prepare("SELECT * FROM `image` WHERE `id_logement` = :logementId");
         foreach ($results as $logement) {
-            $reqByTypes = $this->getDb()->prepare("SELECT * FROM `image` WHERE `id_logement` = :logementId");
+
             $reqByTypes->bindParam(':logementId', $logement['id_logement'], PDO::PARAM_INT);
             $reqByTypes->execute();
             $images = $reqByTypes->fetchAll(PDO::FETCH_ASSOC);

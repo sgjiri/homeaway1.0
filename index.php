@@ -31,7 +31,7 @@ $router->map('POST','/filter/','SearchController#applyFilter','searchWithFilters
 
 $router->map('GET|POST', '/one[i:id_logement]?', 'LogementController#getOneLogement', 'one');
 
-$router->map('GET','/beach/[a:city]?', 'SearchController#searchByCity','beach');
+$router->map('GET','/beach/[:city]?', 'SearchController#searchByCity','beach');
 $router->map('GET','/type/[a:type]?', 'SearchController#searchByType','type');
 
 
@@ -68,8 +68,8 @@ $router->map('POST', '/sendMail', 'ContactController#sendMail', 'sendMail' );
 
 
 $match = $router->match();
-
- var_dump($match);
+// var_dump($_SESSION);
+//  var_dump($match);
 
 if (is_array($match)) {
     list($controller, $action) = explode('#', $match['target']);
