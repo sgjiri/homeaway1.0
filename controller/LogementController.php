@@ -234,14 +234,12 @@ class LogementController extends Controller
         $twig = $this->getTwig();
         echo $twig->render('legalNotices.html.twig', []);
     }
+
+    // -*-*-*-*METHOD PAGE ONE LOGEMENT CONTACT HOTE  -*-*-*-*//
+    public function contactMe()
+    {
+        $twig = $this->getTwig();
+        echo $twig->render('contactHote.html.twig', []);
+    }
+
 }
-// public function getAllLogement()
-    // {
-    //     global $router;
-    //     $model = new LogementModel();
-    //     $ville = $model->getAll();
-
-    //     $twig = $this->getTwig();
-
-    //     echo $twig->render('logementCity.html.twig', ['logements' => $ville]);
-    // }

@@ -1,10 +1,12 @@
 <?php
-class DashboardReservationModel extends Model{
+class DashboardReservationModel extends Model
+{
 
 
-    public function getReservation($idUser){
-        
-        $req=$this->getDb()->prepare("SELECT `title`, `book`.`start_date`, `book`.`end_date`, `image`.`thumbnail` FROM `logement`
+    public function getReservation($idUser)
+    {
+
+        $req = $this->getDb()->prepare("SELECT `title`, `book`.`start_date`, `book`.`end_date`, `image`.`thumbnail` FROM `logement`
         INNER JOIN `image`
         ON `logement`.`id_logement` =`image`.`id_logement`
         INNER JOIN `book`
@@ -18,14 +20,11 @@ class DashboardReservationModel extends Model{
         $req->execute();
         $reqResevation = $req->fetchAll(PDO::FETCH_ASSOC);
         return $reqResevation;
-
     }
 
-
-
-
-    public function getReservationChezMoi($idUser){
-        $req=$this->getDb()->prepare("SELECT `title`, 
+    public function getReservationChezMoi($idUser)
+    {
+        $req = $this->getDb()->prepare("SELECT `title`, 
         GROUP_CONCAT(DISTINCT `person`.`mail`) AS `contact`, 
         GROUP_CONCAT(DISTINCT `book`.`start_date`) AS `start_date`,
         GROUP_CONCAT(DISTINCT `book`.`end_date`) AS `end_date`,
@@ -39,10 +38,7 @@ class DashboardReservationModel extends Model{
         ORDER BY `book`.`end_date`");
         $req->bindParam(':idUser', $idUser, PDO::PARAM_STR);
         $req->execute();
-        $ReservationChezMoi= $req->fetchAll(PDO::FETCH_ASSOC);
+        $ReservationChezMoi = $req->fetchAll(PDO::FETCH_ASSOC);
         return $ReservationChezMoi;
-
-
-
     }
 }

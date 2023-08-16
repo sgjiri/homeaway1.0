@@ -143,11 +143,15 @@
 				{% for i in 0..(logements|length - 1) %}
 
 					{% set tableauImage = logements[i].thumbnails[0] %}
+
 					<a href="{{ path('beach', { 'logementId': logements[i].id_logement }) }}">
+					 {# <a href="{{ path('one', { 'id_logement': logements[i].id_logement }) }}"> #}
+
 						<article class="item js-marker" data-lat="{{ logements[i].latitude }}" data-lng="{{ logements[i].longitude }}" data-price="{{ logements[i].price_by_night }}">
+						
 							<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'Appartement ' ~ logements[i].city }}">
 							<h4>{{ logements[i].title }}
-								&nbsp;-&nbsp;{{ logements[i].city }}</h4>
+								&nbsp;-&nbsp;{{ logements[i].city}}</h4>
 							<p>{{ logements[i].resume }}</p>
 							<p>
 								<span>{{ logements[i].price_by_night }}€</span>
