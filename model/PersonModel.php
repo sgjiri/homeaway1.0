@@ -12,6 +12,8 @@ class PersonModel extends Model
 
     return $req->fetch(PDO::FETCH_ASSOC);
 }
+
+
     public function getUserByMail(String $mail)
     {
         $req = $this->getDb()->prepare("SELECT `mail`, `password`, `id_person` FROM `person` WHERE `mail` =:mail LIMIT 0, 25");

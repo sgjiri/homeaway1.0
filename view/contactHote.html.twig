@@ -1,0 +1,39 @@
+{% extends "template.html.twig" %}
+
+{% block title %}
+	CONTACT
+{% endblock %}
+
+{% block content %}
+
+	<div class="contactForm">
+		<div class="formContact">
+			<form action="{{ path('sendMail') }}" method="POST">
+				<h3>Contact</h3>
+
+				<p>Nous sommes ravis que vous ayez choisi notre logement pour votre séjour. Pour toute question, demande spéciale ou information supplémentaire, n'hésitez pas à nous contacter en utilisant le formulaire ci-dessous.</p>
+
+				<label class="form-group">
+					<input type="text" name="name" class="form-control" required>
+					<span>Votre nom</span>
+					<span class="border"></span>
+				</label>
+
+				<label class="form-group">
+					<input type="text" name="mail" class="form-control" required>
+					<span >Votre mail</span>
+					<span class="border"></span>
+				</label>
+
+				<label class="form-group">
+					<textarea name="message"  class="form-control" required></textarea>
+					<span >Votre Message</span>
+					<span class="border"></span>
+				</label>
+
+				<input id="send" type="submit" name="submit" value="Envoyer">
+			</form>
+		</div>
+	</div>
+
+{% endblock %}

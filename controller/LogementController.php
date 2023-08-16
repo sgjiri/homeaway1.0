@@ -235,6 +235,7 @@ class LogementController extends Controller
         echo $twig->render('legalNotices.html.twig', []);
     }
 
+
     public function sendMail()
     {
         if (!$_POST) {
@@ -270,4 +271,11 @@ var_dump($_POST);
             }
         }
     }
+    // -*-*-*-*METHOD PAGE ONE LOGEMENT CONTACT HOTE  -*-*-*-*//
+    public function contactMe()
+    {
+        $twig = $this->getTwig();
+        echo $twig->render('contactHote.html.twig', []);
+    }
+
 }

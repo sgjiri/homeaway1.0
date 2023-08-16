@@ -102,6 +102,32 @@ for (let i = 0; i < classLabelSelectImage.length; i++) {
 }
 
 
+let suprimer = document.getElementsByClassName('suprimer');
+console.log(suprimer)
+let popop = document.getElementById('popop');
+
+for (let i = 0; i < suprimer.length; i++) {
+    suprimer[i].addEventListener('click', function() {
+        popop.classList.add('popopActive');
+    });
+}
+
+let addImage = document.getElementsByClassName('spanPlus2');
+
+for (let i = 0; i < addImage.length; i++) {
+    addImage[i].addEventListener('click', function(e) {
+        e.preventDefault()
+    });
+}
+
+let cross = document.getElementById('cross');
+
+cross.addEventListener('click', function(){
+
+    popop.classList.remove('popopActive');
+})
+
+
 
 
 

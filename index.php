@@ -55,10 +55,21 @@ $router->map('POST|GET','/formContact','LogementController#sendMail','formContac
 // **------ROUTE FOOTER------**//
 $router->map('GET', '/legalNotices', 'HomePageController#legalNotices', 'legalNotices' );
 
-var_dump($_SESSION);
+
+// -*-*-*ROUTE FAQ*-*-*-
+$router->map('GET', '/faq', 'HomePageController#faq', 'faq' );
+
+// *-*-*-*ROUTE CONTACTER L HOTE*-*-*-*
+$router->map('GET|POST', '/contact', 'LogementController#contactMe', 'contact' );
+
+
+// *-*-*-*ROUTE ENVOI MAIL CONTACTER L HOTE*-*-*-*
+$router->map('POST', '/sendMail', 'ContactController#sendMail', 'sendMail' );
+
+
 $match = $router->match();
 
-//  var_dump($match);
+ var_dump($match);
 
 if (is_array($match)) {
     list($controller, $action) = explode('#', $match['target']);

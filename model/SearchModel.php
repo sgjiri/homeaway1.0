@@ -10,7 +10,7 @@ class SearchModel extends Model
         $stmt = $this->getDb()->prepare("
             SELECT DISTINCT *
             FROM `logement`
-            LEFT JOIN `book` ON `logement`.id_logement = `book`.logement_id
+            LEFT JOIN `book` ON `logement`.id_logement = `book`.id_logement
             WHERE `logement`.city = :city
             AND `logement`.number_of_person >= :number_of_person
             AND (
@@ -55,7 +55,7 @@ class SearchModel extends Model
         $reqFilter = "
         SELECT DISTINCT *
         FROM logement
-        LEFT JOIN `book` ON `logement`.id_logement = `book`.logement_id
+        LEFT JOIN `book` ON `logement`.id_logement = `book`.id_logement
         WHERE `logement`.city = ?
         AND `logement`.number_of_person >= ?
         AND (
@@ -105,14 +105,14 @@ class SearchModel extends Model
         $stmt = $this->getDb()->prepare(
             "SELECT DISTINCT  `logement`.`id_logement`, `title`, `city`,`resume`,`latitude`,`longitude`,`price_by_night` 
             FROM `logement` 
-            LEFT JOIN `book` ON `logement`.id_logement = `book`.logement_id
+            LEFT JOIN `book` ON `logement`.id_logement = `book`.id_logement
             WHERE `city` = :city 
             AND `number_of_person` >= :number_of_person 
             AND 
             NOT EXISTS (
             SELECT 1 
             FROM `book`
-            WHERE `book`.`logement_id` = `logement`.`id_logement`
+            WHERE `book`.`id_logement` = `logement`.`id_logement`
             AND `book`.`start_date` >= :start_date
             AND `book`.`end_date` <= DATE_ADD(:start_date, INTERVAL 4 DAY)
             )
@@ -120,8 +120,6 @@ class SearchModel extends Model
             "
         );
 
-        // -- -- Réservation sur 5 jours
-        // -- (`book`.`start_date` = CURDATE() AND `book`.`end_date` = DATE_ADD(CURDATE(), INTERVAL 4 DAY))
 
         $stmt->bindParam(':city', $city, PDO::PARAM_STR);
         $stmt->bindParam(':number_of_person', $number_of_person, PDO::PARAM_INT);
@@ -153,7 +151,7 @@ class SearchModel extends Model
         $reqByType = $this->getDb()->prepare(
             "SELECT DISTINCT  `logement`.`id_logement`, `title`, `city`, `resume`, `latitude`, `longitude`, `price_by_night` 
         FROM `logement` 
-        LEFT JOIN `book` ON `logement`.id_logement = `book`.logement_id
+        LEFT JOIN `book` ON `logement`.id_logement = `book`.id_logement
        
         WHERE (
              `logement`.type = :type)
@@ -162,7 +160,7 @@ class SearchModel extends Model
         NOT EXISTS (
             SELECT 1 
             FROM `book`
-            WHERE `book`.`logement_id` = `logement`.`id_logement`
+            WHERE `book`.`id_logement` = `logement`.`id_logement`
             AND `book`.`start_date` >= :start_date
             AND `book`.`end_date` <= DATE_ADD(:start_date, INTERVAL 4 DAY)
         )

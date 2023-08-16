@@ -48,7 +48,7 @@
 			<div class="imgDestination">
 				{% for oneCityBeach in cityBeach %}
     <div>
-      <a href="{{ path('beach') ~ '/' ~ oneCityBeach.ville_nom }}">
+      <a href="{{ path('beach') ~ '/' ~ oneCityBeach.ville_nom|replace({' ': ''}) }}">
     <img src="{{ asset('/img/' ~ oneCityBeach.img) }}" alt="{{ oneCityBeach.ville_nom }}">
 </a>
 
@@ -68,7 +68,7 @@
 			<div class="imgDestination">
 				{% for oneCityMountain in cityMountain %}
 					<div>
-						<a href="{{ path('beach') ~ '/' ~oneCityMountain.ville_nom}}">
+						<a href="{{ path('beach') ~ '/' ~oneCityMountain.ville_nom|replace({' ': ''})}}">
 							<img src="{{ asset('/img/' ~ oneCityMountain.img) }}" alt="Chamonix">
 						</a>
 						<h4>{{oneCityMountain.ville_nom}}</h4>

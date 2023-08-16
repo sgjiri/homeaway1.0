@@ -1,4 +1,4 @@
-$turque: #017c8e;
+$turque: rgba(1, 124, 142, 1);
 $red: #ed1b24;
 $orange: #fbb019;
 $green: #4fb849;
@@ -251,6 +251,164 @@ sans-serif;
         }
     }
 
+    #popop {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(10, 10, 10, .5);
+        width: 100%;
+        z-index: 1000;
+        display: none;
+
+        &.popopActive {
+            display: block;
+        }
+
+        .contentFixCardInfoPerso {
+            position: fixed;
+            z-index: 2000;
+            top: 40%;
+            right: 20%;
+            left: 20%;
+            background-color: rgba(1, 124, 142, 1);
+            display: block;
+
+            opacity: 1; // Annule l'opacité héritée
+
+            div {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                align-items: center;
+                height: 100%;
+                
+    
+                div{
+                    
+                    margin-right: 5px;
+                    .valider {
+                        background: url(../img/valider.png) center center no-repeat;
+                        border-radius: 50%;
+                        height: 40px;
+                        width: 40px;
+                        transition: all 0.1s ease-in;
+    
+                        &:hover {
+                            cursor: pointer;
+                            background-color: $green;
+                            transform: scale(1.1);
+                        }
+                    }
+                    #cross{
+                        background: url(../img/cross.png) center center no-repeat; 
+                        &:hover {
+                         
+                            background-color: $red;
+                            
+                        }
+                    }
+                    .popopCommand{
+                        margin: 0 10px;
+                        border: solid 3px #fff
+                    }
+
+
+                }
+                
+            }
+        }
+    }
+
+    .contentFixCard {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 100;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding-left: 20px;
+
+            h3 {
+                color: #fff;
+                font-family: $roboto;
+
+                font-size: 1.5em;
+
+                @media screen and (max-width: 500px) {
+                    font-size: 1.2em;
+                }
+            }
+
+            p {
+                color: #fff;
+                font-size: 1.2em;
+
+                @media screen and (max-width: 500px) {
+                    font-size: 1em;
+                }
+            }
+
+
+        }
+
+        .figureModifier {
+
+            height: 130px;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+
+            @media screen and (max-width: 600px) {
+                align-items: flex-start;
+            }
+
+            .imgModifier {
+                height: 40%;
+
+
+                @media screen and (max-width: 600px) {
+                    height: 35%;
+                    margin-top: 15px;
+                }
+
+
+
+            }
+
+
+        }
+
+
+
+
+
+    }
+
+    .contentFixCardInfoPerso {
+        background-color: $turque;
+        height: 130px;
+
+        .suprimer {
+            background: url(../img/icon\ _trash_.png) center center no-repeat;
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            transition: all 0.1s ease-in;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $red;
+                transform: scale(1.1);
+            }
+        }
+    }
+
     .contentPage {
         width: 1300px;
         margin: 0 auto;
@@ -439,92 +597,7 @@ sans-serif;
 
 
 
-            .contentFixCard {
-                display: flex;
-                justify-content: space-between;
-                position: relative;
-                z-index: 100;
 
-                div {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    padding-left: 20px;
-
-                    h3 {
-                        color: #fff;
-                        font-family: $roboto;
-
-                        font-size: 1.5em;
-
-                        @media screen and (max-width: 500px) {
-                            font-size: 1.2em;
-                        }
-                    }
-
-                    p {
-                        color: #fff;
-                        font-size: 1.2em;
-
-                        @media screen and (max-width: 500px) {
-                            font-size: 1em;
-                        }
-                    }
-
-
-                }
-
-                .figureModifier {
-
-                    height: 130px;
-                    padding: 0 20px;
-                    display: flex;
-                    align-items: center;
-
-                    @media screen and (max-width: 600px) {
-                        align-items: flex-start;
-                    }
-
-                    .imgModifier {
-                        height: 40%;
-
-
-                        @media screen and (max-width: 600px) {
-                            height: 35%;
-                            margin-top: 15px;
-                        }
-
-
-
-                    }
-
-
-                }
-
-
-
-
-
-            }
-
-            .contentFixCardInfoPerso {
-                background-color: $turque;
-                height: 130px;
-
-                .suprimer{
-                    background: url(../img/icon\ _trash_.png) center center no-repeat;
-                    border-radius: 50%;
-                    height: 40px;
-                    width: 40px;
-                    transition: all 0.1s ease-in;
-
-                    &:hover {
-                        cursor: pointer;
-                        background-color: $red;
-                        transform: scale(1.1);
-                    }
-                }
-            }
 
 
 
@@ -575,7 +648,7 @@ sans-serif;
                     }
                 }
 
-                .suprimer{
+                .suprimer {
                     background: url(../img/icon\ _trash_.png) center center no-repeat;
                     border-radius: 50%;
                     height: 40px;
@@ -585,6 +658,20 @@ sans-serif;
                     &:hover {
                         cursor: pointer;
                         background-color: $red;
+                        transform: scale(1.1);
+                    }
+                }
+
+                .spanPlus2 {
+                    background: url(../img/iconPlus.png) center center no-repeat;
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;
+                    transition: all 0.1s ease-in;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: rgb(60, 60, 251);
                         transform: scale(1.1);
                     }
                 }
@@ -668,7 +755,7 @@ sans-serif;
                 }
 
                 @media screen and (max-width:600px) {
-                    height: 3750px;
+                    height: 4000px;
                 }
 
 
@@ -679,21 +766,18 @@ sans-serif;
                     z-index: 10;
 
                     @media screen and (max-width:1200px) {
-                        height: 3480px;
+                        height: 3800px;
                     }
 
-                    @media screen and (max-width:800px) {
-                        height: 2780px;
-                        transform: translateY(50px);
-                    }
+
 
                     @media screen and (max-width:700px) {
-                        height: 3180px;
+                        height: 3800px;
                         transform: translateY(200px);
                     }
 
                     @media screen and (max-width:600px) {
-                        height: 3750px;
+                        height: 4000px;
                         transform: translateY(270px);
                     }
 
@@ -770,6 +854,10 @@ sans-serif;
 
                                         @media screen and (max-width: 800px) {
                                             font-size: 1.3em;
+                                        }
+
+                                        @media screen and (max-width: 700px) {
+                                            line-height: 30px;
                                         }
 
                                         @media screen and (max-width: 600px) {
@@ -862,50 +950,23 @@ sans-serif;
 
                 .contentInputLeft {
                     @media screen and (max-width:1200px) {
-                        height: 60%;
+                        height: 50%;
                     }
 
-                    ;
 
-                    @media screen and (max-width:800px) {
-                        height: 64%;
-                    }
 
-                    ;
 
-                    @media screen and (max-width:700px) {
-                        height: 60%;
-                    }
 
-                    ;
                 }
 
                 .contentInputRight {
                     padding-bottom: 40px;
 
                     @media screen and (max-width:1200px) {
-                        height: 40%;
+                        height: 48%;
                     }
 
-                    ;
 
-                    @media screen and (max-width:800px) {
-                        height: 36%;
-                    }
-
-                    ;
-
-                    @media screen and (max-width:700px) {
-                        height: 30%;
-                    }
-
-                    ;
-
-                    @media screen and (max-width:600px) {
-                        height: 25%;
-                    }
-
-                    ;
                 }
 
                 .contentInputRight {
@@ -950,9 +1011,30 @@ sans-serif;
                                 form {
                                     align-items: center;
 
-                                    .spanPlus2{
-                                        cursor: pointer;
+                                    .inputUpdateImg {
+                                        display: flex;
+                                        flex-direction: column;
+
+                                        @media screen and (max-width:700px) {
+                                            flex-direction: row;
+                                        }
+
+                                        .submitUpdateImg {
+                                            margin: 10px auto;
+
+                                            @media screen and (max-width:700px) {
+                                                margin: 10px;
+                                            }
+                                        }
+
+                                        .spanPlus2 {
+                                            cursor: pointer;
+                                        }
+
+
                                     }
+
+
 
 
                                     .bigModifierInfo {
@@ -985,9 +1067,19 @@ sans-serif;
 
                                             width: 30%;
                                             height: 20%;
-                                            
+
                                             margin: 5px;
                                             position: relative;
+
+                                            @media screen and (max-width:1200px) {
+                                                width: 30%;
+                                                height: 40%;
+                                            }
+
+                                            @media screen and (max-width:800px) {
+                                                width: 45%;
+                                                height: 40%;
+                                            }
 
                                             label {
                                                 width: 100%;
@@ -1007,8 +1099,8 @@ sans-serif;
                                                 }
 
                                             }
-                                            
-                                            input{
+
+                                            input {
                                                 position: absolute;
                                                 top: 3px;
                                                 right: 3px;
@@ -1109,7 +1201,7 @@ sans-serif;
 
             @media screen and (max-width: 700px) {
                 flex-direction: column;
-                height: 490px;
+                height: 400px;
                 margin-top: 30px;
             }
 
@@ -1121,6 +1213,18 @@ sans-serif;
 
                 &.activeInput {
                     transform: translateY(160px);
+
+                    @media screen and (max-width: 1200px) {
+                        transform: translateY(20px);
+                    }
+
+                    @media screen and (max-width: 950px) {
+                        transform: translateY(0px);
+                    }
+
+                    @media screen and (max-width: 700px) {
+                        transform: translateY(60px);
+                    }
                 }
             }
 
@@ -1139,7 +1243,7 @@ sans-serif;
 
                 @media screen and (max-width:700px) {
                     width: 100%;
-                    height: 40%;
+                    height: 45%;
                 }
 
                 figure {
@@ -1215,11 +1319,11 @@ sans-serif;
                         }
 
                         @media screen and (max-width: 950px) {
-                            font-size: 1.4em;
+                            font-size: 1.2em;
                         }
 
                         @media screen and (max-width: 800px) {
-                            font-size: 1.3em;
+                            font-size: 1.2em;
                         }
 
                         @media screen and (max-width: 700px) {
@@ -1329,7 +1433,11 @@ sans-serif;
                 }
 
                 .oneRightContentGestion {
-                    height: 23%;
+                    height: 22%;
+
+
+
+
 
                     @media screen and (max-width: 700px) {
                         justify-content: flex-start;
@@ -1376,6 +1484,11 @@ sans-serif;
                     }
                 }
 
+                .oneRightContentGestionH {
+                    width: 80%;
+                    margin: 10px 0;
+                }
+
             }
         }
 
@@ -1385,23 +1498,23 @@ sans-serif;
                 height: 2600px;
 
                 @media screen and (max-width: 1200px) {
-                    height: 3800px;
+                    height: 4100px;
                 }
 
                 @media screen and (max-width: 950px) {
-                    height: 3700px;
+                    height: 4050px;
                 }
 
                 @media screen and (max-width: 800px) {
-                    height: 2900px;
+                    height: 3970px;
                 }
 
                 @media screen and (max-width: 700px) {
-                    height: 3300px;
+                    height: 4100px;
                 }
 
                 @media screen and (max-width: 600px) {
-                    height: 3700px;
+                    height: 4300px;
                 }
             }
 
@@ -1422,7 +1535,7 @@ sans-serif;
                 }
 
                 @media screen and (max-width: 700px) {
-                    height: 490px;
+                    height: 400px;
                     flex-direction: column;
                 }
 
@@ -1452,7 +1565,7 @@ sans-serif;
                         width: 100%;
                     }
 
-                    .suprimer{
+                    .suprimer {
                         background: url(../img/icon\ _trash_.png) center center no-repeat;
                         border-radius: 50%;
                         height: 40px;
@@ -1461,14 +1574,24 @@ sans-serif;
                         position: absolute;
                         right: 20px;
                         top: 20px;
-    
+
                         &:hover {
                             cursor: pointer;
                             background-color: $red;
                             transform: scale(1.1);
                         }
+
+                        @media screen and (max-width: 800px) {
+                            height: 30px;
+                            width: 30px;
+                        }
+
+                        @media screen and (max-width: 800px) {
+                            height: 40px;
+                            width: 40px;
+                        }
                     }
-    
+
 
 
                     .figureModifier {
@@ -1743,3 +1866,4 @@ sans-serif;
     }
 
 
+}

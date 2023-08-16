@@ -130,15 +130,20 @@
 					</div>
 				{% endif %}
 			</div>
+
+			
 			<h4>Calendrier</h4>
 			<div id="calendar"></div>
 			<div id="locationOne">
 				<h4>Location</h4>
 				<div id="map" class="item js-marker map" data-lat="{{onelogement.latitude}}" data-lng="{{onelogement.longitude}}" data-price="58"></div>
 			</div>
-			<a href="" class="button">Contacter l'hôte</a>
+
+			<a href="{{path('contact')}}" class="button">Contacter l'hôte</a>
 
 		</div>
+
+
 		<form action="{{path('reservation')}}" method="POST" id="secondPartOne">
 
 			<h4>
@@ -154,7 +159,7 @@
 				<strong id="totalPrices"></strong>
 				€ au total</p>
 
-			
+
 			<input type="hidden" name="id_person" id="id_person" value="{{session.id_person}}">
 
 			<input type="hidden" name="id_logement" id="id_logement" value="">
@@ -165,25 +170,27 @@
 
 	</section>
 	<script>
-	function showConfirmation() {
-    const start_date = document.getElementById("start_date").value;
-    const end_date = document.getElementById("end_date").value;
-    const id_person = document.getElementById("id_person").value;
-    const id_logement = document.getElementById("id_logement").value;
 
-    
-    document.getElementById("start_date").value = start_date;
-    document.getElementById("end_date").value = end_date;
-    document.getElementById("id_person").value = id_person;
-    document.getElementById("id_logement").value = id_logement;
+		function showConfirmation() {
+const start_date = document.getElementById("start_date").value;
+const end_date = document.getElementById("end_date").value;
+const id_person = document.getElementById("id_person").value;
+const id_logement = document.getElementById("id_logement").value;
 
-    const confirmation = confirm("Êtes-vous sûr de vouloir effectuer cette réservation ?");
-    if (confirmation) {
-        const message = "Votre réservation a bien été prise en compte.";
-        alert(message);
-        // Vous pouvez également rediriger l'utilisateur vers une autre page ici si nécessaire
-        document.getElementById("secondPartOne").submit();
-    }
+
+document.getElementById("start_date").value = start_date;
+document.getElementById("end_date").value = end_date;
+document.getElementById("id_person").value = id_person;
+document.getElementById("id_logement").value = id_logement;
+
+const confirmation = confirm("Êtes-vous sûr de vouloir effectuer cette réservation ?");
+if (confirmation) {
+const message = "Votre réservation a bien été prise en compte.";
+alert(message);
+// Vous pouvez également rediriger l'utilisateur vers une autre page ici si nécessaire
+document.getElementById("secondPartOne").submit();
+}
+
 }
 	</script>
 	<script>

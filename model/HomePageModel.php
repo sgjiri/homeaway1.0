@@ -24,5 +24,4 @@ class HomePageModel extends Model{
         return $cityMountain;
     }
 
-    // -*-*-*-*METHOD LIOGEMENT INSOLITE-*-*-*-*//
 }
