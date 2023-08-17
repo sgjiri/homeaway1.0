@@ -216,7 +216,7 @@ class LogementController extends Controller
         $selectedFilters = $_POST["filters"] ?? [];
         $submit = $_POST["submit"];
 
-        var_dump($_POST);
+        // var_dump($_POST);
 
         $logementModel = new LogementModel();
         $filterLogement = $logementModel->logementFilters($selectedFilters);
@@ -251,7 +251,7 @@ class LogementController extends Controller
                 $phone = $_POST['phone'];
                 $email = $_POST['email'];
                 $message = $_POST['message'];
-var_dump($_POST);
+// var_dump($_POST);
 
                 $entete  = 'MIME-Version: 1.0' . "\r\n";
                 $entete .= 'Content-type: text/html; charset=utf-8' . "\r\n";

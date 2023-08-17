@@ -99,6 +99,7 @@
 			<input id="tab-2" type="radio" name="tab" class="sign-up">
 			<label for="tab-2" class="tab">Inscription</label>
 			<div class="login-form">
+
 				<form action='{{path('login')}}' method='POST' class="sign-in-form">
 					<div class="group">
 						<label for="mail" class="label">Mail</label>
@@ -114,6 +115,8 @@
 					</div>
 
 				</form>
+
+				
 				<form method='POST' action='{{path('register')}}' class="sign-up-form">
 					<div class="group">
 						<label for="name" class="label">Nom</label>
@@ -137,7 +140,7 @@
 						<input id="password" name="password" type="password" class="input">
 					</div>
 					<div class="group">
-						<label for="password" class="label">Confirmé mot de passe</label>
+						<label for="password" class="label">Confirmer mot de passe</label>
 						<input id="password" name="password" type="password" class="input" data-type="password">
 					</div>
 					<div class="group">

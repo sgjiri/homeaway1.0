@@ -155,6 +155,7 @@ for (let i = 0; i < classInputSuprimerLogement.length; i++) {
 
 
 
+
 //Je selectione le span bin
 let classInputSuprimerImg = document.getElementsByClassName('suprimerImg');
 console.log(classInputSuprimerImg);
@@ -188,6 +189,10 @@ for (let i = 0; i < classInputSuprimerImg.length; i++) {
     
 }
 
+
+//     }
+// }
+//     }
 
 
 

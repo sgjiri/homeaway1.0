@@ -6,16 +6,16 @@ class SearchModel extends Model
     public function getSearch($city, $start_date, $end_date, $number_of_person)
     {
         $logements = [];
-
+    
         $stmt = $this->getDb()->prepare("
-            SELECT DISTINCT *
+            SELECT DISTINCT logement.*
             FROM `logement`
             LEFT JOIN `book` ON `logement`.id_logement = `book`.id_logement
             WHERE `logement`.city = :city
             AND `logement`.number_of_person >= :number_of_person
             AND (
                 (`book`.`start_date` IS NULL AND `book`.`end_date` IS NULL)
-                OR (`book`.`start_date` >:end_date OR `book`.`end_date` < :start_date)
+                OR (`book`.`start_date` > :end_date OR `book`.`end_date` < :start_date)
                 OR (`book`.`start_date` > :start_date AND `book`.`end_date` < :end_date)
                 OR (:start_date > `book`.`start_date` AND :end_date < `book`.`end_date`)
                 OR (
@@ -24,27 +24,27 @@ class SearchModel extends Model
                 )
             )
         ");
-
+    
         $stmt->bindParam(':city', $city, PDO::PARAM_STR);
         $stmt->bindParam(':number_of_person', $number_of_person, PDO::PARAM_INT);
         $stmt->bindParam(':start_date', $start_date, PDO::PARAM_STR);
         $stmt->bindParam(':end_date', $end_date, PDO::PARAM_STR);
-
+    
         $stmt->execute();
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    
         $length = count($results);
-
+    
         foreach ($results as $logement) {
             $stmt2 = $this->getDb()->prepare("SELECT * FROM `image` WHERE `id_logement` = :logementId");
             $stmt2->bindParam(':logementId', $logement['id_logement'], PDO::PARAM_STR);
             $stmt2->execute();
             $images = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-
+    
             $logement['thumbnails'] = $images;
             $logements[] = $logement;
         }
-
+    
         return $logements;
     }
 
@@ -55,7 +55,7 @@ class SearchModel extends Model
         $reqFilter = "
         SELECT DISTINCT *
         FROM logement
-        LEFT JOIN `book` ON `logement`.id_logement = `book`.id_logement
+        INNER JOIN `book` ON `logement`.id_logement = `book`.id_logement
         WHERE `logement`.city = ?
         AND `logement`.number_of_person >= ?
         AND (
@@ -82,7 +82,7 @@ class SearchModel extends Model
 
         $stmt->execute($param);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($stmt);
+        
 
 
         foreach ($results as $logement) {
@@ -107,24 +107,24 @@ class SearchModel extends Model
             FROM `logement` 
             LEFT JOIN `book` ON `logement`.id_logement = `book`.id_logement
             WHERE `city` = :city 
-            AND `number_of_person` >= :number_of_person 
-            AND 
-            NOT EXISTS (
-            SELECT 1 
-            FROM `book`
-            WHERE `book`.`id_logement` = `logement`.`id_logement`
-            AND `book`.`start_date` >= :start_date
-            AND `book`.`end_date` <= DATE_ADD(:start_date, INTERVAL 4 DAY)
-            )
+            AND `number_of_person` >= 2
+            -- AND 
+            -- NOT EXISTS (
+            -- SELECT 1 
+            -- FROM `book`
+            -- WHERE `book`.`id_logement` = `logement`.`id_logement`
+            -- AND `book`.`start_date` >= :start_date
+            -- AND `book`.`end_date` <= DATE_ADD(:start_date, INTERVAL 4 DAY)
+            -- )
             
             "
         );
 
 
         $stmt->bindParam(':city', $city, PDO::PARAM_STR);
-        $stmt->bindParam(':number_of_person', $number_of_person, PDO::PARAM_INT);
-        $stmt->bindParam('start_date', $start_date, PDO::PARAM_STR);
-        $stmt->bindParam('end_date', $end_date, PDO::PARAM_STR);
+        // $stmt->bindParam(':number_of_person', $number_of_person, PDO::PARAM_INT);
+        // $stmt->bindParam('start_date', $start_date, PDO::PARAM_STR);
+        // $stmt->bindParam('end_date', $end_date, PDO::PARAM_STR);
         $stmt->execute();
 
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -155,21 +155,21 @@ class SearchModel extends Model
        
         WHERE (
              `logement`.type = :type)
-        AND `number_of_person` >= :number_of_person 
-        AND 
-        NOT EXISTS (
-            SELECT 1 
-            FROM `book`
-            WHERE `book`.`id_logement` = `logement`.`id_logement`
-            AND `book`.`start_date` >= :start_date
-            AND `book`.`end_date` <= DATE_ADD(:start_date, INTERVAL 4 DAY)
-        )
+        AND `number_of_person` >= 2
+        -- AND 
+        -- NOT EXISTS (
+        --     SELECT 1 
+        --     FROM `book`
+        --     WHERE `book`.`id_logement` = `logement`.`id_logement`
+        --     AND `book`.`start_date` >= :start_date
+        --     AND `book`.`end_date` <= DATE_ADD(:start_date, INTERVAL 4 DAY)
+        -- )
     "
         );
 
-        $reqByType->bindParam(':number_of_person', $number_of_person, PDO::PARAM_INT);
+        // $reqByType->bindParam(':number_of_person', $number_of_person, PDO::PARAM_INT);
         $reqByType->bindParam(':type', $type, PDO::PARAM_STR);
-        $reqByType->bindParam(':start_date', $start_date, PDO::PARAM_STR);
+        // $reqByType->bindParam(':start_date', $start_date, PDO::PARAM_STR);
         $reqByType->execute();
 
         $results = $reqByType->fetchAll(PDO::FETCH_ASSOC);

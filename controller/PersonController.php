@@ -11,12 +11,11 @@ class PersonController extends Controller
             global $router;
             header('Location: ' . $router->generate('home'));
             exit();
-           
         }
         //  vérifie si le tableau $_POST est vide, si oui affiche la page login
 
         if (!$_POST) {
-             $twig = $this->getTwig();
+            $twig = $this->getTwig();
             echo $twig->render('homePage.html.twig', []);
         } else {
 
@@ -35,22 +34,20 @@ class PersonController extends Controller
 
             if ($person) {
                 if (password_verify($password, $person->getPassword())) {
-                     $_SESSION['connect'] = true;
+                    $_SESSION['connect'] = true;
                     $_SESSION['id_person'] = $person->getId_person();
 
                     $_SESSION['mail'] = $person->getMail();
-                 
+
                     global $router;
-                     header('Location: '. $router->generate('home'));
-                   exit();
-                             
-              
+                    header('Location: ' . $router->generate('home'));
+                    exit();
                 }
             } else {
                 // si password non ok affiche message erreur avec redirection 
                 $message = "mail ou mot de passe incorrect !";
-                 $twig = $this->getTwig();
-            echo $twig->render('homepage.html.twig', ['message' =>$message]);
+                $twig = $this->getTwig();
+                echo $twig->render('homepage.html.twig', ['message' => $message]);
             }
         }
     }
@@ -66,6 +63,10 @@ class PersonController extends Controller
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // récuperation des valeurs soumises au champ mail et pwd et utilisation de pwd default pour hacher mdp brut avt de le stocker ds variable $pwd et utilisation de filter mail pr effectuer la validation du format du mail si ok stockage ds variable $mail
 
+            // // Récupération de la date de naissance au format "YYYY-MM-DD"
+            // $date_of_birth = $_POST['date_of_birth'];
+            // $dobFormatted = date('Y-m-d', strtotime($date_of_birth));
+
             $rawPass = $_POST['password'];
             $password = password_hash($rawPass, PASSWORD_DEFAULT);
             $mail = filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL);
@@ -73,7 +74,7 @@ class PersonController extends Controller
             $phone_number = $_POST['phone_number'];
             $name = $_POST['name'];
             $firstname = $_POST['firstname'];
-
+            var_dump($_POST['date_of_birth']);
 
             // création instance model person avec val mail et pwd 
             $person = new Person([
@@ -95,11 +96,11 @@ class PersonController extends Controller
             header('Location: ./');
             exit();
 
-          
+
             // si formulaire non soumis cad si method $server...... non abouti cad false affichage du template header avec getrender 
         } else {
 
-             $twig = $this->getTwig();
+            $twig = $this->getTwig();
             echo $twig->render('homepage.html.twig', []);
         }
     }
