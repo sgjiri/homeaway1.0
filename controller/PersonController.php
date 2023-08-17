@@ -63,14 +63,14 @@ class PersonController extends Controller
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // récuperation des valeurs soumises au champ mail et pwd et utilisation de pwd default pour hacher mdp brut avt de le stocker ds variable $pwd et utilisation de filter mail pr effectuer la validation du format du mail si ok stockage ds variable $mail
 
-            // Récupération de la date de naissance au format "YYYY-MM-DD"
-            $date_of_birth = $_POST['date_of_birth'];
-            $dobFormatted = date('Y-m-d', strtotime($date_of_birth));
+            // // Récupération de la date de naissance au format "YYYY-MM-DD"
+            // $date_of_birth = $_POST['date_of_birth'];
+            // $dobFormatted = date('Y-m-d', strtotime($date_of_birth));
 
             $rawPass = $_POST['password'];
             $password = password_hash($rawPass, PASSWORD_DEFAULT);
             $mail = filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL);
-            // $date_of_birth = $_POST['date_of_birth'];
+            $date_of_birth = $_POST['date_of_birth'];
             $phone_number = $_POST['phone_number'];
             $name = $_POST['name'];
             $firstname = $_POST['firstname'];
@@ -82,7 +82,7 @@ class PersonController extends Controller
                 'password' => $password,
                 'name' => $name,
                 'firstname' => $firstname,
-                'date_of_birth' => $dobFormatted,
+                'date_of_birth' => $date_of_birth,
                 'phone_number' => $phone_number
 
 

@@ -49,7 +49,7 @@ class Person
         return $this->firstname;
     }
 
-    public function getDateOfBirth()
+    public function getDate_of_birth()
     {
         return $this->date_of_birth;
     }
@@ -59,7 +59,7 @@ class Person
         return $this->password;
     }
 
-    public function getPhoneNumber()
+    public function getPhone_number()
     {
         return $this->phone_number;
     }
@@ -89,7 +89,7 @@ class Person
         $this->firstname = $firstname;
     }
 
-    public function setDateOfBirth(string $date_of_birth)
+    public function setDate_of_birth(string $date_of_birth)
     {
         $this->date_of_birth = $date_of_birth;
     }
@@ -99,7 +99,7 @@ class Person
         $this->password = $password;
     }
 
-    public function setPhoneNumber(int $phone_number)
+    public function setPhone_number(int $phone_number)
     {
         $this->phone_number = $phone_number;
     }

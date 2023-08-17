@@ -272,7 +272,8 @@ header {
             transform: rotateY(180deg);
             backface-visibility: hidden;
             transition: all .4s linear;
-
+            overflow: auto;
+            height: 500px;
         }
 
         .sign-in {
@@ -1281,7 +1282,6 @@ footer {
 
         width: 230px;
         margin: 0 auto 50px auto;
-
         z-index: 1;
         display: none;
 
@@ -1360,7 +1360,7 @@ footer {
     }
 
     #resultresearch {
-        #formFilter {
+        #formFilter.formFilterActive  {
             max-width: 1200px;
             width: 80%;
             display: flex;
@@ -1376,7 +1376,7 @@ footer {
                 .convenience {
                     display: flex;
                     align-items: center;
-                    margin-right: 20px;
+                    margin-right: 50px;
 
                     img {
                         width: 40pxpx;

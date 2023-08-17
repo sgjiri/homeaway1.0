@@ -160,10 +160,16 @@ cross.addEventListener('click', function(){
 //         if(classInputSelectImage[i].checked===true){
 //             console.log(classInputSelectImage[i]);
 //         }
+<<<<<<< HEAD
 
 //     }
 // }
+=======
+>>>>>>> 800bf7ea52902c4cec1d0ca3dc3c0228ed38b8f0
 
+//     }
+// }
+//     }
 
 
 
