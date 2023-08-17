@@ -23,7 +23,7 @@
 						<div>
 							<form action="" method="post">
 								<input type="hidden" name="inputHiddenPopop" id="inputHiddenPopop" value="">
-								<input type="submit" class="valider change validerGestion submitUpdateImg popopCommand" id="popopvalider"value="">
+								<input type="submit" class="valider change validerGestion submitUpdateImg popopCommand" id="popopvalider" value="">
 								<span class="suprimer change validerGestion submitUpdateImg popopCommand" id='cross'></span>
 							</form>
 						</div>
@@ -215,7 +215,7 @@
 
 
 						<form action="" method="post" class="figureModifier 	figureModifierInfo">
-							<span class="suprimer change validerGestion" id="spanSuprimerUser" data-idUser="{{idUser}}"></span>
+							<span class="suprimer change validerGestion" id="spanSuprimerUser" data-iduser="{{idUser}}"></span>
 						</form>
 					</div>
 
@@ -223,29 +223,29 @@
 				</div>
 
 				{# <div class='card cardInfoPerso cardInfoPersoM card2ligneInfoPerso'>
-																																																															<div class='contentFixCard contentFixCardInfoPerso'>
-																																																																<div>
-																																																																	<h3>Date de naissance</h3>
-																																																																	<p>{{user.date_of_birth}}</p>
-																																																																</div>
-																																																																<figure class="figureModifier figureModifierInfo">
-																																																																	<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
-																																																																</figure>
-																																																															</div>
-																																																															<div class='input inputInfo input2ligne'>
-																																																																<form action="" method="post">
-																																																																	<label for="rue"></label>
-																																																																	<input type="text" name="rue" class='change' placeholder="Votre rue">
-																																																																	<label for="numeroBatiment"></label>
-																																																																	<input type="text" name='numeroBatiment' class='change' placeholder="N° de batiment">
-																																																																	<label for="codePostale"></label>
-																																																																	<input type="text" name='codePostale' class='change' placeholder="code postale">
-																																																																	<label for="ville"></label>
-																																																																	<input type="text" name='ville' class='change' placeholder="ville">
-																																																																	<input type="submit" name="valider" class="valider change" value="">
-																																																																</form>
-																																																															</div>
-																																																														</div> #}
+																																																																																<div class='contentFixCard contentFixCardInfoPerso'>
+																																																																																	<div>
+																																																																																		<h3>Date de naissance</h3>
+																																																																																		<p>{{user.date_of_birth}}</p>
+																																																																																	</div>
+																																																																																	<figure class="figureModifier figureModifierInfo">
+																																																																																		<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
+																																																																																	</figure>
+																																																																																</div>
+																																																																																<div class='input inputInfo input2ligne'>
+																																																																																	<form action="" method="post">
+																																																																																		<label for="rue"></label>
+																																																																																		<input type="text" name="rue" class='change' placeholder="Votre rue">
+																																																																																		<label for="numeroBatiment"></label>
+																																																																																		<input type="text" name='numeroBatiment' class='change' placeholder="N° de batiment">
+																																																																																		<label for="codePostale"></label>
+																																																																																		<input type="text" name='codePostale' class='change' placeholder="code postale">
+																																																																																		<label for="ville"></label>
+																																																																																		<input type="text" name='ville' class='change' placeholder="ville">
+																																																																																		<input type="submit" name="valider" class="valider change" value="">
+																																																																																	</form>
+																																																																																</div>
+																																																																															</div> #}
 
 			</div>
 			<div class='contentPage' id='contentHistoricReservation'>
@@ -302,8 +302,8 @@
 
 								<form action="" method="post">
 									<input type="hidden" name="idLogement" id="idLogement" value="{{logement[i].id_logement}}">
-									
-									<span class="suprimer change validerGestion suprimerLogement" data-idLogement="{{logement[i].id_logement}}" data-nameLogement="{{logement[i].title}}"></span>
+
+									<span class="suprimer change validerGestion suprimerLogement" data-idlogement="{{logement[i].id_logement}}" data-namelogement="{{logement[i].title}}"></span>
 								</form>
 
 								<div class="oneRightContent oneRightContentGestion oneRightContentGestionH">
@@ -1035,81 +1035,68 @@
 													a
 												{{end_dates[i][j]}}
 											</td>
+											<td data-label="Reservar par">
+							<p>
+								{{names[i][j]}}
+								{{firstnames[i][j]}}
+							</p>
+						</td>
+						<td data-label="reglement">
+							<p>
+								reglé
+							</p>
+						</td>
+						<td data-label="Nombre de persones">
+							<p>
+								4
+							</p>
+						</td>
+						<td data-label="Contact">
+							<p>
+								{{contacts[i][j]}}
+							</p>
+						</td>
 										</tr>
 									</p>
 								</tbody>
 							</td>
-							<td data-label="Reservar par">
-								<p>
-									{{names[i][j]}}
-									{{firstnames[i][j]}}
-								</p>
-							</td>
-							<td data-label="reglement">
-								<p>
-									reglé
-								</p>
-							</td>
-							<td data-label="Nombre de persones">
-								<p>
-									4
-								</p>
-							</td>
-							<td data-label="Contact">
-								<p>
-									{{contacts[i][j]}}
-								</p>
-							</td>
 						</tr>
-					{% endfor %}
-				</tbody>
+
+
+						
+					</tr>
+					</tbody>
 			</table>
-
-
-		</div>
-	{% endfor  %}
-</html></div><div class="contentPage contentPageReservation" id='contentMesReservation'>
-<h1>Mes Reservation</h1>
-<div class='divBarreDeRecherche'>
-	<form action="" method='GET'>
-		<input type="search" name='search' placeholder='Rechercher...' class='search'>
-		<input type="submit" name='rechercher' value class='rechercher' class='valider change'>
-	</form>
+			</div>
+				{% endfor %}
+			
+	</body>
+</html></div>{% endfor  %}</html></div><div class="contentPage contentPageReservation" id='contentMesReservation'><h1>Mes Reservation</h1><div class='divBarreDeRecherche'><form action="" method='GET'><input type="search" name='search' placeholder='Rechercher...' class='search'><input type="submit" name='rechercher' value class='rechercher' class='valider change'></form></div>{% for reqOneResevation in mesReservations %}<div class='card cardInfoPerso cardHG cardReservation'><div class='cardContentLeft'>
+<figure>
+	<img src="{{ asset('/img/logement/' ~ reqOneResevation.thumbnail) }}" alt="">
+</figure></div><div class='cardContentRight'>
+<div class='oneRightContent oneRightContentResqervation'>
+	<h2>
+		{{reqOneResevation.title}}</h2>
 </div>
-
-{% for reqOneResevation in mesReservations %}
-	<div class='card cardInfoPerso cardHG cardReservation'>
-		<div class='cardContentLeft'>
-			<figure>
-				<img src="{{ asset('/img/logement/' ~ reqOneResevation.thumbnail) }}" alt="">
-			</figure>
-		</div>
-		<div class='cardContentRight'>
-			<div class='oneRightContent oneRightContentResqervation'>
-				<h2>
-					{{reqOneResevation.title}}</h2>
-			</div>
-			<div class='oneRightContent oneRightContentResqervation'>
-				<figure class="iconRightContent">
-					<img id="iconReservationHistoric" src="{{ asset('/img/calendar.png') }}" alt="">
-				</figure>
-				<p class='dateRightContent infoRightContent'>du
-					{{reqOneResevation.start_date}}
-					au
-					{{reqOneResevation.end_date}}</p>
-			</div>
-			<div class='oneRightContent oneRightContentResqervation'>
-				<figure class="iconRightContent">
-					<img id="iconReservationHistoric" src="{{ asset('/img/argent.png') }}" alt="">
-				</figure>
-				<p class='dateRightContent infoRightContent'>reglé</p>
-			</div>
-			<div class='oneRightContent oneRightContentResqervation'>
-				<figure class="iconRightContent">
-					<img id="iconReservationHistoric" src="{{ asset('/img/people.png') }}" alt="">
-				</figure>
-				<p class='dateRightContent infoRightContent'>4 persones</p>
-			</div>
-		</div>
-	</div>
-{% endfor %}</div><div class="contentPage" id='con'></div></div></body>{% endblock %}{% block js %}<script src="{{ asset('/js/dashboard.js') }}"></script><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script><script src="./asset/js/input.js"></script>{% endblock %}</body></html></body></html>
+<div class='oneRightContent oneRightContentResqervation'>
+	<figure class="iconRightContent">
+		<img id="iconReservationHistoric" src="{{ asset('/img/calendar.png') }}" alt="">
+	</figure>
+	<p class='dateRightContent infoRightContent'>du
+		{{reqOneResevation.start_date}}
+		au
+		{{reqOneResevation.end_date}}</p>
+</div>
+<div class='oneRightContent oneRightContentResqervation'>
+	<figure class="iconRightContent">
+		<img id="iconReservationHistoric" src="{{ asset('/img/argent.png') }}" alt="">
+	</figure>
+	<p class='dateRightContent infoRightContent'>reglé</p>
+</div>
+<div class='oneRightContent oneRightContentResqervation'>
+	<figure class="iconRightContent">
+		<img id="iconReservationHistoric" src="{{ asset('/img/people.png') }}" alt="">
+	</figure>
+	<p class='dateRightContent infoRightContent'>4 persones</p>
+</div></div></div>{% endfor %}</div><div class="contentPage" id='con'></div></body></html></div></body>{% endblock %}{% block js %}<script src="{{ asset('/js/dashboard.js') }}"></script><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script><script src="./asset/js/input.js"></script>{% endblock %} </body></html></body></html>
