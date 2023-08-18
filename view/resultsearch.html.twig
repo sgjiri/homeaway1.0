@@ -115,7 +115,7 @@
 				<div class="convenience">
 					<input type="checkbox" id="piscine" name="filters[]" value="piscine">
 					<img src="{{asset('/img/swimmingpool.png')}}" alt="icon piscine">
-					<label for="piscine">piscine</label>
+					<label for="piscine">Piscine</label>
 				</div>
 
 				<div class="convenience">
@@ -127,7 +127,7 @@
 				<div class="convenience">
 					<input type="checkbox" id="parking" name="filters[]" value="parking">
 					<img src="{{asset('/img/iconParking.png')}}" alt="icon parking">
-					<label for="parking">parking</label>
+					<label for="parking">Parking</label>
 				</div>
 			</div>
 
@@ -154,9 +154,7 @@
 						<a href="{{ path('one') ~ logementDispo[i].id_logement}}">
 							<article class="item js-marker" data-lat="{{ logementDispo[i].latitude }}" data-lng="{{ logementDispo[i].longitude }}" data-price="{{ logementDispo[i].price_by_night }}">
 
-								<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'Appartement ' ~ logementDispo[i].city }}">
-
-
+								<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'logementDispo[i].type ' ~ logementDispo[i].city }}">
 
 
 								<h4>{{ logementDispo[i].title }}
