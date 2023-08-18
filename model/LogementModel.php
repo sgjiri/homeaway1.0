@@ -196,13 +196,13 @@ class LogementModel extends Model
         $req->execute();
 
     }
-    public function like($id_person, $id_logement)
+    public function like($id_person)
     {
-        $reqlike = $this->getDb()->prepare("SELECT `id_logement`, `id_person` FROM `like` WHERE id_logement=:id_logement AND id_person=:id_person");
+        $reqlike = $this->getDb()->prepare("SELECT `id_logement` FROM `like` WHERE id_person=:id_person");
         $reqlike->bindParam(':id_person', $id_person, PDO::PARAM_INT);
-        $reqlike->bindParam(':id_logement', $id_logement, PDO::PARAM_INT);
+       
         $reqlike->execute();
         
-        return $reqlike->fetchAll(PDO::FETCH_ASSOC);
+        return $reqlike->fetchAll(PDO::FETCH_COLUMN);
     }
 }

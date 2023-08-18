@@ -320,19 +320,5 @@ public function deleteFavorite()
     // Convertissez les données en JSON et renvoyez la réponse
     echo json_encode($response);
 }
-public function getLike()
-{
-    $modelLogement = new LogementModel();
-    $id_logement = $_POST['id_logement'];
-    $id_person = $_SESSION['id_person'];
-
-    $results = $modelLogement->like($id_person, $id_logement);
-
-    
-    $_SESSION['like_status'] = $results;
-
-    $twig = $this->getTwig();
-    echo $twig->render('resultSearch.html.twig', ['results' => $results]);
-}
 
 }

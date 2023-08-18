@@ -21,27 +21,27 @@
 				</li>
 			</ul>
 		</div>
-		<div class="searchBoxDesktop">
-			<form action="{{path('search')}}" class="searchformDesktop">
+<div class="searchBoxDesktop">
+			<form action="{{path('search')}}" method="POST" class="searchformDesktop articleM">
 				<div class="searchFormBox">
 					<label for="city">Destination</label>
-					<input type="text" name="city" id="city" value="{{ formValue['city']}}">
+					<input type="text" name="city" id="cityM" value="{{ formValue['city']}}">
 				</div>
 				<div class="searchFormBox">
 					<label for="start_date">Date d'arrivée</label>
-					<input type="date" name="start_date" id="start_date" value="{{ formValue['start']}}">
+					<input type="date" name="start_date" id="start_dateM" value="{{ formValue['start']}}">
 				</div>
 				<div class="searchFormBox">
 					<label for="end_date">Date de retour</label>
-					<input type="date" name="end_date" id="end_date" value="{{ formValue['end']}}">
+					<input type="date" name="end_date" id="end_dateM" value="{{ formValue['end']}}">
 				</div>
 				<div class="searchFormBox">
 					<label for="number_of_person">Voyageurs</label>
-					<input type="number" name="number_of_person" id="number_of_person" value="{{ formValue['person']}}">
+					<input type="number" name="number_of_person" id="number_of_personM" value="{{ formValue['person']}}">
 				</div>
-				<input type="hidden" name="check">
+
 				<div id="buttonSearch">
-					<input type="submit" value="Modifier">
+					<input type="submit" name="submit" value="Modifier">
 				</div>
 			</form>
 		</div>
@@ -163,9 +163,16 @@
 							<div class="close-button">&times;</div>
 							{% if session.connect is defined and session.connect == true %}
 										<form action="{{ path('favorite') }}" method="POST">
-										<input type="hidden" name="id_logement"  class="idLogementHidden" value="{{logementTypes[i].id_logement}}">
+										<input type="hidden" name="id_logement"  class="idLogementHidden" value="{{logementsTypes[i].id_logement}}">
 										<input type="hidden" name="id_person" id="idPersonHidden" value="{{session.id_person}}">
+											{% if logementsTypes[i].id_logement in results %}
+
+										<button class="heartIcon" type="button"><img src="../asset/img/iconHeartRed.png" alt="icon coeur rouge
+									"></button>
+
+										{% else %}
 										<button class="heartIcon" type="button"><img src="../asset/img/iconHeartBlack.png" alt="icon coeur noir"></button>
+									{% endif %}
 									</form>
 								{% endif %}
 							</article>

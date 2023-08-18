@@ -22,7 +22,7 @@
 			</ul>
 		</div>
 		<div class="searchBoxDesktop">
-			<form action="{{path('search')}}" class="searchformDesktop">
+			<form action="{{path('search')}}" class="searchformDesktop"  method="POST">
 				<div class="searchFormBox">
 					<label for="city">Destination</label>
 					<input type="text" name="city" id="city" value="{{ formValue['city']}}">
@@ -41,7 +41,7 @@
 				</div>
 				<input type="hidden" name="check">
 				<div id="buttonSearch">
-					<input type="submit" value="Modifier">
+					<input type="submit" name="submit" value="Modifier">
 				</div>
 			</form>
 		</div>
@@ -170,8 +170,14 @@
 										<form action="{{ path('favorite') }}" method="POST">
 										<input type="hidden" name="id_logement"  class="idLogementHidden" value="{{logements[i].id_logement}}">
 										<input type="hidden" name="id_person" id="idPersonHidden" value="{{session.id_person}}">
-										<button class="heartIcon" type="button"><img src="
-										../asset/img/iconHeartBlack.png" alt="icon coeur noir"></button>
+										{% if logements[i].id_logement in results %}
+
+										<button class="heartIcon" type="button"><img src="../asset/img/iconHeartRed.png" alt="icon coeur rouge
+									"></button>
+
+										{% else %}
+										<button class="heartIcon" type="button"><img src="../asset/img/iconHeartBlack.png" alt="icon coeur noir"></button>
+									{% endif %}
 									</form>
 								{% endif %}
 							</article>

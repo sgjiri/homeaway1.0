@@ -21,7 +21,12 @@ class SearchController extends Controller
 
             $model = new SearchModel;
             $datas = $model->getSearch($city, $start_date, $end_date, $number_of_person);
-
+            $modelLogement = new LogementModel();
+            
+            $id_person = $_SESSION['id_person'];
+        
+            $results = $modelLogement->like($id_person);
+            var_dump($results);
             $dataUpdated = [];
             $totalPrices = [];
             foreach ($datas as $logementComplet) {
@@ -38,7 +43,8 @@ class SearchController extends Controller
             $resultSearchView = $twig->render('resultsearch.html.twig', [
                 'logementDispo' => $datas,
                 'totalPrices' => $totalPrices,
-                'formValue' => $formValue
+                'formValue' => $formValue,
+                'results'=> $results
             ]);
             echo $resultSearchView;
 
@@ -123,13 +129,17 @@ class SearchController extends Controller
         $number_of_person = 2;
         $model = new SearchModel();
         $logements = $model->getLogementsByVille($city, $number_of_person);
-       
+        $modelLogement = new LogementModel();
+            
+            $id_person = $_SESSION['id_person'];
+        
+            $results = $modelLogement->like($id_person);
 
         $twig = $this->getTwig();
         $logementsView = $twig->render('logementCity.html.twig', [
             'logements' => $logements,
             'city' => $city,
-            
+            'results'=> $results
         ]);
         echo $logementsView;
     }
@@ -143,7 +153,11 @@ class SearchController extends Controller
         // var_dump($logements);
         $dataUpdated = [];
         // $totalPrices = [];
-
+        $modelLogement = new LogementModel();
+            
+        $id_person = $_SESSION['id_person'];
+    
+        $results = $modelLogement->like($id_person);
         foreach ($logementsTypes as $logementComplet) {
             $price_by_night = $logementComplet['price_by_night'];
             // $start = new DateTime($start_date);
@@ -157,6 +171,8 @@ class SearchController extends Controller
         $logementsTypeView = $twig->render('logementType.html.twig', [
             'logementsTypes' => $logementsTypes,
             'type' => $type,
+            'results'=> $results
+            
             // 'totalPrices' => $totalPrices, 
         ]);
         echo $logementsTypeView;

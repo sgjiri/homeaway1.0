@@ -173,7 +173,7 @@
 								<form action="{{ path('favorite') }}" method="POST">
 									<input type="hidden" name="id_logement" class="idLogementHidden" value="{{logementDispo[i].id_logement}}">
 									<input type="hidden" name="id_person" id="idPersonHidden" value="{{session.id_person}}">
-									{% if session.like_status == true %}
+									{% if logementDispo[i].id_logement in results %}
 
 										<button class="heartIcon" type="button"><img src="./asset/img/iconHeartRed.png" alt="icon coeur rouge
 									"></button>

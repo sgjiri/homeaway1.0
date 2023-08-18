@@ -68,13 +68,13 @@ $router->map('POST', '/sendMail', 'ContactController#sendMail', 'sendMail' );
 // *-*-*-*ROUTE add faorites*-*-*-*
 $router->map('POST|GET', '/favorite', 'LogementController#addFavorite', 'favorite' );
 $router->map('POST', '/delfavorite', 'LogementController#deleteFavorite', 'delfavorite' );
-$router->map('POST', '/getFavorite', 'LogementController#getLike', 'getFavorite');
+
 
 
 
 
 $match = $router->match();
-// var_dump($_SESSION);
+// var_dump($match);
 
 
 if (is_array($match)) {
