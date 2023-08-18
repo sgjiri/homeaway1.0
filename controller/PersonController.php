@@ -11,11 +11,12 @@ class PersonController extends Controller
             global $router;
             header('Location: ' . $router->generate('home'));
             exit();
+           
         }
         //  vérifie si le tableau $_POST est vide, si oui affiche la page login
 
         if (!$_POST) {
-            $twig = $this->getTwig();
+             $twig = $this->getTwig();
             echo $twig->render('homePage.html.twig', []);
         } else {
 
@@ -34,20 +35,22 @@ class PersonController extends Controller
 
             if ($person) {
                 if (password_verify($password, $person->getPassword())) {
-                    $_SESSION['connect'] = true;
+                     $_SESSION['connect'] = true;
                     $_SESSION['id_person'] = $person->getId_person();
 
                     $_SESSION['mail'] = $person->getMail();
-
+                 
                     global $router;
-                    header('Location: ' . $router->generate('home'));
-                    exit();
+                     header('Location: '. $router->generate('home'));
+                   exit();
+                             
+              
                 }
             } else {
                 // si password non ok affiche message erreur avec redirection 
                 $message = "mail ou mot de passe incorrect !";
-                $twig = $this->getTwig();
-                echo $twig->render('homepage.html.twig', ['message' => $message]);
+                 $twig = $this->getTwig();
+            echo $twig->render('homepage.html.twig', ['message' =>$message]);
             }
         }
     }
@@ -86,6 +89,7 @@ class PersonController extends Controller
             $phone_number = $_POST['phone_number'];
             $name = $_POST['name'];
             $firstname = $_POST['firstname'];
+
             // var_dump($_POST['date_of_birth']);
 
 
@@ -99,6 +103,7 @@ class PersonController extends Controller
                 echo "Le mot de passe doit contenir au moins 12 caractères avec au moins une majuscule, une minuscule et un caractère spécial.";
                 exit();
             }
+
 
             // création instance model person avec val mail et pwd 
             $person = new Person([
@@ -120,10 +125,11 @@ class PersonController extends Controller
             
             header('Location:  ./');
             exit();
+
             // si formulaire non soumis cad si method $server...... non abouti cad false affichage du template header avec getrender 
         } else {
 
-            $twig = $this->getTwig();
+             $twig = $this->getTwig();
             echo $twig->render('homepage.html.twig', []);
         }
     }

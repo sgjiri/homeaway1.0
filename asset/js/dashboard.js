@@ -3,7 +3,7 @@ let messagerie = document.getElementById('messagerie');
 let nav = document.getElementById('navDash');
 let iconLike = document.getElementById('iconLike');
 
-if (document.getElementById('like')) {
+if(document.getElementById('like')){
     let like = document.getElementById('like');
     like.addEventListener('click', function () {
         like.classList.add('likeActive');
@@ -12,12 +12,12 @@ if (document.getElementById('like')) {
         info.classList.add('likeActive')
     })
 }
-if (document.getElementById('info')) {
+if(document.getElementById('info')) {
     let info = document.getElementById('info');
     info.addEventListener('click', function () {
         info.classList.add('infoActive');
         like.classList.remove('likeActive');
-
+    
     })
 }
 
@@ -50,11 +50,11 @@ function animationInput(idFigure, idCard, idImg, idInput) {
 
     for (let i = 0; i < classFigureModifier.length; i++) {
         (function (index) {
-
-
+    
+    
             classFigureModifier[index].addEventListener('click', function () {
-
-
+    
+    
                 classImgModifier[index].classList.toggle('activeModifie');
                 classInput[index].classList.toggle('activeInput');
                 classCard[index].classList.toggle('active');
@@ -64,11 +64,11 @@ function animationInput(idFigure, idCard, idImg, idInput) {
 }
 
 animationInput('figureModifierInfo', 'cardInfoPersoM', 'imgModifierInfo', 'inputInfo');
-animationInput('figureModifierGestion', 'cardH', 'imgModifierGestion', 'inputGA');
+animationInput('figureModifierGestion', 'cardH', 'imgModifierGestion','inputGA');
 
 
 
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
     // Obtenez la valeur du paramètre de requête 'activeElement' depuis l'URL
     const urlParams = new URLSearchParams(window.location.search);
     const activeElement = urlParams.get('activeElement');
@@ -103,11 +103,11 @@ for (let i = 0; i < classLabelSelectImage.length; i++) {
 
 
 
-let deleteUser = document.getElementById('spanSuprimerUser');
+let deleteUser=document.getElementById('spanSuprimerUser');
 let popop = document.getElementById('popop');
 let popopValider = document.getElementById('popopvalider');
 
-deleteUser.addEventListener('click', function () {
+deleteUser.addEventListener('click', function() {
     popop.classList.add('popopActive')
     popopValider.setAttribute("name", "suprimerUser");
 });
@@ -119,14 +119,14 @@ deleteUser.addEventListener('click', function () {
 let addImage = document.getElementsByClassName('spanPlus2');
 
 for (let i = 0; i < addImage.length; i++) {
-    addImage[i].addEventListener('click', function (e) {
+    addImage[i].addEventListener('click', function(e) {
         e.preventDefault()
     });
 }
 
 
 let cross = document.getElementById('cross');
-cross.addEventListener('click', function () {
+cross.addEventListener('click', function(){
 
     popop.classList.remove('popopActive');
 })
@@ -169,40 +169,29 @@ for (let i = 0; i < classInputSuprimerLike.length; i++) {
 
 
 
-
-//Je selectione le span bin
-let classInputSuprimerImg = document.getElementsByClassName('suprimerImg');
-console.log(classInputSuprimerImg);
-//J'inicialise un tableau
-let img = [];
-for (let i = 0; i < classInputSuprimerImg.length; i++) {
-
-    //Apres avoir clické sur la poubelle, je recuperre les values images selectionés, et je les ajoute dan le tableau img
-    classInputSuprimerImg[i].addEventListener('click', function () {
+    for (let i = 0; i < classInputSuprimerLogement.length; i++) {
         
-        for (let j = 0; j < classInputSelectImage.length; j++) {
-            
+        classInputSuprimerLogement[i].addEventListener('click', function() {
+            let idLogement = this.getAttribute("data-idLogement");
+            let nameLogement = this.getAttribute("data-nameLogement");
+            getMessagePopop.innerHTML = "Voulez vous vraiment supprimer le logement " + nameLogement + "?";
+            popop.classList.add('popopActive');
+            popopValider.setAttribute("name", "suprimerLogement");
+            inputHidden.setAttribute("value", idLogement)
+        });
+    }
 
-            if (classInputSelectImage[j].checked === true) {
-                let name = classInputSelectImage[j].getAttribute("value");
-                img.push(name);
-                
-            }
-            
-        }
 
-        //pour envoyer les info dans le contreler, j'ai besoin de doner une valeur a value de input chaché. Pour ce la je tansforme le tableau en string. Quand je vais recuperrer les info dans le controller, je vais les retransformer en tableau.
-        stringImg = img.toString();
-        console.log(stringImg);
-        popop.classList.add('popopActive');
-        getMessagePopop.innerHTML = "Voulez vous vraiment supprimer les images " + stringImg + "?";
-        popopValider.setAttribute("name", "suprimerImages");
-        inputHidden.setAttribute("value", stringImg)
-        img = [];
-    })
-    
-}
+//     let classInputSuprimerImg = document.getElementsByClassName('suprimerImg');
+//     for (let i = 0; i < classInputSuprimerImg.length; i++) {
 
+
+//         classInputSuprimerLogement[i].addEventListener('click', function() {    
+//     for (let i = 0; i < classInputSelectImage.length; i++) {
+
+//         if(classInputSelectImage[i].checked===true){
+//             console.log(classInputSelectImage[i]);
+//         }
 
 //     }
 // }

@@ -289,6 +289,7 @@ class DashboardController extends Controller
         }
 
         if (isset($_POST['suprimerImages'])) {
+
             $nameImage = ($_POST['inputHiddenPopop']);
             
             $suprimerImage = explode(',', $nameImage);
@@ -296,12 +297,13 @@ class DashboardController extends Controller
             $return = $modelUpdate->deleteImg($suprimerImage);
             header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");
             exit();
+
         }
 
         if (isset($_POST['suprimerLogement'])) {
             var_dump($_POST);
             var_dump('coucou');
-            $id_logement = ($_POST['inputHiddenPopop']);
+            $id_logement = ($_POST['inputHiddenPopop']);;
             $delModel = new LogementModel();
             $delModel->delete($id_logement);
             header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");
