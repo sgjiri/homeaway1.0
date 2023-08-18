@@ -22,7 +22,7 @@ class BookController extends Controller
 
                 if ($resultReserve) {
                     echo "Réservation effectuée avec succès.";
-                    header('Location: ' . $router->generate('dashboard'));
+                    header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentMesReservation");
                     exit();
                 } else {
                     echo "Erreur lors de la réservation.";

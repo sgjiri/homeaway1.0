@@ -50,7 +50,6 @@ class DashboardController extends Controller
             }
 
 
-
             $arrayHistoriqueContacts = [];
             $arrayHistoriqueStart_date = [];
             $arrayHistoriqueEnd_dateArray = [];
@@ -292,7 +291,7 @@ class DashboardController extends Controller
             $nameImage = ($_POST['inputHiddenPopop']);
             
             $suprimerImage = explode(',', $nameImage);
-            // var_dump($suprimerImage);
+            var_dump($suprimerImage);
             $return = $modelUpdate->deleteImg($suprimerImage);
             header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");
             exit();
@@ -308,12 +307,6 @@ class DashboardController extends Controller
             exit();
         }
 
-
-        if (isset($_POST['suprimerUser'])) {
-            $delUser = new PersonModel();
-            $delUser->deleteUser($idUser);
-            header("Location: /Projet/homeaway1.0");
-
         
 
         if (isset($_POST['suprimerLike'])) {
@@ -321,7 +314,6 @@ class DashboardController extends Controller
             $id_logement = ($_POST['inputHiddenPopop']);
             $deLike->deleteLike($idUser, $id_logement);
             header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentLike");
-
             exit();
         }
 
@@ -488,7 +480,8 @@ class DashboardController extends Controller
 
 
         if (isset($_POST['validerImages'])) {
-          
+            var_dump($_POST);
+            var_dump('coucou');
 
             if (isset($_SESSION['id_person'])) {
                 // var_dump('id_person is set');

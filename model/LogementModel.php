@@ -181,4 +181,12 @@ class LogementModel extends Model
 
         return $results;
     }
+    public function favorite($id_logement, $id_person) {
+        $reqAddFavorite = $this->getDb()->prepare("INSERT INTO `like` (`id_person`, `id_logement`) VALUES (:id_person, :id_logement)");
+            
+            $reqAddFavorite->bindValue(':id_person', $id_person, PDO::PARAM_INT);
+            $reqAddFavorite->bindValue(':id_logement', $id_logement, PDO::PARAM_INT);
+            $reqAddFavorite->execute();
+         
+    }
 }

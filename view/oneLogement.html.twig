@@ -150,8 +150,13 @@
 				<strong id="priceByNight">
 					€</strong>
 				par nuit</h4>
+				<div id="dateReserv">
+				<p>Du</p>	
 			<input type="date" name="start_date" id="startDate" value="">
+			<p>au</p>
 			<input type="date" name="end_date" id="endDate" value="">
+				</div>
+			
 			<p>
 				<strong id="numberOfPerson"></strong>
 				personne(s)</p>
@@ -211,6 +216,12 @@ document.getElementById("secondPartOne").submit();
 	<style>
 	footer{
 		margin-bottom:248px; 
-	}</style>
+	}
+	@media screen and (min-width:800px) {
+		footer{
+		margin-bottom:unset; 
+	}
+	}
+	</style>
 	</footer>
 {% endblock %}
