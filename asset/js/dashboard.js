@@ -150,6 +150,20 @@ for (let i = 0; i < classInputSuprimerLogement.length; i++) {
 }
 
 
+let classInputSuprimerLike = document.getElementsByClassName('suprimerLike');
+
+for (let i = 0; i < classInputSuprimerLike.length; i++) {
+
+    classInputSuprimerLike[i].addEventListener('click', function () {
+        let idLogement = this.getAttribute("data-idLogement");
+        getMessagePopop.innerHTML = "Voulez vous vraiment supprimer ce logement de vos favorit?";
+        popop.classList.add('popopActive');
+        popopValider.setAttribute("name", "suprimerLike");
+        inputHidden.setAttribute("value", idLogement)
+    });
+}
+
+
 
 //Funtion pour surprimer les images
 
