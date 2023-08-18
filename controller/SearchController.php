@@ -26,7 +26,7 @@ class SearchController extends Controller
             $id_person = $_SESSION['id_person'];
         
             $results = $modelLogement->like($id_person);
-            var_dump($results);
+       
             $dataUpdated = [];
             $totalPrices = [];
             foreach ($datas as $logementComplet) {
