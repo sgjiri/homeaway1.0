@@ -166,19 +166,33 @@
 								
 							</p>
 							<div class="close-button">&times;</div>
-						</article>
-					</a>
+							{% if session.connect is defined and session.connect == true %}
+									<form action="{{path ('favorite')}}" method="POST">
+										<input type="hidden" name="id_logement" value="{{logementDispo[i].id_logement}}">
+										<input type="hidden" name="id-Person" value="{{session.id_person}}">
+										<button class="heartIcon" type="button"><img src="./asset/img/iconHeartBlack.png" alt="icon coeur noir"></button>
+									</form>
+								{% endif %}
+							</article>
+						
 
-				{% endfor %}
 
-				
+					{% endfor %}
+
+				{% endif %}
+
+
 			</div>
 
 
 		</div>
 	</section>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script>
 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script>
+	<script src="{{asset('/js/localStorage.js')}}"></script>
 	<script src="{{asset('/js/vendor.js')}}"></script>
 	<script src="{{asset('/js/map.js')}}"></script>
+	<script src="{{asset('/js/heart.js')}}"></script>
+
+
 {% endblock %}

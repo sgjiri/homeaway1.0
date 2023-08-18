@@ -33,8 +33,8 @@ class PersonModel extends Model
         $name = $person->getName();
         $firstname = $person->getFirstname();
         $mail = $person->getMail();
-        $date_of_birth = $person->getDateOfBirth();
-        $phone_number = $person->getPhoneNumber();
+        $date_of_birth = $person->getDate_of_birth();
+        $phone_number = $person->getPhone_number();
         $password = $person->getPassword();
        
 

@@ -247,7 +247,7 @@ header {
         width: 100%;
         height: 100%;
 
-        padding: 50px 10px 50px 10px;
+        padding: 50px 10px;
         // background: rgba(40, 57, 101, .5);
 
         .sign-in-form {
@@ -272,6 +272,8 @@ header {
             transform: rotateY(180deg);
             backface-visibility: hidden;
             transition: all .4s linear;
+            overflow: auto;
+            height: 500px;
 
         }
 
@@ -346,6 +348,9 @@ header {
         margin: 0 auto;
 
         .group {
+            width: 80%;
+            margin: 0 auto;
+
             .check {
                 display: none;
 
@@ -844,6 +849,32 @@ header {
             text-align: center;
         }
 
+        .fc {
+            font-size: 0.6rem;
+            font-family: $roboto;
+        }
+
+        .fc-scrollgrid-sync-inner {
+            height: 25px;
+
+            a {
+                margin: unset;
+            }
+        }
+
+
+        .fc-today-button {
+            display: none;
+        }
+
+        .fc-prev-button {
+            background-color: $blueDark;
+        }
+
+        .fc-next-button {
+            background-color: $bluelight;
+        }
+
     }
 
     #secondPartOne {
@@ -864,6 +895,12 @@ header {
             font-family: $roboto;
         }
 
+        #dateReserv {
+            display: flex;
+            align-items: center;
+
+        }
+
         input[type=submit] {
 
             margin: 25px auto;
@@ -872,27 +909,7 @@ header {
         }
     }
 
-    .fc {
-        font-size: 0.6rem;
-        font-family: $roboto;
-    }
 
-    .fc-button-group {
-        width: 50px;
-
-    }
-
-    .fc-today-button {
-        display: none;
-    }
-
-    .fc-prev-button {
-        background-color: $blueDark;
-    }
-
-    .fc-next-button {
-        background-color: $bluelight;
-    }
 
     #locationOne {
         #map {
@@ -1004,7 +1021,7 @@ header {
             right: 5%;
             width: 30%;
             border: 2px solid $blueDark;
-            height: 200px;
+            height: 230px;
 
         }
     }
@@ -1231,12 +1248,18 @@ footer {
             font-family: $roboto;
             font-size: 0.8rem;
         }
+
         .close-button {
             position: absolute;
             top: 10px;
             right: 10px;
             cursor: pointer;
-         }
+            display: block;
+        }
+
+        .heartIcon {
+            display: none;
+        }
 
     }
 }
@@ -1299,7 +1322,8 @@ footer {
             }
 
         }
-        #applyFilters> input{
+
+        #applyFilters>input {
             width: 100%;
             margin-top: 10px;
         }
@@ -1318,6 +1342,7 @@ footer {
             cursor: pointer;
             transition: box-shadow .3s;
             padding: 0 20px;
+            position: relative;
 
             &:hover {
                 box-shadow: 0 0 10px rgba(0, 0, 0, .1);
@@ -1344,6 +1369,32 @@ footer {
                     font-weight: 700;
                 }
             }
+
+            .close-button {
+                display: none;
+            }
+            .idLogement {
+                display: none;
+            }
+            .heartIcon {
+                position: absolute;
+                top: 10px;
+                right: 25px;
+                cursor: pointer;
+                display: block;
+                background-color: transparent;
+                border: none;
+                z-index: 999;
+
+                img {
+
+                    width: 25px;
+                    height: 25px;
+
+                }
+
+            }
+
         }
     }
 
@@ -1359,7 +1410,7 @@ footer {
     }
 
     #resultresearch {
-        #formFilter.formFilterActive  {
+        #formFilter.formFilterActive {
             max-width: 1200px;
             width: 80%;
             display: flex;
@@ -1371,6 +1422,7 @@ footer {
                 height: 100px;
                 display: flex;
                 overflow-x: scroll;
+
 
                 .convenience {
                     display: flex;
@@ -1388,7 +1440,8 @@ footer {
 
                 }
             }
-            #applyFilters> input{
+
+            #applyFilters>input {
                 width: 100px;
                 margin: 0 0 0 20px;
             }
@@ -1404,10 +1457,7 @@ footer {
         .listResult {
             margin: 0 auto;
 
-            .item {
-                margin: unset;
 
-            }
         }
 
         #containerResultSearch {

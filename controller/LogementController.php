@@ -247,8 +247,7 @@ class LogementController extends Controller
 
             if (isset($_POST['submit'])) {
                 $name = $_POST['name'];
-                $surname = $_POST['surname'];
-                $phone = $_POST['phone'];
+                $surname = $_POST['surname'];              
                 $email = $_POST['email'];
                 $message = $_POST['message'];
 var_dump($_POST);
@@ -260,7 +259,7 @@ var_dump($_POST);
 
                 $emailContent = "<h3>" . $name . " " . $surname . "</h3>";
                 $emailContent .= "<p>" . htmlspecialchars($message) . "</p>";
-                $emailContent .= $phone;
+                
 
                 $retour = mail('alexandre.sequeira01@gmail.com', 'Envoi depuis page Contact', $emailContent, $entete);
                 if ($retour) {
@@ -276,6 +275,14 @@ var_dump($_POST);
     {
         $twig = $this->getTwig();
         echo $twig->render('contactHote.html.twig', []);
+    }
+    public function addFavorite()
+    {
+        $modelLogement = new LogementModel();
+       
+        $favorite = $modelLogement->getOne($_POST['id_logement'], $_SESSION['id_person']);
+        header('Location:./search');
+                    exit();
     }
 
 }
