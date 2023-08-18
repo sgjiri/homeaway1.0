@@ -9,9 +9,10 @@ class DashboardController extends Controller
         $modelUpdate = new DashboardUpdateLogementModel();
         $modelReservation = new DashboardReservationModel();
         $modelLikes = new DashboardLikesModel();
+        $date = date('Y-m-d');
         if (!$_POST) {
             $datas = $model->getUser($idUser);
-            $date = date('Y-m-d');
+            
             $datasLogement = $modelUpdate->getLogement($idUser);
             $datasMesReservation = $modelReservation->getReservation($idUser, $date);
             $datasHistoriqueReservation = $modelReservation->getHistoriqueReservation($idUser, $date);
@@ -73,7 +74,6 @@ class DashboardController extends Controller
                 $arrayHistoriqueName[] = $historiquenameArray;
                 $arrayHistoriqueFirstname[] = $historiquefirstnameArray;
             }
-            var_dump($datasLikes);
            
 
             echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images' => $imageArray, 'mesReservations' => $datasMesReservation, 'historiqueReservation' => $datasHistoriqueReservation,'datasReservationChezMoi' => $datasReservationChezMoi, 'contacts' => $arrayContacts, 'start_dates' => $arrayStart_date, 'end_dates' => $arrayEnd_dateArray, 'names' => $arrayName, 'firstnames' => $arrayFirstname, 'idUser'=>$idUser,'datasHistoriqueReservationChezMoi' => $datasHistoriqueReservationChezMoi, 'contactsHistorique' => $arrayHistoriqueContacts, 'start_datesHistorique' => $arrayHistoriqueStart_date, 'end_datesHistorique' => $arrayHistoriqueEnd_dateArray, 'namesHistorique' => $arrayHistoriqueName, 'firstnamesHistorique' => $arrayHistoriqueFirstname, 'idUser'=>$idUser, 'likes'=>$datasLikes]);
@@ -275,7 +275,7 @@ class DashboardController extends Controller
             $climatisation = isset($_POST['climitisation']) && $_POST['climatisation'] == 1 ? true : false;
             $camera = isset($_POST['camera']) && $_POST['camera'] == 1 ? true : false;
             $home_textiles = isset($_POST['home_textiles']) && $_POST['home_textiles'] == 1 ? true : false;
-            $spa = isset($_POST['spa']) &&  $_POST['spa'] == 1 ? true : false;
+            $spa = isset($_POST['spa']) &&  $_POST['spsuprimera'] == 1 ? true : false;
             $jacuzzi = isset($_POST['jacuzzi']) &&  $_POST['jacuzzi'] == 1 ? true : false;
             $idLogement = ($_POST['idLogement']);
             $return = $modelUpdate->setEquipment($parking, $wifi, $piscine, $animals, $kitchen, $garden, $tv, $climatisation, $camera, $home_textiles, $spa, $idUser, $jacuzzi, $idLogement);
@@ -303,7 +303,30 @@ class DashboardController extends Controller
             $id_logement = ($_POST['inputHiddenPopop']);
             $delModel = new LogementModel();
             $delModel->delete($id_logement);
-            header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");
+            header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentInfoPerso");
+            exit();
+        }
+
+        if (isset($_POST['suprimerUser'])) {
+            $delUser = new PersonModel();
+            $delUser->deleteUser($idUser);
+            session_destroy();
+            header("Location: /Projet/homeaway1.0");
+            exit();
+        }
+
+        if (isset($_POST['suprimerReservation'])) {
+            
+            $delReservation = new DashboardReservationModel();
+            $id_resevation = ($_POST['inputHiddenPopop']);
+            $startDate = $delReservation->selectDate($id_resevation); // Récupère la date de début
+            $dt = strtotime("$startDate");
+            $dateRservation5 = date("Y-m-d", strtotime("-5 day", $dt));
+            $date5 = date("Y-m-d", strtotime("-5 day", $date));
+            if($dateRservation5 > $date5){
+                $delReservation->deletResevation($id_resevation);
+            }
+            header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentMesReservation");
             exit();
         }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 18 août 2023 à 08:49
+-- Généré le : jeu. 17 août 2023 à 12:08
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -116,6 +116,10 @@ INSERT INTO `image` (`id_image`, `thumbnail`, `id_logement`) VALUES
 (30, 'sao1.webp\r\n', 27),
 (31, 'paris1.webp', 29),
 (32, 'paris2.webp', 29),
+(33, 'sttrop1.webp', 145),
+(34, 'sttrop2.webp', 145),
+(35, 'sttrop3.webp', 145),
+(36, 'sttrop4.webp', 145),
 (37, 'castelnou1.webp', 19),
 (38, 'castelnou2.webp', 19),
 (39, 'castelnou3.webp', 19),
@@ -136,6 +140,10 @@ INSERT INTO `image` (`id_image`, `thumbnail`, `id_logement`) VALUES
 (54, 'par3.webp', 91),
 (55, 'par4.webp', 91),
 (56, 'par5.webp', 91),
+(59, 'thumbnail_1_appartementMontpellier2.1.webp', 141),
+(60, 'thumbnail_2_appartementMontpellier2.2.webp', 141),
+(61, 'thumbnail_3_appartementMontpellier2.6.jpg', 141),
+(62, 'thumbnail_4_appartementMontpellier2.3.webp', 141),
 (63, 'thumbnail_1_chamonix1.webp', 142),
 (64, 'thumbnail_2_chamonix2.webp', 142),
 (65, 'thumbnail_3_chamonix3.webp', 142),
@@ -191,14 +199,6 @@ CREATE TABLE IF NOT EXISTS `like` (
   KEY `idLogement` (`id_logement`),
   KEY `idPerson` (`id_person`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `like`
---
-
-INSERT INTO `like` (`id_logement`, `id_person`) VALUES
-(7, 16),
-(7, 16);
 
 -- --------------------------------------------------------
 
@@ -289,10 +289,12 @@ INSERT INTO `logement` (`id_logement`, `id_person`, `title`, `type`, `surface`, 
 (90, 2, 'Maison plain pied ', 'Maison ', 60, 'Bienvenue dans cette maison de plain-pied accueillante à Eycheil. Profitez de la simplicité d\'un agencement sans escaliers, où chaque pièce est facilement accessible.', 'Découvrez cette charmante maison de plain-pied à Eycheil. Profitez de la commodité et du confort d\'une maison sans escaliers, offrant un espace de vie spacieux et fonctionnel. Avec une disposition pratique et des aménagements modernes, cette maison vous offre une expérience agréable et pratique. Profitez de la facilité d\'accès à toutes les pièces et de la convivialité d\'une maison de plain-pied à Eycheil.\r\nProfitez d\'un espace de vie ouvert et lumineux, avec des aménagements modernes qui vous offrent tout le confort dont vous avez besoin. Profitez de la praticité et de la convivialité d\'une maison de plain-pied, idéale pour profiter pleinement de votre séjour à Eycheil.\r\n', 'Hôtel de Ville, Place de la Mairie', '09200', 'Eycheil', 'montain', '42.9759463', '1.1595229', 90, 7, 3, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0),
 (91, 2, 'Appartement centre ville Paris ', 'Appartement ', 99, 'Bienvenue dans cet appartement au cœur du centre-ville de Paris. Profitez de l\'effervescence de la capitale en vous installant dans ce logement moderne et confortable. ', 'Vivez en plein centre de Paris avec ce 3 pièces situé Auteuil .\r\nDémarrez votre nouvelle vie avec cet appartement meublé qui propose un mobilier design et tendance . \r\nNB : Nos appartements sont proposés en résidences secondaires ou baux sociétés et pour un an maximum.\r\n\r\nUn appartement conçu spécialement pour vous\r\n\r\nConçu avec soin avec des finitions sur mesure, des meubles tendances et une cuisine entièrement équipée et aménagée. Profitez d’un moment de détente dans votre salon avec nos TV connectée ou nos enceintes Marshall wifi, ou d’un peu de repos bien mérité sur nos matelas haut de gamme ! Vous tomberez amoureux de cet appartement situé Auteuil.\r\n\r\nÉquipements\r\n\r\nLes équipements de l’immeuble propres à ce 3 pièces sont:\r\n\r\nAscenseur\r\nAssistance à l’arrivée et au quotidien\r\nVous pouvez commander des prestations de ménage supplémentaires, soumettre des demandes de maintenance et en savoir plus sur votre nouveau chez-vous en quelques clics.\r\n\r\n', 'Quartier Auteuil Sud ', '75016', 'Paris ', 'river', '48.8530933', '2.2487626', 120, 2, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0),
 (92, 2, 'Chambre d\'hôte', 'gest house', 12, 'Découvrez l\'élégance parisienne dans notre ravissante chambre d\'hôte, nichée dans un quartier pittoresque de la capitale. ', 'Bienvenue dans notre charmante chambre d\'hôte, idéalement située au cœur de Paris. Que vous soyez un voyageur passionné ou un couple en quête d\'une escapade romantique, notre établissement offre un cadre enchanteur pour votre séjour dans la Ville Lumière. Emplacement privilégié : Nichée dans un quartier pittoresque, notre chambre d\'hôte vous permettra de vous immerger pleinement dans l\'atmosphère unique de Paris. À quelques pas seulement des monuments emblématiques tels que la Tour Eiffel, le Louvre et Notre-Dame, vous serez au centre de toutes les merveilles que cette ville a à offrir.', '14 Rue Houdon', '75018', 'Paris', 'lac', '48.8833146', '2.3387702', 80, 2, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0),
-(138, 2, 'Studio autonome', 'studio', 30, 'Grand studio indépendant avec accès autonome par boîte à clé codée et parking cuisine équipée ', 'Grand studio indépendant avec accès autonome par boîte à clé codée et parking Cuisine équipée avec frigidaire et petit congélateur Machine à café Tassimo capsule fourni\r\nCarafe d\'eau Brita\r\nMicro onde\r\nGrille pain\r\nPossibilité de cuisiner sur place\r\nPouvant accueillir jusqu\'à un couple avec 2 enfants + 1 bébé ou 4 adultes désireux de visiter Paris et ses attractions..\r\nCasino à 5mn\r\nCarrefour 10mn\r\nAuchan 5mn\r\nCentre commercial Aéroville à 5mn soit 3 km\r\nIPTV le bouquet Complet Internet fibre illimité\r\nLe logement\r\nContact 0637463511...Situé à 10 mn de l\'aéroport Roissy CDG, à 20 mn de Paris, Parc Astérix à 15 mn , Mer de sable à 30 mn, Centre commercial Aéroville à 5 mn, Parinor et Parinor 2 à 10 mn, Disneyland Paris à 30 mn, Parcours de santé, Forêt + Golf de Roissy derrière l\'appartement, 15 mn du Stade de France, idéalement située pour visiter Paris et sa région (RER D et B à 10 mn en voiture). Tout équipé WIFI et fibre, place de parking extérieur et gratuite au pied de l\'apparteme', '66 Rue du Père Corentin', '75014', 'Paris', 'lac', '48.8240192', '2.3273560', 85, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0);
+(138, 2, 'Studio autonome', 'studio', 30, 'Grand studio indépendant avec accès autonome par boîte à clé codée et parking cuisine équipée ', 'Grand studio indépendant avec accès autonome par boîte à clé codée et parking Cuisine équipée avec frigidaire et petit congélateur Machine à café Tassimo capsule fourni\r\nCarafe d\'eau Brita\r\nMicro onde\r\nGrille pain\r\nPossibilité de cuisiner sur place\r\nPouvant accueillir jusqu\'à un couple avec 2 enfants + 1 bébé ou 4 adultes désireux de visiter Paris et ses attractions..\r\nCasino à 5mn\r\nCarrefour 10mn\r\nAuchan 5mn\r\nCentre commercial Aéroville à 5mn soit 3 km\r\nIPTV le bouquet Complet Internet fibre illimité\r\nLe logement\r\nContact 0637463511...Situé à 10 mn de l\'aéroport Roissy CDG, à 20 mn de Paris, Parc Astérix à 15 mn , Mer de sable à 30 mn, Centre commercial Aéroville à 5 mn, Parinor et Parinor 2 à 10 mn, Disneyland Paris à 30 mn, Parcours de santé, Forêt + Golf de Roissy derrière l\'appartement, 15 mn du Stade de France, idéalement située pour visiter Paris et sa région (RER D et B à 10 mn en voiture). Tout équipé WIFI et fibre, place de parking extérieur et gratuite au pied de l\'apparteme', '66 Rue du Père Corentin', '75014', 'Paris', 'lac', '48.8240192', '2.3273560', 85, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0),
+(141, 16, 'Studio meublé T2', 'studio', 40, 'Profitez d\'un logement élégant et central.Studio pouvant accueillir jusqu\'à 4 personnes. A 15 minutes en vélo de la plage de Carnon. ', 'A 3 minutes à pieds du centre ville de Pérols avec restaurant, tabac, banque, médecins, commerce de proximité et marché (le samedi). Tramway à 3 minutes à pieds pour se rendre à Montpellier centre (gare Montpellier saint Roch). Aéroport et gare Montpellier Sud France à 10 minutes en voiture. Parcours santé, Parc Expo à 10 minutes en vélo.', 'Chemin de Saint-Hubert', ' 34970', 'Lattes', 'beach', '43.5844240', '3.8971450', 70, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0);
 INSERT INTO `logement` (`id_logement`, `id_person`, `title`, `type`, `surface`, `resume`, `description`, `adress`, `adressCode`, `city`, `location`, `latitude`, `longitude`, `price_by_night`, `number_of_person`, `number_of_beds`, `parking`, `wifi`, `piscine`, `animals`, `kitchen`, `garden`, `tv`, `climatisation`, `camera`, `home_textiles`, `spa`, `jacuzzi`) VALUES
 (142, 16, 'Appartement chaleureux et calme Chamonix', 'flat', 35, 'Appartement moderne et au calme, en rez-de-chaussée , situé aux Houches , à 5 min en voiture de Chamonix.', 'Venez vous relaxer dans cet appartement fraichement rénové et idéalement placé.\r\nVillage du Départ du tour du Mont blanc et de nombreux itinéraires de montagne. Ligne de bus vers Chamonix à 1min à pied de l\'appartement.\r\nA 5min à pied du supermarché et du marché de Chibon (tous les mercredis). Belle exposition et vue sur l\'aiguille du midi.\r\nLe logement\r\nL\'appartement d\'une surface de 33m2 est entièrement équipé avec tout le nécessaire pour passer un séjour merveilleux .\r\nLa chambre dispose d\'un lit double et d\'une grande armoire pour vos affaires.\r\nLe canapé lit, convertible est adapté pour les enfants .\r\nAccès des voyageurs\r\nL\'appartement est situé à 1 minute à pied de la ligne de Bus vers Chamonix.\r\nSi vous venez en voiture, un parking gratuit est mis à disposition .\r\nAutres remarques\r\nVos hôtes Daphné et Loïc , passionnés de montagne et épicuriens dans l\'âme sauront vous partager tous les plus beaux itinéraires et les meilleures adresses de la vallée.', 'Route de Perpignan', '66300 ', 'Thuir', 'montain', '42.6324300', '2.7563480', 85, 2, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0),
 (144, 16, 'Maison St Tropez ', 'housse', 87, 'Eco del mar est entouré d\'un grand jardin et offre des espaces confortables pour passer du temps avec ses amis et sa famille\r\n\r\nRépartis sur un seul niveau, le séjour avec cheminée à double façade, la salle à manger de la véranda et la cuisine moderne ave', 'Avec le soleil, les nuages ou la pluie, c\'est une expérience unique d\'avoir la mer devant les yeux. Située dans un quartier privilégié sur la plage de Bouillabaisse dans le golfe de Saint Tropez, cette charmante villa se caractérise par une vue magnifique et un accès direct à la mer. ', 'Chemin de Belle Isnarde', '83990', 'Saint-Tropez', 'beach', '43.2559680', '6.6532707', 400, 6, 3, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0),
+(145, 16, 'Logement entier pour 2 pers', 'Appartement ', 55, 'Magnifique appartement 2 pièces entièrement rénové aux normes', 'Un esprit plutôt contemporain pour la décoration raffinée a été choisi pour vous retrouver dans une ambiance reposante garantie !\r\n\r\nVue agréable sur jardin avec piscine...\r\n\r\nLe logement se situe dans une résidence privée et sécurisée de 8 logements seulement.\r\nLe logement\r\nAgréable vue jardin avec une terrasse orientée EST de 21 m2 pour profiter des petits déjeuners ensoleillés.\r\n\r\nL\'appartement est équipé de double vitrage et climatisation pour les moins friands des chaleurs d’été ou tout simplement pour vous permettre de passer vos nuits en toute quiétude...\r\nAccès des voyageurs\r\nLes voyageurs auront accès à l’ensemble du logement TOTALEMENT Privatif...\r\n\r\nVous disposez d\'un séjour de 30 m2 avec cuisine équipée ouverte, une chambre confortable de 14 m2, salle de douche et WC indépendant.\r\n\r\nLa terrasse quant à elle dispose d’une belle surface de 21 m2 exposée à l\'Est et sans vis à vis avec vue jardin.\r\nAutres remarques\r\nIl est prévu en fin de séjour un ménage de finition, il est ce', '34 Bd Vasserot', '83990', 'Saint-Tropez', 'beach', '43.2700157', '6.6405225', 150, 2, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0),
 (146, 26, 'Cabane éco lodge', 'hut', 18, 'Pour une escapade en amoureux dans une jolie cabane en bois sur une île, accessible uniquement en bateau. Véritable cocon lumineux en bord de Seine en pleine nature. ', 'Notre cabane est équipée d’un salon de jardin privatif, d’une vue directe sur la Seine depuis votre lit, d’un bain nordique, de nombreux points lumineux pour une atmosphère cosy.\r\n\r\nVoici votre refuge pour reconnecter avec votre couple ♥️', '23 Avenue René Fonck', '75019', 'Paris', 'lac', '45.2090159', '-74.3102336', 90, 2, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1);
 
 -- --------------------------------------------------------
@@ -37094,7 +37096,7 @@ INSERT INTO `villes_france` (`id_ville`, `ville_nom`, `img`, `place`) VALUES
 -- Contraintes pour la table `book`
 --
 ALTER TABLE `book`
-  ADD CONSTRAINT `book_ibfk_2` FOREIGN KEY (`id_person`) REFERENCES `person` (`id_person`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `book_ibfk_2` FOREIGN KEY (`id_person`) REFERENCES `person` (`id_person`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `book_ibfk_3` FOREIGN KEY (`id_logement`) REFERENCES `logement` (`id_logement`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
