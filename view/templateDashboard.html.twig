@@ -16,7 +16,7 @@
 		{% block content %}
 			<div class='content'>
 				<div id="popop">
-					<div class='contentFixCard contentFixCardInfoPerso'>
+					<div class='contentFixCard contentFixCardInfoPerso' id="cardPopop">
 						<div>
 
 							<p id="messagePopop"></p>
@@ -1080,6 +1080,11 @@
 								</figure>
 							</div>
 							<div class='cardContentRight'>
+								<form action="" method="post">
+									<input type="hidden" name="idReservation" id="idReservation" value="{{reqOneResevation.id_reservation}}">
+
+									<span class="suprimer change validerGestion suprimerResevation" data-idResevation="{{reqOneResevation.id_reservation}}"></span>
+								</form>
 								<div class='oneRightContent oneRightContentResqervation'>
 									<h2>{{reqOneResevation.title}}</h2>
 								</div>

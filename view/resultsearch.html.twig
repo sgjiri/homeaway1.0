@@ -150,35 +150,44 @@
 						{% set tableauImage = logementDispo[i].thumbnails[0] %}
 
 
-							<article class="item js-marker" data-lat="{{ logementDispo[i].latitude }}" data-lng="{{ logementDispo[i].longitude }}" data-price="{{ logementDispo[i].price_by_night }}">
+						<article class="item js-marker" data-lat="{{ logementDispo[i].latitude }}" data-lng="{{ logementDispo[i].longitude }}" data-price="{{ logementDispo[i].price_by_night }}">
 
+<<<<<<< HEAD
 								<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ logementDispo[i].type  ~ logementDispo[i].city }}">
+=======
+							<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'logementDispo[i].type ' ~ logementDispo[i].city }}">
+>>>>>>> 6043e71e6bae6e45ebbb3d68c83430f52cdc9523
 
 
+							<h4>{{ logementDispo[i].title }}
+								&nbsp;-&nbsp;{{ logementDispo[i].city }}</h4>
+							<span class="idLogement">{{logementDispo[i].id_logement}}</span>
+							<p>{{ logementDispo[i].resume}}</p>
 
-								<h4>{{ logementDispo[i].title }}
-									&nbsp;-&nbsp;{{ logementDispo[i].city }}</h4>
-								<span class="idLogement">{{logementDispo[i].id_logement}}</span>
-								<p>{{ logementDispo[i].resume}}</p>
 
+							<p>
+								<span class='priceByNight'>{{ logementDispo[i].price_by_night }}€</span>
+								par nuit - &nbsp;
+								<span class='totalPrices'>{{ totalPrices[i] }}€
+								</span>
+								au total
+							</p>
+							<div class="close-button">&times;</div>
+							{% if session.connect is defined and session.connect == true %}
+								<form action="{{ path('favorite') }}" method="POST">
+									<input type="hidden" name="id_logement" class="idLogementHidden" value="{{logementDispo[i].id_logement}}">
+									<input type="hidden" name="id_person" id="idPersonHidden" value="{{session.id_person}}">
+									{% if logementDispo[i].id_logement in results %}
 
-								<p>
-									<span class='priceByNight'>{{ logementDispo[i].price_by_night }}€</span>
-									par nuit - &nbsp;
-									<span class='totalPrices'>{{ totalPrices[i] }}€
-									</span>
-									au total
-								</p>
-								<div class="close-button">&times;</div>
-								{% if session.connect is defined and session.connect == true %}
-									<form action="{{ path('favorite') }}" method="POST">
-										<input type="hidden" name="id_logement"  class="idLogementHidden" value="{{logementDispo[i].id_logement}}">
-										<input type="hidden" name="id_person" id="idPersonHidden" value="{{session.id_person}}">
+										<button class="heartIcon" type="button"><img src="./asset/img/iconHeartRed.png" alt="icon coeur rouge
+									"></button>
+
+										{% else %}
 										<button class="heartIcon" type="button"><img src="./asset/img/iconHeartBlack.png" alt="icon coeur noir"></button>
-									</form>
-								{% endif %}
-							</article>
-						
+									{% endif %}
+								</form>
+							{% endif %}
+						</article>
 
 
 					{% endfor %}
