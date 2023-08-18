@@ -144,7 +144,7 @@ class SearchModel extends Model
     }
 
 
-    public function getLogementsByType($type, $number_of_person)
+    public function getLogementsByType($type)
     {
         $logementsType = [];
 
