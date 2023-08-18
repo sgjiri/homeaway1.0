@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 17 août 2023 à 12:08
+-- Généré le : jeu. 17 août 2023 à 07:09
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `book` (
   PRIMARY KEY (`id_reservation`),
   KEY `person` (`id_person`),
   KEY `logement` (`id_logement`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `book`
@@ -47,8 +47,7 @@ INSERT INTO `book` (`id_reservation`, `start_date`, `end_date`, `id_person`, `id
 (3, '2023-08-20', '2023-08-25', 16, 3),
 (4, '2023-08-27', '2023-08-31', 3, 7),
 (29, '2023-08-30', '2023-09-03', 16, 3),
-(30, '2023-08-17', '2023-08-25', 23, 3),
-(35, '2023-09-04', '2023-09-08', 40, 146);
+(30, '2023-08-17', '2023-08-25', 23, 3);
 
 -- --------------------------------------------------------
 
@@ -79,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `image` (
   `id_logement` int NOT NULL,
   PRIMARY KEY (`id_image`),
   KEY `logement` (`id_logement`)
-) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `image`
@@ -135,11 +134,6 @@ INSERT INTO `image` (`id_image`, `thumbnail`, `id_logement`) VALUES
 (49, 'thumbnail_1_parisappart.webp', 138),
 (50, 'thumbnail_2_paris2.webp', 138),
 (51, 'thumbnail_3_paris4.webp', 138),
-(52, 'par1.webp', 91),
-(53, 'par2.webp', 91),
-(54, 'par3.webp', 91),
-(55, 'par4.webp', 91),
-(56, 'par5.webp', 91),
 (59, 'thumbnail_1_appartementMontpellier2.1.webp', 141),
 (60, 'thumbnail_2_appartementMontpellier2.2.webp', 141),
 (61, 'thumbnail_3_appartementMontpellier2.6.jpg', 141),
@@ -149,10 +143,6 @@ INSERT INTO `image` (`id_image`, `thumbnail`, `id_logement`) VALUES
 (65, 'thumbnail_3_chamonix3.webp', 142),
 (66, 'thumbnail_4_chamonix4.webp', 142),
 (67, 'thumbnail_5_chamonix5.webp', 142),
-(68, 'ch1.webp', 92),
-(69, 'ch2.webp', 92),
-(70, 'ch3.webp', 92),
-(71, 'ch4.webp', 92),
 (72, 'thumbnail_1_villa sam.webp', 144),
 (73, 'thumbnail_2_villa2.webp', 144),
 (74, 'evian2.webp\r\n', 24),
@@ -175,30 +165,7 @@ INSERT INTO `image` (`id_image`, `thumbnail`, `id_logement`) VALUES
 (91, 'sao2.webp\r\n\r\n', 27),
 (92, '\r\nsao3.webp\r\n\r\n', 27),
 (93, '\r\nsao4.webp\r\n\r\n\r\n', 27),
-(94, '\r\n\r\nsao5.webp', 27),
-(95, 'thumbnail_1_cab1.webp', 146),
-(96, 'thumbnail_2_cab2.webp', 146),
-(97, 'thumbnail_3_cab3.webp', 146),
-(98, 'thumbnail_4_cab4.webp', 146),
-(99, 'thumbnail_5_cab5.webp', 146),
-(100, 'thumbnail_6_cab6.webp', 146),
-(101, 'pen1.webp', 21),
-(102, 'pen2.webp', 21),
-(103, 'pen3.webp', 21);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `like`
---
-
-DROP TABLE IF EXISTS `like`;
-CREATE TABLE IF NOT EXISTS `like` (
-  `id_logement` int NOT NULL,
-  `id_person` int NOT NULL,
-  KEY `idLogement` (`id_logement`),
-  KEY `idPerson` (`id_person`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(94, '\r\n\r\nsao5.webp', 27);
 
 -- --------------------------------------------------------
 
@@ -238,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `logement` (
   `jacuzzi` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_logement`),
   KEY `person` (`id_person`)
-) ENGINE=InnoDB AUTO_INCREMENT=147 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=146 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `logement`
@@ -294,8 +261,7 @@ INSERT INTO `logement` (`id_logement`, `id_person`, `title`, `type`, `surface`, 
 INSERT INTO `logement` (`id_logement`, `id_person`, `title`, `type`, `surface`, `resume`, `description`, `adress`, `adressCode`, `city`, `location`, `latitude`, `longitude`, `price_by_night`, `number_of_person`, `number_of_beds`, `parking`, `wifi`, `piscine`, `animals`, `kitchen`, `garden`, `tv`, `climatisation`, `camera`, `home_textiles`, `spa`, `jacuzzi`) VALUES
 (142, 16, 'Appartement chaleureux et calme Chamonix', 'flat', 35, 'Appartement moderne et au calme, en rez-de-chaussée , situé aux Houches , à 5 min en voiture de Chamonix.', 'Venez vous relaxer dans cet appartement fraichement rénové et idéalement placé.\r\nVillage du Départ du tour du Mont blanc et de nombreux itinéraires de montagne. Ligne de bus vers Chamonix à 1min à pied de l\'appartement.\r\nA 5min à pied du supermarché et du marché de Chibon (tous les mercredis). Belle exposition et vue sur l\'aiguille du midi.\r\nLe logement\r\nL\'appartement d\'une surface de 33m2 est entièrement équipé avec tout le nécessaire pour passer un séjour merveilleux .\r\nLa chambre dispose d\'un lit double et d\'une grande armoire pour vos affaires.\r\nLe canapé lit, convertible est adapté pour les enfants .\r\nAccès des voyageurs\r\nL\'appartement est situé à 1 minute à pied de la ligne de Bus vers Chamonix.\r\nSi vous venez en voiture, un parking gratuit est mis à disposition .\r\nAutres remarques\r\nVos hôtes Daphné et Loïc , passionnés de montagne et épicuriens dans l\'âme sauront vous partager tous les plus beaux itinéraires et les meilleures adresses de la vallée.', 'Route de Perpignan', '66300 ', 'Thuir', 'montain', '42.6324300', '2.7563480', 85, 2, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0),
 (144, 16, 'Maison St Tropez ', 'housse', 87, 'Eco del mar est entouré d\'un grand jardin et offre des espaces confortables pour passer du temps avec ses amis et sa famille\r\n\r\nRépartis sur un seul niveau, le séjour avec cheminée à double façade, la salle à manger de la véranda et la cuisine moderne ave', 'Avec le soleil, les nuages ou la pluie, c\'est une expérience unique d\'avoir la mer devant les yeux. Située dans un quartier privilégié sur la plage de Bouillabaisse dans le golfe de Saint Tropez, cette charmante villa se caractérise par une vue magnifique et un accès direct à la mer. ', 'Chemin de Belle Isnarde', '83990', 'Saint-Tropez', 'beach', '43.2559680', '6.6532707', 400, 6, 3, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0),
-(145, 16, 'Logement entier pour 2 pers', 'Appartement ', 55, 'Magnifique appartement 2 pièces entièrement rénové aux normes', 'Un esprit plutôt contemporain pour la décoration raffinée a été choisi pour vous retrouver dans une ambiance reposante garantie !\r\n\r\nVue agréable sur jardin avec piscine...\r\n\r\nLe logement se situe dans une résidence privée et sécurisée de 8 logements seulement.\r\nLe logement\r\nAgréable vue jardin avec une terrasse orientée EST de 21 m2 pour profiter des petits déjeuners ensoleillés.\r\n\r\nL\'appartement est équipé de double vitrage et climatisation pour les moins friands des chaleurs d’été ou tout simplement pour vous permettre de passer vos nuits en toute quiétude...\r\nAccès des voyageurs\r\nLes voyageurs auront accès à l’ensemble du logement TOTALEMENT Privatif...\r\n\r\nVous disposez d\'un séjour de 30 m2 avec cuisine équipée ouverte, une chambre confortable de 14 m2, salle de douche et WC indépendant.\r\n\r\nLa terrasse quant à elle dispose d’une belle surface de 21 m2 exposée à l\'Est et sans vis à vis avec vue jardin.\r\nAutres remarques\r\nIl est prévu en fin de séjour un ménage de finition, il est ce', '34 Bd Vasserot', '83990', 'Saint-Tropez', 'beach', '43.2700157', '6.6405225', 150, 2, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0),
-(146, 26, 'Cabane éco lodge', 'hut', 18, 'Pour une escapade en amoureux dans une jolie cabane en bois sur une île, accessible uniquement en bateau. Véritable cocon lumineux en bord de Seine en pleine nature. ', 'Notre cabane est équipée d’un salon de jardin privatif, d’une vue directe sur la Seine depuis votre lit, d’un bain nordique, de nombreux points lumineux pour une atmosphère cosy.\r\n\r\nVoici votre refuge pour reconnecter avec votre couple ♥️', '23 Avenue René Fonck', '75019', 'Paris', 'lac', '45.2090159', '-74.3102336', 90, 2, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1);
+(145, 16, 'Logement entier pour 2 pers', 'Appartement ', 55, 'Magnifique appartement 2 pièces entièrement rénové aux normes', 'Un esprit plutôt contemporain pour la décoration raffinée a été choisi pour vous retrouver dans une ambiance reposante garantie !\r\n\r\nVue agréable sur jardin avec piscine...\r\n\r\nLe logement se situe dans une résidence privée et sécurisée de 8 logements seulement.\r\nLe logement\r\nAgréable vue jardin avec une terrasse orientée EST de 21 m2 pour profiter des petits déjeuners ensoleillés.\r\n\r\nL\'appartement est équipé de double vitrage et climatisation pour les moins friands des chaleurs d’été ou tout simplement pour vous permettre de passer vos nuits en toute quiétude...\r\nAccès des voyageurs\r\nLes voyageurs auront accès à l’ensemble du logement TOTALEMENT Privatif...\r\n\r\nVous disposez d\'un séjour de 30 m2 avec cuisine équipée ouverte, une chambre confortable de 14 m2, salle de douche et WC indépendant.\r\n\r\nLa terrasse quant à elle dispose d’une belle surface de 21 m2 exposée à l\'Est et sans vis à vis avec vue jardin.\r\nAutres remarques\r\nIl est prévu en fin de séjour un ménage de finition, il est ce', '34 Bd Vasserot', '83990', 'Saint-Tropez', 'beach', '43.2700157', '6.6405225', 150, 2, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -313,7 +279,7 @@ CREATE TABLE IF NOT EXISTS `person` (
   `phone_number` int NOT NULL,
   `mail` varchar(50) NOT NULL,
   PRIMARY KEY (`id_person`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `person`
@@ -328,21 +294,7 @@ INSERT INTO `person` (`id_person`, `name`, `firstname`, `date_of_birth`, `passwo
 (23, 'SEQUEIRA', 'ALEXANDRE', '2023-06-29', '$2y$10$C1.yV5A5FQOmHqi6JG7Xruc0aGPUXllnMhk2znTkVUkyLPwNU6d5e', 628657515, 'bobas@gmail.com'),
 (24, 'Fischer', 'JIRKA', '1985-08-02', '$2y$10$1e9OVIL1gr6NfJ3Pl4qssexLtTClSH.SOnM.4.6CKWz21ooAFRBqq', 652658969, ''),
 (25, 'Fischer', 'JIRKA', '1985-08-02', '$2y$10$9NjENGDKnza/PQEn0sAoxOGWj7klt7pSvC04WGN7gZFcyl3/j/cMG', 685969878, ''),
-(26, 'Fischer', 'JIRKA', '1985-08-02', '$2y$10$CYIdClWT3M6tK3S3xa1c9.QBSIBG6deT6CsQAYYnobeu63Dp2TpFm', 652658969, 'jirka@live.fr'),
-(27, 'ravinet', 'elisa', '1985-05-02', '$2y$10$Kf7vMd8xoLfkpHCo7iwEze.SOdqe1Lw7UmQFcBEwk6ZjNPfJYEeEy', 652658969, 'hizya@outlook.fr'),
-(28, 'acha', 'hamid', '2007-05-23', '$2y$10$c8KNDc20Ojx9Zh4j8JOu6eXkmhH6jvVHgguhm14Goz35xXKTY0Y7G', 789693696, 'titi@live.fr'),
-(29, 'acha', 'hamid', '2010-02-02', '$2y$10$wj7cdaHCJEoEMAiWgEnWUeJntIxBagTEuq458dfCIwv9rCwXYoiZS', 652658969, 'toto@live.fr'),
-(30, 'achar', 'bilal', '2000-03-25', '$2y$10$6Q9HofQbX5eSQXd5xX6LFuZnh5fz3O.wnOxagAU/geg0OMRqrDfIq', 652658969, 'arri@live.fr'),
-(31, 'ici', 'labas', '1980-03-02', '$2y$10$MdPS.wttITyeKKuuJjN/N.JegkND2TpVwmWSCJctvOAX2IH9VHO3i', 652658969, 'coucou@live.fr'),
-(32, 'lavigne', 'avril', '1980-02-03', '$2y$10$vKDWxlm/5SrTvndtNcSp8.hTDTPKSPdMO.U4rze873yhy5lTAqE26', 685969878, 'avril@live.fr'),
-(33, 'lavigne', 'avril', '1980-02-03', '$2y$10$z4Vm5ZI84lVbYCw.VdDK2uYLbmAHV2.SfDBIcc0okGZf3SbWaH2fa', 685969878, 'avril@live.fr'),
-(34, 'buy', 'JIRKA', '1980-03-02', '$2y$10$YHcQMp5gzIYnH2hymqDb3um3ByaOkFqSJdJz79M/uBlRw2EHNrt/K', 685969878, 'titi@live.fr'),
-(35, 'michelle gellar', 'sarah', '1985-02-03', '$2y$10$q2bAODLr0Pm.6vkNEa6gZ.P2BRq.Fj8A4Z.Rbhk2cTjx0NZZtz/hm', 685969878, 'sarah@live.fr'),
-(36, 'bek', 'najia', '1985-03-02', '$2y$10$dFzYaYjiEq6L.jmBvYXdyecreMe58cLGNme7TkOeOY44Y/ccMCkFS', 685969878, 'love@live.fr'),
-(37, 'acha', 'xwcwx', '1985-03-02', '$2y$10$vzKZjuJSevEen9vSaITdWug1iJYFKMcmV714okGlGwBHAc5ftT6Cm', 652658969, 'tata@gmail.com'),
-(38, 'dsf', 'fsdfdsf', '1985-03-02', '$2y$10$PXyrfbgP96Rw3tD16gSCv.7vASXo6ZYp/4eFtDPAgH6k/B2UR.iai', 652658969, 'tata@gmail.com'),
-(39, 'dsqsd', 'qsdqsd', '1986-02-03', '$2y$10$77O1pkAdV3Fq12kGfGsLSuAmKeX7y/rxIwf64rKgG8P3d8f0N5Mty', 652658969, 'titi@live.fr'),
-(40, 'amir', 'abdel', '1986-05-03', '$2y$10$IzN9jXojdXFWg3LWWnFoUueSt3s65R2ao7M0X.3nqbniJIz4IYn3e', 685969878, 'amir@live.fr');
+(26, 'Fischer', 'JIRKA', '1985-08-02', '$2y$10$CYIdClWT3M6tK3S3xa1c9.QBSIBG6deT6CsQAYYnobeu63Dp2TpFm', 652658969, 'jirka@live.fr');
 
 -- --------------------------------------------------------
 
@@ -37110,13 +37062,6 @@ ALTER TABLE `cancel`
 --
 ALTER TABLE `image`
   ADD CONSTRAINT `image_ibfk_1` FOREIGN KEY (`id_logement`) REFERENCES `logement` (`id_logement`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Contraintes pour la table `like`
---
-ALTER TABLE `like`
-  ADD CONSTRAINT `like_ibfk_1` FOREIGN KEY (`id_logement`) REFERENCES `logement` (`id_logement`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `like_ibfk_2` FOREIGN KEY (`id_person`) REFERENCES `person` (`id_person`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

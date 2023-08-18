@@ -3,16 +3,16 @@ class PersonModel extends Model
 {
     // -------CONNEXION-------//
 
-     
-//     public function getPersonById($id)
-// {
-//     $req = $this->getDb()->prepare("SELECT `mail`, `password`, `id_person` FROM `person` WHERE `id_person` = :id LIMIT 0, 1");
-//     $req->bindParam(":id", $id, PDO::PARAM_INT);
-//     $req->execute();
 
-//     return $req->fetch(PDO::FETCH_ASSOC);
-// }
+        public function getPersonById($id)
+    {
+        $req = $this->getDb()->prepare("SELECT `mail`, `password`, `id_person` FROM `person` WHERE `id_person` = :id LIMIT 0, 1");
+        $req->bindParam(":id", $id, PDO::PARAM_INT);
+        $req->execute();
 
+        return $req->fetch(PDO::FETCH_ASSOC);
+    }
+  
 
     public function getUserByMail(String $mail)
     {
@@ -21,12 +21,12 @@ class PersonModel extends Model
         $req->bindParam(":mail", $mail, PDO::PARAM_STR);
         $req->execute();
 
+
         return $req->rowCount() === 1 ? new Person($req->fetch(PDO::FETCH_ASSOC)) : false;
     }
 
 
     // -------INSCRIPTION-------//
-
 
     public function register(Person $person)
     {
@@ -36,7 +36,6 @@ class PersonModel extends Model
         $date_of_birth = $person->getDate_of_birth();
         $phone_number = $person->getPhone_number();
         $password = $person->getPassword();
-       
 
         $req = $this->getDb()->prepare('INSERT INTO `person` (`name`,`firstname`,`date_of_birth`,`phone_number`, `mail`, `password`) VALUES ( :name, :firstname, :date_of_birth, :phone_number, :mail, :password )');
 
@@ -48,6 +47,22 @@ class PersonModel extends Model
         $req->bindParam(":mail", $mail, PDO::PARAM_STR);
 
         $req->execute();
+        $this->login($person->getMail()); // Connexion de l'utilisateur après l'inscription
+    }
+
+
+    public function login($mail)
+    {
+        
+        $person = $this->getUserByMail($mail);
+
+        if ($person) {
+           
+            $_SESSION['connect'] = true;
+            $_SESSION['id_person'] = $person->getId_person();
+            $_SESSION['mail'] = $person->getMail();
+        }
+       
     }
 
     public function deleteUser($idUser)
@@ -58,5 +73,4 @@ class PersonModel extends Model
 
         $reqDelete->execute();
     }
-
 }

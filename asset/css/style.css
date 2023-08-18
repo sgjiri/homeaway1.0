@@ -213,6 +213,9 @@ header .loginBoxHeader .sign-up-form {
   overflow: auto;
   height: 500px;
 }
+header .loginBoxHeader .passw-require {
+  color: white;
+}
 header .loginBoxHeader .sign-in {
   display: none;
 }

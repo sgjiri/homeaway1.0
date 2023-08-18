@@ -133,9 +133,41 @@ cross.addEventListener('click', function(){
 
 
 
-    let classInputSuprimerLogement = document.getElementsByClassName('suprimerLogement');
-    let inputHidden = document.getElementById('inputHiddenPopop');
-    let getMessagePopop = document.getElementById('messagePopop');
+let classInputSuprimerLogement = document.getElementsByClassName('suprimerLogement');
+let inputHidden = document.getElementById('inputHiddenPopop');
+let getMessagePopop = document.getElementById('messagePopop');
+
+for (let i = 0; i < classInputSuprimerLogement.length; i++) {
+
+    classInputSuprimerLogement[i].addEventListener('click', function () {
+        let idLogement = this.getAttribute("data-idLogement");
+        let nameLogement = this.getAttribute("data-nameLogement");
+        getMessagePopop.innerHTML = "Voulez vous vraiment supprimer le logement " + nameLogement + "?";
+        popop.classList.add('popopActive');
+        popopValider.setAttribute("name", "suprimerLogement");
+        inputHidden.setAttribute("value", idLogement)
+    });
+}
+
+
+let classInputSuprimerLike = document.getElementsByClassName('suprimerLike');
+
+for (let i = 0; i < classInputSuprimerLike.length; i++) {
+
+    classInputSuprimerLike[i].addEventListener('click', function () {
+        let idLogement = this.getAttribute("data-idLogement");
+        getMessagePopop.innerHTML = "Voulez vous vraiment supprimer ce logement de vos favorit?";
+        popop.classList.add('popopActive');
+        popopValider.setAttribute("name", "suprimerLike");
+        inputHidden.setAttribute("value", idLogement)
+    });
+}
+
+
+
+//Funtion pour surprimer les images
+
+
 
     for (let i = 0; i < classInputSuprimerLogement.length; i++) {
         
