@@ -302,5 +302,23 @@ class LogementController extends Controller
     // Convertissez les données en JSON et renvoyez la réponse
     echo json_encode($response);
 }
+public function deleteFavorite()
+{
+    $modelLogement = new LogementModel();
+
+    $id_logement = $_POST['id_logement'];
+    $id_person = $_SESSION['id_person'];
+
+    $modelLogement->delFavorite($id_person, $id_logement);
+
+    // Préparez les données de réponse JSON
+    $response = array(
+        'status' => 'success',
+        'message' => 'Le logement a été supprimé des favoris.'
+    );
+
+    // Convertissez les données en JSON et renvoyez la réponse
+    echo json_encode($response);
+}
 
 }

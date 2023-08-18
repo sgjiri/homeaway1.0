@@ -399,20 +399,25 @@ sans-serif;
     .contentFixCardInfoPerso {
         background-color: $turque;
         height: 130px;
-
-        .suprimer {
-            background: url(../img/icon\ _trash_.png) center center no-repeat;
-            border-radius: 50%;
-            height: 40px;
-            width: 40px;
-            transition: all 0.1s ease-in;
-
-            &:hover {
-                cursor: pointer;
-                background-color: $red;
-                transform: scale(1.1);
+        form{
+            .suprimer {
+                background: url(../img/icon\ _trash_.png) center center no-repeat;
+                border-radius: 50%;
+                height: 40px;
+                width: 40px;
+                transition: all 0.1s ease-in;
+    
+                &:hover {
+                    cursor: pointer;
+                    background-color: $red;
+                    transform: scale(1.1);
+                }
             }
+
+
         }
+
+        
     }
 
     .contentPage {
@@ -546,6 +551,7 @@ sans-serif;
             padding: 5px;
             margin-left: 20px;
             height: 50%;
+           
 
             &::placeholder {
                 color: #e3dada;
@@ -1745,6 +1751,26 @@ sans-serif;
             background-color: $green;
 
             .cardContentRight {
+
+                form{
+                    .suprimer {
+                        background: url(../img/icon\ _trash_.png) center center no-repeat;
+                        border-radius: 50%;
+                        height: 40px;
+                        width: 40px;
+                        transition: all 0.1s ease-in;
+                        position: absolute;
+                        right: 20px;
+                        top: 20px;
+            
+                        &:hover {
+                            cursor: pointer;
+                            background-color: $red;
+                            transform: scale(1.1);
+                        }
+                    }
+
+                }
                 .oneRightContent {
                     height: 25%;
 
