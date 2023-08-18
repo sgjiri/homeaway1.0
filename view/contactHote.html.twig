@@ -1,15 +1,15 @@
 {% extends "template.html.twig" %}
 
 {% block title %}
-	CONTACT
+	CONTACTER HOTE
 {% endblock %}
 
 {% block content %}
 
 	<div class="contactForm">
 		<div class="formContact">
-			<form action="{{ path('contact') }}" method="POST">
-				<h3>Contacter l'hôte</h3>
+			<form action="{{ path('sendMail') }}" method="POST">
+				<h3>Contacter l'hote</h3>
 
 				<p>Nous sommes ravis que vous ayez choisi notre logement pour votre séjour. Pour toute question, demande spéciale ou information supplémentaire, n'hésitez pas à nous contacter en utilisant le formulaire ci-dessous.</p>
 

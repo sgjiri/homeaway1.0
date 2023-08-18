@@ -22,7 +22,6 @@ class DashboardController extends Controller
             for ($i = 0; $i < count($datasLogement); $i++) {
                 $images = $datasLogement[$i]['images'];
                 $arrayImage = explode(',', $images);
-
                 $imageArray[] = $arrayImage;
             }
             $arrayContacts = [];
@@ -73,8 +72,7 @@ class DashboardController extends Controller
                 $arrayHistoriqueName[] = $historiquenameArray;
                 $arrayHistoriqueFirstname[] = $historiquefirstnameArray;
             }
-            var_dump($datasLikes);
-           
+          
 
             echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images' => $imageArray, 'mesReservations' => $datasMesReservation, 'historiqueReservation' => $datasHistoriqueReservation,'datasReservationChezMoi' => $datasReservationChezMoi, 'contacts' => $arrayContacts, 'start_dates' => $arrayStart_date, 'end_dates' => $arrayEnd_dateArray, 'names' => $arrayName, 'firstnames' => $arrayFirstname, 'idUser'=>$idUser,'datasHistoriqueReservationChezMoi' => $datasHistoriqueReservationChezMoi, 'contactsHistorique' => $arrayHistoriqueContacts, 'start_datesHistorique' => $arrayHistoriqueStart_date, 'end_datesHistorique' => $arrayHistoriqueEnd_dateArray, 'namesHistorique' => $arrayHistoriqueName, 'firstnamesHistorique' => $arrayHistoriqueFirstname, 'idUser'=>$idUser, 'likes'=>$datasLikes]);
         }
@@ -289,17 +287,14 @@ class DashboardController extends Controller
 
         if (isset($_POST['suprimerImages'])) {
             $nameImage = ($_POST['inputHiddenPopop']);
-            
             $suprimerImage = explode(',', $nameImage);
-            var_dump($suprimerImage);
             $return = $modelUpdate->deleteImg($suprimerImage);
             header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");
             exit();
         }
 
         if (isset($_POST['suprimerLogement'])) {
-            var_dump($_POST);
-            var_dump('coucou');
+          
             $id_logement = ($_POST['inputHiddenPopop']);
             $delModel = new LogementModel();
             $delModel->delete($id_logement);
@@ -480,8 +475,8 @@ class DashboardController extends Controller
 
 
         if (isset($_POST['validerImages'])) {
-            var_dump($_POST);
-            var_dump('coucou');
+            // var_dump($_POST);
+            // var_dump('coucou');
 
             if (isset($_SESSION['id_person'])) {
                 // var_dump('id_person is set');

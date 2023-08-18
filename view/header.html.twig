@@ -10,10 +10,10 @@
 			<img id="imgConnectDesktop" src="{{asset('/img/divBurgerConnect')}}" alt="burger">
 			<nav id='navConnect'>
 				<ul>
-					<li><a id="lienInformation"href='{{path('dashboard')}}?activeElement=contentInfoPerso'>Vos informations</a></li>
+					<li><a id="lienInformation"href='{{path('dashboard')}}?activeElement=contentInfoPerso'>Mes informations</a></li>
 					<li><a href='#'>Messages</a></li>
-					<li><a href='{{path('dashboard')}}?activeElement=contentMesReservation'>Vos réservations</a></li>
-					<li><a href='{{path('dashboard')}}?activeElement=contentAjoutLogement'>Ajouter un logement en ligne</a></li>
+					<li><a href='{{path('dashboard')}}?activeElement=contentMesReservation'>Mes réservations</a></li>
+					<li><a href='{{path('dashboard')}}?activeElement=contentAjoutLogement'>Ajouter un logement </a></li>
 					<li><a href='#'>Vos favoris</a></li>
 					<li><a href='{{ path('faq') }}'>FAQ</a></li>
 					<li><a href='{{path('logout')}}'>Déconnexion</a></li>
@@ -38,11 +38,11 @@
 
 				<nav id='navConnectPhone'>
 					<ul>
-						<li><a href='#'>Vos informations</a></li>
+						<li><a href='#'>Mes informations</a></li>
 						<li><a href='#'>Messages</a></li>
-						<li><a href='#'>Vos réservations</a></li>
-						<li><a href='{{path('add')}}'>Ajouter un logement en ligne</a></li>
-						<li><a href='#'>Vos favoris</a></li>
+						<li><a href='#'>Mes réservations</a></li>
+						<li><a href='{{path('add')}}'>Ajouter un logement </a></li>
+						<li><a href='#'>Mes favoris</a></li>
 						<li><a href='('faq') }}'>FAQ</a></li>
 						<li><a href='{{path('logout')}}'>Déconnexion</a></li>
 					</ul>
@@ -137,9 +137,9 @@
 						<input id="password" name="password" type="password" class="input">
 					</div>
 					<div class="group">
-						<label for="password" class="label">Confirmé mot de passe</label>
+						<label for="password" class="label">Confirmation du mot de passe</label>
 						<input id="password" name="password" type="password" class="input" data-type="password">
-						 <p class="passw-require">Votre mot de passe doit contenir au moins 12 caractères avec au moins une majuscule, une minuscule et un caractère spécial.</p>
+						 <p class="passw-require">Votre mot de passe doit contenir au moins 12 caractères avec au moins une majuscule, une minuscule et un caractère spécial (*./,/).</p>
 					</div>
 					<div class="group">
 						<label for="pass" class="label">Email Address</label>
@@ -158,6 +158,5 @@
 
 
 </header>
-
 
 

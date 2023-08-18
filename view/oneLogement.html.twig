@@ -15,7 +15,7 @@
 
 							{% for oneImg in allImg %}
 								<div class="slide">
-									<img src="{{ asset('/img/logement/' ~ oneImg.thumbnail) }}" alt="{{ oneImg.thumbnail }}">
+									<img src="{{ asset('/img/logement/' ~ oneImg.thumbnail) }}" alt="{{ oneImg.title }}">
 
 								</div>
 							{% endfor %}
@@ -26,11 +26,11 @@
 				</div>
 				<div id="boxGallery">
 					<div id="bigImg">
-						<img class="imgTop" src="{{asset('/img/logement/' ~ allImg[0].thumbnail)}}" alt="nom de l'image">
+						<img class="imgTop" src="{{asset('/img/logement/' ~ allImg[0].thumbnail)}}" alt="{{ allImg[0].title }}">
 					</div>
 					<div id="scrollbar">
 						{% for oneImg in allImg %}
-							<img class="imgGallery" src="{{ asset('/img/logement/' ~ oneImg.thumbnail) }}" alt="{ oneImg.thumbnail }}">
+							<img class="imgGallery" src="{{ asset('/img/logement/' ~ oneImg.thumbnail) }}" alt="{{ oneImg.title }}">
 
 						{% endfor %}
 					</div>
@@ -76,7 +76,7 @@
 				{% endif %}
 				{% if onelogement.animals == true %}
 					<div class="convenience">
-						<img src="{{asset('/img/pate.png')}}" alt="icon pate">
+						<img src="{{asset('/img/pate.png')}}" alt="icon animaux">
 						<p>Animaux</p>
 					</div>
 				{% endif %}
@@ -131,7 +131,7 @@
 				{% endif %}
 			</div>
 
-			
+
 			<h4>Calendrier</h4>
 			<div id="calendar"></div>
 			<div id="locationOne">
@@ -150,13 +150,13 @@
 				<strong id="priceByNight">
 					€</strong>
 				par nuit</h4>
-				<div id="dateReserv">
-				<p>Du</p>	
-			<input type="date" name="start_date" id="startDate" value="">
-			<p>au</p>
-			<input type="date" name="end_date" id="endDate" value="">
-				</div>
-			
+			<div id="dateReserv">
+				<p>Du</p>
+				<input type="date" name="start_date" id="startDate" value="">
+				<p>au</p>
+				<input type="date" name="end_date" id="endDate" value="">
+			</div>
+
 			<p>
 				<strong id="numberOfPerson"></strong>
 				personne(s)</p>
@@ -169,35 +169,14 @@
 
 			<input type="hidden" name="id_logement" id="id_logement" value="">
 
-			<input class="button" type="submit" name="submit" value="Réserver" onclick="showConfirmation()">
+			<input class="button" type="submit" name="submit" value="Réserver" id="reservationButton">
 		</form>
 
 
 	</section>
-	<script>
-
-		function showConfirmation() {
-const start_date = document.getElementById("start_date").value;
-const end_date = document.getElementById("end_date").value;
-const id_person = document.getElementById("id_person").value;
-const id_logement = document.getElementById("id_logement").value;
 
 
-document.getElementById("start_date").value = start_date;
-document.getElementById("end_date").value = end_date;
-document.getElementById("id_person").value = id_person;
-document.getElementById("id_logement").value = id_logement;
-
-const confirmation = confirm("Êtes-vous sûr de vouloir effectuer cette réservation ?");
-if (confirmation) {
-const message = "Votre réservation a bien été prise en compte.";
-alert(message);
-// Vous pouvez également rediriger l'utilisateur vers une autre page ici si nécessaire
-document.getElementById("secondPartOne").submit();
-}
-
-}
-	</script>
+	<script src="{{asset('/js/contacthote.js')}}"></script>
 	<script>
 		const books = {{ books|json_encode|raw }}
 	</script>
@@ -212,16 +191,19 @@ document.getElementById("secondPartOne").submit();
 	<script src="{{asset('/js/map.js')}}"></script>
 
 	<script src="{{asset('/js/calendar.js')}}"></script>
+
+
+	
 	<footer>
-	<style>
-	footer{
-		margin-bottom:248px; 
-	}
-	@media screen and (min-width:800px) {
-		footer{
-		margin-bottom:unset; 
-	}
-	}
-	</style>
+		<style>
+			footer {
+				margin-bottom: 248px;
+			}
+			@media screen and(min-width:800px) {
+				footer {
+					margin-bottom: unset;
+				}
+			}
+		</style>
 	</footer>
 {% endblock %}
