@@ -151,7 +151,7 @@
 
 					{% set tableauImage = logements[i].thumbnails[0] %}
 
-				  <a href="{{ path('one') ~ logements[i].id_logement}}">
+				  <a href="{{ path('one')  ~ logements[i].id_logement}}">
                      
 
 						<article class="item js-marker" data-lat="{{ logements[i].latitude }}" data-lng="{{ logements[i].longitude }}" data-price="{{ logements[i].price_by_night }}">
