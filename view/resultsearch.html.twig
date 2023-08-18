@@ -150,11 +150,10 @@
 						{% set tableauImage = logementDispo[i].thumbnails[0] %}
 
 
-
-						<a href="{{ path('one') ~ logementDispo[i].id_logement}}">
 							<article class="item js-marker" data-lat="{{ logementDispo[i].latitude }}" data-lng="{{ logementDispo[i].longitude }}" data-price="{{ logementDispo[i].price_by_night }}">
 
 								<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ logementDispo[i].type  ~ logementDispo[i].city }}">
+
 
 
 								<h4>{{ logementDispo[i].title }}
@@ -162,7 +161,6 @@
 								<span class="idLogement">{{logementDispo[i].id_logement}}</span>
 								<p>{{ logementDispo[i].resume}}</p>
 
-					
 
 								<p>
 									<span class='priceByNight'>{{ logementDispo[i].price_by_night }}€</span>
@@ -172,9 +170,15 @@
 									au total
 								</p>
 								<div class="close-button">&times;</div>
-
+								{% if session.connect is defined and session.connect == true %}
+									<form action="{{ path('favorite') }}" method="POST">
+										<input type="hidden" name="id_logement"  class="idLogementHidden" value="{{logementDispo[i].id_logement}}">
+										<input type="hidden" name="id_person" id="idPersonHidden" value="{{session.id_person}}">
+										<button class="heartIcon" type="button"><img src="./asset/img/iconHeartBlack.png" alt="icon coeur noir"></button>
+									</form>
+								{% endif %}
 							</article>
-						</a>
+						
 
 
 					{% endfor %}
@@ -192,6 +196,7 @@
 	<script src="{{asset('/js/localStorage.js')}}"></script>
 	<script src="{{asset('/js/vendor.js')}}"></script>
 	<script src="{{asset('/js/map.js')}}"></script>
+	<script src="{{asset('/js/heart.js')}}"></script>
 
 
 {% endblock %}

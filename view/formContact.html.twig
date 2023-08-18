@@ -5,23 +5,44 @@
 {% endblock %}
 
 {% block content %}
- <form action="{{path('formContact')}}" method="POST" >
-                <label for="name">Nom :</label><br>
-                <input type="text" id="name" name="name" required><br>
+	<div class="contactForm">
+		<div class="formContact">
+			<form action="{{path('sendMail')}}" method="POST">
+				<h3>Formulaire de contact</h3>
 
-                <label for="surname">Prénom :</label><br>
-                <input type="text" id="surname" name="surname" required><br>
+				<p>
 
-                <label for="phone">Numéro de téléphone :</label><br>
-                <input type="tel" id="phone" name="phone" required><br>
+					Votre satisfaction est notre priorité absolue. Que vous ayez des questions, des commentaires ou des préoccupations, nous sommes là pour vous aider. Veuillez remplir le formulaire ci-dessous avec autant de détails que possible, afin que nous puissions vous assister de la meilleure façon qui soit.<br><br>
 
-                <label for="email">E-mail :</label><br>
-                <input type="email" id="email" name="email" required><br>
+					Nous nous engageons à répondre à toutes les demandes dans les plus brefs délais. Votre opinion est inestimable et nous permet d'améliorer continuellement notre service. Nous vous remercions d'avance pour votre collaboration.<br><br>
 
-                <label for="message">Message :</label><br>
-                <textarea id="message" name="message" rows="5" cols="40" required></textarea><br>
+					L'équipe de HomeAway</p>
 
-                <input id="submit" type="submit" value="Envoyer">
-            </form>
+				<label class="form-group">
+					<input type="text" name="name" class="form-control" required>
+					<span>Votre nom</span>
+					<span class="border"></span>
+				</label>
+				<label class="form-group">
+					<input type="text" name="surname" class="form-control" required>
+					<span>Votre prénom</span>
+					<span class="border"></span>
+				</label>
 
+				<label class="form-group">
+					<input type="text" name="mail" class="form-control" required>
+					<span>Votre mail</span>
+					<span class="border"></span>
+				</label>
+
+				<label class="form-group">
+					<textarea name="message" class="form-control" required></textarea>
+					<span>Votre Message</span>
+					<span class="border"></span>
+				</label>
+
+				<input id="send" type="submit" name="submit" value="Envoyer">
+			</form>
+		</div>
+	</div>
 {% endblock %}
