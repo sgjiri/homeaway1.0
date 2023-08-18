@@ -109,6 +109,7 @@ let popopValider = document.getElementById('popopvalider');
 
 deleteUser.addEventListener('click', function () {
     popop.classList.add('popopActive')
+    getMessagePopop.innerHTML = "Voulez vous vraiment supprimer votre compte?";
     popopValider.setAttribute("name", "suprimerUser");
 });
 
@@ -136,6 +137,7 @@ cross.addEventListener('click', function () {
 let classInputSuprimerLogement = document.getElementsByClassName('suprimerLogement');
 let inputHidden = document.getElementById('inputHiddenPopop');
 let getMessagePopop = document.getElementById('messagePopop');
+let getCardPopop = document.getElementById('cardPopop');
 
 for (let i = 0; i < classInputSuprimerLogement.length; i++) {
 
@@ -143,6 +145,7 @@ for (let i = 0; i < classInputSuprimerLogement.length; i++) {
         let idLogement = this.getAttribute("data-idLogement");
         let nameLogement = this.getAttribute("data-nameLogement");
         getMessagePopop.innerHTML = "Voulez vous vraiment supprimer le logement " + nameLogement + "?";
+        getCardPopop.style.backgroundColor = 'rgba(1, 124, 142, 1)';
         popop.classList.add('popopActive');
         popopValider.setAttribute("name", "suprimerLogement");
         inputHidden.setAttribute("value", idLogement)
@@ -158,8 +161,23 @@ for (let i = 0; i < classInputSuprimerLike.length; i++) {
         let idLogement = this.getAttribute("data-idLogement");
         getMessagePopop.innerHTML = "Voulez vous vraiment supprimer ce logement de vos favorit?";
         popop.classList.add('popopActive');
+        getCardPopop.style.backgroundColor = '#ed1b24';
         popopValider.setAttribute("name", "suprimerLike");
         inputHidden.setAttribute("value", idLogement)
+    });
+}
+
+let classInputSuprimerReservation = document.getElementsByClassName('suprimerResevation');
+
+for (let i = 0; i < classInputSuprimerReservation.length; i++) {
+
+    classInputSuprimerReservation[i].addEventListener('click', function () {
+        let idResevation = this.getAttribute("data-idResevation");
+        getMessagePopop.innerHTML = "Voulez vous vraiment annuler cette reservation?";
+        popop.classList.add('popopActive');
+        getCardPopop.style.backgroundColor = '#4fb849';
+        popopValider.setAttribute("name", "suprimerReservation");
+        inputHidden.setAttribute("value", idResevation)
     });
 }
 
