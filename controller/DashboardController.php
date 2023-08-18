@@ -5,7 +5,6 @@ class DashboardController extends Controller
     {
         $twig = $this->getTwig();
         $idUser = $_SESSION['id_person'];
-        var_dump($idUser);
         $model = new DashboardModel();
         $modelUpdate = new DashboardUpdateLogementModel();
         $modelReservation = new DashboardReservationModel();
@@ -49,7 +48,6 @@ class DashboardController extends Controller
                 $arrayName[] = $nameArray;
                 $arrayFirstname[] = $firstnameArray;
             }
-
 
 
             $arrayHistoriqueContacts = [];
@@ -290,32 +288,24 @@ class DashboardController extends Controller
         }
 
         if (isset($_POST['suprimerImages'])) {
-
             $nameImage = ($_POST['inputHiddenPopop']);
             
             $suprimerImage = explode(',', $nameImage);
-            // var_dump($suprimerImage);
+            var_dump($suprimerImage);
             $return = $modelUpdate->deleteImg($suprimerImage);
             header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");
             exit();
-
         }
 
         if (isset($_POST['suprimerLogement'])) {
             var_dump($_POST);
             var_dump('coucou');
-            $id_logement = ($_POST['inputHiddenPopop']);;
+            $id_logement = ($_POST['inputHiddenPopop']);
             $delModel = new LogementModel();
             $delModel->delete($id_logement);
             header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");
             exit();
         }
-
-
-        if (isset($_POST['suprimerUser'])) {
-            $delUser = new PersonModel();
-            $delUser->deleteUser($idUser);
-            header("Location: /Projet/homeaway1.0");
 
         
 
@@ -324,7 +314,6 @@ class DashboardController extends Controller
             $id_logement = ($_POST['inputHiddenPopop']);
             $deLike->deleteLike($idUser, $id_logement);
             header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentLike");
-
             exit();
         }
 
@@ -491,7 +480,8 @@ class DashboardController extends Controller
 
 
         if (isset($_POST['validerImages'])) {
-          
+            var_dump($_POST);
+            var_dump('coucou');
 
             if (isset($_SESSION['id_person'])) {
                 // var_dump('id_person is set');
