@@ -74,10 +74,14 @@ class DashboardController extends Controller
                 $arrayHistoriqueFirstname[] = $historiquefirstnameArray;
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
           
 =======
            
 >>>>>>> 6043e71e6bae6e45ebbb3d68c83430f52cdc9523
+=======
+
+>>>>>>> 2a9518dee95d40efd15d02a41b56bcbcd2cb9515
 
             echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images' => $imageArray, 'mesReservations' => $datasMesReservation, 'historiqueReservation' => $datasHistoriqueReservation,'datasReservationChezMoi' => $datasReservationChezMoi, 'contacts' => $arrayContacts, 'start_dates' => $arrayStart_date, 'end_dates' => $arrayEnd_dateArray, 'names' => $arrayName, 'firstnames' => $arrayFirstname, 'idUser'=>$idUser,'datasHistoriqueReservationChezMoi' => $datasHistoriqueReservationChezMoi, 'contactsHistorique' => $arrayHistoriqueContacts, 'start_datesHistorique' => $arrayHistoriqueStart_date, 'end_datesHistorique' => $arrayHistoriqueEnd_dateArray, 'namesHistorique' => $arrayHistoriqueName, 'firstnamesHistorique' => $arrayHistoriqueFirstname, 'idUser'=>$idUser, 'likes'=>$datasLikes]);
         }
