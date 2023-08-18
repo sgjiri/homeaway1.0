@@ -189,4 +189,20 @@ class LogementModel extends Model
             $reqAddFavorite->execute();
          
     }
+    public function delFavorite($id_person, $id_logement){
+        $req=$this->getDb()->prepare("DELETE FROM `like` WHERE `id_logement` = :id_logement AND `id_person` = :id_person");
+        $req->bindParam(':id_person', $id_person, PDO::PARAM_INT);
+        $req->bindParam(':id_logement', $id_logement, PDO::PARAM_INT);
+        $req->execute();
+
+    }
+    public function like($id_person, $id_logement)
+    {
+        $reqlike = $this->getDb()->prepare("SELECT `id_logement`, `id_person` FROM `like` WHERE id_logement=:id_logement AND id_person=:id_person");
+        $reqlike->bindParam(':id_person', $id_person, PDO::PARAM_INT);
+        $reqlike->bindParam(':id_logement', $id_logement, PDO::PARAM_INT);
+        $reqlike->execute();
+        
+        return $reqlike->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

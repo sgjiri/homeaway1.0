@@ -66,7 +66,10 @@ $router->map('GET|POST', '/contact', 'LogementController#contactMe', 'contact' )
 // *-*-*-*ROUTE ENVOI MAIL CONTACTER L HOTE*-*-*-*
 $router->map('POST', '/sendMail', 'ContactController#sendMail', 'sendMail' );
 // *-*-*-*ROUTE add faorites*-*-*-*
-$router->map('POST', '/favorite', 'LogementController#addFavorite', 'favorite' );
+$router->map('POST|GET', '/favorite', 'LogementController#addFavorite', 'favorite' );
+$router->map('POST', '/delfavorite', 'LogementController#deleteFavorite', 'delfavorite' );
+$router->map('POST', '/getFavorite', 'LogementController#getLike', 'getFavorite');
+
 
 
 
