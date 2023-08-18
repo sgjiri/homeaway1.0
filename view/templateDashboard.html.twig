@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="{{ asset('/font/font.css') }}">
 
 		<title>
-			{% block title %}{% endblock %}
+			{% block title %}Tableau de bord{% endblock %}
 		</title>
 	</head>
 	<body>
@@ -213,6 +213,252 @@
 							</form>
 						</div>
 
+<<<<<<< HEAD
+					</div>
+				</div>
+
+			</div>
+			<nav id='navDash'>
+				<ul>
+					<li id='info'>
+						<ul>
+							<li id='infoPerso' class='liInfo clickInfo'>
+								<figure class='icon'>
+									<img src="{{ asset('/img/🦆 icon _person_.png') }}" alt="icon _person">
+								</figure>
+							</li>
+							<li id='perso' class='liInfo clickInfo'>
+								<figure class='icon'>
+									<img id='iconInfo' src="{{ asset('/img/Perso.png') }}" alt="contact personnel">
+								</figure>
+							</li>
+							<li id='historic' class='liInfo clickInfo'>
+								<figure class='icon'>
+									<img src="{{ asset('/img/group.png') }}" alt="historique">
+								</figure>
+							</li>
+
+
+							<li id='gestionBien' class='liInfo clickInfo'>
+								<figure class='icon'>
+									<img src="{{ asset('/img/gestion.png') }}" alt="informations personnelles">
+								</figure>
+							</li>
+							<li id='ajouterBien' class='liInfo clickInfo'>
+								<figure class='icon'>
+									<img src="{{ asset('/img/ajouter.png') }}" alt="ajouter logement">
+								</figure>
+							</li>
+							<li id='gestionReservation' class='liInfo clickInfo'>
+								<figure class='icon'>
+									<img src="{{ asset('/img/gestionReservation.png') }}" alt="réservation">
+								</figure>
+							</li>
+
+
+						</ul>
+					</li>
+					<li id='like'>
+						<figure class='icon' id='iconLike'>
+							<img src="{{ asset('/img/🦆 icon _heart_.png') }}" alt="favoris">
+						</figure>
+					</li>
+					<li id='resevations' class='clickInfo'>
+						<figure class='icon'>
+							<img src="{{ asset('/img/reservation.png') }}" alt="réservations">
+						</figure>
+					</li>
+					<li id='messagerie'>
+						<figure class='icon'>
+							<img id='imgMesagerie' src="{{ asset('/img/iconMessage.png') }}" alt="Messagerie">
+						</figure>
+					</li>
+				</ul>
+			</nav>
+			<a href='{{path('home')}}' class='logoDash'>
+				<img src="{{ asset('/img/logoDash.png') }}" alt="">
+			</a>
+
+			<div class='contentPage' id='contentInfoPerso'>
+				<div class='card cardInfoPerso cardInfoPersoM'>
+					<div class='contentFixCard contentFixCardInfoPerso'>
+						<div>
+							<h3>Nom et Prénom</h3>
+							<p>{{user.firstname}}
+								{{user.name}}</p>
+
+						</div>
+
+						<figure class="figureModifier figureModifierInfo">
+							<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="Modifier">
+						</figure>
+					</div>
+
+					<div class='input inputInfo input2info height'>
+						<form action="" method="post">
+							<label for="lastname"></label>
+							<input type="text" class='change' name="lastname" id='lastname' placeholder="Votre nom..." required>
+							<label for="firstname"></label>
+							<input type="text" class='change' name="firstname" id='firstname' placeholder="Votre prénom...">
+							<input type="submit" name="validerName" class="valider change" value="" required>
+						</form>
+
+					</div>
+				</div>
+
+				<div class='card cardInfoPerso cardInfoPersoM'>
+					<div class='contentFixCard contentFixCardInfoPerso'>
+						<div>
+							<h3>Adresse mail</h3>
+							<p>{{user.mail}}</p>
+
+						</div>
+
+						<figure class="figureModifier figureModifierInfo">
+							<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="Modifier">
+						</figure>
+					</div>
+					<div class='input inputInfo height'>
+						<form action="" method="post">
+							<label for="mail"></label>
+							<input type="text" name='mail' id='mail' class='change' placeholder="Votre mail..." required>
+							<input type="submit" name="validerMail" class="valider change" value="">
+						</form>
+					</div>
+				</div>
+
+				<div class='card cardInfoPerso cardInfoPersoM'>
+					<div class='contentFixCard contentFixCardInfoPerso'>
+						<div>
+							<h3>Téléphone</h3>
+							<p>{{user.phone_number}}</p>
+
+						</div>
+
+						<figure class="figureModifier figureModifierInfo">
+							<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="Modifier">
+						</figure>
+					</div>
+					<div class='input inputInfo height'>
+
+						<form action="" method="post">
+							<label for="tel"></label>
+							<input type="text" name='tel' id='tel' class='change' placeholder="Numéro de téléphone...">
+							<input type="submit" name="validerTel" class="valider change" value="" required>
+						</form>
+					</div>
+				</div>
+				<div class='card cardInfoPerso cardInfoPersoM'>
+					<div class='contentFixCard contentFixCardInfoPerso'>
+						<div>
+							<h3>Date de naissance</h3>
+							<p>{{user.date_of_birth}}</p>
+
+						</div>
+
+						<figure class="figureModifier figureModifierInfo">
+							<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="Modifier">
+						</figure>
+					</div>
+					<div class='input inputInfo height'>
+
+						<form action="" method="post">
+							<label for="date_of_birth"></label>
+							<input type="text" name='date_of_birth' id='date_of_birth' class='change' placeholder="Date de naissance">
+							<input type="submit" name="validerDateOfBird" class="valider change" value="" required>
+						</form>
+					</div>
+				</div>
+				<div class='card cardInfoPerso cardInfoPersoM'>
+					<div class='contentFixCard contentFixCardInfoPerso'>
+						<div>
+							<h3>Mot de passe</h3>
+						</div>
+
+						<figure class="figureModifier figureModifierInfo">
+							<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="Modifier">
+						</figure>
+					</div>
+
+					<div class='input inputInfo input2info height'>
+						<form action="" method="post">
+							<label for="password"></label>
+							<input type="text" class='change' name="password" id='password' placeholder="Modifier...">
+							<label for="passwordConfirm"></label>
+							<input type="text" class='change' name="passwordConfirm" id='passwordConfirm' placeholder="Confirmer...">
+							<input type="submit" name="validerPassword" class="valider change" value="">
+						</form>
+
+					</div>
+				</div>
+
+
+				<div class='card cardInfoPerso cardInfoPersoM'>
+					<div class='contentFixCard contentFixCardInfoPerso'>
+						<div>
+							<h3>Supprimer mon compte</h3>
+						</div>
+
+
+						<form action="" method="post" class="figureModifier 	figureModifierInfo">
+							<span class="suprimer change validerGestion" id="spanSuprimerUser" data-iduser="{{idUser}}"></span>
+						</form>
+					</div>
+
+
+				</div>
+
+			</div>
+
+			<div class='contentPage' id='contentHistoricReservation'>
+				<h1>Historique des réservations</h1>
+				<div class='divBarreDeRecherche'>
+					<form action="" method='GET'>
+						<input type="search" name='search' placeholder='Rechercher...' class='search'>
+						<input type="submit" name='rechercher' value class='rechercher' class='valider change'>
+					</form>
+				</div>
+				<div class='card cardInfoPerso cardHG'>
+					<div class='cardContentLeft'>
+						<figure>
+							<img src="{{ asset('/img/montpellier.jpg') }}" alt="Montpellier">
+						</figure>
+					</div>
+					<div class='cardContentRight'>
+						<div class='oneRightContent'>
+							<h2>
+								Nom de logement de la bdd</h2>
+						</div>
+						<div class='oneRightContent'>
+							<figure class="iconRightContent">
+								<img id="iconReservationHistoric" src="{{ asset('/img/calendar.png') }}" alt="calendrier">
+							</figure>
+							<p class='dateRightContent infoRightContent'>du 00/00/0000 au 00/00/0000</p>
+						</div>
+						<div class='oneRightContent'>
+							<figure class="iconRightContent">
+								<img id="iconAvis" src="{{ asset('/img/avis-client.png') }}" alt="avis des clients">
+							</figure>
+							<button class='avis infoRightContent'>
+								<span>Laisser un avis</span>
+							</button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class='contentPage' id='contentGestionLogement'>
+				<h1>Gestion des biens</h1>
+
+
+				{% for i in 0..(logement|length - 1) %}
+					<div class='card cardHG cardH cardInfoPerso'>
+						<div class='contentCardGestion'>
+							<div class='cardContentLeft'>
+								<figure>
+									<img src="{{ asset('/img/logement/' ~ logement[i].thumbnail) }}" alt="appartement">
+=======
 
 					</div>
 				</div>
@@ -229,6 +475,7 @@
 							<div class='cardContentLeft'>
 								<figure>
 									<img src="{{ asset('/img/logement/' ~ reqOneResevation.thumbnail) }}" alt="">
+>>>>>>> 844b9c7b6056c2ac06c3c77b2aa36d8c0d0a227b
 								</figure>
 							</div>
 							<div class='cardContentRight'>
@@ -237,7 +484,11 @@
 								</div>
 								<div class='oneRightContent'>
 									<figure class="iconRightContent">
+<<<<<<< HEAD
+										<img id="iconReservationHistoric" src="{{ asset('/img/emplacement 1.png') }}" alt="logement">
+=======
 										<img id="iconReservationHistoric" src="{{ asset('/img/calendar.png') }}" alt="">
+>>>>>>> 844b9c7b6056c2ac06c3c77b2aa36d8c0d0a227b
 									</figure>
 									<p class='dateRightContent infoRightContent'>du
 										{{reqOneResevation.start_date}}
@@ -246,13 +497,29 @@
 								</div>
 								<div class='oneRightContent'>
 									<figure class="iconRightContent">
+<<<<<<< HEAD
+										<img id="iconReservationHistoric" src="{{ asset('/img/lit.png') }}" alt="logement">
+=======
 										<img id="iconAvis" src="{{ asset('/img/avis-client.png') }}" alt="">
+>>>>>>> 844b9c7b6056c2ac06c3c77b2aa36d8c0d0a227b
 									</figure>
 									<button class='avis infoRightContent'>
 										<span>Laiser votre avis</span>
 									</button>
 
 								</div>
+<<<<<<< HEAD
+								<div class="oneRightContent oneRightContentGestion">
+									<figure class="iconRightContent">
+										<img id="iconReservationHistoric" src="{{ asset('/img/reservation1.png') }}" alt="logement">
+									</figure>
+									<p class='infoRightContent'>Nombre de réservations</p>
+								</div>
+								<figure class="figureModifier figureModifierGestion">
+									<img class="imgModifierGestion" src="{{ asset('/img/exchange.png') }}" alt="modification biens">
+								</figure>
+=======
+>>>>>>> 844b9c7b6056c2ac06c3c77b2aa36d8c0d0a227b
 							</div>
 						</div>
 					{% endfor %}
@@ -290,11 +557,46 @@
 											{{logement[i].adressCode}},
 											{{logement[i].city}}</p>
 									</div>
+<<<<<<< HEAD
+									<div class='oneInfo'>
+										<div class='infoSaisis'>
+											<div class='contentInfoGestion hInputGestion'>
+												<h3>Type:
+													<br>{{logement[i].type}}
+												</h3>
+											</div>
+
+										</div>
+										<div class='modifierInfo infoSaisis'>
+											<form action="" method="post">
+												<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
+												<select type="select" name="type" id="type" class='change changeGestion' placeholder="Modifier...">
+													<option value=""></option>
+													<option value="housse">Maison</option>
+													<option value="flat">Appartement</option>
+													<option value="studio">Studio</option>
+													<option value="chalet">Chalet</option>
+													<option value="cottage">Gîte</option>
+													<option value="gest house">Maison d'hôte</option>
+													<option value="dome">Dôme</option>
+													<option value="hut">Cabane</option>
+													<option value="yurt">Yourte</option>
+													<option value="barge">Péniche</option>
+												</select>
+												<input type="submit" name="validerType" class="valider change" value="">
+
+
+											</form>
+
+										</div>
+
+=======
 									<div class="oneRightContent oneRightContentGestion">
 										<figure class="iconRightContent">
 											<img id="iconReservationHistoric" src="{{ asset('/img/lit.png') }}" alt="">
 										</figure>
 										<p class='infoRightContent'>{{logement[i].number_of_person}}</p>
+>>>>>>> 844b9c7b6056c2ac06c3c77b2aa36d8c0d0a227b
 									</div>
 									<div class="oneRightContent oneRightContentGestion">
 										<figure class="iconRightContent">
@@ -511,7 +813,7 @@
 															<div class="updateImg">
 																<label for="selectImage" class='labelSelectImage'>
 																	<figure>
-																		<img src=" {{ asset('/img/logement/' ~ images[i][j]) }}" alt="">
+																		<img src=" {{ asset('/img/logement/' ~ images[i][j]) }}" alt="logement">
 																	</figure>
 																	<input type="checkbox" name="selectImage[]" class="InputSelectImage" value="{{ images[i][j] }}">
 																</label>
@@ -566,9 +868,7 @@
 														<label class="labelGestionEquipement" for="camera">camera
 															<input type="checkbox" name="camera" value="1">
 														</label>
-														<label class="labelGestionEquipement" for="piscine">piscine
-															<input type="checkbox" name="piscine" value="1">
-														</label>
+													
 														<label class="labelGestionEquipement" for="home_textiles">draps
 															<input type="checkbox" name="home_textiles">
 														</label>
@@ -593,7 +893,7 @@
 					{% endfor %}
 				</div>
 				<div class="contentPage" id='contentAjoutLogement'>
-					<h1>Ajoutez un bien</h1>
+					<h1>Ajouter un bien</h1>
 					<div class='card cardAjout'>
 						<div class="input inputGA">
 							<form class="add-flat" method="post" action='' enctype="multipart/form-data">
@@ -602,7 +902,7 @@
 										<div class='oneInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Title:
+													<h3>Titre
 
 													</h3>
 												</div>
@@ -618,7 +918,7 @@
 										<div class='oneInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Adresse:
+													<h3>Adresse
 
 													</h3>
 												</div>
@@ -635,7 +935,7 @@
 										<div class='oneInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Code postale:
+													<h3>Code postal
 
 													</h3>
 												</div>
@@ -652,7 +952,7 @@
 										<div class='oneInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Ville:
+													<h3>Ville
 
 													</h3>
 												</div>
@@ -669,7 +969,7 @@
 										<div class='oneInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Type:
+													<h3>Type
 
 													</h3>
 												</div>
@@ -687,7 +987,7 @@
 													<option value="gest house">Maison d'hôte</option>
 													<option value="dome">Dôme</option>
 													<option value="hut">Cabane</option>
-													<option value="yurt">Yourt</option>
+													<option value="yurt">Yourte</option>
 													<option value="barge">Péniche</option>
 												</select>
 
@@ -699,7 +999,7 @@
 										<div class='oneInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Surface en m²:
+													<h3>Surface en m²
 
 													</h3>
 												</div>
@@ -707,7 +1007,7 @@
 											</div>
 											<div class='modifierInfo infoSaisis'>
 												<label for="surface"></label>
-												<input type="number" class='change changeGestion' placeholder="Saisisez..." name="surface" id="surface" required>
+												<input type="number" class='change changeGestion' placeholder="Saisissez..." name="surface" id="surface" required>
 											</div>
 
 										</div>
@@ -715,7 +1015,7 @@
 										<div class='oneInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Emplacement:
+													<h3>Emplacement
 
 													</h3>
 												</div>
@@ -740,7 +1040,7 @@
 										<div class='oneInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Prix par nuit en €:
+													<h3>Prix par nuit en €
 
 													</h3>
 												</div>
@@ -758,7 +1058,7 @@
 										<div class='oneInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Maximume de persones:
+													<h3>Nombre de personnes
 
 													</h3>
 												</div>
@@ -775,7 +1075,7 @@
 										<div class='oneInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Nombre de lits:
+													<h3>Nombre de lits
 
 													</h3>
 												</div>
@@ -796,7 +1096,7 @@
 										<div class='oneInfo oneBigInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Description:
+													<h3>Description
 													</h3>
 												</div>
 											</div>
@@ -811,7 +1111,7 @@
 										<div class='oneInfo oneBigInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Resumé:
+													<h3>Résumé
 													</h3>
 												</div>
 											</div>
@@ -826,13 +1126,13 @@
 										<div class='oneInfo oneBigInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Images:
+													<h3>Images
 													</h3>
 												</div>
 											</div>
 											<div class='modifierInfo infoSaisis'>
 												<div class='change changeGestion bigModifierInfo addImg'>
-													<span class="spanPlus"><img src="{{ asset('/img/iconPlus.png') }}" alt="plus"></span>
+													<span class="spanPlus"><img src="{{ asset('/img/iconPlus.png') }}" alt="ajouter"></span>
 												</div>
 
 
@@ -842,50 +1142,48 @@
 										<div class='oneInfo oneBigInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Equipement:
+													<h3>Equipement
 													</h3>
 												</div>
 											</div>
 											<div class='modifierInfo infoSaisis'>
 
 												<div type="text" class='change changeGestion bigModifierInfo' placeholder="Modifier...">
-													<label class="labelGestionEquipement" for="parking+">parking
+													<label class="labelGestionEquipement" for="parking+">Parking
 														<input type="checkbox" name="parking+" value="1">
 													</label>
-													<label class="labelGestionEquipement" for="wifi+">wifi
+													<label class="labelGestionEquipement" for="wifi+">Wifi
 														<input type="checkbox" name="wifi+" value="1">
 													</label>
-													<label class="labelGestionEquipement" for="piscine+">piscine
+													<label class="labelGestionEquipement" for="piscine+">Piscine
 														<input type="checkbox" name="piscine+" value="1">
 													</label>
-													<label class="labelGestionEquipement" for="animals+">animaux
+													<label class="labelGestionEquipement" for="animals+">Animaux
 														<input type="checkbox" name="animals+" value="1">
 													</label>
-													<label class="labelGestionEquipement" for="kitchen+">cuisine
+													<label class="labelGestionEquipement" for="kitchen+">Cuisine
 														<input type="checkbox" name="kitchen+" value="1">
 													</label>
-													<label class="labelGestionEquipement" for="garden+">jardin
+													<label class="labelGestionEquipement" for="garden+">Jardin
 														<input type="checkbox" name="garden+" value="1">
 													</label>
-													<label class="labelGestionEquipement" for="tv+">tv
+													<label class="labelGestionEquipement" for="tv+">Tv
 														<input type="checkbox" name="tv+" value="1">
 													</label>
-													<label class="labelGestionEquipement" for="climatisation+">climatisation
+													<label class="labelGestionEquipement" for="climatisation+">Climatisation
 														<input type="checkbox" name="climatisation+" value="1">
 													</label>
-													<label class="labelGestionEquipement" for="camera+">camera
+													<label class="labelGestionEquipement" for="camera+">Camera
 														<input type="checkbox" name="camera+" value="1">
 													</label>
-													<label class="labelGestionEquipement" for="piscine+">piscine
-														<input type="checkbox" name="piscine+" value="1">
-													</label>
-													<label class="labelGestionEquipement" for="home_textiles+">draps
+												
+													<label class="labelGestionEquipement" for="home_textiles+">Draps
 														<input type="checkbox" name="home_textiles+" value="1">
 													</label>
-													<label class="labelGestionEquipement" for="spa+">spa
+													<label class="labelGestionEquipement" for="spa+">Spa
 														<input type="checkbox" name="spa+" value="1">
 													</label>
-													<label class="labelGestionEquipement" for="jacuzzi+">jacuzzi
+													<label class="labelGestionEquipement" for="jacuzzi+">Jacuzzi
 														<input type="checkbox" name="jacuzzi+" value="1">
 													</label>
 												</div>
@@ -900,7 +1198,7 @@
 				</div>
 				
 				<div class="contentPage" id='contentGestionReservation'>
-					<h1>Gestion des reservation</h1>
+					<h1>Gestion des réservations</h1>
 					<div class='divBarreDeRecherche'>
 						<form action="" method='GET'>
 							<input type="search" name='search' placeholder='Rechercher...' class='search'>
@@ -915,9 +1213,9 @@
 							<table class="reservation-table">
 								<thead>
 									<tr class="rowTable">
-										<th class="reservation-date colomTable">Periode</th>
-										<th class="reservation-reseverPar colomTable">Reserver par</th>
-										<th class="reservation-reglement colomTable">Reglement</th>
+										<th class="reservation-date colomTable">Période</th>
+										<th class="reservation-reseverPar colomTable">Réservé par</th>
+										<th class="reservation-reglement colomTable">Règlement</th>
 										<th class="reservation-nbPresonnes colomTable">Nombre de personnes</th>
 										<th class="reservation-contact colomTable">Contact</th>
 									</tr>
@@ -962,6 +1260,21 @@
 					{% endif %}
 
 
+<<<<<<< HEAD
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	{% endfor %}
+</html></body></html></div>{% endfor  %}</html></div><div class="contentPage contentPageReservation" id='contentMesReservation'><h1>Mes Réservations</h1><div class='divBarreDeRecherche'><form action="" method='GET'><input type="search" name='search' placeholder='Rechercher...' class='search'><input type="submit" name='rechercher' value class='rechercher' class='valider change'></form></div>{% for reqOneResevation in mesReservations %}<div class='card cardInfoPerso cardHG cardReservation'><div class='cardContentLeft'><figure><img src="{{ asset('/img/logement/' ~ reqOneResevation.thumbnail) }}" alt=""></figure></div><div class='cardContentRight'><div class='oneRightContent oneRightContentResqervation'><h2>
+{{reqOneResevation.title}}</h2></div><div class='oneRightContent oneRightContentResqervation'><figure class="iconRightContent">
+<img id="iconReservationHistoric" src="{{ asset('/img/calendar.png') }}" alt=""></figure><p class='dateRightContent infoRightContent'>du
+{{reqOneResevation.start_date}}
+au
+{{reqOneResevation.end_date}}</p></div><div class='oneRightContent oneRightContentResqervation'><figure class="iconRightContent">
+<img id="iconReservationHistoric" src="{{ asset('/img/argent.png') }}" alt=""></figure><p class='dateRightContent infoRightContent'>reglé</p></div><div class='oneRightContent oneRightContentResqervation'><figure class="iconRightContent">
+<img id="iconReservationHistoric" src="{{ asset('/img/people.png') }}" alt=""></figure><p class='dateRightContent infoRightContent'>4 persones</p></div></div></div>{% endfor %}</div><div class="contentPage" id='con'></div></body></html></div> </body>{% endblock %}{% block js %} <script src="{{ asset('/js/dashboard.js') }}"></script> <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script> <script src="./asset/js/input.js"></script>{% endblock %}</body></html></body></html>
+=======
 					<h2>Historique des reservation</h2>
 					{% if datasHistoriqueReservationChezMoi is not empty %}
 						{% for i in 0..(datasHistoriqueReservationChezMoi|length - 1) %}
@@ -1124,3 +1437,4 @@
 		{% endblock %}
 	</body>
 </html>
+>>>>>>> 844b9c7b6056c2ac06c3c77b2aa36d8c0d0a227b
