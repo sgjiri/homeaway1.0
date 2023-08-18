@@ -44,7 +44,7 @@ class DashboardController extends Controller
                 $arrayName[] = $nameArray;
                 $arrayFirstname[] = $firstnameArray;
             }
-            var_dump($arrayContacts);
+            // var_dump($arrayContacts);
 
             echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images' => $imageArray, 'mesReservations' => $datasMesReservation, 'datasReservationChezMoi' => $datasReservationChezMoi, 'contacts' => $arrayContacts, 'start_dates' => $arrayStart_date, 'end_dates' => $arrayEnd_dateArray, 'names' => $arrayName, 'firstnames' => $arrayFirstname, 'idUser'=>$idUser]);
         }
@@ -261,7 +261,7 @@ class DashboardController extends Controller
             $nameImage = ($_POST['inputHiddenPopop']);
             
             $suprimerImage = explode(',', $nameImage);
-            var_dump($suprimerImage);
+            // var_dump($suprimerImage);
             $return = $modelUpdate->deleteImg($suprimerImage);
             header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");
             exit();
@@ -287,7 +287,7 @@ class DashboardController extends Controller
         }
 
         if (isset($_POST['suprimerUser'])) {
-            var_dump($idUser);
+            // var_dump($idUser);
             $delUser = new PersonModel();
             $delUser->deleteUser($idUser);
             header("Location: /Projet/homeaway1.0");
@@ -457,8 +457,7 @@ class DashboardController extends Controller
 
 
         if (isset($_POST['validerImages'])) {
-            var_dump($_POST);
-            var_dump('coucou');
+          
 
             if (isset($_SESSION['id_person'])) {
                 // var_dump('id_person is set');

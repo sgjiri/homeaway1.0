@@ -63,18 +63,42 @@ class PersonController extends Controller
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // récuperation des valeurs soumises au champ mail et pwd et utilisation de pwd default pour hacher mdp brut avt de le stocker ds variable $pwd et utilisation de filter mail pr effectuer la validation du format du mail si ok stockage ds variable $mail
 
-            // // Récupération de la date de naissance au format "YYYY-MM-DD"
-            // $date_of_birth = $_POST['date_of_birth'];
-            // $dobFormatted = date('Y-m-d', strtotime($date_of_birth));
-
             $rawPass = $_POST['password'];
             $password = password_hash($rawPass, PASSWORD_DEFAULT);
             $mail = filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL);
             $date_of_birth = $_POST['date_of_birth'];
+            $birthdate = date_create_from_format('Y-m-d', $date_of_birth);
+
+            if (!$birthdate) {
+                // La création de l'objet DateTime a échoué, afficher un message d'erreur ou rediriger vers une page d'erreur.
+                echo "La date de naissance n'est pas valide.";
+                exit();
+            }
+
+            // Vérification de l'âge requis (18 ans)
+            $now = new DateTime();
+            $age = $now->diff($birthdate)->y;
+
+            if ($age < 18) {
+                echo "Vous devez avoir au moins 18 ans pour vous inscrire.";
+                exit();
+            }
             $phone_number = $_POST['phone_number'];
             $name = $_POST['name'];
             $firstname = $_POST['firstname'];
-            var_dump($_POST['date_of_birth']);
+            // var_dump($_POST['date_of_birth']);
+
+
+            // Vérification du mot de passe
+            if (strlen($rawPass) < 12 || !preg_match('/[A-Z]/', $rawPass) || !preg_match('/[a-z]/', $rawPass) || !preg_match('/[!@#$%^&*]/', $rawPass)) {
+                //                 strlen($rawPass) < 12: Vérifie si la longueur du mot de passe est inférieure à 12 caractères.
+                // !preg_match('/[A-Z]/', $rawPass): Vérifie si le mot de passe ne contient pas au moins une lettre majuscule.
+                // !preg_match('/[a-z]/', $rawPass): Vérifie si le mot de passe ne contient pas au moins une lettre minuscule.
+                // !preg_match('/[!@#$%^&*]/', $rawPass): Vérifie si le mot de passe ne contient pas au moins un des caractères spéciaux suivants : !, @, #, $, %, ^, &, *.
+                // Le mot de passe ne respecte pas les critères, afficher un message d'erreur ou rediriger vers une page d'erreur.
+                echo "Le mot de passe doit contenir au moins 12 caractères avec au moins une majuscule, une minuscule et un caractère spécial.";
+                exit();
+            }
 
             // création instance model person avec val mail et pwd 
             $person = new Person([
@@ -85,18 +109,17 @@ class PersonController extends Controller
                 'date_of_birth' => $date_of_birth,
                 'phone_number' => $phone_number
 
-
             ]);
 
             //  appel de la methode créer register du model pour l enregistrement du nouvel utilisateur ds bdd
 
             $model->register($person);
 
-            // redirection vers la route login apres création de l util 
-            header('Location: ./');
+            // Connexion de l'utilisateur après l'inscription
+            $model->login($mail);
+            
+            header('Location:  ./');
             exit();
-
-
             // si formulaire non soumis cad si method $server...... non abouti cad false affichage du template header avec getrender 
         } else {
 
