@@ -250,7 +250,7 @@ class LogementController extends Controller
                 $surname = $_POST['surname'];              
                 $email = $_POST['email'];
                 $message = $_POST['message'];
-var_dump($_POST);
+
 
                 $entete  = 'MIME-Version: 1.0' . "\r\n";
                 $entete .= 'Content-type: text/html; charset=utf-8' . "\r\n";
@@ -276,13 +276,31 @@ var_dump($_POST);
         $twig = $this->getTwig();
         echo $twig->render('contactHote.html.twig', []);
     }
-    public function addFavorite()
-    {
-        $modelLogement = new LogementModel();
+    // public function addFavorite()
+    // {
+    //     $modelLogement = new LogementModel();
        
-        $favorite = $modelLogement->getOne($_POST['id_logement'], $_SESSION['id_person']);
-        header('Location:./search');
-                    exit();
-    }
+    //     $modelLogement->favorite($_POST['id_logement'], $_SESSION['id_person']);
+    //     header('Location:./search');
+    //                 exit();
+    // }
+    public function addFavorite()
+{
+    $modelLogement = new LogementModel();
+
+   
+    $id_logement = $_POST['id_logement'];
+    $id_person = $_SESSION['id_person'];
+    var_dump($id_person, $id_logement);
+    $modelLogement->favorite( $id_logement , $id_person );
+   // Préparez les données de réponse JSON
+    $response = array(
+        'status' => 'success',
+        'message' => 'Le logement a été ajouté aux favoris.'
+    );
+
+    // Convertissez les données en JSON et renvoyez la réponse
+    echo json_encode($response);
+}
 
 }

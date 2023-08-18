@@ -171,9 +171,9 @@
 								</p>
 								<div class="close-button">&times;</div>
 								{% if session.connect is defined and session.connect == true %}
-									<form action="" method="POST">
-										<input type="hidden" name="id_logement" value="{{logementDispo[i].id_logement}}">
-										<input type="hidden" name="id-Person" value="{{session.id_person}}">
+									<form action="{{ path('favorite') }}" method="POST">
+										<input type="hidden" name="id_logement"  class="idLogementHidden" value="{{logementDispo[i].id_logement}}">
+										<input type="hidden" name="id_person" id="idPersonHidden" value="{{session.id_person}}">
 										<button class="heartIcon" type="button"><img src="./asset/img/iconHeartBlack.png" alt="icon coeur noir"></button>
 									</form>
 								{% endif %}
