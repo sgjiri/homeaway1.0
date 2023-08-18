@@ -14,20 +14,206 @@
 	<body>
 
 		{% block content %}
-		<div class='content'>
-			<div id="popop">
-				<div class='contentFixCard contentFixCardInfoPerso'>
-					<div>
-
-						<p id="messagePopop"></p>
+			<div class='content'>
+				<div id="popop">
+					<div class='contentFixCard contentFixCardInfoPerso'>
 						<div>
+
+							<p id="messagePopop"></p>
+							<div>
+								<form action="" method="post">
+									<input type="hidden" name="inputHiddenPopop" id="inputHiddenPopop" value="">
+									<input type="submit" class="valider change validerGestion submitUpdateImg popopCommand" id="popopvalider" value="">
+									<span class="suprimer change validerGestion submitUpdateImg popopCommand" id='cross'></span>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+				<nav id='navDash'>
+					<ul>
+						<li id='info'>
+							<ul>
+								<li id='infoPerso' class='liInfo clickInfo'>
+									<figure class='icon'>
+										<img src="{{ asset('/img/🦆 icon _person_.png') }}" alt="icon _person">
+									</figure>
+								</li>
+								<li id='perso' class='liInfo clickInfo'>
+									<figure class='icon'>
+										<img id='iconInfo' src="{{ asset('/img/Perso.png') }}" alt="Perso">
+									</figure>
+								</li>
+								<li id='historic' class='liInfo clickInfo'>
+									<figure class='icon'>
+										<img src="{{ asset('/img/group.png') }}" alt="group">
+									</figure>
+								</li>
+								<li id='gestionBien' class='liInfo clickInfo'>
+									<figure class='icon'>
+										<img src="{{ asset('/img/gestion.png') }}" alt="Perso">
+									</figure>
+								</li>
+								<li id='ajouterBien' class='liInfo clickInfo'>
+									<figure class='icon'>
+										<img src="{{ asset('/img/ajouter.png') }}" alt="add house">
+									</figure>
+								</li>
+								<li id='gestionReservation' class='liInfo clickInfo'>
+									<figure class='icon'>
+										<img src="{{ asset('/img/gestionReservation.png') }}" alt="reservation">
+									</figure>
+								</li>
+							</ul>
+						</li>
+						<li id='like' class='clickInfo'>
+							<figure class='icon' id='iconLike'>
+								<img src="{{ asset('/img/🦆 icon _heart_.png') }}" alt="">
+							</figure>
+						</li>
+						<li id='resevations' class='clickInfo'>
+							<figure class='icon'>
+								<img src="{{ asset('/img/reservation.png') }}" alt="">
+							</figure>
+						</li>
+						<li id='messagerie'>
+							<figure class='icon'>
+								<img id='imgMesagerie' src="{{ asset('/img/iconMessage.png') }}" alt="">
+							</figure>
+						</li>
+					</ul>
+				</nav>
+				<a href='{{path('home')}}' class='logoDash'>
+					<img src="{{ asset('/img/logoDash.png') }}" alt="">
+				</a>
+				<div class='contentPage' id='contentInfoPerso'>
+					<div class='card cardInfoPerso cardInfoPersoM'>
+						<div class='contentFixCard contentFixCardInfoPerso'>
+							<div>
+								<h3>Nom légal</h3>
+								<p>{{user.firstname}}
+									{{user.name}}</p>
+
+							</div>
+
+							<figure class="figureModifier figureModifierInfo">
+								<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
+							</figure>
+						</div>
+
+						<div class='input inputInfo input2info height'>
 							<form action="" method="post">
-								<input type="hidden" name="inputHiddenPopop" id="inputHiddenPopop" value="">
-								<input type="submit" class="valider change validerGestion submitUpdateImg popopCommand" id="popopvalider" value="">
-								<span class="suprimer change validerGestion submitUpdateImg popopCommand" id='cross'></span>
+								<label for="lastname"></label>
+								<input type="text" class='change' name="lastname" id='lastname' placeholder="Votre nom..." required>
+								<label for="firstname"></label>
+								<input type="text" class='change' name="firstname" id='firstname' placeholder="Votre prenom...">
+								<input type="submit" name="validerName" class="valider change" value="" required>
+							</form>
+
+						</div>
+					</div>
+
+					<div class='card cardInfoPerso cardInfoPersoM'>
+						<div class='contentFixCard contentFixCardInfoPerso'>
+							<div>
+								<h3>Adresse mail</h3>
+								<p>{{user.mail}}</p>
+
+							</div>
+
+							<figure class="figureModifier figureModifierInfo">
+								<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
+							</figure>
+						</div>
+						<div class='input inputInfo height'>
+							<form action="" method="post">
+								<label for="mail"></label>
+								<input type="text" name='mail' id='mail' class='change' placeholder="Votre mail..." required>
+								<input type="submit" name="validerMail" class="valider change" value="">
+							</form>
+						</div>
+					</div>
+
+					<div class='card cardInfoPerso cardInfoPersoM'>
+						<div class='contentFixCard contentFixCardInfoPerso'>
+							<div>
+								<h3>Numero de téléphone</h3>
+								<p>{{user.phone_number}}</p>
+
+							</div>
+
+							<figure class="figureModifier figureModifierInfo">
+								<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
+							</figure>
+						</div>
+						<div class='input inputInfo height'>
+
+							<form action="" method="post">
+								<label for="tel"></label>
+								<input type="text" name='tel' id='tel' class='change' placeholder="Votre numero de telephone...">
+								<input type="submit" name="validerTel" class="valider change" value="" required>
+							</form>
+						</div>
+					</div>
+					<div class='card cardInfoPerso cardInfoPersoM'>
+						<div class='contentFixCard contentFixCardInfoPerso'>
+							<div>
+								<h3>Date de naissance</h3>
+								<p>{{user.date_of_birth}}</p>
+
+							</div>
+
+							<figure class="figureModifier figureModifierInfo">
+								<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
+							</figure>
+						</div>
+						<div class='input inputInfo height'>
+
+							<form action="" method="post">
+								<label for="date_of_birth"></label>
+								<input type="text" name='date_of_birth' id='date_of_birth' class='change' placeholder="Modifier">
+								<input type="submit" name="validerDateOfBird" class="valider change" value="" required>
+							</form>
+						</div>
+					</div>
+					<div class='card cardInfoPerso cardInfoPersoM'>
+						<div class='contentFixCard contentFixCardInfoPerso'>
+							<div>
+								<h3>Mot de passe</h3>
+							</div>
+
+							<figure class="figureModifier figureModifierInfo">
+								<img class="imgModifier imgModifierInfo" src="{{ asset('/img/exchange.png') }}" alt="">
+							</figure>
+						</div>
+
+						<div class='input inputInfo input2info height'>
+							<form action="" method="post">
+								<label for="password"></label>
+								<input type="text" class='change' name="password" id='password' placeholder="Modifier...">
+								<label for="passwordConfirm"></label>
+								<input type="text" class='change' name="passwordConfirm" id='passwordConfirm' placeholder="Confirmer...">
+								<input type="submit" name="validerPassword" class="valider change" value="">
+							</form>
+						</div>
+					</div>
+
+
+					<div class='card cardInfoPerso cardInfoPersoM'>
+						<div class='contentFixCard contentFixCardInfoPerso'>
+							<div>
+								<h3>Suprimer le compte</h3>
+							</div>
+
+
+							<form action="" method="post" class="figureModifier 	figureModifierInfo">
+								<span class="suprimer change validerGestion" id="spanSuprimerUser" data-iduser="{{idUser}}"></span>
 							</form>
 						</div>
 
+<<<<<<< HEAD
 					</div>
 				</div>
 
@@ -272,35 +458,57 @@
 							<div class='cardContentLeft'>
 								<figure>
 									<img src="{{ asset('/img/logement/' ~ logement[i].thumbnail) }}" alt="appartement">
+=======
+
+					</div>
+				</div>
+				<div class='contentPage' id='contentHistoricReservation'>
+					<h1>Historique des réservations</h1>
+					<div class='divBarreDeRecherche'>
+						<form action="" method='GET'>
+							<input type="search" name='search' placeholder='Rechercher...' class='search'>
+							<input type="submit" name='rechercher' value class='rechercher' class='valider change'>
+						</form>
+					</div>
+					{% for reqOneResevation in historiqueReservation %}
+						<div class='card cardInfoPerso cardHG'>
+							<div class='cardContentLeft'>
+								<figure>
+									<img src="{{ asset('/img/logement/' ~ reqOneResevation.thumbnail) }}" alt="">
+>>>>>>> 844b9c7b6056c2ac06c3c77b2aa36d8c0d0a227b
 								</figure>
 							</div>
-							<div class='cardContentRight cardContentRightWithButton'>
-
-								<form action="" method="post">
-									<input type="hidden" name="idLogement" id="idLogement" value="{{logement[i].id_logement}}">
-
-									<span class="suprimer change validerGestion suprimerLogement" data-idlogement="{{logement[i].id_logement}}" data-namelogement="{{logement[i].title}}"></span>
-								</form>
-
-								<div class="oneRightContent oneRightContentGestion oneRightContentGestionH">
-
-									<h2>
-										{{logement[i].title}}</h2>
+							<div class='cardContentRight'>
+								<div class='oneRightContent'>
+									<h2>{{reqOneResevation.title}}</h2>
 								</div>
-								<div class="oneRightContent oneRightContentGestion">
+								<div class='oneRightContent'>
 									<figure class="iconRightContent">
+<<<<<<< HEAD
 										<img id="iconReservationHistoric" src="{{ asset('/img/emplacement 1.png') }}" alt="logement">
+=======
+										<img id="iconReservationHistoric" src="{{ asset('/img/calendar.png') }}" alt="">
+>>>>>>> 844b9c7b6056c2ac06c3c77b2aa36d8c0d0a227b
 									</figure>
-									<p class='infoRightContent'>{{logement[i].adress}},
-										{{logement[i].adressCode}},
-										{{logement[i].city}}</p>
+									<p class='dateRightContent infoRightContent'>du
+										{{reqOneResevation.start_date}}
+										au
+										{{reqOneResevation.end_date}}</p>
 								</div>
-								<div class="oneRightContent oneRightContentGestion">
+								<div class='oneRightContent'>
 									<figure class="iconRightContent">
+<<<<<<< HEAD
 										<img id="iconReservationHistoric" src="{{ asset('/img/lit.png') }}" alt="logement">
+=======
+										<img id="iconAvis" src="{{ asset('/img/avis-client.png') }}" alt="">
+>>>>>>> 844b9c7b6056c2ac06c3c77b2aa36d8c0d0a227b
 									</figure>
-									<p class='infoRightContent'>{{logement[i].number_of_person}}</p>
+									<button class='avis infoRightContent'>
+										<span>Laiser votre avis</span>
+									</button>
+
 								</div>
+<<<<<<< HEAD
 								<div class="oneRightContent oneRightContentGestion">
 									<figure class="iconRightContent">
 										<img id="iconReservationHistoric" src="{{ asset('/img/reservation1.png') }}" alt="logement">
@@ -310,55 +518,46 @@
 								<figure class="figureModifier figureModifierGestion">
 									<img class="imgModifierGestion" src="{{ asset('/img/exchange.png') }}" alt="modification biens">
 								</figure>
+=======
+>>>>>>> 844b9c7b6056c2ac06c3c77b2aa36d8c0d0a227b
 							</div>
-
-
 						</div>
-						<div class="input inputGA">
-							<div class="contentInput contentInputLeft">
-								<div class='infoLogement infoLogementLeft'>
-									<div class='oneInfo'>
-										<div class='infoSaisis'>
-											<div class='contentInfoGestion hInputGestion'>
-												<h3>Title:
-													<br>{{logement[i].title}}
-												</h3>
-											</div>
+					{% endfor %}
+				</div>
+				<div class='contentPage' id='contentGestionLogement'>
+					<h1>Gestion des bien</h1>
 
-										</div>
-										<div class='modifierInfo infoSaisis'>
-											<form action="" method='post'>
-												<input type="hidden" name="idLogement" id="idLogement" value="{{logement[i].id_logement}}">
-												<label for="title"></label>
-												<input type="text" name='title' id='title' class='change changeGestion' placeholder="Modifier...">
-												<input type="submit" name="validerTitle" class="valider change" value="">
 
-											</form>
+					{% for i in 0..(logement|length - 1) %}
+						<div class='card cardHG cardH cardInfoPerso'>
+							<div class='contentCardGestion'>
+								<div class='cardContentLeft'>
+									<figure>
+										<img src="{{ asset('/img/logement/' ~ logement[i].thumbnail) }}" alt="">
+									</figure>
+								</div>
+								<div class='cardContentRight cardContentRightWithButton'>
 
-										</div>
+									<form action="" method="post">
+										<input type="hidden" name="idLogement" id="idLogement" value="{{logement[i].id_logement}}">
 
+										<span class="suprimer change validerGestion suprimerLogement" data-idlogement="{{logement[i].id_logement}}" data-namelogement="{{logement[i].title}}"></span>
+									</form>
+
+									<div class="oneRightContent oneRightContentGestion oneRightContentGestionH">
+
+										<h2>
+											{{logement[i].title}}</h2>
 									</div>
-									<div class='oneInfo'>
-										<div class='infoSaisis'>
-											<div class='contentInfoGestion hInputGestion'>
-												<h3>Adresse:
-													<br>{{logement[i].adress}},
-													{{logement[i].adressCode}},
-													{{logement[i].city}}
-												</h3>
-											</div>
-
-										</div>
-										<div class='modifierInfo infoSaisis'>
-											<form action="" method="post">
-												<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
-												<input type="text" name="adresse" id="adresse" class='change changeGestion' placeholder="Modifier...">
-												<input type="submit" name="validerAdresse" class="valider change" value="">
-											</form>
-
-										</div>
-
+									<div class="oneRightContent oneRightContentGestion">
+										<figure class="iconRightContent">
+											<img id="iconReservationHistoric" src="{{ asset('/img/emplacement 1.png') }}" alt="">
+										</figure>
+										<p class='infoRightContent'>{{logement[i].adress}},
+											{{logement[i].adressCode}},
+											{{logement[i].city}}</p>
 									</div>
+<<<<<<< HEAD
 									<div class='oneInfo'>
 										<div class='infoSaisis'>
 											<div class='contentInfoGestion hInputGestion'>
@@ -391,106 +590,68 @@
 
 										</div>
 
+=======
+									<div class="oneRightContent oneRightContentGestion">
+										<figure class="iconRightContent">
+											<img id="iconReservationHistoric" src="{{ asset('/img/lit.png') }}" alt="">
+										</figure>
+										<p class='infoRightContent'>{{logement[i].number_of_person}}</p>
+>>>>>>> 844b9c7b6056c2ac06c3c77b2aa36d8c0d0a227b
 									</div>
-
-									<div class='oneInfo'>
-										<div class='infoSaisis'>
-											<div class='contentInfoGestion hInputGestion'>
-												<h3>Surface en m²:
-													<br>{{logement[i].surface}}
-												</h3>
-											</div>
-
-										</div>
-										<div class='modifierInfo infoSaisis'>
-											<form action="" method="post">
-												<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
-												<input type="number" name="surface" id="surface" class='change changeGestion' placeholder="Modifier...">
-												<input type="submit" name="validerSurface" class="valider change" value="">
-
-
-											</form>
-
-										</div>
-
+									<div class="oneRightContent oneRightContentGestion">
+										<figure class="iconRightContent">
+											<img id="iconReservationHistoric" src="{{ asset('/img/reservation1.png') }}" alt="">
+										</figure>
+										<p class='infoRightContent'>nombre de reservations</p>
 									</div>
-
-									<div class='oneInfo'>
-										<div class='infoSaisis'>
-											<div class='contentInfoGestion hInputGestion'>
-												<h3>Emplacement:
-													<br>{{logement[i].location}}
-												</h3>
-											</div>
-
-										</div>
-										<div class='modifierInfo infoSaisis'>
-											<form action="" method="post">
-												<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
-												<select type="select" name="location" class='change changeGestion' placeholder="Modifier...">
-													<option value=""></option>
-													<option value="beach">La plage</option>
-													<option value="river">La rivière/ Un fleuve</option>
-													<option value="forest">La fôret</option>
-													<option value="montain">La montagne</option>
-													<option value="lac">Un lac</option>
-												</select>
-												<input type="submit" name="validerLocation" class="valider change" value="">
-
-
-											</form>
-
-										</div>
-
-									</div>
-
-									<div class='oneInfo'>
-										<div class='infoSaisis'>
-											<div class='contentInfoGestion hInputGestion'>
-												<h3>Prix par nuit en €:
-													<br>{{logement[i].price_by_night}}
-												</h3>
-											</div>
-
-										</div>
-										<div class='modifierInfo infoSaisis'>
-											<form action="" method="post">
-												<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
-												<input type="number" name="price_by_night" class='change changeGestion' placeholder="Modifier...">
-												<input type="submit" name="validerPrice" class="valider change" value="">
-
-
-											</form>
-
-										</div>
-
-									</div>
-
-									<div class='oneInfo'>
-										<div class='infoSaisis'>
-											<div class='contentInfoGestion hInputGestion'>
-												<h3>Maximume de persones:
-													<br>{{logement[i].number_of_person}}
+									<figure class="figureModifier figureModifierGestion">
+										<img class="imgModifierGestion" src="{{ asset('/img/exchange.png') }}" alt="">
+									</figure>
+								</div>
+							</div>
+							<div class="input inputGA">
+								<div class="contentInput contentInputLeft">
+									<div class='infoLogement infoLogementLeft'>
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Title:
+														<br>{{logement[i].title}}
+													</h3>
 												</div>
-
 											</div>
 											<div class='modifierInfo infoSaisis'>
-												<form action="" method="post">
-													<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
-													<input type="number" name="number_of_person" class='change changeGestion' placeholder="Modifier...">
-													<input type="submit" name="validerPersone" class="valider change" value="">
-
-
+												<form action="" method='post'>
+													<input type="hidden" name="idLogement" id="idLogement" value="{{logement[i].id_logement}}">
+													<label for="title"></label>
+													<input type="text" name='title' id='title' class='change changeGestion' placeholder="Modifier...">
+													<input type="submit" name="validerTitle" class="valider change" value="">
 												</form>
-
 											</div>
-
 										</div>
 										<div class='oneInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
-													<h3>Nombre de lits:
-														<br>{{logement[i].number_of_beds}}
+													<h3>Adresse:
+														<br>{{logement[i].adress}},
+														{{logement[i].adressCode}},
+														{{logement[i].city}}
+													</h3>
+												</div>
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<form action="" method="post">
+													<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
+													<input type="text" name="adresse" id="adresse" class='change changeGestion' placeholder="Modifier...">
+													<input type="submit" name="validerAdresse" class="valider change" value="">
+												</form>
+											</div>
+										</div>
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Type:
+														<br>{{logement[i].type}}
 													</h3>
 												</div>
 
@@ -498,16 +659,112 @@
 											<div class='modifierInfo infoSaisis'>
 												<form action="" method="post">
 													<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
-													<input type="number" name="number_of_beds" class='change changeGestion' placeholder="Modifier...">
-													<input type="submit" name="validerBeds" class="valider change" value="">
-
-
+													<select type="select" name="type" id="type" class='change changeGestion' placeholder="Modifier...">
+														<option value=""></option>
+														<option value="housse">Maison</option>
+														<option value="flat">Appartement</option>
+														<option value="studio">Studio</option>
+														<option value="chalet">Chalet</option>
+														<option value="cottage">Gîte</option>
+														<option value="gest house">Maison d'hôte</option>
+														<option value="dome">Dôme</option>
+														<option value="hut">Cabane</option>
+														<option value="yurt">Yourt</option>
+														<option value="barge">Péniche</option>
+													</select>
+													<input type="submit" name="validerType" class="valider change" value="">
 												</form>
-
 											</div>
-
+										</div>
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Surface en m²:
+														<br>{{logement[i].surface}}
+													</h3>
+												</div>
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<form action="" method="post">
+													<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
+													<input type="number" name="surface" id="surface" class='change changeGestion' placeholder="Modifier...">
+													<input type="submit" name="validerSurface" class="valider change" value="">
+												</form>
+											</div>
+										</div>
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Emplacement:
+														<br>{{logement[i].location}}
+													</h3>
+												</div>
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<form action="" method="post">
+													<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
+													<select type="select" name="location" class='change changeGestion' placeholder="Modifier...">
+														<option value=""></option>
+														<option value="beach">La plage</option>
+														<option value="river">La rivière/ Un fleuve</option>
+														<option value="forest">La fôret</option>
+														<option value="montain">La montagne</option>
+														<option value="lac">Un lac</option>
+													</select>
+													<input type="submit" name="validerLocation" class="valider change" value="">
+												</form>
+											</div>
+										</div>
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Prix par nuit en €:
+														<br>{{logement[i].price_by_night}}
+													</h3>
+												</div>
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<form action="" method="post">
+													<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
+													<input type="number" name="price_by_night" class='change changeGestion' placeholder="Modifier...">
+													<input type="submit" name="validerPrice" class="valider change" value="">
+												</form>
+											</div>
+										</div>
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Maximume de persones:
+														<br>{{logement[i].number_of_person}}
+													</h3>
+												</div>
+												<div class='modifierInfo infoSaisis'>
+													<form action="" method="post">
+														<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
+														<input type="number" name="number_of_person" class='change changeGestion' placeholder="Modifier...">
+														<input type="submit" name="validerPersone" class="valider change" value="">
+													</form>
+												</div>
+											</div>
+											<div class='oneInfo'>
+												<div class='infoSaisis'>
+													<div class='contentInfoGestion hInputGestion'>
+														<h3>Nombre de lits:
+															<br>{{logement[i].number_of_beds}}
+														</h3>
+													</div>
+												</div>
+												<div class='modifierInfo infoSaisis'>
+													<form action="" method="post">
+														<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
+														<input type="number" name="number_of_beds" class='change changeGestion' placeholder="Modifier...">
+														<input type="submit" name="validerBeds" class="valider change" value="">
+													</form>
+												</div>
+											</div>
 										</div>
 									</div>
+
 								</div>
 								<div class="contentInput contentInputRight">
 									<div class="infoLogement">
@@ -523,11 +780,8 @@
 													<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
 													<textarea type="text" name="description" class='change changeGestion bigModifierInfo' placeholder="Modifier..."></textarea>
 													<input type="submit" name="validerDescription" class="valider change validerGestion" value="">
-
 												</form>
-
 											</div>
-
 										</div>
 										<div class='oneInfo'>
 											<div class='infoSaisis'>
@@ -541,13 +795,9 @@
 													<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
 													<textarea type="text" class='change changeGestion bigModifierInfo' name="resume" placeholder="Modifier..."></textarea>
 													<input type="submit" name="validerResume" class="valider change validerGestion" value="">
-
 												</form>
-
 											</div>
-
 										</div>
-
 										<div class='oneInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
@@ -567,31 +817,19 @@
 																	</figure>
 																	<input type="checkbox" name="selectImage[]" class="InputSelectImage" value="{{ images[i][j] }}">
 																</label>
-
-
 															</div>
 
 														{% endfor %}
-
-
 													</div>
 													<div class='inputUpdateImg'>
 
 														<input type="submit" name="validerImages" class="valider change validerGestion submitUpdateImg" value="">
 														<span class="suprimer change validerGestion submitUpdateImg suprimerImg"></span>
 														<span class="spanPlus2 change validerGestion submitUpdateImg"></span>
-
-
 													</div>
-
-
 												</form>
-
 											</div>
-
 										</div>
-
-
 										<div class='oneInfo'>
 											<div class='infoSaisis'>
 												<div class='contentInfoGestion hInputGestion'>
@@ -644,23 +882,15 @@
 
 													</div>
 													<input type="submit" name="validerEquipment" class="valider change validerGestion" value="">
-
 												</form>
-
 											</div>
-
 										</div>
-
-
 									</div>
-
-
 								</div>
 							</div>
 
 						</div>
 					{% endfor %}
-
 				</div>
 				<div class="contentPage" id='contentAjoutLogement'>
 					<h1>Ajouter un bien</h1>
@@ -956,25 +1186,17 @@
 													<label class="labelGestionEquipement" for="jacuzzi+">Jacuzzi
 														<input type="checkbox" name="jacuzzi+" value="1">
 													</label>
-
-
 												</div>
-
-
 											</div>
-
 										</div>
-
-
 									</div>
-
-
 								</div>
 								<input type="submit" name="submitAddLogement" class="valider change validerGestion" value="">
 							</form>
 						</div>
 					</div>
 				</div>
+				
 				<div class="contentPage" id='contentGestionReservation'>
 					<h1>Gestion des réservations</h1>
 					<div class='divBarreDeRecherche'>
@@ -983,8 +1205,10 @@
 							<input type="submit" name='rechercher' value class='rechercher' class='valider change'>
 						</form>
 					</div>
-					{% for i in 0..(datasReservationChezMoi|length - 1) %}
-						<h2>{{datasReservationChezMoi[i].title}}</h2>
+					<h2>Resevation a venir</h2>
+					{% if datasReservationChezMoi is not empty %}
+						{% for i in 0..(datasReservationChezMoi|length - 1) %}
+						<h3>{{datasReservationChezMoi[i].title}}</h3>
 						<div class='card cardGestionReservation'>
 							<table class="reservation-table">
 								<thead>
@@ -1002,10 +1226,8 @@
 										<tr class="rowTable">
 											<td data-label="Date">
 												<p>
-													de
-													{{start_dates[i][j]}}
-													a
-												{{end_dates[i][j]}}
+													du {{start_dates[i][j]}} au {{end_dates[i][j]}}
+												</p>
 											</td>
 											<td data-label="Reservar par">
 												<p>
@@ -1029,12 +1251,16 @@
 												</p>
 											</td>
 										</tr>
-									</p>
+									{% endfor  %}
+									
 								</tbody>
-							</td>
-						</tr>
+							</table>
+						</div>
+					{% endfor %}
+					{% endif %}
 
 
+<<<<<<< HEAD
 					</tr>
 				</tbody>
 			</table>
@@ -1048,3 +1274,167 @@ au
 {{reqOneResevation.end_date}}</p></div><div class='oneRightContent oneRightContentResqervation'><figure class="iconRightContent">
 <img id="iconReservationHistoric" src="{{ asset('/img/argent.png') }}" alt=""></figure><p class='dateRightContent infoRightContent'>reglé</p></div><div class='oneRightContent oneRightContentResqervation'><figure class="iconRightContent">
 <img id="iconReservationHistoric" src="{{ asset('/img/people.png') }}" alt=""></figure><p class='dateRightContent infoRightContent'>4 persones</p></div></div></div>{% endfor %}</div><div class="contentPage" id='con'></div></body></html></div> </body>{% endblock %}{% block js %} <script src="{{ asset('/js/dashboard.js') }}"></script> <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script> <script src="./asset/js/input.js"></script>{% endblock %}</body></html></body></html>
+=======
+					<h2>Historique des reservation</h2>
+					{% if datasHistoriqueReservationChezMoi is not empty %}
+						{% for i in 0..(datasHistoriqueReservationChezMoi|length - 1) %}
+						<h3>{{datasHistoriqueReservationChezMoi[i].title}}</h3>
+						<div class='card cardGestionReservation'>
+							<table class="reservation-table">
+								<thead>
+									<tr class="rowTable">
+										<th class="reservation-date colomTable">Periode</th>
+										<th class="reservation-reseverPar colomTable">Reserver par</th>
+										<th class="reservation-reglement colomTable">Reglement</th>
+										<th class="reservation-nbPresonnes colomTable">Nombre de personnes</th>
+										<th class="reservation-contact colomTable">Contact</th>
+									</tr>
+								</thead>
+								<tbody>
+
+									{% for j in 0..(contactsHistorique[i]|length - 1) %}
+										<tr class="rowTable">
+											<td data-label="Date">
+												<p>
+													du {{start_datesHistorique[i][j]}} au {{end_datesHistorique[i][j]}}
+												</p>
+											</td>
+											<td data-label="Reservar par">
+												<p>
+													{{namesHistorique[i][j]}}
+													{{firstnamesHistorique[i][j]}}
+												</p>
+											</td>
+											<td data-label="reglement">
+												<p>
+													reglé
+												</p>
+											</td>
+											<td data-label="Nombre de persones">
+												<p>
+													4
+												</p>
+											</td>
+											<td data-label="Contact">
+												<p>
+													{{contactsHistorique[i][j]}}
+												</p>
+											</td>
+										</tr>
+									{% endfor  %}
+									
+								</tbody>
+							</table>
+						</div>
+					{% endfor %}
+					{% endif %}
+				</div>
+				<div class="contentPage" id='contentLike'>
+					<h1>Mes Likes</h1>
+					<div class='divBarreDeRecherche'>
+						<form action="" method='GET'>
+							<input type="search" name='search' placeholder='Rechercher...' class='search'>
+							<input type="submit" name='rechercher' value class='rechercher' class='valider change'>
+						</form>
+					</div>
+					{% for reqOneLike in likes %}
+						<div class='card cardInfoPerso cardHG cardReservation'>
+							<div class='cardContentLeft'>
+								<figure>
+									<img src="{{ asset('/img/logement/' ~ reqOneLike.thumbnail) }}" alt="">
+								</figure>
+							</div>
+							<div class='cardContentRight'>
+								<form action="" method="post">
+										<input type="hidden" name="idLogement" id="idLogement" value="{{reqOneLike.id_logement}}">
+
+										<span class="suprimer change validerGestion suprimerLike" data-idlogement="{{reqOneLike.id_logement}}"></span>
+									</form>
+								<div class='oneRightContent oneRightContentResqervation'>
+									<h2>{{reqOneLike.title}}</h2>
+								</div>
+								<div class='oneRightContent oneRightContentResqervation'>
+									<figure class="iconRightContent">
+										<img id="iconReservationHistoric" src="{{ asset('/img/calendar.png') }}" alt="">
+									</figure>
+									<p class='dateRightContent infoRightContent'>{{reqOneLike.adress}}
+									</p>
+								</div>
+								<div class='oneRightContent oneRightContentResqervation'>
+									<figure class="iconRightContent">
+										<img id="iconReservationHistoric" src="{{ asset('/img/argent.png') }}" alt="">
+									</figure>
+									<p class='dateRightContent infoRightContent'>{{reqOneLike.number_of_beds}}</p>
+								</div>
+								<div class='oneRightContent oneRightContentResqervation'>
+									<figure class="iconRightContent">
+										<img id="iconReservationHistoric" src="{{ asset('/img/people.png') }}" alt="">
+									</figure>
+									<p class='dateRightContent infoRightContent'>4 persones</p>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				
+				
+				
+				
+				</div>
+				<div class="contentPage contentPageReservation" id='contentMesReservation'>
+					<h1>Mes Reservation</h1>
+					<div class='divBarreDeRecherche'>
+						<form action="" method='GET'>
+							<input type="search" name='search' placeholder='Rechercher...' class='search'>
+							<input type="submit" name='rechercher' value class='rechercher' class='valider change'>
+						</form>
+					</div>
+					{% for reqOneResevation in mesReservations %}
+						<div class='card cardInfoPerso cardHG cardReservation'>
+							<div class='cardContentLeft'>
+								<figure>
+									<img src="{{ asset('/img/logement/' ~ reqOneResevation.thumbnail) }}" alt="">
+								</figure>
+							</div>
+							<div class='cardContentRight'>
+								<div class='oneRightContent oneRightContentResqervation'>
+									<h2>{{reqOneResevation.title}}</h2>
+								</div>
+								<div class='oneRightContent oneRightContentResqervation'>
+									<figure class="iconRightContent">
+										<img id="iconReservationHistoric" src="{{ asset('/img/calendar.png') }}" alt="">
+									</figure>
+									<p class='dateRightContent infoRightContent'>du{{reqOneResevation.start_date}}
+										au
+										{{reqOneResevation.end_date}}
+									</p>
+								</div>
+								<div class='oneRightContent oneRightContentResqervation'>
+									<figure class="iconRightContent">
+										<img id="iconReservationHistoric" src="{{ asset('/img/argent.png') }}" alt="">
+									</figure>
+									<p class='dateRightContent infoRightContent'>reglé</p>
+								</div>
+								<div class='oneRightContent oneRightContentResqervation'>
+									<figure class="iconRightContent">
+										<img id="iconReservationHistoric" src="{{ asset('/img/people.png') }}" alt="">
+									</figure>
+									<p class='dateRightContent infoRightContent'>4 persones</p>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="contentPage" id='con'></div>
+			</div>
+		{% endblock %}
+
+
+		{% block js %}
+
+			<script src="{{ asset('/js/dashboard.js') }}"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script>
+			<script src="./asset/js/input.js"></script>
+		{% endblock %}
+	</body>
+</html>
+>>>>>>> 844b9c7b6056c2ac06c3c77b2aa36d8c0d0a227b

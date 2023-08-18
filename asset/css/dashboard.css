@@ -1367,99 +1367,6 @@
 .content .contentPage .cardH .contentCardGestion .cardContentRightWithButton .figureModifier .imgModifierGestion.activeModifie {
   transform: rotate(-90deg);
 }
-.content .contentPage .cardGestionReservation {
-  background-color: rgb(1, 124, 142);
-}
-.content .contentPage .cardGestionReservation .reservation-table {
-  border-collapse: collapse;
-}
-@media (max-width: 1050px) {
-  .content .contentPage .cardGestionReservation .reservation-table thead {
-    display: none;
-  }
-}
-.content .contentPage .cardGestionReservation .reservation-table thead .rowTable {
-  color: #fff;
-  font-size: 1.5em;
-  border-bottom: 1px #fff solid;
-}
-@media screen and (max-width: 1050px) {
-  .content .contentPage .cardGestionReservation .reservation-table thead .rowTable {
-    font-size: 1.2em;
-  }
-}
-@media (max-width: 1050px) {
-  .content .contentPage .cardGestionReservation .reservation-table thead .rowTable {
-    display: block;
-    margin-bottom: 40px;
-  }
-}
-.content .contentPage .cardGestionReservation .reservation-table thead .rowTable .colomTable {
-  width: 20%;
-  text-align: center;
-  padding: 10px 0;
-}
-.content .contentPage .cardGestionReservation .reservation-table tbody .rowTable {
-  color: #fff;
-  border-bottom: 1px #fff solid;
-  font-size: 1.2em;
-}
-@media screen and (max-width: 1050px) {
-  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable {
-    font-size: 1em;
-  }
-}
-@media (max-width: 1050px) {
-  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable {
-    display: block;
-    margin-bottom: 40px;
-  }
-}
-.content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td {
-  max-width: 20%;
-  text-align: center;
-  padding: 10px;
-  word-break: break-word;
-}
-@media (max-width: 1050px) {
-  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td {
-    max-width: 100%;
-    display: block;
-    text-align: right;
-  }
-  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td:before {
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-  }
-}
-@media (max-width: 1050px) and (max-width: 450px) {
-  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td {
-    text-align: left;
-  }
-}
-.content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td p {
-  width: 100%;
-}
-@media (max-width: 1050px) {
-  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td p {
-    width: 60%;
-    margin-left: 38%;
-  }
-}
-@media (max-width: 700px) {
-  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td p {
-    width: 40%;
-    margin-left: 58%;
-  }
-}
-@media (max-width: 450px) {
-  .content .contentPage .cardGestionReservation .reservation-table tbody .rowTable td p {
-    margin-top: 25px;
-    width: 100%;
-    margin-left: 0;
-  }
-}
 .content .contentPage .cardAjout {
   box-shadow: none;
 }
@@ -1544,4 +1451,133 @@
 }
 .content .contentPageReservation .card .cardContentRight .oneRightContent p {
   width: 60%;
+}
+.content #contentGestionReservation h2 {
+  margin-top: 100px;
+}
+.content #contentGestionReservation h3 {
+  margin-top: 50px;
+}
+.content #contentGestionReservation .cardGestionReservation {
+  background-color: rgb(1, 124, 142);
+  margin-top: 20px;
+}
+.content #contentGestionReservation .cardGestionReservation .reservation-table {
+  border-collapse: collapse;
+}
+@media (max-width: 1050px) {
+  .content #contentGestionReservation .cardGestionReservation .reservation-table thead {
+    display: none;
+  }
+}
+.content #contentGestionReservation .cardGestionReservation .reservation-table thead .rowTable {
+  color: #fff;
+  font-size: 1.5em;
+  border-bottom: 1px #fff solid;
+}
+@media screen and (max-width: 1050px) {
+  .content #contentGestionReservation .cardGestionReservation .reservation-table thead .rowTable {
+    font-size: 1.2em;
+  }
+}
+@media (max-width: 1050px) {
+  .content #contentGestionReservation .cardGestionReservation .reservation-table thead .rowTable {
+    display: block;
+    margin-bottom: 40px;
+  }
+}
+.content #contentGestionReservation .cardGestionReservation .reservation-table thead .rowTable .colomTable {
+  width: 20%;
+  text-align: center;
+  padding: 10px 0;
+}
+.content #contentGestionReservation .cardGestionReservation .reservation-table tbody .rowTable {
+  color: #fff;
+  border-bottom: 1px #fff solid;
+  font-size: 1.2em;
+}
+@media screen and (max-width: 1050px) {
+  .content #contentGestionReservation .cardGestionReservation .reservation-table tbody .rowTable {
+    font-size: 1em;
+  }
+}
+@media (max-width: 1050px) {
+  .content #contentGestionReservation .cardGestionReservation .reservation-table tbody .rowTable {
+    display: block;
+    margin-bottom: 40px;
+  }
+}
+.content #contentGestionReservation .cardGestionReservation .reservation-table tbody .rowTable td {
+  max-width: 20%;
+  text-align: center;
+  padding: 10px;
+  word-break: break-word;
+}
+@media (max-width: 1050px) {
+  .content #contentGestionReservation .cardGestionReservation .reservation-table tbody .rowTable td {
+    max-width: 100%;
+    display: block;
+    text-align: right;
+  }
+  .content #contentGestionReservation .cardGestionReservation .reservation-table tbody .rowTable td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+}
+@media (max-width: 1050px) and (max-width: 450px) {
+  .content #contentGestionReservation .cardGestionReservation .reservation-table tbody .rowTable td {
+    text-align: left;
+  }
+}
+.content #contentGestionReservation .cardGestionReservation .reservation-table tbody .rowTable td p {
+  width: 100%;
+}
+@media (max-width: 1050px) {
+  .content #contentGestionReservation .cardGestionReservation .reservation-table tbody .rowTable td p {
+    width: 60%;
+    margin-left: 38%;
+  }
+}
+@media (max-width: 700px) {
+  .content #contentGestionReservation .cardGestionReservation .reservation-table tbody .rowTable td p {
+    width: 40%;
+    margin-left: 58%;
+  }
+}
+@media (max-width: 450px) {
+  .content #contentGestionReservation .cardGestionReservation .reservation-table tbody .rowTable td p {
+    margin-top: 25px;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+.content #contentLike .divBarreDeRecherche form {
+  background-color: #ed1b24;
+}
+.content #contentLike .divBarreDeRecherche form .search {
+  background-color: #ed1b24;
+  border: #ed1b24 3px solid;
+}
+.content #contentLike .card {
+  background-color: #ed1b24;
+  position: relative;
+}
+.content #contentLike .card .cardContentRight form .suprimer {
+  background: url(../img/icon\ _trash_.png) center center no-repeat;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  transition: all 0.1s ease-in;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.content #contentLike .card .cardContentRight form .suprimer:hover {
+  cursor: pointer;
+  background-color: #ed1b24;
+  transform: scale(1.1);
+}
+.content #contentLike .card .cardContentRight .oneRightContent {
+  height: 23%;
 }/*# sourceMappingURL=dashboard.css.map */
