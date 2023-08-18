@@ -8,12 +8,16 @@ class DashboardController extends Controller
         $model = new DashboardModel();
         $modelUpdate = new DashboardUpdateLogementModel();
         $modelReservation = new DashboardReservationModel();
-
+        $modelLikes = new DashboardLikesModel();
         if (!$_POST) {
             $datas = $model->getUser($idUser);
+            $date = date('Y-m-d');
             $datasLogement = $modelUpdate->getLogement($idUser);
-            $datasMesReservation = $modelReservation->getReservation($idUser);
-            $datasReservationChezMoi = $modelReservation->getReservationChezMoi($idUser);
+            $datasMesReservation = $modelReservation->getReservation($idUser, $date);
+            $datasHistoriqueReservation = $modelReservation->getHistoriqueReservation($idUser, $date);
+            $datasReservationChezMoi = $modelReservation->getReservationChezMoi($idUser, $date);
+            $datasHistoriqueReservationChezMoi = $modelReservation->getHistoriqueReservationChezMoi($idUser, $date);
+            $datasLikes= $modelLikes->getLikes($idUser);
             $imageArray = [];
             for ($i = 0; $i < count($datasLogement); $i++) {
                 $images = $datasLogement[$i]['images'];
@@ -45,7 +49,35 @@ class DashboardController extends Controller
                 $arrayFirstname[] = $firstnameArray;
             }
 
-            echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images' => $imageArray, 'mesReservations' => $datasMesReservation, 'datasReservationChezMoi' => $datasReservationChezMoi, 'contacts' => $arrayContacts, 'start_dates' => $arrayStart_date, 'end_dates' => $arrayEnd_dateArray, 'names' => $arrayName, 'firstnames' => $arrayFirstname, 'idUser'=>$idUser]);
+
+
+            $arrayHistoriqueContacts = [];
+            $arrayHistoriqueStart_date = [];
+            $arrayHistoriqueEnd_dateArray = [];
+            $arrayHistoriqueName = [];
+            $arrayHistoriqueFirstname = [];
+            for ($i = 0; $i < count($datasHistoriqueReservationChezMoi); $i++) {
+                $historiquecontact = $datasHistoriqueReservationChezMoi[$i]['contact'];
+                $historiquestart_date = $datasHistoriqueReservationChezMoi[$i]['start_date'];
+                $historiqueend_date = $datasHistoriqueReservationChezMoi[$i]['end_date'];
+                $historiquename = $datasHistoriqueReservationChezMoi[$i]['name'];
+                $historiquefirstname = $datasHistoriqueReservationChezMoi[$i]['firstname'];
+                $historiquecontactArray = explode(',', $historiquecontact);
+                $historiquestart_dateArray = explode(',', $historiquestart_date);
+                $historiqueend_dateArray = explode(',', $historiqueend_date);
+                $historiquenameArray = explode(',', $historiquename);
+                $historiquefirstnameArray = explode(',', $historiquefirstname);
+
+                $arrayHistoriqueContacts[] = $historiquecontactArray;
+                $arrayHistoriqueStart_date[] = $historiquestart_dateArray;
+                $arrayHistoriqueEnd_dateArray[] = $historiqueend_dateArray;
+                $arrayHistoriqueName[] = $historiquenameArray;
+                $arrayHistoriqueFirstname[] = $historiquefirstnameArray;
+            }
+            var_dump($datasLikes);
+           
+
+            echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images' => $imageArray, 'mesReservations' => $datasMesReservation, 'historiqueReservation' => $datasHistoriqueReservation,'datasReservationChezMoi' => $datasReservationChezMoi, 'contacts' => $arrayContacts, 'start_dates' => $arrayStart_date, 'end_dates' => $arrayEnd_dateArray, 'names' => $arrayName, 'firstnames' => $arrayFirstname, 'idUser'=>$idUser,'datasHistoriqueReservationChezMoi' => $datasHistoriqueReservationChezMoi, 'contactsHistorique' => $arrayHistoriqueContacts, 'start_datesHistorique' => $arrayHistoriqueStart_date, 'end_datesHistorique' => $arrayHistoriqueEnd_dateArray, 'namesHistorique' => $arrayHistoriqueName, 'firstnamesHistorique' => $arrayHistoriqueFirstname, 'idUser'=>$idUser, 'likes'=>$datasLikes]);
         }
         if (isset($_POST['validerName'])) {
             $firstname = ($_POST['firstname']);
@@ -257,14 +289,15 @@ class DashboardController extends Controller
         }
 
         if (isset($_POST['suprimerImages'])) {
-            $suprimerImage = [];
 
-            if (isset($_POST['selectImage']) && is_array($_POST['selectImage'])) {
-                foreach ($_POST['selectImage'] as $image) {
-                    $suprimerImage[] = $image;
-                }
-                $return = $modelUpdate->deleteImg($suprimerImage);
-            }
+            $nameImage = ($_POST['inputHiddenPopop']);
+            
+            $suprimerImage = explode(',', $nameImage);
+            // var_dump($suprimerImage);
+            $return = $modelUpdate->deleteImg($suprimerImage);
+            header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");
+            exit();
+
         }
 
         if (isset($_POST['suprimerLogement'])) {
@@ -277,11 +310,20 @@ class DashboardController extends Controller
             exit();
         }
 
+
         if (isset($_POST['suprimerUser'])) {
-            var_dump($idUser);
             $delUser = new PersonModel();
             $delUser->deleteUser($idUser);
             header("Location: /Projet/homeaway1.0");
+
+        
+
+        if (isset($_POST['suprimerLike'])) {
+            $deLike = new DashboardLikesModel();
+            $id_logement = ($_POST['inputHiddenPopop']);
+            $deLike->deleteLike($idUser, $id_logement);
+            header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentLike");
+
             exit();
         }
 
@@ -448,8 +490,7 @@ class DashboardController extends Controller
 
 
         if (isset($_POST['validerImages'])) {
-            var_dump($_POST);
-            var_dump('coucou');
+          
 
             if (isset($_SESSION['id_person'])) {
                 // var_dump('id_person is set');
