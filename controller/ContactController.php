@@ -11,7 +11,7 @@ class ContactController extends Controller{
                   
     
                 // Préparation de l'envoi de l'e-mail
-                $to = 'votre@email.com'; // Adresse e-mail où le message sera envoyé
+                $to = 'homeaway01000@gmail.com'; // Adresse e-mail où le message sera envoyé
                 $subject = 'Nouveau message de contact'; // Sujet de l'e-mail
                 $headers = "From: $mail\r\n"; // Adresse e-mail de l'expéditeur
                 $headers .= "Reply-To: $mail\r\n"; // Adresse e-mail de réponse

@@ -1,7 +1,7 @@
 {% extends "template.html.twig" %}
 
 {% block title %}
-	HomeAway logementcontent
+	HomeAway recherche
 {% endblock %}
 
 
@@ -152,7 +152,16 @@
 
 						<article class="item js-marker" data-lat="{{ logementDispo[i].latitude }}" data-lng="{{ logementDispo[i].longitude }}" data-price="{{ logementDispo[i].price_by_night }}">
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+								<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ logementDispo[i].type  ~ logementDispo[i].city }}">
+=======
 							<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'logementDispo[i].type ' ~ logementDispo[i].city }}">
+>>>>>>> 6043e71e6bae6e45ebbb3d68c83430f52cdc9523
+=======
+							<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'logementDispo[i].type ' ~ logementDispo[i].city }}">
+
+>>>>>>> 2a9518dee95d40efd15d02a41b56bcbcd2cb9515
 
 
 							<h4>{{ logementDispo[i].title }}

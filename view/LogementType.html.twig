@@ -77,7 +77,7 @@
 
 				<div class="convenience">
 					<input type="checkbox" id="animals" name="filters[]" value="animals">
-					<img src="{{asset('/img/pate.png')}}" alt="icon pate">
+					<img src="{{asset('/img/pate.png')}}" alt="icon animaux">
 					<label for="Wifi">Animaux autorisés</label>
 				</div>
 
@@ -125,7 +125,7 @@
 				<div class="convenience">
 					<input type="checkbox" id="parking" name="filters[]" value="parking">
 					<img src="{{asset('/img/iconParking.png')}}" alt="icon parking">
-					<label for="parking">parking</label>
+					<label for="parking">Parking</label>
 				</div>
 			</div>
 
@@ -135,7 +135,7 @@
 
 		</form>
 
-		
+
 		<div id="containerResultSearch">
 			<div class="map" id="map"></div>
 
@@ -143,25 +143,38 @@
 				class="listResult">
 
 				{# {% if logement is empty %}
-																	<p>Aucun logement ne correspond à votre recherche.</p>
-																{% else %} #}
+																					<p>Aucun logement ne correspond à votre recherche.</p>
+																				{% else %} #}
 
 				{% for i in 0..(logementsTypes|length - 1) %}
 
 					{% set tableauImage = logementsTypes[i].thumbnails[0] %}
 					
 						<article class="item js-marker" data-lat="{{ logementsTypes[i].latitude }}" data-lng="{{ logementsTypes[i].longitude }}" data-price="{{ logementsTypes[i].price_by_night }}">
-							<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'Appartement ' ~ logementsTypes[i].city }}">
+							<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'Appartement ' ~ logementsTypes[i].title }}">
 							<h4>{{ logementsTypes[i].title }}
 								&nbsp;-&nbsp;{{ logementsTypes[i].city }}</h4>
 							<p>{{ logementsTypes[i].resume }}</p>
 							<p>
 								<span>{{ logementsTypes[i].price_by_night }}€</span>
 								par nuit - &nbsp;
-								{# {{ totalPrices[i] }}€ au total #}
+
 							</p>
 							<div class="close-button">&times;</div>
 							{% if session.connect is defined and session.connect == true %}
+<<<<<<< HEAD
+<<<<<<< HEAD
+								<form action="" method="POST">
+									<input type="hidden" name="id_logement" value="{{logementDispo[i].id_logement}}">
+									<input type="hidden" name="id-Person" value="{{session.id_person}}">
+									<button class="heartIcon" type="button"><img src="./asset/img/iconHeartBlack.png" alt="icon coeur noir"></button>
+								</form>
+							{% endif %}
+						</article>
+=======
+=======
+
+>>>>>>> 2a9518dee95d40efd15d02a41b56bcbcd2cb9515
 										<form action="{{ path('favorite') }}" method="POST">
 										<input type="hidden" name="id_logement"  class="idLogementHidden" value="{{logementsTypes[i].id_logement}}">
 										<input type="hidden" name="id_person" id="idPersonHidden" value="{{session.id_person}}">
@@ -177,12 +190,24 @@
 								{% endif %}
 							</article>
 						
+<<<<<<< HEAD
+>>>>>>> 6043e71e6bae6e45ebbb3d68c83430f52cdc9523
+=======
+
+>>>>>>> 2a9518dee95d40efd15d02a41b56bcbcd2cb9515
 
 
 					{% endfor %}
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+			
+=======
 				
+>>>>>>> 6043e71e6bae6e45ebbb3d68c83430f52cdc9523
 
+=======
+>>>>>>> 2a9518dee95d40efd15d02a41b56bcbcd2cb9515
 
 			</div>
 
