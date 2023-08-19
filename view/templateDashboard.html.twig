@@ -436,6 +436,7 @@
 														<br>{{logement[i].number_of_person}}
 													</h3>
 												</div>
+											</div>
 												<div class='modifierInfo infoSaisis'>
 													<form action="" method="post">
 														<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
@@ -443,25 +444,25 @@
 														<input type="submit" name="validerPersone" class="valider change" value="">
 													</form>
 												</div>
-											</div>
-											<div class='oneInfo'>
-												<div class='infoSaisis'>
-													<div class='contentInfoGestion hInputGestion'>
-														<h3>Nombre de lits:
-															<br>{{logement[i].number_of_beds}}
-														</h3>
-													</div>
-												</div>
-												<div class='modifierInfo infoSaisis'>
-													<form action="" method="post">
-														<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
-														<input type="number" name="number_of_beds" class='change changeGestion' placeholder="Modifier...">
-														<input type="submit" name="validerBeds" class="valider change" value="">
-													</form>
-												</div>
-											</div>
+											
 										</div>
-									</div>
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Nombre de lits:
+														<br>{{logement[i].number_of_beds}}
+													</h3>
+												</div>
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<form action="" method="post">
+													<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
+													<input type="number" name="number_of_beds" class='change changeGestion' placeholder="Modifier...">
+													<input type="submit" name="validerBeds" class="valider change" value="">
+												</form>
+											</div>											
+										</div>
+								</div>
 
 								</div>
 								<div class="contentInput contentInputRight">
@@ -1095,7 +1096,7 @@
 									<figure class="iconRightContent">
 										<img id="iconReservationHistoric" src="{{ asset('/img/calendar.png') }}" alt="">
 									</figure>
-									<p class='dateRightContent infoRightContent'>du{{reqOneResevation.start_date}}
+									<p class='dateRightContent infoRightContent'>du {{reqOneResevation.start_date}}
 										au
 										{{reqOneResevation.end_date}}
 									</p>

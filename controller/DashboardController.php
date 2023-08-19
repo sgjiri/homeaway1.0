@@ -131,11 +131,11 @@ class DashboardController extends Controller
 
             if ($return) {
                 $datas = $model->getUser($idUser);
-                header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentInfoPerso");
                 echo $twig->render('templateDashboard.html.twig', ['user' => $datas]), "<script>alert(\"changement de mot de passe ruisi\")</script>";
+                echo "<meta http-equiv='refresh' content='0;url=/Projet/homeaway1.0/dashboard?activeElement=contentInfoPerso'>";
             } else {
-                header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentInfoPerso");
                 echo "<script>alert(\"les donné saisi ne sont pas les meme\")</script>";
+                echo "<meta http-equiv='refresh' content='0;url=/Projet/homeaway1.0/dashboard?activeElement=contentInfoPerso'>";
             }
         }
 
@@ -316,18 +316,21 @@ class DashboardController extends Controller
         }
 
         if (isset($_POST['suprimerReservation'])) {
-            
             $delReservation = new DashboardReservationModel();
             $id_resevation = ($_POST['inputHiddenPopop']);
             $startDate = $delReservation->selectDate($id_resevation); // Récupère la date de début
-            $dt = strtotime("$startDate");
+            $dt = strtotime($startDate['start_date']);
+            $date = strtotime(date("Y-m-d")); // Utiliser la date actuelle ici
             $dateRservation5 = date("Y-m-d", strtotime("-5 day", $dt));
             $date5 = date("Y-m-d", strtotime("-5 day", $date));
-            if($dateRservation5 > $date5){
+            
+            if ($dateRservation5 > $date5) {
                 $delReservation->deletResevation($id_resevation);
+                header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentMesReservation");
+            } else {
+                echo "<script>alert(\"Vous ne pouvez plus annuler cette réservation\")</script>";
+                echo "<meta http-equiv='refresh' content='0;url=/Projet/homeaway1.0/dashboard?activeElement=contentMesReservation'>";
             }
-            header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentMesReservation");
-            exit();
         }
 
         
