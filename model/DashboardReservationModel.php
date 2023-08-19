@@ -92,7 +92,6 @@ class DashboardReservationModel extends Model
         $reqDate->bindParam(':id_resevation', $id_resevation, PDO::PARAM_STR);
         $reqDate->execute();
         $startDate = $reqDate->fetch(PDO::FETCH_ASSOC);
-        var_dump($startDate);
         return $startDate;
         
     }

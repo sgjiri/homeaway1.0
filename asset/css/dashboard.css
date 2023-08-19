@@ -1180,17 +1180,22 @@
 }
 .content .contentPage .cardHG .cardContentRight .oneRightContent button span {
   color: #fff;
-  font-size: 2em;
+  font-size: 1.5em;
   transition: all 0.3s ease-in-out;
 }
 @media screen and (max-width: 1300px) {
   .content .contentPage .cardHG .cardContentRight .oneRightContent button span {
-    font-size: 1.7em;
+    font-size: 1.2em;
   }
 }
 @media screen and (max-width: 950px) {
   .content .contentPage .cardHG .cardContentRight .oneRightContent button span {
-    font-size: 1.3em;
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 800px) {
+  .content .contentPage .cardHG .cardContentRight .oneRightContent button span {
+    font-size: 0.8em;
   }
 }
 .content .contentPage .cardHG .cardContentRight .oneRightContent button:hover {
@@ -1454,7 +1459,12 @@
   transition: all 0.1s ease-in;
   position: absolute;
   right: 20px;
-  top: 20px;
+  bottom: 20px;
+}
+@media screen and (max-width: 950px) {
+  .content .contentPageReservation .card .cardContentRight form .suprimer {
+    bottom: 0;
+  }
 }
 .content .contentPageReservation .card .cardContentRight form .suprimer:hover {
   cursor: pointer;
@@ -1462,10 +1472,18 @@
   transform: scale(1.1);
 }
 .content .contentPageReservation .card .cardContentRight .oneRightContent {
-  height: 25%;
+  height: 23%;
 }
 .content .contentPageReservation .card .cardContentRight .oneRightContent p {
   width: 60%;
+}
+@media screen and (max-width: 700px) {
+  .content .contentPageReservation .card .cardContentRight .oneRightContent {
+    justify-content: start;
+  }
+}
+.content .contentPageReservation .card .cardContentRight .oneRightContent h2 {
+  text-align: start;
 }
 .content #contentGestionReservation h2 {
   margin-top: 100px;
@@ -1595,4 +1613,12 @@
 }
 .content #contentLike .card .cardContentRight .oneRightContent {
   height: 23%;
+}
+@media screen and (max-width: 700px) {
+  .content #contentLike .card .cardContentRight .oneRightContent {
+    justify-content: start;
+  }
+}
+.content #contentLike .card .cardContentRight .oneRightContent h2 {
+  text-align: start;
 }/*# sourceMappingURL=dashboard.css.map */
