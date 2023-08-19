@@ -22,35 +22,36 @@
 			</ul>
 		</div>
 		<div class="searchBoxDesktop">
-			<form action="{{path('search')}}" class="searchformDesktop"  method="POST">
+
+			<form action="{{path('search')}}" method="POST" class="searchformDesktop articleM">
 				<div class="searchFormBox">
 					<label for="city">Destination</label>
-					<input type="text" name="city" id="city" value="{{ formValue['city']}}">
+					<input type="text" name="city" id="cityM" value="{{city}}">
 				</div>
 				<div class="searchFormBox">
 					<label for="start_date">Date d'arrivée</label>
-					<input type="date" name="start_date" id="start_date" value="{{ formValue['start']}}">
+					<input type="date" name="start_date" id="start_dateM" value="{{ defaultStartDate}}">
 				</div>
 				<div class="searchFormBox">
 					<label for="end_date">Date de retour</label>
-					<input type="date" name="end_date" id="end_date" value="{{ formValue['end']}}">
+					<input type="date" name="end_date" id="end_dateM" value="{{ defaultEndDate}}">
 				</div>
 				<div class="searchFormBox">
 					<label for="number_of_person">Voyageurs</label>
-					<input type="number" name="number_of_person" id="number_of_person" value="{{ formValue['person']}}">
+					<input type="number" name="number_of_person" id="number_of_personM" value="2">
 				</div>
-				<input type="hidden" name="check">
+
 				<div id="buttonSearch">
 					<input type="submit" name="submit" value="Modifier">
 				</div>
 			</form>
+			<script></script>
 		</div>
 		<figure id="filter">
 			<img src="{{asset('/img/filter.png')}}" alt="filtre">
 		</figure>
 
 
-		
 		<form action="{{ path('searchWithFilters') }}" method="POST" id="formFilter">
 			<div id="convenience">
 				<div class="convenience">
@@ -136,58 +137,55 @@
 
 		</form>
 
-		
+
 		<div id="containerResultSearch">
 			<div class="map" id="map"></div>
 
-			<div
-				class="listResult">
+			<div class="listResult">
 
-				{# {% if logement is empty %}
-													<p>Aucun logement ne correspond à votre recherche.</p>
-												{% else %} #}
+				{% if logements is empty %}
+					<p>Aucun logement ne correspond à votre recherche.</p>
+				{% else %}
+					{% for i in 0..(logements|length - 1) %}
 
-				{% for i in 0..(logements|length - 1) %}
+						{% set tableauImage = logements[i].thumbnails[0] %}
 
-					{% set tableauImage = logements[i].thumbnails[0] %}
-
-				
-                     
 
 						<article class="item js-marker" data-lat="{{ logements[i].latitude }}" data-lng="{{ logements[i].longitude }}" data-price="{{ logements[i].price_by_night }}">
-						
+
 							<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'Appartement ' ~ logements[i].city }}">
 							<h4>{{ logements[i].title }}
 								&nbsp;-&nbsp;{{ logements[i].city}}</h4>
+							<span class="idLogement">{{logements[i].id_logement}}</span>
 							<p>{{ logements[i].resume }}</p>
 							<p>
-								<span>{{ logements[i].price_by_night }}€</span>
-								par nuit 
-								
+								<span class='priceByNight'>{{ logements[i].price_by_night }}€</span>
+								par nuit&nbsp; - &nbsp;
+								<span class='totalPrices'>{{ totalPrices[i] }}€
+								</span>
+								au total
+
 							</p>
 							<div class="close-button">&times;</div>
 							{% if session.connect is defined and session.connect == true %}
-										<form action="{{ path('favorite') }}" method="POST">
-										<input type="hidden" name="id_logement"  class="idLogementHidden" value="{{logements[i].id_logement}}">
-										<input type="hidden" name="id_person" id="idPersonHidden" value="{{session.id_person}}">
-										{% if logements[i].id_logement in results %}
+								<form action="{{ path('favorite') }}" method="POST">
+									<input type="hidden" name="id_logement" class="idLogementHidden" value="{{logements[i].id_logement}}">
+									<input type="hidden" name="id_person" id="idPersonHidden" value="{{session.id_person}}">
+									{% if logements[i].id_logement in results %}
 
-										<button class="heartIcon" type="button"><img src="../asset/img/iconHeartRed.png" alt="icon coeur rouge
-									"></button>
+										<button class="heartIcon" type="button"><img src="../asset/img/iconHeartRed.png" alt="icon coeur rouge"></button>
 
-										{% else %}
+									{% else %}
 										<button class="heartIcon" type="button"><img src="../asset/img/iconHeartBlack.png" alt="icon coeur noir"></button>
 									{% endif %}
-									</form>
-								{% endif %}
-							</article>
-						
+								</form>
+							{% endif %}
+						</article>
 
 
 					{% endfor %}
 
-
-
+				{% endif %}
 			</div>
 
 
@@ -199,6 +197,7 @@
 	<script src="{{asset('/js/vendor.js')}}"></script>
 	<script src="{{asset('/js/map.js')}}"></script>
 	<script src="{{asset('/js/heart2.js')}}"></script>
+	
 
 
 {% endblock %}
