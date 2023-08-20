@@ -27,7 +27,7 @@ class SearchController extends Controller
         
             $results = $modelLogement->like($id_person);
        
-            $dataUpdated = [];
+            
             $totalPrices = [];
             foreach ($datas as $logementComplet) {
 
@@ -130,15 +130,27 @@ class SearchController extends Controller
         $model = new SearchModel();
         $logements = $model->getLogementsByVille($city, $number_of_person);
         $modelLogement = new LogementModel();
-            
+        $defaultStartDate = date("Y-m-d");
+        $defaultEndDate = date("Y-m-d", strtotime("+5 days"));
             $id_person = $_SESSION['id_person'];
         
             $results = $modelLogement->like($id_person);
-
+            $totalPrices = [];
+            foreach ($logements as $logementComplet) {
+                $price_by_night = $logementComplet['price_by_night'];
+                 $start = new DateTime($defaultStartDate);
+                $end = new DateTime($defaultEndDate);
+                $number_of_days = $start->diff($end)->days;
+                 array_push($totalPrices, $price_by_night * $number_of_days);
+                
+            }
         $twig = $this->getTwig();
         $logementsView = $twig->render('logementCity.html.twig', [
             'logements' => $logements,
             'city' => $city,
+            'defaultStartDate' => $defaultStartDate,
+            'defaultEndDate' => $defaultEndDate,
+            'totalPrices' => $totalPrices,
             'results'=> $results
         ]);
         echo $logementsView;
@@ -150,9 +162,10 @@ class SearchController extends Controller
         $number_of_person = 2;
         $model = new SearchModel();
         $logementsTypes = $model->getLogementsByType($type, $number_of_person);
-        // var_dump($logements);
-        $dataUpdated = [];
-        // $totalPrices = [];
+        
+        $defaultStartDate = date("Y-m-d");
+        $defaultEndDate = date("Y-m-d", strtotime("+5 days"));
+        $totalPrices = [];
         $modelLogement = new LogementModel();
             
         $id_person = $_SESSION['id_person'];
@@ -160,20 +173,22 @@ class SearchController extends Controller
         $results = $modelLogement->like($id_person);
         foreach ($logementsTypes as $logementComplet) {
             $price_by_night = $logementComplet['price_by_night'];
-            // $start = new DateTime($start_date);
-            // $end = new DateTime($end_date);
-            // $number_of_days = $start->diff($end)->days;
-            // array_push($totalPrices, $price_by_night * $number_of_days);
-            $dataUpdated[] = $logementComplet;
+            $start = new DateTime($defaultStartDate);
+             $end = new DateTime($defaultEndDate);
+            $number_of_days = $start->diff($end)->days;
+            array_push($totalPrices, $price_by_night * $number_of_days);
+            
         }
 
         $twig = $this->getTwig();
         $logementsTypeView = $twig->render('logementType.html.twig', [
             'logementsTypes' => $logementsTypes,
             'type' => $type,
+            'defaultStartDate' => $defaultStartDate,
+            'defaultEndDate' => $defaultEndDate,
+            'totalPrices' => $totalPrices,
             'results'=> $results
             
-            // 'totalPrices' => $totalPrices, 
         ]);
         echo $logementsTypeView;
     }

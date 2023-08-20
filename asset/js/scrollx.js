@@ -1,42 +1,17 @@
-// function up(){  document.getElementById("scrollbar").scrollTop=document.getElementById("scrollbar").scrollTop - 100;}
 
-// function down(){document.getElementById("scrollbar").scrollTop=document.getElementById("scrollbar").scrollTop + 100;}
-
-// function wheel(event){
-    
-// 	let delta = 0;
-	
-// 	if (event.wheelDelta) {
-// 		delta = event.wheelDelta/120; 
-// 		if (window.opera) delta = -delta;
-// 	} else if (event.detail) {
-// 		delta = -event.detail/3;
-// 	}
-// 	if (delta > 0)up();
-// 	if (delta < 0)down();
-// 	return false;
-// }
-
-// function keyListener(event){
-   
-//    if(event.keyCode==38)up(); //keyCode 38 is up arrow
-//    if(event.keyCode==40)down(); //keyCode 40 is down arrow
-// }
-
-// /* Initialization code. */
-// if (window.addEventListener)
-// 	window.addEventListener('DOMMouseScroll', wheel, false);
-// window.onmousewheel = document.onmousewheel = wheel;
-// window.onkeydown = document.onkeydown = keyListener; 
 
 //centrer image cliqué 
 function centerImageInGallery(selectedImg) {
     let galleryContainer = document.getElementById('scrollbar');  
     let galleryWidth = galleryContainer.offsetWidth;
+    //position horizontale de l'image sélectionnée
     let selectedImgOffsetLeft = selectedImg.offsetLeft;
+    //La largeur de l'image sélectionnée 
     let selectedImgWidth = selectedImg.clientWidth;
     let selectedImgCenter = selectedImgOffsetLeft + (selectedImgWidth / 2);
     let scrollLeft = selectedImgCenter - (galleryWidth / 2);
+
+    // Faire défiler horizontalement le conteneur de la galerie pour centrer l'image
     galleryContainer.scrollTo({
       left: scrollLeft,
       behavior: 'smooth'
@@ -44,13 +19,18 @@ function centerImageInGallery(selectedImg) {
   }
 
 // img take place
-
+// Récupérer la première image en haut de la galerie
 let imgTop = document.getElementsByClassName('imgTop')[0];
+// Récupérer toutes les images de la galerie
 let imgGallery = document.getElementsByClassName('imgGallery');
+
+// Ajouter un écouteur d'événement 'click' à chaque image de la galerie
 for (let i = 0; i < imgGallery.length; i++) {
     imgGallery[i].addEventListener('click', function() {
         let srcImgGallery = imgGallery[i].getAttribute('src');
+        // Ajouter un écouteur d'événement 'click' à chaque image de la galerie
         imgTop.setAttribute('src', srcImgGallery);
+          // Centrer l'image sélectionnée dans la galerie
         centerImageInGallery(imgGallery[i]);
     });
 }
