@@ -61,15 +61,8 @@ class DashboardController extends Controller
             $arrayFirstname = [];
             for ($i = 0; $i < count($datasReservationChezMoi); $i++) {
 
-                // var_dump($datasReservationChezMoi[$i]['start_date']);
 
-                // $dtStart = strtotime($datasReservationChezMoi[$i]['start_date']);
-                // $dtEnd = strtotime($datasReservationChezMoi[$i]['end_date']);
-                // $dateStartRservation = date("d/m/Y", $dtStart);
-                // $dateEndRservation = date("d/m/Y", $dtEnd);
-                // $datasReservationChezMoi[$i]['start_date'] = $dateStartRservation;
 
-                $datasReservationChezMoi[$i]['end_date'] = $dateEndRservation;
                 $contact = $datasReservationChezMoi[$i]['contact'];
                 $start_date = $datasReservationChezMoi[$i]['start_date'];
                 $end_date = $datasReservationChezMoi[$i]['end_date'];
@@ -91,6 +84,26 @@ class DashboardController extends Controller
                 $arrayName[] = $nameArray;
                 $arrayFirstname[] = $firstnameArray;
             }
+
+            for ($i = 0; $i < count($arrayStart_date); $i++) {
+                for ($j = 0; $j < count($arrayStart_date[$i]); $j++) {
+                $dtStart = strtotime($arrayStart_date[$i][$j]);
+                $dateStartRservation = date("d/m/Y", $dtStart);
+                $arrayStart_date[$i][$j] = $dateStartRservation;
+                
+            }}
+
+            for ($i = 0; $i < count($arrayEnd_dateArray); $i++) {
+                for ($j = 0; $j < count($arrayEnd_dateArray[$i]); $j++) {
+                $dtStart = strtotime($arrayEnd_dateArray[$i][$j]);
+                $dateStartRservation = date("d/m/Y", $dtStart);
+                $arrayEnd_dateArray[$i][$j] = $dateStartRservation;
+                
+            }}
+
+
+
+
 
 
             $arrayHistoriqueContacts = [];
@@ -116,8 +129,7 @@ class DashboardController extends Controller
                 $arrayHistoriqueName[] = $historiquenameArray;
                 $arrayHistoriqueFirstname[] = $historiquefirstnameArray;
             }
-            var_dump($arrayStart_date);
-            var_dump($arrayContacts);
+
            
 
             echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images' => $imageArray, 'mesReservations' => $datasMesReservation, 'historiqueReservation' => $datasHistoriqueReservation,'datasReservationChezMoi' => $datasReservationChezMoi, 'contacts' => $arrayContacts, 'start_dates' => $arrayStart_date, 'end_dates' => $arrayEnd_dateArray, 'names' => $arrayName, 'firstnames' => $arrayFirstname, 'idUser'=>$idUser,'datasHistoriqueReservationChezMoi' => $datasHistoriqueReservationChezMoi, 'contactsHistorique' => $arrayHistoriqueContacts, 'start_datesHistorique' => $arrayHistoriqueStart_date, 'end_datesHistorique' => $arrayHistoriqueEnd_dateArray, 'namesHistorique' => $arrayHistoriqueName, 'firstnamesHistorique' => $arrayHistoriqueFirstname, 'idUser'=>$idUser, 'likes'=>$datasLikes]);
@@ -347,7 +359,7 @@ class DashboardController extends Controller
             $id_logement = ($_POST['inputHiddenPopop']);
             $delModel = new LogementModel();
             $delModel->delete($id_logement);
-            header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentInfoPerso");
+            header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentGestionLogement");
             exit();
         }
 

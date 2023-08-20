@@ -46,11 +46,11 @@ class DashboardReservationModel extends Model
     public function getReservationChezMoi($idUser, $date)
     {
         $req = $this->getDb()->prepare("SELECT `title`, 
-        GROUP_CONCAT(DISTINCT `person`.`mail`) AS `contact`, 
-        GROUP_CONCAT(DISTINCT `book`.`start_date`) AS `start_date`,
-        GROUP_CONCAT(DISTINCT `book`.`end_date`) AS `end_date`,
-        GROUP_CONCAT(DISTINCT `person`.`name`) AS `name`, 
-        GROUP_CONCAT(DISTINCT `person`.`firstname`) AS `firstname`
+        GROUP_CONCAT( `person`.`mail`) AS `contact`, 
+        GROUP_CONCAT(`book`.`start_date`) AS `start_date`,
+        GROUP_CONCAT(`book`.`end_date`) AS `end_date`,
+        GROUP_CONCAT(`person`.`name`) AS `name`, 
+        GROUP_CONCAT(`person`.`firstname`) AS `firstname`
         FROM `logement`
         INNER JOIN `book` ON `logement`.`id_logement` = `book`.`id_logement`
         INNER JOIN `person` ON `book`.`id_person` = `person`.`id_person`
