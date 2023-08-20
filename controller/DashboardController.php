@@ -18,6 +18,34 @@ class DashboardController extends Controller
             $datasHistoriqueReservation = $modelReservation->getHistoriqueReservation($idUser, $date);
             $datasReservationChezMoi = $modelReservation->getReservationChezMoi($idUser, $date);
             $datasHistoriqueReservationChezMoi = $modelReservation->getHistoriqueReservationChezMoi($idUser, $date);
+            
+            for ($i = 0; $i < count($datasMesReservation); $i++) {
+                
+                
+                $dtStart = strtotime($datasMesReservation[$i]['start_date']);
+                $dtEnd = strtotime($datasMesReservation[$i]['end_date']);
+                $dateStartRservation = date("d/m/Y", $dtStart);
+                $dateEndRservation = date("d/m/Y", $dtEnd);
+                $datasMesReservation[$i]['start_date'] = $dateStartRservation;
+                $datasMesReservation[$i]['end_date'] = $dateEndRservation;
+
+
+            }
+
+            for ($i = 0; $i < count($datasHistoriqueReservation); $i++) {
+                
+                
+                $dtStart = strtotime($datasHistoriqueReservation[$i]['start_date']);
+                $dtEnd = strtotime($datasHistoriqueReservation[$i]['end_date']);
+                $dateStartRservation = date("d/m/Y", $dtStart);
+                $dateEndRservation = date("d/m/Y", $dtEnd);
+                $datasHistoriqueReservation[$i]['start_date'] = $dateStartRservation;
+                $datasHistoriqueReservation[$i]['end_date'] = $dateEndRservation;
+
+
+            }
+
+
             $datasLikes= $modelLikes->getLikes($idUser);
             $imageArray = [];
             for ($i = 0; $i < count($datasLogement); $i++) {
@@ -32,11 +60,25 @@ class DashboardController extends Controller
             $arrayName = [];
             $arrayFirstname = [];
             for ($i = 0; $i < count($datasReservationChezMoi); $i++) {
+
+                // var_dump($datasReservationChezMoi[$i]['start_date']);
+
+                // $dtStart = strtotime($datasReservationChezMoi[$i]['start_date']);
+                // $dtEnd = strtotime($datasReservationChezMoi[$i]['end_date']);
+                // $dateStartRservation = date("d/m/Y", $dtStart);
+                // $dateEndRservation = date("d/m/Y", $dtEnd);
+                // $datasReservationChezMoi[$i]['start_date'] = $dateStartRservation;
+
+                $datasReservationChezMoi[$i]['end_date'] = $dateEndRservation;
                 $contact = $datasReservationChezMoi[$i]['contact'];
                 $start_date = $datasReservationChezMoi[$i]['start_date'];
                 $end_date = $datasReservationChezMoi[$i]['end_date'];
                 $name = $datasReservationChezMoi[$i]['name'];
                 $firstname = $datasReservationChezMoi[$i]['firstname'];
+
+                
+
+
                 $contactArray = explode(',', $contact);
                 $start_dateArray = explode(',', $start_date);
                 $end_dateArray = explode(',', $end_date);
@@ -74,6 +116,8 @@ class DashboardController extends Controller
                 $arrayHistoriqueName[] = $historiquenameArray;
                 $arrayHistoriqueFirstname[] = $historiquefirstnameArray;
             }
+            var_dump($arrayStart_date);
+            var_dump($arrayContacts);
            
 
             echo $twig->render('templateDashboard.html.twig', ['user' => $datas, 'logement' => $datasLogement, 'images' => $imageArray, 'mesReservations' => $datasMesReservation, 'historiqueReservation' => $datasHistoriqueReservation,'datasReservationChezMoi' => $datasReservationChezMoi, 'contacts' => $arrayContacts, 'start_dates' => $arrayStart_date, 'end_dates' => $arrayEnd_dateArray, 'names' => $arrayName, 'firstnames' => $arrayFirstname, 'idUser'=>$idUser,'datasHistoriqueReservationChezMoi' => $datasHistoriqueReservationChezMoi, 'contactsHistorique' => $arrayHistoriqueContacts, 'start_datesHistorique' => $arrayHistoriqueStart_date, 'end_datesHistorique' => $arrayHistoriqueEnd_dateArray, 'namesHistorique' => $arrayHistoriqueName, 'firstnamesHistorique' => $arrayHistoriqueFirstname, 'idUser'=>$idUser, 'likes'=>$datasLikes]);
@@ -320,11 +364,9 @@ class DashboardController extends Controller
             $id_resevation = ($_POST['inputHiddenPopop']);
             $startDate = $delReservation->selectDate($id_resevation); // Récupère la date de début
             $dt = strtotime($startDate['start_date']);
-            $date = strtotime(date("Y-m-d")); // Utiliser la date actuelle ici
-            $dateRservation5 = date("Y-m-d", strtotime("-5 day", $dt));
-            $date5 = date("Y-m-d", strtotime("-5 day", $date));
-            
-            if ($dateRservation5 > $date5) {
+            $dateRservation5 = date("Y-m-d", strtotime("-5 day", $dt)); 
+            if ($dateRservation5 >= $date) {
+                
                 $delReservation->deletResevation($id_resevation);
                 header("Location: /Projet/homeaway1.0/dashboard?activeElement=contentMesReservation");
             } else {
