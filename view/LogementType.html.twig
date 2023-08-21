@@ -21,23 +21,23 @@
 				</li>
 			</ul>
 		</div>
-<div class="searchBoxDesktop">
+		<div class="searchBoxDesktop">
 			<form action="{{path('search')}}" method="POST" class="searchformDesktop articleM">
 				<div class="searchFormBox">
 					<label for="city">Destination</label>
-					<input type="text" name="city" id="cityM" value="{{ formValue['city']}}">
+					<input type="text" name="city" id="cityM" value="Nom d'une ville">
 				</div>
 				<div class="searchFormBox">
 					<label for="start_date">Date d'arrivée</label>
-					<input type="date" name="start_date" id="start_dateM" value="{{ formValue['start']}}">
+					<input type="date" name="start_date" id="start_dateM" value="{{ defaultStartDate}}">
 				</div>
 				<div class="searchFormBox">
 					<label for="end_date">Date de retour</label>
-					<input type="date" name="end_date" id="end_dateM" value="{{ formValue['end']}}">
+					<input type="date" name="end_date" id="end_dateM" value="{{defaultEndDate}}">
 				</div>
 				<div class="searchFormBox">
 					<label for="number_of_person">Voyageurs</label>
-					<input type="number" name="number_of_person" id="number_of_personM" value="{{ formValue['person']}}">
+					<input type="number" name="number_of_person" id="number_of_personM" value="2">
 				</div>
 
 				<div id="buttonSearch">
@@ -139,23 +139,28 @@
 		<div id="containerResultSearch">
 			<div class="map" id="map"></div>
 
-			<div
-				class="listResult">
+			<div class="listResult">
 
+<<<<<<< HEAD
 				{# {% if logement is empty %}
 																					<p>Aucun logement ne correspond à votre recherche.</p>
 																				{% else %} #}
+=======
+>>>>>>> 4526611362d27ef1732c3bdb9e1b3a740e7233ce
 
-				{% for i in 0..(logementsTypes|length - 1) %}
+				
+					{% for i in 0..(logementsTypes|length - 1) %}
 
-					{% set tableauImage = logementsTypes[i].thumbnails[0] %}
-					
+						{% set tableauImage = logementsTypes[i].thumbnails[0] %}
+
 						<article class="item js-marker" data-lat="{{ logementsTypes[i].latitude }}" data-lng="{{ logementsTypes[i].longitude }}" data-price="{{ logementsTypes[i].price_by_night }}">
 							<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'Appartement ' ~ logementsTypes[i].title }}">
 							<h4>{{ logementsTypes[i].title }}
 								&nbsp;-&nbsp;{{ logementsTypes[i].city }}</h4>
+								<span class="idLogement">{{logementsTypes[i].id_logement}}</span>
 							<p>{{ logementsTypes[i].resume }}</p>
 							<p>
+<<<<<<< HEAD
 								<span>{{ logementsTypes[i].price_by_night }}€</span>
 								par nuit - &nbsp;
 
@@ -175,27 +180,54 @@
 										<input type="hidden" name="id_logement"  class="idLogementHidden" value="{{logementsTypes[i].id_logement}}">
 										<input type="hidden" name="id_person" id="idPersonHidden" value="{{session.id_person}}">
 											{% if logementsTypes[i].id_logement in results %}
+=======
+								<span class='priceByNight'>{{ logementsTypes[i].price_by_night }}€</span>
+								par nuit&nbsp; - &nbsp;
+								<span class='totalPrices'>{{ totalPrices[i] }}€
+								</span>&nbsp;au total.
+							</p>
+							<div class="close-button">&times;</div>
+							{% if session.connect is defined and session.connect == true %}
+								<form action="{{ path('favorite') }}" method="POST">
+									<input type="hidden" name="id_logement" class="idLogementHidden" value="{{logementsTypes[i].id_logement}}">
+									<input type="hidden" name="id_person" id="idPersonHidden" value="{{session.id_person}}">
+									{% if logementsTypes[i].id_logement in results %}
+>>>>>>> 4526611362d27ef1732c3bdb9e1b3a740e7233ce
 
 										<button class="heartIcon" type="button"><img src="../asset/img/iconHeartRed.png" alt="icon coeur rouge
-									"></button>
+																														"></button>
 
-										{% else %}
+									{% else %}
 										<button class="heartIcon" type="button"><img src="../asset/img/iconHeartBlack.png" alt="icon coeur noir"></button>
 									{% endif %}
-									</form>
-								{% endif %}
-							</article>
-						
+								</form>
+							{% endif %}
+						</article>
 
 
 
 					{% endfor %}
 
+<<<<<<< HEAD
+=======
+
+
+				</div>
+>>>>>>> 4526611362d27ef1732c3bdb9e1b3a740e7233ce
 
 
 			</div>
+		</section>
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script>
+		<script src="{{asset('/js/localStorage.js')}}"></script>
+		<script src="{{asset('/js/vendor.js')}}"></script>
+		<script src="{{asset('/js/map.js')}}"></script>
+		<script src="{{asset('/js/heart2.js')}}"></script>
+		
 
 
+<<<<<<< HEAD
 		</div>
 	</section>
 
@@ -207,3 +239,6 @@
 
 
 {% endblock %}
+=======
+	{% endblock %}
+>>>>>>> 4526611362d27ef1732c3bdb9e1b3a740e7233ce

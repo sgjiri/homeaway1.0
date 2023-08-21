@@ -1420,15 +1420,18 @@ sans-serif;
 
                         span {
                             color: #fff;
-                            font-size: 2em;
+                            font-size: 1.5em;
                             transition: all 0.3s ease-in-out;
 
                             @media screen and (max-width: 1300px) {
-                                font-size: 1.7em;
+                                font-size: 1.2em;
                             }
 
                             @media screen and (max-width: 950px) {
-                                font-size: 1.3em;
+                                font-size: 1em;
+                            }
+                            @media screen and (max-width: 800px) {
+                                font-size: 0.8em;
                             }
                         }
 
@@ -1761,7 +1764,11 @@ sans-serif;
                         transition: all 0.1s ease-in;
                         position: absolute;
                         right: 20px;
-                        top: 20px;
+                        bottom: 20px;
+
+                        @media screen and (max-width: 950px) {
+                            bottom: 0;
+                        }
             
                         &:hover {
                             cursor: pointer;
@@ -1772,12 +1779,21 @@ sans-serif;
 
                 }
                 .oneRightContent {
-                    height: 25%;
+                    height: 23%;
 
                     p {
                         width: 60%;
                     }
+
+                    @media screen and (max-width: 700px) {
+                        justify-content: start;
+                        
+                    }
+                    h2{
+                        text-align: start;
+                    }
                 }
+                
             }
         }
 
@@ -1951,6 +1967,14 @@ sans-serif;
     
                 .oneRightContent{
                     height: 23%;
+
+                    @media screen and (max-width: 700px) {
+                        justify-content: start;
+                        
+                    }
+                    h2{
+                        text-align: start;
+                    }
                 } 
 
 

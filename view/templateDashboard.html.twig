@@ -436,6 +436,7 @@
 														<br>{{logement[i].number_of_person}}
 													</h3>
 												</div>
+											</div>
 												<div class='modifierInfo infoSaisis'>
 													<form action="" method="post">
 														<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
@@ -443,6 +444,7 @@
 														<input type="submit" name="validerPersone" class="valider change" value="">
 													</form>
 												</div>
+<<<<<<< HEAD
 											</div>
 											<div class='oneInfo'>
 												<div class='infoSaisis'>
@@ -460,8 +462,27 @@
 													</form>
 												</div>
 											</div>
+=======
+											
+>>>>>>> 4526611362d27ef1732c3bdb9e1b3a740e7233ce
 										</div>
-									</div>
+										<div class='oneInfo'>
+											<div class='infoSaisis'>
+												<div class='contentInfoGestion hInputGestion'>
+													<h3>Nombre de lits:
+														<br>{{logement[i].number_of_beds}}
+													</h3>
+												</div>
+											</div>
+											<div class='modifierInfo infoSaisis'>
+												<form action="" method="post">
+													<input type="hidden" name="idLogement" value="{{logement[i].id_logement}}">
+													<input type="number" name="number_of_beds" class='change changeGestion' placeholder="Modifier...">
+													<input type="submit" name="validerBeds" class="valider change" value="">
+												</form>
+											</div>											
+										</div>
+								</div>
 
 								</div>
 								<div class="contentInput contentInputRight">
@@ -1092,7 +1113,7 @@
 									<figure class="iconRightContent">
 										<img id="iconReservationHistoric" src="{{ asset('/img/calendar.png') }}" alt="calendrier">
 									</figure>
-									<p class='dateRightContent infoRightContent'>du{{reqOneResevation.start_date}}
+									<p class='dateRightContent infoRightContent'>du {{reqOneResevation.start_date}}
 										au
 										{{reqOneResevation.end_date}}
 									</p>
