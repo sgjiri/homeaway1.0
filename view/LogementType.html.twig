@@ -162,8 +162,7 @@
 							</p>
 							<div class="close-button">&times;</div>
 							{% if session.connect is defined and session.connect == true %}
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 								<form action="" method="POST">
 									<input type="hidden" name="id_logement" value="{{logementDispo[i].id_logement}}">
 									<input type="hidden" name="id-Person" value="{{session.id_person}}">
@@ -171,10 +170,7 @@
 								</form>
 							{% endif %}
 						</article>
-=======
-=======
 
->>>>>>> 2a9518dee95d40efd15d02a41b56bcbcd2cb9515
 										<form action="{{ path('favorite') }}" method="POST">
 										<input type="hidden" name="id_logement"  class="idLogementHidden" value="{{logementsTypes[i].id_logement}}">
 										<input type="hidden" name="id_person" id="idPersonHidden" value="{{session.id_person}}">
@@ -190,24 +186,12 @@
 								{% endif %}
 							</article>
 						
-<<<<<<< HEAD
->>>>>>> 6043e71e6bae6e45ebbb3d68c83430f52cdc9523
-=======
 
->>>>>>> 2a9518dee95d40efd15d02a41b56bcbcd2cb9515
 
 
 					{% endfor %}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-			
-=======
-				
->>>>>>> 6043e71e6bae6e45ebbb3d68c83430f52cdc9523
 
-=======
->>>>>>> 2a9518dee95d40efd15d02a41b56bcbcd2cb9515
 
 			</div>
 
