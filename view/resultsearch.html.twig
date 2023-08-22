@@ -151,7 +151,7 @@
 
 
 						<article class="item js-marker" data-lat="{{ logementDispo[i].latitude }}" data-lng="{{ logementDispo[i].longitude }}" data-price="{{ logementDispo[i].price_by_night }}">
-
+							<p id="messageContainer"></p>
 							<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'logementDispo[i].type ' ~ logementDispo[i].city }}">
 
 
@@ -168,6 +168,7 @@
 								</span>
 								au total
 							</p>
+
 							<div class="close-button">&times;</div>
 							{% if session.connect is defined and session.connect == true %}
 								<form action="{{ path('favorite') }}" method="POST">
@@ -176,9 +177,9 @@
 									{% if logementDispo[i].id_logement in results %}
 
 										<button class="heartIcon" type="button"><img src="./asset/img/iconHeartRed.png" alt="icon coeur rouge
-									"></button>
+																				"></button>
 
-										{% else %}
+									{% else %}
 										<button class="heartIcon" type="button"><img src="./asset/img/iconHeartBlack.png" alt="icon coeur noir"></button>
 									{% endif %}
 								</form>

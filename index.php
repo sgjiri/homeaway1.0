@@ -84,6 +84,8 @@ if (is_array($match)) {
 
     if (is_callable(array($obj, $action))) {
         call_user_func_array(array($obj, $action), $match['params']);
+        $errorController = new ErrorController();
+        $errorController->error404();
     }
 } else {
         $errorController = new ErrorController();

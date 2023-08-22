@@ -276,14 +276,7 @@ class LogementController extends Controller
         $twig = $this->getTwig();
         echo $twig->render('contactHote.html.twig', []);
     }
-    // public function addFavorite()
-    // {
-    //     $modelLogement = new LogementModel();
-       
-    //     $modelLogement->favorite($_POST['id_logement'], $_SESSION['id_person']);
-    //     header('Location:./search');
-    //                 exit();
-    // }
+   
     public function addFavorite()
 {
     $modelLogement = new LogementModel();
@@ -291,13 +284,10 @@ class LogementController extends Controller
    
     $id_logement = $_POST['id_logement'];
     $id_person = $_SESSION['id_person'];
-    var_dump($id_person, $id_logement);
+
     $modelLogement->favorite( $id_logement , $id_person );
    // Préparez les données de réponse JSON
-    $response = array(
-        'status' => 'success',
-        'message' => 'Le logement a été ajouté aux favoris.'
-    );
+    $response =  [ 'status' => 'success'];
 
     // Convertissez les données en JSON et renvoyez la réponse
     echo json_encode($response);
@@ -312,10 +302,7 @@ public function deleteFavorite()
     $modelLogement->delFavorite($id_person, $id_logement);
 
     // Préparez les données de réponse JSON
-    $response = array(
-        'status' => 'success',
-        'message' => 'Le logement a été supprimé des favoris.'
-    );
+    $response =  ['status' => 'success'];
 
     // Convertissez les données en JSON et renvoyez la réponse
     echo json_encode($response);

@@ -25,7 +25,10 @@ $text-color: #333;
     list-style-type: none;
 
 }
-
+#messageContainer {
+    font-weight: 700;
+    padding-bottom: 10px;
+}
 .row-limit-size {
     width: 100%;
     max-width: 1200px;
