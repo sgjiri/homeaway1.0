@@ -1,5 +1,5 @@
 let heartIcons = document.getElementsByClassName('heartIcon');
-let messageContainer = document.getElementById('messageContainer');
+let messageContainer = document.getElementsByClassName('messageContainer');
 
 for (let i = 0; i < heartIcons.length; i++) {
   let heartIcon = heartIcons[i];
@@ -29,7 +29,10 @@ for (let i = 0; i < heartIcons.length; i++) {
         if (response.ok) {
           // Mettre à jour l'icône du cœur sur la page après avoir supprimé le logement des favoris
           heartImage.src = '../asset/img/iconHeartBlack.png';
-          messageContainer.innerHTML = 'Le logement a été supprimé des favoris.';
+          messageContainer[i].innerHTML = 'Le logement a été supprimé des favoris.';
+          setTimeout(function() {
+            messageContainer[i].innerHTML = '';
+          }, 1000);
         } else {
           console.error('Une erreur s\'est produite lors de la suppression des favoris.');
         }
@@ -37,6 +40,7 @@ for (let i = 0; i < heartIcons.length; i++) {
       .catch(error => {
         console.error('Une erreur s\'est produite lors de la requête de suppression des favoris:', error);
       });
+      
     } else {
       // Effectuer une requête fetch pour ajouter le logement aux favoris
       fetch('/Projet/homeaway1.0/favorite', {
@@ -47,7 +51,10 @@ for (let i = 0; i < heartIcons.length; i++) {
         if (response.ok) {
           // Mettre à jour l'icône du cœur sur la page après avoir ajouté le logement aux favoris
           heartImage.src = '../asset/img/iconHeartRed.png';
-          messageContainer.innerHTML = 'Le logement a été ajouté aux favoris.';
+          messageContainer[i].innerHTML = 'Le logement a été ajouté aux favoris.';
+          setTimeout(function() {
+            messageContainer[i].innerHTML = '';
+          }, 1000);
         } else {
           console.error('Une erreur s\'est produite lors de l\'ajout aux favoris.');
         }

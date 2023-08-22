@@ -152,7 +152,7 @@
 
 
 						<article class="item js-marker" data-lat="{{ logements[i].latitude }}" data-lng="{{ logements[i].longitude }}" data-price="{{ logements[i].price_by_night }}">
-							<p id="messageContainer"></p>
+							<p class="messageContainer"></p>
 							<img src="{{ asset('/img/logement/' ~ tableauImage['thumbnail']) }}" alt="{{ 'Appartement ' ~ logements[i].city }}">
 							<h4>{{ logements[i].title }}
 								&nbsp;-&nbsp;{{ logements[i].city}}</h4>

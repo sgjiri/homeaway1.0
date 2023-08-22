@@ -2,7 +2,7 @@
 let heartIcons = document.getElementsByClassName('heartIcon');
 
 // Sélectionner l'élément conteneur du message
-let messageContainer = document.getElementById('messageContainer');
+let messageContainer = document.getElementsByClassName('messageContainer');
 
 // Parcourir tous les icônes de cœur
 for (let i = 0; i < heartIcons.length; i++) {
@@ -35,7 +35,10 @@ for (let i = 0; i < heartIcons.length; i++) {
           // Mettre à jour l'icône du cœur sur la page après avoir supprimé le logement des favoris
           heartImage.src = './asset/img/iconHeartBlack.png';
           // Afficher le message de succès
-          messageContainer.innerHTML = 'Le logement a été supprimé des favoris.';
+          messageContainer[i].innerHTML = 'Le logement a été supprimé des favoris.';
+          setTimeout(function() {
+            messageContainer[i].innerHTML = '';
+          }, 1000);
         } else {
           console.error('Une erreur s\'est produite lors de la suppression des favoris.');
         }
@@ -54,7 +57,10 @@ for (let i = 0; i < heartIcons.length; i++) {
           // Mettre à jour l'icône du cœur sur la page après avoir ajouté le logement aux favoris
           heartImage.src = './asset/img/iconHeartRed.png';
           // Afficher le message de succès
-          messageContainer.innerHTML = 'Le logement a été ajouté aux favoris.';
+          messageContainer[i].innerHTML = 'Le logement a été ajouté aux favoris.';
+          setTimeout(function() {
+            messageContainer[i].innerHTML = '';
+          }, 1000);
         } else {
           console.error('Une erreur s\'est produite lors de l\'ajout aux favoris.');
         }
