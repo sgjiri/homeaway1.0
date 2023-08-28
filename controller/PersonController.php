@@ -74,8 +74,9 @@ class PersonController extends Controller
 
             if (!$birthdate) {
                 // La création de l'objet DateTime a échoué, afficher un message d'erreur ou rediriger vers une page d'erreur.
-                echo "La date de naissance n'est pas valide.";
-                exit();
+                $erroMessage= "La date de naissance n'est pas valide.";
+                $twig = $this->getTwig();
+                echo $twig->render('homepage.html.twig', ['errorMessage'=>$erroMessage]);
             }
 
             // Vérification de l'âge requis (18 ans)
@@ -83,14 +84,15 @@ class PersonController extends Controller
             $age = $now->diff($birthdate)->y;
 
             if ($age < 18) {
-                echo "Vous devez avoir au moins 18 ans pour vous inscrire.";
-                exit();
+                $erroMessage= "Vous devez avoir au moins 18 ans pour vous inscrire.";
+                $twig = $this->getTwig();
+                echo $twig->render('homepage.html.twig', ['errorMessage'=>$erroMessage]);
             }
             $phone_number = $_POST['phone_number'];
             $name = $_POST['name'];
             $firstname = $_POST['firstname'];
 
-            // var_dump($_POST['date_of_birth']);
+          
 
 
             // Vérification du mot de passe
@@ -100,8 +102,9 @@ class PersonController extends Controller
                 // !preg_match('/[a-z]/', $rawPass): Vérifie si le mot de passe ne contient pas au moins une lettre minuscule.
                 // !preg_match('/[!@#$%^&*]/', $rawPass): Vérifie si le mot de passe ne contient pas au moins un des caractères spéciaux suivants : !, @, #, $, %, ^, &, *.
                 // Le mot de passe ne respecte pas les critères, afficher un message d'erreur ou rediriger vers une page d'erreur.
-                echo "Le mot de passe doit contenir au moins 12 caractères avec au moins une majuscule, une minuscule et un caractère spécial.";
-                exit();
+               $erroMessage="Le mot de passe doit contenir au moins 12 caractères avec au moins une majuscule, une minuscule et un caractère spécial.";
+                $twig = $this->getTwig();
+                echo $twig->render('homepage.html.twig', ['errorMessage'=>$erroMessage]);
             }
 
 

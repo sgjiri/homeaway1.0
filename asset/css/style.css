@@ -196,6 +196,16 @@ header .loginBoxHeader {
   height: 100%;
   padding: 50px 10px;
 }
+header .loginBoxHeader .sign-in-form {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  transition: all 0.4s linear;
+}
 header .loginBoxHeader .sign-up-form {
   top: 0;
   left: 0;
