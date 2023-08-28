@@ -208,26 +208,7 @@ class LogementController extends Controller
         echo $twig->render('oneLogement.html.twig', ['onelogement' => $onelogement, 'allImg' => $allImg, 'books' => $allBook]);
     }
 
-    public function filterLogement()
-    {
-        global $router;
-
-        // Récupérez les filtres sélectionnés depuis le formulaire
-        $selectedFilters = $_POST["filters"] ?? [];
-        $submit = $_POST["submit"];
-
-        var_dump($_POST);
-
-        $logementModel = new LogementModel();
-        $filterLogement = $logementModel->logementFilters($selectedFilters);
-
-        header('Location:./search');
-        exit();
-
-        // $twig = $this->getTwig();
-        // echo $twig->render('resultsearch.html.twig', ['filterLogement' => $filterLogement]);
-    }
-
+    
 
     public function legalNotices()
     {

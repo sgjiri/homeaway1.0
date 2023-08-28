@@ -11,7 +11,7 @@ $router->setBasePath('/Projet/homeaway1.0');
 
 // **-------ROUTE HOMEPAGE-------**//
 $router->map('GET', '/', 'HomePageController#homepage', 'home' );
-// $router->map('GET', '/', 'HomePageController#cityBeach', 'home' );
+
 $router->map('GET', '/logement/', '', 'baseLogement');
 $router->map('GET', '/logement/[i:id_ville]', 'HomePageController#cityBeach', 'city');
 

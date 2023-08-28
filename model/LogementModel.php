@@ -105,82 +105,8 @@ class LogementModel extends Model
         $reqDelete->execute();
     }
 
-    // -*-*-*-*-*-FILTRES RECHERCHE-*-*-*-*-*
-    public function logementFilters($selectedFilters)
-    {
-
-        // Sélectionne toutes les colonnes de la table logement avec une condition initiale WHERE 1, qui est toujours vraie.
-        $reqFilter = "SELECT * FROM `logement` WHERE 1";
-        // Initialisation de l'array pour les conditions et les paramètres de requête
-        $conditions = [];
-        $queryParams = [];
-
-        // Vérifie si l'utilisateur a sélectionné le filtre wifi, et si oui, ajoute la condition au niveau de la requête SQL.
-        if (isset($selectedFilters['wifi'])) {
-            $conditions[] = "wifi = :wifi";
-            $queryParams[':wifi'] = 1;
-        }
-        if (isset($selectedFilters['parking'])) {
-            $conditions[] = "parking = :parking";
-            $queryParams[':parking'] = 1;
-        }
-        if (isset($selectedFilters['piscine'])) {
-            $conditions[] = "piscine = :piscine";
-            $queryParams[':piscine'] = 1;
-        }
-        if (isset($selectedFilters['animals'])) {
-            $conditions[] = "animals = :animals";
-            $queryParams[':animals'] = 1;
-        }
-        if (isset($selectedFilters['kitchen'])) {
-            $conditions[] = "kitchen = :kitchen";
-            $queryParams[':kitchen'] = 1;
-        }
-        if (isset($selectedFilters['garden'])) {
-            $conditions[] = "garden = :garden";
-            $queryParams[':garden'] = 1;
-        }
-        if (isset($selectedFilters['tv'])) {
-            $conditions[] = "tv = :tv";
-            $queryParams[':tv'] = 1;
-        }
-        if (isset($selectedFilters['climatisation'])) {
-            $conditions[] = "climatisation = :climatisation";
-            $queryParams[':climatisation'] = 1;
-        }
-        if (isset($selectedFilters['camera'])) {
-            $conditions[] = "camera = :camera";
-            $queryParams[':camera'] = 1;
-        }
-        if (isset($selectedFilters['home_textiles'])) {
-            $conditions[] = "home_textiles = :home_textiles";
-            $queryParams[':home_textiles'] = 1;
-        }
-        if (isset($selectedFilters['spa'])) {
-            $conditions[] = "spa = :spa";
-            $queryParams[':spa'] = 1;
-        }
-        if (isset($selectedFilters['jacuzzi'])) {
-            $conditions[] = "jacuzzi = :jacuzzi";
-            $queryParams[':jacuzzi'] = 1;
-        }
-
-
-
-        if (!empty($conditions)) {
-            $reqFilter .= " AND " . implode(" AND ", $conditions);
-        }
-
-
-        // Exécution de la requête préparée
-        $stmtFiltre = $this->getDb()->prepare($reqFilter);
-        $stmtFiltre->execute($queryParams);
-
-        // Récupération des résultats
-        $results = $stmtFiltre->fetchAll(PDO::FETCH_ASSOC);
-
-        return $results;
-    }
+    
+   
     public function favorite($id_logement, $id_person) {
         $reqAddFavorite = $this->getDb()->prepare("INSERT INTO `like` (`id_person`, `id_logement`) VALUES (:id_person, :id_logement)");
             
