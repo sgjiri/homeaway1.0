@@ -172,7 +172,7 @@ header #loginBox {
   min-height: 850px;
   display: none;
   position: relative;
-  background: url(../img/logement/thumbnail_1_appartementMarseille1.1.webp);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/logement/thumbnail_1_appartementMarseille1.1.webp);
   background-size: cover;
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
@@ -196,16 +196,6 @@ header .loginBoxHeader {
   height: 100%;
   padding: 50px 10px;
 }
-header .loginBoxHeader .sign-in-form {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-  transition: all 0.4s linear;
-}
 header .loginBoxHeader .sign-up-form {
   top: 0;
   left: 0;
@@ -216,7 +206,7 @@ header .loginBoxHeader .sign-up-form {
   backface-visibility: hidden;
   transition: all 0.4s linear;
   overflow: auto;
-  height: 500px;
+  height: 400px;
 }
 header .loginBoxHeader .passw-require {
   color: white;
@@ -516,6 +506,7 @@ header .login-form .group label .icon:after {
   height: 208px;
   margin: 25px auto;
   display: block;
+  opacity: 0.7;
 }
 #destination .destinationContainer .imgDestination div h4 {
   position: absolute;
@@ -523,10 +514,10 @@ header .login-form .group label .icon:after {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  color: #000;
+  color: #fff;
   font-family: "Righteous", cursive;
-  font-size: 1.2rem;
-  -webkit-text-stroke: 1px #fff;
+  font-size: 1.3rem;
+  -webkit-text-stroke: 1px #000;
   text-transform: uppercase;
 }
 

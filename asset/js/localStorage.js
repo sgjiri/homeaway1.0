@@ -6,6 +6,7 @@ if (document.getElementsByClassName('article')) {
       event.preventDefault();
 
       const startDate = document.getElementById('start_dateM').value;
+    
       const endDate = document.getElementById('end_dateM').value;
       const numberOfPerson = document.getElementById('number_of_personM').value;
       const idLogement = document.getElementsByClassName('idLogement')[i].innerHTML;
@@ -52,3 +53,4 @@ id_logement.value = idLogementCookie ? idLogementCookie.split('=')[1].trim() : '
 priceByNight.innerHTML = priceByNightCookie ? priceByNightCookie.split('=')[1].trim() : '';
 totalPrices.innerHTML = totalPricesCookie ? totalPricesCookie.split('=')[1].trim() : '';
 
+console.log(startDate.value )

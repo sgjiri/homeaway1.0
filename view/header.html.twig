@@ -1,4 +1,7 @@
 <header>
+{% if error %}
+						<div class="error-message">{{ error }}</div>
+					{% endif %}
 	<div id="logo">
 
 		<a href="{{path('home')}}"><img src="{{asset('/img/Logo')}}" alt="logo"></a>
@@ -12,15 +15,15 @@
 				<ul>
 					<li><a id="lienInformation"href='{{path('dashboard')}}?activeElement=contentInfoPerso'>Vos informations</a></li>
 					<li><a href='#'>Messages</a></li>
-					<li><a href='{{path('dashboard')}}?activeElement=contentMesReservation'>Vos réservations</a></li>
-					<li><a href='{{path('dashboard')}}?activeElement=contentAjoutLogement'>Ajouter un logement en ligne</a></li>
+					<li><ahref='{{path('dashboard')}}?activeElement=contentMesReservation'>Vos réservations</a></li>
+					<li><ahref='{{path('dashboard')}}?activeElement=contentAjoutLogement'>Ajouter un logement en ligne</a></li>
 					<li><a href='#'>Vos favoris</a></li>
 					<li><a href='{{ path('faq') }}'>FAQ</a></li>
 					<li><a href='{{path('logout')}}'>Déconnexion</a></li>
 				</ul>
 			</nav>
 		{% else %}
-			<img id="imgDisconnectDesktop"src="{{asset('/img/divBurger')}}" alt="connexion">
+			<img id="imgDisconnectDesktop" src="{{asset('/img/divBurger')}}" alt="connexion">
 			<nav id='navDisconnect'>
 				<ul>
 					<li><a id='loginButtonDestop' href='#'>Connexion</a></li>
@@ -41,10 +44,10 @@
 						<li><a href='#'>Vos informations</a></li>
 						<li><a href='#'>Messages</a></li>
 						<li><a href='#'>Vos réservations</a></li>
-						<li><a href='{{path('add')}}'>Ajouter un logement en ligne</a></li>
+						<li><ahref='{{path('add')}}'>Ajouter un logement en ligne</a></li>
 						<li><a href='#'>Vos favoris</a></li>
-						<li><a href='('faq') }}'>FAQ</a></li>
-						<li><a href='{{path('logout')}}'>Déconnexion</a></li>
+						<li><a href='(' faq') }}'>FAQ</a></li>
+						<li><ahref='{{path('logout')}}'>Déconnexion</a></li>
 					</ul>
 				</nav>
 			{% else %}
@@ -53,7 +56,7 @@
 					<ul>
 						<li><a href='#' id='loginButton'>Connexion</a></li>
 						<li><a href='#' id='registerButton'>Inscription</a></li>
-						<li><a href='('faq') }}'>FAQ</a></li>
+						<li><a href='(' faq') }}'>FAQ</a></li>
 
 					</ul>
 				</nav>
@@ -66,7 +69,7 @@
 	</div>
 	<div id="searchBoxPhone">
 
-		<form action= "{{path('search')}}" method="POST" id="searchform">
+		<form action="{{path('search')}}" method="POST" id="searchform">
 
 
 			<div class="searchFormBox">
@@ -82,12 +85,12 @@
 				<input type="date" name="end_date" id="end_date">
 			</div>
 			<div class="searchFormBox">
-			<label for="number_of_person">Voyageurs</label>
-			<input type="number" name="number_of_person" id="number_of_person">
+				<label for="number_of_person">Voyageurs</label>
+				<input type="number" name="number_of_person" id="number_of_person">
 			</div>
-			
+
 			<div id="buttonSearch">
-			<input type="submit" name="submit" id="submit" value="Recherche">
+				<input type="submit" name="submit" id="submit" value="Recherche">
 			</div>
 		</form>
 	</div>
@@ -127,11 +130,15 @@
 						<label for="date_of_birth" class="label">Date de naissance</label>
 						<input id="date_of_birth" type="date" name='date_of_birth' class="input">
 					</div>
+					
 					<div class="group">
 						<label for="phone_number" class="label">Numéro de téléphone</label>
 						<input type="tel" id="phone_number" name="phone_number" required class="input">
 					</div>
-
+					<div class="group">
+						<label for="pass" class="label">Email Address</label>
+						<input id="mail" name="mail" type="mail" class="input">
+					</div>
 					<div class="group">
 						<label for="password" class="label">Mot de passe</label>
 						<input id="password" name="password" type="password" class="input">
@@ -139,12 +146,10 @@
 					<div class="group">
 						<label for="password" class="label">Confirmé mot de passe</label>
 						<input id="password" name="password" type="password" class="input" data-type="password">
-						 <p class="passw-require">Votre mot de passe doit contenir au moins 12 caractères avec au moins une majuscule, une minuscule et un caractère spécial.</p>
+						<p class="passw-require">Votre mot de passe doit contenir au moins 12 caractères avec au moins une majuscule, une minuscule et un caractère spécial.</p>
 					</div>
-					<div class="group">
-						<label for="pass" class="label">Email Address</label>
-						<input id="mail" name="mail" type="mail" class="input">
-					</div>
+					
+
 
 					<div class="group">
 						<input type="submit" class="button" value="Inscription ">
@@ -158,6 +163,3 @@
 
 
 </header>
-
-
-

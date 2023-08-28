@@ -196,8 +196,7 @@ class LogementController extends Controller
 
     public function getOneLogement($id_logement)
     {
-        global $router;
-
+        
         $modelLogement = new LogementModel();
         $modelBook = new BookModel();
         $onelogement = $modelLogement->getOne($id_logement);
@@ -287,10 +286,7 @@ class LogementController extends Controller
 
     $modelLogement->favorite( $id_logement , $id_person );
    // Préparez les données de réponse JSON
-    $response = array(
-        'status' => 'success',
-        'message' => 'Le logement a été ajouté aux favoris.'
-    );
+    $response =  [ 'status' => 'success'];
 
     // Convertissez les données en JSON et renvoyez la réponse
     echo json_encode($response);
@@ -305,10 +301,7 @@ public function deleteFavorite()
     $modelLogement->delFavorite($id_person, $id_logement);
 
     // Préparez les données de réponse JSON
-    $response = array(
-        'status' => 'success',
-        'message' => 'Le logement a été supprimé des favoris.'
-    );
+    $response =  ['status' => 'success'];
 
     // Convertissez les données en JSON et renvoyez la réponse
     echo json_encode($response);

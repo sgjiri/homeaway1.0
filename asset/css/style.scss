@@ -154,7 +154,7 @@ header {
         width: 90%;
         min-height: 600px;
         display: none;
-
+       
         form {
             width: 100%;
             padding-top: 25px;
@@ -215,7 +215,7 @@ header {
         z-index: 900;
         width: 100%;
     }
-
+   
     #loginBox {
         width: 100%;
         margin: auto;
@@ -223,7 +223,7 @@ header {
         min-height: 850px;
         display: none;
         position: relative;
-        background: url(../img/logement/thumbnail_1_appartementMarseille1.1.webp);
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/logement/thumbnail_1_appartementMarseille1.1.webp);
         background-size: cover;
         box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
 
@@ -253,18 +253,7 @@ header {
         padding: 50px 10px;
         // background: rgba(40, 57, 101, .5);
 
-        .sign-in-form {
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            position: absolute;
-            transform: rotateY(180deg);
-            backface-visibility: hidden;
-            transition: all .4s linear;
-
-
-        }
+     
 
         .sign-up-form {
             top: 0;
@@ -276,7 +265,7 @@ header {
             backface-visibility: hidden;
             transition: all .4s linear;
             overflow: auto;
-            height: 500px;
+            height: 400px;
 
         }
         .passw-require{
@@ -668,6 +657,7 @@ header {
         .imgDestination {
             div {
                 position: relative;
+                 
 
                 a {
                     img {
@@ -676,6 +666,7 @@ header {
                         height: 208px;
                         margin: 25px auto;
                         display: block;
+                       opacity: 0.7;
 
                     }
 
@@ -687,10 +678,10 @@ header {
                     bottom: 20px;
                     left: 50%;
                     transform: translateX(-50%);
-                    color: #000;
+                    color: $white;
                     font-family: $fontTitle;
-                    font-size: 1.2rem;
-                    -webkit-text-stroke: 1px $white;
+                    font-size: 1.3rem;
+                    -webkit-text-stroke: 1px #000;
                     text-transform: uppercase;
 
 
