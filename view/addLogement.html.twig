@@ -1,0 +1,151 @@
+{% extends "template.html.twig" %}
+
+{% block title %}
+	Formulaire nouveau logement
+{% endblock %}
+
+{% block content %}
+
+	{% if message %}
+		<p>
+			{{ message }}
+		</p>
+	{% endif %}
+	<section id="formAddLogement" class="row-limit-size">
+		<fieldset>
+			<legend>Ajouter un logement
+			</legend>
+
+			<form id="add-flat" method="post" action='{{path('add')}}'enctype="multipart/form-data">
+
+				<div id="textField">
+					<input type="hidden" name="id_person" id="id_person" value="{{session.id_person}}" required>
+
+					<label for="title">Titre:</label>
+					<input type="text" name="title" id="title" required>
+
+					<label for="type">Type:</label>
+					<select name="type" id="type" required>
+						<option value=""></option>
+						<option value="housse">Maison</option>
+						<option value="flat">Appartement</option>
+						<option value="studio">Studio</option>
+						<option value="chalet">Chalet</option>
+						<option value="cottage">Gîte</option>
+						<option value="gest house">Maison d'hôte</option>
+						<option value="dome">Dôme</option>
+						<option value="hut">Cabane</option>
+						<option value="yurt">Yourt</option>
+						<option value="barge">Péniche</option>
+					</select>
+
+					<label for="surface">Surface:</label>
+					<input type="number" name="surface" id="surface" placehoder="en m²" required>
+
+					<label for="resume">Résumé :</label>
+					<textarea name="resume" id="resume" cols="30" rows="10"></textarea>
+
+					<label for="description">Description :</label>
+					<textarea name="description" id="description" cols="30" rows="10"></textarea>
+
+					<label for="adress">Adresse :</label>
+					<input type="text" name="adress" id="adress" placeholder="numéro, voirie, nom" required>
+
+					<label for="adressCode">Code postal</label>
+					<input type="text" name="adressCode" id="adressCode" required>
+
+					<label for="city">Ville :</label>
+					<input type="text" name="city" id="city" required>
+
+					<label for="city">Secteur proche de/d'</label>
+					<select name="location" id="location" required>
+						<option value=""></option>
+						<option value="beach">La plage</option>
+						<option value="river">La rivière/ Un fleuve</option>
+						<option value="forest">La fôret</option>
+						<option value="montain">La montagne</option>
+						<option value="lac">Un lac</option>
+					</select>
+
+					<label for="price_by_night">Prix par nuit</label>
+					<input type="number" name="price_by_night" id="type" required>
+
+
+					<label for="number_of_person">Nombre de personne</label>
+					<input type="number" name="number_of_person" id="type" required>
+
+
+					<label for="number_of_beds">Nombre de lit</label>
+					<input type="number" name="number_of_beds" id="type" required>
+				</div>
+
+				<div id="checkbox">
+					<div>
+						<label for="parking">Parking</label>
+						<input type="checkbox" name="parking" id="type" value="1">
+					</div>
+					<div>
+
+						<label for="wifi">Wifi</label>
+						<input type="checkbox" name="wifi" id="type" value="1">
+					</div>
+					<div>
+						<label for="piscine">Piscine</label>
+						<input type="checkbox" name="piscine" id="type" value="1">
+					</div>
+					<div>
+						<label for="animals">Animals</label>
+						<input type="checkbox" name="animals" id="type" value="1">
+					</div>
+					<div>
+						<label for="kitchen">Kitchen</label>
+						<input type="checkbox" name="kitchen" id="type" value="1">
+					</div>
+					<div>
+						<label for="garden">Garden</label>
+						<input type="checkbox" name="garden" id="type" value="1">
+					</div>
+					<div>
+						<label for="tv">TV</label>
+						<input type="checkbox" name="tv" id="type" value="1">
+					</div>
+					<div>
+						<label for="climatisation">Climatisation</label>
+						<input type="checkbox" name="climatisation" id="type" value="1">
+					</div>
+					<div>
+						<label for="camera">Camera</label>
+						<input type="checkbox" name="camera" id="type" value="1">
+					</div>
+					<div>
+						<label for="home_textiles">Home_textiles</label>
+						<input type="checkbox" name="home_textiles" id="type" value="1">
+					</div>
+					<div>
+						<label for="spa ">Spa
+						</label>
+						<input type="checkbox" name="spa " id="type" value="1">
+					</div>
+					<div>
+						<label for="jacuzzi ">Jacuzzi
+						</label>
+						<input type="checkbox" name="jacuzzi " id="type" value="1">
+					</div>
+				</div>
+				
+               <div id="addImg">
+                    <span id="spanPlus"><img src="{{ asset('/img/iconPlus.png') }}" alt="plus"></span>
+                   
+                </div>
+
+				<input type="submit" name="submit" value="Envoyer">
+			</fieldset>
+		</form>
+
+	</section>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJOi0dF-SaAfjQDQogCfi0Ns5BDtZcJJU"></script>
+
+	<script src="./asset/js/input.js"></script>
+
+{% endblock %}
