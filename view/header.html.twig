@@ -1,12 +1,11 @@
 <header>
-{% if error %}
-						<div class="error-message">{{ error }}</div>
-					{% endif %}
+
 	<div id="logo">
 
 		<a href="{{path('home')}}"><img src="{{asset('/img/Logo')}}" alt="logo"></a>
 
 	</div>
+	
 	<div id="burgerDesktop">
 
 		{% if session.connect is defined and session.connect == true %}
@@ -15,14 +14,17 @@
 				<ul>
 					<li><a id="lienInformation"href='{{path('dashboard')}}?activeElement=contentInfoPerso'>Vos informations</a></li>
 					<li><a href='#'>Messages</a></li>
-					<li><ahref='{{path('dashboard')}}?activeElement=contentMesReservation'>Vos réservations</a></li>
-					<li><ahref='{{path('dashboard')}}?activeElement=contentAjoutLogement'>Ajouter un logement en ligne</a></li>
+					<li><a href='{{path('dashboard')}}?activeElement=contentMesReservation'>Vos réservations</a></li>
+					<li><a href='{{path('dashboard')}}?activeElement=contentAjoutLogement'>Ajouter un logement en ligne</a></li>
 					<li><a href='#'>Vos favoris</a></li>
 					<li><a href='{{ path('faq') }}'>FAQ</a></li>
 					<li><a href='{{path('logout')}}'>Déconnexion</a></li>
 				</ul>
 			</nav>
 		{% else %}
+		{% if errorMessage %}
+						<div class="error-message">{{ errorMessage }}</div>
+					{% endif %}
 			<img id="imgDisconnectDesktop" src="{{asset('/img/divBurger')}}" alt="connexion">
 			<nav id='navDisconnect'>
 				<ul>
@@ -41,17 +43,19 @@
 
 				<nav id='navConnectPhone'>
 					<ul>
-						<li><a href='#'>Vos informations</a></li>
+						<li><a href='{{path('dashboard')}}?activeElement=contentInfoPerso'>Vos informations</a></li>
 						<li><a href='#'>Messages</a></li>
-						<li><a href='#'>Vos réservations</a></li>
-						<li><ahref='{{path('add')}}'>Ajouter un logement en ligne</a></li>
+						<li><a href='{{path('dashboard')}}?activeElement=contentMesReservation'>Vos réservations</a></li>
+						<li><ahref='{{path('dashboard')}}?activeElement=contentAjoutLogement'>Ajouter un logement en ligne</a></li>
 						<li><a href='#'>Vos favoris</a></li>
-						<li><a href='(' faq') }}'>FAQ</a></li>
+						<li><a href='{{ path('faq') }}'>FAQ</a></li>
 						<li><ahref='{{path('logout')}}'>Déconnexion</a></li>
 					</ul>
 				</nav>
 			{% else %}
-
+                    {% if errorMessage %}
+						<div class="error-message">{{ errorMessage }}</div>
+					{% endif %}
 				<nav id='navDisconnectPhone'>
 					<ul>
 						<li><a href='#' id='loginButton'>Connexion</a></li>
